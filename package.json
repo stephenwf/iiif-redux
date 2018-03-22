@@ -16,9 +16,24 @@
     "test:watch": "nwb test --server"
   },
   "dependencies": {
+    "immutability-helper": "^2.6.6",
+    "jest": "^22.4.2",
+    "normalizr": "^3.2.4",
+    "redux": "^3.7.2",
+    "redux-actions": "^2.3.0",
+    "redux-saga": "^0.16.0",
+    "reselect": "^3.0.1"
   },
   "devDependencies": {
-    "nwb": "0.19.x"
+    "babel-eslint": "^8.1.0",
+    "eslint": "^3.10.2",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-flow": "^2.29.1",
+    "eslint-plugin-flowtype": "^2.40.1",
+    "eslint-plugin-prettier": "^2.4.0",
+    "flow-bin": "^0.61.0",
+    "nwb": "0.19.x",
+    "prettier": "^1.9.2"
   },
   "author": "",
   "homepage": "",
