@@ -1,5 +1,4 @@
-![iiif-redux](https://user-images.githubusercontent.com/8266711/37868695-b5dd160e-2fa2-11e8-8a9e-77009d047cad.png)
-
+<img src="https://user-images.githubusercontent.com/8266711/37868695-b5dd160e-2fa2-11e8-8a9e-77009d047cad.png" width="510" />
 ___
 
 :warning: IIIF Redux current state is a request for comments from the community with a proposal for managing 
