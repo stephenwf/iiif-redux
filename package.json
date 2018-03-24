@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "immutability-helper": "^2.6.6",
-    "jest": "^22.4.2",
     "normalizr": "^3.2.4",
     "redux": "^3.7.2",
     "redux-actions": "^2.3.0",
@@ -25,7 +24,12 @@
     "reselect": "^3.0.1"
   },
   "devDependencies": {
+    "@types/reselect": "^2.2.0",
     "babel-eslint": "^8.1.0",
+    "babel-jest": "^22.4.3",
+    "jest": "^22.4.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "eslint": "^3.10.2",
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-flow": "^2.29.1",
@@ -33,9 +37,15 @@
     "eslint-plugin-prettier": "^2.4.0",
     "flow-bin": "^0.61.0",
     "nwb": "0.19.x",
-    "prettier": "^1.9.2"
+    "prettier": "^1.9.2",
+    "react-test-renderer": "^16.2.0"
   },
-  "author": "",
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "<rootDir>/jest.transform.js"
+    }
+  },
+  "author": "Stephen Fraser <stephen.fraser@digirati.com>",
   "homepage": "",
   "license": "MIT",
   "repository": ""
