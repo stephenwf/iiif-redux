@@ -183,6 +183,37 @@ Other external tooling possibilities:
 * External metadata comprehension, tooling + display
 * External annotation comprehension, tooling + display (and authoring)
 
+### Value normalization
+At the moment its unclear what the best approach for normalizing values, such as internationalised string should be.
+One option would be to normalize the data before we add it to the store. So for example:
+```json
+{
+  "@id": "...",
+  "label": "some label",
+  "description": "some description"
+}
+```
+would be stored in state as:
+```json
+{
+  "@id": "...",
+  "label": [{ "@language": "@none", "@value": "some label" }],
+  "description": [{ "@language": "@none", "@value": "some description" }]
+}
+```
+Similarly, for fields that can be Objects or arrays of objects, normalizing those into always be arrays.
+
+The downsides to this approach would be the lossy nature of this, there's no way of knowing what the original manifest looked like. 
+In addition, it would make editing existing manifests harder as this set of rules for normalizing would be reflected in the output.
+
+The second option is to normalize on the way out, in the selectors themselves. Structurally this adds some overhead in the API, but
+the benefits (opposite of those mentioned above) seem to be worth it.
+
+#### Exceptions to the rule
+Some things need to be normalized on the way in, in a sort of expand for the state, and contract for the output. One example is 
+when annotations target a specific region of a selector, this should be expanded out to make it easier to associate IDs in the 
+original normalization step. 
+
 ### Selectors
 The very basics of a selector is a simple function that takes a big object, and returns a smaller object or a single value.
 ```js
