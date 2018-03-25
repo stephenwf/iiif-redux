@@ -4,6 +4,12 @@
     "@type": "sc:Manifest",
     "attribution": "National Library of Scotland<br/>License: <a target=\"_top\" href=\"http://creativecommons.org/licenses/by/4.0/\">CC BY 4.0</a>",
     "label": "Forth Bridge illustrations 1886-1887",
+    "startCanvas": "https://view.nls.uk/iiif/7446/74464117/canvas/3",
+    "seeAlso": [
+      {"@id": "http://seealso.com/page-1.json", "label": "Page 1"},
+      {"@id": "http://seealso.com/page-2.json", "label": "Page 2"},
+      "http://seealso.com/page-3.json"
+    ],
     "metadata": [
         {
             "label": "Title",

@@ -84,6 +84,9 @@ const getThumbnail = resource => {
 };
 
 const getLicense = resource => {
+  if (!resource.license) {
+    return null;
+  }
   if (Array.isArray(resource.license)) {
     return resource.license;
   }
