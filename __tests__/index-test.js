@@ -29,6 +29,6 @@ describe('api/manifests', () => {
       'https://view.nls.uk/iiif/7446/74464117/canvas/1'
     );
 
-    console.log(canvases);
+    // console.log(canvases);
   });
 });

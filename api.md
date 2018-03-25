@@ -1,0 +1,256 @@
+# API
+IIIF API
+
+## Descriptive properties
+- [ ] Collection
+  - [x] getLabel (Required)
+  - [x] getMetadata (Recommended)
+  - [x] getDescription (Recommended)
+  - [ ] getThumbnail (Recommended)
+  - [ ] getAttribution (Optional)
+  - [ ] getLicence (Optional)
+  - [ ] getLogo (Optional)
+- [ ] Manifest
+  - [ ] getLabel (Required)
+  - [ ] getMetadata (Recommended)
+  - [ ] getDescription (Recommended)
+  - [ ] getThumbnail (Recommended)
+  - [ ] getAttribution (Optional)
+  - [ ] getLicence (Optional)
+  - [ ] getLogo (Optional)
+- [ ] Sequence
+  - [ ] getLabel (Optional)
+  - [ ] getMetadata (Optional)
+  - [ ] getDescription (Optional)
+  - [ ] getThumbnail (Optional)
+  - [ ] getAttribution (Optional)
+  - [ ] getLicence (Optional)
+  - [ ] getLogo (Optional)
+- [ ] Canvas
+  - [ ] getLabel (Required)
+  - [ ] getMetadata (Optional)
+  - [ ] getDescription (Optional)
+  - [ ] getThumbnail (Recommended)
+  - [ ] getAttribution (Optional)
+  - [ ] getLicence (Optional)
+  - [ ] getLogo (Optional)
+- [ ] Annotation
+  - [ ] getLabel (Optional)
+  - [ ] getMetadata (Optional)
+  - [ ] getDescription (Optional)
+  - [ ] getThumbnail (Optional)
+  - [ ] getAttribution (Optional)
+  - [ ] getLicence (Optional)
+  - [ ] getLogo (Optional)
+- [ ] AnnotationList
+  - [ ] getLabel (Optional)
+  - [ ] getMetadata (Optional)
+  - [ ] getDescription (Optional)
+  - [ ] getThumbnail (Optional)
+  - [ ] getAttribution (Optional)
+  - [ ] getLicence (Optional)
+  - [ ] getLogo (Optional)
+- [ ] Range
+  - [ ] getLabel (Required)
+  - [ ] getMetadata (Optional)
+  - [ ] getDescription (Optional)
+  - [ ] getThumbnail (Optional)
+  - [ ] getAttribution (Optional)
+  - [ ] getLicence (Optional)
+  - [ ] getLogo (Optional)
+- [ ] Layer
+  - [ ] getLabel (Required)
+  - [ ] getMetadata (Optional)
+  - [ ] getDescription (Optional)
+  - [ ] getThumbnail (Optional)
+  - [ ] getAttribution (Optional)
+  - [ ] getLicence (Optional)
+  - [ ] getLogo (Optional)
+- [ ] Image content
+  - [ ] getLabel (Optional)
+  - [ ] getMetadata (Optional)
+  - [ ] getDescription (Optional)
+  - [ ] getThumbnail (Optional)
+  - [ ] getAttribution (Optional)
+  - [ ] getLicence (Optional)
+  - [ ] getLogo (Optional)
+- [ ] Other content
+  - [ ] getLabel (Optional)
+  - [ ] getMetadata (Optional)
+  - [ ] getDescription (Optional)
+  - [ ] getThumbnail (Optional)
+  - [ ] getAttribution (Optional)
+  - [ ] getLicence (Optional)
+  - [ ] getLogo (Optional)
+
+## Technical properties
+- [ ] Collection
+  - [ ] getId (Required)
+  - [ ] getType (Required - probably not needed for this)
+  - [ ] getViewingHint (Optional)
+  - [ ] getNavDate (Optional)
+- [ ] Manifest
+  - [ ] getId (Required)
+  - [ ] getType (Required - probably not needed for this)
+  - [ ] getViewingDirection (Optional)
+  - [ ] getViewingHint (Optional)
+  - [ ] getNavDate (Optional)
+- [ ] Sequence
+  - [ ] getId (Optional - auto-generated)
+  - [ ] getType (Required - probably not needed for this)
+  - [ ] getViewingDirection (Optional)
+  - [ ] getViewingHint (Optional)
+- [ ] Canvas
+  - [ ] getId (Required)
+  - [ ] getType (Required - probably not needed for this)
+  - [ ] getHeight (Required)
+  - [ ] getWidth (Required)
+  - [ ] getViewingHint (Optional)
+- [ ] Annotation
+  - [ ] getId (Recommended - auto-generated)
+  - [ ] getType (Required - probably not needed for this)
+  - [ ] getViewingHint (Optional)
+- [ ] AnnotationList
+  - [ ] getId (Required)
+  - [ ] getType (Required - probably not needed for this)
+  - [ ] getViewingHint (Optional)
+- [ ] Range
+  - [ ] getId (Required)
+  - [ ] getType (Required - probably not needed for this)
+  - [ ] getViewingDirection (Optional)
+  - [ ] getViewingHint (Optional)
+- [ ] Layer
+  - [ ] getId (Required)
+  - [ ] getType (Required - probably not needed for this)
+  - [ ] getViewingDirection (Optional)
+  - [ ] getViewingHint (Optional)
+- [ ] Image Content
+  - [ ] getId (Required)
+  - [ ] getType (Required - probably not needed for this)
+  - [ ] getFormat (Optional - [ ] default?)
+  - [ ] getHeight (Optional)
+  - [ ] getWidth (Optional)
+  - [ ] getViewingHint (Optional)
+- [ ] Other Content
+  - [ ] getId (Required)
+  - [ ] getType (Required - probably not needed for this)
+  - [ ] getFormat (Optional - [ ] default?)
+  - [ ] getHeight (Optional)
+  - [ ] getWidth (Optional)
+  - [ ] getViewingHint (Optional)
+
+## Linking Properties (all optional)
+- [ ] Collection
+  - [ ] getSeeAlso
+  - [ ] getService
+  - [ ] getRelated
+  - [ ] getRendering
+  - [ ] getWithin
+- [ ] Manifest
+  - [ ] getSeeAlso
+  - [ ] getService
+  - [ ] getRelated
+  - [ ] getRendering
+  - [ ] getWithin
+- [ ] Sequence
+  - [ ] getSeeAlso
+  - [ ] getService
+  - [ ] getRelated
+  - [ ] getRendering
+  - [ ] getWithin
+  - [ ] getStartCanvas
+- [ ] Canvas
+  - [ ] getSeeAlso
+  - [ ] getService
+  - [ ] getRelated
+  - [ ] getRendering
+  - [ ] getWithin
+- [ ] Annotation
+  - [ ] getSeeAlso
+  - [ ] getService
+  - [ ] getRelated
+  - [ ] getRendering
+  - [ ] getWithin
+- [ ] AnnotationList
+  - [ ] getSeeAlso
+  - [ ] getService
+  - [ ] getRelated
+  - [ ] getRendering
+  - [ ] getWithin
+- [ ] Range
+  - [ ] getSeeAlso
+  - [ ] getService
+  - [ ] getRelated
+  - [ ] getRendering
+  - [ ] getWithin
+  - [ ] getStartCanvas
+- [ ] Layer
+  - [ ] getSeeAlso
+  - [ ] getService
+  - [ ] getRelated
+  - [ ] getRendering
+  - [ ] getWithin
+- [ ] Image Content
+  - [ ] getSeeAlso
+  - [ ] getService
+  - [ ] getRelated
+  - [ ] getRendering
+  - [ ] getWithin
+- [ ] Other Content
+  - [ ] getSeeAlso
+  - [ ] getService
+  - [ ] getRelated
+  - [ ] getRendering
+  - [ ] getWithin
+## Paging properties (all optional)
+- [ ] Collection
+  - [ ] getFirst
+  - [ ] getLast
+  - [ ] getTotal
+  - [ ] getNext
+  - [ ] getPrevious
+  - [ ] getStartIndex
+- [ ] AnnotationList
+  - [ ] getNext
+  - [ ] getPrevious
+  - [ ] getStartIndex
+- [ ] Layer
+  - [ ] getFirst
+  - [ ] getLast
+  - [ ] getTotal
+
+## Structural properties (all optional, unless stated)
+- [ ] Collection
+  - [ ] getCollections
+  - [ ] getManifests
+  - [ ] getMembers
+- [ ] Manifest
+  - [ ] getSequences (Required)
+  - [ ] getStructures / getRanges
+- [ ] Sequence
+  - [ ] getCanvases
+- [ ] Canvas
+  - [ ] getOtherContent
+  - [ ] getImages
+- [ ] AnnotationList
+  - [ ] getResources / getAnnotations
+- [ ] Range
+  - [ ] getMembers
+  - [ ] getCanvases
+  - [ ] getRanges
+- [ ] Layer
+  - [ ] getOtherContent
+  
+## Dereferenceable  
+- [ ] Collection (Required)
+- [ ] Manifest (Required)
+- [ ] First Sequence (Optional)
+- [ ] Nth Sequence (Required)
+- [ ] Canvas (Optional)
+- [ ] Annotation (Recommended)
+- [ ] AnnotationList (Required)
+- [ ] Range (Optional)
+- [ ] Layer (Optional)
+- [ ] Image Content (Required)
+- [ ] Other Content (Required)
+
