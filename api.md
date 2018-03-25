@@ -2,22 +2,22 @@
 IIIF API
 
 ## Descriptive properties
-- [ ] Collection
+- [x] Collection
   - [x] getLabel (Required)
   - [x] getMetadata (Recommended)
   - [x] getDescription (Recommended)
-  - [ ] getThumbnail (Recommended)
-  - [ ] getAttribution (Optional)
-  - [ ] getLicence (Optional)
-  - [ ] getLogo (Optional)
-- [ ] Manifest
-  - [ ] getLabel (Required)
-  - [ ] getMetadata (Recommended)
-  - [ ] getDescription (Recommended)
-  - [ ] getThumbnail (Recommended)
-  - [ ] getAttribution (Optional)
-  - [ ] getLicence (Optional)
-  - [ ] getLogo (Optional)
+  - [x] getThumbnail (Recommended)
+  - [x] getAttribution (Optional)
+  - [x] getLicence (Optional)
+  - [x] getLogo (Optional)
+- [x] Manifest
+  - [x] getLabel (Required)
+  - [x] getMetadata (Recommended)
+  - [x] getDescription (Recommended)
+  - [x] getThumbnail (Recommended)
+  - [x] getAttribution (Optional)
+  - [x] getLicence (Optional)
+  - [x] getLogo (Optional)
 - [ ] Sequence
   - [ ] getLabel (Optional)
   - [ ] getMetadata (Optional)
@@ -84,17 +84,17 @@ IIIF API
   - [ ] getLogo (Optional)
 
 ## Technical properties
-- [ ] Collection
-  - [ ] getId (Required)
-  - [ ] getType (Required - probably not needed for this)
-  - [ ] getViewingHint (Optional)
-  - [ ] getNavDate (Optional)
-- [ ] Manifest
-  - [ ] getId (Required)
-  - [ ] getType (Required - probably not needed for this)
-  - [ ] getViewingDirection (Optional)
-  - [ ] getViewingHint (Optional)
-  - [ ] getNavDate (Optional)
+- [x] Collection
+  - [x] getId (Required)
+  - [x] getType (Required - probably not needed for this)
+  - [x] getViewingHint (Optional)
+  - [x] getNavDate (Optional)
+- [x] Manifest
+  - [x] getId (Required)
+  - [x] getType (Required - probably not needed for this)
+  - [x] getViewingDirection (Optional)
+  - [x] getViewingHint (Optional)
+  - [x] getNavDate (Optional)
 - [ ] Sequence
   - [ ] getId (Optional - auto-generated)
   - [ ] getType (Required - probably not needed for this)
