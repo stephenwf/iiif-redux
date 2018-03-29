@@ -11,10 +11,8 @@ notifications:
 node_js:
   - 8.9.4
 
-before_install:
-  - yarn add coveralls
-
-script: yarn run test:coverage
+script:
+  - yarn run test:coverage
 
 after_success:
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js

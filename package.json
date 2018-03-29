@@ -11,9 +11,9 @@
   "scripts": {
     "build": "nwb build-web-module",
     "clean": "nwb clean-module",
-    "test": "yarn",
-    "test:coverage": "yarn --verbose --coverage",
-    "test:watch": "nwb test --verbose --coverage --watch"
+    "test": "jest",
+    "test:coverage": "jest --verbose --coverage",
+    "test:watch": "jest --verbose --coverage --watch"
   },
   "dependencies": {
     "immutability-helper": "^2.6.6",
@@ -32,6 +32,7 @@
     "babel-jest": "^22.4.3",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "coveralls": "^3.0.0",
     "eslint": "^3.10.2",
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-flow": "^2.29.1",
