@@ -108,6 +108,13 @@ describe('api/current-manifest/technical', () => {
 
   describe('getViewingHint', () => {
     it('should load a valid viewing hint from manifest', () => {
+      expect(
+        getViewingHint(
+          createStateWithCustomProperties({
+            viewingHint: 'http://example.org/viewingHint',
+          })
+        )
+      ).toEqual('http://example.org/viewingHint');
       expect(getViewingHint(state)).toEqual('individuals');
     });
     it('should ignore an invalid viewing hint', () => {
