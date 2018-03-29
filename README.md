@@ -10,6 +10,8 @@ IIIF resources state on the frontend for both presentational and content creatio
 ___
 
 ## Concepts
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fstephenwf%2Fiiif-redux.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fstephenwf%2Fiiif-redux?ref=badge_shield)
+
 There are a few concept used in this proposal for IIIF Redux to format, organise, mutate and access data from IIIF resources.
 
 ### Normalisation of data structures
@@ -636,3 +638,7 @@ Finally running Interoperable Manifesto library through Manifesto's tests too wo
 ## Contributing
 This project is currently firmly in the planning and prototyping stages at the moment. Any contributions in the
 form of pull requests or issues for discussion are welcome.
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fstephenwf%2Fiiif-redux.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fstephenwf%2Fiiif-redux?ref=badge_large)
