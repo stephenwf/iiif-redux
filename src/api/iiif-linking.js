@@ -60,17 +60,16 @@ const normalizeLinkedResources = memoize(property => {
   return normalizeLinkedResourceToObject(property);
 });
 
-const getSeeAlso = resource => normalizeLinkedResources(resource.seeAlso);
+const getSeeAlso = resource => resource.seeAlso;
 
-const getService = resource => normalizeLinkedResources(resource.service);
+const getService = resource => resource.service;
 
-const getRelated = resource => normalizeLinkedResources(resource.related);
+const getRelated = resource => resource.related;
 
-const getRendering = resource => normalizeLinkedResources(resource.rendering);
+const getRendering = resource => resource.rendering;
 
-const getWithin = resource => normalizeLinkedResources(resource.within);
+const getWithin = resource => resource.within;
 
-const getStartCanvas = resource =>
-  normalizeLinkedResources(resource.startCanvas);
+const getStartCanvas = resource => resource.startCanvas;
 
 export { preprocessLinkedEntities, normalizeLinkedResources };

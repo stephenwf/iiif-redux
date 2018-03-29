@@ -17,6 +17,8 @@
  * - Services
  */
 
+// @todo Image Service API.
+
 import { schema } from 'normalizr';
 import {
   normalizeLinkedResources,
