@@ -1,7 +1,7 @@
 {
   "name": "iiif-redux",
   "version": "1.0.0",
-  "description": "Describe iiif-redux here",
+  "description": "IIIF Redux current state is a request for comments from the community with a proposal for managing IIIF resources state on the frontend for both presentational and content creation purposes.",
   "main": "lib/index.js",
   "files": [
     "es",
@@ -11,9 +11,9 @@
   "scripts": {
     "build": "nwb build-web-module",
     "clean": "nwb clean-module",
-    "test": "nwb test",
-    "test:coverage": "nwb test --coverage",
-    "test:watch": "nwb test --server"
+    "test": "yarn",
+    "test:coverage": "yarn --verbose --coverage",
+    "test:watch": "nwb test --verbose --coverage --watch"
   },
   "dependencies": {
     "immutability-helper": "^2.6.6",
@@ -51,5 +51,5 @@
   "author": "Stephen Fraser <stephen.fraser@digirati.com>",
   "homepage": "",
   "license": "MIT",
-  "repository": ""
+  "repository": "https://github.com/stephenwf/iiif-redux"
 }

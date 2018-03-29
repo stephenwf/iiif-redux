@@ -1,14 +1,22 @@
 sudo: false
-
 language: node_js
+cache:
+  yarn: true
+  directories:
+  - node_modules
+  - "$HOME/.npm"
+  - "$HOME/.nvm"
+notifications:
+  email: false
 node_js:
-  - 6
+  - 8.9.4
 
 before_install:
-  - npm install codecov.io coveralls
+  - yarn add coveralls
+
+script: yarn run test:coverage
 
 after_success:
-  - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
 branches:
