@@ -191,12 +191,12 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   - [ ] getViewingHint (Optional)
 
 ### Linking Properties (all optional)
-- [ ] Collection
-  - [ ] getSeeAlso
-  - [ ] getService
-  - [ ] getRelated
-  - [ ] getRendering
-  - [ ] getWithin
+- [x] Collection
+  - [x] getSeeAlso
+  - [x] getService
+  - [x] getRelated
+  - [x] getRendering
+  - [x] getWithin
 - [ ] Manifest
   - [ ] getSeeAlso
   - [ ] getService
@@ -254,13 +254,13 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   - [ ] getRendering
   - [ ] getWithin
 ### Paging properties (all optional)
-- [ ] Collection
-  - [ ] getFirst
-  - [ ] getLast
-  - [ ] getTotal
-  - [ ] getNext
-  - [ ] getPrevious
-  - [ ] getStartIndex
+- [x] Collection
+  - [x] getFirst
+  - [x] getLast
+  - [x] getTotal
+  - [x] getNext
+  - [x] getPrevious
+  - [x] getStartIndex
 - [ ] AnnotationList
   - [ ] getNext
   - [ ] getPrevious
@@ -271,10 +271,10 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   - [ ] getTotal
 
 ### Structural properties (all optional, unless stated)
-- [ ] Collection
-  - [ ] getCollections
-  - [ ] getManifests
-  - [ ] getMembers
+- [x] Collection
+  - [x] getCollections
+  - [x] getManifests
+  - [x] getMembers
 - [ ] Manifest
   - [ ] getSequences (Required)
   - [ ] getStructures / getRanges

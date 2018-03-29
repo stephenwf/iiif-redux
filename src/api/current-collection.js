@@ -1,18 +1,20 @@
 import { createSelector } from 'reselect';
+import validUrl from 'valid-url';
 import { getDefaultLanguage } from './config';
 import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
 import * as linking from './iiif-linking';
 import * as paging from './iiif-paging';
 import * as structural from './iiif-structural';
-import validUrl from 'valid-url';
 import { getAllManifests } from './current-manifest';
+import {
+  getAllCollections,
+  getAllLayers,
+  getAllServices,
+  getAllExternalResources,
+} from './all';
 
 const getCurrentCollectionId = state => state.routing.currentCollection;
-const getAllCollections = state => state.collections;
-const getAllExternalResources = state => state.externalResources;
-const getAllLayers = state => state.layers;
-const getAllServices = state => state.services;
 
 const getCurrentCollection = createSelector(
   getCurrentCollectionId,

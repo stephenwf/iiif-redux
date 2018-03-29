@@ -1,39 +1,16 @@
 import { createSelector } from 'reselect';
+import validUrl from 'valid-url';
 import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
 import { getDefaultLanguage } from './config';
+import { getCurrentManifestId } from './current';
+import { getAllManifests } from './all';
 
-const getCurrentManifestId = state => state.routing.currentManifest;
-const getAllManifests = state => state.manifests;
 const getCurrentManifest = createSelector(
   getCurrentManifestId,
   getAllManifests,
   (manifestId, manifests) => manifests[manifestId]
 );
-
-/*
-const getAllSequences = state => state.sequences;
-const getAllCanvases = state => state.canvases;
-
-const getSequences = createSelector(
-  getCurrentManifest,
-  getAllSequences,
-  (manifest, sequences) =>
-    manifest.sequences.map(sequenceId => sequences[sequenceId])
-);
-
-const getDefaultSequence = createSelector(
-  getSequences,
-  sequences => sequences[0]
-);
-const isPaged = createSelector(getCurrentManifest, manifestApi.isPaged);
-
-const getCanvasesFromDefaultSequence = createSelector(
-  getDefaultSequence,
-  getAllCanvases,
-  (sequence, canvases) => sequence.canvases.map(canvasId => canvases[canvasId])
-);
-*/
 
 const getViewingDirection = createSelector(
   getCurrentManifest,
@@ -54,8 +31,7 @@ const getViewingHint = createSelector(getCurrentManifest, manifest => {
     case 'continuous':
       return viewingHint;
     default:
-      // @todo only return if URI
-      return null;
+      return validUrl.isWebUri(viewingHint) ? viewingHint : null;
   }
 });
 
