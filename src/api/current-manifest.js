@@ -4,7 +4,13 @@ import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
 import { getDefaultLanguage } from './config';
 import { getCurrentManifestId } from './current';
-import { getAllManifests } from './all';
+import {
+  getAllExternalResources,
+  getAllLayers,
+  getAllManifests,
+  getAllServices,
+} from './all';
+import * as linking from './iiif-linking';
 
 const getCurrentManifest = createSelector(
   getCurrentManifestId,
@@ -12,12 +18,15 @@ const getCurrentManifest = createSelector(
   (manifestId, manifests) => manifests[manifestId]
 );
 
-const getViewingDirection = createSelector(
-  getCurrentManifest,
-  technical.getViewingDirection
-);
-
-const getNavDate = createSelector(getCurrentManifest, technical.getNavDate);
+/**************************************************
+ * Technical properties
+ *
+ * - getId
+ * - getType
+ * - getViewingHint
+ * - getViewingDirection
+ * - getNavDate
+ **************************************************/
 
 const getId = createSelector(getCurrentManifest, technical.getId);
 
@@ -34,6 +43,25 @@ const getViewingHint = createSelector(getCurrentManifest, manifest => {
       return validUrl.isWebUri(viewingHint) ? viewingHint : null;
   }
 });
+
+const getViewingDirection = createSelector(
+  getCurrentManifest,
+  technical.getViewingDirection
+);
+
+const getNavDate = createSelector(getCurrentManifest, technical.getNavDate);
+
+/**************************************************
+ * Descriptive properties
+ *
+ * - getLabel
+ * - getDescription
+ * - getMetadata
+ * - getAttribution
+ * - getLogo
+ * - getLicence
+ * - getThumbnail
+ **************************************************/
 
 const getLabel = createSelector(
   getCurrentManifest,
@@ -68,22 +96,86 @@ const getThumbnail = createSelector(
   descriptive.getThumbnail
 );
 
-export {
-  getCurrentManifestId,
-  getAllManifests,
+/**************************************************
+ * Linking properties
+ *
+ * - getSeeAlso
+ * - getService
+ * - getRelated
+ * - getRendering
+ * - getWithin
+ **************************************************/
+const getSeeAlsoIds = createSelector(getCurrentManifest, linking.getSeeAlso);
+const getSeeAlso = createSelector(
+  getSeeAlsoIds,
+  getAllExternalResources,
+  (seeAlsoIds, allExternalResources) =>
+    seeAlsoIds.map(seeAlsoId => allExternalResources[seeAlsoId])
+);
+
+const getServiceIds = createSelector(getCurrentManifest, linking.getService);
+const getService = createSelector(
+  getServiceIds,
+  getAllServices,
+  (serviceIds, allServices) =>
+    serviceIds.map(serviceId => allServices[serviceId])
+);
+
+const getRelatedIds = createSelector(getCurrentManifest, linking.getRelated);
+const getRelated = createSelector(
+  getRelatedIds,
+  getAllExternalResources,
+  (relatedIds, allExternalResources) =>
+    relatedIds.map(relatedId => allExternalResources[relatedId])
+);
+
+const getRenderingIds = createSelector(
   getCurrentManifest,
-  getViewingHint,
-  // Tested.
-  getViewingDirection,
-  getNavDate,
+  linking.getRendering
+);
+const getRendering = createSelector(
+  getRenderingIds,
+  getAllExternalResources,
+  (renderingIds, allExternalResources) =>
+    renderingIds.map(renderingId => allExternalResources[renderingId])
+);
+
+const getWithinIds = createSelector(getCurrentManifest, linking.getWithin);
+const getWithin = createSelector(
+  getWithinIds,
+  getAllLayers,
+  getAllExternalResources,
+  (withinIds, allLayers, allExternalResources) =>
+    withinIds.map(
+      withinId => allLayers[withinId] || allExternalResources[withinId]
+    )
+);
+
+export {
+  getCurrentManifest,
+  // Technical
   getId,
   getType,
+  getViewingHint,
+  getViewingDirection,
+  getNavDate,
+  // Descriptive
   getLabel,
   getDescription,
   getMetadata,
-  // To be tested.
   getAttribution,
   getLogo,
   getLicense,
   getThumbnail,
+  // Linking
+  getWithinIds,
+  getWithin,
+  getRenderingIds,
+  getRendering,
+  getRelatedIds,
+  getRelated,
+  getServiceIds,
+  getService,
+  getSeeAlsoIds,
+  getSeeAlso,
 };

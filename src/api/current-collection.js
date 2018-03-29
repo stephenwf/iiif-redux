@@ -6,15 +6,14 @@ import * as descriptive from './iiif-descriptive';
 import * as linking from './iiif-linking';
 import * as paging from './iiif-paging';
 import * as structural from './iiif-structural';
-import { getAllManifests } from './current-manifest';
+import { getCurrentCollectionId } from './current';
 import {
   getAllCollections,
   getAllLayers,
   getAllServices,
   getAllExternalResources,
+  getAllManifests,
 } from './all';
-
-const getCurrentCollectionId = state => state.routing.currentCollection;
 
 const getCurrentCollection = createSelector(
   getCurrentCollectionId,

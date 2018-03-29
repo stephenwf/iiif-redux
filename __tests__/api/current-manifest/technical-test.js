@@ -2,14 +2,7 @@ import {
   getViewingDirection,
   getNavDate,
   getId,
-  getLabel,
-  getDescription,
-  getMetadata,
   getType,
-  getAttribution,
-  getLicense,
-  getLogo,
-  getThumbnail,
   getViewingHint,
 } from '../../../src/api/current-manifest';
 
