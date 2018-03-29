@@ -1,16 +1,29 @@
 import memoize from 'lodash.memoize';
+import striptags from 'striptags';
+
+const filterHtmlTags = (
+  str,
+  allowed = ['a', 'b', 'br', 'i', 'img', 'p'],
+  replacement = ''
+) =>
+  Array.isArray(str)
+    ? str.map(s => filterHtmlTags(s, allowed, replacement))
+    : striptags(str, allowed, replacement);
 
 const normalizeSingleLanguageProperty = memoize((property, defaultLanguage) => {
   if (!property) {
     return null;
   }
   if (typeof property === 'string') {
-    return [{ '@language': defaultLanguage, '@value': property }];
+    return [
+      { '@language': defaultLanguage, '@value': filterHtmlTags(property) },
+    ];
   }
   if (Array.isArray(property)) {
     return null; // Invalid.
   }
   if (property['@value']) {
+    property['@value'] = filterHtmlTags(property['@value']);
     // presentation 2.
     return [property];
   } else {
@@ -19,8 +32,8 @@ const normalizeSingleLanguageProperty = memoize((property, defaultLanguage) => {
       return {
         '@language': language === '@none' ? defaultLanguage : language,
         '@value': Array.isArray(property[language])
-          ? property[language][0]
-          : property[language],
+          ? filterHtmlTags(property[language][0])
+          : filterHtmlTags(property[language]),
       };
     });
   }
@@ -31,7 +44,9 @@ const normalizeLanguageProperty = memoize((property, defaultLanguage) => {
     return [];
   }
   if (typeof property === 'string') {
-    return [{ '@language': defaultLanguage, '@value': property }];
+    return [
+      { '@language': defaultLanguage, '@value': filterHtmlTags(property) },
+    ];
   }
   if (Array.isArray(property)) {
     return property
@@ -108,6 +123,7 @@ export {
   getAttribution,
   getLicense,
   getLogo,
+  filterHtmlTags,
   normalizeLanguageProperty,
   normalizeSingleLanguageProperty,
 };

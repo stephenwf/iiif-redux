@@ -12,15 +12,22 @@
  * - getStartCanvas
  */
 import memoize from 'lodash.memoize';
+import validUrl from 'valid-url';
 
 const preprocessLinkedEntities = (value, parent, key) => {
   switch (key) {
+    // From iiif-linking
     case 'seeAlso':
     case 'service':
     case 'related':
     case 'rendering':
     case 'within':
     case 'startCanvas':
+    // From iiif-paging
+    case 'first':
+    case 'last':
+    case 'next':
+    case 'prev':
       return normalizeLinkedResources(value);
     default:
       return value;
@@ -32,12 +39,15 @@ const normalizeLinkedResourceToObject = memoize(property => {
     return null;
   }
   if (typeof property === 'string') {
+    if (!validUrl.isWebUri(property)) {
+      return null;
+    }
     return [{ '@id': property }];
   }
   if (Array.isArray(property)) {
-    return null; // Invalid.
+    return normalizeLinkedResourceToObject(property[0]); // only allow one value?
   }
-  if (property['@value']) {
+  if (property['@value'] || property['@id']) {
     // presentation 2.
     return [property];
   }
@@ -49,6 +59,9 @@ const normalizeLinkedResources = memoize(property => {
     return [];
   }
   if (typeof property === 'string') {
+    if (!validUrl.isWebUri(property)) {
+      return null;
+    }
     return [{ '@id': property }];
   }
   if (Array.isArray(property)) {
@@ -72,4 +85,14 @@ const getWithin = resource => resource.within;
 
 const getStartCanvas = resource => resource.startCanvas;
 
-export { preprocessLinkedEntities, normalizeLinkedResources };
+export {
+  preprocessLinkedEntities,
+  normalizeLinkedResources,
+  normalizeLinkedResourceToObject,
+  getSeeAlso,
+  getService,
+  getRelated,
+  getRendering,
+  getStartCanvas,
+  getWithin,
+};

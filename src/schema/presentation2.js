@@ -58,8 +58,21 @@ const within = new schema.Array(
 // 1) Collections
 // ===========================================================================
 collection.define({
-  collections: [collection],
+  collections: new schema.Array(
+    {
+      collection,
+      manifest,
+    },
+    entity => (entity['@type'] === 'sc:Manifest' ? 'manifest' : 'collection')
+  ),
   manifests: [manifest],
+  members: new schema.Array(
+    {
+      collection,
+      manifest,
+    },
+    entity => (entity['@type'] === 'sc:Manifest' ? 'manifest' : 'collection')
+  ),
 
   // Linking
   seeAlso: [externalResource],

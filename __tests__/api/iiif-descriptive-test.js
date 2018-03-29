@@ -6,6 +6,7 @@ import {
   getThumbnail,
   getLicense,
   getLogo,
+  filterHtmlTags,
 } from '../../src/api/iiif-descriptive';
 
 describe('api/iiif-descriptive', () => {
@@ -29,6 +30,11 @@ describe('api/iiif-descriptive', () => {
         { '@language': 'en', '@value': 'Book 1' },
         { '@language': 'en', '@value': 'An unexpected journey' },
       ]);
+      expect(
+        getEnglishLabel({
+          label: ['Book 1'],
+        })
+      ).toEqual([{ '@language': 'en', '@value': 'Book 1' }]);
     });
 
     it('should ignore invalid values', () => {
@@ -335,7 +341,7 @@ describe('api/iiif-descriptive', () => {
             {
               '@language': 'en',
               '@value':
-                '<span>From: <a href="https://example.org/db/1.html">Some Collection</a></span>',
+                'From: <a href="https://example.org/db/1.html">Some Collection</a>',
             },
           ],
         },
@@ -433,6 +439,13 @@ describe('api/iiif-descriptive', () => {
         'http://rightsstatements.org/vocab/NoC-NC/1.1/',
       ]);
     });
+    it('handles missing licences', () => {
+      expect(
+        getLicense({
+          licence: null,
+        })
+      ).toEqual(null);
+    });
   });
 
   describe('getLogo', () => {
@@ -486,6 +499,40 @@ describe('api/iiif-descriptive', () => {
           ],
         })
       ).toEqual('http://example.org/logos/institution1.jpg');
+    });
+  });
+
+  describe('filterHtmlTags', () => {
+    it('should not filter some tags', () => {
+      const notFiltered = [
+        '<a href="#">not filtered</a>',
+        '<b>not filtered</b>',
+        '<p class="center">not filtered</p>',
+        'not<br/>filtered',
+        'not <i>filtered</i>',
+        'not <img src="#"/> filtered',
+      ];
+
+      notFiltered.forEach(str => {
+        expect(filterHtmlTags(str)).toEqual(str);
+      });
+    });
+    it('should filter some tags', () => {
+      expect(filterHtmlTags('<script>filterMe();</script>')).toEqual(
+        'filterMe();'
+      );
+      expect(filterHtmlTags('<ul><li>filter</li> <li>me</li></ul>')).toEqual(
+        'filter me'
+      );
+    });
+    it('should filter arrays', () => {
+      expect(
+        filterHtmlTags([
+          'filter me',
+          '<strong>filter</strong> me',
+          'filter <hr/>me',
+        ])
+      ).toEqual(['filter me', 'filter me', 'filter me']);
     });
   });
 });

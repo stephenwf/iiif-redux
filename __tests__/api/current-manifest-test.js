@@ -39,7 +39,7 @@ describe('api/current-manifest', () => {
         metadata: [
           { label: 'test metadata label', value: 'test metadata value' },
         ],
-        attribution: 'Some <strong>attribution</strong> for test manifest',
+        attribution: 'Some <b>attribution</b> for test manifest',
         license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
         logo: 'http://example.org/logos/institution1.jpg',
         thumbnail: {
@@ -111,7 +111,7 @@ describe('api/current-manifest', () => {
       expect(getAttribution(state1)).toEqual([
         {
           '@language': 'en',
-          '@value': 'Some <strong>attribution</strong> for test manifest',
+          '@value': 'Some <b>attribution</b> for test manifest',
         },
       ]);
     });

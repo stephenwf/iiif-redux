@@ -1,7 +1,58 @@
 # API
 IIIF API
 
-## Descriptive properties
+## IIIF Specific APIs
+As described in the table on the IIIF specification page.
+
+### Descriptive properties
+- [x] getLabel
+- [x] getMetadata
+- [x] getDescription
+- [x] getThumbnail
+- [x] getAttribution
+- [x] getLicence
+- [x] getLogo
+
+### Technical properties
+- [x] getId
+- [x] getType
+- [x] getViewingHint
+- [x] getNavDate
+- [x] getFormat
+- [x] getHeight
+- [x] getWidth
+- [x] getViewingHint
+
+### Linking properties
+- [x] getSeeAlso
+- [x] getService
+- [x] getRelated
+- [x] getRendering
+- [x] getWithin
+- [x] getStartCanvas
+
+### Paging properties
+- [x] getFirst
+- [x] getLast
+- [x] getTotal
+- [x] getNext
+- [x] getPrevious
+- [x] getStartIndex
+
+### Structural properties
+- [x] getCollections
+- [x] getManifests
+- [x] getMembers
+- [x] getSequences
+- [x] getCanvases
+- [x] getStructures / getRanges
+- [x] getOtherContent
+- [x] getImages
+  
+## Resource specific API
+Methods that work on specific resources. (currentCollection, currentManifest etc.)
+
+### Descriptive properties
 - [x] Collection
   - [x] getLabel (Required)
   - [x] getMetadata (Recommended)
@@ -83,7 +134,7 @@ IIIF API
   - [ ] getLicence (Optional)
   - [ ] getLogo (Optional)
 
-## Technical properties
+### Technical properties
 - [x] Collection
   - [x] getId (Required)
   - [x] getType (Required - probably not needed for this)
@@ -139,7 +190,7 @@ IIIF API
   - [ ] getWidth (Optional)
   - [ ] getViewingHint (Optional)
 
-## Linking Properties (all optional)
+### Linking Properties (all optional)
 - [ ] Collection
   - [ ] getSeeAlso
   - [ ] getService
@@ -202,7 +253,7 @@ IIIF API
   - [ ] getRelated
   - [ ] getRendering
   - [ ] getWithin
-## Paging properties (all optional)
+### Paging properties (all optional)
 - [ ] Collection
   - [ ] getFirst
   - [ ] getLast
@@ -219,7 +270,7 @@ IIIF API
   - [ ] getLast
   - [ ] getTotal
 
-## Structural properties (all optional, unless stated)
+### Structural properties (all optional, unless stated)
 - [ ] Collection
   - [ ] getCollections
   - [ ] getManifests
@@ -240,8 +291,8 @@ IIIF API
   - [ ] getRanges
 - [ ] Layer
   - [ ] getOtherContent
-  
-## Dereferenceable  
+
+## Dereferenceable guide  
 - [ ] Collection (Required)
 - [ ] Manifest (Required)
 - [ ] First Sequence (Optional)

@@ -10,21 +10,9 @@ import {
   getType,
   getViewingHint,
   getNavDate,
-  getViewingDirection,
-} from '../../src/api/current-collection';
+} from '../../../src/api/current-collection';
 
-describe('api/current-collection', () => {
-  const createStateWithCustomProperties = props => ({
-    routing: { currentCollection: 'http://iiif.com/collection-1.json' },
-    config: { defaultLanguage: 'en' },
-    collections: {
-      'http://iiif.com/collection-1.json': {
-        '@id': 'http://iiif.com/collection-1.json',
-        ...props,
-      },
-    },
-  });
-
+describe('api/current-collection/descriptive', () => {
   const state1 = {
     routing: { currentCollection: 'http://iiif.com/collection-1.json' },
     config: { defaultLanguage: 'en' },
@@ -36,13 +24,16 @@ describe('api/current-collection', () => {
         viewingDirection: 'top-to-bottom',
         viewingHint: 'individuals',
         navDate: '1856-01-01T00:00:00Z',
-        description: 'Test collection <strong>description</strong>',
+        description: 'Test collection <b>description</b>',
         metadata: [
-          { label: 'test metadata label', value: 'test metadata value' },
+          {
+            label: 'test metadata label',
+            value: '<script>test</script> metadata value',
+          },
         ],
         logo: 'http://example.org/logos/institution1.jpg',
         license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
-        attribution: 'Some <strong>attribution</strong> for test collection',
+        attribution: 'Some <b>attribution</b> for test collection',
         thumbnail: {
           '@id':
             'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
@@ -55,18 +46,6 @@ describe('api/current-collection', () => {
       },
     },
   };
-
-  describe('getId', () => {
-    it('should load id from collection', () => {
-      expect(getId(state1)).toEqual('http://iiif.com/collection-1.json');
-    });
-  });
-
-  describe('getType', () => {
-    it('should load type from collection', () => {
-      expect(getType(state1)).toEqual('sc:Collection');
-    });
-  });
 
   describe('getLabel', () => {
     it('should load label from collection', () => {
@@ -81,7 +60,7 @@ describe('api/current-collection', () => {
       expect(getDescription(state1)).toEqual([
         {
           '@language': 'en',
-          '@value': 'Test collection <strong>description</strong>',
+          '@value': 'Test collection <b>description</b>',
         },
       ]);
     });
@@ -133,37 +112,9 @@ describe('api/current-collection', () => {
       expect(getAttribution(state1)).toEqual([
         {
           '@language': 'en',
-          '@value': 'Some <strong>attribution</strong> for test collection',
+          '@value': 'Some <b>attribution</b> for test collection',
         },
       ]);
-    });
-  });
-
-  describe('getViewingHint', () => {
-    it('should load a valid viewing hint from collection', () => {
-      expect(getViewingHint(state1)).toEqual('individuals');
-    });
-    it('should ignore an invalid viewing hint from collection', () => {
-      expect(
-        getViewingHint(
-          createStateWithCustomProperties({
-            viewingHint: 'something-invalid',
-          })
-        )
-      ).toEqual(null);
-      expect(
-        getViewingHint(
-          createStateWithCustomProperties({
-            viewingHint: 0 / 0,
-          })
-        )
-      ).toEqual(null);
-    });
-  });
-
-  describe('getNavDate', () => {
-    it('should load navDate from collection', () => {
-      expect(getNavDate(state1)).toEqual('1856-01-01T00:00:00Z');
     });
   });
 });
