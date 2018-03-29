@@ -20,7 +20,10 @@ describe('api/current-collection/linking', () => {
         service: ['http://iiif.com/service-1.json'],
         related: ['http://iiif.com/extern-2.json'],
         rendering: ['http://iiif.com/extern-3.json'],
-        within: ['http://iiif.com/layer-1.json'],
+        within: [
+          'http://iiif.com/layer-1.json',
+          'http://iiif.com/extern-4.json',
+        ],
       },
     },
     services: {
@@ -41,6 +44,10 @@ describe('api/current-collection/linking', () => {
       'http://iiif.com/extern-3.json': {
         '@id': 'http://iiif.com/extern-3.json',
         label: 'External 3',
+      },
+      'http://iiif.com/extern-4.json': {
+        '@id': 'http://iiif.com/extern-4.json',
+        label: 'External 4',
       },
     },
     layers: {
@@ -73,9 +80,13 @@ describe('api/current-collection/linking', () => {
     expect(getRendering(state)[0].label).toEqual('External 3');
   });
   it('should get WithinIds', () => {
-    expect(getWithinIds(state)).toEqual(['http://iiif.com/layer-1.json']);
+    expect(getWithinIds(state)).toEqual([
+      'http://iiif.com/layer-1.json',
+      'http://iiif.com/extern-4.json',
+    ]);
   });
   it('should get Within', () => {
     expect(getWithin(state)[0].label).toEqual('Layer 1');
+    expect(getWithin(state)[1].label).toEqual('External 4');
   });
 });

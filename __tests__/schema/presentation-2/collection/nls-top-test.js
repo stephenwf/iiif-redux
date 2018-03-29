@@ -41,11 +41,6 @@ describe('National Library of Scotland: Top level collection', () => {
       'https://view.nls.uk/collections/1258/8396/125883965.json',
       'https://view.nls.uk/collections/1334/7486/133474867.json',
       'https://view.nls.uk/collections/1256/5201/125652019.json',
-      'https://view.nls.uk/manifest/7445/74457611/manifest.json',
-      'https://view.nls.uk/manifest/7445/74457640/manifest.json',
-      'https://view.nls.uk/manifest/7446/74464614/manifest.json',
-      'https://view.nls.uk/manifest/7446/74465058/manifest.json',
-      'https://view.nls.uk/manifest/7492/74921376/manifest.json',
       'https://view.nls.uk/collections/7446/74466699.json',
       'https://view.nls.uk/collections/7446/74466728.json',
       'https://view.nls.uk/collections/7446/74462370.json',
@@ -53,6 +48,11 @@ describe('National Library of Scotland: Top level collection', () => {
       'https://view.nls.uk/collections/1256/4477/125644778.json',
       'https://view.nls.uk/collections/9350/93506071.json',
       'https://view.nls.uk/collections/1041/8410/104184103.json',
+      'https://view.nls.uk/manifest/7445/74457611/manifest.json',
+      'https://view.nls.uk/manifest/7445/74457640/manifest.json',
+      'https://view.nls.uk/manifest/7446/74464614/manifest.json',
+      'https://view.nls.uk/manifest/7446/74465058/manifest.json',
+      'https://view.nls.uk/manifest/7492/74921376/manifest.json',
     ]);
   });
 

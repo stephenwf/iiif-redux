@@ -29,8 +29,13 @@ const getManifests = resource => [
 const getMembers = resource => [
   ...new Set([
     ...alwaysArray(resource.members).map(member => member.id),
-    ...alwaysArray(resource.collections).map(collection => collection.id),
+    ...alwaysArray(resource.collections)
+      .filter(collection => collection.schema === 'collection')
+      .map(collection => collection.id),
     ...(resource.manifests || []),
+    ...alwaysArray(resource.collections)
+      .filter(collection => collection.schema === 'manifest')
+      .map(collection => collection.id),
   ]),
 ];
 

@@ -13,7 +13,6 @@ const getAllCollections = state => state.collections;
 const getAllExternalResources = state => state.externalResources;
 const getAllLayers = state => state.layers;
 const getAllServices = state => state.services;
-const getAllCanvases = state => state.canvases;
 
 const getCurrentCollection = createSelector(
   getCurrentCollectionId,
@@ -206,10 +205,10 @@ const getCollectionIds = createSelector(
   structural.getCollections
 );
 const getCollections = createSelector(
-  getMemberIds,
+  getCollectionIds,
   getAllCollections,
-  (memberIds, allCollections) =>
-    memberIds.map(memberId => allCollections[memberId] || null).filter(e => e)
+  (collectionIds, allCollections) =>
+    collectionIds.map(collectionId => allCollections[collectionId])
 );
 
 const getManifestIds = createSelector(
@@ -228,9 +227,9 @@ const getMembers = createSelector(
   getAllCollections,
   getAllManifests,
   (memberIds, allCollections, allManifests) =>
-    memberIds.map(
-      memberId => allCollections[memberId] || allManifests[memberId]
-    )
+    memberIds
+      .map(memberId => allCollections[memberId] || allManifests[memberId])
+      .filter(e => e)
 );
 
 export {
