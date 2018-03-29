@@ -47,6 +47,13 @@ describe('api/current-collection/descriptive', () => {
   describe('getViewingHint', () => {
     it('should load a valid viewing hint from collection', () => {
       expect(getViewingHint(state1)).toEqual('individuals');
+      expect(
+        getViewingHint(
+          createStateWithCustomProperties({
+            viewingHint: 'http://iiif.com/custom/viewinghint',
+          })
+        )
+      ).toEqual('http://iiif.com/custom/viewinghint');
     });
     it('should ignore an invalid viewing hint from collection', () => {
       expect(
