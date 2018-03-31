@@ -130,7 +130,7 @@ collection.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
-  within: [within],
+  within: within,
 
   // Extra
   thumbnail: imageResource,
@@ -148,7 +148,7 @@ manifest.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
-  within: [within],
+  within: within,
 
   // Extra
   thumbnail: imageResource,
@@ -165,7 +165,7 @@ sequence.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
-  within: [within],
+  within: within,
   startCanvas: canvas,
 
   // Extra
@@ -183,7 +183,7 @@ canvas.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
-  within: [within],
+  within: within,
 
   // Extra
   thumbnail: imageResource,
@@ -208,7 +208,7 @@ annotation.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
-  within: [within],
+  within: within,
 
   // Extra
   thumbnail: imageResource,
@@ -225,7 +225,7 @@ annotationList.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
-  within: [within],
+  within: within,
 
   // Extra
   thumbnail: imageResource,
@@ -242,7 +242,7 @@ range.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
-  within: [within],
+  within: within,
   startCanvas: canvas,
   contentLayer: layer,
 
@@ -259,7 +259,7 @@ layer.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
-  within: [within],
+  within: within,
 });
 
 const preprocess = compose(moveStartCanvasToSequence);

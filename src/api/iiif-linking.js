@@ -15,6 +15,12 @@ import memoize from 'lodash.memoize';
 import validUrl from 'valid-url';
 
 const preprocessLinkedEntities = (value, parent, key) => {
+  if (key === null && value.within) {
+    return {
+      ...value,
+      within: normalizeLinkedResources(value.within),
+    };
+  }
   switch (key) {
     // From iiif-linking
     case 'seeAlso':
