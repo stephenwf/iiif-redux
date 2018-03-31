@@ -3,7 +3,7 @@ import {
   getDescription,
   getAttribution,
   getMetadata,
-  getThumbnail,
+  getThumbnailId,
   getLicense,
   getLogo,
   filterHtmlTags,
@@ -367,10 +367,10 @@ describe('api/iiif-descriptive', () => {
     });
   });
 
-  describe('getThumbnail', () => {
+  describe('getThumbnailId', () => {
     it('should parse image service thumbnails', () => {
       expect(
-        getThumbnail({
+        getThumbnailId({
           thumbnail: {
             '@id':
               'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
@@ -394,7 +394,7 @@ describe('api/iiif-descriptive', () => {
 
     it('should parse string thumbnails', () => {
       expect(
-        getThumbnail({
+        getThumbnailId({
           thumbnail:
             'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
         })
@@ -404,7 +404,7 @@ describe('api/iiif-descriptive', () => {
     });
     it('should return the first', () => {
       expect(
-        getThumbnail({
+        getThumbnailId({
           thumbnail: [
             'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
           ],

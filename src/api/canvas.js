@@ -1,3 +1,3 @@
-const getThumbnail = canvas => canvas.thumbnail;
+const getThumbnailId = canvas => canvas.thumbnail;
 
-export { getThumbnail };
+export { getThumbnailId };

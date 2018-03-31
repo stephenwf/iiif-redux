@@ -5,6 +5,7 @@ import {
   getLogo,
   getLicense,
   getAttribution,
+  getThumbnailId,
   getThumbnail,
 } from '../../../src/api/current-canvas';
 
@@ -30,14 +31,18 @@ describe('api/current-canvas/descriptive', () => {
         logo: 'http://example.org/logos/institution1.jpg',
         license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
         attribution: 'Some <b>attribution</b> for test canvas',
-        thumbnail: {
-          '@id':
-            'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
-          service: {
-            '@context': 'http://iiif.io/api/image/2/context.json',
-            '@id': 'http://example.org/images/book1-page1',
-            profile: 'http://iiif.io/api/image/2/level1.json',
-          },
+        thumbnail:
+          'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
+      },
+    },
+    imageResources: {
+      'http://example.org/images/book1-page1/full/80,100/0/default.jpg': {
+        '@id':
+          'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
+        service: {
+          '@context': 'http://iiif.io/api/image/2/context.json',
+          '@id': 'http://example.org/images/book1-page1',
+          profile: 'http://iiif.io/api/image/2/level1.json',
         },
       },
     },
@@ -89,6 +94,14 @@ describe('api/current-canvas/descriptive', () => {
     });
   });
 
+  describe('getThumbnailId', () => {
+    it('should load thumbnail id from canvas', () => {
+      expect(getThumbnailId(state)).toEqual(
+        'http://example.org/images/book1-page1/full/80,100/0/default.jpg'
+      );
+    });
+  });
+
   describe('getThumbnail', () => {
     it('should load thumbnail from canvas', () => {
       expect(getThumbnail(state)).toEqual({
@@ -100,6 +113,18 @@ describe('api/current-canvas/descriptive', () => {
           profile: 'http://iiif.io/api/image/2/level1.json',
         },
       });
+    });
+    it('should load thumbnail without service', () => {
+      expect(
+        getThumbnail({
+          ...state,
+          ...{
+            imageResources: {}, // unset image resources.
+          },
+        })
+      ).toEqual(
+        'http://example.org/images/book1-page1/full/80,100/0/default.jpg'
+      );
     });
   });
 

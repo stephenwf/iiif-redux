@@ -5,7 +5,7 @@ import {
   getImages,
 } from '../../../src/api/current-canvas';
 
-describe('api/current-canvas/linking', () => {
+describe('api/current-canvas/structural', () => {
   const state = {
     routing: { currentCanvas: 'http://iiif.com/canvas-1.json' },
     config: { defaultLanguage: 'en' },
@@ -35,7 +35,7 @@ describe('api/current-canvas/linking', () => {
         ],
       },
     },
-    images: {
+    annotations: {
       'http://iiif.com/image-1.json': {
         '@id': 'http://iiif.com/image-1.json',
         label: 'Image 1',

@@ -6,7 +6,7 @@ import * as linking from './iiif-linking';
 import * as structural from './iiif-structural';
 import { getCurrentCanvasId } from './current';
 import {
-  getAllAnnotationLists,
+  getAllAnnotationLists, getAllAnotations,
   getAllCanvases,
   getAllExternalResources,
   getAllImages,
@@ -88,7 +88,15 @@ const getLogo = createSelector(getCurrentCanvas, descriptive.getLogo);
 
 const getLicense = createSelector(getCurrentCanvas, descriptive.getLicense);
 
-const getThumbnail = createSelector(getCurrentCanvas, descriptive.getThumbnail);
+const getThumbnailId = createSelector(
+  getCurrentCanvas,
+  descriptive.getThumbnailId
+);
+const getThumbnail = createSelector(
+  getThumbnailId,
+  getAllImages,
+  (thumbnailId, allImages) => allImages[thumbnailId] || thumbnailId
+);
 
 /**************************************************
  * Linking properties
@@ -176,7 +184,7 @@ const getOtherContent = createSelector(
 const getImageIds = createSelector(getCurrentCanvas, structural.getImages);
 const getImages = createSelector(
   getImageIds,
-  getAllImages,
+  getAllAnotations,
   (imageIds, allImages) => imageIds.map(imageId => allImages[imageId])
 );
 
@@ -192,6 +200,7 @@ export {
   getLabel,
   getMetadata,
   getDescription,
+  getThumbnailId,
   getThumbnail,
   getAttribution,
   getLicense,
