@@ -1,25 +1,23 @@
 import { createSelector } from 'reselect';
-import validUrl from 'valid-url';
 import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
+import * as linking from './iiif-linking';
+import * as structural from './iiif-structural';
 import { getDefaultLanguage } from './config';
-import { getCurrentManifestId } from './current';
+import { getCurrentSequenceId } from './current';
 import {
   getAllExternalResources,
   getAllLayers,
-  getAllManifests,
-  getAllRanges,
   getAllSequences,
   getAllServices,
+  getAllCanvases,
 } from './all';
-import * as linking from './iiif-linking';
-import * as structural from './iiif-structural';
-import { getMemberIds } from './current-collection';
+import validUrl from 'valid-url';
 
-const getCurrentManifest = createSelector(
-  getCurrentManifestId,
-  getAllManifests,
-  (manifestId, manifests) => manifests[manifestId]
+const getCurrentSequence = createSelector(
+  getCurrentSequenceId,
+  getAllSequences,
+  (sequenceId, sequences) => sequences[sequenceId]
 );
 
 /**************************************************
@@ -29,14 +27,11 @@ const getCurrentManifest = createSelector(
  * - getType
  * - getViewingHint
  * - getViewingDirection
- * - getNavDate
  **************************************************/
-const getId = createSelector(getCurrentManifest, technical.getId);
-
-const getType = createSelector(getCurrentManifest, technical.getType);
-
-const getViewingHint = createSelector(getCurrentManifest, manifest => {
-  const viewingHint = technical.getViewingHint(manifest);
+const getId = createSelector(getCurrentSequence, technical.getId);
+const getType = createSelector(getCurrentSequence, technical.getType);
+const getViewingHint = createSelector(getCurrentSequence, sequence => {
+  const viewingHint = technical.getViewingHint(sequence);
   switch (viewingHint) {
     case 'individuals':
     case 'paged':
@@ -46,13 +41,10 @@ const getViewingHint = createSelector(getCurrentManifest, manifest => {
       return validUrl.isWebUri(viewingHint) ? viewingHint : null;
   }
 });
-
 const getViewingDirection = createSelector(
-  getCurrentManifest,
+  getCurrentSequence,
   technical.getViewingDirection
 );
-
-const getNavDate = createSelector(getCurrentManifest, technical.getNavDate);
 
 /**************************************************
  * Descriptive properties
@@ -66,35 +58,35 @@ const getNavDate = createSelector(getCurrentManifest, technical.getNavDate);
  * - getThumbnail
  **************************************************/
 const getLabel = createSelector(
-  getCurrentManifest,
+  getCurrentSequence,
   getDefaultLanguage,
-  (manifest, language) => descriptive.getLabel(language)(manifest)
+  (sequence, language) => descriptive.getLabel(language)(sequence)
 );
 
 const getDescription = createSelector(
-  getCurrentManifest,
+  getCurrentSequence,
   getDefaultLanguage,
-  (manifest, language) => descriptive.getDescription(language)(manifest)
+  (sequence, language) => descriptive.getDescription(language)(sequence)
 );
 
 const getMetadata = createSelector(
-  getCurrentManifest,
+  getCurrentSequence,
   getDefaultLanguage,
-  (manifest, language) => descriptive.getMetadata(language)(manifest)
+  (sequence, language) => descriptive.getMetadata(language)(sequence)
 );
 
 const getAttribution = createSelector(
-  getCurrentManifest,
+  getCurrentSequence,
   getDefaultLanguage,
-  (manifest, language) => descriptive.getAttribution(language)(manifest)
+  (sequence, language) => descriptive.getAttribution(language)(sequence)
 );
 
-const getLogo = createSelector(getCurrentManifest, descriptive.getLogo);
+const getLogo = createSelector(getCurrentSequence, descriptive.getLogo);
 
-const getLicense = createSelector(getCurrentManifest, descriptive.getLicense);
+const getLicense = createSelector(getCurrentSequence, descriptive.getLicense);
 
 const getThumbnail = createSelector(
-  getCurrentManifest,
+  getCurrentSequence,
   descriptive.getThumbnail
 );
 
@@ -106,22 +98,17 @@ const getThumbnail = createSelector(
  * - getRelated
  * - getRendering
  * - getWithin
+ * - getStartCanvas
  **************************************************/
-const getSeeAlsoIds = createSelector(getCurrentManifest, linking.getSeeAlso);
+const getSeeAlsoIds = createSelector(getCurrentSequence, linking.getSeeAlso);
 const getSeeAlso = createSelector(
   getSeeAlsoIds,
   getAllExternalResources,
   (seeAlsoIds, allExternalResources) =>
-    seeAlsoIds.map(
-      seeAlsoId =>
-        allExternalResources[seeAlsoId] || {
-          '@id': seeAlsoId,
-          label: 'unknown',
-        }
-    )
+    seeAlsoIds.map(seeAlsoId => allExternalResources[seeAlsoId])
 );
 
-const getServiceIds = createSelector(getCurrentManifest, linking.getService);
+const getServiceIds = createSelector(getCurrentSequence, linking.getService);
 const getService = createSelector(
   getServiceIds,
   getAllServices,
@@ -129,7 +116,7 @@ const getService = createSelector(
     serviceIds.map(serviceId => allServices[serviceId])
 );
 
-const getRelatedIds = createSelector(getCurrentManifest, linking.getRelated);
+const getRelatedIds = createSelector(getCurrentSequence, linking.getRelated);
 const getRelated = createSelector(
   getRelatedIds,
   getAllExternalResources,
@@ -138,7 +125,7 @@ const getRelated = createSelector(
 );
 
 const getRenderingIds = createSelector(
-  getCurrentManifest,
+  getCurrentSequence,
   linking.getRendering
 );
 const getRendering = createSelector(
@@ -148,7 +135,7 @@ const getRendering = createSelector(
     renderingIds.map(renderingId => allExternalResources[renderingId])
 );
 
-const getWithinIds = createSelector(getCurrentManifest, linking.getWithin);
+const getWithinIds = createSelector(getCurrentSequence, linking.getWithin);
 const getWithin = createSelector(
   getWithinIds,
   getAllLayers,
@@ -159,41 +146,35 @@ const getWithin = createSelector(
     )
 );
 
+const getStartCanvasId = createSelector(
+  getCurrentSequence,
+  linking.getStartCanvas
+);
+const getStartCanvas = createSelector(
+  getStartCanvasId,
+  getAllCanvases,
+  (canvasId, allCanvases) => allCanvases[canvasId]
+);
+
 /**************************************************
  * Structural properties
  *
- * - getSequences (Required)
- * - getStructures / getRanges
+ * - getCanvases (Required)
  **************************************************/
-const getSequenceIds = createSelector(
-  getCurrentManifest,
-  structural.getSequences
+const getCanvasIds = createSelector(getCurrentSequence, structural.getCanvases);
+const getCanvases = createSelector(
+  getCanvasIds,
+  getAllCanvases,
+  (canvasIds, allCanvases) => canvasIds.map(canvasId => allCanvases[canvasId])
 );
-const getSequences = createSelector(
-  getSequenceIds,
-  getAllSequences,
-  (sequenceIds, allSequences) =>
-    sequenceIds.map(sequenceId => allSequences[sequenceId])
-);
-
-const getRangeIds = createSelector(getCurrentManifest, structural.getRanges);
-const getRanges = createSelector(
-  getRangeIds,
-  getAllRanges,
-  (rangeIds, allRanges) => rangeIds.map(rangeId => allRanges[rangeId])
-);
-
-const getStructureIds = getRangeIds;
-const getStructures = getRanges;
 
 export {
-  getCurrentManifest,
+  getCurrentSequence,
   // Technical
   getId,
   getType,
   getViewingHint,
   getViewingDirection,
-  getNavDate,
   // Descriptive
   getLabel,
   getDescription,
@@ -203,21 +184,19 @@ export {
   getLicense,
   getThumbnail,
   // Linking
-  getWithinIds,
-  getWithin,
-  getRenderingIds,
-  getRendering,
-  getRelatedIds,
-  getRelated,
-  getServiceIds,
-  getService,
   getSeeAlsoIds,
   getSeeAlso,
+  getServiceIds,
+  getService,
+  getRelatedIds,
+  getRelated,
+  getRenderingIds,
+  getRendering,
+  getWithinIds,
+  getWithin,
+  getStartCanvasId,
+  getStartCanvas,
   // Structural
-  getSequenceIds,
-  getSequences,
-  getRangeIds,
-  getRanges,
-  getStructureIds,
-  getStructures,
+  getCanvasIds,
+  getCanvases,
 };
