@@ -13,6 +13,7 @@ import {
   getAllServices,
   getAllExternalResources,
   getAllManifests,
+  getAllAnnotationLists,
 } from './all';
 
 const getCurrentCollection = createSelector(
@@ -194,6 +195,7 @@ const getStartIndex = createSelector(
  * - getCollections
  * - getManifests
  * - getMembers
+ * - getOtherContent
  **************************************************/
 const getMemberIds = createSelector(
   getCurrentCollection,
@@ -230,6 +232,24 @@ const getMembers = createSelector(
     memberIds
       .map(memberId => allCollections[memberId] || allManifests[memberId])
       .filter(e => e)
+);
+const getOtherContentIds = createSelector(
+  getCurrentCollection,
+  structural.getOtherContent
+);
+const getOtherContent = createSelector(
+  getOtherContentIds,
+  getAllExternalResources,
+  getAllAnnotationLists,
+  (otherContentIds, allExternalResources, allAnnotationLists) =>
+    otherContentIds.map(
+      otherContentId =>
+        allAnnotationLists[otherContentId] ||
+        allExternalResources[otherContentId] || {
+          '@id': otherContentId,
+          label: 'unknown',
+        }
+    )
 );
 
 export {
@@ -275,4 +295,6 @@ export {
   getManifests,
   getMemberIds,
   getMembers,
+  getOtherContentIds,
+  getOtherContent,
 };

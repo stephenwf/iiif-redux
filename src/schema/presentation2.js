@@ -54,6 +54,16 @@ const within = new schema.Array(
   },
   entity => (entity['@type'] === 'sc:Layer' ? 'layer' : 'externalResource')
 );
+const otherContent = new schema.Union(
+  {
+    externalResource,
+    annotationList,
+  },
+  entity =>
+    entity['@type'] === 'sc:AnnotationList'
+      ? 'annotationList'
+      : 'externalResource'
+);
 
 /**
  * Dereferencable resources:
@@ -130,6 +140,7 @@ collection.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
+  otherContent: [otherContent],
   within: within,
 
   // Extra
@@ -148,6 +159,7 @@ manifest.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
+  otherContent: [otherContent],
   within: within,
 
   // Extra
@@ -165,6 +177,7 @@ sequence.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
+  otherContent: [otherContent],
   within: within,
   startCanvas: canvas,
 
@@ -183,6 +196,7 @@ canvas.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
+  otherContent: [otherContent],
   within: within,
 
   // Extra

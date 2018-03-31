@@ -47,7 +47,8 @@ const getStructures = resource => alwaysArray(resource.structures);
 
 const getRanges = getStructures;
 
-const getOtherContent = resource => alwaysArray(resource.otherContent);
+const getOtherContent = resource =>
+  alwaysArray(resource.otherContent).map(otherContent => otherContent.id);
 
 const getImages = resource => alwaysArray(resource.images);
 

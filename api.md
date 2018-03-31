@@ -275,9 +275,11 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   - [x] getCollections
   - [x] getManifests
   - [x] getMembers
+  - [x] getOtherContent (implicit)
 - [x] Manifest
   - [x] getSequences (Required)
   - [x] getStructures / getRanges
+  - [x] getOtherContent (implicit)
 - [x] Sequence
   - [x] getCanvases
 - [ ] Canvas

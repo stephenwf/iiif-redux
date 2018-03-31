@@ -170,13 +170,19 @@ describe('api/iiif-structural', () => {
       expect(
         getOtherContent({
           otherContent: [
-            'https://example.org/annotationList/1',
-            'https://example.org/annotationList/2',
+            {
+              id: 'https://example.org/annotationList/1',
+              schema: 'annotationList',
+            },
+            {
+              id: 'https://example.org/externalContent/1',
+              schema: 'externalContent',
+            },
           ],
         })
       ).toEqual([
         'https://example.org/annotationList/1',
-        'https://example.org/annotationList/2',
+        'https://example.org/externalContent/1',
       ]);
     });
     it('should always return an array', () => {
