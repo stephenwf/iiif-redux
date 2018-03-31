@@ -112,7 +112,13 @@ const getSeeAlso = createSelector(
   getSeeAlsoIds,
   getAllExternalResources,
   (seeAlsoIds, allExternalResources) =>
-    seeAlsoIds.map(seeAlsoId => allExternalResources[seeAlsoId])
+    seeAlsoIds.map(
+      seeAlsoId =>
+        allExternalResources[seeAlsoId] || {
+          '@id': seeAlsoId,
+          label: 'unknown',
+        }
+    )
 );
 
 const getServiceIds = createSelector(getCurrentManifest, linking.getService);

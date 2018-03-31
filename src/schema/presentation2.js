@@ -18,12 +18,13 @@
  */
 
 // @todo Image Service API.
-
-import { schema } from 'normalizr';
+import { compose } from 'redux';
+import { schema, normalize } from 'normalizr';
 import {
   normalizeLinkedResources,
   preprocessLinkedEntities,
 } from '../api/iiif-linking';
+import moveStartCanvasToSequence from '../compat/moveStartCanvasToSequence';
 
 function createEntity(name, hasLinked = true) {
   const options = { idAttribute: '@id' };
@@ -39,7 +40,7 @@ const sequence = createEntity('sequences');
 const canvas = createEntity('canvases');
 const annotation = createEntity('annotations');
 const annotationList = createEntity('annotationLists');
-const range = createEntity('range');
+const range = createEntity('ranges');
 const layer = createEntity('layers');
 const imageResource = createEntity('imageResources'); // thumbnails + image service
 
@@ -52,6 +53,56 @@ const within = new schema.Array(
     layer,
   },
   entity => (entity['@type'] === 'sc:Layer' ? 'layer' : 'externalResource')
+);
+
+/**
+ * Dereferencable resources:
+ *
+ * - Collection (Required)
+ * - Manifest (Required)
+ * - First Sequence (Optional)
+ * - Nth Sequence (Required)
+ * - Canvas (Optional)
+ * - Annotation (Recommended)
+ * - AnnotationList (Required)
+ * - Range (Optional)
+ * - Layer (Optional)
+ * - Image Content (Required)
+ * - Other Content (Required)
+ */
+const RESOURCE_TYPE_MAP = {
+  'sc:Collection': 'collection',
+  'sc:Sequence': 'sequence',
+  'sc:Manifest': 'manifest',
+  'sc:Canvas': 'canvas',
+  'sc:AnnotationList': 'annotationList',
+  'sc:Annotation': 'annotation',
+  'sc:Range': 'range',
+  'sc:Layer': 'layer',
+  'dctypes:Image': 'imageResource',
+};
+const resource = new schema.Union(
+  {
+    collection,
+    sequence,
+    manifest,
+    canvas,
+    annotationList,
+    annotation,
+    range,
+    layer,
+    imageResource,
+    service,
+  },
+  entity => {
+    if (RESOURCE_TYPE_MAP[entity['@type']]) {
+      return RESOURCE_TYPE_MAP[entity['@type']];
+    }
+    if (entity.profile) {
+      return 'service';
+    }
+    throw Error('Unknown entity type');
+  }
 );
 
 // ===========================================================================
@@ -211,7 +262,15 @@ layer.define({
   within: [within],
 });
 
+const preprocess = compose(moveStartCanvasToSequence);
+
+const normalizeResource = rawResource =>
+  normalize(preprocess(rawResource), resource);
+
 export {
+  normalizeResource as normalize,
+  preprocess,
+  resource,
   collection,
   manifest,
   sequence,
