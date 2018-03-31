@@ -13,7 +13,7 @@
     "clean": "nwb clean-module",
     "test": "jest",
     "test:coverage": "jest --verbose --coverage",
-    "test:watch": "jest --verbose --coverage --watch"
+    "test:watch": "jest --coverage --watch"
   },
   "dependencies": {
     "immutability-helper": "^2.6.6",

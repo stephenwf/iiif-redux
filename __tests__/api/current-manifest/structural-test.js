@@ -1,0 +1,74 @@
+import {
+  getSequenceIds,
+  getSequences,
+  getRangeIds,
+  getRanges,
+  getStructureIds,
+  getStructures,
+} from '../../../src/api/current-manifest';
+
+describe('api/current-manifest/structural', () => {
+  const state = {
+    routing: { currentManifest: 'http://iiif.com/manifest-1.json' },
+    config: { defaultLanguage: 'en' },
+    manifests: {
+      'http://iiif.com/manifest-1.json': {
+        '@id': 'http://iiif.com/manifest-1.json',
+        label: 'Manifest 1',
+        sequences: ['http://iiif.com/sequence-1.json'],
+        structures: [
+          'http://iiif.com/range-1.json',
+          'http://iiif.com/range-2.json',
+        ],
+      },
+    },
+    sequences: {
+      'http://iiif.com/sequence-1.json': {
+        '@id': 'http://iiif.com/sequence-1.json',
+        label: 'Sequence 1',
+        canvases: ['http://iiif.com/canvas-1.json'],
+      },
+    },
+    ranges: {
+      'http://iiif.com/range-1.json': {
+        '@id': 'http://iiif.com/range-1.json',
+        label: 'Range 1',
+      },
+      'http://iiif.com/range-2.json': {
+        '@id': 'http://iiif.com/range-2.json',
+        label: 'Range 2',
+      },
+    },
+  };
+
+  it('should load sequence ids', () => {
+    expect(getSequenceIds(state)).toEqual(['http://iiif.com/sequence-1.json']);
+  });
+
+  it('should load full sequences', () => {
+    expect(getSequences(state).map(sequence => sequence.label)).toEqual([
+      'Sequence 1',
+    ]);
+  });
+
+  it('should load range ids', () => {
+    expect(getRangeIds(state)).toEqual([
+      'http://iiif.com/range-1.json',
+      'http://iiif.com/range-2.json',
+    ]);
+    expect(getStructureIds(state)).toEqual([
+      'http://iiif.com/range-1.json',
+      'http://iiif.com/range-2.json',
+    ]);
+  });
+  it('should load ranges', () => {
+    expect(getRanges(state).map(range => range.label)).toEqual([
+      'Range 1',
+      'Range 2',
+    ]);
+    expect(getStructures(state).map(range => range.label)).toEqual([
+      'Range 1',
+      'Range 2',
+    ]);
+  });
+});

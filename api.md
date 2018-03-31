@@ -69,14 +69,14 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   - [x] getAttribution (Optional)
   - [x] getLicence (Optional)
   - [x] getLogo (Optional)
-- [ ] Sequence
-  - [ ] getLabel (Optional)
-  - [ ] getMetadata (Optional)
-  - [ ] getDescription (Optional)
-  - [ ] getThumbnail (Optional)
-  - [ ] getAttribution (Optional)
-  - [ ] getLicence (Optional)
-  - [ ] getLogo (Optional)
+- [x] Sequence
+  - [x] getLabel (Optional)
+  - [x] getMetadata (Optional)
+  - [x] getDescription (Optional)
+  - [x] getThumbnail (Optional)
+  - [x] getAttribution (Optional)
+  - [x] getLicence (Optional)
+  - [x] getLogo (Optional)
 - [ ] Canvas
   - [ ] getLabel (Required)
   - [ ] getMetadata (Optional)
@@ -146,11 +146,11 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   - [x] getViewingDirection (Optional)
   - [x] getViewingHint (Optional)
   - [x] getNavDate (Optional)
-- [ ] Sequence
-  - [ ] getId (Optional - auto-generated)
-  - [ ] getType (Required - probably not needed for this)
-  - [ ] getViewingDirection (Optional)
-  - [ ] getViewingHint (Optional)
+- [x] Sequence
+  - [x] getId (Optional - auto-generated)
+  - [x] getType (Required - probably not needed for this)
+  - [x] getViewingDirection (Optional)
+  - [x] getViewingHint (Optional)
 - [ ] Canvas
   - [ ] getId (Required)
   - [ ] getType (Required - probably not needed for this)
@@ -197,19 +197,19 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   - [x] getRelated
   - [x] getRendering
   - [x] getWithin
-- [ ] Manifest
-  - [ ] getSeeAlso
-  - [ ] getService
-  - [ ] getRelated
-  - [ ] getRendering
-  - [ ] getWithin
-- [ ] Sequence
-  - [ ] getSeeAlso
-  - [ ] getService
-  - [ ] getRelated
-  - [ ] getRendering
-  - [ ] getWithin
-  - [ ] getStartCanvas
+- [x] Manifest
+  - [x] getSeeAlso
+  - [x] getService
+  - [x] getRelated
+  - [x] getRendering
+  - [x] getWithin
+- [x] Sequence
+  - [x] getSeeAlso
+  - [x] getService
+  - [x] getRelated
+  - [x] getRendering
+  - [x] getWithin
+  - [x] getStartCanvas
 - [ ] Canvas
   - [ ] getSeeAlso
   - [ ] getService
@@ -275,11 +275,11 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   - [x] getCollections
   - [x] getManifests
   - [x] getMembers
-- [ ] Manifest
-  - [ ] getSequences (Required)
-  - [ ] getStructures / getRanges
-- [ ] Sequence
-  - [ ] getCanvases
+- [x] Manifest
+  - [x] getSequences (Required)
+  - [x] getStructures / getRanges
+- [x] Sequence
+  - [x] getCanvases
 - [ ] Canvas
   - [ ] getOtherContent
   - [ ] getImages

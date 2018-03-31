@@ -153,7 +153,6 @@ const getWithin = createSelector(
  * - getPrevious
  * - getStartIndex
  **************************************************/
-
 const getFirstId = createSelector(getCurrentCollection, paging.getFirst);
 const getFirst = createSelector(
   getFirstId,
@@ -234,10 +233,12 @@ const getMembers = createSelector(
 );
 
 export {
+  // Technical
   getId,
   getType,
   getViewingHint,
   getNavDate,
+  // Descriptive
   getLabel,
   getDescription,
   getMetadata,
@@ -245,6 +246,7 @@ export {
   getLogo,
   getLicense,
   getThumbnail,
+  // Linking
   getSeeAlsoIds,
   getSeeAlso,
   getServiceIds,
@@ -255,6 +257,7 @@ export {
   getRendering,
   getWithinIds,
   getWithin,
+  // Paging
   getFirstId,
   getFirst,
   getLastId,
@@ -265,6 +268,7 @@ export {
   getPreviousId,
   getPrevious,
   getStartIndex,
+  // Structural
   getCollectionIds,
   getCollections,
   getManifestIds,
