@@ -16,9 +16,12 @@
     "test:watch": "jest --coverage --watch"
   },
   "dependencies": {
+    "deepmerge": "^2.1.0",
+    "got": "^8.3.0",
     "immutability-helper": "^2.6.6",
     "lodash.memoize": "^4.1.2",
     "normalizr": "^3.2.4",
+    "reduce-reducers": "^0.1.2",
     "redux": "^3.7.2",
     "redux-actions": "^2.3.0",
     "redux-saga": "^0.16.0",

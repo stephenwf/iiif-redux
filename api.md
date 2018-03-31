@@ -77,14 +77,14 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   - [x] getAttribution (Optional)
   - [x] getLicence (Optional)
   - [x] getLogo (Optional)
-- [ ] Canvas
-  - [ ] getLabel (Required)
-  - [ ] getMetadata (Optional)
-  - [ ] getDescription (Optional)
-  - [ ] getThumbnail (Recommended)
-  - [ ] getAttribution (Optional)
-  - [ ] getLicence (Optional)
-  - [ ] getLogo (Optional)
+- [x] Canvas
+  - [x] getLabel (Required)
+  - [x] getMetadata (Optional)
+  - [x] getDescription (Optional)
+  - [x] getThumbnail (Recommended)
+  - [x] getAttribution (Optional)
+  - [x] getLicence (Optional)
+  - [x] getLogo (Optional)
 - [ ] Annotation
   - [ ] getLabel (Optional)
   - [ ] getMetadata (Optional)
@@ -151,12 +151,12 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   - [x] getType (Required - probably not needed for this)
   - [x] getViewingDirection (Optional)
   - [x] getViewingHint (Optional)
-- [ ] Canvas
-  - [ ] getId (Required)
-  - [ ] getType (Required - probably not needed for this)
-  - [ ] getHeight (Required)
-  - [ ] getWidth (Required)
-  - [ ] getViewingHint (Optional)
+- [x] Canvas
+  - [x] getId (Required)
+  - [x] getType (Required - probably not needed for this)
+  - [x] getHeight (Required)
+  - [x] getWidth (Required)
+  - [x] getViewingHint (Optional)
 - [ ] Annotation
   - [ ] getId (Recommended - auto-generated)
   - [ ] getType (Required - probably not needed for this)
@@ -210,12 +210,12 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   - [x] getRendering
   - [x] getWithin
   - [x] getStartCanvas
-- [ ] Canvas
-  - [ ] getSeeAlso
-  - [ ] getService
-  - [ ] getRelated
-  - [ ] getRendering
-  - [ ] getWithin
+- [x] Canvas
+  - [x] getSeeAlso
+  - [x] getService
+  - [x] getRelated
+  - [x] getRendering
+  - [x] getWithin
 - [ ] Annotation
   - [ ] getSeeAlso
   - [ ] getService
@@ -282,9 +282,9 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   - [x] getOtherContent (implicit)
 - [x] Sequence
   - [x] getCanvases
-- [ ] Canvas
-  - [ ] getOtherContent
-  - [ ] getImages
+- [x] Canvas
+  - [x] getOtherContent
+  - [x] getImages
 - [ ] AnnotationList
   - [ ] getResources / getAnnotations
 - [ ] Range
