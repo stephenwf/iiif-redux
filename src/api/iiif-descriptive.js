@@ -91,7 +91,7 @@ const getMetadata = defaultLanguage => resource => {
 };
 
 // Returns ID to service.
-const getThumbnail = resource => {
+const getThumbnailId = resource => {
   if (Array.isArray(resource.thumbnail)) {
     return resource.thumbnail[0];
   }
@@ -119,7 +119,7 @@ export {
   getLabel,
   getMetadata,
   getDescription,
-  getThumbnail,
+  getThumbnailId,
   getAttribution,
   getLicense,
   getLogo,

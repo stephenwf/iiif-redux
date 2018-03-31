@@ -7,6 +7,7 @@ import { getCurrentManifestId } from './current';
 import {
   getAllAnnotationLists,
   getAllExternalResources,
+  getAllImages,
   getAllLayers,
   getAllManifests,
   getAllRanges,
@@ -94,9 +95,14 @@ const getLogo = createSelector(getCurrentManifest, descriptive.getLogo);
 
 const getLicense = createSelector(getCurrentManifest, descriptive.getLicense);
 
-const getThumbnail = createSelector(
+const getThumbnailId = createSelector(
   getCurrentManifest,
-  descriptive.getThumbnail
+  descriptive.getThumbnailId
+);
+const getThumbnail = createSelector(
+  getThumbnailId,
+  getAllImages,
+  (thumbnailId, allImages) => allImages[thumbnailId] || thumbnailId
 );
 
 /**************************************************
@@ -221,6 +227,7 @@ export {
   getAttribution,
   getLogo,
   getLicense,
+  getThumbnailId,
   getThumbnail,
   // Linking
   getWithinIds,

@@ -14,6 +14,7 @@ import {
   getAllExternalResources,
   getAllManifests,
   getAllAnnotationLists,
+  getAllImages,
 } from './all';
 
 const getCurrentCollection = createSelector(
@@ -84,9 +85,14 @@ const getLogo = createSelector(getCurrentCollection, descriptive.getLogo);
 
 const getLicense = createSelector(getCurrentCollection, descriptive.getLicense);
 
-const getThumbnail = createSelector(
+const getThumbnailId = createSelector(
   getCurrentCollection,
-  descriptive.getThumbnail
+  descriptive.getThumbnailId
+);
+const getThumbnail = createSelector(
+  getThumbnailId,
+  getAllImages,
+  (thumbnailId, allImages) => allImages[thumbnailId] || thumbnailId
 );
 
 /**************************************************
@@ -265,6 +271,7 @@ export {
   getAttribution,
   getLogo,
   getLicense,
+  getThumbnailId,
   getThumbnail,
   // Linking
   getSeeAlsoIds,

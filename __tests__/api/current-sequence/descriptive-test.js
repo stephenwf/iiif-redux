@@ -5,6 +5,7 @@ import {
   getAttribution,
   getLicense,
   getLogo,
+  getThumbnailId,
   getThumbnail,
 } from '../../../src/api/current-sequence';
 
@@ -24,14 +25,18 @@ describe('api/current-sequence/descriptive', () => {
         attribution: 'Some <b>attribution</b> for test sequence',
         license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
         logo: 'http://example.org/logos/institution1.jpg',
-        thumbnail: {
-          '@id':
-            'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
-          service: {
-            '@context': 'http://iiif.io/api/image/2/context.json',
-            '@id': 'http://example.org/images/book1-page1',
-            profile: 'http://iiif.io/api/image/2/level1.json',
-          },
+        thumbnail:
+          'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
+      },
+    },
+    imageResources: {
+      'http://example.org/images/book1-page1/full/80,100/0/default.jpg': {
+        '@id':
+          'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
+        service: {
+          '@context': 'http://iiif.io/api/image/2/context.json',
+          '@id': 'http://example.org/images/book1-page1',
+          profile: 'http://iiif.io/api/image/2/level1.json',
         },
       },
     },
@@ -42,7 +47,7 @@ describe('api/current-sequence/descriptive', () => {
    *  - getLabel (Required)
    *  - getMetadata (Recommended)
    *  - getDescription (Recommended)
-   *  - getThumbnail (Recommended)
+   *  - getThumbnailId (Recommended)
    *  - getAttribution (Optional)
    *  - getLicence (Optional)
    *  - getLogo (Optional)
@@ -74,8 +79,16 @@ describe('api/current-sequence/descriptive', () => {
     });
   });
 
+  describe('getThumbnailId', () => {
+    it('should load thumbnail id from collection', () => {
+      expect(getThumbnailId(state)).toEqual(
+        'http://example.org/images/book1-page1/full/80,100/0/default.jpg'
+      );
+    });
+  });
+
   describe('getThumbnail', () => {
-    it('should load thumbnail from sequence', () => {
+    it('should load thumbnail from canvas', () => {
       expect(getThumbnail(state)).toEqual({
         '@id':
           'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
@@ -85,6 +98,18 @@ describe('api/current-sequence/descriptive', () => {
           profile: 'http://iiif.io/api/image/2/level1.json',
         },
       });
+    });
+    it('should load thumbnail without service', () => {
+      expect(
+        getThumbnail({
+          ...state,
+          ...{
+            imageResources: {}, // unset image resources.
+          },
+        })
+      ).toEqual(
+        'http://example.org/images/book1-page1/full/80,100/0/default.jpg'
+      );
     });
   });
 

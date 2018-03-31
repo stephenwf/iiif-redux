@@ -6,7 +6,7 @@ import {
   getWidth,
 } from '../../../src/api/current-canvas';
 
-describe('api/current-canvas/descriptive', () => {
+describe('api/current-canvas/technical', () => {
   const createStateWithCustomProperties = props => ({
     routing: { currentCanvas: 'http://iiif.com/canvas-1.json' },
     config: { defaultLanguage: 'en' },

@@ -63,14 +63,15 @@ const reducer = handleActions(
     [iiifResourceSuccess]: (
       state,
       { payload: { resourceId, normalizedResponse } }
-    ) =>
-      update(deepmerge(state, normalizedResponse), {
+    ) => {
+      return update(deepmerge(state, normalizedResponse), {
         dereferenced: {
           [resourceId]: {
             loading: { $set: false },
           },
         },
-      }),
+      });
+    },
   },
   DEFAULT_STATE
 );

@@ -3,6 +3,24 @@ import bridges from './fixtures/bridges';
 import { iiifResourceRequest } from '../src/spaces/iiif-resource';
 import { manifest } from '../src/schema/presentation2';
 import got from 'got';
+import * as currentManifest from '../src/api/current-manifest';
+import * as currentSequence from '../src/api/current-sequence';
+import * as currentCanvas from '../src/api/current-canvas';
+
+function waitForRequest(store, id) {
+  return new Promise(resolve => {
+    store.subscribe(() => {
+      const newState = store.getState();
+      if (
+        newState.dereferenced &&
+        newState.dereferenced[id] &&
+        newState.dereferenced[id].loading === false
+      ) {
+        resolve();
+      }
+    });
+  });
+}
 
 describe('store', () => {
   it('should have default state', () => {
@@ -98,22 +116,14 @@ describe('store', () => {
     got.get = jest.fn();
     got.get.mockReturnValue(
       Promise.resolve({
-        body: bridges,
+        body: JSON.parse(JSON.stringify(bridges)),
       })
     );
 
-    const forRequestToFinish = new Promise(resolve => {
-      store.subscribe(() => {
-        const newState = store.getState();
-        if (
-          newState.dereferenced[
-            'https://view.nls.uk/manifest/7446/74464117/manifest.json'
-          ].loading === false
-        ) {
-          resolve();
-        }
-      });
-    });
+    const whenRequestFinishes = waitForRequest(
+      store,
+      'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+    );
 
     store.dispatch(
       iiifResourceRequest(
@@ -135,7 +145,7 @@ describe('store', () => {
     );
     expect(manifestState.ttl).toEqual(600);
 
-    await forRequestToFinish;
+    await whenRequestFinishes;
 
     const secondState = store.getState();
     expect(Object.keys(secondState)).toEqual([
@@ -368,5 +378,59 @@ describe('store', () => {
       'http://seealso.com/page-1.json',
       'http://seealso.com/page-2.json',
     ]);
+  });
+
+  it('should create state that works with selectors', async () => {
+    const store = createStore({}, [], [], {
+      config: {
+        defaultLanguage: 'en',
+      },
+      routing: {
+        currentManifest:
+          'https://view.nls.uk/manifest/7446/74464117/manifest.json',
+        currentSequence:
+          'https://view.nls.uk/manifest/7446/74464117/canvas/default',
+        currentCanvas: 'https://view.nls.uk/iiif/7446/74464117/canvas/1',
+      },
+    });
+    got.get = jest.fn();
+    got.get.mockReturnValue(
+      Promise.resolve({
+        body: JSON.parse(JSON.stringify(bridges)),
+      })
+    );
+
+    const whenRequestFinishes = waitForRequest(
+      store,
+      'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+    );
+
+    store.dispatch(
+      iiifResourceRequest(
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json',
+        ['MANIFEST_REQUEST', 'MANIFEST_SUCCESS', 'MANIFEST_ERROR'],
+        manifest
+      )
+    );
+
+    await whenRequestFinishes;
+
+    const state = store.getState();
+
+    expect(currentManifest.getLabel(state)).toEqual([
+      { '@language': 'en', '@value': 'Forth Bridge illustrations 1886-1887' },
+    ]);
+
+    expect(currentSequence.getLabel(state)).toEqual([
+      { '@language': 'en', '@value': 'default' },
+    ]);
+
+    expect(currentCanvas.getLabel(state)).toEqual([
+      { '@language': 'en', '@value': '1' },
+    ]);
+
+    expect(currentCanvas.getThumbnailId(state)).toEqual(
+      'https://deriv.nls.uk/dcn4/7443/74438561.4.jpg'
+    );
   });
 });

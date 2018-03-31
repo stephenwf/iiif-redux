@@ -5,7 +5,7 @@ import {
   getAttribution,
   getLicense,
   getLogo,
-  getThumbnail,
+  getThumbnailId, getThumbnail,
 } from '../../../src/api/current-manifest';
 
 describe('api/current-manifest/descriptive', () => {
@@ -24,14 +24,18 @@ describe('api/current-manifest/descriptive', () => {
         attribution: 'Some <b>attribution</b> for test manifest',
         license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
         logo: 'http://example.org/logos/institution1.jpg',
-        thumbnail: {
-          '@id':
-            'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
-          service: {
-            '@context': 'http://iiif.io/api/image/2/context.json',
-            '@id': 'http://example.org/images/book1-page1',
-            profile: 'http://iiif.io/api/image/2/level1.json',
-          },
+        thumbnail:
+          'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
+      },
+    },
+    imageResources: {
+      'http://example.org/images/book1-page1/full/80,100/0/default.jpg': {
+        '@id':
+          'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
+        service: {
+          '@context': 'http://iiif.io/api/image/2/context.json',
+          '@id': 'http://example.org/images/book1-page1',
+          profile: 'http://iiif.io/api/image/2/level1.json',
         },
       },
     },
@@ -42,7 +46,7 @@ describe('api/current-manifest/descriptive', () => {
    *  - getLabel (Required)
    *  - getMetadata (Recommended)
    *  - getDescription (Recommended)
-   *  - getThumbnail (Recommended)
+   *  - getThumbnailId (Recommended)
    *  - getAttribution (Optional)
    *  - getLicence (Optional)
    *  - getLogo (Optional)
@@ -74,8 +78,16 @@ describe('api/current-manifest/descriptive', () => {
     });
   });
 
+  describe('getThumbnailId', () => {
+    it('should load thumbnail id from collection', () => {
+      expect(getThumbnailId(state)).toEqual(
+        'http://example.org/images/book1-page1/full/80,100/0/default.jpg'
+      );
+    });
+  });
+
   describe('getThumbnail', () => {
-    it('should load thumbnail from manifest', () => {
+    it('should load thumbnail from canvas', () => {
       expect(getThumbnail(state)).toEqual({
         '@id':
           'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
@@ -86,8 +98,19 @@ describe('api/current-manifest/descriptive', () => {
         },
       });
     });
+    it('should load thumbnail without service', () => {
+      expect(
+        getThumbnail({
+          ...state,
+          ...{
+            imageResources: {}, // unset image resources.
+          },
+        })
+      ).toEqual(
+        'http://example.org/images/book1-page1/full/80,100/0/default.jpg'
+      );
+    });
   });
-
   describe('getAttribution', () => {
     it('should load attribution from manifest', () => {
       expect(getAttribution(state)).toEqual([

@@ -11,6 +11,7 @@ import {
   getAllSequences,
   getAllServices,
   getAllCanvases,
+  getAllImages,
 } from './all';
 import validUrl from 'valid-url';
 
@@ -85,9 +86,14 @@ const getLogo = createSelector(getCurrentSequence, descriptive.getLogo);
 
 const getLicense = createSelector(getCurrentSequence, descriptive.getLicense);
 
-const getThumbnail = createSelector(
+const getThumbnailId = createSelector(
   getCurrentSequence,
-  descriptive.getThumbnail
+  descriptive.getThumbnailId
+);
+const getThumbnail = createSelector(
+  getThumbnailId,
+  getAllImages,
+  (thumbnailId, allImages) => allImages[thumbnailId] || thumbnailId
 );
 
 /**************************************************
@@ -182,6 +188,7 @@ export {
   getAttribution,
   getLogo,
   getLicense,
+  getThumbnailId,
   getThumbnail,
   // Linking
   getSeeAlsoIds,
