@@ -6,6 +6,8 @@ const getAllManifests = state => state.manifests;
 const getAllSequences = state => state.sequences;
 const getAllRanges = state => state.ranges;
 const getAllCanvases = state => state.canvases;
+const getAllImages = state => state.images;
+const getAllAnnotationLists = state => state.annotationLists;
 
 export {
   getAllCollections,
@@ -16,4 +18,6 @@ export {
   getAllSequences,
   getAllRanges,
   getAllCanvases,
+  getAllImages,
+  getAllAnnotationLists,
 };

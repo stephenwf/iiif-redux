@@ -1,6 +1,87 @@
 import { normalize } from '../../../src/schema/presentation2';
 
 describe('schema/presentation-2/smoke-tests', () => {
+  it('should load external resource and annotation lists in otherContent', () => {
+    expect(
+      normalize({
+        '@id': 'http://example.org/collection-1.json',
+        '@type': 'sc:Manifest',
+        otherContent: [
+          {
+            '@id': 'http://example.org/annotation-list-1.json',
+            '@type': 'sc:AnnotationList',
+          },
+          {
+            '@id': 'http://example.org/external-content-1',
+            '@type': 'dctypes:Text',
+            format: 'text/html',
+          },
+          {
+            '@id': 'http://example.org/annotation-list-2.json',
+            '@type': 'sc:AnnotationList',
+          },
+          {
+            '@id': 'http://example.org/external-content-2',
+            '@type': 'dctypes:Text',
+            format: 'text/html',
+          },
+        ],
+      })
+    ).toEqual({
+      entities: {
+        annotationLists: {
+          'http://example.org/annotation-list-1.json': {
+            '@id': 'http://example.org/annotation-list-1.json',
+            '@type': 'sc:AnnotationList',
+          },
+          'http://example.org/annotation-list-2.json': {
+            '@id': 'http://example.org/annotation-list-2.json',
+            '@type': 'sc:AnnotationList',
+          },
+        },
+        externalResources: {
+          'http://example.org/external-content-1': {
+            '@id': 'http://example.org/external-content-1',
+            '@type': 'dctypes:Text',
+            format: 'text/html',
+          },
+          'http://example.org/external-content-2': {
+            '@id': 'http://example.org/external-content-2',
+            '@type': 'dctypes:Text',
+            format: 'text/html',
+          },
+        },
+        manifests: {
+          'http://example.org/collection-1.json': {
+            '@id': 'http://example.org/collection-1.json',
+            '@type': 'sc:Manifest',
+            otherContent: [
+              {
+                id: 'http://example.org/annotation-list-1.json',
+                schema: 'annotationList',
+              },
+              {
+                id: 'http://example.org/external-content-1',
+                schema: 'externalResource',
+              },
+              {
+                id: 'http://example.org/annotation-list-2.json',
+                schema: 'annotationList',
+              },
+              {
+                id: 'http://example.org/external-content-2',
+                schema: 'externalResource',
+              },
+            ],
+          },
+        },
+      },
+      result: {
+        id: 'http://example.org/collection-1.json',
+        schema: 'manifest',
+      },
+    });
+  });
   it('should load external resources when attached to annotation', () => {
     expect(
       normalize({

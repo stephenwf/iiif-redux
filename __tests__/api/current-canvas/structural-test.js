@@ -1,26 +1,21 @@
 import {
-  getSequenceIds,
-  getSequences,
-  getRangeIds,
-  getRanges,
-  getStructureIds,
-  getStructures,
-  getOtherContent,
   getOtherContentIds,
-} from '../../../src/api/current-manifest';
+  getOtherContent,
+  getImageIds,
+  getImages,
+} from '../../../src/api/current-canvas';
 
-describe('api/current-manifest/structural', () => {
+describe('api/current-canvas/linking', () => {
   const state = {
-    routing: { currentManifest: 'http://iiif.com/manifest-1.json' },
+    routing: { currentCanvas: 'http://iiif.com/canvas-1.json' },
     config: { defaultLanguage: 'en' },
-    manifests: {
-      'http://iiif.com/manifest-1.json': {
-        '@id': 'http://iiif.com/manifest-1.json',
-        label: 'Manifest 1',
-        sequences: ['http://iiif.com/sequence-1.json'],
-        structures: [
-          'http://iiif.com/range-1.json',
-          'http://iiif.com/range-2.json',
+    canvases: {
+      'http://iiif.com/canvas-1.json': {
+        '@type': 'sc:Canvas',
+        images: [
+          'http://iiif.com/image-1.json',
+          'http://iiif.com/image-2.json',
+          'http://iiif.com/image-3.json',
         ],
         otherContent: [
           { id: 'http://iiif.com/external-1.json', schema: 'externalResource' },
@@ -40,21 +35,18 @@ describe('api/current-manifest/structural', () => {
         ],
       },
     },
-    sequences: {
-      'http://iiif.com/sequence-1.json': {
-        '@id': 'http://iiif.com/sequence-1.json',
-        label: 'Sequence 1',
-        canvases: ['http://iiif.com/canvas-1.json'],
+    images: {
+      'http://iiif.com/image-1.json': {
+        '@id': 'http://iiif.com/image-1.json',
+        label: 'Image 1',
       },
-    },
-    ranges: {
-      'http://iiif.com/range-1.json': {
-        '@id': 'http://iiif.com/range-1.json',
-        label: 'Range 1',
+      'http://iiif.com/image-2.json': {
+        '@id': 'http://iiif.com/image-2.json',
+        label: 'Image 2',
       },
-      'http://iiif.com/range-2.json': {
-        '@id': 'http://iiif.com/range-2.json',
-        label: 'Range 2',
+      'http://iiif.com/image-3.json': {
+        '@id': 'http://iiif.com/image-3.json',
+        label: 'Image 3',
       },
     },
     annotationLists: {
@@ -79,37 +71,6 @@ describe('api/current-manifest/structural', () => {
     },
   };
 
-  it('should load sequence ids', () => {
-    expect(getSequenceIds(state)).toEqual(['http://iiif.com/sequence-1.json']);
-  });
-
-  it('should load full sequences', () => {
-    expect(getSequences(state).map(sequence => sequence.label)).toEqual([
-      'Sequence 1',
-    ]);
-  });
-
-  it('should load range ids', () => {
-    expect(getRangeIds(state)).toEqual([
-      'http://iiif.com/range-1.json',
-      'http://iiif.com/range-2.json',
-    ]);
-    expect(getStructureIds(state)).toEqual([
-      'http://iiif.com/range-1.json',
-      'http://iiif.com/range-2.json',
-    ]);
-  });
-  it('should load ranges', () => {
-    expect(getRanges(state).map(range => range.label)).toEqual([
-      'Range 1',
-      'Range 2',
-    ]);
-    expect(getStructures(state).map(range => range.label)).toEqual([
-      'Range 1',
-      'Range 2',
-    ]);
-  });
-
   it('should get other content ids', () => {
     expect(getOtherContentIds(state)).toEqual([
       'http://iiif.com/external-1.json',
@@ -128,7 +89,23 @@ describe('api/current-manifest/structural', () => {
       'Annotation List 1',
       'External 2',
       'Annotation List 2',
-      'unknown'
+      'unknown',
+    ]);
+  });
+
+  it('should get image ids', () => {
+    expect(getImageIds(state)).toEqual([
+      'http://iiif.com/image-1.json',
+      'http://iiif.com/image-2.json',
+      'http://iiif.com/image-3.json',
+    ]);
+  });
+
+  it('should get images', () => {
+    expect(getImages(state).map(image => image.label)).toEqual([
+      'Image 1',
+      'Image 2',
+      'Image 3',
     ]);
   });
 });

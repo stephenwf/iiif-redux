@@ -5,6 +5,7 @@ import * as descriptive from './iiif-descriptive';
 import { getDefaultLanguage } from './config';
 import { getCurrentManifestId } from './current';
 import {
+  getAllAnnotationLists,
   getAllExternalResources,
   getAllLayers,
   getAllManifests,
@@ -186,6 +187,25 @@ const getRanges = createSelector(
 const getStructureIds = getRangeIds;
 const getStructures = getRanges;
 
+const getOtherContentIds = createSelector(
+  getCurrentManifest,
+  structural.getOtherContent
+);
+const getOtherContent = createSelector(
+  getOtherContentIds,
+  getAllExternalResources,
+  getAllAnnotationLists,
+  (otherContentIds, allExternalResources, allAnnotationLists) =>
+    otherContentIds.map(
+      otherContentId =>
+        allAnnotationLists[otherContentId] ||
+        allExternalResources[otherContentId] || {
+          '@id': otherContentId,
+          label: 'unknown',
+        }
+    )
+);
+
 export {
   getCurrentManifest,
   // Technical
@@ -220,4 +240,6 @@ export {
   getRanges,
   getStructureIds,
   getStructures,
+  getOtherContentIds,
+  getOtherContent,
 };

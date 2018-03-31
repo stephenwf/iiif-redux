@@ -5,6 +5,8 @@ import {
   getManifests,
   getMemberIds,
   getMembers,
+  getOtherContent,
+  getOtherContentIds,
 } from '../../../src/api/current-collection';
 
 describe('api/current-collection/structural', () => {
@@ -33,6 +35,22 @@ describe('api/current-collection/structural', () => {
           'http://iiif.com/manifest-3.json',
           'http://iiif.com/manifest-4.json',
         ],
+        otherContent: [
+          { id: 'http://iiif.com/external-1.json', schema: 'externalResource' },
+          {
+            id: 'http://iiif.com/annotation-list-1.json',
+            schema: 'annotationList',
+          },
+          { id: 'http://iiif.com/external-2.json', schema: 'externalResource' },
+          {
+            id: 'http://iiif.com/annotation-list-2.json',
+            schema: 'annotationList',
+          },
+          {
+            id: 'http://iiif.com/external-3.json',
+            schema: 'externalResource',
+          },
+        ],
       },
       'http://iiif.com/collection-2.json': {
         '@id': 'http://iiif.com/collection-2.json',
@@ -45,6 +63,26 @@ describe('api/current-collection/structural', () => {
       'http://iiif.com/collection-4.json': {
         '@id': 'http://iiif.com/collection-4.json',
         label: 'Collection 4',
+      },
+    },
+    annotationLists: {
+      'http://iiif.com/annotation-list-1.json': {
+        '@id': 'http://iiif.com/annotation-list-1.json',
+        label: 'Annotation List 1',
+      },
+      'http://iiif.com/annotation-list-2.json': {
+        '@id': 'http://iiif.com/annotation-list-2.json',
+        label: 'Annotation List 2',
+      },
+    },
+    externalResources: {
+      'http://iiif.com/external-1.json': {
+        '@id': 'http://iiif.com/external-1.json',
+        label: 'External 1',
+      },
+      'http://iiif.com/external-2.json': {
+        '@id': 'http://iiif.com/external-2.json',
+        label: 'External 2',
       },
     },
     manifests: {
@@ -134,6 +172,28 @@ describe('api/current-collection/structural', () => {
       'Manifest 4',
       'Manifest 5',
       'Manifest 6',
+    ]);
+  });
+
+  it('should get other content ids', () => {
+    expect(getOtherContentIds(state)).toEqual([
+      'http://iiif.com/external-1.json',
+      'http://iiif.com/annotation-list-1.json',
+      'http://iiif.com/external-2.json',
+      'http://iiif.com/annotation-list-2.json',
+      'http://iiif.com/external-3.json',
+    ]);
+  });
+
+  it('should get Other content', () => {
+    expect(
+      getOtherContent(state).map(otherContent => otherContent.label)
+    ).toEqual([
+      'External 1',
+      'Annotation List 1',
+      'External 2',
+      'Annotation List 2',
+      'unknown',
     ]);
   });
 });
