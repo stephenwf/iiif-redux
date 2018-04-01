@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/stephenwf/iiif-redux/master/iiif-redux.png" width="510" />
+<img src="https://raw.githubusercontent.com/stephenwf/iiif-redux/master/iiif-redux.png" width="340" />
 
 [![Coverage Status](https://coveralls.io/repos/github/stephenwf/iiif-redux/badge.svg)](https://coveralls.io/github/stephenwf/iiif-redux)
 [![Build Status](https://travis-ci.org/stephenwf/iiif-redux.svg?branch=master)](https://travis-ci.org/stephenwf/iiif-redux)
