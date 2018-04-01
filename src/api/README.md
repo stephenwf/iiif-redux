@@ -105,7 +105,7 @@ API is to be composed:
 
 ```js
 // my-project/selectors/currentCollection.js 
-import { createSelector, defaultMemoize, createStructuredSelector } from 'reselect';
+import { createSelector, createStructuredSelector } from 'reselect';
 import { getDefaultLanguage } from 'iiif-redux/api/config';
 import * as currentManifest from 'iiif-redux/api/currentManifest';
 import * as currentSequence from 'iiif-redux/api/currentSequence';
@@ -117,14 +117,13 @@ export default createStructuredSelector({
  canvasThumbnails: createSelector(
    currentSequence.getCanvases,
    getDefaultLanguage,
-   defaultMemoize((canvases, lang) =>
+   (canvases, lang) =>
      canvases.map(
        createStructuredSelector({
          label: descriptive.getLabel(lang),
          thumbnail: descriptive.getThumbnailId,
        })
      )
-   )
  ),
 });
 ```  
