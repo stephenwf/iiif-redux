@@ -4,6 +4,7 @@
 [![Build Status](https://travis-ci.org/stephenwf/iiif-redux.svg?branch=master)](https://travis-ci.org/stephenwf/iiif-redux)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fstephenwf%2Fiiif-redux.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fstephenwf%2Fiiif-redux?ref=badge_shield)
 
+[Api Documentation](src/api#api) | [API Progress](api.md) 
 ___
 
 :warning: IIIF Redux current state is a request for comments from the community with a proposal for managing 
