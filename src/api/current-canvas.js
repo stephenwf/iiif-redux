@@ -6,7 +6,8 @@ import * as linking from './iiif-linking';
 import * as structural from './iiif-structural';
 import { getCurrentCanvasId } from './current';
 import {
-  getAllAnnotationLists, getAllAnotations,
+  getAllAnnotationLists,
+  getAllAnnotations,
   getAllCanvases,
   getAllExternalResources,
   getAllImages,
@@ -14,6 +15,7 @@ import {
   getAllServices,
 } from './all';
 import { getDefaultLanguage } from './config';
+import { isImageService } from '../constants/services';
 
 const getCurrentCanvas = createSelector(
   getCurrentCanvasId,
@@ -184,8 +186,39 @@ const getOtherContent = createSelector(
 const getImageIds = createSelector(getCurrentCanvas, structural.getImages);
 const getImages = createSelector(
   getImageIds,
-  getAllAnotations,
+  getAllAnnotations,
   (imageIds, allImages) => imageIds.map(imageId => allImages[imageId])
+);
+
+/**************************************************
+ * Algorithms
+ *
+ * - getImageService
+ **************************************************/
+const getImageService = createSelector(
+  getImages,
+  getAllServices,
+  getAllImages,
+  (images, allServices, allImages) =>
+    // The basic path is images[x].resource.service
+    images.reduce((result, image) => {
+      if (result) return result;
+      const resource =
+        image.resource.schema === 'imageResource'
+          ? allImages[image.resource.id]
+          : null;
+      const services = Array.isArray(resource.service)
+        ? resource.service
+        : [resource.service];
+
+      return services.reduce((innerResult, serviceId) => {
+        if (innerResult) return innerResult;
+        const service = allServices[serviceId];
+        if (isImageService(service.profile)) {
+          return service;
+        }
+      }, null);
+    }, null)
 );
 
 export {
@@ -221,4 +254,6 @@ export {
   getOtherContent,
   getImageIds,
   getImages,
+  // Algorithms.
+  getImageService,
 };

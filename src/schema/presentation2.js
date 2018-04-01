@@ -276,6 +276,13 @@ layer.define({
   within: within,
 });
 
+// ===========================================================================
+// 9) Image resource
+// ===========================================================================
+imageResource.define({
+  service: service,
+});
+
 const preprocess = compose(moveStartCanvasToSequence);
 
 const normalizeResource = rawResource =>
