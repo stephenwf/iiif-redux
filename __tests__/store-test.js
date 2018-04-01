@@ -1,3 +1,4 @@
+import { createStructuredSelector, createSelector } from 'reselect';
 import createStore from '../src/createStore';
 import bridges from './fixtures/bridges';
 import { iiifResourceRequest } from '../src/spaces/iiif-resource';
@@ -6,6 +7,8 @@ import got from 'got';
 import * as currentManifest from '../src/api/current-manifest';
 import * as currentSequence from '../src/api/current-sequence';
 import * as currentCanvas from '../src/api/current-canvas';
+import * as descriptive from '../src/api/iiif-descriptive';
+import { getDefaultLanguage } from '../src/api/config';
 
 function waitForRequest(store, id) {
   return new Promise(resolve => {
@@ -432,5 +435,233 @@ describe('store', () => {
     expect(currentCanvas.getThumbnailId(state)).toEqual(
       'https://deriv.nls.uk/dcn4/7443/74438561.4.jpg'
     );
+
+    const structured = createStructuredSelector({
+      label: currentManifest.getLabel,
+      metadata: currentManifest.getMetadata,
+      canvasThumbnails: createSelector(
+        currentSequence.getCanvases,
+        getDefaultLanguage,
+        (canvases, lang) =>
+          canvases.map(
+            createStructuredSelector({
+              label: descriptive.getLabel(lang),
+              thumbnail: descriptive.getThumbnailId,
+            })
+          )
+      ),
+    });
+    expect(structured(state)).toEqual({
+      label: [
+        { '@language': 'en', '@value': 'Forth Bridge illustrations 1886-1887' },
+      ],
+      canvasThumbnails: [
+        {
+          label: [{ '@language': 'en', '@value': '1' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438561.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '2' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438562.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '3' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438654.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '4' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438655.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '5' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438656.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '6' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438657.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '7' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438658.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '8' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438659.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '9' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438660.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '10' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438661.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '11' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438662.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '12' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438663.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '13' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438664.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '14' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438665.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '15' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438666.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '16' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438667.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '17' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438668.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '18' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438669.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '19' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438670.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '20' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438671.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '21' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438672.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '22' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438673.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '23' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438674.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '24' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438675.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '25' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438676.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '26' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438677.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '27' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438678.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '28' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438679.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '29' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438680.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '30' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438681.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '31' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438682.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '32' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438683.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '33' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438684.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '34' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438685.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '35' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438686.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '36' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438687.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '37' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74439048.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '38' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74439050.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '39' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74439051.4.jpg',
+        },
+        {
+          label: [{ '@language': 'en', '@value': '40' }],
+          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74439052.4.jpg',
+        },
+      ],
+      metadata: [
+        {
+          label: [{ '@language': 'en', '@value': 'Title' }],
+          value: [
+            {
+              '@language': 'en',
+              '@value': 'Forth Bridge illustrations 1886-1887',
+            },
+          ],
+        },
+        {
+          label: [{ '@language': 'en', '@value': 'Description' }],
+          value: [
+            {
+              '@language': 'en',
+              '@value':
+                '40 black-and-white photographs capturing the construction of the Forth Bridge by Glasgow-based Sir William Arrol & Co. Close-up and distance views of superstructure, cantilevers, lifting platforms and viaduct. Taken at weekly or fortnightly intervals from 1886-1887 by Philip Phillips, son of one of the contractors. Silver gelatin prints.',
+            },
+          ],
+        },
+        {
+          label: [{ '@language': 'en', '@value': 'Shelfmark' }],
+          value: [{ '@language': 'en', '@value': 'RB.l.229' }],
+        },
+        {
+          label: [],
+          value: [
+            {
+              '@language': 'en',
+              '@value':
+                '<a href="http://digital.nls.uk/74464117">View in our digital gallery</a>',
+            },
+          ],
+        },
+        {
+          label: [{ '@language': 'en', '@value': 'Full conditions of use' }],
+          value: [
+            {
+              '@language': 'en',
+              '@value':
+                'You have permission to make copies of this work under the <a target="_top" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Licence</a> unless otherwise stated.',
+            },
+          ],
+        },
+      ],
+    });
   });
 });
