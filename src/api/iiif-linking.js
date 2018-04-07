@@ -15,29 +15,31 @@ import memoize from 'lodash.memoize';
 import validUrl from 'valid-url';
 
 const preprocessLinkedEntities = (value, parent, key) => {
-  if (key === null && value.within) {
-    return {
-      ...value,
-      within: normalizeLinkedResources(value.within),
-    };
-  }
-  switch (key) {
-    // From iiif-linking
-    case 'seeAlso':
-    case 'service':
-    case 'related':
-    case 'rendering':
-    case 'within':
-    case 'startCanvas':
-    // From iiif-paging
-    case 'first':
-    case 'last':
-    case 'next':
-    case 'prev':
-      return normalizeLinkedResources(value);
-    default:
-      return value;
-  }
+  return Object.entries(value).reduce((acc, [entryKey, entryValue]) => {
+    switch (entryKey) {
+      case 'seeAlso':
+      case 'service':
+      case 'related':
+      case 'rendering':
+      case 'within':
+        acc[entryKey] = normalizeLinkedResources(entryValue);
+        break;
+
+      case 'startCanvas':
+      case 'first':
+      case 'last':
+      case 'next':
+      case 'prev':
+        const resource = normalizeLinkedResources(entryValue);
+        acc[entryKey] = resource ? resource[0] : null;
+        break;
+
+      default:
+        acc[entryKey] = entryValue;
+        break;
+    }
+    return acc;
+  }, {});
 };
 
 const normalizeLinkedResourceToObject = memoize(property => {

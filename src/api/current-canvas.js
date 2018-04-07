@@ -206,12 +206,9 @@ const getImageService = createSelector(
       const resource =
         image.resource.schema === 'imageResource'
           ? allImages[image.resource.id]
-          : null;
-      const services = Array.isArray(resource.service)
-        ? resource.service
-        : [resource.service];
+          : { service: [] };
 
-      return services.reduce((innerResult, serviceId) => {
+      return resource.service.reduce((innerResult, serviceId) => {
         if (innerResult) return innerResult;
         const service = allServices[serviceId];
         if (isImageService(service.profile)) {

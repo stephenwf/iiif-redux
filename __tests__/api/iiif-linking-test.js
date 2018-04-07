@@ -14,111 +14,105 @@ describe('api/iiif-linking', () => {
   describe('preprocessLinkedEntities', () => {
     it('should process seeAlso properties', () => {
       expect(
-        preprocessLinkedEntities(
-          'http://example.org/someResource.json',
-          null,
-          'seeAlso'
-        )
-      ).toEqual([{ '@id': 'http://example.org/someResource.json' }]);
+        preprocessLinkedEntities({
+          seeAlso: 'http://example.org/someResource.json',
+        })
+      ).toEqual({
+        seeAlso: [{ '@id': 'http://example.org/someResource.json' }],
+      });
     });
     it('should process service properties', () => {
       expect(
-        preprocessLinkedEntities(
-          'http://example.org/someResource.json',
-          null,
-          'service'
-        )
-      ).toEqual([{ '@id': 'http://example.org/someResource.json' }]);
+        preprocessLinkedEntities({
+          service: 'http://example.org/someResource.json',
+        })
+      ).toEqual({
+        service: [{ '@id': 'http://example.org/someResource.json' }],
+      });
     });
     it('should process related properties', () => {
       expect(
-        preprocessLinkedEntities(
-          'http://example.org/someResource.json',
-          null,
-          'related'
-        )
-      ).toEqual([{ '@id': 'http://example.org/someResource.json' }]);
+        preprocessLinkedEntities({
+          related: 'http://example.org/someResource.json',
+        })
+      ).toEqual({
+        related: [{ '@id': 'http://example.org/someResource.json' }],
+      });
     });
     it('should process rendering properties', () => {
       expect(
-        preprocessLinkedEntities(
-          'http://example.org/someResource.json',
-          null,
-          'rendering'
-        )
-      ).toEqual([{ '@id': 'http://example.org/someResource.json' }]);
+        preprocessLinkedEntities({
+          rendering: 'http://example.org/someResource.json',
+        })
+      ).toEqual({
+        rendering: [{ '@id': 'http://example.org/someResource.json' }],
+      });
     });
     it('should process within properties', () => {
       expect(
-        preprocessLinkedEntities(
-          'http://example.org/someResource.json',
-          null,
-          'within'
-        )
-      ).toEqual([{ '@id': 'http://example.org/someResource.json' }]);
+        preprocessLinkedEntities({
+          within: 'http://example.org/someResource.json',
+        })
+      ).toEqual({
+        within: [{ '@id': 'http://example.org/someResource.json' }],
+      });
     });
     it('should process startCanvas properties', () => {
       expect(
-        preprocessLinkedEntities(
-          'http://example.org/canvas/1.json',
-          null,
-          'startCanvas'
-        )
-      ).toEqual([{ '@id': 'http://example.org/canvas/1.json' }]);
+        preprocessLinkedEntities({
+          startCanvas: 'http://example.org/canvas/1.json',
+        })
+      ).toEqual({
+        startCanvas: { '@id': 'http://example.org/canvas/1.json' },
+      });
     });
     it('should process string URIs', () => {
       expect(
-        preprocessLinkedEntities(
-          'http://example.org/canvas/1.json',
-          null,
-          'startCanvas'
-        )
-      ).toEqual([{ '@id': 'http://example.org/canvas/1.json' }]);
+        preprocessLinkedEntities({
+          startCanvas: 'http://example.org/canvas/1.json',
+        })
+      ).toEqual({
+        startCanvas: { '@id': 'http://example.org/canvas/1.json' },
+      });
     });
     it('should process ignore invalid URIs', () => {
       expect(
-        preprocessLinkedEntities('NOT A REAL URI', null, 'startCanvas')
-      ).toEqual(null);
+        preprocessLinkedEntities({ startCanvas: 'NOT A REAL URI' })
+      ).toEqual({ startCanvas: null });
 
-      expect(
-        preprocessLinkedEntities(
-          { 'not real': 'anything' },
-          null,
-          'startCanvas'
-        )
-      ).toEqual(null);
+      expect(preprocessLinkedEntities({ 'not real': 'anything' })).toEqual({
+        'not real': 'anything',
+      });
     });
     it('should process object links', () => {
       expect(
-        preprocessLinkedEntities(
-          { '@id': 'http://example.org/canvas/1.json' },
-          null,
-          'startCanvas'
-        )
-      ).toEqual([{ '@id': 'http://example.org/canvas/1.json' }]);
+        preprocessLinkedEntities({ '@id': 'http://example.org/canvas/1.json' })
+      ).toEqual({ '@id': 'http://example.org/canvas/1.json' });
     });
     it('should process arrays of object links', () => {
       expect(
-        preprocessLinkedEntities(
-          [
+        preprocessLinkedEntities({
+          service: [
             'http://example.org/canvas/1.json',
             { '@id': 'http://example.org/canvas/2.json' },
             { '@id': 'http://example.org/canvas/3.json' },
           ],
-          null,
-          'startCanvas'
-        )
-      ).toEqual([
-        { '@id': 'http://example.org/canvas/1.json' },
-        { '@id': 'http://example.org/canvas/2.json' },
-        { '@id': 'http://example.org/canvas/3.json' },
-      ]);
+        })
+      ).toEqual({
+        service: [
+          { '@id': 'http://example.org/canvas/1.json' },
+          { '@id': 'http://example.org/canvas/2.json' },
+          { '@id': 'http://example.org/canvas/3.json' },
+        ],
+      });
     });
     it('should ignore all other properties', () => {
       const noChanged = Symbol('not-changed');
-      expect(preprocessLinkedEntities(noChanged, null, 'nope')).toEqual(
-        noChanged
-      );
+      expect(
+        preprocessLinkedEntities({ notProcessed: noChanged }, null, 'nope')
+      ).toEqual({ notProcessed: noChanged });
+
+      expect(normalizeLinkedResourceToObject(123)).toEqual(null);
     });
   });
   describe('normalizeLinkedResourceToObject', () => {

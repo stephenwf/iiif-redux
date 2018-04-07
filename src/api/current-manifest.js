@@ -123,7 +123,6 @@ const getSeeAlso = createSelector(
       seeAlsoId =>
         allExternalResources[seeAlsoId] || {
           '@id': seeAlsoId,
-          label: 'unknown',
         }
     )
 );

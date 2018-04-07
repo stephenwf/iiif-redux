@@ -34,5 +34,9 @@ describe('constants', () => {
         expect(isImageService(serivceProfile)).toEqual(true);
       });
     });
+
+    it('should return false if invalid', () => {
+      expect(isImageService('NOT REAL PROFILE')).toEqual(false);
+    });
   });
 });

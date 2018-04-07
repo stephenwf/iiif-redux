@@ -424,6 +424,7 @@ describe('store', () => {
     expect(Object.keys(secondState.externalResources)).toEqual([
       'http://seealso.com/page-1.json',
       'http://seealso.com/page-2.json',
+      'http://seealso.com/page-3.json',
     ]);
   });
 
@@ -712,6 +713,12 @@ describe('store', () => {
           ],
         },
       ],
+    });
+
+    expect(currentCanvas.getImageService(state)).toEqual({
+      '@context': 'http://iiif.io/api/image/2/context.json',
+      '@id': 'https://view.nls.uk/iiif/7443/74438561.5',
+      profile: 'http://iiif.io/api/image/2/profiles/level2.json',
     });
   });
 });
