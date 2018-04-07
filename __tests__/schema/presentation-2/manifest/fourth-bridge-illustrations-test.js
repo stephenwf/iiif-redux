@@ -17,6 +17,12 @@ describe('Forth Bridge illustrations manifest', () => {
     },
   };
 
+  it('should match snapshot', () => {
+
+    expect(entity.entities).toMatchSnapshot();
+
+  })
+
   it('should have a label', () => {
     expect(currentManifest.getLabel(state)).toEqual([
       { '@language': 'en', '@value': 'Forth Bridge illustrations 1886-1887' },
@@ -113,7 +119,7 @@ describe('Forth Bridge illustrations manifest', () => {
     expect(currentManifest.getSeeAlso(state)).toEqual([
       { '@id': 'http://seealso.com/page-1.json', label: 'Page 1' },
       { '@id': 'http://seealso.com/page-2.json', label: 'Page 2' },
-      { '@id': 'http://seealso.com/page-3.json', label: 'unknown' },
+      { '@id': 'http://seealso.com/page-3.json' },
     ]);
   });
 

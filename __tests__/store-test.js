@@ -9,6 +9,7 @@ import * as currentSequence from '../src/api/current-sequence';
 import * as currentCanvas from '../src/api/current-canvas';
 import * as descriptive from '../src/api/iiif-descriptive';
 import { getDefaultLanguage } from '../src/api/config';
+import { getImageService } from '../src/api/current-canvas';
 
 function waitForRequest(store, id) {
   return new Promise(resolve => {
@@ -153,6 +154,7 @@ describe('store', () => {
     const secondState = store.getState();
     expect(Object.keys(secondState)).toEqual([
       'dereferenced',
+      'services',
       'imageResources',
       'annotations',
       'canvases',
@@ -160,6 +162,48 @@ describe('store', () => {
       'ranges',
       'externalResources',
       'manifests',
+    ]);
+    expect(Object.keys(secondState.services)).toEqual([
+      'https://view.nls.uk/iiif/7443/74438561.5',
+      'https://view.nls.uk/iiif/7443/74438562.5',
+      'https://view.nls.uk/iiif/7443/74438654.5',
+      'https://view.nls.uk/iiif/7443/74438655.5',
+      'https://view.nls.uk/iiif/7443/74438656.5',
+      'https://view.nls.uk/iiif/7443/74438657.5',
+      'https://view.nls.uk/iiif/7443/74438658.5',
+      'https://view.nls.uk/iiif/7443/74438659.5',
+      'https://view.nls.uk/iiif/7443/74438660.5',
+      'https://view.nls.uk/iiif/7443/74438661.5',
+      'https://view.nls.uk/iiif/7443/74438662.5',
+      'https://view.nls.uk/iiif/7443/74438663.5',
+      'https://view.nls.uk/iiif/7443/74438664.5',
+      'https://view.nls.uk/iiif/7443/74438665.5',
+      'https://view.nls.uk/iiif/7443/74438666.5',
+      'https://view.nls.uk/iiif/7443/74438667.5',
+      'https://view.nls.uk/iiif/7443/74438668.5',
+      'https://view.nls.uk/iiif/7443/74438669.5',
+      'https://view.nls.uk/iiif/7443/74438670.5',
+      'https://view.nls.uk/iiif/7443/74438671.5',
+      'https://view.nls.uk/iiif/7443/74438672.5',
+      'https://view.nls.uk/iiif/7443/74438673.5',
+      'https://view.nls.uk/iiif/7443/74438674.5',
+      'https://view.nls.uk/iiif/7443/74438675.5',
+      'https://view.nls.uk/iiif/7443/74438676.5',
+      'https://view.nls.uk/iiif/7443/74438677.5',
+      'https://view.nls.uk/iiif/7443/74438678.5',
+      'https://view.nls.uk/iiif/7443/74438679.5',
+      'https://view.nls.uk/iiif/7443/74438680.5',
+      'https://view.nls.uk/iiif/7443/74438681.5',
+      'https://view.nls.uk/iiif/7443/74438682.5',
+      'https://view.nls.uk/iiif/7443/74438683.5',
+      'https://view.nls.uk/iiif/7443/74438684.5',
+      'https://view.nls.uk/iiif/7443/74438685.5',
+      'https://view.nls.uk/iiif/7443/74438686.5',
+      'https://view.nls.uk/iiif/7443/74438687.5',
+      'https://view.nls.uk/iiif/7443/74439048.5',
+      'https://view.nls.uk/iiif/7443/74439050.5',
+      'https://view.nls.uk/iiif/7443/74439051.5',
+      'https://view.nls.uk/iiif/7443/74439052.5',
     ]);
     expect(Object.keys(secondState.manifests)).toEqual([
       'https://view.nls.uk/manifest/7446/74464117/manifest.json',
@@ -380,6 +424,7 @@ describe('store', () => {
     expect(Object.keys(secondState.externalResources)).toEqual([
       'http://seealso.com/page-1.json',
       'http://seealso.com/page-2.json',
+      'http://seealso.com/page-3.json',
     ]);
   });
 
@@ -435,6 +480,12 @@ describe('store', () => {
     expect(currentCanvas.getThumbnailId(state)).toEqual(
       'https://deriv.nls.uk/dcn4/7443/74438561.4.jpg'
     );
+
+    expect(currentCanvas.getImageService(state)).toEqual({
+      '@context': 'http://iiif.io/api/image/2/context.json',
+      '@id': 'https://view.nls.uk/iiif/7443/74438561.5',
+      profile: 'http://iiif.io/api/image/2/profiles/level2.json',
+    });
 
     const structured = createStructuredSelector({
       label: currentManifest.getLabel,
@@ -662,6 +713,12 @@ describe('store', () => {
           ],
         },
       ],
+    });
+
+    expect(currentCanvas.getImageService(state)).toEqual({
+      '@context': 'http://iiif.io/api/image/2/context.json',
+      '@id': 'https://view.nls.uk/iiif/7443/74438561.5',
+      profile: 'http://iiif.io/api/image/2/profiles/level2.json',
     });
   });
 });

@@ -46,7 +46,7 @@ const imageResource = createEntity('imageResources'); // thumbnails + image serv
 
 // Unofficial types?
 const externalResource = createEntity('externalResources', false);
-const service = createEntity('services', false);
+const service = createEntity('services', true);
 const within = new schema.Array(
   {
     externalResource,
@@ -274,6 +274,13 @@ layer.define({
   related: [externalResource],
   rendering: [externalResource],
   within: within,
+});
+
+// ===========================================================================
+// 9) Image resource
+// ===========================================================================
+imageResource.define({
+  service: [service],
 });
 
 const preprocess = compose(moveStartCanvasToSequence);

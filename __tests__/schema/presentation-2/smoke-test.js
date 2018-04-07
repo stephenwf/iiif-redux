@@ -234,9 +234,10 @@ describe('schema/presentation-2/smoke-tests', () => {
           },
         },
         layers: {
-          'http://example.org/layer-1.json': [
-            { '@id': 'http://example.org/layer-1.json', '@type': 'sc:Layer' },
-          ],
+          'http://example.org/layer-1.json': {
+            '@id': 'http://example.org/layer-1.json',
+            '@type': 'sc:Layer',
+          },
         },
       },
       result: {
