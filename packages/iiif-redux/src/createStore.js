@@ -1,7 +1,10 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import reduceReducers from 'reduce-reducers';
-import {DEFAULT_STATE, reducer as resourceReducer} from './spaces/iiif-resource';
+import {
+  DEFAULT_STATE,
+  reducer as resourceReducer,
+} from './spaces/iiif-resource';
 
 import * as reducers from './reducers';
 import sagas from './sagas';

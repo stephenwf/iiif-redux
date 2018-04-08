@@ -1,3 +1,4 @@
+import 'isomorphic-fetch';
 import sagas from './sagas';
 import * as reducers from './reducers';
 import createStore from './createStore';
