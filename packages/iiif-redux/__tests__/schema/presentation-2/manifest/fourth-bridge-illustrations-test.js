@@ -18,10 +18,8 @@ describe('Forth Bridge illustrations manifest', () => {
   };
 
   it('should match snapshot', () => {
-
     expect(entity.entities).toMatchSnapshot();
-
-  })
+  });
 
   it('should have a label', () => {
     expect(currentManifest.getLabel(state)).toEqual([
@@ -102,7 +100,9 @@ describe('Forth Bridge illustrations manifest', () => {
   });
 
   it('should get current sequence', () => {
-    expect(currentSequence.getCurrentSequence(state).label).toEqual('default');
+    expect(currentSequence.getCurrentSequence(state).label).toEqual([
+      { '@language': 'en', '@value': 'default' },
+    ]);
   });
 
   it('should get start canvas id', () => {
@@ -112,7 +112,9 @@ describe('Forth Bridge illustrations manifest', () => {
   });
 
   it('should get start canvas id', () => {
-    expect(currentSequence.getStartCanvas(state).label).toEqual('3');
+    expect(currentSequence.getStartCanvas(state).label).toEqual([
+      { '@language': 'en', '@value': '3' },
+    ]);
   });
 
   it('should return see also link', () => {
@@ -169,7 +171,9 @@ describe('Forth Bridge illustrations manifest', () => {
   });
 
   it('should get full ranges', () => {
-    expect(currentManifest.getRanges(state).map(range => range.label)).toEqual([
+    expect(
+      currentManifest.getRanges(state).map(range => range.label[0]['@value'])
+    ).toEqual([
       'Imaginative depiction of the completed Forth Rail Bridge',
       'No. 2 - Fife S.W. skewback & tubes in  construction, 7 Sept. 1886',
       'No. 3 - Superstructure, Fife, 15 Sept. 1886',

@@ -17,20 +17,32 @@ describe('api/current-collection/descriptive', () => {
       'http://iiif.com/collection-1.json': {
         '@id': 'http://iiif.com/collection-1.json',
         '@type': 'sc:Collection',
-        label: 'Test collection label',
+        label: [{ '@value': 'Test collection label', '@language': 'en' }],
         viewingDirection: 'top-to-bottom',
         viewingHint: 'individuals',
         navDate: '1856-01-01T00:00:00Z',
-        description: 'Test collection <b>description</b>',
+        description: [
+          { '@value': 'Test collection <b>description</b>', '@language': 'en' },
+        ],
         metadata: [
           {
-            label: 'test metadata label',
-            value: '<script>test</script> metadata value',
+            label: [{ '@value': 'test metadata label', '@language': 'en' }],
+            value: [
+              {
+                '@value': 'test metadata value',
+                '@language': 'en',
+              },
+            ],
           },
         ],
         logo: 'http://example.org/logos/institution1.jpg',
         license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
-        attribution: 'Some <b>attribution</b> for test collection',
+        attribution: [
+          {
+            '@value': 'Some <b>attribution</b> for test collection',
+            '@language': 'en',
+          },
+        ],
         thumbnail:
           'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
       },

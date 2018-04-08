@@ -45,16 +45,24 @@ describe('Wellcome Genre: Boxes collection', () => {
     ]);
     const members = currentCollection.getMembers(state);
     expect(members.length).toEqual(5);
-    expect(members[0].label).toEqual(
-      'Bio-Light :the 3-day detox diet : lose weight, look good, feel great'
-    );
+    expect(members[0].label).toEqual([
+      {
+        '@language': 'en',
+        '@value':
+          'Bio-Light :the 3-day detox diet : lose weight, look good, feel great',
+      },
+    ]);
   });
 
   it('should have manifests', () => {
     const manifests = currentCollection.getManifests(state);
     expect(manifests.length).toEqual(5);
-    expect(manifests[0].label).toEqual(
-      'Bio-Light :the 3-day detox diet : lose weight, look good, feel great'
-    );
+    expect(manifests[0].label).toEqual([
+      {
+        '@language': 'en',
+        '@value':
+          'Bio-Light :the 3-day detox diet : lose weight, look good, feel great',
+      },
+    ]);
   });
 });

@@ -7,7 +7,6 @@ import * as currentManifest from '../src/api/current-manifest';
 import * as currentSequence from '../src/api/current-sequence';
 import * as currentCanvas from '../src/api/current-canvas';
 import * as descriptive from '../src/api/iiif-descriptive';
-import { getDefaultLanguage } from '../src/api/config';
 import { getImageService } from '../src/api/current-canvas';
 
 function waitForRequest(store, id) {
@@ -480,16 +479,13 @@ describe('store', () => {
     const structured = createStructuredSelector({
       label: currentManifest.getLabel,
       metadata: currentManifest.getMetadata,
-      canvasThumbnails: createSelector(
-        currentSequence.getCanvases,
-        getDefaultLanguage,
-        (canvases, lang) =>
-          canvases.map(
-            createStructuredSelector({
-              label: descriptive.getLabel(lang),
-              thumbnail: descriptive.getThumbnailId,
-            })
-          )
+      canvasThumbnails: createSelector(currentSequence.getCanvases, canvases =>
+        canvases.map(
+          createStructuredSelector({
+            label: descriptive.getLabel,
+            thumbnail: descriptive.getThumbnailId,
+          })
+        )
       ),
     });
     expect(structured(state)).toEqual({

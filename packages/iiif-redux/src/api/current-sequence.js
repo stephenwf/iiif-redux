@@ -3,7 +3,6 @@ import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
 import * as linking from './iiif-linking';
 import * as structural from './iiif-structural';
-import { getDefaultLanguage } from './config';
 import { getCurrentSequenceId } from './current';
 import {
   getAllExternalResources,
@@ -58,28 +57,18 @@ const getViewingDirection = createSelector(
  * - getLicence
  * - getThumbnail
  **************************************************/
-const getLabel = createSelector(
-  getCurrentSequence,
-  getDefaultLanguage,
-  (sequence, language) => descriptive.getLabel(language)(sequence)
-);
+const getLabel = createSelector(getCurrentSequence, descriptive.getLabel);
 
 const getDescription = createSelector(
   getCurrentSequence,
-  getDefaultLanguage,
-  (sequence, language) => descriptive.getDescription(language)(sequence)
+  descriptive.getDescription
 );
 
-const getMetadata = createSelector(
-  getCurrentSequence,
-  getDefaultLanguage,
-  (sequence, language) => descriptive.getMetadata(language)(sequence)
-);
+const getMetadata = createSelector(getCurrentSequence, descriptive.getMetadata);
 
 const getAttribution = createSelector(
   getCurrentSequence,
-  getDefaultLanguage,
-  (sequence, language) => descriptive.getAttribution(language)(sequence)
+  descriptive.getAttribution
 );
 
 const getLogo = createSelector(getCurrentSequence, descriptive.getLogo);

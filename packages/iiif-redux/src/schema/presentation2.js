@@ -20,11 +20,8 @@
 // @todo Image Service API.
 import { compose } from 'redux';
 import { schema, normalize } from 'normalizr';
-import {
-  normalizeLinkedResources,
-  preprocessLinkedEntities,
-} from '../api/iiif-linking';
 import moveStartCanvasToSequence from '../compat/moveStartCanvasToSequence';
+import preprocessLinkedEntities from '../compat/preprocessLinkedEntities';
 
 function createEntity(name, hasLinked = true) {
   const options = { idAttribute: '@id' };

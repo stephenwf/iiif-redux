@@ -77,9 +77,12 @@ describe('National Library of Scotland: Top level collection', () => {
     ]);
     const manifests = currentCollection.getManifests(state);
     expect(manifests).toHaveLength(5);
-    expect(manifests[0].label).toEqual(
-      'Photographs of the south side of Edinburgh'
-    );
+    expect(manifests[0].label).toEqual([
+      {
+        '@language': 'en',
+        '@value': 'Photographs of the south side of Edinburgh',
+      },
+    ]);
   });
 
   it('should have collections accessible on their own', () => {

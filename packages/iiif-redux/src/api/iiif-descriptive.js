@@ -1,94 +1,10 @@
-import memoize from 'lodash.memoize';
-import striptags from 'striptags';
+const getLabel = resource => resource.label;
 
-const filterHtmlTags = (
-  str,
-  allowed = ['a', 'b', 'br', 'i', 'img', 'p'],
-  replacement = ''
-) =>
-  Array.isArray(str)
-    ? str.map(s => filterHtmlTags(s, allowed, replacement))
-    : striptags(str, allowed, replacement);
+const getDescription = resource => resource.description;
 
-const normalizeSingleLanguageProperty = memoize((property, defaultLanguage) => {
-  if (!property) {
-    return null;
-  }
-  if (typeof property === 'string') {
-    return [
-      { '@language': defaultLanguage, '@value': filterHtmlTags(property) },
-    ];
-  }
-  if (Array.isArray(property)) {
-    return null; // Invalid.
-  }
-  if (property['@value']) {
-    property['@value'] = filterHtmlTags(property['@value']);
-    // presentation 2.
-    return [property];
-  } else {
-    // presentation 3.
-    return Object.keys(property).map(language => {
-      return {
-        '@language': language === '@none' ? defaultLanguage : language,
-        '@value': Array.isArray(property[language])
-          ? filterHtmlTags(property[language][0])
-          : filterHtmlTags(property[language]),
-      };
-    });
-  }
-});
+const getAttribution = resource => resource.attribution;
 
-const normalizeLanguageProperty = memoize((property, defaultLanguage) => {
-  if (!property) {
-    return [];
-  }
-  if (typeof property === 'string') {
-    return [
-      { '@language': defaultLanguage, '@value': filterHtmlTags(property) },
-    ];
-  }
-  if (Array.isArray(property)) {
-    return property
-      .map(prop => normalizeSingleLanguageProperty(prop, defaultLanguage))
-      .reduce((a, b) => a.concat(b), [])
-      .filter(e => e);
-  }
-  return normalizeSingleLanguageProperty(property, defaultLanguage);
-});
-
-// Below are fields that can be translated.
-const getLabel = defaultLanguage => resource =>
-  normalizeLanguageProperty(resource.label, defaultLanguage);
-
-const getDescription = defaultLanguage => resource =>
-  normalizeLanguageProperty(resource.description, defaultLanguage);
-
-const getAttribution = defaultLanguage => resource =>
-  normalizeLanguageProperty(resource.attribution, defaultLanguage);
-
-const getMetadata = defaultLanguage => resource => {
-  if (!Array.isArray(resource.metadata)) {
-    return [];
-  }
-  return resource.metadata
-    .map(
-      metadataItem =>
-        metadataItem.value
-          ? {
-              label: normalizeLanguageProperty(
-                metadataItem.label,
-                defaultLanguage
-              ),
-              value: normalizeLanguageProperty(
-                metadataItem.value,
-                defaultLanguage
-              ),
-            }
-          : null
-    )
-    .filter(e => e);
-};
+const getMetadata = resource => resource.metadata;
 
 // Returns ID to service.
 const getThumbnailId = resource => {
@@ -123,7 +39,4 @@ export {
   getAttribution,
   getLicense,
   getLogo,
-  filterHtmlTags,
-  normalizeLanguageProperty,
-  normalizeSingleLanguageProperty,
 };

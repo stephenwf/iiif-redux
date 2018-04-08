@@ -412,7 +412,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438561.5/annotation",
       ],
-      "label": "1",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "1",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438561.4.jpg",
       "width": 2500,
     },
@@ -423,7 +428,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438661.5/annotation",
       ],
-      "label": "10",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "10",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438661.4.jpg",
       "width": 2500,
     },
@@ -434,7 +444,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438662.5/annotation",
       ],
-      "label": "11",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "11",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438662.4.jpg",
       "width": 2500,
     },
@@ -445,7 +460,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438663.5/annotation",
       ],
-      "label": "12",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "12",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438663.4.jpg",
       "width": 2500,
     },
@@ -456,7 +476,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438664.5/annotation",
       ],
-      "label": "13",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "13",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438664.4.jpg",
       "width": 2500,
     },
@@ -467,7 +492,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438665.5/annotation",
       ],
-      "label": "14",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "14",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438665.4.jpg",
       "width": 2500,
     },
@@ -478,7 +508,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438666.5/annotation",
       ],
-      "label": "15",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "15",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438666.4.jpg",
       "width": 2500,
     },
@@ -489,7 +524,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438667.5/annotation",
       ],
-      "label": "16",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "16",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438667.4.jpg",
       "width": 2500,
     },
@@ -500,7 +540,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438668.5/annotation",
       ],
-      "label": "17",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "17",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438668.4.jpg",
       "width": 2500,
     },
@@ -511,7 +556,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438669.5/annotation",
       ],
-      "label": "18",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "18",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438669.4.jpg",
       "width": 2500,
     },
@@ -522,7 +572,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438670.5/annotation",
       ],
-      "label": "19",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "19",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438670.4.jpg",
       "width": 2500,
     },
@@ -533,7 +588,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438562.5/annotation",
       ],
-      "label": "2",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "2",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438562.4.jpg",
       "width": 2500,
     },
@@ -544,7 +604,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438671.5/annotation",
       ],
-      "label": "20",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "20",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438671.4.jpg",
       "width": 2500,
     },
@@ -555,7 +620,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438672.5/annotation",
       ],
-      "label": "21",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "21",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438672.4.jpg",
       "width": 2500,
     },
@@ -566,7 +636,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438673.5/annotation",
       ],
-      "label": "22",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "22",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438673.4.jpg",
       "width": 2500,
     },
@@ -577,7 +652,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438674.5/annotation",
       ],
-      "label": "23",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "23",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438674.4.jpg",
       "width": 2500,
     },
@@ -588,7 +668,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438675.5/annotation",
       ],
-      "label": "24",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "24",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438675.4.jpg",
       "width": 2500,
     },
@@ -599,7 +684,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438676.5/annotation",
       ],
-      "label": "25",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "25",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438676.4.jpg",
       "width": 2500,
     },
@@ -610,7 +700,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438677.5/annotation",
       ],
-      "label": "26",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "26",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438677.4.jpg",
       "width": 2500,
     },
@@ -621,7 +716,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438678.5/annotation",
       ],
-      "label": "27",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "27",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438678.4.jpg",
       "width": 2500,
     },
@@ -632,7 +732,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438679.5/annotation",
       ],
-      "label": "28",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "28",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438679.4.jpg",
       "width": 2500,
     },
@@ -643,7 +748,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438680.5/annotation",
       ],
-      "label": "29",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "29",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438680.4.jpg",
       "width": 2500,
     },
@@ -654,7 +764,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438654.5/annotation",
       ],
-      "label": "3",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "3",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438654.4.jpg",
       "width": 2500,
     },
@@ -665,7 +780,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438681.5/annotation",
       ],
-      "label": "30",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "30",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438681.4.jpg",
       "width": 2500,
     },
@@ -676,7 +796,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438682.5/annotation",
       ],
-      "label": "31",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "31",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438682.4.jpg",
       "width": 2500,
     },
@@ -687,7 +812,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438683.5/annotation",
       ],
-      "label": "32",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "32",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438683.4.jpg",
       "width": 2500,
     },
@@ -698,7 +828,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438684.5/annotation",
       ],
-      "label": "33",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "33",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438684.4.jpg",
       "width": 2500,
     },
@@ -709,7 +844,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438685.5/annotation",
       ],
-      "label": "34",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "34",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438685.4.jpg",
       "width": 2500,
     },
@@ -720,7 +860,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438686.5/annotation",
       ],
-      "label": "35",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "35",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438686.4.jpg",
       "width": 2500,
     },
@@ -731,7 +876,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438687.5/annotation",
       ],
-      "label": "36",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "36",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438687.4.jpg",
       "width": 2500,
     },
@@ -742,7 +892,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74439048.5/annotation",
       ],
-      "label": "37",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "37",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74439048.4.jpg",
       "width": 2500,
     },
@@ -753,7 +908,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74439050.5/annotation",
       ],
-      "label": "38",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "38",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74439050.4.jpg",
       "width": 2500,
     },
@@ -764,7 +924,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74439051.5/annotation",
       ],
-      "label": "39",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "39",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74439051.4.jpg",
       "width": 2500,
     },
@@ -775,7 +940,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438655.5/annotation",
       ],
-      "label": "4",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "4",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438655.4.jpg",
       "width": 2500,
     },
@@ -786,7 +956,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74439052.5/annotation",
       ],
-      "label": "40",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "40",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74439052.4.jpg",
       "width": 2500,
     },
@@ -797,7 +972,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438656.5/annotation",
       ],
-      "label": "5",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "5",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438656.4.jpg",
       "width": 2500,
     },
@@ -808,7 +988,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438657.5/annotation",
       ],
-      "label": "6",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "6",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438657.4.jpg",
       "width": 2500,
     },
@@ -819,7 +1004,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438658.5/annotation",
       ],
-      "label": "7",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "7",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438658.4.jpg",
       "width": 2500,
     },
@@ -830,7 +1020,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438659.5/annotation",
       ],
-      "label": "8",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "8",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438659.4.jpg",
       "width": 2500,
     },
@@ -841,7 +1036,12 @@ Object {
       "images": Array [
         "https://view.nls.uk/iiif/7443/74438660.5/annotation",
       ],
-      "label": "9",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "9",
+        },
+      ],
       "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438660.4.jpg",
       "width": 2500,
     },
@@ -1506,32 +1706,83 @@ Object {
       "@context": "http://iiif.io/api/presentation/2/context.json",
       "@id": "https://view.nls.uk/manifest/7446/74464117/manifest.json",
       "@type": "sc:Manifest",
-      "attribution": "National Library of Scotland<br/>License: <a target=\\"_top\\" href=\\"http://creativecommons.org/licenses/by/4.0/\\">CC BY 4.0</a>",
-      "label": "Forth Bridge illustrations 1886-1887",
+      "attribution": Array [
+        Object {
+          "@language": "en",
+          "@value": "National Library of Scotland<br/>License: <a target=\\"_top\\" href=\\"http://creativecommons.org/licenses/by/4.0/\\">CC BY 4.0</a>",
+        },
+      ],
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Forth Bridge illustrations 1886-1887",
+        },
+      ],
       "metadata": Array [
         Object {
-          "label": "Title",
-          "value": "Forth Bridge illustrations 1886-1887",
+          "label": Array [
+            Object {
+              "@language": "en",
+              "@value": "Title",
+            },
+          ],
+          "value": Array [
+            Object {
+              "@language": "en",
+              "@value": "Forth Bridge illustrations 1886-1887",
+            },
+          ],
         },
         Object {
-          "label": "Description",
-          "value": "40 black-and-white photographs capturing the construction of the Forth Bridge by Glasgow-based Sir William Arrol & Co. Close-up and distance views of superstructure, cantilevers, lifting platforms and viaduct. Taken at weekly or fortnightly intervals from 1886-1887 by Philip Phillips, son of one of the contractors. Silver gelatin prints.",
+          "label": Array [
+            Object {
+              "@language": "en",
+              "@value": "Description",
+            },
+          ],
+          "value": Array [
+            Object {
+              "@language": "en",
+              "@value": "40 black-and-white photographs capturing the construction of the Forth Bridge by Glasgow-based Sir William Arrol & Co. Close-up and distance views of superstructure, cantilevers, lifting platforms and viaduct. Taken at weekly or fortnightly intervals from 1886-1887 by Philip Phillips, son of one of the contractors. Silver gelatin prints.",
+            },
+          ],
         },
         Object {
-          "label": "Part reference",
-          "value": "",
+          "label": Array [
+            Object {
+              "@language": "en",
+              "@value": "Shelfmark",
+            },
+          ],
+          "value": Array [
+            Object {
+              "@language": "en",
+              "@value": "RB.l.229",
+            },
+          ],
         },
         Object {
-          "label": "Shelfmark",
-          "value": "RB.l.229",
+          "label": Array [],
+          "value": Array [
+            Object {
+              "@language": "en",
+              "@value": "<a href=\\"http://digital.nls.uk/74464117\\">View in our digital gallery</a>",
+            },
+          ],
         },
         Object {
-          "label": "",
-          "value": "<a href=\\"http://digital.nls.uk/74464117\\">View in our digital gallery</a>",
-        },
-        Object {
-          "label": "Full conditions of use",
-          "value": "You have permission to make copies of this work under the <a target=\\"_top\\" href=\\"http://creativecommons.org/licenses/by/4.0/\\">Creative Commons Attribution 4.0 International Licence</a> unless otherwise stated.",
+          "label": Array [
+            Object {
+              "@language": "en",
+              "@value": "Full conditions of use",
+            },
+          ],
+          "value": Array [
+            Object {
+              "@language": "en",
+              "@value": "You have permission to make copies of this work under the <a target=\\"_top\\" href=\\"http://creativecommons.org/licenses/by/4.0/\\">Creative Commons Attribution 4.0 International Licence</a> unless otherwise stated.",
+            },
+          ],
         },
       ],
       "seeAlso": Array [
@@ -1594,7 +1845,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/1",
       ],
-      "label": "Imaginative depiction of the completed Forth Rail Bridge",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Imaginative depiction of the completed Forth Rail Bridge",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-10": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-10",
@@ -1602,7 +1858,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/10",
       ],
-      "label": "Detail of top member joint",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Detail of top member joint",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-11": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-11",
@@ -1610,7 +1871,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/11",
       ],
-      "label": "Works at Inchgarvie, showing completion of lifting platforms",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Works at Inchgarvie, showing completion of lifting platforms",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-12": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-12",
@@ -1618,7 +1884,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/12",
       ],
-      "label": "Queensferry cantilever from end of approach viaduct",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Queensferry cantilever from end of approach viaduct",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-13": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-13",
@@ -1626,7 +1897,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/13",
       ],
-      "label": "Detail of the top member",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Detail of the top member",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-14": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-14",
@@ -1634,7 +1910,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/14",
       ],
-      "label": "Queensferry cantilever at rail level",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Queensferry cantilever at rail level",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-15": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-15",
@@ -1642,7 +1923,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/15",
       ],
-      "label": "Inchgarvie cantilever as seen from the landing stage",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Inchgarvie cantilever as seen from the landing stage",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-16": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-16",
@@ -1650,7 +1936,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/16",
       ],
-      "label": "Fife cantilever from the east side",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Fife cantilever from the east side",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-17": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-17",
@@ -1658,7 +1949,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/17",
       ],
-      "label": "Fife from Village Pier (west side)",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Fife from Village Pier (west side)",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-18": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-18",
@@ -1666,7 +1962,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/18",
       ],
-      "label": "Works at Inchgarvie after first three lifts",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Works at Inchgarvie after first three lifts",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-19": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-19",
@@ -1674,7 +1975,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/19",
       ],
-      "label": "Queensferry cantilever two thirds full height",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Queensferry cantilever two thirds full height",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-2": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-2",
@@ -1682,7 +1988,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/2",
       ],
-      "label": "No. 2 - Fife S.W. skewback & tubes in  construction, 7 Sept. 1886",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "No. 2 - Fife S.W. skewback & tubes in  construction, 7 Sept. 1886",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-20": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-20",
@@ -1690,7 +2001,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/20",
       ],
-      "label": "Works at Inchgarvie from wind gauge on castle ruins",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Works at Inchgarvie from wind gauge on castle ruins",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-21": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-21",
@@ -1698,7 +2014,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/21",
       ],
-      "label": "Queensferry cantilever at full height from north end of approach viaduct",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Queensferry cantilever at full height from north end of approach viaduct",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-22": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-22",
@@ -1706,7 +2027,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/22",
       ],
-      "label": "Three cantilevers from the south shore on the occasion of Queensferry superstructure attaining its full height",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Three cantilevers from the south shore on the occasion of Queensferry superstructure attaining its full height",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-23": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-23",
@@ -1714,7 +2040,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/23",
       ],
-      "label": "Three cantilevers from the south shore on the occasion of Queensferry superstructure attaining its full height",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Three cantilevers from the south shore on the occasion of Queensferry superstructure attaining its full height",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-24": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-24",
@@ -1722,7 +2053,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/24",
       ],
-      "label": "Fife cantilever, at full height from village pier",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Fife cantilever, at full height from village pier",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-25": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-25",
@@ -1730,7 +2066,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/25",
       ],
-      "label": "General view from Port Edgar, with trees in the foreground",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "General view from Port Edgar, with trees in the foreground",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-26": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-26",
@@ -1738,7 +2079,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/26",
       ],
-      "label": "General view taken from the east end of South Queensferry",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "General view taken from the east end of South Queensferry",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-27": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-27",
@@ -1746,7 +2092,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/27",
       ],
-      "label": "General view taken from Dalmeny Park at water level",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "General view taken from Dalmeny Park at water level",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-28": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-28",
@@ -1754,7 +2105,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/28",
       ],
-      "label": "General view taken late in the evening",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "General view taken late in the evening",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-29": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-29",
@@ -1762,7 +2118,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/29",
       ],
-      "label": "Queensferry cantilever and eight spans of approach viaduct",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Queensferry cantilever and eight spans of approach viaduct",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-3": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-3",
@@ -1770,7 +2131,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/3",
       ],
-      "label": "No. 3 - Superstructure, Fife, 15 Sept. 1886",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "No. 3 - Superstructure, Fife, 15 Sept. 1886",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-30": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-30",
@@ -1778,7 +2144,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/30",
       ],
-      "label": "Inchgarvie cantilever, three-fourths full height",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Inchgarvie cantilever, three-fourths full height",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-31": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-31",
@@ -1786,7 +2157,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/31",
       ],
-      "label": "General view from North Queensferry hills depicting the three cantilevers at very nearly their full height",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "General view from North Queensferry hills depicting the three cantilevers at very nearly their full height",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-32": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-32",
@@ -1794,7 +2170,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/32",
       ],
-      "label": "Birds'-eye view of Inchgarvie and surrounding country",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Birds'-eye view of Inchgarvie and surrounding country",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-33": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-33",
@@ -1802,7 +2183,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/33",
       ],
-      "label": "Fife cantilever, showing arrangement of platforms for construction of struts and ties",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Fife cantilever, showing arrangement of platforms for construction of struts and ties",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-34": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-34",
@@ -1810,7 +2196,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/34",
       ],
-      "label": "Queensferry approach viaduct and half span of cantilever",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Queensferry approach viaduct and half span of cantilever",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-35": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-35",
@@ -1818,7 +2209,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/35",
       ],
-      "label": "General view from the high ground situated S.W. of South Queensferry",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "General view from the high ground situated S.W. of South Queensferry",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-36": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-36",
@@ -1826,7 +2222,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/36",
       ],
-      "label": "General view from back of Newhalls Inn, South Queensferry",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "General view from back of Newhalls Inn, South Queensferry",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-37": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-37",
@@ -1834,7 +2235,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/37",
       ],
-      "label": "Fife cantilever with No. 1 strut and lifting platform nearly up to rail level",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Fife cantilever with No. 1 strut and lifting platform nearly up to rail level",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-38": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-38",
@@ -1842,7 +2248,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/38",
       ],
-      "label": "Queensferry cantilever from end of Hawes Pier",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Queensferry cantilever from end of Hawes Pier",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-39": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-39",
@@ -1850,7 +2261,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/39",
       ],
-      "label": "Inchgarvie superstructure at full height",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Inchgarvie superstructure at full height",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-4": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-4",
@@ -1858,7 +2274,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/4",
       ],
-      "label": "No. 4 - Superstructure, North Side",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "No. 4 - Superstructure, North Side",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-40": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-40",
@@ -1866,7 +2287,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/40",
       ],
-      "label": "Part of Inchgarvie and Queensferry works, showing the span to be bridged",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Part of Inchgarvie and Queensferry works, showing the span to be bridged",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-5": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-5",
@@ -1874,7 +2300,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/5",
       ],
-      "label": "General views from high ground back of South Queensferry",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "General views from high ground back of South Queensferry",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-6": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-6",
@@ -1882,7 +2313,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/6",
       ],
-      "label": "General views from high ground back of South Queensferry",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "General views from high ground back of South Queensferry",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-7": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-7",
@@ -1890,7 +2326,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/7",
       ],
-      "label": "Fife superstructure from sea shore",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Fife superstructure from sea shore",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-8": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-8",
@@ -1898,7 +2339,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/8",
       ],
-      "label": "Queensferry superstructure, showing arrangement of lifting platforms",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Queensferry superstructure, showing arrangement of lifting platforms",
+        },
+      ],
     },
     "https://view.nls.uk/iiif/7446/74464117/range/r-9": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-9",
@@ -1906,7 +2352,12 @@ Object {
       "canvases": Array [
         "https://view.nls.uk/iiif/7446/74464117/canvas/9",
       ],
-      "label": "Inchgarvie superstructure, showing erection of skewbacks",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Inchgarvie superstructure, showing erection of skewbacks",
+        },
+      ],
     },
   },
   "sequences": Object {
@@ -1955,7 +2406,12 @@ Object {
         "https://view.nls.uk/iiif/7446/74464117/canvas/39",
         "https://view.nls.uk/iiif/7446/74464117/canvas/40",
       ],
-      "label": "default",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "default",
+        },
+      ],
       "startCanvas": "https://view.nls.uk/iiif/7446/74464117/canvas/3",
       "viewingHint": "individuals",
     },

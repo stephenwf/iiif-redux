@@ -17,20 +17,32 @@ describe('api/current-canvas/descriptive', () => {
       'http://iiif.com/canvas-1.json': {
         '@id': 'http://iiif.com/canvas-1.json',
         '@type': 'sc:Canvas',
-        label: 'Test canvas label',
+        label: [{ '@value': 'Test canvas label', '@language': 'en' }],
         viewingDirection: 'top-to-bottom',
         viewingHint: 'individuals',
         navDate: '1856-01-01T00:00:00Z',
-        description: 'Test canvas <b>description</b>',
+        description: [
+          { '@value': 'Test canvas <b>description</b>', '@language': 'en' },
+        ],
         metadata: [
           {
-            label: 'test metadata label',
-            value: '<script>test</script> metadata value',
+            label: [{ '@value': 'test metadata label', '@language': 'en' }],
+            value: [
+              {
+                '@value': 'test metadata value',
+                '@language': 'en',
+              },
+            ],
           },
         ],
         logo: 'http://example.org/logos/institution1.jpg',
         license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
-        attribution: 'Some <b>attribution</b> for test canvas',
+        attribution: [
+          {
+            '@value': 'Some <b>attribution</b> for test canvas',
+            '@language': 'en',
+          },
+        ],
         thumbnail:
           'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
       },
