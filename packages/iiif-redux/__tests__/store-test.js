@@ -3,7 +3,6 @@ import createStore from '../src/createStore';
 import bridges from './fixtures/bridges';
 import { iiifResourceRequest } from '../src/spaces/iiif-resource';
 import { manifest } from '../src/schema/presentation2';
-import got from 'got';
 import * as currentManifest from '../src/api/current-manifest';
 import * as currentSequence from '../src/api/current-sequence';
 import * as currentCanvas from '../src/api/current-canvas';
@@ -27,6 +26,8 @@ function waitForRequest(store, id) {
 }
 
 describe('store', () => {
+  global.fetch = require('jest-fetch-mock');
+
   it('should have default state', () => {
     const store = createStore();
     expect(store.getState()).toEqual({ dereferenced: {} });
@@ -62,8 +63,7 @@ describe('store', () => {
 
   it('should set error in state when request errors', async () => {
     const store = createStore();
-    got.get = jest.fn();
-    got.get.mockImplementation(() => Promise.reject('Excepted error found'));
+    fetch.mockRejectOnce('Excepted error found');
     store.dispatch(
       iiifResourceRequest(
         'https://view.nls.uk/manifest/7446/74464117/manifest.json',
@@ -117,12 +117,7 @@ describe('store', () => {
 
   it('should import a manifest', async () => {
     const store = createStore();
-    got.get = jest.fn();
-    got.get.mockReturnValue(
-      Promise.resolve({
-        body: JSON.parse(JSON.stringify(bridges)),
-      })
-    );
+    fetch.mockResponseOnce(JSON.stringify(bridges));
 
     const whenRequestFinishes = waitForRequest(
       store,
@@ -441,12 +436,7 @@ describe('store', () => {
         currentCanvas: 'https://view.nls.uk/iiif/7446/74464117/canvas/1',
       },
     });
-    got.get = jest.fn();
-    got.get.mockReturnValue(
-      Promise.resolve({
-        body: JSON.parse(JSON.stringify(bridges)),
-      })
-    );
+    fetch.mockResponseOnce(JSON.stringify(bridges));
 
     const whenRequestFinishes = waitForRequest(
       store,

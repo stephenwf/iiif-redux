@@ -2,9 +2,9 @@ import { createActions, handleActions } from 'redux-actions';
 import { normalize } from 'normalizr';
 import validUrl from 'valid-url';
 import { call, put, select, all, takeEvery } from 'redux-saga/effects';
-import got from 'got';
 import deepmerge from 'deepmerge';
 import update from 'immutability-helper';
+import { resource } from '../schema/presentation2';
 const IIIF_RESOURCE_REQUEST = 'IIIF_RESOURCE_REQUEST';
 const IIIF_RESOURCE_SUCCESS = 'IIIF_RESOURCE_SUCCESS';
 const IIIF_RESOURCE_ERROR = 'IIIF_RESOURCE_ERROR';
@@ -77,7 +77,7 @@ const reducer = handleActions(
 );
 
 async function requestResource(resourceId, options) {
-  return got.get(resourceId, { json: true });
+  return fetch(resourceId).then(resp => resp.json());
 }
 
 function* errorAction(type, resourceId, error) {
@@ -126,7 +126,7 @@ function* requestIiifResource({ payload }) {
 
   try {
     const response = yield call(requestResource, resourceId, options);
-    const { result, entities } = normalize(response.body, schema);
+    const { result, entities } = normalize(response, schema);
     yield call(successAction, SUCCESS, result, entities);
   } catch (err) {
     yield call(errorAction, ERROR, resourceId, err);
