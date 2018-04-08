@@ -20,6 +20,12 @@ IIIF Redux is a single source of truth for IIIF resources, split into 3 distinct
 - **IIIF Redux Viewer** - more state, actions and selectors for building a viewer experience 
 - **IIIF Redux Creator** - new set of actions for drafting and editing IIIF resources, and hook-able middleware for saving, for creating editor UIs for IIIF resources.
 
+### Planned projects
+- **IIIF Service plugins** - Community sourced set of plugins for understanding and presenting different services on IIIF resources.
+- **IIIF Graph QL** - built using the selector library, an interface to IIIF endpoints using GraphQL.
+- **IIIF Redux AV** - Redux state in the temporal dimension, with extensions focused on displaying AV content.
+- **IIIF Presentation Upgrade** - Presentation 2 to 3 converter, Presentation 2 or 3 normalization, fixing and validation. 
+
 ## Proposal
 - [Concepts](CONCEPTS.md) - Primer for the structure of the API
 - [API Proposal](src/README.md) - Proposal for how the whole API will function
