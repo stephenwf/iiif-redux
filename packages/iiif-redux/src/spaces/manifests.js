@@ -1,93 +1,24 @@
-import { createActions, handleActions } from 'redux-actions';
-import { call, put, takeEvery, all } from 'redux-saga/effects';
-import update from 'immutability-helper';
+import { put, all, takeEvery } from 'redux-saga/effects';
+import { ROUTING_SELECT_MANIFEST } from './routing';
+import { manifest } from '../schema/presentation2';
+import { iiifResourceRequest } from './iiif-resource';
 
-const MANIFESTS_REQUEST = 'MANIFESTS_REQUEST';
-const MANIFESTS_SUCCESS = 'MANIFESTS_SUCCESS';
-const MANIFESTS_FAILURE = 'MANIFESTS_FAILURE';
+const MANIFEST_REQUEST = 'MANIFEST_REQUEST';
+const MANIFEST_SUCCESS = 'MANIFEST_SUCCESS';
+const MANIFEST_ERROR = 'MANIFEST_ERROR';
 
-async function fetchManifest(manifestUrl) {
-  const manifest = await fetch(manifestUrl);
-  if (!manifest) {
-    throw Error('No manifest found');
-  }
-  return await manifest.json();
-}
-
-const { manifestRequest, manifestSuccess, manifestFailure } = createActions({
-  [MANIFESTS_REQUEST]: (manifestUrl, { startCanvas }) => ({
-    manifestUrl,
-    metaData: { startCanvas },
-  }),
-  [MANIFESTS_SUCCESS]: (manifestUrl, manifest) => ({
-    manifestUrl,
-    manifest,
-  }),
-  [MANIFESTS_FAILURE]: (manifestUrl, error) => ({ manifestUrl, error }),
-});
-
-function* fetchManifestSaga({ payload: { manifestUrl } }) {
-  try {
-    const manifest = yield call(fetchManifest, manifestUrl);
-    yield put(manifestSuccess(manifestUrl, manifest));
-  } catch (err) {
-    yield put(manifestFailure(manifestUrl, err));
-  }
+function* fetchManifest({ payload: { id } }) {
+  yield put(
+    iiifResourceRequest(
+      id,
+      [MANIFEST_REQUEST, MANIFEST_SUCCESS, MANIFEST_ERROR],
+      manifest
+    )
+  );
 }
 
 function* saga() {
-  yield all([takeEvery(MANIFESTS_REQUEST, fetchManifestSaga)]);
+  yield all([takeEvery(ROUTING_SELECT_MANIFEST, fetchManifest)]);
 }
 
-const defaultState = {
-  isPending: false,
-  currentManifest: null,
-  jsonLd: null,
-  error: false,
-  errorMessage: null,
-  currentCanvas: 0,
-};
-
-const reducer = handleActions(
-  {
-    // Requesting manifest adds its ID to state.
-    [manifestRequest]: (state, { payload: { manifestUrl, locale } }) =>
-      update(state, {
-        currentManifest: { $set: manifestUrl },
-        locale: { $set: locale },
-        isPending: { $set: true },
-      }),
-
-    // After a successful manifest request we store it.
-    [manifestSuccess]: (
-      state,
-      { payload: { manifestUrl, manifest, manifesto, locale } }
-    ) =>
-      update(state, {
-        jsonLd: { $set: manifest },
-        manifesto: { $set: manifesto },
-        locale: { $set: locale },
-        isPending: { $set: false },
-      }),
-
-    // After failure, we store error message.
-    [manifestFailure]: (state, { payload: { manifestUrl, error } }) =>
-      update(state, {
-        isPending: { $set: false },
-        error: true,
-        errorMessage: error,
-      }),
-  },
-  defaultState
-);
-
-export {
-  MANIFESTS_REQUEST,
-  MANIFESTS_SUCCESS,
-  MANIFESTS_FAILURE,
-  manifestRequest,
-  manifestSuccess,
-  manifestFailure,
-  saga,
-  reducer,
-};
+export { MANIFEST_SUCCESS, MANIFEST_REQUEST, MANIFEST_ERROR, saga };

@@ -1,11 +1,5 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import reduceReducers from 'reduce-reducers';
-import {
-  DEFAULT_STATE,
-  reducer as resourceReducer,
-} from './spaces/iiif-resource';
-
 import * as reducers from './reducers';
 import sagas from './sagas';
 
@@ -20,15 +14,8 @@ export default function createCustomStore(
   const sagaMiddleware = createSagaMiddleware();
 
   const store = createStore(
-    // Object.keys(reducers).length !== 0 ||
-    // Object.keys(customReducers).length !== 0
-    //   ? reduceReducers(
-    //       resourceReducer,
-    //       combineReducers({ ...reducers, ...customReducers })
-    //     )
-    //   : resourceReducer,
-    resourceReducer,
-    { ...DEFAULT_STATE, ...defaultState },
+    combineReducers(reducers),
+    defaultState,
     composeEnhancers(applyMiddleware(sagaMiddleware, ...extraMiddleware))
   );
 

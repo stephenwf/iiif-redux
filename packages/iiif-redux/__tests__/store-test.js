@@ -29,7 +29,31 @@ describe('store', () => {
 
   it('should have default state', () => {
     const store = createStore();
-    expect(store.getState()).toEqual({ dereferenced: {} });
+    expect(store.getState()).toEqual({
+      dereferenced: {},
+      resources: {
+        annotation: {},
+        annotationList: {},
+        canvas: {},
+        collection: {},
+        imageResource: {},
+        layer: {},
+        manifest: {},
+        range: {},
+        sequence: {},
+      },
+      routing: {
+        currentAnnotation: null,
+        currentAnnotationList: null,
+        currentCanvas: null,
+        currentCollection: null,
+        currentImageResource: null,
+        currentLayer: null,
+        currentManifest: null,
+        currentRange: null,
+        currentSequence: null,
+      },
+    });
   });
 
   it('should throw an error if actions are not passed through', () => {
@@ -56,6 +80,28 @@ describe('store', () => {
             'https://view.nls.uk/manifest/7446/74464117/manifest.json',
           ttl: 600,
         },
+      },
+      resources: {
+        annotation: {},
+        annotationList: {},
+        canvas: {},
+        collection: {},
+        imageResource: {},
+        layer: {},
+        manifest: {},
+        range: {},
+        sequence: {},
+      },
+      routing: {
+        currentAnnotation: null,
+        currentAnnotationList: null,
+        currentCanvas: null,
+        currentCollection: null,
+        currentImageResource: null,
+        currentLayer: null,
+        currentManifest: null,
+        currentRange: null,
+        currentSequence: null,
       },
     });
   });
@@ -86,6 +132,28 @@ describe('store', () => {
           ttl: 600,
         },
       },
+      resources: {
+        annotation: {},
+        annotationList: {},
+        canvas: {},
+        collection: {},
+        imageResource: {},
+        layer: {},
+        manifest: {},
+        range: {},
+        sequence: {},
+      },
+      routing: {
+        currentAnnotation: null,
+        currentAnnotationList: null,
+        currentCanvas: null,
+        currentCollection: null,
+        currentImageResource: null,
+        currentLayer: null,
+        currentManifest: null,
+        currentRange: null,
+        currentSequence: null,
+      },
     });
   });
 
@@ -110,6 +178,28 @@ describe('store', () => {
           resourceId: 'not-real-url',
           ttl: 600,
         },
+      },
+      resources: {
+        annotation: {},
+        annotationList: {},
+        canvas: {},
+        collection: {},
+        imageResource: {},
+        layer: {},
+        manifest: {},
+        range: {},
+        sequence: {},
+      },
+      routing: {
+        currentAnnotation: null,
+        currentAnnotationList: null,
+        currentCanvas: null,
+        currentCollection: null,
+        currentImageResource: null,
+        currentLayer: null,
+        currentManifest: null,
+        currentRange: null,
+        currentSequence: null,
       },
     });
   });
@@ -147,6 +237,15 @@ describe('store', () => {
 
     const secondState = store.getState();
     expect(Object.keys(secondState.resources)).toEqual([
+      'collection',
+      'sequence',
+      'manifest',
+      'canvas',
+      'annotationList',
+      'annotation',
+      'range',
+      'layer',
+      'imageResource',
       'services',
       'imageResources',
       'annotations',
@@ -423,9 +522,6 @@ describe('store', () => {
 
   it('should create state that works with selectors', async () => {
     const store = createStore({}, [], [], {
-      config: {
-        defaultLanguage: 'en',
-      },
       routing: {
         currentManifest:
           'https://view.nls.uk/manifest/7446/74464117/manifest.json',
