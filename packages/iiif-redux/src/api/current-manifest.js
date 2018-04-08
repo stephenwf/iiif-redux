@@ -2,7 +2,6 @@ import { createSelector } from 'reselect';
 import validUrl from 'valid-url';
 import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
-import { getDefaultLanguage } from './config';
 import { getCurrentManifestId } from './current';
 import {
   getAllAnnotationLists,
@@ -16,7 +15,6 @@ import {
 } from './all';
 import * as linking from './iiif-linking';
 import * as structural from './iiif-structural';
-import { getMemberIds } from './current-collection';
 
 const getCurrentManifest = createSelector(
   getCurrentManifestId,
@@ -67,30 +65,19 @@ const getNavDate = createSelector(getCurrentManifest, technical.getNavDate);
  * - getLicence
  * - getThumbnail
  **************************************************/
-const getLabel = createSelector(
-  getCurrentManifest,
-  getDefaultLanguage,
-  (manifest, language) => descriptive.getLabel(language)(manifest)
-);
+const getLabel = createSelector(getCurrentManifest, descriptive.getLabel);
 
 const getDescription = createSelector(
   getCurrentManifest,
-  getDefaultLanguage,
-  (manifest, language) => descriptive.getDescription(language)(manifest)
+  descriptive.getDescription
 );
 
-const getMetadata = createSelector(
-  getCurrentManifest,
-  getDefaultLanguage,
-  (manifest, language) => descriptive.getMetadata(language)(manifest)
-);
+const getMetadata = createSelector(getCurrentManifest, descriptive.getMetadata);
 
 const getAttribution = createSelector(
   getCurrentManifest,
-  getDefaultLanguage,
-  (manifest, language) => descriptive.getAttribution(language)(manifest)
+  descriptive.getAttribution
 );
-
 const getLogo = createSelector(getCurrentManifest, descriptive.getLogo);
 
 const getLicense = createSelector(getCurrentManifest, descriptive.getLicense);
@@ -119,12 +106,7 @@ const getSeeAlso = createSelector(
   getSeeAlsoIds,
   getAllExternalResources,
   (seeAlsoIds, allExternalResources) =>
-    seeAlsoIds.map(
-      seeAlsoId =>
-        allExternalResources[seeAlsoId] || {
-          '@id': seeAlsoId,
-        }
-    )
+    seeAlsoIds.map(seeAlsoId => allExternalResources[seeAlsoId])
 );
 
 const getServiceIds = createSelector(getCurrentManifest, linking.getService);

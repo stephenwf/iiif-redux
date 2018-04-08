@@ -5,7 +5,8 @@ import {
   getAttribution,
   getLicense,
   getLogo,
-  getThumbnailId, getThumbnail,
+  getThumbnailId,
+  getThumbnail,
 } from '../../../src/api/current-manifest';
 
 describe('api/current-manifest/descriptive', () => {
@@ -16,12 +17,25 @@ describe('api/current-manifest/descriptive', () => {
       'http://iiif.com/manifest-1.json': {
         '@id': 'http://iiif.com/manifest-1.json',
         '@type': 'sc:Manifest',
-        label: 'Manifest label 1',
-        description: 'Manifest description',
+        label: [{ '@value': 'Manifest label 1', '@language': 'en' }],
+        description: [{ '@value': 'Manifest description', '@language': 'en' }],
         metadata: [
-          { label: 'test metadata label', value: 'test metadata value' },
+          {
+            label: [{ '@value': 'test metadata label', '@language': 'en' }],
+            value: [
+              {
+                '@value': 'test metadata value',
+                '@language': 'en',
+              },
+            ],
+          },
         ],
-        attribution: 'Some <b>attribution</b> for test manifest',
+        attribution: [
+          {
+            '@value': 'Some <b>attribution</b> for test manifest',
+            '@language': 'en',
+          },
+        ],
         license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
         logo: 'http://example.org/logos/institution1.jpg',
         thumbnail:

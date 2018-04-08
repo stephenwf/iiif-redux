@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as currentCollection from 'iiif-redux/es/api/current-collection';
 import { createStructuredSelector } from 'reselect';
-import { Row, Col, Card, Button, Layout } from 'antd';
+import { Row, Col, Card, Layout } from 'antd';
 const { Header, Content, Footer } = Layout;
 
 const Locale = str => {
@@ -22,14 +22,19 @@ class Collection extends Component {
           <Row gutter={16} style={{ padding: 15 }}>
             {this.props.collections.map((manifest, key) => (
               <Col span={8} key={key}>
-                <Card style={{ margin: 15 }} title={manifest.label}>
+                <Card
+                  style={{ margin: 15 }}
+                  title={<Locale>{manifest.label}</Locale>}
+                >
                   {manifest['@id']}
                 </Card>
               </Col>
             ))}
           </Row>
         </Content>
-        <Footer>{this.props.attribution}</Footer>
+        <Footer>
+          <Locale>{this.props.attribution}</Locale>
+        </Footer>
       </Layout>
     );
   }

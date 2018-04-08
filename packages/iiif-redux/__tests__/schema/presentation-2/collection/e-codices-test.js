@@ -43,7 +43,9 @@ describe('e-codices collection', () => {
   it('should be able to load first collection', () => {
     const collections = currentCollection.getCollections(state);
 
-    expect(collections[0].label).toEqual('[sine loco], codices restituti');
+    expect(collections[0].label).toEqual([
+      { '@language': 'en', '@value': '[sine loco], codices restituti' },
+    ]);
   });
 
   it('should be able to load collections from members property', () => {

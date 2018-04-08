@@ -17,12 +17,25 @@ describe('api/current-sequence/descriptive', () => {
       'http://iiif.com/sequence-1.json': {
         '@id': 'http://iiif.com/sequence-1.json',
         '@type': 'sc:Sequence',
-        label: 'Sequence label 1',
-        description: 'Sequence description',
+        label: [{ '@value': 'Sequence label 1', '@language': 'en' }],
+        description: [{ '@value': 'Sequence description', '@language': 'en' }],
         metadata: [
-          { label: 'test metadata label', value: 'test metadata value' },
+          {
+            label: [{ '@value': 'test metadata label', '@language': 'en' }],
+            value: [
+              {
+                '@value': 'test metadata value',
+                '@language': 'en',
+              },
+            ],
+          },
         ],
-        attribution: 'Some <b>attribution</b> for test sequence',
+        attribution: [
+          {
+            '@value': 'Some <b>attribution</b> for test sequence',
+            '@language': 'en',
+          },
+        ],
         license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
         logo: 'http://example.org/logos/institution1.jpg',
         thumbnail:

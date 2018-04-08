@@ -14,7 +14,6 @@ import {
   getAllLayers,
   getAllServices,
 } from './all';
-import { getDefaultLanguage } from './config';
 import { isImageService } from '../constants/services';
 
 const getCurrentCanvas = createSelector(
@@ -62,28 +61,18 @@ const getWidth = createSelector(getCurrentCanvas, technical.getWidth);
  * - getLicense
  * - getLogo
  **************************************************/
-const getLabel = createSelector(
-  getCurrentCanvas,
-  getDefaultLanguage,
-  (canvas, language) => descriptive.getLabel(language)(canvas)
-);
+const getLabel = createSelector(getCurrentCanvas, descriptive.getLabel);
 
 const getDescription = createSelector(
   getCurrentCanvas,
-  getDefaultLanguage,
-  (canvas, language) => descriptive.getDescription(language)(canvas)
+  descriptive.getDescription
 );
 
-const getMetadata = createSelector(
-  getCurrentCanvas,
-  getDefaultLanguage,
-  (canvas, language) => descriptive.getMetadata(language)(canvas)
-);
+const getMetadata = createSelector(getCurrentCanvas, descriptive.getMetadata);
 
 const getAttribution = createSelector(
   getCurrentCanvas,
-  getDefaultLanguage,
-  (canvas, language) => descriptive.getAttribution(language)(canvas)
+  descriptive.getAttribution
 );
 
 const getLogo = createSelector(getCurrentCanvas, descriptive.getLogo);

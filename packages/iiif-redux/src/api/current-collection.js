@@ -1,6 +1,5 @@
 import { createSelector } from 'reselect';
 import validUrl from 'valid-url';
-import { getDefaultLanguage } from './config';
 import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
 import * as linking from './iiif-linking';
@@ -57,28 +56,21 @@ const getNavDate = createSelector(getCurrentCollection, technical.getNavDate);
  * - getLicence
  * - getThumbnail
  **************************************************/
-const getLabel = createSelector(
-  getCurrentCollection,
-  getDefaultLanguage,
-  (collection, language) => descriptive.getLabel(language)(collection)
-);
+const getLabel = createSelector(getCurrentCollection, descriptive.getLabel);
 
 const getDescription = createSelector(
   getCurrentCollection,
-  getDefaultLanguage,
-  (collection, language) => descriptive.getDescription(language)(collection)
+  descriptive.getDescription
 );
 
 const getMetadata = createSelector(
   getCurrentCollection,
-  getDefaultLanguage,
-  (collection, language) => descriptive.getMetadata(language)(collection)
+  descriptive.getMetadata
 );
 
 const getAttribution = createSelector(
   getCurrentCollection,
-  getDefaultLanguage,
-  (collection, language) => descriptive.getAttribution(language)(collection)
+  descriptive.getAttribution
 );
 
 const getLogo = createSelector(getCurrentCollection, descriptive.getLogo);
