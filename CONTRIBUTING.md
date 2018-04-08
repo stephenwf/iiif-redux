@@ -1,3 +1,7 @@
+# Contributing
+This project is currently firmly in the planning and prototyping stages at the moment. Any contributions in the
+form of pull requests or issues for discussion are welcome.
+
 ## Prerequisites
 
 [Node.js](http://nodejs.org/) >= v4 must be installed.
