@@ -16,9 +16,9 @@ ___
 
 ## What is IIIF Redux?
 IIIF Redux is a single source of truth for IIIF resources, split into 3 distinct packages:
-- IIIF Redux - the "to the spec" implementation, storing and normalizing collections, manifests and canvases.
-- IIIF Redux Viewer - more state, actions and selectors for building a viewer experience 
-- IIIF Redux Creator - new set of actions for drafting and editing IIIF resources, and hook-able middleware for saving, for creating editor UIs for IIIF resources.
+- **IIIF Redux** - the "to the spec" implementation, storing and normalizing collections, manifests and canvases.
+- **IIIF Redux Viewer** - more state, actions and selectors for building a viewer experience 
+- **IIIF Redux Creator** - new set of actions for drafting and editing IIIF resources, and hook-able middleware for saving, for creating editor UIs for IIIF resources.
 
 ## Proposal
 - [Concepts](CONCEPTS.md) - Primer for the structure of the API
