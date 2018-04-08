@@ -1,7 +1,7 @@
 # List of issues + tasks
 
 * [x] Normalize strings into locales on the way in instead of the way out
-* [ ] Move entities in state to their own namespace
+* [x] Move entities in state to their own namespace
 * [ ] Strategy for resources you can dereference
 * [ ] Add routing reducer + actions
 * [ ] Add Collection space with specific actions
