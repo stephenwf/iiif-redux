@@ -304,4 +304,6 @@ export {
   getMembers,
   getOtherContentIds,
   getOtherContent,
+  // Other
+  getCurrentCollection,
 };
