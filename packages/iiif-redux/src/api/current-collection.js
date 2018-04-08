@@ -5,7 +5,7 @@ import * as descriptive from './iiif-descriptive';
 import * as linking from './iiif-linking';
 import * as paging from './iiif-paging';
 import * as structural from './iiif-structural';
-import { getCurrentCollectionId } from './current';
+import { getCurrentCollection } from './current';
 import {
   getAllCollections,
   getAllLayers,
@@ -15,12 +15,6 @@ import {
   getAllAnnotationLists,
   getAllImages,
 } from './all';
-
-const getCurrentCollection = createSelector(
-  getCurrentCollectionId,
-  getAllCollections,
-  (id, collections) => collections[id]
-);
 
 /**************************************************
  * Technical properties

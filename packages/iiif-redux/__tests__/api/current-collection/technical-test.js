@@ -9,10 +9,12 @@ describe('api/current-collection/descriptive', () => {
   const createStateWithCustomProperties = props => ({
     routing: { currentCollection: 'http://iiif.com/collection-1.json' },
     config: { defaultLanguage: 'en' },
-    collections: {
-      'http://iiif.com/collection-1.json': {
-        '@id': 'http://iiif.com/collection-1.json',
-        ...props,
+    resources: {
+      collections: {
+        'http://iiif.com/collection-1.json': {
+          '@id': 'http://iiif.com/collection-1.json',
+          ...props,
+        },
       },
     },
   });
@@ -20,14 +22,16 @@ describe('api/current-collection/descriptive', () => {
   const state1 = {
     routing: { currentCollection: 'http://iiif.com/collection-1.json' },
     config: { defaultLanguage: 'en' },
-    collections: {
-      'http://iiif.com/collection-1.json': {
-        '@id': 'http://iiif.com/collection-1.json',
-        '@type': 'sc:Collection',
-        label: 'Test collection label',
-        viewingDirection: 'top-to-bottom',
-        viewingHint: 'individuals',
-        navDate: '1856-01-01T00:00:00Z',
+    resources: {
+      collections: {
+        'http://iiif.com/collection-1.json': {
+          '@id': 'http://iiif.com/collection-1.json',
+          '@type': 'sc:Collection',
+          label: 'Test collection label',
+          viewingDirection: 'top-to-bottom',
+          viewingHint: 'individuals',
+          navDate: '1856-01-01T00:00:00Z',
+        },
       },
     },
   };

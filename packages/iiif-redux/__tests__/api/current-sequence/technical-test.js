@@ -9,22 +9,26 @@ describe('api/current-sequence/technical', () => {
   const createStateWithCustomProperties = props => ({
     routing: { currentSequence: 'http://iiif.com/sequence-1.json' },
     config: { defaultLanguage: 'en' },
-    sequences: {
-      'http://iiif.com/sequence-1.json': {
-        '@id': 'http://iiif.com/sequence-1.json',
-        ...props,
+    resources: {
+      sequences: {
+        'http://iiif.com/sequence-1.json': {
+          '@id': 'http://iiif.com/sequence-1.json',
+          ...props,
+        },
       },
     },
   });
   const state = {
     routing: { currentSequence: 'http://iiif.com/sequence-1.json' },
     config: { defaultLanguage: 'en' },
-    sequences: {
-      'http://iiif.com/sequence-1.json': {
-        '@id': 'http://iiif.com/sequence-1.json',
-        '@type': 'sc:Sequence',
-        viewingDirection: 'top-to-bottom',
-        viewingHint: 'individuals',
+    resources: {
+      sequences: {
+        'http://iiif.com/sequence-1.json': {
+          '@id': 'http://iiif.com/sequence-1.json',
+          '@type': 'sc:Sequence',
+          viewingDirection: 'top-to-bottom',
+          viewingHint: 'individuals',
+        },
       },
     },
   };

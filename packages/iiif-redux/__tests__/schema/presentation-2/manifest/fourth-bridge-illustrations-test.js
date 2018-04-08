@@ -6,7 +6,9 @@ import * as currentSequence from '../../../../src/api/current-sequence';
 describe('Forth Bridge illustrations manifest', () => {
   const entity = normalize(bridgesFixture);
   const state = {
-    ...entity.entities,
+    resources: {
+      ...entity.entities,
+    },
     config: {
       defaultLanguage: 'en',
     },

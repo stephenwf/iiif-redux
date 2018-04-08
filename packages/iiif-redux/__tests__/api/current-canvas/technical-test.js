@@ -10,10 +10,12 @@ describe('api/current-canvas/technical', () => {
   const createStateWithCustomProperties = props => ({
     routing: { currentCanvas: 'http://iiif.com/canvas-1.json' },
     config: { defaultLanguage: 'en' },
-    canvases: {
-      'http://iiif.com/canvas-1.json': {
-        '@id': 'http://iiif.com/canvas-1.json',
-        ...props,
+    resources: {
+      canvases: {
+        'http://iiif.com/canvas-1.json': {
+          '@id': 'http://iiif.com/canvas-1.json',
+          ...props,
+        },
       },
     },
   });
@@ -21,16 +23,18 @@ describe('api/current-canvas/technical', () => {
   const state = {
     routing: { currentCanvas: 'http://iiif.com/canvas-1.json' },
     config: { defaultLanguage: 'en' },
-    canvases: {
-      'http://iiif.com/canvas-1.json': {
-        '@id': 'http://iiif.com/canvas-1.json',
-        '@type': 'sc:Canvas',
-        label: 'Test canvas label',
-        viewingDirection: 'top-to-bottom',
-        viewingHint: 'non-paged',
-        navDate: '1856-01-01T00:00:00Z',
-        height: 2000,
-        width: 3000,
+    resources: {
+      canvases: {
+        'http://iiif.com/canvas-1.json': {
+          '@id': 'http://iiif.com/canvas-1.json',
+          '@type': 'sc:Canvas',
+          label: 'Test canvas label',
+          viewingDirection: 'top-to-bottom',
+          viewingHint: 'non-paged',
+          navDate: '1856-01-01T00:00:00Z',
+          height: 2000,
+          width: 3000,
+        },
       },
     },
   };

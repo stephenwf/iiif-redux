@@ -4,23 +4,16 @@ import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
 import * as linking from './iiif-linking';
 import * as structural from './iiif-structural';
-import { getCurrentCanvasId } from './current';
+import { getCurrentCanvas } from './current';
 import {
   getAllAnnotationLists,
   getAllAnnotations,
-  getAllCanvases,
   getAllExternalResources,
   getAllImages,
   getAllLayers,
   getAllServices,
 } from './all';
 import { isImageService } from '../constants/services';
-
-const getCurrentCanvas = createSelector(
-  getCurrentCanvasId,
-  getAllCanvases,
-  (currentCanvasId, allCanvases) => allCanvases[currentCanvasId]
-);
 
 /**************************************************
  * Technical properties

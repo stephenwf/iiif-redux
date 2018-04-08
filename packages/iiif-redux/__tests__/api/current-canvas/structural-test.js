@@ -9,64 +9,72 @@ describe('api/current-canvas/structural', () => {
   const state = {
     routing: { currentCanvas: 'http://iiif.com/canvas-1.json' },
     config: { defaultLanguage: 'en' },
-    canvases: {
-      'http://iiif.com/canvas-1.json': {
-        '@type': 'sc:Canvas',
-        images: [
-          'http://iiif.com/image-1.json',
-          'http://iiif.com/image-2.json',
-          'http://iiif.com/image-3.json',
-        ],
-        otherContent: [
-          { id: 'http://iiif.com/external-1.json', schema: 'externalResource' },
-          {
-            id: 'http://iiif.com/annotation-list-1.json',
-            schema: 'annotationList',
-          },
-          { id: 'http://iiif.com/external-2.json', schema: 'externalResource' },
-          {
-            id: 'http://iiif.com/annotation-list-2.json',
-            schema: 'annotationList',
-          },
-          {
-            id: 'http://iiif.com/external-3.json',
-            schema: 'externalResource',
-          },
-        ],
+    resources: {
+      canvases: {
+        'http://iiif.com/canvas-1.json': {
+          '@type': 'sc:Canvas',
+          images: [
+            'http://iiif.com/image-1.json',
+            'http://iiif.com/image-2.json',
+            'http://iiif.com/image-3.json',
+          ],
+          otherContent: [
+            {
+              id: 'http://iiif.com/external-1.json',
+              schema: 'externalResource',
+            },
+            {
+              id: 'http://iiif.com/annotation-list-1.json',
+              schema: 'annotationList',
+            },
+            {
+              id: 'http://iiif.com/external-2.json',
+              schema: 'externalResource',
+            },
+            {
+              id: 'http://iiif.com/annotation-list-2.json',
+              schema: 'annotationList',
+            },
+            {
+              id: 'http://iiif.com/external-3.json',
+              schema: 'externalResource',
+            },
+          ],
+        },
       },
-    },
-    annotations: {
-      'http://iiif.com/image-1.json': {
-        '@id': 'http://iiif.com/image-1.json',
-        label: 'Image 1',
+      annotations: {
+        'http://iiif.com/image-1.json': {
+          '@id': 'http://iiif.com/image-1.json',
+          label: 'Image 1',
+        },
+        'http://iiif.com/image-2.json': {
+          '@id': 'http://iiif.com/image-2.json',
+          label: 'Image 2',
+        },
+        'http://iiif.com/image-3.json': {
+          '@id': 'http://iiif.com/image-3.json',
+          label: 'Image 3',
+        },
       },
-      'http://iiif.com/image-2.json': {
-        '@id': 'http://iiif.com/image-2.json',
-        label: 'Image 2',
+      annotationLists: {
+        'http://iiif.com/annotation-list-1.json': {
+          '@id': 'http://iiif.com/annotation-list-1.json',
+          label: 'Annotation List 1',
+        },
+        'http://iiif.com/annotation-list-2.json': {
+          '@id': 'http://iiif.com/annotation-list-2.json',
+          label: 'Annotation List 2',
+        },
       },
-      'http://iiif.com/image-3.json': {
-        '@id': 'http://iiif.com/image-3.json',
-        label: 'Image 3',
-      },
-    },
-    annotationLists: {
-      'http://iiif.com/annotation-list-1.json': {
-        '@id': 'http://iiif.com/annotation-list-1.json',
-        label: 'Annotation List 1',
-      },
-      'http://iiif.com/annotation-list-2.json': {
-        '@id': 'http://iiif.com/annotation-list-2.json',
-        label: 'Annotation List 2',
-      },
-    },
-    externalResources: {
-      'http://iiif.com/external-1.json': {
-        '@id': 'http://iiif.com/external-1.json',
-        label: 'External 1',
-      },
-      'http://iiif.com/external-2.json': {
-        '@id': 'http://iiif.com/external-2.json',
-        label: 'External 2',
+      externalResources: {
+        'http://iiif.com/external-1.json': {
+          '@id': 'http://iiif.com/external-1.json',
+          label: 'External 1',
+        },
+        'http://iiif.com/external-2.json': {
+          '@id': 'http://iiif.com/external-2.json',
+          label: 'External 2',
+        },
       },
     },
   };

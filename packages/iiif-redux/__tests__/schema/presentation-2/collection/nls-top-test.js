@@ -6,7 +6,9 @@ import * as currentCollection from '../../../../src/api/current-collection';
 describe('National Library of Scotland: Top level collection', () => {
   const entity = normalize(nlsTop, collection);
   const state = {
-    ...entity.entities,
+    resources: {
+      ...entity.entities,
+    },
     config: {
       defaultLanguage: 'en',
     },

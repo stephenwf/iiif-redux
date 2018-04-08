@@ -146,8 +146,7 @@ describe('store', () => {
     await whenRequestFinishes;
 
     const secondState = store.getState();
-    expect(Object.keys(secondState)).toEqual([
-      'dereferenced',
+    expect(Object.keys(secondState.resources)).toEqual([
       'services',
       'imageResources',
       'annotations',
@@ -157,7 +156,7 @@ describe('store', () => {
       'externalResources',
       'manifests',
     ]);
-    expect(Object.keys(secondState.services)).toEqual([
+    expect(Object.keys(secondState.resources.services)).toEqual([
       'https://view.nls.uk/iiif/7443/74438561.5',
       'https://view.nls.uk/iiif/7443/74438562.5',
       'https://view.nls.uk/iiif/7443/74438654.5',
@@ -199,10 +198,10 @@ describe('store', () => {
       'https://view.nls.uk/iiif/7443/74439051.5',
       'https://view.nls.uk/iiif/7443/74439052.5',
     ]);
-    expect(Object.keys(secondState.manifests)).toEqual([
+    expect(Object.keys(secondState.resources.manifests)).toEqual([
       'https://view.nls.uk/manifest/7446/74464117/manifest.json',
     ]);
-    expect(Object.keys(secondState.canvases)).toEqual([
+    expect(Object.keys(secondState.resources.canvases)).toEqual([
       'https://view.nls.uk/iiif/7446/74464117/canvas/1',
       'https://view.nls.uk/iiif/7446/74464117/canvas/2',
       'https://view.nls.uk/iiif/7446/74464117/canvas/3',
@@ -244,7 +243,7 @@ describe('store', () => {
       'https://view.nls.uk/iiif/7446/74464117/canvas/39',
       'https://view.nls.uk/iiif/7446/74464117/canvas/40',
     ]);
-    expect(Object.keys(secondState.annotations)).toEqual([
+    expect(Object.keys(secondState.resources.annotations)).toEqual([
       'https://view.nls.uk/iiif/7443/74438561.5/annotation',
       'https://view.nls.uk/iiif/7443/74438562.5/annotation',
       'https://view.nls.uk/iiif/7443/74438654.5/annotation',
@@ -286,7 +285,7 @@ describe('store', () => {
       'https://view.nls.uk/iiif/7443/74439051.5/annotation',
       'https://view.nls.uk/iiif/7443/74439052.5/annotation',
     ]);
-    expect(Object.keys(secondState.imageResources)).toEqual([
+    expect(Object.keys(secondState.resources.imageResources)).toEqual([
       'https://view.nls.uk/iiif/7443/74438561.5/full/full/0/native.jpg',
       'https://deriv.nls.uk/dcn4/7443/74438561.4.jpg',
       'https://view.nls.uk/iiif/7443/74438562.5/full/full/0/native.jpg',
@@ -369,10 +368,10 @@ describe('store', () => {
       'https://deriv.nls.uk/dcn4/7443/74439052.4.jpg',
     ]);
 
-    expect(Object.keys(secondState.sequences)).toEqual([
+    expect(Object.keys(secondState.resources.sequences)).toEqual([
       'https://view.nls.uk/manifest/7446/74464117/canvas/default',
     ]);
-    expect(Object.keys(secondState.ranges)).toEqual([
+    expect(Object.keys(secondState.resources.ranges)).toEqual([
       'https://view.nls.uk/iiif/7446/74464117/range/r-1',
       'https://view.nls.uk/iiif/7446/74464117/range/r-2',
       'https://view.nls.uk/iiif/7446/74464117/range/r-3',
@@ -415,7 +414,7 @@ describe('store', () => {
       'https://view.nls.uk/iiif/7446/74464117/range/r-40',
     ]);
 
-    expect(Object.keys(secondState.externalResources)).toEqual([
+    expect(Object.keys(secondState.resources.externalResources)).toEqual([
       'http://seealso.com/page-1.json',
       'http://seealso.com/page-2.json',
       'http://seealso.com/page-3.json',

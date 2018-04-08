@@ -14,50 +14,52 @@ describe('api/current-canvas/linking', () => {
   const state = {
     routing: { currentCanvas: 'http://iiif.com/canvas-1.json' },
     config: { defaultLanguage: 'en' },
-    canvases: {
-      'http://iiif.com/canvas-1.json': {
-        '@type': 'sc:Canvas',
-        seeAlso: [
-          'http://iiif.com/extern-1.json',
-          'http://iiif.com/extern-5.json',
-        ],
-        service: ['http://iiif.com/service-1.json'],
-        related: ['http://iiif.com/extern-2.json'],
-        rendering: ['http://iiif.com/extern-3.json'],
-        within: [
-          'http://iiif.com/layer-1.json',
-          'http://iiif.com/extern-4.json',
-        ],
+    resources: {
+      canvases: {
+        'http://iiif.com/canvas-1.json': {
+          '@type': 'sc:Canvas',
+          seeAlso: [
+            'http://iiif.com/extern-1.json',
+            'http://iiif.com/extern-5.json',
+          ],
+          service: ['http://iiif.com/service-1.json'],
+          related: ['http://iiif.com/extern-2.json'],
+          rendering: ['http://iiif.com/extern-3.json'],
+          within: [
+            'http://iiif.com/layer-1.json',
+            'http://iiif.com/extern-4.json',
+          ],
+        },
       },
-    },
-    services: {
-      'http://iiif.com/service-1.json': {
-        '@id': 'http://iiif.com/service-1.json',
-        label: 'Service 1',
+      services: {
+        'http://iiif.com/service-1.json': {
+          '@id': 'http://iiif.com/service-1.json',
+          label: 'Service 1',
+        },
       },
-    },
-    externalResources: {
-      'http://iiif.com/extern-1.json': {
-        '@id': 'http://iiif.com/extern-1.json',
-        label: 'External 1',
+      externalResources: {
+        'http://iiif.com/extern-1.json': {
+          '@id': 'http://iiif.com/extern-1.json',
+          label: 'External 1',
+        },
+        'http://iiif.com/extern-2.json': {
+          '@id': 'http://iiif.com/extern-2.json',
+          label: 'External 2',
+        },
+        'http://iiif.com/extern-3.json': {
+          '@id': 'http://iiif.com/extern-3.json',
+          label: 'External 3',
+        },
+        'http://iiif.com/extern-4.json': {
+          '@id': 'http://iiif.com/extern-4.json',
+          label: 'External 4',
+        },
       },
-      'http://iiif.com/extern-2.json': {
-        '@id': 'http://iiif.com/extern-2.json',
-        label: 'External 2',
-      },
-      'http://iiif.com/extern-3.json': {
-        '@id': 'http://iiif.com/extern-3.json',
-        label: 'External 3',
-      },
-      'http://iiif.com/extern-4.json': {
-        '@id': 'http://iiif.com/extern-4.json',
-        label: 'External 4',
-      },
-    },
-    layers: {
-      'http://iiif.com/layer-1.json': {
-        '@id': 'http://iiif.com/layer-1.json',
-        label: 'Layer 1',
+      layers: {
+        'http://iiif.com/layer-1.json': {
+          '@id': 'http://iiif.com/layer-1.json',
+          label: 'Layer 1',
+        },
       },
     },
   };

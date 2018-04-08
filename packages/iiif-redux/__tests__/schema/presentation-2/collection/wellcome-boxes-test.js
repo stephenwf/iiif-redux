@@ -6,7 +6,9 @@ import * as currentCollection from '../../../../src/api/current-collection';
 describe('Wellcome Genre: Boxes collection', () => {
   const entity = normalize(boxes, collection);
   const state = {
-    ...entity.entities,
+    resources: {
+      ...entity.entities,
+    },
     config: {
       defaultLanguage: 'en',
     },

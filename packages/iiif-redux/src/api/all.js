@@ -1,14 +1,14 @@
-const getAllCollections = state => state.collections;
-const getAllExternalResources = state => state.externalResources;
-const getAllLayers = state => state.layers;
-const getAllServices = state => state.services;
-const getAllManifests = state => state.manifests;
-const getAllSequences = state => state.sequences;
-const getAllRanges = state => state.ranges;
-const getAllCanvases = state => state.canvases;
-const getAllImages = state => state.imageResources;
-const getAllAnnotations = state => state.annotations;
-const getAllAnnotationLists = state => state.annotationLists;
+const getAllCollections = state => state.resources.collections;
+const getAllExternalResources = state => state.resources.externalResources;
+const getAllLayers = state => state.resources.layers;
+const getAllServices = state => state.resources.services;
+const getAllManifests = state => state.resources.manifests;
+const getAllSequences = state => state.resources.sequences;
+const getAllRanges = state => state.resources.ranges;
+const getAllCanvases = state => state.resources.canvases;
+const getAllImages = state => state.resources.imageResources;
+const getAllAnnotations = state => state.resources.annotations;
+const getAllAnnotationLists = state => state.resources.annotationLists;
 
 export {
   getAllCollections,

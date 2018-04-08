@@ -10,23 +10,27 @@ describe('api/current-manifest/technical', () => {
   const createStateWithCustomProperties = props => ({
     routing: { currentManifest: 'http://iiif.com/manifest-1.json' },
     config: { defaultLanguage: 'en' },
-    manifests: {
-      'http://iiif.com/manifest-1.json': {
-        '@id': 'http://iiif.com/manifest-1.json',
-        ...props,
+    resources: {
+      manifests: {
+        'http://iiif.com/manifest-1.json': {
+          '@id': 'http://iiif.com/manifest-1.json',
+          ...props,
+        },
       },
     },
   });
   const state = {
     routing: { currentManifest: 'http://iiif.com/manifest-1.json' },
     config: { defaultLanguage: 'en' },
-    manifests: {
-      'http://iiif.com/manifest-1.json': {
-        '@id': 'http://iiif.com/manifest-1.json',
-        '@type': 'sc:Manifest',
-        navDate: '1856-01-01T00:00:00Z',
-        viewingDirection: 'top-to-bottom',
-        viewingHint: 'individuals',
+    resources: {
+      manifests: {
+        'http://iiif.com/manifest-1.json': {
+          '@id': 'http://iiif.com/manifest-1.json',
+          '@type': 'sc:Manifest',
+          navDate: '1856-01-01T00:00:00Z',
+          viewingDirection: 'top-to-bottom',
+          viewingHint: 'individuals',
+        },
       },
     },
   };
