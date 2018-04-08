@@ -1,0 +1,44 @@
+{
+  "name": "iiif-redux",
+  "version": "1.0.0",
+  "description":
+    "IIIF Redux current state is a request for comments from the community with a proposal for managing IIIF resources state on the frontend for both presentational and content creation purposes.",
+  "main": "lib/index.js",
+  "files": ["es", "lib", "umd"],
+  "scripts": {
+    "build": "nwb build-web-module",
+    "clean": "nwb clean-module",
+    "test": "jest",
+    "test:coverage": "jest --verbose --coverage",
+    "test:watch": "jest --coverage --watch"
+  },
+  "dependencies": {
+    "deepmerge": "^2.1.0",
+    "got": "^8.3.0",
+    "immutability-helper": "^2.6.6",
+    "lodash.memoize": "^4.1.2",
+    "normalizr": "^3.2.4",
+    "reduce-reducers": "^0.1.2",
+    "redux": "^3.7.2",
+    "redux-actions": "^2.3.0",
+    "redux-saga": "^0.16.0",
+    "reselect": "^3.0.1",
+    "striptags": "^3.1.1",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
+    "@types/reselect": "^2.2.0",
+    "nwb": "0.19.x",
+    "babel-jest": "^22.4.3",
+    "react-test-renderer": "^16.2.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "<rootDir>/../../jest.transform.js"
+    }
+  },
+  "author": "Stephen Fraser <stephen.fraser@digirati.com>",
+  "homepage": "",
+  "license": "MIT",
+  "repository": "https://github.com/stephenwf/iiif-redux"
+}
