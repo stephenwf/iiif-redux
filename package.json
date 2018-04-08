@@ -1,59 +1,46 @@
 {
-  "name": "iiif-redux",
-  "version": "1.0.0",
-  "description": "IIIF Redux current state is a request for comments from the community with a proposal for managing IIIF resources state on the frontend for both presentational and content creation purposes.",
-  "main": "lib/index.js",
-  "files": [
-    "es",
-    "lib",
-    "umd"
-  ],
-  "scripts": {
-    "build": "nwb build-web-module",
-    "clean": "nwb clean-module",
-    "test": "jest",
-    "test:coverage": "jest --verbose --coverage",
-    "test:watch": "jest --coverage --watch"
-  },
-  "dependencies": {
-    "deepmerge": "^2.1.0",
-    "got": "^8.3.0",
-    "immutability-helper": "^2.6.6",
-    "lodash.memoize": "^4.1.2",
-    "normalizr": "^3.2.4",
-    "reduce-reducers": "^0.1.2",
-    "redux": "^3.7.2",
-    "redux-actions": "^2.3.0",
-    "redux-saga": "^0.16.0",
-    "reselect": "^3.0.1",
-    "striptags": "^3.1.1",
-    "valid-url": "^1.0.9"
-  },
+  "workspaces": ["packages/*"],
+  "private": true,
   "devDependencies": {
-    "@types/reselect": "^2.2.0",
+    "@fesk/module-release": "^0.0.1",
     "babel-eslint": "^8.1.0",
-    "babel-jest": "^22.4.3",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "coveralls": "^3.0.0",
     "eslint": "^3.10.2",
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-flow": "^2.29.1",
     "eslint-plugin-flowtype": "^2.40.1",
     "eslint-plugin-prettier": "^2.4.0",
     "flow-bin": "^0.61.0",
+    "husky": "^0.14.3",
+    "lerna": "2.9.0",
     "jest": "^22.4.3",
-    "nwb": "0.19.x",
-    "prettier": "^1.9.2",
-    "react-test-renderer": "^16.2.0"
+    "lint-staged": "^6.0.0",
+    "npm-run-all": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "istanbul": "^0.4.5",
+    "prettier": "^1.9.2"
+  },
+  "devEngines": {
+    "node": "8.x"
+  },
+  "scripts": {
+    "build": "lerna run build && lerna link",
+    "build-all": "lerna run build",
+    "precommit": "lint-staged",
+    "release": "fesk-release",
+    "merge": "fesk-merge",
+    "link": "lerna link",
+    "postinstall": "lerna link",
+    "test": "jest",
+    "test:coverage": "jest --verbose --coverage",
+    "test:watch": "jest --coverage --watch"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"],
+    "*.{js,json,scss,md}": ["prettier --write", "git add"]
   },
   "jest": {
     "transform": {
       "^.+\\.js$": "<rootDir>/jest.transform.js"
     }
-  },
-  "author": "Stephen Fraser <stephen.fraser@digirati.com>",
-  "homepage": "",
-  "license": "MIT",
-  "repository": "https://github.com/stephenwf/iiif-redux"
+  }
 }
