@@ -22,7 +22,7 @@ IIIF Redux is a single source of truth for IIIF resources, split into 3 distinct
 
 ### Planned projects
 - **IIIF Service plugins** - Community sourced set of plugins for understanding and presenting different services on IIIF resources.
-- **IIIF Graph QL** - built using the selector library, an interface to IIIF endpoints using GraphQL.
+- **IIIF GraphQL** - built using the selector library, an interface to IIIF endpoints using GraphQL.
 - **IIIF Redux AV** - Redux state in the temporal dimension, with extensions focused on displaying AV content.
 - **IIIF Presentation Upgrade** - Presentation 2 to 3 converter, Presentation 2 or 3 normalization, fixing and validation. 
 
