@@ -13,43 +13,47 @@ describe('api/current-sequence/descriptive', () => {
   const state = {
     routing: { currentSequence: 'http://iiif.com/sequence-1.json' },
     config: { defaultLanguage: 'en' },
-    sequences: {
-      'http://iiif.com/sequence-1.json': {
-        '@id': 'http://iiif.com/sequence-1.json',
-        '@type': 'sc:Sequence',
-        label: [{ '@value': 'Sequence label 1', '@language': 'en' }],
-        description: [{ '@value': 'Sequence description', '@language': 'en' }],
-        metadata: [
-          {
-            label: [{ '@value': 'test metadata label', '@language': 'en' }],
-            value: [
-              {
-                '@value': 'test metadata value',
-                '@language': 'en',
-              },
-            ],
-          },
-        ],
-        attribution: [
-          {
-            '@value': 'Some <b>attribution</b> for test sequence',
-            '@language': 'en',
-          },
-        ],
-        license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
-        logo: 'http://example.org/logos/institution1.jpg',
-        thumbnail:
-          'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
+    resources: {
+      sequences: {
+        'http://iiif.com/sequence-1.json': {
+          '@id': 'http://iiif.com/sequence-1.json',
+          '@type': 'sc:Sequence',
+          label: [{ '@value': 'Sequence label 1', '@language': 'en' }],
+          description: [
+            { '@value': 'Sequence description', '@language': 'en' },
+          ],
+          metadata: [
+            {
+              label: [{ '@value': 'test metadata label', '@language': 'en' }],
+              value: [
+                {
+                  '@value': 'test metadata value',
+                  '@language': 'en',
+                },
+              ],
+            },
+          ],
+          attribution: [
+            {
+              '@value': 'Some <b>attribution</b> for test sequence',
+              '@language': 'en',
+            },
+          ],
+          license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
+          logo: 'http://example.org/logos/institution1.jpg',
+          thumbnail:
+            'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
+        },
       },
-    },
-    imageResources: {
-      'http://example.org/images/book1-page1/full/80,100/0/default.jpg': {
-        '@id':
-          'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
-        service: {
-          '@context': 'http://iiif.io/api/image/2/context.json',
-          '@id': 'http://example.org/images/book1-page1',
-          profile: 'http://iiif.io/api/image/2/level1.json',
+      imageResources: {
+        'http://example.org/images/book1-page1/full/80,100/0/default.jpg': {
+          '@id':
+            'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
+          service: {
+            '@context': 'http://iiif.io/api/image/2/context.json',
+            '@id': 'http://example.org/images/book1-page1',
+            profile: 'http://iiif.io/api/image/2/level1.json',
+          },
         },
       },
     },
@@ -117,7 +121,10 @@ describe('api/current-sequence/descriptive', () => {
         getThumbnail({
           ...state,
           ...{
-            imageResources: {}, // unset image resources.
+            resources: {
+              ...state.resources,
+              imageResources: {}, // unset image resources.
+            },
           },
         })
       ).toEqual(

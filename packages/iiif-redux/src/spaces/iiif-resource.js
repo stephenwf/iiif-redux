@@ -4,7 +4,6 @@ import validUrl from 'valid-url';
 import { call, put, select, all, takeEvery } from 'redux-saga/effects';
 import deepmerge from 'deepmerge';
 import update from 'immutability-helper';
-import { resource } from '../schema/presentation2';
 const IIIF_RESOURCE_REQUEST = 'IIIF_RESOURCE_REQUEST';
 const IIIF_RESOURCE_SUCCESS = 'IIIF_RESOURCE_SUCCESS';
 const IIIF_RESOURCE_ERROR = 'IIIF_RESOURCE_ERROR';
@@ -64,7 +63,7 @@ const reducer = handleActions(
       state,
       { payload: { resourceId, normalizedResponse } }
     ) => {
-      return update(deepmerge(state, normalizedResponse), {
+      return update(deepmerge(state, { resources: normalizedResponse }), {
         dereferenced: {
           [resourceId]: {
             loading: { $set: false },

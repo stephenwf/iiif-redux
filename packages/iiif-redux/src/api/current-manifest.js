@@ -2,25 +2,18 @@ import { createSelector } from 'reselect';
 import validUrl from 'valid-url';
 import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
-import { getCurrentManifestId } from './current';
+import { getCurrentManifest } from './current';
 import {
   getAllAnnotationLists,
   getAllExternalResources,
   getAllImages,
   getAllLayers,
-  getAllManifests,
   getAllRanges,
   getAllSequences,
   getAllServices,
 } from './all';
 import * as linking from './iiif-linking';
 import * as structural from './iiif-structural';
-
-const getCurrentManifest = createSelector(
-  getCurrentManifestId,
-  getAllManifests,
-  (manifestId, manifests) => manifests[manifestId]
-);
 
 /**************************************************
  * Technical properties

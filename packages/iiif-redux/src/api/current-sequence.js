@@ -3,22 +3,15 @@ import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
 import * as linking from './iiif-linking';
 import * as structural from './iiif-structural';
-import { getCurrentSequenceId } from './current';
 import {
   getAllExternalResources,
   getAllLayers,
-  getAllSequences,
   getAllServices,
   getAllCanvases,
   getAllImages,
 } from './all';
 import validUrl from 'valid-url';
-
-const getCurrentSequence = createSelector(
-  getCurrentSequenceId,
-  getAllSequences,
-  (sequenceId, sequences) => sequences[sequenceId]
-);
+import { getCurrentSequence } from './current';
 
 /**************************************************
  * Technical properties

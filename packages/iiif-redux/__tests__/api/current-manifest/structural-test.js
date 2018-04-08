@@ -13,68 +13,76 @@ describe('api/current-manifest/structural', () => {
   const state = {
     routing: { currentManifest: 'http://iiif.com/manifest-1.json' },
     config: { defaultLanguage: 'en' },
-    manifests: {
-      'http://iiif.com/manifest-1.json': {
-        '@id': 'http://iiif.com/manifest-1.json',
-        label: 'Manifest 1',
-        sequences: ['http://iiif.com/sequence-1.json'],
-        structures: [
-          'http://iiif.com/range-1.json',
-          'http://iiif.com/range-2.json',
-        ],
-        otherContent: [
-          { id: 'http://iiif.com/external-1.json', schema: 'externalResource' },
-          {
-            id: 'http://iiif.com/annotation-list-1.json',
-            schema: 'annotationList',
-          },
-          { id: 'http://iiif.com/external-2.json', schema: 'externalResource' },
-          {
-            id: 'http://iiif.com/annotation-list-2.json',
-            schema: 'annotationList',
-          },
-          {
-            id: 'http://iiif.com/external-3.json',
-            schema: 'externalResource',
-          },
-        ],
+    resources: {
+      manifests: {
+        'http://iiif.com/manifest-1.json': {
+          '@id': 'http://iiif.com/manifest-1.json',
+          label: 'Manifest 1',
+          sequences: ['http://iiif.com/sequence-1.json'],
+          structures: [
+            'http://iiif.com/range-1.json',
+            'http://iiif.com/range-2.json',
+          ],
+          otherContent: [
+            {
+              id: 'http://iiif.com/external-1.json',
+              schema: 'externalResource',
+            },
+            {
+              id: 'http://iiif.com/annotation-list-1.json',
+              schema: 'annotationList',
+            },
+            {
+              id: 'http://iiif.com/external-2.json',
+              schema: 'externalResource',
+            },
+            {
+              id: 'http://iiif.com/annotation-list-2.json',
+              schema: 'annotationList',
+            },
+            {
+              id: 'http://iiif.com/external-3.json',
+              schema: 'externalResource',
+            },
+          ],
+        },
       },
-    },
-    sequences: {
-      'http://iiif.com/sequence-1.json': {
-        '@id': 'http://iiif.com/sequence-1.json',
-        label: 'Sequence 1',
-        canvases: ['http://iiif.com/canvas-1.json'],
+      sequences: {
+        'http://iiif.com/sequence-1.json': {
+          '@id': 'http://iiif.com/sequence-1.json',
+          label: 'Sequence 1',
+          canvases: ['http://iiif.com/canvas-1.json'],
+        },
       },
-    },
-    ranges: {
-      'http://iiif.com/range-1.json': {
-        '@id': 'http://iiif.com/range-1.json',
-        label: 'Range 1',
+      ranges: {
+        'http://iiif.com/range-1.json': {
+          '@id': 'http://iiif.com/range-1.json',
+          label: 'Range 1',
+        },
+        'http://iiif.com/range-2.json': {
+          '@id': 'http://iiif.com/range-2.json',
+          label: 'Range 2',
+        },
       },
-      'http://iiif.com/range-2.json': {
-        '@id': 'http://iiif.com/range-2.json',
-        label: 'Range 2',
+      annotationLists: {
+        'http://iiif.com/annotation-list-1.json': {
+          '@id': 'http://iiif.com/annotation-list-1.json',
+          label: 'Annotation List 1',
+        },
+        'http://iiif.com/annotation-list-2.json': {
+          '@id': 'http://iiif.com/annotation-list-2.json',
+          label: 'Annotation List 2',
+        },
       },
-    },
-    annotationLists: {
-      'http://iiif.com/annotation-list-1.json': {
-        '@id': 'http://iiif.com/annotation-list-1.json',
-        label: 'Annotation List 1',
-      },
-      'http://iiif.com/annotation-list-2.json': {
-        '@id': 'http://iiif.com/annotation-list-2.json',
-        label: 'Annotation List 2',
-      },
-    },
-    externalResources: {
-      'http://iiif.com/external-1.json': {
-        '@id': 'http://iiif.com/external-1.json',
-        label: 'External 1',
-      },
-      'http://iiif.com/external-2.json': {
-        '@id': 'http://iiif.com/external-2.json',
-        label: 'External 2',
+      externalResources: {
+        'http://iiif.com/external-1.json': {
+          '@id': 'http://iiif.com/external-1.json',
+          label: 'External 1',
+        },
+        'http://iiif.com/external-2.json': {
+          '@id': 'http://iiif.com/external-2.json',
+          label: 'External 2',
+        },
       },
     },
   };
@@ -128,7 +136,7 @@ describe('api/current-manifest/structural', () => {
       'Annotation List 1',
       'External 2',
       'Annotation List 2',
-      'unknown'
+      'unknown',
     ]);
   });
 });

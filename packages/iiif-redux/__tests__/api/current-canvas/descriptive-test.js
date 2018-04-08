@@ -13,48 +13,50 @@ describe('api/current-canvas/descriptive', () => {
   const state = {
     routing: { currentCanvas: 'http://iiif.com/canvas-1.json' },
     config: { defaultLanguage: 'en' },
-    canvases: {
-      'http://iiif.com/canvas-1.json': {
-        '@id': 'http://iiif.com/canvas-1.json',
-        '@type': 'sc:Canvas',
-        label: [{ '@value': 'Test canvas label', '@language': 'en' }],
-        viewingDirection: 'top-to-bottom',
-        viewingHint: 'individuals',
-        navDate: '1856-01-01T00:00:00Z',
-        description: [
-          { '@value': 'Test canvas <b>description</b>', '@language': 'en' },
-        ],
-        metadata: [
-          {
-            label: [{ '@value': 'test metadata label', '@language': 'en' }],
-            value: [
-              {
-                '@value': 'test metadata value',
-                '@language': 'en',
-              },
-            ],
-          },
-        ],
-        logo: 'http://example.org/logos/institution1.jpg',
-        license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
-        attribution: [
-          {
-            '@value': 'Some <b>attribution</b> for test canvas',
-            '@language': 'en',
-          },
-        ],
-        thumbnail:
-          'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
+    resources: {
+      canvases: {
+        'http://iiif.com/canvas-1.json': {
+          '@id': 'http://iiif.com/canvas-1.json',
+          '@type': 'sc:Canvas',
+          label: [{ '@value': 'Test canvas label', '@language': 'en' }],
+          viewingDirection: 'top-to-bottom',
+          viewingHint: 'individuals',
+          navDate: '1856-01-01T00:00:00Z',
+          description: [
+            { '@value': 'Test canvas <b>description</b>', '@language': 'en' },
+          ],
+          metadata: [
+            {
+              label: [{ '@value': 'test metadata label', '@language': 'en' }],
+              value: [
+                {
+                  '@value': 'test metadata value',
+                  '@language': 'en',
+                },
+              ],
+            },
+          ],
+          logo: 'http://example.org/logos/institution1.jpg',
+          license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
+          attribution: [
+            {
+              '@value': 'Some <b>attribution</b> for test canvas',
+              '@language': 'en',
+            },
+          ],
+          thumbnail:
+            'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
+        },
       },
-    },
-    imageResources: {
-      'http://example.org/images/book1-page1/full/80,100/0/default.jpg': {
-        '@id':
-          'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
-        service: {
-          '@context': 'http://iiif.io/api/image/2/context.json',
-          '@id': 'http://example.org/images/book1-page1',
-          profile: 'http://iiif.io/api/image/2/level1.json',
+      imageResources: {
+        'http://example.org/images/book1-page1/full/80,100/0/default.jpg': {
+          '@id':
+            'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
+          service: {
+            '@context': 'http://iiif.io/api/image/2/context.json',
+            '@id': 'http://example.org/images/book1-page1',
+            profile: 'http://iiif.io/api/image/2/level1.json',
+          },
         },
       },
     },
@@ -131,7 +133,10 @@ describe('api/current-canvas/descriptive', () => {
         getThumbnail({
           ...state,
           ...{
-            imageResources: {}, // unset image resources.
+            resources: {
+              ...state.resources,
+              imageResources: {}, // unset image resources.
+            },
           },
         })
       ).toEqual(

@@ -6,7 +6,9 @@ import * as currentCollection from '../../../../src/api/current-collection';
 describe('e-codices collection', () => {
   const entity = normalize(eCodicesFixture, collection);
   const state = {
-    ...entity.entities,
+    resources: {
+      ...entity.entities,
+    },
     config: {
       defaultLanguage: 'en',
     },

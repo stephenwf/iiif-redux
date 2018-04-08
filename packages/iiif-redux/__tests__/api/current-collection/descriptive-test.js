@@ -13,48 +13,53 @@ describe('api/current-collection/descriptive', () => {
   const state = {
     routing: { currentCollection: 'http://iiif.com/collection-1.json' },
     config: { defaultLanguage: 'en' },
-    collections: {
-      'http://iiif.com/collection-1.json': {
-        '@id': 'http://iiif.com/collection-1.json',
-        '@type': 'sc:Collection',
-        label: [{ '@value': 'Test collection label', '@language': 'en' }],
-        viewingDirection: 'top-to-bottom',
-        viewingHint: 'individuals',
-        navDate: '1856-01-01T00:00:00Z',
-        description: [
-          { '@value': 'Test collection <b>description</b>', '@language': 'en' },
-        ],
-        metadata: [
-          {
-            label: [{ '@value': 'test metadata label', '@language': 'en' }],
-            value: [
-              {
-                '@value': 'test metadata value',
-                '@language': 'en',
-              },
-            ],
-          },
-        ],
-        logo: 'http://example.org/logos/institution1.jpg',
-        license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
-        attribution: [
-          {
-            '@value': 'Some <b>attribution</b> for test collection',
-            '@language': 'en',
-          },
-        ],
-        thumbnail:
-          'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
+    resources: {
+      collections: {
+        'http://iiif.com/collection-1.json': {
+          '@id': 'http://iiif.com/collection-1.json',
+          '@type': 'sc:Collection',
+          label: [{ '@value': 'Test collection label', '@language': 'en' }],
+          viewingDirection: 'top-to-bottom',
+          viewingHint: 'individuals',
+          navDate: '1856-01-01T00:00:00Z',
+          description: [
+            {
+              '@value': 'Test collection <b>description</b>',
+              '@language': 'en',
+            },
+          ],
+          metadata: [
+            {
+              label: [{ '@value': 'test metadata label', '@language': 'en' }],
+              value: [
+                {
+                  '@value': 'test metadata value',
+                  '@language': 'en',
+                },
+              ],
+            },
+          ],
+          logo: 'http://example.org/logos/institution1.jpg',
+          license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
+          attribution: [
+            {
+              '@value': 'Some <b>attribution</b> for test collection',
+              '@language': 'en',
+            },
+          ],
+          thumbnail:
+            'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
+        },
       },
-    },
-    imageResources: {
-      'http://example.org/images/book1-page1/full/80,100/0/default.jpg': {
-        '@id':
-          'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
-        service: {
-          '@context': 'http://iiif.io/api/image/2/context.json',
-          '@id': 'http://example.org/images/book1-page1',
-          profile: 'http://iiif.io/api/image/2/level1.json',
+      imageResources: {
+        'http://example.org/images/book1-page1/full/80,100/0/default.jpg': {
+          '@id':
+            'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
+          service: {
+            '@context': 'http://iiif.io/api/image/2/context.json',
+            '@id': 'http://example.org/images/book1-page1',
+            profile: 'http://iiif.io/api/image/2/level1.json',
+          },
         },
       },
     },
@@ -131,7 +136,10 @@ describe('api/current-collection/descriptive', () => {
         getThumbnail({
           ...state,
           ...{
-            imageResources: {}, // unset image resources.
+            resources: {
+              ...state.resources,
+              imageResources: {}, // unset image resources.
+            },
           },
         })
       ).toEqual(
