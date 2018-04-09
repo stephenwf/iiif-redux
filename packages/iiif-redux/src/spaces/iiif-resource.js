@@ -33,46 +33,57 @@ const {
 
 const DEFAULT_STATE = {
   dereferenced: {},
+  resources: {
+    collection: {},
+    sequence: {},
+    manifest: {},
+    canvas: {},
+    annotationList: {},
+    annotation: {},
+    range: {},
+    layer: {},
+    imageResource: {},
+  },
 };
 
-const reducer = handleActions(
+const resourceReducer = handleActions(
+  {
+    [iiifResourceSuccess]: (state, { payload: { normalizedResponse } }) =>
+      deepmerge(state, normalizedResponse),
+  },
+  DEFAULT_STATE.resources
+);
+
+const dereferencedReducer = handleActions(
   {
     [iiifResourceRequest]: (state, { payload: { resourceId, ttl } }) =>
       update(state, {
-        dereferenced: {
-          [resourceId]: {
-            $set: {
-              resourceId,
-              ttl,
-              requested: new Date(),
-              loading: true,
-            },
+        [resourceId]: {
+          $set: {
+            resourceId,
+            ttl,
+            requested: new Date(),
+            loading: true,
           },
         },
       }),
+
     [iiifResourceError]: (state, { payload: { resourceId, error } }) =>
       update(state, {
-        dereferenced: {
-          [resourceId]: {
-            loading: { $set: false },
-            error: { $set: error },
-          },
+        [resourceId]: {
+          loading: { $set: false },
+          error: { $set: error },
         },
       }),
-    [iiifResourceSuccess]: (
-      state,
-      { payload: { resourceId, normalizedResponse } }
-    ) => {
-      return update(deepmerge(state, { resources: normalizedResponse }), {
-        dereferenced: {
-          [resourceId]: {
-            loading: { $set: false },
-          },
+
+    [iiifResourceSuccess]: (state, { payload: { resourceId } }) =>
+      update(state, {
+        [resourceId]: {
+          loading: { $set: false },
         },
-      });
-    },
+      }),
   },
-  DEFAULT_STATE
+  DEFAULT_STATE.dereferenced
 );
 
 async function requestResource(resourceId, options) {
@@ -136,4 +147,10 @@ function* saga() {
   yield takeEvery(IIIF_RESOURCE_REQUEST, requestIiifResource);
 }
 
-export { saga, reducer, iiifResourceRequest, DEFAULT_STATE };
+export {
+  saga,
+  resourceReducer,
+  dereferencedReducer,
+  iiifResourceRequest,
+  DEFAULT_STATE,
+};
