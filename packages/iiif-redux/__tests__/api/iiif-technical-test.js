@@ -67,6 +67,9 @@ describe('api/iiif-technical', () => {
         '1856-01-01T00:00:00Z'
       );
     });
+    it('should default to null', () => {
+      expect(getNavDate({})).toEqual(null);
+    });
   });
   describe('getViewingDirection', () => {
     it('should load all valid viewing directions', () => {
@@ -106,6 +109,9 @@ describe('api/iiif-technical', () => {
   describe('getFormat', () => {
     it('should return format', () => {
       expect(getFormat({ format: 'text/plain' })).toEqual('text/plain');
+    });
+    it('should default to null', () => {
+      expect(getFormat({})).toEqual(null);
     });
   });
   describe('getHeight', () => {
