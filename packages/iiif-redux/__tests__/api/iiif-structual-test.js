@@ -8,6 +8,7 @@ import {
   getOtherContent,
   getRanges,
   getStructures,
+  alwaysArray,
 } from '../../src/api/iiif-structural';
 
 describe('api/iiif-structural', () => {
@@ -218,5 +219,8 @@ describe('api/iiif-structural', () => {
     it('should always return an array', () => {
       expect(getStructures({})).toEqual([]);
     });
+  });
+  describe('alwaysArray', () => {
+    expect(alwaysArray('test')).toEqual(['test']);
   });
 });
