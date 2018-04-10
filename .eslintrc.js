@@ -6,9 +6,8 @@ const ERROR = 2;
 module.exports = {
   // Stop ESLint from looking for a configuration file in parent folders
   root: true,
-  extends: ['plugin:flowtype/recommended'],
 
-  plugins: ['prettier', 'flowtype'],
+  plugins: ['prettier', 'flowtype', 'typescript'],
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 8,

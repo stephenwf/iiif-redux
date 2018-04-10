@@ -4,6 +4,7 @@
   "devDependencies": {
     "@fesk/module-release": "^0.0.1",
     "babel-eslint": "^8.1.0",
+    "coveralls": "^3.0.0",
     "eslint": "^3.10.2",
     "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-flow": "^2.29.1",
@@ -11,13 +12,13 @@
     "eslint-plugin-prettier": "^2.4.0",
     "flow-bin": "^0.61.0",
     "husky": "^0.14.3",
-    "lerna": "2.9.0",
+    "istanbul": "^0.4.5",
     "jest": "^22.4.3",
+    "lerna": "2.9.0",
     "lint-staged": "^6.0.0",
     "npm-run-all": "^4.1.2",
-    "coveralls": "^3.0.0",
-    "istanbul": "^0.4.5",
-    "prettier": "^1.9.2"
+    "prettier": "^1.9.2",
+    "typescript-babel-jest": "^1.0.5"
   },
   "devEngines": {
     "node": "8.x"
@@ -40,7 +41,10 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.js$": "<rootDir>/jest.transform.js"
-    }
+      "^.+\\.js$": "<rootDir>/jest.transform.js",
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
   }
 }

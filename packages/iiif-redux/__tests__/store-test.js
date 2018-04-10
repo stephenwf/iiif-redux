@@ -1,6 +1,6 @@
 import { createStructuredSelector, createSelector } from 'reselect';
 import createStore from '../src/createStore';
-import bridges from './fixtures/bridges';
+import bridges from './fixtures/bridges.json';
 import { iiifResourceRequest } from '../src/spaces/iiif-resource';
 import { manifest } from '../src/schema/presentation2';
 import * as currentManifest from '../src/api/current-manifest';

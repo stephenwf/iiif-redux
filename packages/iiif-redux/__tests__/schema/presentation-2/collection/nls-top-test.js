@@ -1,6 +1,6 @@
 import { normalize } from 'normalizr';
 import { collection } from '../../../../src/schema/presentation2';
-import nlsTop from '../../../fixtures/nls-top';
+import nlsTop from '../../../fixtures/nls-top.json';
 import * as currentCollection from '../../../../src/api/current-collection';
 
 describe('National Library of Scotland: Top level collection', () => {

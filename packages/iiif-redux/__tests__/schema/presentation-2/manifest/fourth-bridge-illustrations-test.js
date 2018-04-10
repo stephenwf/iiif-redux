@@ -1,5 +1,5 @@
 import { normalize } from '../../../../src/schema/presentation2';
-import bridgesFixture from '../../../fixtures/bridges';
+import bridgesFixture from '../../../fixtures/bridges.json';
 import * as currentManifest from '../../../../src/api/current-manifest';
 import * as currentSequence from '../../../../src/api/current-sequence';
 

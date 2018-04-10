@@ -86,7 +86,7 @@ describe('api/iiif-descriptive', () => {
         getLicense({
           licence: null,
         })
-      ).toEqual(null);
+      ).toEqual([]);
     });
   });
 
