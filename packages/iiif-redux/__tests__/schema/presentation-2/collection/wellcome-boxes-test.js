@@ -1,6 +1,6 @@
 import { normalize } from 'normalizr';
 import { collection } from '../../../../src/schema/presentation2';
-import boxes from '../../../fixtures/wellcome-boxes';
+import boxes from '../../../fixtures/wellcome-boxes.json';
 import * as currentCollection from '../../../../src/api/current-collection';
 
 describe('Wellcome Genre: Boxes collection', () => {

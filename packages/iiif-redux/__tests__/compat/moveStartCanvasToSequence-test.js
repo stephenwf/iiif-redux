@@ -1,5 +1,5 @@
 import moveStartCanvasToSequence from '../../src/compat/moveStartCanvasToSequence';
-import bridgesFixture from '../fixtures/bridges';
+import bridgesFixture from '../fixtures/bridges.json';
 
 describe('compat/moveStartCanvasToSequence', () => {
   it('should set start canvas on manifest to null', () => {

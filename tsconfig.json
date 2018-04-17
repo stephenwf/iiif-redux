@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "lib": ["es5", "es6", "dom"],
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "outDir": "./dist/",
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true
+  }
+}

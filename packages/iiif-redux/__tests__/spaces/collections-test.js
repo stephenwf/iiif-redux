@@ -1,5 +1,5 @@
 import createStore from '../../src/createStore';
-import nlsTop from '../fixtures/nls-top';
+import nlsTop from '../fixtures/nls-top.json';
 import * as currentCollection from '../../src/api/current-collection';
 import { selectCollection } from '../../src/spaces/routing';
 

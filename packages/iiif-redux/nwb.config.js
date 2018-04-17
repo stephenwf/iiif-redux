@@ -12,4 +12,15 @@ module.exports = {
       modules: false,
     },
   },
+  webpack: {
+    config(config) {
+      config.resolve.extensions.push('.ts', '.tsx');
+      config.module.rules.push({
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader',
+      });
+
+      return config;
+    },
+  },
 };

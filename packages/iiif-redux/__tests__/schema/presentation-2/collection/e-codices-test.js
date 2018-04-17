@@ -1,6 +1,6 @@
 import { normalize } from 'normalizr';
 import { collection } from '../../../../src/schema/presentation2';
-import eCodicesFixture from '../../../fixtures/e-codices';
+import eCodicesFixture from '../../../fixtures/e-codices.json';
 import * as currentCollection from '../../../../src/api/current-collection';
 
 describe('e-codices collection', () => {
