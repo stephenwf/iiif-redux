@@ -2,6 +2,7 @@ import {
   getId,
   getType,
   getViewingHint,
+  getWhitelistedViewingHint,
   getNavDate,
   getViewingDirection,
   getFormat,
@@ -29,7 +30,7 @@ describe('api/iiif-technical', () => {
       [
         VIEWING_HINTS.CONTINUOUS,
         VIEWING_HINTS.FACING_PAGES,
-        VIEWING_HINTS.INDIVIUALS,
+        VIEWING_HINTS.INDIVIDUALS,
         VIEWING_HINTS.MULTI_PART,
         VIEWING_HINTS.NON_PAGES,
         VIEWING_HINTS.PAGED,
@@ -55,6 +56,30 @@ describe('api/iiif-technical', () => {
         expect(getViewingHint({ viewingHint })).toEqual(null);
       });
     });
+    it('should allow whitelisted viewing hints', () => {
+      expect(
+        getWhitelistedViewingHint(['paged'])({
+          viewingHint: 'http://example.org/viewing/hint',
+        })
+      ).toEqual('http://example.org/viewing/hint');
+    });
+    it('should allow whitelisted viewing hints', () => {
+      expect(
+        getWhitelistedViewingHint(['paged'])({ viewingHint: 'paged' })
+      ).toEqual('paged');
+    });
+    it('should ignore non-whitelisted viewing hints', () => {
+      expect(
+        getWhitelistedViewingHint(['paged'])({ viewingHint: 'top' })
+      ).toEqual(null);
+    });
+    it('should ignore non-whitelisted viewing hints', () => {
+      expect(
+        getWhitelistedViewingHint(['paged', 'top'])({
+          viewingHint: 'invalid-viewing-hint',
+        })
+      ).toEqual(null);
+    });
     it('should handle slightly invalid viewing hints', () => {
       ['Paged', 'pAgEd', ' Paged '].forEach(viewingHint => {
         expect(getViewingHint({ viewingHint })).toEqual(VIEWING_HINTS.PAGED);
@@ -66,6 +91,9 @@ describe('api/iiif-technical', () => {
       expect(getNavDate({ navDate: '1856-01-01T00:00:00Z' })).toEqual(
         '1856-01-01T00:00:00Z'
       );
+    });
+    it('should default to null', () => {
+      expect(getNavDate({})).toEqual(null);
     });
   });
   describe('getViewingDirection', () => {
@@ -106,6 +134,9 @@ describe('api/iiif-technical', () => {
   describe('getFormat', () => {
     it('should return format', () => {
       expect(getFormat({ format: 'text/plain' })).toEqual('text/plain');
+    });
+    it('should default to null', () => {
+      expect(getFormat({})).toEqual(null);
     });
   });
   describe('getHeight', () => {
