@@ -4,7 +4,7 @@ const getId = resource => resource['@id'];
 
 const getType = resource => resource['@type'];
 
-const getNavDate = resource => resource.navDate;
+const getNavDate = resource => resource.navDate || null;
 
 const VIEWING_DIRECTIONS = {
   LEFT_TO_RIGHT: 'left-to-right',
@@ -29,7 +29,7 @@ const getViewingDirection = resource => {
   }
 };
 
-const getFormat = resource => resource.format;
+const getFormat = resource => resource.format || null;
 
 const getHeight = resource =>
   resource.height ? parseInt(resource.height, 10) : 0;
@@ -38,7 +38,7 @@ const getWidth = resource =>
   resource.width ? parseInt(resource.width, 10) : 0;
 
 const VIEWING_HINTS = {
-  INDIVIUALS: 'individuals',
+  INDIVIDUALS: 'individuals',
   PAGED: 'paged',
   CONTINUOUS: 'continuous',
   MULTI_PART: 'multi-part',
@@ -52,7 +52,7 @@ const getViewingHint = resource => {
     return null;
   }
   switch (viewingHint.toLowerCase().trim()) {
-    case VIEWING_HINTS.INDIVIUALS:
+    case VIEWING_HINTS.INDIVIDUALS:
     case VIEWING_HINTS.PAGED:
     case VIEWING_HINTS.CONTINUOUS:
     case VIEWING_HINTS.MULTI_PART:
@@ -66,10 +66,22 @@ const getViewingHint = resource => {
   }
 };
 
+const getWhitelistedViewingHint = whitelist => resource => {
+  const viewingHint = getViewingHint(resource);
+  if (!viewingHint) {
+    return null;
+  }
+  if (whitelist.indexOf(viewingHint) >= 0) {
+    return viewingHint;
+  }
+  return validUrl.isWebUri(viewingHint) ? viewingHint : null;
+};
+
 export {
   getId,
   getType,
   getViewingHint,
+  getWhitelistedViewingHint,
   getNavDate,
   getViewingDirection,
   getFormat,
