@@ -8,7 +8,7 @@ export interface Logo {
   '@id': string;
 }
 
-interface DescriptiveProperties {
+export interface DescriptiveProperties {
   label: Language;
   description: Language;
   attribution: Language;

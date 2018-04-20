@@ -1,6 +1,6 @@
 import * as validUrl from 'valid-url';
 
-interface TechnicalProperties {
+export interface TechnicalProperties {
   '@id': string;
   '@type': string;
   viewingDirection?: string;
@@ -103,12 +103,24 @@ const getViewingHint = (resource: TechnicalProperties): string | null => {
   }
 };
 
+const getWhitelistedViewingHint = (whitelist: Array<string>) => (resource: TechnicalProperties) => {
+  const viewingHint = getViewingHint(resource);
+  if (!viewingHint) {
+    return null;
+  }
+  if (whitelist.indexOf(viewingHint) >= 0) {
+    return viewingHint;
+  }
+  return validUrl.isWebUri(viewingHint) ? viewingHint : null;
+}
+
 export {
   getId,
   getType,
   getViewingHint,
   getNavDate,
   getViewingDirection,
+  getWhitelistedViewingHint,
   getFormat,
   getHeight,
   getWidth,

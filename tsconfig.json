@@ -1,4 +1,5 @@
 {
+  "exclude": ["node_modules", "es", "lib"],
   "compilerOptions": {
     "lib": ["es5", "es6", "dom"],
     "sourceMap": true,
@@ -15,6 +16,7 @@
     "module": "commonjs",
     "target": "es5",
     "jsx": "react",
+    "declaration": false,
     "allowJs": true
   }
 }

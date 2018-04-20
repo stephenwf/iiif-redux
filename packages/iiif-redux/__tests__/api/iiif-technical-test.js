@@ -2,6 +2,7 @@ import {
   getId,
   getType,
   getViewingHint,
+  getWhitelistedViewingHint,
   getNavDate,
   getViewingDirection,
   getFormat,
@@ -54,6 +55,18 @@ describe('api/iiif-technical', () => {
       ].forEach(viewingHint => {
         expect(getViewingHint({ viewingHint })).toEqual(null);
       });
+    });
+    it('should ignore non-whitelisted viewing hints', () => {
+      expect(
+        getWhitelistedViewingHint(['paged'])({ viewingHint: 'top' })
+      ).toEqual(null);
+    });
+    it('should ignore non-whitelisted viewing hints', () => {
+      expect(
+        getWhitelistedViewingHint(['paged', 'top'])({
+          viewingHint: 'invalid-viewing-hint',
+        })
+      ).toEqual(null);
     });
     it('should handle slightly invalid viewing hints', () => {
       ['Paged', 'pAgEd', ' Paged '].forEach(viewingHint => {

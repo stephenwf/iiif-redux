@@ -8,7 +8,7 @@ module.exports = {
   root: true,
 
   plugins: ['prettier', 'flowtype', 'typescript'],
-  parser: 'babel-eslint',
+  parser: 'typescript-eslint-parser',
   parserOptions: {
     ecmaVersion: 8,
     sourceType: 'module',

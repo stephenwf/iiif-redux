@@ -14,68 +14,23 @@ import {
   getAllServices,
 } from './all';
 import { isImageService } from '../constants/services';
+import createCanvasSelectors from './canvas-factory';
 
-/**************************************************
- * Technical properties
- *
- * - getId
- * - getType
- * - getViewingHint
- * - getHeight
- * - getWidth
- **************************************************/
-const getId = createSelector(getCurrentCanvas, technical.getId);
+const {
+  getId,
+  getType,
+  getViewingHint,
+  getHeight,
+  getWidth,
+  getLabel,
+  getDescription,
+  getMetadata,
+  getAttribution,
+  getLogo,
+  getLicense,
+  getThumbnailId,
+} = createCanvasSelectors(getCurrentCanvas);
 
-const getType = createSelector(getCurrentCanvas, technical.getType);
-
-const getViewingHint = createSelector(getCurrentCanvas, canvas => {
-  const viewingHint = technical.getViewingHint(canvas);
-  switch (viewingHint) {
-    case 'non-paged':
-    case 'facing-pages':
-      return viewingHint;
-    default:
-      return validUrl.isWebUri(viewingHint) ? viewingHint : null;
-  }
-});
-
-const getHeight = createSelector(getCurrentCanvas, technical.getHeight);
-
-const getWidth = createSelector(getCurrentCanvas, technical.getWidth);
-
-/**************************************************
- * Descriptive properties
- *
- * - getLabel
- * - getMetadata
- * - getDescription
- * - getThumbnail
- * - getAttribution
- * - getLicense
- * - getLogo
- **************************************************/
-const getLabel = createSelector(getCurrentCanvas, descriptive.getLabel);
-
-const getDescription = createSelector(
-  getCurrentCanvas,
-  descriptive.getDescription
-);
-
-const getMetadata = createSelector(getCurrentCanvas, descriptive.getMetadata);
-
-const getAttribution = createSelector(
-  getCurrentCanvas,
-  descriptive.getAttribution
-);
-
-const getLogo = createSelector(getCurrentCanvas, descriptive.getLogo);
-
-const getLicense = createSelector(getCurrentCanvas, descriptive.getLicense);
-
-const getThumbnailId = createSelector(
-  getCurrentCanvas,
-  descriptive.getThumbnailId
-);
 const getThumbnail = createSelector(
   getThumbnailId,
   getAllImages,
