@@ -6,6 +6,7 @@ import {
 } from '../../../src/api/current-canvas';
 
 describe('api/current-canvas/structural', () => {
+  const t = text => [{ '@value': text, '@language': 'en' }];
   const state = {
     routing: { currentCanvas: 'http://iiif.com/canvas-1.json' },
     config: { defaultLanguage: 'en' },
@@ -45,35 +46,35 @@ describe('api/current-canvas/structural', () => {
       annotations: {
         'http://iiif.com/image-1.json': {
           '@id': 'http://iiif.com/image-1.json',
-          label: 'Image 1',
+          label: t('Image 1'),
         },
         'http://iiif.com/image-2.json': {
           '@id': 'http://iiif.com/image-2.json',
-          label: 'Image 2',
+          label: t('Image 2'),
         },
         'http://iiif.com/image-3.json': {
           '@id': 'http://iiif.com/image-3.json',
-          label: 'Image 3',
+          label: t('Image 3'),
         },
       },
       annotationLists: {
         'http://iiif.com/annotation-list-1.json': {
           '@id': 'http://iiif.com/annotation-list-1.json',
-          label: 'Annotation List 1',
+          label: t('Annotation List 1'),
         },
         'http://iiif.com/annotation-list-2.json': {
           '@id': 'http://iiif.com/annotation-list-2.json',
-          label: 'Annotation List 2',
+          label: t('Annotation List 2'),
         },
       },
       externalResources: {
         'http://iiif.com/external-1.json': {
           '@id': 'http://iiif.com/external-1.json',
-          label: 'External 1',
+          label: t('External 1'),
         },
         'http://iiif.com/external-2.json': {
           '@id': 'http://iiif.com/external-2.json',
-          label: 'External 2',
+          label: t('External 2'),
         },
       },
     },
@@ -91,7 +92,9 @@ describe('api/current-canvas/structural', () => {
 
   it('should get Other content', () => {
     expect(
-      getOtherContent(state).map(otherContent => otherContent.label)
+      getOtherContent(state).map(
+        otherContent => otherContent.label[0]['@value']
+      )
     ).toEqual([
       'External 1',
       'Annotation List 1',
@@ -110,7 +113,7 @@ describe('api/current-canvas/structural', () => {
   });
 
   it('should get images', () => {
-    expect(getImages(state).map(image => image.label)).toEqual([
+    expect(getImages(state).map(image => image.label[0]['@value'])).toEqual([
       'Image 1',
       'Image 2',
       'Image 3',

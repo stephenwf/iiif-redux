@@ -109,9 +109,9 @@ export default memoize(selector => {
     getAllLayers,
     getAllExternalResources,
     (withinIds, allLayers, allExternalResources) =>
-      withinIds.map(
-        withinId => allLayers[withinId] || allExternalResources[withinId]
-      )
+      withinIds
+        .map(within => allLayers[within.id] || allExternalResources[within.id])
+        .filter(e => e)
   );
 
   /**************************************************
@@ -205,7 +205,7 @@ export default memoize(selector => {
           allAnnotationLists[otherContentId] ||
           allExternalResources[otherContentId] || {
             '@id': otherContentId,
-            label: 'unknown',
+            label: [{ '@value': 'unknown', '@language': '@none' }],
           }
       )
   );

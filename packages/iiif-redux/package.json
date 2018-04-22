@@ -10,9 +10,7 @@
   "scripts": {
     "build": "nwb build-web-module",
     "clean": "nwb clean-module",
-    "test": "jest",
-    "test:coverage": "jest --verbose --coverage",
-    "test:watch": "jest --coverage --watch"
+    "watch": "npm-watch"
   },
   "dependencies": {
     "deepmerge": "^2.1.0",
@@ -21,6 +19,7 @@
     "jest-fetch-mock": "^1.5.0",
     "lodash.memoize": "^4.1.2",
     "normalizr": "^3.2.4",
+    "npm-watch": "^0.3.0",
     "reduce-reducers": "^0.1.2",
     "redux": "^3.7.2",
     "redux-actions": "^2.3.0",
@@ -34,6 +33,9 @@
     "babel-jest": "^22.4.3",
     "nwb": "0.21.5",
     "react-test-renderer": "^16.2.0"
+  },
+  "watch": {
+    "build": "src/**/*.js"
   },
   "jest": {
     "transform": {

@@ -6,6 +6,7 @@ import { Row, Col, Card, Layout, List, Badge } from 'antd';
 import StructuralPanel from './components/StructuralPanel/StructuralPanel';
 import DescriptivePanel from './components/DescriptivePanel/DescriptivePanel';
 import IntlString from './components/IntlString/IntlString';
+import LinkingPanel from './components/LinkingPanel/LinkingPanel';
 const { Header, Content, Footer } = Layout;
 
 const Locale = str => {
@@ -32,6 +33,12 @@ class Collection extends Component {
               logo={this.props.logo}
               license={this.props.license}
               thumbnail={this.props.thumbnail}
+            />
+            <LinkingPanel
+              seeAlso={this.props.seeAlso}
+              service={this.props.service}
+              related={this.props.related}
+              within={this.props.within}
             />
           </Col>
           <Col span={16}>
@@ -90,5 +97,9 @@ export default connect(
     logo: currentCollection.getLogo,
     license: currentCollection.getLicense,
     thumbnail: currentCollection.getThumbnail,
+    seeAlso: currentCollection.getSeeAlso,
+    service: currentCollection.getService,
+    related: currentCollection.getRelated,
+    within: currentCollection.getWithin,
   })
 )(Collection);

@@ -121,8 +121,14 @@ describe('Forth Bridge illustrations manifest', () => {
 
   it('should return see also link', () => {
     expect(currentManifest.getSeeAlso(state)).toEqual([
-      { '@id': 'http://seealso.com/page-1.json', label: 'Page 1' },
-      { '@id': 'http://seealso.com/page-2.json', label: 'Page 2' },
+      {
+        '@id': 'http://seealso.com/page-1.json',
+        label: [{ '@language': 'en', '@value': 'Page 1' }],
+      },
+      {
+        '@id': 'http://seealso.com/page-2.json',
+        label: [{ '@language': 'en', '@value': 'Page 2' }],
+      },
       { '@id': 'http://seealso.com/page-3.json' },
     ]);
   });
