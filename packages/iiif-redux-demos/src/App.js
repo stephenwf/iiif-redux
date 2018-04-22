@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Collection from './Collection';
-import { iiifResourceRequest } from '../../iiif-redux/es/spaces/iiif-resource';
-import { collection } from '../../iiif-redux/es/schema/presentation2';
+import { selectCollection } from 'iiif-redux/lib/spaces/routing';
+import { Spin } from 'antd';
 
 class App extends Component {
   componentWillMount() {
-    this.props.dispatch(
-      iiifResourceRequest(
-        this.props.collection,
-        ['COLLECTION_REQUEST', 'COLLECTION_SUCCESS', 'COLLECTION_ERROR'],
-        collection
-      )
-    );
+    this.props.dispatch(selectCollection({ id: this.props.collection }));
   }
 
   render() {
-    return <div>{this.props.isLoaded ? <Collection /> : 'loading...'}</div>;
+    return (
+      <div>
+        {this.props.isLoaded ? (
+          <Collection />
+        ) : (
+          <div style={{ padding: 80, textAlign: 'center' }}>
+            <Spin />
+          </div>
+        )}
+      </div>
+    );
   }
 }
 

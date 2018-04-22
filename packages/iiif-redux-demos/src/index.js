@@ -6,18 +6,7 @@ import { render } from 'react-dom';
 
 import App from './App';
 
-const store = createStore({}, [], [], {
-  config: {
-    defaultLanguage: 'en',
-  },
-  routing: {
-    currentCollection: 'https://view.nls.uk/collections/top.json',
-    currentManifest: null,
-    currentSequence: null,
-    currentCanvas: null,
-  },
-  collections: {},
-});
+const store = createStore();
 
 render(
   <Provider store={store}>
