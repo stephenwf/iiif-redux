@@ -32,15 +32,15 @@ describe('store', () => {
     expect(store.getState()).toEqual({
       dereferenced: {},
       resources: {
-        annotation: {},
-        annotationList: {},
-        canvas: {},
-        collection: {},
-        imageResource: {},
-        layer: {},
-        manifest: {},
-        range: {},
-        sequence: {},
+        annotations: {},
+        annotationLists: {},
+        canvases: {},
+        collections: {},
+        imageResources: {},
+        layers: {},
+        manifests: {},
+        ranges: {},
+        sequences: {},
       },
       routing: {
         currentAnnotation: null,
@@ -82,15 +82,15 @@ describe('store', () => {
         },
       },
       resources: {
-        annotation: {},
-        annotationList: {},
-        canvas: {},
-        collection: {},
-        imageResource: {},
-        layer: {},
-        manifest: {},
-        range: {},
-        sequence: {},
+        annotations: {},
+        annotationLists: {},
+        canvases: {},
+        collections: {},
+        imageResources: {},
+        layers: {},
+        manifests: {},
+        ranges: {},
+        sequences: {},
       },
       routing: {
         currentAnnotation: null,
@@ -133,15 +133,15 @@ describe('store', () => {
         },
       },
       resources: {
-        annotation: {},
-        annotationList: {},
-        canvas: {},
-        collection: {},
-        imageResource: {},
-        layer: {},
-        manifest: {},
-        range: {},
-        sequence: {},
+        annotations: {},
+        annotationLists: {},
+        canvases: {},
+        collections: {},
+        imageResources: {},
+        layers: {},
+        manifests: {},
+        ranges: {},
+        sequences: {},
       },
       routing: {
         currentAnnotation: null,
@@ -180,15 +180,15 @@ describe('store', () => {
         },
       },
       resources: {
-        annotation: {},
-        annotationList: {},
-        canvas: {},
-        collection: {},
-        imageResource: {},
-        layer: {},
-        manifest: {},
-        range: {},
-        sequence: {},
+        annotations: {},
+        annotationLists: {},
+        canvases: {},
+        collections: {},
+        imageResources: {},
+        layers: {},
+        manifests: {},
+        ranges: {},
+        sequences: {},
       },
       routing: {
         currentAnnotation: null,
@@ -237,23 +237,17 @@ describe('store', () => {
 
     const secondState = store.getState();
     expect(Object.keys(secondState.resources)).toEqual([
-      'collection',
-      'sequence',
-      'manifest',
-      'canvas',
-      'annotationList',
-      'annotation',
-      'range',
-      'layer',
-      'imageResource',
-      'services',
-      'imageResources',
-      'annotations',
-      'canvases',
+      'collections',
       'sequences',
-      'ranges',
-      'externalResources',
       'manifests',
+      'canvases',
+      'annotationLists',
+      'annotations',
+      'ranges',
+      'layers',
+      'imageResources',
+      'services',
+      'externalResources',
     ]);
     expect(Object.keys(secondState.resources.services)).toEqual([
       'https://view.nls.uk/iiif/7443/74438561.5',
@@ -518,6 +512,53 @@ describe('store', () => {
       'http://seealso.com/page-2.json',
       'http://seealso.com/page-3.json',
     ]);
+  });
+
+  it('should only make 1 http request per resource by default', async () => {
+    const store = createStore();
+    fetch.mockResponseOnce(JSON.stringify(bridges));
+
+    const whenRequestFinishes = waitForRequest(
+      store,
+      'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+    );
+
+    store.dispatch(
+      iiifResourceRequest(
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json',
+        ['MANIFEST_REQUEST', 'MANIFEST_SUCCESS', 'MANIFEST_ERROR'],
+        manifest
+      )
+    );
+    const state = store.getState();
+
+    const manifestState =
+      state.dereferenced[
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+      ];
+
+    expect(manifestState.loading).toEqual(true);
+    expect(manifestState.resourceId).toEqual(
+      'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+    );
+    expect(manifestState.ttl).toEqual(600);
+
+    await whenRequestFinishes;
+
+    store.dispatch(
+      iiifResourceRequest(
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json',
+        ['MANIFEST_REQUEST', 'MANIFEST_SUCCESS', 'MANIFEST_ERROR'],
+        manifest
+      )
+    );
+
+    const state2 = store.getState();
+    expect(
+      state2.dereferenced[
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+      ].loading
+    ).toEqual(false);
   });
 
   it('should create state that works with selectors', async () => {

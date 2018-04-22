@@ -34,15 +34,15 @@ const {
 const DEFAULT_STATE = {
   dereferenced: {},
   resources: {
-    collection: {},
-    sequence: {},
-    manifest: {},
-    canvas: {},
-    annotationList: {},
-    annotation: {},
-    range: {},
-    layer: {},
-    imageResource: {},
+    collections: {},
+    sequences: {},
+    manifests: {},
+    canvases: {},
+    annotationLists: {},
+    annotations: {},
+    ranges: {},
+    layers: {},
+    imageResources: {},
   },
 };
 
@@ -62,8 +62,10 @@ const dereferencedReducer = handleActions(
           $set: {
             resourceId,
             ttl,
-            requested: new Date(),
-            loading: true,
+            requested: state[resourceId]
+              ? state[resourceId].requested
+              : new Date(),
+            loading: state[resourceId] ? state[resourceId].loading : true,
           },
         },
       }),
@@ -125,12 +127,16 @@ function* requestIiifResource({ payload }) {
     return;
   }
 
-  // const state = yield select();
+  const state = yield select();
 
   // @todo logic for cache.
-  // if (state.dereferenced[resourceId] && options.forceFresh === false) {
-  //   return;
-  // }
+  if (
+    state.dereferenced[resourceId] &&
+    state.dereferenced[resourceId].loading ===
+      false /*&& options.forceFresh === false*/
+  ) {
+    return;
+  }
 
   yield put({ type: REQUEST, payload });
 

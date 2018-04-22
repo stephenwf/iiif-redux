@@ -91,6 +91,9 @@ describe('api/iiif-descriptive', () => {
   });
 
   describe('getLogo', () => {
+    it('should ignore missing logos', () => {
+      expect(getLogo({})).toEqual(null);
+    });
     it('should unwrap service to ID', () => {
       expect(
         getLogo({

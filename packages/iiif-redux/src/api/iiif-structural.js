@@ -26,18 +26,19 @@ const getManifests = resource => [
     .map(manifest => manifest.id),
 ];
 
-const getMembers = resource => [
-  ...new Set([
-    ...alwaysArray(resource.members).map(member => member.id),
-    ...alwaysArray(resource.collections)
-      .filter(collection => collection.schema === 'collection')
-      .map(collection => collection.id),
-    ...(resource.manifests || []),
-    ...alwaysArray(resource.collections)
-      .filter(collection => collection.schema === 'manifest')
-      .map(collection => collection.id),
-  ]),
-];
+const getMembers = resource =>
+  Array.from(
+    new Set([
+      ...alwaysArray(resource.members).map(member => member.id),
+      ...alwaysArray(resource.collections)
+        .filter(collection => collection.schema === 'collection')
+        .map(collection => collection.id),
+      ...(resource.manifests || []),
+      ...alwaysArray(resource.collections)
+        .filter(collection => collection.schema === 'manifest')
+        .map(collection => collection.id),
+    ])
+  );
 
 const getSequences = resource => alwaysArray(resource.sequences);
 

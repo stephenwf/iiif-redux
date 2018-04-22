@@ -3,17 +3,17 @@ import { createSelector } from 'reselect';
 import validUrl from 'valid-url';
 import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
-import * as linking from './iiif-linking';
-import * as structural from './iiif-structural';
 import {
   getAllAnnotationLists,
-  getAllAnnotations,
   getAllExternalResources,
   getAllImages,
   getAllLayers,
+  getAllRanges,
+  getAllSequences,
   getAllServices,
 } from './all';
-import { isImageService } from '../constants/services';
+import * as linking from './iiif-linking';
+import * as structural from './iiif-structural';
 
 export default memoize(selector => {
   /**************************************************
@@ -22,38 +22,35 @@ export default memoize(selector => {
    * - getId
    * - getType
    * - getViewingHint
-   * - getHeight
-   * - getWidth
+   * - getViewingDirection
+   * - getNavDate
    **************************************************/
   const getId = createSelector(selector, technical.getId);
 
   const getType = createSelector(selector, technical.getType);
 
-  const getViewingHint = createSelector(selector, canvas => {
-    const viewingHint = technical.getViewingHint(canvas);
-    switch (viewingHint) {
-      case 'non-paged':
-      case 'facing-pages':
-        return viewingHint;
-      default:
-        return validUrl.isWebUri(viewingHint) ? viewingHint : null;
-    }
-  });
+  const getViewingHint = createSelector(
+    selector,
+    technical.getWhitelistedViewingHint(['individuals', 'paged', 'continuous'])
+  );
 
-  const getHeight = createSelector(selector, technical.getHeight);
+  const getViewingDirection = createSelector(
+    selector,
+    technical.getViewingDirection
+  );
 
-  const getWidth = createSelector(selector, technical.getWidth);
+  const getNavDate = createSelector(selector, technical.getNavDate);
 
   /**************************************************
    * Descriptive properties
    *
    * - getLabel
-   * - getMetadata
    * - getDescription
-   * - getThumbnail
+   * - getMetadata
    * - getAttribution
-   * - getLicense
    * - getLogo
+   * - getLicence
+   * - getThumbnail
    **************************************************/
   const getLabel = createSelector(selector, descriptive.getLabel);
 
@@ -62,7 +59,6 @@ export default memoize(selector => {
   const getMetadata = createSelector(selector, descriptive.getMetadata);
 
   const getAttribution = createSelector(selector, descriptive.getAttribution);
-
   const getLogo = createSelector(selector, descriptive.getLogo);
 
   const getLicense = createSelector(selector, descriptive.getLicense);
@@ -88,13 +84,7 @@ export default memoize(selector => {
     getSeeAlsoIds,
     getAllExternalResources,
     (seeAlsoIds, allExternalResources) =>
-      seeAlsoIds.map(
-        seeAlsoId =>
-          allExternalResources[seeAlsoId] || {
-            '@id': seeAlsoId,
-            label: 'unknown',
-          }
-      )
+      seeAlsoIds.map(seeAlsoId => allExternalResources[seeAlsoId])
   );
 
   const getServiceIds = createSelector(selector, linking.getService);
@@ -135,9 +125,27 @@ export default memoize(selector => {
   /**************************************************
    * Structural properties
    *
-   * - getOtherContent
-   * - getImages
+   * - getSequences (Required)
+   * - getStructures / getRanges
    **************************************************/
+  const getSequenceIds = createSelector(selector, structural.getSequences);
+  const getSequences = createSelector(
+    getSequenceIds,
+    getAllSequences,
+    (sequenceIds, allSequences) =>
+      sequenceIds.map(sequenceId => allSequences[sequenceId])
+  );
+
+  const getRangeIds = createSelector(selector, structural.getRanges);
+  const getRanges = createSelector(
+    getRangeIds,
+    getAllRanges,
+    (rangeIds, allRanges) => rangeIds.map(rangeId => allRanges[rangeId])
+  );
+
+  const getStructureIds = getRangeIds;
+  const getStructures = getRanges;
+
   const getOtherContentIds = createSelector(
     selector,
     structural.getOtherContent
@@ -157,57 +165,23 @@ export default memoize(selector => {
       )
   );
 
-  const getImageIds = createSelector(selector, structural.getImages);
-  const getImages = createSelector(
-    getImageIds,
-    getAllAnnotations,
-    (imageIds, allImages) => imageIds.map(imageId => allImages[imageId])
-  );
-
-  /**************************************************
-   * Algorithms
-   *
-   * - getImageService
-   **************************************************/
-  const getImageService = createSelector(
-    getImages,
-    getAllServices,
-    getAllImages,
-    (images, allServices, allImages) =>
-      // The basic path is images[x].resource.service
-      images.reduce((result, image) => {
-        if (result) return result;
-        const resource =
-          image.resource.schema === 'imageResource'
-            ? allImages[image.resource.id]
-            : { service: [] };
-
-        return resource.service.reduce((innerResult, serviceId) => {
-          if (innerResult) return innerResult;
-          const service = allServices[serviceId];
-          if (isImageService(service.profile)) {
-            return service;
-          }
-        }, null);
-      }, null)
-  );
-
   return {
+    selector,
     // Technical
     getId,
     getType,
     getViewingHint,
-    getHeight,
-    getWidth,
+    getViewingDirection,
+    getNavDate,
     // Descriptive
     getLabel,
-    getMetadata,
     getDescription,
+    getMetadata,
+    getAttribution,
+    getLogo,
+    getLicense,
     getThumbnailId,
     getThumbnail,
-    getAttribution,
-    getLicense,
-    getLogo,
     // Linking
     getWithinIds,
     getWithin,
@@ -220,11 +194,13 @@ export default memoize(selector => {
     getSeeAlsoIds,
     getSeeAlso,
     // Structural
+    getSequenceIds,
+    getSequences,
+    getRangeIds,
+    getRanges,
+    getStructureIds,
+    getStructures,
     getOtherContentIds,
     getOtherContent,
-    getImageIds,
-    getImages,
-    // Algorithms.
-    getImageService,
   };
 });

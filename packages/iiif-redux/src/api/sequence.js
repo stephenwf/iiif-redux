@@ -1,19 +1,17 @@
 import memoize from 'lodash.memoize';
 import { createSelector } from 'reselect';
-import validUrl from 'valid-url';
 import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
 import * as linking from './iiif-linking';
 import * as structural from './iiif-structural';
 import {
-  getAllAnnotationLists,
-  getAllAnnotations,
   getAllExternalResources,
-  getAllImages,
   getAllLayers,
   getAllServices,
+  getAllCanvases,
+  getAllImages,
 } from './all';
-import { isImageService } from '../constants/services';
+import validUrl from 'valid-url';
 
 export default memoize(selector => {
   /**************************************************
@@ -22,38 +20,36 @@ export default memoize(selector => {
    * - getId
    * - getType
    * - getViewingHint
-   * - getHeight
-   * - getWidth
+   * - getViewingDirection
    **************************************************/
   const getId = createSelector(selector, technical.getId);
-
   const getType = createSelector(selector, technical.getType);
-
-  const getViewingHint = createSelector(selector, canvas => {
-    const viewingHint = technical.getViewingHint(canvas);
+  const getViewingHint = createSelector(selector, sequence => {
+    const viewingHint = technical.getViewingHint(sequence);
     switch (viewingHint) {
-      case 'non-paged':
-      case 'facing-pages':
+      case 'individuals':
+      case 'paged':
+      case 'continuous':
         return viewingHint;
       default:
         return validUrl.isWebUri(viewingHint) ? viewingHint : null;
     }
   });
-
-  const getHeight = createSelector(selector, technical.getHeight);
-
-  const getWidth = createSelector(selector, technical.getWidth);
+  const getViewingDirection = createSelector(
+    selector,
+    technical.getViewingDirection
+  );
 
   /**************************************************
    * Descriptive properties
    *
    * - getLabel
-   * - getMetadata
    * - getDescription
-   * - getThumbnail
+   * - getMetadata
    * - getAttribution
-   * - getLicense
    * - getLogo
+   * - getLicence
+   * - getThumbnail
    **************************************************/
   const getLabel = createSelector(selector, descriptive.getLabel);
 
@@ -82,19 +78,14 @@ export default memoize(selector => {
    * - getRelated
    * - getRendering
    * - getWithin
+   * - getStartCanvas
    **************************************************/
   const getSeeAlsoIds = createSelector(selector, linking.getSeeAlso);
   const getSeeAlso = createSelector(
     getSeeAlsoIds,
     getAllExternalResources,
     (seeAlsoIds, allExternalResources) =>
-      seeAlsoIds.map(
-        seeAlsoId =>
-          allExternalResources[seeAlsoId] || {
-            '@id': seeAlsoId,
-            label: 'unknown',
-          }
-      )
+      seeAlsoIds.map(seeAlsoId => allExternalResources[seeAlsoId])
   );
 
   const getServiceIds = createSelector(selector, linking.getService);
@@ -132,99 +123,56 @@ export default memoize(selector => {
       )
   );
 
+  const getStartCanvasId = createSelector(selector, linking.getStartCanvas);
+  const getStartCanvas = createSelector(
+    getStartCanvasId,
+    getAllCanvases,
+    (canvasId, allCanvases) => allCanvases[canvasId]
+  );
+
   /**************************************************
    * Structural properties
    *
-   * - getOtherContent
-   * - getImages
+   * - getCanvases (Required)
    **************************************************/
-  const getOtherContentIds = createSelector(
-    selector,
-    structural.getOtherContent
-  );
-  const getOtherContent = createSelector(
-    getOtherContentIds,
-    getAllExternalResources,
-    getAllAnnotationLists,
-    (otherContentIds, allExternalResources, allAnnotationLists) =>
-      otherContentIds.map(
-        otherContentId =>
-          allAnnotationLists[otherContentId] ||
-          allExternalResources[otherContentId] || {
-            '@id': otherContentId,
-            label: 'unknown',
-          }
-      )
-  );
-
-  const getImageIds = createSelector(selector, structural.getImages);
-  const getImages = createSelector(
-    getImageIds,
-    getAllAnnotations,
-    (imageIds, allImages) => imageIds.map(imageId => allImages[imageId])
-  );
-
-  /**************************************************
-   * Algorithms
-   *
-   * - getImageService
-   **************************************************/
-  const getImageService = createSelector(
-    getImages,
-    getAllServices,
-    getAllImages,
-    (images, allServices, allImages) =>
-      // The basic path is images[x].resource.service
-      images.reduce((result, image) => {
-        if (result) return result;
-        const resource =
-          image.resource.schema === 'imageResource'
-            ? allImages[image.resource.id]
-            : { service: [] };
-
-        return resource.service.reduce((innerResult, serviceId) => {
-          if (innerResult) return innerResult;
-          const service = allServices[serviceId];
-          if (isImageService(service.profile)) {
-            return service;
-          }
-        }, null);
-      }, null)
+  const getCanvasIds = createSelector(selector, structural.getCanvases);
+  const getCanvases = createSelector(
+    getCanvasIds,
+    getAllCanvases,
+    (canvasIds, allCanvases) => canvasIds.map(canvasId => allCanvases[canvasId])
   );
 
   return {
+    selector,
     // Technical
     getId,
     getType,
     getViewingHint,
-    getHeight,
-    getWidth,
+    getViewingDirection,
     // Descriptive
     getLabel,
-    getMetadata,
     getDescription,
+    getMetadata,
+    getAttribution,
+    getLogo,
+    getLicense,
     getThumbnailId,
     getThumbnail,
-    getAttribution,
-    getLicense,
-    getLogo,
     // Linking
-    getWithinIds,
-    getWithin,
-    getRenderingIds,
-    getRendering,
-    getRelatedIds,
-    getRelated,
-    getServiceIds,
-    getService,
     getSeeAlsoIds,
     getSeeAlso,
+    getServiceIds,
+    getService,
+    getRelatedIds,
+    getRelated,
+    getRenderingIds,
+    getRendering,
+    getWithinIds,
+    getWithin,
+    getStartCanvasId,
+    getStartCanvas,
     // Structural
-    getOtherContentIds,
-    getOtherContent,
-    getImageIds,
-    getImages,
-    // Algorithms.
-    getImageService,
+    getCanvasIds,
+    getCanvases,
   };
 });
