@@ -52,7 +52,7 @@ class StructuralPanel extends Component {
       <div>
         <h3>Structural</h3>
         <List
-          style={{ background: '#fff' }}
+          style={{ background: '#fff', marginBottom: 20 }}
           size="large"
           bordered
           dataSource={dataSource}

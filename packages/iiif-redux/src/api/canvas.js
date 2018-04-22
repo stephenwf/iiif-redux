@@ -15,7 +15,7 @@ import {
 } from './all';
 import { isImageService } from '../constants/services';
 
-const createCanvasSelectors = memoize(selector => {
+export default memoize(selector => {
   /**************************************************
    * Technical properties
    *
@@ -228,5 +228,3 @@ const createCanvasSelectors = memoize(selector => {
     getImageService,
   };
 });
-
-export default createCanvasSelectors;

@@ -25,6 +25,9 @@ const getLicense = resource => {
 };
 
 const getLogo = resource => {
+  if (!resource.logo) {
+    return null;
+  }
   if (Array.isArray(resource.logo)) {
     return resource.logo[0]['@id'] || resource.logo[0];
   }
