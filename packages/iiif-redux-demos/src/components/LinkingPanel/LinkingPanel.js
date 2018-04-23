@@ -6,17 +6,17 @@ class LinkingPanel extends Component {
   render() {
     const {
       // Multiple
-      seeAlso,
-      service,
-      related,
-      rendering,
+      seeAlso = [],
+      service = [],
+      related = [],
+      rendering = [],
       // Single
-      within,
+      within = [],
       startCanvas,
     } = this.props;
 
     const dataSource = [
-      seeAlso
+      seeAlso.length
         ? {
             label: 'See also links',
             value: seeAlso.map((seeAlsoLink, key) => (
@@ -32,7 +32,7 @@ class LinkingPanel extends Component {
             )),
           }
         : null,
-      service
+      service.length
         ? {
             label: 'Services',
             value: service.map((serviceLink, key) => (
@@ -48,7 +48,7 @@ class LinkingPanel extends Component {
             )),
           }
         : null,
-      related
+      related.length
         ? {
             label: 'Related',
             value: related.map((relatedLink, key) => (
@@ -64,7 +64,7 @@ class LinkingPanel extends Component {
             )),
           }
         : null,
-      rendering
+      rendering.length
         ? rendering.map((renderingLink, key) => (
             <li key={key}>
               <a href={renderingLink['@id']} target="_blank">
@@ -77,7 +77,7 @@ class LinkingPanel extends Component {
             </li>
           ))
         : null,
-      within
+      within.length
         ? {
             label: 'Within',
             value: within.map((withinLink, key) => (

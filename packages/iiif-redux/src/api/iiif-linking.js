@@ -21,7 +21,7 @@ const getRendering = resource => resource.rendering || [];
 
 const getWithin = resource => resource.within || [];
 
-const getStartCanvas = resource => resource.startCanvas;
+const getStartCanvas = resource => resource.startCanvas || null;
 
 export {
   getSeeAlso,

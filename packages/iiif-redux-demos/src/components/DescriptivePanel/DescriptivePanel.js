@@ -43,7 +43,9 @@ class DescriptivePanel extends Component {
         ),
       },
       ...(metadata || []).map(metadataItem => ({
-        title: <IntlString>{metadataItem.label}</IntlString>,
+        title: metadataItem.label ? (
+          <IntlString>{metadataItem.label}</IntlString>
+        ) : null,
         value: <IntlString>{metadataItem.value}</IntlString>,
       })),
     ];
