@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as currentCollection from 'iiif-redux/es/api/current-collection';
 import { createStructuredSelector } from 'reselect';
-import { Row, Col, Card, Layout, List, Badge } from 'antd';
-import StructuralPanel from './components/StructuralPanel/StructuralPanel';
-import DescriptivePanel from './components/DescriptivePanel/DescriptivePanel';
-import IntlString from './components/IntlString/IntlString';
-const { Header, Content, Footer } = Layout;
+import { Row, Col, Card, Layout } from 'antd';
+import StructuralPanel from '../StructuralPanel/StructuralPanel';
+import DescriptivePanel from '../DescriptivePanel/DescriptivePanel';
+import LinkingPanel from '../LinkingPanel/LinkingPanel';
+import TechnicalPanel from '../TechnicalPanel/TechnicalPanel';
+const { Content } = Layout;
 
 const Locale = str => {
   return str.children ? str.children[0]['@value'] || '' : '';
@@ -14,15 +15,16 @@ const Locale = str => {
 
 class Collection extends Component {
   render() {
-    const { onClickCollection } = this.props;
+    const { onClickCollection, onClickManifest } = this.props;
     return (
       <Content>
         <Row gutter={16} style={{ padding: 15 }}>
           <Col span={8}>
-            <StructuralPanel
-              collections={this.props.collections}
-              manifests={this.props.manifests}
-              otherContent={this.props.otherContent}
+            <TechnicalPanel
+              id={this.props.id}
+              type={this.props.type}
+              viewingHint={this.props.viewingHint}
+              navDate={this.props.navDate}
             />
             <DescriptivePanel
               label={this.props.label}
@@ -32,6 +34,17 @@ class Collection extends Component {
               logo={this.props.logo}
               license={this.props.license}
               thumbnail={this.props.thumbnail}
+            />
+            <StructuralPanel
+              collections={this.props.collections}
+              manifests={this.props.manifests}
+              otherContent={this.props.otherContent}
+            />
+            <LinkingPanel
+              seeAlso={this.props.seeAlso}
+              service={this.props.service}
+              related={this.props.related}
+              within={this.props.within}
             />
           </Col>
           <Col span={16}>
@@ -60,6 +73,7 @@ class Collection extends Component {
                   {this.props.manifests.map((manifest, key) => (
                     <Col span={12} key={key}>
                       <Card
+                        onClick={() => onClickManifest(manifest['@id'])}
                         style={{ margin: 15 }}
                         title={<Locale>{manifest.label}</Locale>}
                       >
@@ -79,6 +93,10 @@ class Collection extends Component {
 
 export default connect(
   createStructuredSelector({
+    id: currentCollection.getId,
+    type: currentCollection.getType,
+    viewingHint: currentCollection.getViewingHint,
+    navDate: currentCollection.getNavDate,
     collections: currentCollection.getCollections,
     manifests: currentCollection.getManifests,
     members: currentCollection.getMemberIds,
@@ -90,5 +108,9 @@ export default connect(
     logo: currentCollection.getLogo,
     license: currentCollection.getLicense,
     thumbnail: currentCollection.getThumbnail,
+    seeAlso: currentCollection.getSeeAlso,
+    service: currentCollection.getService,
+    related: currentCollection.getRelated,
+    within: currentCollection.getWithin,
   })
 )(Collection);

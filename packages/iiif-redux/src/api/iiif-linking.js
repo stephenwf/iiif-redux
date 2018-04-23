@@ -11,17 +11,17 @@
  * - getWithin
  * - getStartCanvas
  */
-const getSeeAlso = resource => resource.seeAlso;
+const getSeeAlso = resource => resource.seeAlso || [];
 
-const getService = resource => resource.service;
+const getService = resource => resource.service || [];
 
-const getRelated = resource => resource.related;
+const getRelated = resource => resource.related || [];
 
-const getRendering = resource => resource.rendering;
+const getRendering = resource => resource.rendering || [];
 
-const getWithin = resource => resource.within;
+const getWithin = resource => resource.within || [];
 
-const getStartCanvas = resource => resource.startCanvas;
+const getStartCanvas = resource => resource.startCanvas || null;
 
 export {
   getSeeAlso,

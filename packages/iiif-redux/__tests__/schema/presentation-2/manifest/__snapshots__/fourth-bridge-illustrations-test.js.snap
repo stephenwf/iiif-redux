@@ -1049,11 +1049,21 @@ Object {
   "externalResources": Object {
     "http://seealso.com/page-1.json": Object {
       "@id": "http://seealso.com/page-1.json",
-      "label": "Page 1",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Page 1",
+        },
+      ],
     },
     "http://seealso.com/page-2.json": Object {
       "@id": "http://seealso.com/page-2.json",
-      "label": "Page 2",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Page 2",
+        },
+      ],
     },
     "http://seealso.com/page-3.json": Object {
       "@id": "http://seealso.com/page-3.json",

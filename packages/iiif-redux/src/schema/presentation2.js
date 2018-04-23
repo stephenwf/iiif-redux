@@ -24,10 +24,11 @@ import moveStartCanvasToSequence from '../compat/moveStartCanvasToSequence';
 import preprocessLinkedEntities from '../compat/preprocessLinkedEntities';
 
 function createEntity(name, hasLinked = true) {
-  const options = { idAttribute: '@id' };
-  if (hasLinked) {
-    options.processStrategy = preprocessLinkedEntities;
-  }
+  const options = {
+    idAttribute: '@id',
+    processStrategy: preprocessLinkedEntities,
+  };
+
   return new schema.Entity(name, {}, options);
 }
 
@@ -42,7 +43,7 @@ const layer = createEntity('layers');
 const imageResource = createEntity('imageResources'); // thumbnails + image service
 
 // Unofficial types?
-const externalResource = createEntity('externalResources', false);
+const externalResource = createEntity('externalResources');
 const service = createEntity('services', true);
 const within = new schema.Array(
   {

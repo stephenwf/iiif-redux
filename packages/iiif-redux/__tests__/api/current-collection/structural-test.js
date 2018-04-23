@@ -10,6 +10,7 @@ import {
 } from '../../../src/api/current-collection';
 
 describe('api/current-collection/structural', () => {
+  const t = text => [{ '@value': text, '@language': 'en' }];
   const state = {
     routing: { currentCollection: 'http://iiif.com/collection-1.json' },
     config: { defaultLanguage: 'en' },
@@ -17,7 +18,7 @@ describe('api/current-collection/structural', () => {
       collections: {
         'http://iiif.com/collection-1.json': {
           '@id': 'http://iiif.com/collection-1.json',
-          label: 'Collection 1',
+          label: t('Collection 1'),
           collections: [
             { id: 'http://iiif.com/collection-2.json', schema: 'collection' },
             { id: 'http://iiif.com/collection-3.json', schema: 'collection' },
@@ -61,61 +62,61 @@ describe('api/current-collection/structural', () => {
         },
         'http://iiif.com/collection-2.json': {
           '@id': 'http://iiif.com/collection-2.json',
-          label: 'Collection 2',
+          label: t('Collection 2'),
         },
         'http://iiif.com/collection-3.json': {
           '@id': 'http://iiif.com/collection-3.json',
-          label: 'Collection 3',
+          label: t('Collection 3'),
         },
         'http://iiif.com/collection-4.json': {
           '@id': 'http://iiif.com/collection-4.json',
-          label: 'Collection 4',
+          label: t('Collection 4'),
         },
       },
       annotationLists: {
         'http://iiif.com/annotation-list-1.json': {
           '@id': 'http://iiif.com/annotation-list-1.json',
-          label: 'Annotation List 1',
+          label: t('Annotation List 1'),
         },
         'http://iiif.com/annotation-list-2.json': {
           '@id': 'http://iiif.com/annotation-list-2.json',
-          label: 'Annotation List 2',
+          label: t('Annotation List 2'),
         },
       },
       externalResources: {
         'http://iiif.com/external-1.json': {
           '@id': 'http://iiif.com/external-1.json',
-          label: 'External 1',
+          label: t('External 1'),
         },
         'http://iiif.com/external-2.json': {
           '@id': 'http://iiif.com/external-2.json',
-          label: 'External 2',
+          label: t('External 2'),
         },
       },
       manifests: {
         'http://iiif.com/manifest-1.json': {
           '@id': 'http://iiif.com/manifest-1.json',
-          label: 'Manifest 1',
+          label: t('Manifest 1'),
         },
         'http://iiif.com/manifest-2.json': {
           '@id': 'http://iiif.com/manifest-2.json',
-          label: 'Manifest 2',
+          label: t('Manifest 2'),
         },
         'http://iiif.com/manifest-3.json': {
           '@id': 'http://iiif.com/manifest-3.json',
-          label: 'Manifest 3',
+          label: t('Manifest 3'),
         },
         'http://iiif.com/manifest-4.json': {
           '@id': 'http://iiif.com/manifest-4.json',
-          label: 'Manifest 4',
+          label: t('Manifest 4'),
         },
         'http://iiif.com/manifest-5.json': {
           '@id': 'http://iiif.com/manifest-5.json',
-          label: 'Manifest 5',
+          label: t('Manifest 5'),
         },
         'http://iiif.com/manifest-6.json': {
           '@id': 'http://iiif.com/manifest-6.json',
-          label: 'Manifest 6',
+          label: t('Manifest 6'),
         },
       },
     },
@@ -153,14 +154,15 @@ describe('api/current-collection/structural', () => {
   });
 
   it('should getCollections', () => {
-    expect(getCollections(state).map(collection => collection.label)).toEqual([
-      'Collection 2',
-      'Collection 3',
-    ]);
+    expect(
+      getCollections(state).map(collection => collection.label[0]['@value'])
+    ).toEqual(['Collection 2', 'Collection 3']);
   });
 
   it('should getManifests', () => {
-    expect(getManifests(state).map(manifest => manifest.label)).toEqual([
+    expect(
+      getManifests(state).map(manifest => manifest.label[0]['@value'])
+    ).toEqual([
       'Manifest 1',
       'Manifest 2',
       'Manifest 3',
@@ -171,7 +173,7 @@ describe('api/current-collection/structural', () => {
   });
 
   it('should getMembers', () => {
-    expect(getMembers(state).map(member => member.label)).toEqual([
+    expect(getMembers(state).map(member => member.label[0]['@value'])).toEqual([
       'Collection 2',
       'Collection 3',
       'Manifest 1',
@@ -195,7 +197,9 @@ describe('api/current-collection/structural', () => {
 
   it('should get Other content', () => {
     expect(
-      getOtherContent(state).map(otherContent => otherContent.label)
+      getOtherContent(state).map(
+        otherContent => otherContent.label[0]['@value']
+      )
     ).toEqual([
       'External 1',
       'Annotation List 1',

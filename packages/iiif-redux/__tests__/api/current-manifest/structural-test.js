@@ -10,6 +10,7 @@ import {
 } from '../../../src/api/current-manifest';
 
 describe('api/current-manifest/structural', () => {
+  const t = text => [{ '@value': text, '@language': 'en' }];
   const state = {
     routing: { currentManifest: 'http://iiif.com/manifest-1.json' },
     config: { defaultLanguage: 'en' },
@@ -17,7 +18,7 @@ describe('api/current-manifest/structural', () => {
       manifests: {
         'http://iiif.com/manifest-1.json': {
           '@id': 'http://iiif.com/manifest-1.json',
-          label: 'Manifest 1',
+          label: t('Manifest 1'),
           sequences: ['http://iiif.com/sequence-1.json'],
           structures: [
             'http://iiif.com/range-1.json',
@@ -50,38 +51,38 @@ describe('api/current-manifest/structural', () => {
       sequences: {
         'http://iiif.com/sequence-1.json': {
           '@id': 'http://iiif.com/sequence-1.json',
-          label: 'Sequence 1',
+          label: t('Sequence 1'),
           canvases: ['http://iiif.com/canvas-1.json'],
         },
       },
       ranges: {
         'http://iiif.com/range-1.json': {
           '@id': 'http://iiif.com/range-1.json',
-          label: 'Range 1',
+          label: t('Range 1'),
         },
         'http://iiif.com/range-2.json': {
           '@id': 'http://iiif.com/range-2.json',
-          label: 'Range 2',
+          label: t('Range 2'),
         },
       },
       annotationLists: {
         'http://iiif.com/annotation-list-1.json': {
           '@id': 'http://iiif.com/annotation-list-1.json',
-          label: 'Annotation List 1',
+          label: t('Annotation List 1'),
         },
         'http://iiif.com/annotation-list-2.json': {
           '@id': 'http://iiif.com/annotation-list-2.json',
-          label: 'Annotation List 2',
+          label: t('Annotation List 2'),
         },
       },
       externalResources: {
         'http://iiif.com/external-1.json': {
           '@id': 'http://iiif.com/external-1.json',
-          label: 'External 1',
+          label: t('External 1'),
         },
         'http://iiif.com/external-2.json': {
           '@id': 'http://iiif.com/external-2.json',
-          label: 'External 2',
+          label: t('External 2'),
         },
       },
     },
@@ -92,9 +93,9 @@ describe('api/current-manifest/structural', () => {
   });
 
   it('should load full sequences', () => {
-    expect(getSequences(state).map(sequence => sequence.label)).toEqual([
-      'Sequence 1',
-    ]);
+    expect(
+      getSequences(state).map(sequence => sequence.label[0]['@value'])
+    ).toEqual(['Sequence 1']);
   });
 
   it('should load range ids', () => {
@@ -108,14 +109,13 @@ describe('api/current-manifest/structural', () => {
     ]);
   });
   it('should load ranges', () => {
-    expect(getRanges(state).map(range => range.label)).toEqual([
+    expect(getRanges(state).map(range => range.label[0]['@value'])).toEqual([
       'Range 1',
       'Range 2',
     ]);
-    expect(getStructures(state).map(range => range.label)).toEqual([
-      'Range 1',
-      'Range 2',
-    ]);
+    expect(getStructures(state).map(range => range.label[0]['@value'])).toEqual(
+      ['Range 1', 'Range 2']
+    );
   });
 
   it('should get other content ids', () => {
@@ -130,7 +130,9 @@ describe('api/current-manifest/structural', () => {
 
   it('should get Other content', () => {
     expect(
-      getOtherContent(state).map(otherContent => otherContent.label)
+      getOtherContent(state).map(
+        otherContent => otherContent.label[0]['@value']
+      )
     ).toEqual([
       'External 1',
       'Annotation List 1',
