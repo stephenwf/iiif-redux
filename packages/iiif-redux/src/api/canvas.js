@@ -1,5 +1,5 @@
 import memoize from 'lodash.memoize';
-import { createSelector } from 'reselect';
+import { createSelector, createStructuredSelector } from 'reselect';
 import validUrl from 'valid-url';
 import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
@@ -15,7 +15,7 @@ import {
 } from './all';
 import { isImageService } from '../constants/services';
 
-export default memoize(selector => {
+const canvas = memoize(selector => {
   /**************************************************
    * Technical properties
    *
@@ -29,8 +29,8 @@ export default memoize(selector => {
 
   const getType = createSelector(selector, technical.getType);
 
-  const getViewingHint = createSelector(selector, canvas => {
-    const viewingHint = technical.getViewingHint(canvas);
+  const getViewingHint = createSelector(selector, canvasEntity => {
+    const viewingHint = technical.getViewingHint(canvasEntity);
     switch (viewingHint) {
       case 'non-paged':
       case 'facing-pages':
@@ -228,3 +228,14 @@ export default memoize(selector => {
     getImageService,
   };
 });
+
+export default canvas;
+
+export function canvasByIdSelector(callable, getId) {
+  return (state, props) =>
+    createStructuredSelector(
+      callable(
+        canvas(() => state.resources.canvases[getId ? getId(props) : props.id])
+      )
+    )(state);
+}

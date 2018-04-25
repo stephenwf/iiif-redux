@@ -11,4 +11,5 @@ module.exports = require('babel-jest').createTransformer({
     'react',
     'stage-1',
   ],
+  babelrc: false,
 });

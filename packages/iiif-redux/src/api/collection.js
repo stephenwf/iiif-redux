@@ -1,5 +1,5 @@
 import memoize from 'lodash.memoize';
-import { createSelector } from 'reselect';
+import { createSelector, createStructuredSelector } from 'reselect';
 import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
 import * as linking from './iiif-linking';
@@ -14,8 +14,9 @@ import {
   getAllAnnotationLists,
   getAllImages,
 } from './all';
+import manifest from './manifest';
 
-export default memoize(selector => {
+const collection = memoize(selector => {
   /**************************************************
    * Technical properties
    *
@@ -259,3 +260,16 @@ export default memoize(selector => {
     // Other
   };
 });
+
+export default collection;
+
+export function collectionByIdSelector(callable, getId) {
+  return (state, props) =>
+    createStructuredSelector(
+      callable(
+        collection(
+          () => state.resources.collections[getId ? getId(props) : props.id]
+        )
+      )
+    )(state);
+}

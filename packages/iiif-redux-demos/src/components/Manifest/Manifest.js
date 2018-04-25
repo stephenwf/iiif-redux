@@ -7,6 +7,7 @@ import StructuralPanel from '../StructuralPanel/StructuralPanel';
 import DescriptivePanel from '../DescriptivePanel/DescriptivePanel';
 import LinkingPanel from '../LinkingPanel/LinkingPanel';
 import TechnicalPanel from '../TechnicalPanel/TechnicalPanel';
+import SequencePreview from '../SequencePreview/SequencePreview';
 const { Content } = Layout;
 
 const Locale = str => {
@@ -19,7 +20,15 @@ class Manifest extends Component {
     return (
       <Content>
         <Row gutter={16} style={{ padding: 15 }}>
-          <Col span={8}>
+          <Col
+            span={8}
+            style={{
+              position: 'sticky',
+              top: 10,
+              overflow: 'auto',
+              maxHeight: '100vh',
+            }}
+          >
             <TechnicalPanel
               id={this.props.id}
               type={this.props.type}
@@ -54,14 +63,12 @@ class Manifest extends Component {
                 <h3>Sequences</h3>
                 <Row gutter={16} style={{ padding: 15 }}>
                   {this.props.sequences.map((sequence, key) => (
-                    <Col span={12} key={key}>
-                      <Card
-                        onClick={() => onClickSequence(sequence['@id'])}
-                        style={{ margin: 15 }}
-                        title={<Locale>{sequence.label}</Locale>}
-                      >
-                        {sequence['@id']}
-                      </Card>
+                    <Col span={24} key={key}>
+                      <SequencePreview
+                        id={sequence['@id']}
+                        key={key}
+                        onClick={onClickSequence}
+                      />
                     </Col>
                   ))}
                 </Row>

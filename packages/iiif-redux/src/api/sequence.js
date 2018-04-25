@@ -1,5 +1,5 @@
 import memoize from 'lodash.memoize';
-import { createSelector } from 'reselect';
+import { createSelector, createStructuredSelector } from 'reselect';
 import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
 import * as linking from './iiif-linking';
@@ -13,7 +13,7 @@ import {
 } from './all';
 import validUrl from 'valid-url';
 
-export default memoize(selector => {
+const sequence = memoize(selector => {
   /**************************************************
    * Technical properties
    *
@@ -24,8 +24,8 @@ export default memoize(selector => {
    **************************************************/
   const getId = createSelector(selector, technical.getId);
   const getType = createSelector(selector, technical.getType);
-  const getViewingHint = createSelector(selector, sequence => {
-    const viewingHint = technical.getViewingHint(sequence);
+  const getViewingHint = createSelector(selector, sequenceEntity => {
+    const viewingHint = technical.getViewingHint(sequenceEntity);
     switch (viewingHint) {
       case 'individuals':
       case 'paged':
@@ -176,3 +176,16 @@ export default memoize(selector => {
     getCanvases,
   };
 });
+
+export default sequence;
+
+export function sequenceByIdSelector(callable, getId) {
+  return (state, props) =>
+    createStructuredSelector(
+      callable(
+        sequence(
+          () => state.resources.sequences[getId ? getId(props) : props.id]
+        )
+      )
+    )(state);
+}

@@ -2699,6 +2699,16 @@ cross-spawn@^5.0.1, cross-spawn@^5.1.0:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
+cross-spawn@^6.0.5:
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-6.0.5.tgz#4a5ec7c64dfae22c3a14124dbacdee846d80cbc4"
+  dependencies:
+    nice-try "^1.0.4"
+    path-key "^2.0.1"
+    semver "^5.5.0"
+    shebang-command "^1.2.0"
+    which "^1.2.9"
+
 cryptiles@2.x.x:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/cryptiles/-/cryptiles-2.0.5.tgz#3bdfecdc608147c1c67202fa291e7dca59eaa3b8"
@@ -7274,6 +7284,12 @@ nwb-less@^0.7.0:
   dependencies:
     less "3.0.1"
     less-loader "4.1.0"
+
+nwb-watch@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/nwb-watch/-/nwb-watch-1.0.0.tgz#69604f80ae16f61055f23e8c12fc259ceb0e159b"
+  dependencies:
+    cross-spawn "^6.0.5"
 
 nwb@0.21.5:
   version "0.21.5"
