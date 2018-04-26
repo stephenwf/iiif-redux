@@ -7,11 +7,9 @@ import StructuralPanel from '../StructuralPanel/StructuralPanel';
 import DescriptivePanel from '../DescriptivePanel/DescriptivePanel';
 import LinkingPanel from '../LinkingPanel/LinkingPanel';
 import TechnicalPanel from '../TechnicalPanel/TechnicalPanel';
+import ManifestPreview from '../ManifestPreview/ManifestPreview';
+import CollectionPreview from '../CollectionPreview/CollectionPreview';
 const { Content } = Layout;
-
-const Locale = str => {
-  return str.children ? str.children[0]['@value'] || '' : '';
-};
 
 class Collection extends Component {
   render() {
@@ -54,13 +52,11 @@ class Collection extends Component {
                 <Row gutter={16} style={{ padding: 15 }}>
                   {this.props.collections.map((collection, key) => (
                     <Col span={12} key={key}>
-                      <Card
-                        onClick={() => onClickCollection(collection['@id'])}
-                        style={{ margin: 15 }}
-                        title={<Locale>{collection.label}</Locale>}
-                      >
-                        {collection['@id']}
-                      </Card>
+                      <CollectionPreview
+                        key={key}
+                        id={collection['@id']}
+                        onClick={onClickCollection}
+                      />
                     </Col>
                   ))}
                 </Row>
@@ -72,13 +68,11 @@ class Collection extends Component {
                 <Row gutter={16} style={{ padding: 15 }}>
                   {this.props.manifests.map((manifest, key) => (
                     <Col span={12} key={key}>
-                      <Card
-                        onClick={() => onClickManifest(manifest['@id'])}
-                        style={{ margin: 15 }}
-                        title={<Locale>{manifest.label}</Locale>}
-                      >
-                        {manifest['@id']}
-                      </Card>
+                      <ManifestPreview
+                        id={manifest['@id']}
+                        key={key}
+                        onClick={onClickManifest}
+                      />
                     </Col>
                   ))}
                 </Row>

@@ -8,9 +8,10 @@
   "jsnext:main": "es/index",
   "files": ["es", "lib", "umd"],
   "scripts": {
+    "watch": "nwb-watch-module",
     "build": "nwb build-web-module",
     "clean": "nwb clean-module",
-    "watch": "npm-watch"
+    "start": "run-p watch"
   },
   "dependencies": {
     "deepmerge": "^2.1.0",
@@ -29,13 +30,11 @@
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
+    "nwb-watch": "1.0.0",
     "@types/reselect": "^2.2.0",
     "babel-jest": "^22.4.3",
     "nwb": "0.21.5",
     "react-test-renderer": "^16.2.0"
-  },
-  "watch": {
-    "build": "src/**/*.js"
   },
   "jest": {
     "transform": {

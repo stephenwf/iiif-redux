@@ -46,6 +46,12 @@ class StructuralPanel extends Component {
             value: this.props.otherContent.length,
           }
         : null,
+      this.props.images
+        ? {
+            label: 'Total images',
+            value: this.props.images.length,
+          }
+        : null,
     ].filter(e => e);
 
     return (

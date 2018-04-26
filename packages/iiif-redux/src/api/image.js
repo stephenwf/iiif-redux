@@ -1,48 +1,31 @@
 import memoize from 'lodash.memoize';
-import { createSelector, createStructuredSelector } from 'reselect';
-import validUrl from 'valid-url';
+import { createSelector } from 'reselect';
 import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
-import * as linking from './iiif-linking';
-import * as structural from './iiif-structural';
 import {
-  getAllAnnotationLists,
-  getAllAnnotations,
   getAllExternalResources,
   getAllImages,
   getAllLayers,
   getAllServices,
 } from './all';
-import { isImageService } from '../constants/services';
+import * as linking from './iiif-linking';
 
-const canvas = memoize(selector => {
+const image = memoize(selector => {
   /**************************************************
    * Technical properties
    *
    * - getId
    * - getType
    * - getViewingHint
-   * - getHeight
-   * - getWidth
    **************************************************/
   const getId = createSelector(selector, technical.getId);
 
   const getType = createSelector(selector, technical.getType);
 
-  const getViewingHint = createSelector(selector, canvasEntity => {
-    const viewingHint = technical.getViewingHint(canvasEntity);
-    switch (viewingHint) {
-      case 'non-paged':
-      case 'facing-pages':
-        return viewingHint;
-      default:
-        return validUrl.isWebUri(viewingHint) ? viewingHint : null;
-    }
-  });
-
-  const getHeight = createSelector(selector, technical.getHeight);
-
-  const getWidth = createSelector(selector, technical.getWidth);
+  const getViewingHint = createSelector(
+    selector,
+    technical.getWhitelistedViewingHint([])
+  );
 
   /**************************************************
    * Descriptive properties
@@ -132,73 +115,11 @@ const canvas = memoize(selector => {
         .filter(e => e)
   );
 
-  /**************************************************
-   * Structural properties
-   *
-   * - getOtherContent
-   * - getImages
-   **************************************************/
-  const getOtherContentIds = createSelector(
-    selector,
-    structural.getOtherContent
-  );
-  const getOtherContent = createSelector(
-    getOtherContentIds,
-    getAllExternalResources,
-    getAllAnnotationLists,
-    (otherContentIds, allExternalResources, allAnnotationLists) =>
-      otherContentIds.map(
-        otherContentId =>
-          allAnnotationLists[otherContentId] ||
-          allExternalResources[otherContentId] || {
-            '@id': otherContentId,
-            label: [{ '@value': 'unknown', '@language': '@none' }],
-          }
-      )
-  );
-
-  const getImageIds = createSelector(selector, structural.getImages);
-  const getImages = createSelector(
-    getImageIds,
-    getAllAnnotations,
-    (imageIds, allImages) => imageIds.map(imageId => allImages[imageId])
-  );
-
-  /**************************************************
-   * Algorithms
-   *
-   * - getImageService
-   **************************************************/
-  const getImageService = createSelector(
-    getImages,
-    getAllServices,
-    getAllImages,
-    (images, allServices, allImages) =>
-      // The basic path is images[x].resource.service
-      images.reduce((result, image) => {
-        if (result) return result;
-        const resource =
-          image.resource.schema === 'imageResource'
-            ? allImages[image.resource.id]
-            : { service: [] };
-
-        return resource.service.reduce((innerResult, serviceId) => {
-          if (innerResult) return innerResult;
-          const service = allServices[serviceId];
-          if (isImageService(service.profile)) {
-            return service;
-          }
-        }, null);
-      }, null)
-  );
-
   return {
     // Technical
     getId,
     getType,
     getViewingHint,
-    getHeight,
-    getWidth,
     // Descriptive
     getLabel,
     getMetadata,
@@ -209,33 +130,17 @@ const canvas = memoize(selector => {
     getLicense,
     getLogo,
     // Linking
-    getWithinIds,
-    getWithin,
-    getRenderingIds,
-    getRendering,
-    getRelatedIds,
-    getRelated,
-    getServiceIds,
-    getService,
-    getSeeAlsoIds,
     getSeeAlso,
-    // Structural
-    getOtherContentIds,
-    getOtherContent,
-    getImageIds,
-    getImages,
-    // Algorithms.
-    getImageService,
+    getSeeAlsoIds,
+    getService,
+    getServiceIds,
+    getRelated,
+    getRelatedIds,
+    getRendering,
+    getRenderingIds,
+    getWithin,
+    getWithinIds,
   };
 });
 
-export default canvas;
-
-export function canvasByIdSelector(callable, getId) {
-  return (state, props) =>
-    createStructuredSelector(
-      callable(
-        canvas(() => state.resources.canvases[getId ? getId(props) : props.id])
-      )
-    )(state);
-}
+export default image;

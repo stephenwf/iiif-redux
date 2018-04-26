@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as currentManifest from 'iiif-redux/es/api/current-manifest';
+import * as currentSequence from 'iiif-redux/es/api/current-sequence';
 import { createStructuredSelector } from 'reselect';
-import { Row, Col, Card, Layout } from 'antd';
+import { Row, Col, Layout } from 'antd';
 import StructuralPanel from '../StructuralPanel/StructuralPanel';
 import DescriptivePanel from '../DescriptivePanel/DescriptivePanel';
 import LinkingPanel from '../LinkingPanel/LinkingPanel';
 import TechnicalPanel from '../TechnicalPanel/TechnicalPanel';
-import SequencePreview from '../SequencePreview/SequencePreview';
+import CanvasPreview from '../CanvasPreview/CanvasPreview';
 const { Content } = Layout;
 
-const Locale = str => {
-  return str.children ? str.children[0]['@value'] || '' : '';
-};
-
-class Manifest extends Component {
+class Sequence extends Component {
   render() {
-    const { onClickSequence, onClickCanvas } = this.props;
+    const { onClickCanvas } = this.props;
     return (
       <Content>
         <Row gutter={16} style={{ padding: 15 }}>
@@ -34,7 +30,6 @@ class Manifest extends Component {
               type={this.props.type}
               viewingHint={this.props.viewingHint}
               viewingDirection={this.props.viewingDirection}
-              navDate={this.props.navDate}
             />
             <DescriptivePanel
               label={this.props.label}
@@ -45,30 +40,26 @@ class Manifest extends Component {
               license={this.props.license}
               thumbnail={this.props.thumbnail}
             />
-            <StructuralPanel
-              sequences={this.props.sequences}
-              ranges={this.props.ranges}
-              otherContent={this.props.otherContent}
-            />
+            <StructuralPanel canvases={this.props.canvases} />
             <LinkingPanel
               seeAlso={this.props.seeAlso}
               service={this.props.service}
               related={this.props.related}
               within={this.props.within}
+              startCanvas={this.props.startCanvas}
             />
           </Col>
           <Col span={16}>
-            {this.props.sequences.length ? (
+            {this.props.canvases.length ? (
               <div>
-                <h3>Sequences</h3>
+                <h3>Canvases</h3>
                 <Row gutter={16} style={{ padding: 15 }}>
-                  {this.props.sequences.map((sequence, key) => (
-                    <Col span={24} key={key}>
-                      <SequencePreview
-                        id={sequence['@id']}
+                  {this.props.canvases.map((canvas, key) => (
+                    <Col span={8} key={key}>
+                      <CanvasPreview
+                        id={canvas['@id']}
                         key={key}
-                        onClick={onClickSequence}
-                        onClickCanvas={onClickCanvas}
+                        onClick={onClickCanvas}
                       />
                     </Col>
                   ))}
@@ -85,28 +76,26 @@ class Manifest extends Component {
 export default connect(
   createStructuredSelector({
     // Technical
-    id: currentManifest.getId,
-    type: currentManifest.getType,
-    viewingHint: currentManifest.getViewingHint,
-    viewingDirection: currentManifest.getViewingDirection,
-    navDate: currentManifest.getNavDate,
+    id: currentSequence.getId,
+    type: currentSequence.getType,
+    viewingHint: currentSequence.getViewingHint,
+    viewingDirection: currentSequence.getViewingDirection,
     // Descriptive
-    label: currentManifest.getLabel,
-    description: currentManifest.getDescription,
-    metadata: currentManifest.getMetadata,
-    attribution: currentManifest.getAttribution,
-    logo: currentManifest.getLogo,
-    license: currentManifest.getLicense,
-    thumbnail: currentManifest.getThumbnail,
+    label: currentSequence.getLabel,
+    description: currentSequence.getDescription,
+    metadata: currentSequence.getMetadata,
+    attribution: currentSequence.getAttribution,
+    logo: currentSequence.getLogo,
+    license: currentSequence.getLicense,
+    thumbnail: currentSequence.getThumbnail,
     // Linking
-    within: currentManifest.getWithin,
-    rendering: currentManifest.getRendering,
-    related: currentManifest.getRelated,
-    service: currentManifest.getService,
-    seeAlso: currentManifest.getSeeAlso,
+    within: currentSequence.getWithin,
+    rendering: currentSequence.getRendering,
+    related: currentSequence.getRelated,
+    service: currentSequence.getService,
+    seeAlso: currentSequence.getSeeAlso,
+    startCanvas: currentSequence.getStartCanvas,
     // Structural
-    sequences: currentManifest.getSequences,
-    ranges: currentManifest.getRanges,
-    otherContent: currentManifest.getOtherContent,
+    canvases: currentSequence.getCanvases,
   })
-)(Manifest);
+)(Sequence);
