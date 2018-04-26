@@ -1,7 +1,8 @@
 import memoize from 'lodash.memoize';
-import { createSelector } from 'reselect';
+import { createSelector, createStructuredSelector } from 'reselect';
 import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
+import * as structural from './iiif-structural';
 import {
   getAllExternalResources,
   getAllImages,
@@ -9,6 +10,7 @@ import {
   getAllServices,
 } from './all';
 import * as linking from './iiif-linking';
+import { isImageService } from '../constants/services';
 
 const image = memoize(selector => {
   /**************************************************
@@ -115,6 +117,34 @@ const image = memoize(selector => {
         .filter(e => e)
   );
 
+  /**************************************************
+   * Structural properties
+   *
+   * - getResource
+   **************************************************/
+  const getResourceId = createSelector(selector, structural.getResource);
+  const getResource = createSelector(
+    getResourceId,
+    getAllImages,
+    (resourceId, allImageResources) => allImageResources[resourceId] || null
+  );
+
+  const getImageService = createSelector(
+    getResource,
+    getAllServices,
+    (resource, allServices) =>
+      resource
+        ? resource.service.reduce((innerResult, serviceId) => {
+            if (innerResult) return innerResult;
+            const service = allServices[serviceId];
+            if (isImageService(service.profile)) {
+              return service;
+            }
+            return null;
+          }, null)
+        : null
+  );
+
   return {
     // Technical
     getId,
@@ -140,7 +170,23 @@ const image = memoize(selector => {
     getRenderingIds,
     getWithin,
     getWithinIds,
+    // Structural
+    getResourceId,
+    getResource,
+    // Service
+    getImageService,
   };
 });
 
 export default image;
+
+export function imageByIdSelector(callable, getId) {
+  return (state, props) =>
+    createStructuredSelector(
+      callable(
+        image(
+          () => state.resources.annotations[getId ? getId(props) : props.id]
+        )
+      )
+    )(state);
+}

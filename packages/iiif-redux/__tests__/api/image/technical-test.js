@@ -3,7 +3,7 @@ import image from '../../../src/api/image';
 describe('api/image/technical', () => {
   const createStateWithCustomProperties = props => ({
     resources: {
-      images: {
+      annotations: {
         'http://iiif.com/image-1.json': {
           '@id': 'http://iiif.com/image-1.json',
           ...props,
@@ -13,7 +13,7 @@ describe('api/image/technical', () => {
   });
   const state = {
     resources: {
-      images: {
+      annotations: {
         'http://iiif.com/image-1.json': {
           '@id': 'http://iiif.com/image-1.json',
           '@type': 'sc:Annotation',
@@ -24,7 +24,7 @@ describe('api/image/technical', () => {
   };
 
   const { getId, getType, getViewingHint } = image(
-    s => s.resources.images['http://iiif.com/image-1.json']
+    s => s.resources.annotations['http://iiif.com/image-1.json']
   );
 
   describe('getId', () => {

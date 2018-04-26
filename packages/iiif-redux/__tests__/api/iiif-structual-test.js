@@ -8,6 +8,7 @@ import {
   getOtherContent,
   getRanges,
   getStructures,
+  getResource,
 } from '../../src/api/iiif-structural';
 
 describe('api/iiif-structural', () => {
@@ -217,6 +218,21 @@ describe('api/iiif-structural', () => {
     });
     it('should always return an array', () => {
       expect(getStructures({})).toEqual([]);
+    });
+  });
+  describe('getResource', () => {
+    it('should get Structures from resource', () => {
+      expect(
+        getResource({
+          resource: {
+            schema: 'imageResource',
+            id: 'https://example.org/image/1',
+          },
+        })
+      ).toEqual('https://example.org/image/1');
+    });
+    it('should return null if empty', () => {
+      expect(getResource({})).toEqual(null);
     });
   });
 });

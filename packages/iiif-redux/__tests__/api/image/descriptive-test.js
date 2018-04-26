@@ -3,7 +3,7 @@ import image from '../../../src/api/image';
 describe('api/image/descriptive', () => {
   const state = {
     resources: {
-      images: {
+      annotations: {
         'http://iiif.com/image-1.json': {
           '@id': 'http://iiif.com/image-1.json',
           '@type': 'sc:Annotation',
@@ -55,7 +55,7 @@ describe('api/image/descriptive', () => {
     getLogo,
     getThumbnailId,
     getThumbnail,
-  } = image(s => s.resources.images['http://iiif.com/image-1.json']);
+  } = image(s => s.resources.annotations['http://iiif.com/image-1.json']);
 
   /**
    * Descriptive properties

@@ -4,7 +4,7 @@ describe('api/image/linking', () => {
   const t = text => [{ '@value': text, '@language': 'en' }];
   const state = {
     resources: {
-      images: {
+      annotations: {
         'http://iiif.com/image-1.json': {
           seeAlso: [
             'http://iiif.com/extern-1.json',
@@ -69,7 +69,7 @@ describe('api/image/linking', () => {
     getWithin,
     getRenderingIds,
     getRendering,
-  } = image(s => s.resources.images['http://iiif.com/image-1.json']);
+  } = image(s => s.resources.annotations['http://iiif.com/image-1.json']);
 
   it('should get SeeAlso', () => {
     expect(getSeeAlso(state)[0].label[0]['@value']).toEqual('External 1');
