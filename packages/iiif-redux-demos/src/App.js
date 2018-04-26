@@ -9,8 +9,18 @@ import { Spin, Icon, Layout } from 'antd';
 import IntlString from './components/IntlString/IntlString';
 import * as currentCollection from 'iiif-redux/es/api/current-collection';
 import * as currentManifest from 'iiif-redux/es/api/current-manifest';
+import * as currentSequence from 'iiif-redux/es/api/current-sequence';
+import * as currentCanvas from 'iiif-redux/es/api/current-canvas';
 import Manifest from './components/Manifest/Manifest';
-import { deselectManifest } from '../../iiif-redux/src/spaces/routing';
+import {
+  deselectCanvas,
+  deselectManifest,
+  deselectSequence,
+  selectCanvas,
+  selectSequence,
+} from 'iiif-redux/es/spaces/routing';
+import Sequence from './components/Sequence/Sequence';
+import Canvas from './components/Canvas/Canvas';
 const { Header } = Layout;
 
 class App extends Component {
@@ -41,11 +51,23 @@ class App extends Component {
     if (current.type === 'manifest') {
       this.props.dispatch(deselectManifest());
     }
+    if (current.type === 'sequence') {
+      this.props.dispatch(deselectSequence());
+    }
+    if (current.type === 'canvas') {
+      this.props.dispatch(deselectCanvas());
+    }
     if (previous.type === 'collection') {
       this.props.dispatch(selectCollection({ id: previous.id }));
     }
     if (previous.type === 'manifest') {
       this.props.dispatch(selectManifest({ id: previous.id }));
+    }
+    if (previous.type === 'sequence') {
+      this.props.dispatch(selectSequence({ id: previous.id }));
+    }
+    if (previous.type === 'canvas') {
+      this.props.dispatch(selectCanvas({ id: previous.id }));
     }
     this.setState(state => ({
       breadcrumbs: state.breadcrumbs.slice(0, -1),
@@ -58,6 +80,46 @@ class App extends Component {
       breadcrumbs: [...state.breadcrumbs, { type: 'manifest', id: manifestId }],
     }));
   };
+
+  handleSequenceClick = sequenceId => {
+    this.props.dispatch(selectSequence({ id: sequenceId }));
+    this.setState(state => ({
+      breadcrumbs: [...state.breadcrumbs, { type: 'sequence', id: sequenceId }],
+    }));
+  };
+
+  handleCanvasClick = canvasId => {
+    this.props.dispatch(selectCanvas({ id: canvasId }));
+    this.setState(state => ({
+      breadcrumbs: [...state.breadcrumbs, { type: 'canvas', id: canvasId }],
+    }));
+  };
+
+  renderCurrentFrame(type) {
+    if (type === 'collection') {
+      return (
+        <Collection
+          onClickCollection={this.handleCollectionClick}
+          onClickManifest={this.handleManifestClick}
+        />
+      );
+    }
+    if (type === 'manifest') {
+      return (
+        <Manifest
+          onClickSequence={this.handleSequenceClick}
+          onClickCanvas={this.handleCanvasClick}
+        />
+      );
+    }
+    if (type === 'sequence') {
+      return <Sequence onClickCanvas={this.handleCanvasClick} />;
+    }
+    if (type === 'canvas') {
+      return <Canvas />;
+    }
+    return <Spin />;
+  }
 
   render() {
     const { label, type, isLoaded } = this.props;
@@ -78,14 +140,7 @@ class App extends Component {
                   {label ? <IntlString>{label}</IntlString> : null}
                 </h3>
               </Header>
-              {type === 'collection' ? (
-                <Collection
-                  onClickCollection={this.handleCollectionClick}
-                  onClickManifest={this.handleManifestClick}
-                />
-              ) : (
-                <Manifest />
-              )}
+              {this.renderCurrentFrame(type)}
             </div>
           ) : (
             <div style={{ padding: 80, textAlign: 'center' }}>
@@ -99,6 +154,21 @@ class App extends Component {
 }
 
 export default connect((state, props) => {
+  if (currentCanvas.getCurrentCanvas(state)) {
+    return {
+      label: currentCanvas.getLabel(state),
+      type: 'canvas',
+      isLoaded: true,
+    };
+  }
+  if (currentSequence.getCurrentSequence(state)) {
+    return {
+      label: currentSequence.getLabel(state),
+      type: 'sequence',
+      isLoaded: true,
+    };
+  }
+
   if (currentManifest.getCurrentManifest(state)) {
     return {
       label: currentManifest.getLabel(state),

@@ -16,7 +16,7 @@ const Locale = str => {
 
 class Manifest extends Component {
   render() {
-    const { onClickSequence } = this.props;
+    const { onClickSequence, onClickCanvas } = this.props;
     return (
       <Content>
         <Row gutter={16} style={{ padding: 15 }}>
@@ -68,6 +68,7 @@ class Manifest extends Component {
                         id={sequence['@id']}
                         key={key}
                         onClick={onClickSequence}
+                        onClickCanvas={onClickCanvas}
                       />
                     </Col>
                   ))}

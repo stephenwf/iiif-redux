@@ -7,7 +7,7 @@ import CanvasPreview from '../CanvasPreview/CanvasPreview';
 
 class SequencePreview extends Component {
   render() {
-    const { id, label, canvases, onClick } = this.props;
+    const { id, label, canvases, onClick, onClickCanvas } = this.props;
 
     return (
       <Card
@@ -19,7 +19,7 @@ class SequencePreview extends Component {
         <Row>
           {canvases.map((canvasId, key) => (
             <Col span={6}>
-              <CanvasPreview id={canvasId} key={key} />
+              <CanvasPreview onClick={onClickCanvas} id={canvasId} key={key} />
             </Col>
           ))}
         </Row>

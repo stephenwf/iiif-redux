@@ -29,7 +29,10 @@ class DescriptivePanel extends Component {
       {
         title: 'logo',
         value: logo ? (
-          <img style={{ maxWidth: '100%' }} src={logo} />
+          <img
+            style={{ maxWidth: '100%' }}
+            src={logo['@id'] ? logo['@id'] : logo}
+          />
         ) : (
           <Muted>no logo</Muted>
         ),
@@ -37,7 +40,10 @@ class DescriptivePanel extends Component {
       {
         title: 'thumbnail',
         value: thumbnail ? (
-          <img style={{ maxWidth: '100%' }} src={thumbnail} />
+          <img
+            style={{ maxWidth: '100%' }}
+            src={thumbnail['@id'] ? thumbnail['@id'] : thumbnail}
+          />
         ) : (
           <Muted>no thumbnail</Muted>
         ),

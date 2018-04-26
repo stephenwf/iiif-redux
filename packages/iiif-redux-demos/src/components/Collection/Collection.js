@@ -11,10 +11,6 @@ import ManifestPreview from '../ManifestPreview/ManifestPreview';
 import CollectionPreview from '../CollectionPreview/CollectionPreview';
 const { Content } = Layout;
 
-const Locale = str => {
-  return str.children ? str.children[0]['@value'] || '' : '';
-};
-
 class Collection extends Component {
   render() {
     const { onClickCollection, onClickManifest } = this.props;
