@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iiif/presentation/2.1/01 Minimum Required Fields should render all fields on manifest 1`] = `
+Object {
+  "canvas": Object {
+    "height": 1800,
+    "id": "http://iiif.io/api/presentation/2.1/example/fixtures/canvas/1/c1.json",
+    "image": Object {
+      "id": "https://23b7cac9e952d1868e598100cd25352f482db919",
+      "motivation": "sc:painting",
+      "on": Object {
+        "@id": "http://iiif.io/api/presentation/2.1/example/fixtures/canvas/1/c1.json",
+        "@type": "sc:Canvas",
+        "height": 1800,
+        "images": Array [
+          "https://23b7cac9e952d1868e598100cd25352f482db919",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Test 1 Canvas: 1",
+          },
+        ],
+        "width": 1200,
+      },
+      "resource": Object {
+        "@id": "http://iiif.io/api/presentation/2.1/example/fixtures/resources/page1-full.png",
+        "@type": "dctypes:Image",
+        "height": 1800,
+        "width": 1200,
+      },
+    },
+    "imageService": null,
+    "images": Array [
+      Object {
+        "@id": "https://23b7cac9e952d1868e598100cd25352f482db919",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "http://iiif.io/api/presentation/2.1/example/fixtures/canvas/1/c1.json",
+        "resource": Object {
+          "id": "http://iiif.io/api/presentation/2.1/example/fixtures/resources/page1-full.png",
+          "schema": "imageResource",
+        },
+      },
+    ],
+    "label": Array [
+      Object {
+        "@language": "en",
+        "@value": "Test 1 Canvas: 1",
+      },
+    ],
+    "width": 1200,
+  },
+  "manifest": Object {
+    "id": "http://iiif.io/api/presentation/2.1/example/fixtures/1/manifest.json",
+    "label": Array [
+      Object {
+        "@language": "en",
+        "@value": "Test 1 Manifest: Minimum Required Fields",
+      },
+    ],
+    "sequences": Array [
+      Object {
+        "@id": "https://1860e2c42d700c69bb3bf0291656fe1b7689e6f2",
+        "@type": "sc:Sequence",
+        "canvases": Array [
+          "http://iiif.io/api/presentation/2.1/example/fixtures/canvas/1/c1.json",
+        ],
+      },
+    ],
+    "type": "sc:Manifest",
+    "within": Array [
+      Object {
+        "@id": "http://iiif.io/api/presentation/2.1/example/fixtures/collection.json",
+      },
+    ],
+  },
+}
+`;

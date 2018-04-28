@@ -182,7 +182,7 @@ const canvas = memoize(selector => {
             ? allImages[image.resource.id]
             : { service: [] };
 
-        return resource.service.reduce((innerResult, serviceId) => {
+        return (resource.service || []).reduce((innerResult, serviceId) => {
           if (innerResult) return innerResult;
           const service = allServices[serviceId];
           if (isImageService(service.profile)) {

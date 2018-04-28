@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iiif/presentation/2.1/06 Description field should render all descriptions 1`] = `
+Object {
+  "description": Array [
+    Object {
+      "@language": "en",
+      "@value": "This is one description",
+    },
+    Object {
+      "@language": "en",
+      "@value": "This is another",
+    },
+  ],
+}
+`;

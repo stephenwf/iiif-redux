@@ -2,21 +2,7 @@ import createStore from '../../src/createStore';
 import nlsTop from '../fixtures/nls-top';
 import * as currentCollection from '../../src/api/current-collection';
 import { selectCollection } from '../../src/spaces/routing';
-
-function waitForRequest(store, id) {
-  return new Promise(resolve => {
-    store.subscribe(() => {
-      const newState = store.getState();
-      if (
-        newState.dereferenced &&
-        newState.dereferenced[id] &&
-        newState.dereferenced[id].loading === false
-      ) {
-        resolve();
-      }
-    });
-  });
-}
+import { waitForRequest } from '../../test-utils';
 
 describe('spaces/collections', () => {
   global.fetch = require('jest-fetch-mock');

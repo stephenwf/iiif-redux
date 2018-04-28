@@ -22,6 +22,7 @@ import { compose } from 'redux';
 import { schema, normalize } from 'normalizr';
 import moveStartCanvasToSequence from '../compat/moveStartCanvasToSequence';
 import preprocessLinkedEntities from '../compat/preprocessLinkedEntities';
+import addMissingIds from '../compat/addMissingIds';
 
 function createEntity(name, hasLinked = true) {
   const options = {
@@ -281,10 +282,10 @@ imageResource.define({
   service: [service],
 });
 
-const preprocess = compose(moveStartCanvasToSequence);
+const preprocess = compose(moveStartCanvasToSequence, addMissingIds);
 
-const normalizeResource = rawResource =>
-  normalize(preprocess(rawResource), resource);
+const normalizeResource = (rawResource, customSchema = resource) =>
+  normalize(preprocess(rawResource), customSchema);
 
 export {
   normalizeResource as normalize,

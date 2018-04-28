@@ -18,12 +18,13 @@ describe('api/image/technical', () => {
           '@id': 'http://iiif.com/image-1.json',
           '@type': 'sc:Annotation',
           viewingHint: 'http://iiif.com/custom-hint',
+          motivation: 'sc:painting',
         },
       },
     },
   };
 
-  const { getId, getType, getViewingHint } = image(
+  const { getId, getType, getViewingHint, getMotivation } = image(
     s => s.resources.annotations['http://iiif.com/image-1.json']
   );
 
@@ -36,6 +37,12 @@ describe('api/image/technical', () => {
   describe('getType', () => {
     it('should load type from image', () => {
       expect(getType(state)).toEqual('sc:Annotation');
+    });
+  });
+
+  describe('getMotivation', () => {
+    it('should load motivation from image annotation', () => {
+      expect(getMotivation(state)).toEqual('sc:painting');
     });
   });
 

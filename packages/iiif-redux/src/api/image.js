@@ -4,6 +4,7 @@ import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
 import * as structural from './iiif-structural';
 import {
+  getAllCanvases,
   getAllExternalResources,
   getAllImages,
   getAllLayers,
@@ -19,6 +20,7 @@ const image = memoize(selector => {
    * - getId
    * - getType
    * - getViewingHint
+   * - getMotivation
    **************************************************/
   const getId = createSelector(selector, technical.getId);
 
@@ -28,6 +30,8 @@ const image = memoize(selector => {
     selector,
     technical.getWhitelistedViewingHint([])
   );
+
+  const getMotivation = createSelector(selector, technical.getMotivation);
 
   /**************************************************
    * Descriptive properties
@@ -145,11 +149,19 @@ const image = memoize(selector => {
         : null
   );
 
+  const getOnId = createSelector(selector, resource => resource.on);
+  const getOn = createSelector(
+    getOnId,
+    getAllCanvases,
+    (canvasId, canvases) => canvases[canvasId] || null
+  );
+
   return {
     // Technical
     getId,
     getType,
     getViewingHint,
+    getMotivation,
     // Descriptive
     getLabel,
     getMetadata,
@@ -175,6 +187,8 @@ const image = memoize(selector => {
     getResource,
     // Service
     getImageService,
+    // Annotation specifics
+    getOn,
   };
 });
 

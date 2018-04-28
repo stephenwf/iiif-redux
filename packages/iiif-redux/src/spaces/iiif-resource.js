@@ -1,6 +1,6 @@
 import { createActions, handleActions } from 'redux-actions';
-import { normalize } from 'normalizr';
 import validUrl from 'valid-url';
+import { normalize } from '../schema/presentation2';
 import { call, put, select, all, takeEvery } from 'redux-saga/effects';
 import deepmerge from 'deepmerge';
 import update from 'immutability-helper';

@@ -129,7 +129,10 @@ describe('normalizeMetadataProperty', () => {
       },
       {
         label: [{ '@language': 'en', '@value': 'Notes' }],
-        value: [{ '@language': 'en', '@value': 'Text of note 1' }],
+        value: [
+          { '@language': 'en', '@value': 'Text of note 1' },
+          { '@language': 'en', '@value': 'Text of note 2' },
+        ],
       },
       {
         label: [{ '@language': 'en', '@value': 'Source' }],

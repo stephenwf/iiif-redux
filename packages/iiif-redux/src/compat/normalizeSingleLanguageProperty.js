@@ -19,14 +19,24 @@ const normalizeSingleLanguageProperty = memoize((property, defaultLanguage) => {
     return [property];
   } else {
     // presentation 3.
-    return Object.keys(property).map(language => {
-      return {
-        '@language': language === '@none' ? defaultLanguage : language,
-        '@value': Array.isArray(property[language])
-          ? filterHtmlTags(property[language][0])
-          : filterHtmlTags(property[language]),
-      };
-    });
+    return Object.keys(property).reduce((acc, language) => {
+      if (Array.isArray(property[language])) {
+        return [
+          ...acc,
+          ...property[language].map(value => ({
+            '@language': language === '@none' ? defaultLanguage : language,
+            '@value': filterHtmlTags(value),
+          })),
+        ];
+      }
+      return [
+        ...acc,
+        {
+          '@language': language === '@none' ? defaultLanguage : language,
+          '@value': filterHtmlTags(property[language]),
+        },
+      ];
+    }, []);
   }
 });
 

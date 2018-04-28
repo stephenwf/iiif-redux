@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iiif/presentation/2.1/02 Metadata pairs should render metadata 1`] = `
+Object {
+  "metadata": Array [
+    Object {
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "date",
+        },
+      ],
+      "value": Array [
+        Object {
+          "@language": "en",
+          "@value": "some date",
+        },
+      ],
+    },
+  ],
+}
+`;

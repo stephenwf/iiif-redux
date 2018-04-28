@@ -7,22 +7,7 @@ import * as currentManifest from '../src/api/current-manifest';
 import * as currentSequence from '../src/api/current-sequence';
 import * as currentCanvas from '../src/api/current-canvas';
 import * as descriptive from '../src/api/iiif-descriptive';
-import { getImageService } from '../src/api/current-canvas';
-
-function waitForRequest(store, id) {
-  return new Promise(resolve => {
-    store.subscribe(() => {
-      const newState = store.getState();
-      if (
-        newState.dereferenced &&
-        newState.dereferenced[id] &&
-        newState.dereferenced[id].loading === false
-      ) {
-        resolve();
-      }
-    });
-  });
-}
+import { waitForRequest } from '../test-utils';
 
 describe('store', () => {
   global.fetch = require('jest-fetch-mock');
