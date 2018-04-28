@@ -5,7 +5,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/aec1d6af0b6c497faf901b344c58ee80)](https://www.codacy.com/app/stephen-fraser/iiif-redux?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=stephenwf/iiif-redux&amp;utm_campaign=Badge_Grade)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fstephenwf%2Fiiif-redux.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fstephenwf%2Fiiif-redux?ref=badge_shield)
 
-[Concepts](CONCEPTS.md) | [API Proposal](packages/iiif-redux/src/README.md) | [Selector API](packages/iiif-redux/src/api/README.md) | [IIIF Spec progress](PROGRESS.md) | [Contributing](CONTRIBUTING.md)
+[Demo](https://iiif-redux.stephen.wf) | [Concepts](CONCEPTS.md) | [API Proposal](packages/iiif-redux/src/README.md) | [Selector API](packages/iiif-redux/src/api/README.md) | [IIIF Spec progress](PROGRESS.md) | [Contributing](CONTRIBUTING.md)
 
 ---
 
