@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iiif/presentation/2.1/07 SeeAlso link should render attribution + license 1`] = `
+Object {
+  "seeAlso": Array [
+    Object {
+      "@id": "http://www.example.org/link/to/metadata",
+    },
+  ],
+}
+`;
