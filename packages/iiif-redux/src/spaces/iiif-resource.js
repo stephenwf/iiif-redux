@@ -161,9 +161,9 @@ function* requestIiifResource({ payload }) {
     debug('Starting normalize resource %s', resourceId);
     const { result, entities } = normalize(response, schema);
 
-    debug('Finished normalize resource %s', resourceId);
+    debug('Finished normalize resource %s', result);
 
-    yield call(successAction, SUCCESS, resourceId, entities);
+    yield call(successAction, SUCCESS, result, entities);
   } catch (err) {
     debug('Error: %O', err);
     yield call(errorAction, ERROR, resourceId, err);
