@@ -45,9 +45,8 @@ class Canvas extends Component {
             />
           </Col>
           <Col span={16}>
-            {this.props.images.map(image => {
-              console.log(image);
-              return <div />;
+            {this.props.images.map((image, key) => {
+              return <div key={key} />;
             })}
           </Col>
         </Row>

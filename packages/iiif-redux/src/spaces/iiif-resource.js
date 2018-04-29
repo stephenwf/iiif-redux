@@ -4,6 +4,8 @@ import { normalize } from '../schema/presentation2';
 import { call, put, select, all, takeEvery } from 'redux-saga/effects';
 import deepmerge from 'deepmerge';
 import update from 'immutability-helper';
+const debug = require('debug')('iiif-redux');
+
 const IIIF_RESOURCE_REQUEST = 'IIIF_RESOURCE_REQUEST';
 const IIIF_RESOURCE_SUCCESS = 'IIIF_RESOURCE_SUCCESS';
 const IIIF_RESOURCE_ERROR = 'IIIF_RESOURCE_ERROR';
@@ -135,16 +137,36 @@ function* requestIiifResource({ payload }) {
     state.dereferenced[resourceId].loading ===
       false /*&& options.forceFresh === false*/
   ) {
+    debug('Skipping fetch for resource %s using cache.', resourceId);
+
     return;
   }
 
   yield put({ type: REQUEST, payload });
 
   try {
+    debug('Fetching resource %s', resourceId);
     const response = yield call(requestResource, resourceId, options);
+
+    debug('Starting normalize resource %s', resourceId);
     const { result, entities } = normalize(response, schema);
-    yield call(successAction, SUCCESS, result, entities);
+
+    debug('Finished normalize resource %s', resourceId);
+
+    if (result !== resourceId) {
+      // @todo find a proper solution
+      debug(
+        'Resource ID does not match requested resource, patching... Found: %s Expected: %s',
+        result,
+        resourceId
+      );
+      entities[schema._key][resourceId] = entities[schema._key][result];
+      entities[schema._key][result] = null;
+      delete entities[schema._key][result];
+    }
+    yield call(successAction, SUCCESS, resourceId, entities);
   } catch (err) {
+    debug('Error: %O', err);
     yield call(errorAction, ERROR, resourceId, err);
   }
 }

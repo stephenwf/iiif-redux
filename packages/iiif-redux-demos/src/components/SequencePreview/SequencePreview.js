@@ -18,8 +18,8 @@ class SequencePreview extends Component {
         {id}
         <Row>
           {canvases.map((canvasId, key) => (
-            <Col span={6}>
-              <CanvasPreview onClick={onClickCanvas} id={canvasId} key={key} />
+            <Col span={6} key={key}>
+              <CanvasPreview onClick={onClickCanvas} id={canvasId} />
             </Col>
           ))}
         </Row>

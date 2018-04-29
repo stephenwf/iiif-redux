@@ -11,6 +11,12 @@ module.exports = {
     ],
   },
   webpack: {
+    define: {
+      'process.env.__VERSION__': JSON.stringify(
+        require('./package.json').version
+      ),
+      'process.env.DEBUG': JSON.stringify('iiif-redux'),
+    },
     rules: {
       less: {
         javascriptEnabled: true,
