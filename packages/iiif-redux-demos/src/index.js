@@ -19,9 +19,8 @@ if (process.env.NODE_ENV === 'development') {
 
 if (process.env.NODE_ENV === 'production') {
   console.log(
-    `Running in production v${
-      process.env.__VERSION__
-    } (${process.env.HASH.slice(0, 7)})`
+    `Running in production v${process.env.__VERSION__}`,
+    `(${process.env.HASH.slice(0, 7)})`
   );
 }
 
