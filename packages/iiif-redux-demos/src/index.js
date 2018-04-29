@@ -10,8 +10,19 @@ if (window.localStorage && process.env.NODE_ENV === 'development') {
   window.localStorage.debug = process.env.DEBUG;
 }
 if (process.env.NODE_ENV === 'development') {
-  debug('Running in development', `v${process.env.__VERSION__}`);
+  debug(
+    'Running in development',
+    `v${process.env.__VERSION__} (${process.env.HASH.slice(0, 7)})`
+  );
   debug('Debug level:', process.env.DEBUG);
+}
+
+if (process.env.NODE_ENV === 'production') {
+  console.log(
+    `Running in production v${
+      process.env.__VERSION__
+    } (${process.env.HASH.slice(0, 7)})`
+  );
 }
 
 const store = createStore();
