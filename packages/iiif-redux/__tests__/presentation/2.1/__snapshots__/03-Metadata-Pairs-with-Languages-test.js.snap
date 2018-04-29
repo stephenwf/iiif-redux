@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iiif/presentation/2.1/03 Metadata pairs with Languages should render metadata with languages 1`] = `
+Object {
+  "metadata": Array [
+    Object {
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "date",
+        },
+      ],
+      "value": Array [
+        Object {
+          "@language": "fr",
+          "@value": "quelquetemps",
+        },
+        Object {
+          "@language": "en",
+          "@value": "some data",
+        },
+      ],
+    },
+  ],
+}
+`;

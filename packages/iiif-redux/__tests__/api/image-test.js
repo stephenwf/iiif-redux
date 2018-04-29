@@ -4,10 +4,12 @@ describe('iiif/api/image', () => {
   it('should be able to generate selector for any image', () => {
     const state = {
       resources: {
+        canvases: {},
         annotations: {
           'http://iiif.com/image-1.json': {
             '@id': 'http://iiif.com/image-1.json',
             '@type': 'sc:Canvas',
+            on: 'http://iiif.com/canvas-1.json',
           },
         },
       },
@@ -27,6 +29,7 @@ describe('iiif/api/image', () => {
       image => ({
         id: image.getId,
         type: image.getType,
+        on: image.getOn,
       }),
       () => 'http://iiif.com/image-1.json'
     );
@@ -34,6 +37,7 @@ describe('iiif/api/image', () => {
     expect(select2(state)).toEqual({
       id: 'http://iiif.com/image-1.json',
       type: 'sc:Canvas',
+      on: null,
     });
   });
 });

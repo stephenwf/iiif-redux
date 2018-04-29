@@ -14,6 +14,7 @@
     "start": "run-p watch"
   },
   "dependencies": {
+    "debug": "^3.1.0",
     "deepmerge": "^2.1.0",
     "immutability-helper": "^2.6.6",
     "isomorphic-fetch": "^2.2.1",
@@ -21,19 +22,21 @@
     "lodash.memoize": "^4.1.2",
     "normalizr": "^3.2.4",
     "npm-watch": "^0.3.0",
+    "object-hash": "^1.3.0",
     "reduce-reducers": "^0.1.2",
     "redux": "^3.7.2",
     "redux-actions": "^2.3.0",
     "redux-saga": "^0.16.0",
     "reselect": "^3.0.1",
     "striptags": "^3.1.1",
+    "traverse": "^0.6.6",
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
-    "nwb-watch": "1.0.0",
     "@types/reselect": "^2.2.0",
     "babel-jest": "^22.4.3",
     "nwb": "0.21.5",
+    "nwb-watch": "1.0.0",
     "react-test-renderer": "^16.2.0"
   },
   "jest": {

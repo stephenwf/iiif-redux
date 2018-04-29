@@ -7,22 +7,7 @@ import * as currentManifest from '../src/api/current-manifest';
 import * as currentSequence from '../src/api/current-sequence';
 import * as currentCanvas from '../src/api/current-canvas';
 import * as descriptive from '../src/api/iiif-descriptive';
-import { getImageService } from '../src/api/current-canvas';
-
-function waitForRequest(store, id) {
-  return new Promise(resolve => {
-    store.subscribe(() => {
-      const newState = store.getState();
-      if (
-        newState.dereferenced &&
-        newState.dereferenced[id] &&
-        newState.dereferenced[id].loading === false
-      ) {
-        resolve();
-      }
-    });
-  });
-}
+import { waitForRequest } from '../test-utils';
 
 describe('store', () => {
   global.fetch = require('jest-fetch-mock');
@@ -517,6 +502,55 @@ describe('store', () => {
   it('should only make 1 http request per resource by default', async () => {
     const store = createStore();
     fetch.mockResponseOnce(JSON.stringify(bridges));
+
+    const whenRequestFinishes = waitForRequest(
+      store,
+      'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+    );
+
+    store.dispatch(
+      iiifResourceRequest(
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json',
+        ['MANIFEST_REQUEST', 'MANIFEST_SUCCESS', 'MANIFEST_ERROR'],
+        manifest
+      )
+    );
+    const state = store.getState();
+
+    const manifestState =
+      state.dereferenced[
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+      ];
+
+    expect(manifestState.loading).toEqual(true);
+    expect(manifestState.resourceId).toEqual(
+      'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+    );
+    expect(manifestState.ttl).toEqual(600);
+
+    await whenRequestFinishes;
+
+    store.dispatch(
+      iiifResourceRequest(
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json',
+        ['MANIFEST_REQUEST', 'MANIFEST_SUCCESS', 'MANIFEST_ERROR'],
+        manifest
+      )
+    );
+
+    const state2 = store.getState();
+    expect(
+      state2.dereferenced[
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+      ].loading
+    ).toEqual(false);
+  });
+
+  it('should only correct incorrect IDs when requesting resource.', async () => {
+    const store = createStore();
+    fetch.mockResponseOnce(
+      JSON.stringify({ ...bridges, '@id': 'https://INCORRECT_FIX_ME/' })
+    );
 
     const whenRequestFinishes = waitForRequest(
       store,

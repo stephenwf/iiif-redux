@@ -11,6 +11,18 @@ module.exports = {
     ],
   },
   webpack: {
+    define: {
+      'process.env.__VERSION__': JSON.stringify(
+        require('./package.json').version
+      ),
+      'process.env.DEBUG': JSON.stringify('iiif-redux'),
+      'process.env.HASH': JSON.stringify(
+        require('child_process')
+          .execSync('git rev-parse HEAD')
+          .toString()
+          .trim()
+      ),
+    },
     rules: {
       less: {
         javascriptEnabled: true,

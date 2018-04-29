@@ -31,7 +31,7 @@
     "merge": "fesk-merge",
     "link": "lerna link",
     "postinstall": "lerna link",
-    "test": "jest",
+    "test": "jest --coverage",
     "test:coverage": "jest --verbose --coverage",
     "test:watch": "jest --coverage --watch"
   },

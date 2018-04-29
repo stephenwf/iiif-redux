@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iiif/presentation/2.1/07 Rights Metadata should render attribution + license 1`] = `
+Object {
+  "attribution": Array [
+    Object {
+      "@language": "en",
+      "@value": "Owning Institution",
+    },
+  ],
+  "license": Array [
+    "http://creativecommons.org/licenses/by-nc/3.0/",
+  ],
+}
+`;

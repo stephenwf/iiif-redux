@@ -1,9 +1,11 @@
 import { createActions, handleActions } from 'redux-actions';
-import { normalize } from 'normalizr';
 import validUrl from 'valid-url';
+import { normalize } from '../schema/presentation2';
 import { call, put, select, all, takeEvery } from 'redux-saga/effects';
 import deepmerge from 'deepmerge';
 import update from 'immutability-helper';
+const debug = require('debug')('iiif-redux');
+
 const IIIF_RESOURCE_REQUEST = 'IIIF_RESOURCE_REQUEST';
 const IIIF_RESOURCE_SUCCESS = 'IIIF_RESOURCE_SUCCESS';
 const IIIF_RESOURCE_ERROR = 'IIIF_RESOURCE_ERROR';
@@ -135,16 +137,35 @@ function* requestIiifResource({ payload }) {
     state.dereferenced[resourceId].loading ===
       false /*&& options.forceFresh === false*/
   ) {
+    debug('Skipping fetch for resource %s using cache.', resourceId);
+
     return;
   }
 
   yield put({ type: REQUEST, payload });
 
   try {
+    debug('Fetching resource %s', resourceId);
     const response = yield call(requestResource, resourceId, options);
+
+    if (response['@id'] !== resourceId) {
+      // @todo this will not catch "partOf" fields.
+      debug(
+        'Resource ID does not match requested resource, patching... Found: %s Expected: %s',
+        response['@id'],
+        resourceId
+      );
+      response['@id'] = resourceId;
+    }
+
+    debug('Starting normalize resource %s', resourceId);
     const { result, entities } = normalize(response, schema);
+
+    debug('Finished normalize resource %s', result);
+
     yield call(successAction, SUCCESS, result, entities);
   } catch (err) {
+    debug('Error: %O', err);
     yield call(errorAction, ERROR, resourceId, err);
   }
 }

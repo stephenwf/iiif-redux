@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iiif/presentation/2.1/10 Service link as Object should render service link 1`] = `
+Object {
+  "service": Array [
+    Object {
+      "@id": "http://example.org/path/to/service",
+      "format": "text/html",
+    },
+  ],
+}
+`;

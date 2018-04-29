@@ -77,6 +77,9 @@ const getWhitelistedViewingHint = whitelist => resource => {
   return validUrl.isWebUri(viewingHint) ? viewingHint : null;
 };
 
+// @todo whitelist motivations + URIs.
+const getMotivation = resource => resource.motivation;
+
 export {
   getId,
   getType,
@@ -87,6 +90,7 @@ export {
   getFormat,
   getHeight,
   getWidth,
+  getMotivation,
   VIEWING_DIRECTIONS,
   VIEWING_HINTS,
 };

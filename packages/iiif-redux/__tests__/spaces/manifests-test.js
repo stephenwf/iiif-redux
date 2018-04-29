@@ -2,21 +2,7 @@ import createStore from '../../src/createStore';
 import bridges from '../fixtures/bridges';
 import * as currentManifest from '../../src/api/current-manifest';
 import { selectCollection, selectManifest } from '../../src/spaces/routing';
-
-function waitForRequest(store, id) {
-  return new Promise(resolve => {
-    store.subscribe(() => {
-      const newState = store.getState();
-      if (
-        newState.dereferenced &&
-        newState.dereferenced[id] &&
-        newState.dereferenced[id].loading === false
-      ) {
-        resolve();
-      }
-    });
-  });
-}
+import { waitForRequest } from '../../test-utils';
 
 describe('spaces/collections', () => {
   global.fetch = require('jest-fetch-mock');

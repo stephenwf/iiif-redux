@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iiif/presentation/2.1/09 Service link should render service link 1`] = `
+Object {
+  "service": Array [
+    Object {
+      "@id": "http://www.example.org/link/to/searchService",
+    },
+  ],
+}
+`;
