@@ -148,22 +148,21 @@ function* requestIiifResource({ payload }) {
     debug('Fetching resource %s', resourceId);
     const response = yield call(requestResource, resourceId, options);
 
+    if (response['@id'] !== resourceId) {
+      // @todo this will not catch "partOf" fields.
+      debug(
+        'Resource ID does not match requested resource, patching... Found: %s Expected: %s',
+        response['@id'],
+        resourceId
+      );
+      response['@id'] = resourceId;
+    }
+
     debug('Starting normalize resource %s', resourceId);
     const { result, entities } = normalize(response, schema);
 
     debug('Finished normalize resource %s', resourceId);
 
-    if (result !== resourceId) {
-      // @todo find a proper solution
-      debug(
-        'Resource ID does not match requested resource, patching... Found: %s Expected: %s',
-        result,
-        resourceId
-      );
-      entities[schema._key][resourceId] = entities[schema._key][result];
-      entities[schema._key][result] = null;
-      delete entities[schema._key][result];
-    }
     yield call(successAction, SUCCESS, resourceId, entities);
   } catch (err) {
     debug('Error: %O', err);

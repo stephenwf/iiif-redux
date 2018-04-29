@@ -546,6 +546,55 @@ describe('store', () => {
     ).toEqual(false);
   });
 
+  it('should only correct incorrect IDs when requesting resource.', async () => {
+    const store = createStore();
+    fetch.mockResponseOnce(
+      JSON.stringify({ ...bridges, '@id': 'https://INCORRECT_FIX_ME/' })
+    );
+
+    const whenRequestFinishes = waitForRequest(
+      store,
+      'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+    );
+
+    store.dispatch(
+      iiifResourceRequest(
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json',
+        ['MANIFEST_REQUEST', 'MANIFEST_SUCCESS', 'MANIFEST_ERROR'],
+        manifest
+      )
+    );
+    const state = store.getState();
+
+    const manifestState =
+      state.dereferenced[
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+      ];
+
+    expect(manifestState.loading).toEqual(true);
+    expect(manifestState.resourceId).toEqual(
+      'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+    );
+    expect(manifestState.ttl).toEqual(600);
+
+    await whenRequestFinishes;
+
+    store.dispatch(
+      iiifResourceRequest(
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json',
+        ['MANIFEST_REQUEST', 'MANIFEST_SUCCESS', 'MANIFEST_ERROR'],
+        manifest
+      )
+    );
+
+    const state2 = store.getState();
+    expect(
+      state2.dereferenced[
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+      ].loading
+    ).toEqual(false);
+  });
+
   it('should create state that works with selectors', async () => {
     const store = createStore({}, [], [], {
       routing: {
