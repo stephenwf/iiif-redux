@@ -3,7 +3,7 @@
   "private": true,
   "devDependencies": {
     "@fesk/module-release": "0.0.2",
-    "babel-eslint": "8.2.2",
+    "babel-eslint": "8.2.3",
     "eslint": "3.19.0",
     "eslint-plugin-babel": "3.3.0",
     "eslint-plugin-flow": "2.29.1",
