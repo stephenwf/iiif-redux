@@ -12,17 +12,17 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "antd": "^3.4.0",
+    "antd": "3.4.0",
     "iiif-redux": "1.0.0",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
-    "react-redux": "^5.0.7",
-    "reselect": "^3.0.1"
+    "react": "16.3.1",
+    "react-dom": "16.3.1",
+    "react-redux": "5.0.7",
+    "reselect": "3.0.1"
   },
   "devDependencies": {
-    "babel-plugin-import": "^1.7.0",
+    "babel-plugin-import": "1.7.0",
     "nwb": "0.21.5",
-    "nwb-less": "^0.7.0"
+    "nwb-less": "0.7.0"
   },
   "author": "",
   "license": "MIT",
