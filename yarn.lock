@@ -8992,9 +8992,13 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
-reduce-reducers@^0.1.0, reduce-reducers@^0.1.2:
+reduce-reducers@^0.1.0:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/reduce-reducers/-/reduce-reducers-0.1.2.tgz#fa1b4718bc5292a71ddd1e5d839c9bea9770f14b"
+
+reduce-reducers@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/reduce-reducers/-/reduce-reducers-0.3.0.tgz#ed6122072676eb8d84d41d74bba31e5e3f7ce977"
 
 redux-actions@^2.3.0:
   version "2.3.0"
