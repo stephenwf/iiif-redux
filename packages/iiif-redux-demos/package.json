@@ -14,8 +14,8 @@
   "dependencies": {
     "antd": "3.4.4",
     "iiif-redux": "1.0.0",
-    "react": "16.3.1",
-    "react-dom": "16.3.1",
+    "react": "16.3.2",
+    "react-dom": "16.3.2",
     "react-redux": "5.0.7",
     "reselect": "3.0.1"
   },
