@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as currentCanvas from 'iiif-redux/es/api/current-canvas';
 import { createStructuredSelector } from 'reselect';
-import { Row, Col, Layout } from 'antd';
+import { Row, Col, Layout, Card } from 'antd';
 import StructuralPanel from '../StructuralPanel/StructuralPanel';
 import DescriptivePanel from '../DescriptivePanel/DescriptivePanel';
 import LinkingPanel from '../LinkingPanel/LinkingPanel';
 import TechnicalPanel from '../TechnicalPanel/TechnicalPanel';
+import ImageService from '../ImageService/ImageService';
 const { Content } = Layout;
 
 class Canvas extends Component {
   render() {
-    const { onClickImage, onClickOtherContent } = this.props;
+    const { id, onClickImage, onClickOtherContent } = this.props;
     return (
       <Content>
         <Row gutter={16} style={{ padding: 15 }}>
@@ -45,9 +46,9 @@ class Canvas extends Component {
             />
           </Col>
           <Col span={16}>
-            {this.props.images.map((image, key) => {
-              return <div key={key} />;
-            })}
+            <Card>
+              <ImageService id={id} />
+            </Card>
           </Col>
         </Row>
       </Content>

@@ -23,7 +23,8 @@
     "node": "8.x"
   },
   "scripts": {
-    "start": "lerna run start --stream --parallel --concurrency 100",
+    "start": "run-p start-all",
+    "start-all": "lerna run start --stream --parallel --concurrency 100",
     "build": "lerna run build && lerna link",
     "build-all": "lerna run build",
     "precommit": "lint-staged",
