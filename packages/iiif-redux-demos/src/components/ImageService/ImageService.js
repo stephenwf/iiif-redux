@@ -4,7 +4,7 @@ import { canvasByIdSelector } from 'iiif-redux/es/api/canvas';
 import { Spin, Radio } from 'antd';
 
 class ImageService extends Component {
-  state = { service: null, error: null };
+  state = { service: null, error: null, setSize: 'none', clickThrough: false };
   componentWillMount() {
     this.loadImageService(this.props.thumbnail, this.props.imageService);
   }
@@ -44,7 +44,18 @@ class ImageService extends Component {
   }
 
   getImage = () => {
-    const { service, format, quality, tile, scaleFactor } = this.state;
+    const { service, format, quality, tile, scaleFactor, setSize } = this.state;
+
+    if (setSize !== 'none') {
+      const realSize = service.sizes[setSize];
+      return (
+        <img
+          src={`${service['@id']}/full/${realSize.width},${
+            realSize.height
+          }/0/${quality}.${format}`}
+        />
+      );
+    }
 
     const rotation = '0';
     const currentTile = service.tiles.find(
@@ -111,6 +122,28 @@ class ImageService extends Component {
       prof => typeof prof !== 'string'
     );
 
+    const clickThrough = (service.service || []).find(
+      serv => serv.profile === 'http://iiif.io/api/auth/0/login/clickthrough'
+    );
+
+    if (clickThrough && this.state.clickThrough === false) {
+      return (
+        <div>
+          <h4>{clickThrough.label}</h4>
+          <span
+            dangerouslySetInnerHTML={{ __html: clickThrough.description }}
+          />
+          <a
+            onClick={() => this.setState({ clickThrough: true })}
+            href={`${clickThrough['@id']}?origin=${window.location.host}`}
+            target="_blank"
+          >
+            Agree and continue
+          </a>
+        </div>
+      );
+    }
+
     return (
       <div>
         <h3>Formats</h3>
@@ -138,6 +171,28 @@ class ImageService extends Component {
             </Radio>
           ))}
         </Radio.Group>
+
+        {service.sizes ? (
+          <div>
+            <h3>Preset sizes</h3>
+            <Radio.Group
+              onChange={this.onChange('setSize')}
+              value={this.state.setSize}
+              style={radioContainer}
+            >
+              <Radio style={radioStyle} value={'none'}>
+                None
+              </Radio>
+              {(service.sizes || []).map((quality, n) => (
+                <Radio style={radioStyle} value={n}>
+                  {quality.width} x {quality.height}
+                </Radio>
+              ))}
+            </Radio.Group>
+          </div>
+        ) : (
+          <div>No preset sizes</div>
+        )}
 
         <h3>Tiles</h3>
         <Radio.Group
