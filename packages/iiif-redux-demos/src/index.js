@@ -28,7 +28,7 @@ const store = createStore();
 
 render(
   <Provider store={store}>
-    <App collection="http://wellcomelibrary.org/service/collections/" />
+    <App collection="https://wellcomelibrary.org/service/collections/" />
     {/*<App collection="https://raw.githubusercontent.com/ryanfb/iiif-universe/gh-pages/iiif-universe.json" />*/}
     {/*<App collection="https://view.nls.uk/collections/top.json" />*/}
     {/*<App collection="http://iiif.io/api/presentation/2.1/example/fixtures/collection.json" />*/}
