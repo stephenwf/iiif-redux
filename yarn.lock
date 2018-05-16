@@ -288,9 +288,9 @@ ansi-styles@^3.1.0, ansi-styles@^3.2.0, ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-antd@3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-3.5.0.tgz#046200573be6177f3b8f015ea49a6d7e7d6d5371"
+antd@3.5.2:
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-3.5.2.tgz#f27356289788dbe463103f0ab715345ac7ca8cee"
   dependencies:
     array-tree-filter "^2.0.0"
     babel-runtime "6.x"
@@ -318,7 +318,7 @@ antd@3.5.0:
     rc-pagination "~1.16.1"
     rc-progress "~2.2.2"
     rc-rate "~2.4.0"
-    rc-select "~8.0.1"
+    rc-select "~8.0.7"
     rc-slider "~8.6.0"
     rc-steps "~3.1.0"
     rc-switch "~1.6.0"
@@ -8571,9 +8571,9 @@ rc-rate@~2.4.0:
     prop-types "^15.5.8"
     rc-util "^4.3.0"
 
-rc-select@~8.0.1:
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/rc-select/-/rc-select-8.0.2.tgz#42c7f4760d47a3696fd91a20db5a3f156408a791"
+rc-select@~8.0.7:
+  version "8.0.8"
+  resolved "https://registry.yarnpkg.com/rc-select/-/rc-select-8.0.8.tgz#4d73537095eaeccfc828d94833528df4ed0c2199"
   dependencies:
     babel-runtime "^6.23.0"
     classnames "2.x"
