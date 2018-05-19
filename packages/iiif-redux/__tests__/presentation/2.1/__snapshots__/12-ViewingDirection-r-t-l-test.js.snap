@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iiif/presentation/2.1/11 ViewingDirection: r-t-l should render correct viewing direction 1`] = `
+Object {
+  "service": "right-to-left",
+}
+`;

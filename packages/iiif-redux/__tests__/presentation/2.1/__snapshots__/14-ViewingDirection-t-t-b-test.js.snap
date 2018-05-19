@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iiif/presentation/2.1/13 Manifest: ViewingDirection: t-t-b should render correct viewing direction 1`] = `
+Object {
+  "service": "top-to-bottom",
+}
+`;
