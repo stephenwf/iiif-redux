@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iiif/presentation/2.1/17 Manifest: ViewingHint: individuals should render correct viewing hint 1`] = `
+Object {
+  "viewingHint": "individuals",
+}
+`;

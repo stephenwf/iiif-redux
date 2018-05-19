@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iiif/presentation/2.1/18 Manifest: Non Standard Keys should ignore non-standard keys 1`] = `
+Object {
+  "label": Array [
+    Object {
+      "@language": "en",
+      "@value": "Test 18 Manifest: Non Standard Keys",
+    },
+  ],
+  "sequence": Object {
+    "canvas": Object {
+      "height": 1800,
+      "id": "http://iiif.io/api/presentation/2.1/example/fixtures/canvas/18/c1.json",
+      "images": Array [
+        Object {
+          "@id": "https://5a22a1f389469fe1dfd1696147429e2da4367a64",
+          "@type": "oa:Annotation",
+          "motivation": "sc:painting",
+          "on": "http://iiif.io/api/presentation/2.1/example/fixtures/canvas/18/c1.json",
+          "resource": Object {
+            "id": "http://iiif.io/api/presentation/2.1/example/fixtures/resources/page1-full.png",
+            "schema": "imageResource",
+          },
+        },
+      ],
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Test 18 Canvas: 1",
+        },
+      ],
+      "type": "sc:Canvas",
+      "width": 1200,
+    },
+    "label": Array [
+      Object {
+        "@language": "en",
+        "@value": "Test 18 Sequence 1",
+      },
+    ],
+    "type": "sc:Sequence",
+  },
+  "within": Array [
+    Object {
+      "@id": "http://iiif.io/api/presentation/2.1/example/fixtures/collection.json",
+    },
+  ],
+}
+`;

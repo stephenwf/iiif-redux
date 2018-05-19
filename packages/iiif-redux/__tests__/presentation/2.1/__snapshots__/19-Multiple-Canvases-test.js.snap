@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iiif/presentation/2.1/19 Manifest: Multiple Canvases should load first canvas 1`] = `
+Object {
+  "height": 1800,
+  "id": "http://iiif.io/api/presentation/2.1/example/fixtures/canvas/19/c1.json",
+  "images": Array [
+    Object {
+      "@id": "https://ad0d179405de570f964eac866738de7af94f7a24",
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "on": "http://iiif.io/api/presentation/2.1/example/fixtures/canvas/19/c1.json",
+      "resource": Object {
+        "id": "http://iiif.io/api/presentation/2.1/example/fixtures/resources/page1-full.png",
+        "schema": "imageResource",
+      },
+    },
+  ],
+  "label": Array [
+    Object {
+      "@language": "en",
+      "@value": "Test 19 Canvas: 1",
+    },
+  ],
+  "type": "sc:Canvas",
+  "width": 1200,
+}
+`;
+
+exports[`iiif/presentation/2.1/19 Manifest: Multiple Canvases should load second canvas 1`] = `
+Object {
+  "height": 1800,
+  "id": "http://iiif.io/api/presentation/2.1/example/fixtures/canvas/19/c2.json",
+  "images": Array [
+    Object {
+      "@id": "https://ed8f412700cc77d0687f749ba82f348e8d97ebc5",
+      "@type": "oa:Annotation",
+      "motivation": "sc:painting",
+      "on": "http://iiif.io/api/presentation/2.1/example/fixtures/canvas/19/c2.json",
+      "resource": Object {
+        "id": "http://iiif.io/api/presentation/2.1/example/fixtures/resources/page2-full.png",
+        "schema": "imageResource",
+      },
+    },
+  ],
+  "label": Array [
+    Object {
+      "@language": "en",
+      "@value": "Test 19 Canvas: 2",
+    },
+  ],
+  "type": "sc:Canvas",
+  "width": 1200,
+}
+`;
