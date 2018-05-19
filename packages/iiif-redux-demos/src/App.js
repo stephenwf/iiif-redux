@@ -1,191 +1,136 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import Collection from './components/Collection/Collection';
-import {
-  selectCollection,
-  selectManifest,
-} from 'iiif-redux/lib/spaces/routing';
-import { Spin, Icon, Layout } from 'antd';
-import IntlString from './components/IntlString/IntlString';
-import * as currentCollection from 'iiif-redux/es/api/current-collection';
-import * as currentManifest from 'iiif-redux/es/api/current-manifest';
-import * as currentSequence from 'iiif-redux/es/api/current-sequence';
-import * as currentCanvas from 'iiif-redux/es/api/current-canvas';
-import Manifest from './components/Manifest/Manifest';
-import {
-  deselectCanvas,
-  deselectManifest,
-  deselectSequence,
-  selectCanvas,
-  selectSequence,
-} from 'iiif-redux/es/spaces/routing';
-import Sequence from './components/Sequence/Sequence';
-import Canvas from './components/Canvas/Canvas';
-const { Header } = Layout;
+import TopLevelCollection from './components/TopLevelCollection/TopLevelCollection';
+import { Input, List, Icon, Row, Col } from 'antd';
+import logo from '../../../iiif-redux.png';
+
+function getHash() {
+  const rawHash = window.location.hash.substring(1);
+  const hash = rawHash.indexOf('?') === 0 ? rawHash.substring(1) : rawHash;
+  return hash
+    .split('&')
+    .map(el => el.split('='))
+    .reduce((acc, [key, value]) => {
+      acc[key] = value;
+      return acc;
+    }, {});
+}
 
 class App extends Component {
-  state = {
-    breadcrumbs: [],
-  };
+  state = { topLevelCollection: null };
 
   componentWillMount() {
-    this.props.dispatch(selectCollection({ id: this.props.collection }));
-    this.setState({
-      breadcrumbs: [{ type: 'collection', id: this.props.collection }],
-    });
+    const hash = getHash();
+    if (hash.collection) {
+      this.setState({ topLevelCollection: hash.collection });
+    }
+
+    window.addEventListener('hashchange', this.onHashChange, false);
   }
 
-  handleCollectionClick = collectionId => {
-    this.props.dispatch(selectCollection({ id: collectionId }));
-    this.setState(state => ({
-      breadcrumbs: [
-        ...state.breadcrumbs,
-        { type: 'collection', id: collectionId },
-      ],
-    }));
-  };
-
-  goBack = () => {
-    const current = this.state.breadcrumbs[this.state.breadcrumbs.length - 1];
-    const previous = this.state.breadcrumbs[this.state.breadcrumbs.length - 2];
-    if (current.type === 'manifest') {
-      this.props.dispatch(deselectManifest());
-    }
-    if (current.type === 'sequence') {
-      this.props.dispatch(deselectSequence());
-    }
-    if (current.type === 'canvas') {
-      this.props.dispatch(deselectCanvas());
-    }
-    if (previous.type === 'collection') {
-      this.props.dispatch(selectCollection({ id: previous.id }));
-    }
-    if (previous.type === 'manifest') {
-      this.props.dispatch(selectManifest({ id: previous.id }));
-    }
-    if (previous.type === 'sequence') {
-      this.props.dispatch(selectSequence({ id: previous.id }));
-    }
-    if (previous.type === 'canvas') {
-      this.props.dispatch(selectCanvas({ id: previous.id }));
-    }
-    this.setState(state => ({
-      breadcrumbs: state.breadcrumbs.slice(0, -1),
-    }));
-  };
-
-  handleManifestClick = manifestId => {
-    this.props.dispatch(selectManifest({ id: manifestId }));
-    this.setState(state => ({
-      breadcrumbs: [...state.breadcrumbs, { type: 'manifest', id: manifestId }],
-    }));
-  };
-
-  handleSequenceClick = sequenceId => {
-    this.props.dispatch(selectSequence({ id: sequenceId }));
-    this.setState(state => ({
-      breadcrumbs: [...state.breadcrumbs, { type: 'sequence', id: sequenceId }],
-    }));
-  };
-
-  handleCanvasClick = canvasId => {
-    this.props.dispatch(selectCanvas({ id: canvasId }));
-    this.setState(state => ({
-      breadcrumbs: [...state.breadcrumbs, { type: 'canvas', id: canvasId }],
-    }));
-  };
-
-  renderCurrentFrame(type) {
-    if (type === 'collection') {
-      return (
-        <Collection
-          onClickCollection={this.handleCollectionClick}
-          onClickManifest={this.handleManifestClick}
-        />
-      );
-    }
-    if (type === 'manifest') {
-      return (
-        <Manifest
-          onClickSequence={this.handleSequenceClick}
-          onClickCanvas={this.handleCanvasClick}
-        />
-      );
-    }
-    if (type === 'sequence') {
-      return <Sequence onClickCanvas={this.handleCanvasClick} />;
-    }
-    if (type === 'canvas') {
-      return <Canvas />;
-    }
-    return <Spin />;
+  componentWillUnmount() {
+    window.removeEventListener('hashchange', this.onHashChange, false);
   }
+
+  onHashChange = () => {
+    const hash = getHash();
+    this.setState({ topLevelCollection: hash.collection || null });
+  };
+
+  collections = [
+    {
+      label: 'Wellcome top level collection',
+      url: 'https://wellcomelibrary.org/service/collections/',
+    },
+    {
+      label: 'IIIF Universe',
+      url:
+        'https://raw.githubusercontent.com/ryanfb/iiif-universe/gh-pages/iiif-universe.json',
+    },
+    {
+      label: 'National Library of Scotland',
+      url: 'https://view.nls.uk/collections/top.json',
+    },
+    {
+      label: 'IIIF Presentation 2 fixtures',
+      url:
+        'http://iiif.io/api/presentation/2.1/example/fixtures/collection.json',
+    },
+    {
+      label: 'Test collection',
+      url: 'https://iiif-fixtures.stephen.wf/collection.json',
+    },
+  ];
 
   render() {
-    const { label, type, isLoaded } = this.props;
+    const { topLevelCollection } = this.state;
+
+    if (!topLevelCollection) {
+      return (
+        <div>
+          <Row>
+            <Col span={12} offset={6}>
+              <div style={{ textAlign: 'center' }}>
+                <img src={logo} width={510} />
+              </div>
+              <Input.Search
+                size="large"
+                placeholder="Enter a collection URL."
+                onSearch={value =>
+                  (window.location.hash = `?collection=${value}`)
+                }
+                enterButton="View collection"
+              />
+              <br />
+              <br />
+              <h3>Alternatively choose from here</h3>
+              <List
+                size="large"
+                bordered
+                dataSource={this.collections}
+                renderItem={item => (
+                  <List.Item
+                    style={{ cursor: 'pointer' }}
+                    onClick={() =>
+                      (window.location.hash = `?collection=${item.url}`)
+                    }
+                  >
+                    {item.label}
+                  </List.Item>
+                )}
+              />
+            </Col>
+          </Row>
+          <div style={{ textAlign: 'center', marginTop: 80 }}>
+            <Icon type="code" style={{ marginRight: 5 }} />
+            Created by{' '}
+            <a href="https://stephen.wf" target="_blank">
+              Stephen Fraser
+            </a>
+            <Icon
+              type="api"
+              style={{ marginLeft: 20, marginRight: 20, color: '#ccc' }}
+            />
+            <a href="https://github.com/stephenwf/iiif-redux">
+              <Icon type="github" style={{ marginRight: 5 }} />
+              See project on Github
+            </a>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div>
-        <Layout>
-          {isLoaded ? (
-            <div>
-              <Header>
-                <h3 style={{ color: '#fff' }}>
-                  {this.state.breadcrumbs.length !== 1 ? (
-                    <Icon
-                      onClick={this.goBack}
-                      type="arrow-left"
-                      style={{ marginRight: 15 }}
-                    />
-                  ) : null}
-                  {label ? <IntlString>{label}</IntlString> : null}
-                </h3>
-              </Header>
-              {this.renderCurrentFrame(type)}
-            </div>
-          ) : (
-            <div style={{ padding: 80, textAlign: 'center' }}>
-              <Spin />
-            </div>
-          )}
-        </Layout>
+        <TopLevelCollection collection={topLevelCollection} />
+        <a style={{ position: 'absolute', top: 0, right: 20 }} href="#">
+          <Icon
+            type="close-circle-o"
+            style={{ color: '#fff', fontSize: 22, lineHeight: '64px' }}
+          />
+        </a>
       </div>
     );
   }
 }
 
-export default connect((state, props) => {
-  if (currentCanvas.getCurrentCanvas(state)) {
-    return {
-      label: currentCanvas.getLabel(state),
-      type: 'canvas',
-      isLoaded: true,
-    };
-  }
-  if (currentSequence.getCurrentSequence(state)) {
-    return {
-      label: currentSequence.getLabel(state),
-      type: 'sequence',
-      isLoaded: true,
-    };
-  }
-
-  if (currentManifest.getCurrentManifest(state)) {
-    return {
-      label: currentManifest.getLabel(state),
-      type: 'manifest',
-      isLoaded: true,
-    };
-  }
-
-  return {
-    label:
-      state.dereferenced[props.collection] &&
-      state.dereferenced[props.collection].loading === false
-        ? currentCollection.getLabel(state)
-        : null,
-    type: 'collection',
-    isLoaded:
-      state.dereferenced[props.collection] &&
-      state.dereferenced[props.collection].loading === false,
-  };
-})(App);
+export default App;
