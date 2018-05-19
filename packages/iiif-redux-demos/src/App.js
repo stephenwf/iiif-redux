@@ -38,7 +38,7 @@ class App extends Component {
 
   collections = [
     {
-      label: 'Wellcome top level collection',
+      label: 'Wellcome Library',
       url: 'https://wellcomelibrary.org/service/collections/',
     },
     {
@@ -51,13 +51,8 @@ class App extends Component {
       url: 'https://view.nls.uk/collections/top.json',
     },
     {
-      label: 'IIIF Presentation 2 fixtures',
-      url:
-        'http://iiif.io/api/presentation/2.1/example/fixtures/collection.json',
-    },
-    {
-      label: 'Test collection',
-      url: 'https://iiif-fixtures.stephen.wf/collection.json',
+      label: 'The Indigenous Digital Archive',
+      url: 'https://manifests.dlcs-ida.org/top',
     },
   ];
 
