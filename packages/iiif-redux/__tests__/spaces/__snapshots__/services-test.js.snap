@@ -1,0 +1,240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`spaces/services reducer should be able to deactivate service 1`] = `
+Object {
+  "list": Object {
+    "1234": Object {
+      "config": Object {
+        "myCustomProp": "some value",
+      },
+      "id": "1234",
+      "isActive": false,
+      "isEnabled": false,
+      "label": "test label",
+      "resource": "http://resource/id/",
+      "serviceId": "http://service/id/",
+    },
+  },
+  "resourceIndex": Object {
+    "http://resource/id/": Array [
+      "1234",
+    ],
+  },
+}
+`;
+
+exports[`spaces/services reducer should be able to handle multiple resources 1`] = `
+Object {
+  "list": Object {
+    "1": Object {
+      "id": "1",
+      "isActive": false,
+      "isEnabled": false,
+      "label": "label 1",
+      "resource": "resource-1",
+      "serviceId": "service-1",
+    },
+    "2": Object {
+      "id": "2",
+      "isActive": false,
+      "isEnabled": false,
+      "label": "label 2",
+      "resource": "resource-2",
+      "serviceId": "service-2",
+    },
+    "3": Object {
+      "id": "3",
+      "isActive": false,
+      "isEnabled": false,
+      "label": "label 3",
+      "resource": "resource-3",
+      "serviceId": "service-3",
+    },
+  },
+  "resourceIndex": Object {
+    "resource-1": Array [
+      "1",
+    ],
+    "resource-2": Array [
+      "2",
+    ],
+    "resource-3": Array [
+      "3",
+    ],
+  },
+}
+`;
+
+exports[`spaces/services reducer should be able to handle multiple services on a resource 1`] = `
+Object {
+  "list": Object {
+    "1": Object {
+      "id": "1",
+      "isActive": false,
+      "isEnabled": false,
+      "label": "label 1",
+      "resource": "resource-1",
+      "serviceId": "service-1",
+    },
+    "2": Object {
+      "id": "2",
+      "isActive": false,
+      "isEnabled": false,
+      "label": "label 2",
+      "resource": "resource-1",
+      "serviceId": "service-2",
+    },
+    "3": Object {
+      "id": "3",
+      "isActive": false,
+      "isEnabled": false,
+      "label": "label 3",
+      "resource": "resource-1",
+      "serviceId": "service-3",
+    },
+  },
+  "resourceIndex": Object {
+    "resource-1": Array [
+      "1",
+      "2",
+      "3",
+    ],
+  },
+}
+`;
+
+exports[`spaces/services reducer should be able to override label when activating service 1`] = `
+Object {
+  "list": Object {
+    "1234": Object {
+      "config": Object {
+        "myCustomProp": "some value",
+      },
+      "id": "1234",
+      "isActive": true,
+      "isEnabled": false,
+      "label": "test override label",
+      "resource": "http://resource/id/",
+      "serviceId": "http://service/id/",
+    },
+  },
+  "resourceIndex": Object {
+    "http://resource/id/": Array [
+      "1234",
+    ],
+  },
+}
+`;
+
+exports[`spaces/services reducer should deactivate and disable service after error 1`] = `
+Object {
+  "list": Object {
+    "1234": Object {
+      "config": Object {
+        "myCustomProp": "some value",
+      },
+      "error": "Something went wrong",
+      "id": "1234",
+      "isActive": false,
+      "isEnabled": false,
+      "label": "test label",
+      "resource": "http://resource/id/",
+      "serviceId": "http://service/id/",
+    },
+  },
+  "resourceIndex": Object {
+    "http://resource/id/": Array [
+      "1234",
+    ],
+  },
+}
+`;
+
+exports[`spaces/services reducer should handle serviceAnnounce actions 1`] = `
+Object {
+  "list": Object {
+    "1234": Object {
+      "id": "1234",
+      "isActive": false,
+      "isEnabled": false,
+      "label": "test label",
+      "resource": "http://resource/id/",
+      "serviceId": "http://service/id/",
+    },
+  },
+  "resourceIndex": Object {
+    "http://resource/id/": Array [
+      "1234",
+    ],
+  },
+}
+`;
+
+exports[`spaces/services reducer should handle serviceAnnounce and then serviceActivate actions 1`] = `
+Object {
+  "list": Object {
+    "1234": Object {
+      "config": Object {
+        "myCustomProp": "some value",
+      },
+      "id": "1234",
+      "isActive": true,
+      "isEnabled": false,
+      "label": "test label",
+      "resource": "http://resource/id/",
+      "serviceId": "http://service/id/",
+    },
+  },
+  "resourceIndex": Object {
+    "http://resource/id/": Array [
+      "1234",
+    ],
+  },
+}
+`;
+
+exports[`spaces/services reducer should handle serviceAnnounce, serviceActivate and then serviceEnable actions 1`] = `
+Object {
+  "list": Object {
+    "1234": Object {
+      "config": Object {
+        "myCustomProp": "some value",
+      },
+      "id": "1234",
+      "isActive": true,
+      "isEnabled": true,
+      "label": "test label",
+      "resource": "http://resource/id/",
+      "serviceId": "http://service/id/",
+    },
+  },
+  "resourceIndex": Object {
+    "http://resource/id/": Array [
+      "1234",
+    ],
+  },
+}
+`;
+
+exports[`spaces/services reducer should handle serviceAnnounce, serviceActivate, serviceEnable and then serviceDisable actions 1`] = `
+Object {
+  "list": Object {
+    "1234": Object {
+      "config": Object {
+        "myCustomProp": "some value",
+      },
+      "id": "1234",
+      "isActive": true,
+      "isEnabled": false,
+      "label": "test label",
+      "resource": "http://resource/id/",
+      "serviceId": "http://service/id/",
+    },
+  },
+  "resourceIndex": Object {
+    "http://resource/id/": Array [
+      "1234",
+    ],
+  },
+}
+`;
