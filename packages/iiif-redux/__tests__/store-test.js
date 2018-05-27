@@ -38,6 +38,7 @@ describe('store', () => {
         currentRange: null,
         currentSequence: null,
       },
+      services: { list: {}, resourceIndex: {} },
     });
   });
 
@@ -88,6 +89,7 @@ describe('store', () => {
         currentRange: null,
         currentSequence: null,
       },
+      services: { list: {}, resourceIndex: {} },
     });
   });
 
@@ -139,6 +141,7 @@ describe('store', () => {
         currentRange: null,
         currentSequence: null,
       },
+      services: { list: {}, resourceIndex: {} },
     });
   });
 
@@ -186,6 +189,7 @@ describe('store', () => {
         currentRange: null,
         currentSequence: null,
       },
+      services: { list: {}, resourceIndex: {} },
     });
   });
 

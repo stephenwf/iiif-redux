@@ -23,6 +23,16 @@ export function waitForRequest(store, id) {
   });
 }
 
+export function waitForStore(store, check) {
+  return new Promise(resolve => {
+    store.subscribe(() => {
+      if (check(store.getState())) {
+        resolve();
+      }
+    });
+  });
+}
+
 export async function createStoreAndImportManifest(manifestJson) {
   const id = manifestJson['@id'];
   const store = createStore();

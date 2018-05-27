@@ -1,5 +1,10 @@
+import { put, call, all, takeEvery, select } from 'redux-saga/effects';
 import { createActions, handleActions } from 'redux-actions';
 import update from 'immutability-helper';
+import { ROUTING_SELECT_CANVAS, ROUTING_SELECT_COLLECTION } from './routing';
+import * as currentCanvas from '../api/current-canvas';
+import hyperid from 'hyperid';
+import { imageByIdSelector } from '../api/image';
 
 const SERVICE_ANNOUNCE = 'SERVICE_ANNOUNCE';
 const SERVICE_ACTIVATE = 'SERVICE_ACTIVATE';
@@ -113,6 +118,42 @@ const reducer = handleActions(
   DEFAULT_STATE
 );
 
+function* announceCanvas({ payload: { id } }) {
+  const services = yield select(currentCanvas.getService);
+  // Canvas services.
+  for (const service of services) {
+    const uniqueId = yield call(hyperid.uuid);
+    yield put(
+      serviceAnnounce(uniqueId, service['@id'], id, service.label || null)
+    );
+  }
+  // Canvas image services.
+  const images = yield select(currentCanvas.getImages);
+  for (const image of images) {
+    const imageFull = yield select(
+      imageByIdSelector(
+        api => ({
+          resource: api.getResource,
+        }),
+        () => image['@id']
+      )
+    );
+
+    if (imageFull.resource && imageFull.resource.service) {
+      for (const service of imageFull.resource.service) {
+        // At this point, we need to get the service by id.
+        // const uniqueId = yield call(hyperid.uuid);
+        // console.log(service);
+        // yield put(serviceAnnounce(uniqueId, service, imageFull['@id']));
+      }
+    }
+  }
+}
+
+function* saga() {
+  yield all([takeEvery(ROUTING_SELECT_CANVAS, announceCanvas)]);
+}
+
 export {
   serviceAnnounce,
   serviceActivate,
@@ -126,4 +167,5 @@ export {
   SERVICE_DEACTIVATE,
   DEFAULT_STATE,
   reducer,
+  saga,
 };

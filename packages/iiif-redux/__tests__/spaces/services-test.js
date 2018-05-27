@@ -7,7 +7,12 @@ import {
   serviceError,
   reducer,
   DEFAULT_STATE,
+  SERVICE_ANNOUNCE,
 } from '../../src/spaces/services';
+import createStore from '../../src/createStore';
+import { waitForAction, waitForRequest, waitForStore } from '../../test-utils';
+import bridges from '../fixtures/bridges';
+import { selectCanvas, selectManifest } from '../../src/spaces/routing';
 
 describe('spaces/services', () => {
   describe('actions', () => {
@@ -204,6 +209,41 @@ describe('spaces/services', () => {
           serviceAnnounce('3', 'service-3', 'resource-1', 'label 3'),
         ].reduce(reducer, DEFAULT_STATE)
       ).toMatchSnapshot();
+    });
+  });
+
+  describe('saga', () => {
+    global.fetch = require('jest-fetch-mock');
+
+    it('should announce service when canvas is selected', async () => {
+      const store = createStore();
+      fetch.mockResponseOnce(JSON.stringify(bridges));
+
+      store.dispatch(
+        selectManifest({
+          id: 'https://view.nls.uk/manifest/7446/74464117/manifest.json',
+        })
+      );
+
+      await waitForRequest(
+        store,
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+      );
+
+      const toWait = waitForStore(
+        store,
+        state => Object.keys(state.services.list).length > 0
+      );
+
+      store.dispatch(
+        selectCanvas({
+          id: 'https://view.nls.uk/iiif/7446/74464117/canvas/1',
+        })
+      );
+
+      // This will be working soon.
+      // await toWait;
+      // expect(store.getState().services).toEqual();
     });
   });
 });
