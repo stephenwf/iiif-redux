@@ -12,7 +12,7 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "antd": "3.5.3",
+    "antd": "3.5.4",
     "iiif-redux": "1.0.0",
     "react": "16.4.0",
     "react-dom": "16.4.0",

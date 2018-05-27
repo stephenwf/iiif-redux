@@ -294,9 +294,9 @@ ansi-styles@^3.1.0, ansi-styles@^3.2.0, ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-antd@3.5.3:
-  version "3.5.3"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-3.5.3.tgz#92249afbb1d0f90b4ea2832362b371a24cb5e3bd"
+antd@3.5.4:
+  version "3.5.4"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-3.5.4.tgz#045e4226b41716dc215f6255bb121b0fb9e5dc3b"
   dependencies:
     array-tree-filter "^2.0.0"
     babel-runtime "6.x"
@@ -309,6 +309,7 @@ antd@3.5.3:
     moment "^2.19.3"
     omit.js "^1.0.0"
     prop-types "^15.5.7"
+    raf "^3.4.0"
     rc-animate "^2.4.1"
     rc-calendar "~9.6.0"
     rc-cascader "~0.13.0"
@@ -339,7 +340,7 @@ antd@3.5.3:
     react-lazy-load "^3.0.12"
     react-slick "~0.23.1"
     shallowequal "^1.0.1"
-    warning "~3.0.0"
+    warning "~4.0.0"
 
 any-observable@^0.3.0:
   version "0.3.0"
@@ -8515,6 +8516,12 @@ quick-lru@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-1.1.0.tgz#4360b17c61136ad38078397ff11416e186dcfbb8"
 
+raf@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.0.tgz#a28876881b4bc2ca9117d4138163ddb80f781575"
+  dependencies:
+    performance-now "^2.1.0"
+
 randomatic@^1.1.3:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/randomatic/-/randomatic-1.1.7.tgz#c7abe9cc8b87c0baa876b19fde83fd464797e38c"
@@ -10949,9 +10956,15 @@ warning@2.x:
   dependencies:
     loose-envify "^1.0.0"
 
-warning@^3.0.0, warning@~3.0.0:
+warning@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
+  dependencies:
+    loose-envify "^1.0.0"
+
+warning@~4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.0.tgz#311a464f62c0986f4d2d2f3a46d471b3ba02f782"
   dependencies:
     loose-envify "^1.0.0"
 
