@@ -126,14 +126,14 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   * [ ] getAttribution (Optional)
   * [ ] getLicence (Optional)
   * [ ] getLogo (Optional)
-* [ ] Image content
-  * [ ] getLabel (Optional)
-  * [ ] getMetadata (Optional)
-  * [ ] getDescription (Optional)
-  * [ ] getThumbnail (Optional)
-  * [ ] getAttribution (Optional)
-  * [ ] getLicence (Optional)
-  * [ ] getLogo (Optional)
+* [x] Image content
+  * [x] getLabel (Optional)
+  * [x] getMetadata (Optional)
+  * [x] getDescription (Optional)
+  * [x] getThumbnail (Optional)
+  * [x] getAttribution (Optional)
+  * [x] getLicence (Optional)
+  * [x] getLogo (Optional)
 * [ ] Other content
   * [ ] getLabel (Optional)
   * [ ] getMetadata (Optional)
@@ -185,13 +185,13 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   * [ ] getType (Required - probably not needed for this)
   * [ ] getViewingDirection (Optional)
   * [ ] getViewingHint (Optional)
-* [ ] Image Content
-  * [ ] getId (Required)
-  * [ ] getType (Required - probably not needed for this)
-  * [ ] getFormat (Optional - [ ] default?)
-  * [ ] getHeight (Optional)
-  * [ ] getWidth (Optional)
-  * [ ] getViewingHint (Optional)
+* [x] Image Content
+  * [x] getId (Required)
+  * [x] getType (Required - probably not needed for this)
+  * [x] getFormat (Optional - default?)
+  * [x] getHeight (Optional)
+  * [x] getWidth (Optional)
+  * [x] getViewingHint (Optional)
 * [ ] Other Content
   * [ ] getId (Required)
   * [ ] getType (Required - probably not needed for this)
@@ -252,12 +252,12 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   * [ ] getRelated
   * [ ] getRendering
   * [ ] getWithin
-* [ ] Image Content
-  * [ ] getSeeAlso
-  * [ ] getService
-  * [ ] getRelated
-  * [ ] getRendering
-  * [ ] getWithin
+* [x] Image Content
+  * [x] getSeeAlso
+  * [x] getService
+  * [x] getRelated
+  * [x] getRendering
+  * [x] getWithin
 * [ ] Other Content
   * [ ] getSeeAlso
   * [ ] getService

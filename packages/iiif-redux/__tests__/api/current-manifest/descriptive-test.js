@@ -66,7 +66,7 @@ describe('api/current-manifest/descriptive', () => {
    *  - getDescription (Recommended)
    *  - getThumbnailId (Recommended)
    *  - getAttribution (Optional)
-   *  - getLicence (Optional)
+   *  - getLicense (Optional)
    *  - getLogo (Optional)
    */
   describe('getLabel', () => {
@@ -144,7 +144,7 @@ describe('api/current-manifest/descriptive', () => {
   });
 
   describe('getLicense', () => {
-    it('should load licence from manifest', () => {
+    it('should load license from manifest', () => {
       expect(getLicense(state)).toEqual([
         'http://rightsstatements.org/vocab/NoC-NC/1.0/',
       ]);

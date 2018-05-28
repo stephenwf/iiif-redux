@@ -101,7 +101,7 @@ describe('api/current-canvas/descriptive', () => {
   });
 
   describe('getLicense', () => {
-    it('should load licence from canvas', () => {
+    it('should load license from canvas', () => {
       expect(getLicense(state)).toEqual([
         'http://rightsstatements.org/vocab/NoC-NC/1.0/',
       ]);

@@ -104,7 +104,7 @@ describe('api/current-collection/descriptive', () => {
   });
 
   describe('getLicense', () => {
-    it('should load licence from collection', () => {
+    it('should load license from collection', () => {
       expect(getLicense(state)).toEqual([
         'http://rightsstatements.org/vocab/NoC-NC/1.0/',
       ]);

@@ -81,10 +81,10 @@ describe('api/iiif-descriptive', () => {
         'http://rightsstatements.org/vocab/NoC-NC/1.1/',
       ]);
     });
-    it('handles missing licences', () => {
+    it('handles missing licenses', () => {
       expect(
         getLicense({
-          licence: null,
+          license: null,
         })
       ).toEqual(null);
     });

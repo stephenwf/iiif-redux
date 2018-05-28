@@ -5,7 +5,7 @@ describe('api/annotation/linking', () => {
   const state = {
     resources: {
       annotations: {
-        'http://iiif.com/image-1.json': {
+        'http://iiif.com/annotation-1.json': {
           seeAlso: [
             'http://iiif.com/extern-1.json',
             'http://iiif.com/extern-5.json',
@@ -69,7 +69,9 @@ describe('api/annotation/linking', () => {
     getWithin,
     getRenderingIds,
     getRendering,
-  } = annotation(s => s.resources.annotations['http://iiif.com/image-1.json']);
+  } = annotation(
+    s => s.resources.annotations['http://iiif.com/annotation-1.json']
+  );
 
   it('should get SeeAlso', () => {
     expect(getSeeAlso(state)[0].label[0]['@value']).toEqual('External 1');
