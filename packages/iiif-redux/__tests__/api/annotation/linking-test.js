@@ -1,6 +1,6 @@
-import image from '../../../src/api/image';
+import annotation from '../../../src/api/annotation';
 
-describe('api/image/linking', () => {
+describe('api/annotation/linking', () => {
   const t = text => [{ '@value': text, '@language': 'en' }];
   const state = {
     resources: {
@@ -69,7 +69,7 @@ describe('api/image/linking', () => {
     getWithin,
     getRenderingIds,
     getRendering,
-  } = image(s => s.resources.annotations['http://iiif.com/image-1.json']);
+  } = annotation(s => s.resources.annotations['http://iiif.com/image-1.json']);
 
   it('should get SeeAlso', () => {
     expect(getSeeAlso(state)[0].label[0]['@value']).toEqual('External 1');

@@ -1,6 +1,6 @@
-import image from '../../../src/api/image';
+import annotation from '../../../src/api/annotation';
 
-describe('api/image/descriptive', () => {
+describe('api/annotation/descriptive', () => {
   const state = {
     resources: {
       annotations: {
@@ -55,7 +55,7 @@ describe('api/image/descriptive', () => {
     getLogo,
     getThumbnailId,
     getThumbnail,
-  } = image(s => s.resources.annotations['http://iiif.com/image-1.json']);
+  } = annotation(s => s.resources.annotations['http://iiif.com/image-1.json']);
 
   /**
    * Descriptive properties

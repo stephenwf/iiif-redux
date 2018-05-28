@@ -13,7 +13,7 @@ import {
 import * as linking from './iiif-linking';
 import { isImageService } from '../constants/services';
 
-const image = memoize(selector => {
+const annotation = memoize(selector => {
   /**************************************************
    * Technical properties
    *
@@ -192,13 +192,13 @@ const image = memoize(selector => {
   };
 });
 
-export default image;
+export default annotation;
 
-export function imageByIdSelector(callable, getId) {
+export function annotationByIdSelector(callable, getId) {
   return (state, props) =>
     createStructuredSelector(
       callable(
-        image(
+        annotation(
           () => state.resources.annotations[getId ? getId(props) : props.id]
         )
       )

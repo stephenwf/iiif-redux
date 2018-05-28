@@ -1,6 +1,6 @@
-import image from '../../../src/api/image';
+import annotation from '../../../src/api/annotation';
 
-describe('api/image/technical', () => {
+describe('api/annotation/technical', () => {
   const createStateWithCustomProperties = props => ({
     resources: {
       annotations: {
@@ -24,7 +24,7 @@ describe('api/image/technical', () => {
     },
   };
 
-  const { getId, getType, getViewingHint, getMotivation } = image(
+  const { getId, getType, getViewingHint, getMotivation } = annotation(
     s => s.resources.annotations['http://iiif.com/image-1.json']
   );
 

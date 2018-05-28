@@ -2,7 +2,7 @@ import { createStructuredSelector } from 'reselect';
 import testJson from '../../fixtures/presentation/2.1/01/manifest';
 import * as currentManifest from '../../../src/api/current-manifest';
 import * as currentCanvas from '../../../src/api/current-canvas';
-import { imageByIdSelector } from '../../../src/api/image';
+import { annotationByIdSelector } from '../../../src/api/annotation';
 import { createStoreAndImportManifest } from '../../../test-utils';
 
 describe('iiif/presentation/2.1/01 Minimum Required Fields', () => {
@@ -29,7 +29,7 @@ describe('iiif/presentation/2.1/01 Minimum Required Fields', () => {
           width: currentCanvas.getWidth,
           images: currentCanvas.getImages,
           imageService: currentCanvas.getImageService,
-          image: imageByIdSelector(
+          image: annotationByIdSelector(
             image => ({
               id: image.getId,
               motivation: image.getMotivation,
