@@ -1,4 +1,4 @@
-import { imageResourceByIdSelector } from '../../src/api/imageResource';
+import { imageResourceByIdSelector } from '../../src/api/image-resource';
 
 describe('iiif/api/imageResource', () => {
   it('should be able to generate selector for any imageResource', () => {

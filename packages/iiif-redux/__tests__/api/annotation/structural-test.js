@@ -1,4 +1,5 @@
 import annotation from '../../../src/api/annotation';
+import canvas from '../../../src/api/canvas';
 
 describe('api/annotation/structural', () => {
   const state = {
@@ -10,6 +11,7 @@ describe('api/annotation/structural', () => {
             id: 'http://iiif.com/image-resource-1.jpg',
             schema: 'imageResource',
           },
+          on: 'http://iiif.com/canvas-1.json',
         },
         'http://iiif.com/image-2.json': {
           '@id': 'http://iiif.com/image-2.json',
@@ -17,6 +19,7 @@ describe('api/annotation/structural', () => {
             id: 'http://iiif.com/image-resource-3.jpg',
             schema: 'imageResource',
           },
+          on: 'http://iiif.com/canvas-2.json',
         },
         'http://iiif.com/layer-1.json': {
           '@id': 'http://iiif.com/layer-1.json',
@@ -24,6 +27,7 @@ describe('api/annotation/structural', () => {
             id: 'http://iiif.com/layer-resource-1.json',
             schema: 'layer',
           },
+          on: 'http://iiif.com/canvas-3.json',
         },
         'http://iiif.com/layer-2.json': {
           '@id': 'http://iiif.com/layer-2.json',
@@ -99,6 +103,15 @@ describe('api/annotation/structural', () => {
           profile: 'http://iiif.io/unsupported-service-2.json',
         },
       },
+      canvases: {
+        'http://iiif.com/canvas-1.json': {
+          '@id': 'http://iiif.com/canvas-1.json',
+          label: [{ '@language': 'none', '@value': 'canvas label' }],
+        },
+        'http://iiif.com/canvas-3.json': {
+          '@id': 'http://iiif.com/canvas-3.json',
+        },
+      },
     },
   };
 
@@ -165,5 +178,49 @@ describe('api/annotation/structural', () => {
       label: 'Image service 1',
       profile: 'http://iiif.io/api/image/2/profiles/level2.json',
     });
+  });
+
+  it('should get canvas id from on property', () => {
+    const { getOnId } = annotation(
+      s => s.resources.annotations['http://iiif.com/image-1.json']
+    );
+    expect(getOnId(state)).toEqual('http://iiif.com/canvas-1.json');
+  });
+
+  it('should get canvas from on property', () => {
+    const { getOn } = annotation(
+      s => s.resources.annotations['http://iiif.com/image-1.json']
+    );
+
+    const { getLabel } = canvas(getOn);
+
+    expect(getLabel(state)).toEqual([
+      { '@language': 'none', '@value': 'canvas label' },
+    ]);
+  });
+
+  it('should get canvas id from on property (de-reference)', () => {
+    const { getOnId } = annotation(
+      s => s.resources.annotations['http://iiif.com/image-2.json']
+    );
+    expect(getOnId(state)).toEqual('http://iiif.com/canvas-2.json');
+  });
+
+  it('should get handle missing canvases (should never happen, ID should always be available)', () => {
+    const { getOn } = annotation(
+      s => s.resources.annotations['http://iiif.com/image-2.json']
+    );
+
+    expect(getOn(state)).toEqual(null);
+  });
+
+  it('should handle dereferenced canvases', () => {
+    const { getOn } = annotation(
+      s => s.resources.annotations['http://iiif.com/layer-1.json']
+    );
+
+    const { getLabel } = canvas(getOn);
+
+    expect(getLabel(state)).toEqual();
   });
 });
