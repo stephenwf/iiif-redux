@@ -102,14 +102,14 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   * [x] getAttribution (Optional)
   * [x] getLicence (Optional)
   * [x] getLogo (Optional)
-* [ ] AnnotationList
-  * [ ] getLabel (Optional)
-  * [ ] getMetadata (Optional)
-  * [ ] getDescription (Optional)
-  * [ ] getThumbnail (Optional)
-  * [ ] getAttribution (Optional)
-  * [ ] getLicence (Optional)
-  * [ ] getLogo (Optional)
+* [x] AnnotationList
+  * [x] getLabel (Optional)
+  * [x] getMetadata (Optional)
+  * [x] getDescription (Optional)
+  * [x] getThumbnail (Optional)
+  * [x] getAttribution (Optional)
+  * [x] getLicence (Optional)
+  * [x] getLogo (Optional)
 * [ ] Range
   * [ ] getLabel (Required)
   * [ ] getMetadata (Optional)
@@ -171,10 +171,10 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   * [x] getId (Recommended - auto-generated)
   * [x] getType (Required - probably not needed for this)
   * [x] getViewingHint (Optional)
-* [ ] AnnotationList
-  * [ ] getId (Required)
-  * [ ] getType (Required - probably not needed for this)
-  * [ ] getViewingHint (Optional)
+* [x] AnnotationList
+  * [x] getId (Required)
+  * [x] getType (Required - probably not needed for this)
+  * [x] getViewingHint (Optional)
 * [ ] Range
   * [ ] getId (Required)
   * [ ] getType (Required - probably not needed for this)
@@ -233,12 +233,12 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   * [x] getRelated
   * [x] getRendering
   * [x] getWithin
-* [ ] AnnotationList
-  * [ ] getSeeAlso
-  * [ ] getService
-  * [ ] getRelated
-  * [ ] getRendering
-  * [ ] getWithin
+* [x] AnnotationList
+  * [x] getSeeAlso
+  * [x] getService
+  * [x] getRelated
+  * [x] getRendering
+  * [x] getWithin
 * [ ] Range
   * [ ] getSeeAlso
   * [ ] getService
@@ -274,10 +274,10 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   * [x] getNext
   * [x] getPrevious
   * [x] getStartIndex
-* [ ] AnnotationList
-  * [ ] getNext
-  * [ ] getPrevious
-  * [ ] getStartIndex
+* [x] AnnotationList
+  * [x] getNext
+  * [x] getPrevious
+  * [x] getStartIndex
 * [ ] Layer
   * [ ] getFirst
   * [ ] getLast
@@ -299,8 +299,8 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
 * [x] Canvas
   * [x] getOtherContent
   * [x] getImages
-* [ ] AnnotationList
-  * [ ] getResources / getAnnotations
+* [x] AnnotationList
+  * [x] getResources / getAnnotations
 * [ ] Range
   * [ ] getMembers
   * [ ] getCanvases
