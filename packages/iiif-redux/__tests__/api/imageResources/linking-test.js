@@ -1,11 +1,11 @@
-import image from '../../../src/api/image';
+import imageResource from '../../../src/api/imageResource';
 
-describe('api/image/linking', () => {
+describe('api/imageResource/linking', () => {
   const t = text => [{ '@value': text, '@language': 'en' }];
   const state = {
     resources: {
-      annotations: {
-        'http://iiif.com/image-1.json': {
+      imageResources: {
+        'http://iiif.com/imageResource-1.json': {
           seeAlso: [
             'http://iiif.com/extern-1.json',
             'http://iiif.com/extern-5.json',
@@ -69,7 +69,9 @@ describe('api/image/linking', () => {
     getWithin,
     getRenderingIds,
     getRendering,
-  } = image(s => s.resources.annotations['http://iiif.com/image-1.json']);
+  } = imageResource(
+    s => s.resources.imageResources['http://iiif.com/imageResource-1.json']
+  );
 
   it('should get SeeAlso', () => {
     expect(getSeeAlso(state)[0].label[0]['@value']).toEqual('External 1');

@@ -1,7 +1,7 @@
-import { imageByIdSelector } from '../../src/api/image';
+import { annotationByIdSelector } from '../../src/api/annotation';
 
-describe('iiif/api/image', () => {
-  it('should be able to generate selector for any image', () => {
+describe('iiif/api/annotation', () => {
+  it('should be able to generate selector for any annotation', () => {
     const state = {
       resources: {
         canvases: {},
@@ -15,7 +15,7 @@ describe('iiif/api/image', () => {
       },
     };
 
-    const select = imageByIdSelector(image => ({
+    const select = annotationByIdSelector(image => ({
       id: image.getId,
       type: image.getType,
     }));
@@ -25,7 +25,7 @@ describe('iiif/api/image', () => {
       type: 'sc:Canvas',
     });
 
-    const select2 = imageByIdSelector(
+    const select2 = annotationByIdSelector(
       image => ({
         id: image.getId,
         type: image.getType,

@@ -1,29 +1,15 @@
-import {
-  getLabel,
-  getDescription,
-  getMetadata,
-  getLogo,
-  getLicense,
-  getAttribution,
-  getThumbnailId,
-  getThumbnail,
-} from '../../../src/api/current-canvas';
+import imageResource from '../../../src/api/imageResource';
 
-describe('api/current-canvas/descriptive', () => {
+describe('api/imageResource/descriptive', () => {
   const state = {
-    routing: { currentCanvas: 'http://iiif.com/canvas-1.json' },
-    config: { defaultLanguage: 'en' },
     resources: {
-      canvases: {
-        'http://iiif.com/canvas-1.json': {
-          '@id': 'http://iiif.com/canvas-1.json',
-          '@type': 'sc:Canvas',
-          label: [{ '@value': 'Test canvas label', '@language': 'en' }],
-          viewingDirection: 'top-to-bottom',
-          viewingHint: 'individuals',
-          navDate: '1856-01-01T00:00:00Z',
+      imageResource: {
+        'http://iiif.com/imageResource-1.json': {
+          '@id': 'http://iiif.com/imageResource-1.json',
+          '@type': 'dctypes:Image',
+          label: [{ '@value': 'Annotation label 1', '@language': 'en' }],
           description: [
-            { '@value': 'Test canvas <b>description</b>', '@language': 'en' },
+            { '@value': 'Annotation description', '@language': 'en' },
           ],
           metadata: [
             {
@@ -36,14 +22,14 @@ describe('api/current-canvas/descriptive', () => {
               ],
             },
           ],
-          logo: 'http://example.org/logos/institution1.jpg',
-          license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
           attribution: [
             {
-              '@value': 'Some <b>attribution</b> for test canvas',
+              '@value': 'Some <b>attribution</b> for test imageResource',
               '@language': 'en',
             },
           ],
+          license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
+          logo: 'http://example.org/logos/institution1.jpg',
           thumbnail:
             'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
         },
@@ -62,27 +48,39 @@ describe('api/current-canvas/descriptive', () => {
     },
   };
 
-  describe('getLabel', () => {
-    it('should load label from canvas', () => {
-      expect(getLabel(state)).toEqual([
-        { '@language': 'en', '@value': 'Test canvas label' },
-      ]);
-    });
-  });
+  const {
+    getLabel,
+    getDescription,
+    getMetadata,
+    getAttribution,
+    getLicense,
+    getLogo,
+    getThumbnailId,
+    getThumbnail,
+  } = imageResource(
+    s => s.resources.imageResource['http://iiif.com/imageResource-1.json']
+  );
 
-  describe('getDescription', () => {
-    it('should load description from canvas', () => {
-      expect(getDescription(state)).toEqual([
-        {
-          '@language': 'en',
-          '@value': 'Test canvas <b>description</b>',
-        },
+  /**
+   * Descriptive properties
+   *  - getLabel (Required)
+   *  - getMetadata (Recommended)
+   *  - getDescription (Recommended)
+   *  - getThumbnailId (Recommended)
+   *  - getAttribution (Optional)
+   *  - getLicense (Optional)
+   *  - getLogo (Optional)
+   */
+  describe('getLabel', () => {
+    it('should load label from imageResource', () => {
+      expect(getLabel(state)).toEqual([
+        { '@language': 'en', '@value': 'Annotation label 1' },
       ]);
     });
   });
 
   describe('getMetadata', () => {
-    it('should load metadata from canvas', () => {
+    it('should load metadata from imageResource', () => {
       expect(getMetadata(state)).toEqual([
         {
           label: [{ '@language': 'en', '@value': 'test metadata label' }],
@@ -92,24 +90,16 @@ describe('api/current-canvas/descriptive', () => {
     });
   });
 
-  describe('getLogo', () => {
-    it('should load logo from canvas', () => {
-      expect(getLogo(state)).toEqual(
-        'http://example.org/logos/institution1.jpg'
-      );
-    });
-  });
-
-  describe('getLicense', () => {
-    it('should load license from canvas', () => {
-      expect(getLicense(state)).toEqual([
-        'http://rightsstatements.org/vocab/NoC-NC/1.0/',
+  describe('getDescription', () => {
+    it('should load description from imageResource', () => {
+      expect(getDescription(state)).toEqual([
+        { '@language': 'en', '@value': 'Annotation description' },
       ]);
     });
   });
 
   describe('getThumbnailId', () => {
-    it('should load thumbnail id from canvas', () => {
+    it('should load thumbnail id from collection', () => {
       expect(getThumbnailId(state)).toEqual(
         'http://example.org/images/book1-page1/full/80,100/0/default.jpg'
       );
@@ -146,13 +136,29 @@ describe('api/current-canvas/descriptive', () => {
   });
 
   describe('getAttribution', () => {
-    it('should load attribution from canvas', () => {
+    it('should load attribution from imageResource', () => {
       expect(getAttribution(state)).toEqual([
         {
           '@language': 'en',
-          '@value': 'Some <b>attribution</b> for test canvas',
+          '@value': 'Some <b>attribution</b> for test imageResource',
         },
       ]);
+    });
+  });
+
+  describe('getLicense', () => {
+    it('should load license from imageResource', () => {
+      expect(getLicense(state)).toEqual([
+        'http://rightsstatements.org/vocab/NoC-NC/1.0/',
+      ]);
+    });
+  });
+
+  describe('getLogo', () => {
+    it('should load logo from imageResource', () => {
+      expect(getLogo(state)).toEqual(
+        'http://example.org/logos/institution1.jpg'
+      );
     });
   });
 });

@@ -1,14 +1,16 @@
-import image from '../../../src/api/image';
+import annotation from '../../../src/api/annotation';
 
-describe('api/image/descriptive', () => {
+describe('api/annotation/descriptive', () => {
   const state = {
     resources: {
       annotations: {
-        'http://iiif.com/image-1.json': {
-          '@id': 'http://iiif.com/image-1.json',
+        'http://iiif.com/annotation-1.json': {
+          '@id': 'http://iiif.com/annotation-1.json',
           '@type': 'sc:Annotation',
-          label: [{ '@value': 'Image label 1', '@language': 'en' }],
-          description: [{ '@value': 'Image description', '@language': 'en' }],
+          label: [{ '@value': 'Annotation label 1', '@language': 'en' }],
+          description: [
+            { '@value': 'Annotation description', '@language': 'en' },
+          ],
           metadata: [
             {
               label: [{ '@value': 'test metadata label', '@language': 'en' }],
@@ -22,7 +24,7 @@ describe('api/image/descriptive', () => {
           ],
           attribution: [
             {
-              '@value': 'Some <b>attribution</b> for test image',
+              '@value': 'Some <b>attribution</b> for test annotation',
               '@language': 'en',
             },
           ],
@@ -55,7 +57,9 @@ describe('api/image/descriptive', () => {
     getLogo,
     getThumbnailId,
     getThumbnail,
-  } = image(s => s.resources.annotations['http://iiif.com/image-1.json']);
+  } = annotation(
+    s => s.resources.annotations['http://iiif.com/annotation-1.json']
+  );
 
   /**
    * Descriptive properties
@@ -64,19 +68,19 @@ describe('api/image/descriptive', () => {
    *  - getDescription (Recommended)
    *  - getThumbnailId (Recommended)
    *  - getAttribution (Optional)
-   *  - getLicence (Optional)
+   *  - getLicense (Optional)
    *  - getLogo (Optional)
    */
   describe('getLabel', () => {
-    it('should load label from image', () => {
+    it('should load label from annotation', () => {
       expect(getLabel(state)).toEqual([
-        { '@language': 'en', '@value': 'Image label 1' },
+        { '@language': 'en', '@value': 'Annotation label 1' },
       ]);
     });
   });
 
   describe('getMetadata', () => {
-    it('should load metadata from image', () => {
+    it('should load metadata from annotation', () => {
       expect(getMetadata(state)).toEqual([
         {
           label: [{ '@language': 'en', '@value': 'test metadata label' }],
@@ -87,9 +91,9 @@ describe('api/image/descriptive', () => {
   });
 
   describe('getDescription', () => {
-    it('should load description from image', () => {
+    it('should load description from annotation', () => {
       expect(getDescription(state)).toEqual([
-        { '@language': 'en', '@value': 'Image description' },
+        { '@language': 'en', '@value': 'Annotation description' },
       ]);
     });
   });
@@ -132,18 +136,18 @@ describe('api/image/descriptive', () => {
   });
 
   describe('getAttribution', () => {
-    it('should load attribution from image', () => {
+    it('should load attribution from annotation', () => {
       expect(getAttribution(state)).toEqual([
         {
           '@language': 'en',
-          '@value': 'Some <b>attribution</b> for test image',
+          '@value': 'Some <b>attribution</b> for test annotation',
         },
       ]);
     });
   });
 
   describe('getLicense', () => {
-    it('should load licence from image', () => {
+    it('should load license from annotation', () => {
       expect(getLicense(state)).toEqual([
         'http://rightsstatements.org/vocab/NoC-NC/1.0/',
       ]);
@@ -151,7 +155,7 @@ describe('api/image/descriptive', () => {
   });
 
   describe('getLogo', () => {
-    it('should load logo from image', () => {
+    it('should load logo from annotation', () => {
       expect(getLogo(state)).toEqual(
         'http://example.org/logos/institution1.jpg'
       );

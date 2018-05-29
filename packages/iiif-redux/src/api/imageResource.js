@@ -3,41 +3,38 @@ import { createSelector, createStructuredSelector } from 'reselect';
 import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
 import * as linking from './iiif-linking';
-import * as structural from './iiif-structural';
 import {
   getAllExternalResources,
+  getAllImages,
   getAllLayers,
   getAllServices,
-  getAllCanvases,
-  getAllImages,
 } from './all';
-import validUrl from 'valid-url';
+import canvas from './canvas';
 
-const sequence = memoize(selector => {
+const imageResource = memoize(selector => {
   /**************************************************
    * Technical properties
    *
    * - getId
    * - getType
+   * - getFormat
+   * - getHeight
+   * - getWidth
    * - getViewingHint
-   * - getViewingDirection
    **************************************************/
   const getId = createSelector(selector, technical.getId);
+
   const getType = createSelector(selector, technical.getType);
-  const getViewingHint = createSelector(selector, sequenceEntity => {
-    const viewingHint = technical.getViewingHint(sequenceEntity);
-    switch (viewingHint) {
-      case 'individuals':
-      case 'paged':
-      case 'continuous':
-        return viewingHint;
-      default:
-        return validUrl.isWebUri(viewingHint) ? viewingHint : null;
-    }
-  });
-  const getViewingDirection = createSelector(
+
+  const getFormat = createSelector(selector, technical.getFormat);
+
+  const getHeight = createSelector(selector, technical.getHeight);
+
+  const getWidth = createSelector(selector, technical.getWidth);
+
+  const getViewingHint = createSelector(
     selector,
-    technical.getViewingDirection
+    technical.getWhitelistedViewingHint([]) // has to be URI.
   );
 
   /**************************************************
@@ -78,14 +75,19 @@ const sequence = memoize(selector => {
    * - getRelated
    * - getRendering
    * - getWithin
-   * - getStartCanvas
    **************************************************/
   const getSeeAlsoIds = createSelector(selector, linking.getSeeAlso);
   const getSeeAlso = createSelector(
     getSeeAlsoIds,
     getAllExternalResources,
     (seeAlsoIds, allExternalResources) =>
-      seeAlsoIds.map(seeAlsoId => allExternalResources[seeAlsoId])
+      seeAlsoIds.map(
+        seeAlsoId =>
+          allExternalResources[seeAlsoId] || {
+            '@id': seeAlsoId,
+            label: [{ '@value': 'unknown', '@language': '@none' }],
+          }
+      )
   );
 
   const getServiceIds = createSelector(selector, linking.getService);
@@ -123,68 +125,46 @@ const sequence = memoize(selector => {
         .filter(e => e)
   );
 
-  const getStartCanvasId = createSelector(selector, linking.getStartCanvas);
-  const getStartCanvas = createSelector(
-    getStartCanvasId,
-    getAllCanvases,
-    (canvasId, allCanvases) => allCanvases[canvasId]
-  );
-
-  /**************************************************
-   * Structural properties
-   *
-   * - getCanvases (Required)
-   **************************************************/
-  const getCanvasIds = createSelector(selector, structural.getCanvases);
-  const getCanvases = createSelector(
-    getCanvasIds,
-    getAllCanvases,
-    (canvasIds, allCanvases) => canvasIds.map(canvasId => allCanvases[canvasId])
-  );
-
   return {
     selector,
     // Technical
     getId,
     getType,
+    getFormat,
+    getHeight,
+    getWidth,
     getViewingHint,
-    getViewingDirection,
-    // Descriptive
+    // descriptive
     getLabel,
     getDescription,
     getMetadata,
     getAttribution,
     getLogo,
     getLicense,
-    getThumbnailId,
     getThumbnail,
-    // Linking
-    getSeeAlsoIds,
+    getThumbnailId,
+    // linking
     getSeeAlso,
-    getServiceIds,
+    getSeeAlsoIds,
     getService,
-    getRelatedIds,
+    getServiceIds,
     getRelated,
-    getRenderingIds,
+    getRelatedIds,
     getRendering,
-    getWithinIds,
+    getRenderingIds,
     getWithin,
-    getStartCanvasId,
-    getStartCanvas,
-    // Structural
-    getCanvasIds,
-    getCanvases,
+    getWithinIds,
   };
 });
 
-export default sequence;
+export default imageResource;
 
-export function sequenceByIdSelector(callable, getId) {
+export function imageResourceByIdSelector(callable, getId) {
   return (state, props) =>
     createStructuredSelector(
       callable(
-        sequence(
-          () => state.resources.sequences[getId ? getId(props) : props.id]
+        imageResource(
+          () => state.resources.imageResources[getId ? getId(props) : props.id]
         )
       )
     )(state);

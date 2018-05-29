@@ -49,7 +49,7 @@ const manifest = memoize(selector => {
    * - getMetadata
    * - getAttribution
    * - getLogo
-   * - getLicence
+   * - getLicense
    * - getThumbnail
    **************************************************/
   const getLabel = createSelector(selector, descriptive.getLabel);

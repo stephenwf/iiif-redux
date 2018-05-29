@@ -84,7 +84,7 @@ describe('Forth Bridge illustrations manifest', () => {
           {
             '@language': 'en',
             '@value':
-              'You have permission to make copies of this work under the <a target="_top" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Licence</a> unless otherwise stated.',
+              'You have permission to make copies of this work under the <a target="_top" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a> unless otherwise stated.',
           },
         ],
       },

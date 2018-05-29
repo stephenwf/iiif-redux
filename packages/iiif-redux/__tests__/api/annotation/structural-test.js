@@ -1,6 +1,6 @@
-import image from '../../../src/api/image';
+import annotation from '../../../src/api/annotation';
 
-describe('api/image/structural', () => {
+describe('api/annotation/structural', () => {
   const state = {
     resources: {
       annotations: {
@@ -103,7 +103,7 @@ describe('api/image/structural', () => {
   };
 
   it('should get image ids', () => {
-    const { getResourceId } = image(
+    const { getResourceId } = annotation(
       s => s.resources.annotations['http://iiif.com/image-1.json']
     );
     expect(getResourceId(state)).toEqual(
@@ -112,7 +112,7 @@ describe('api/image/structural', () => {
   });
 
   it('should get image', () => {
-    const { getResource } = image(
+    const { getResource } = annotation(
       s => s.resources.annotations['http://iiif.com/image-1.json']
     );
     expect(getResource(state)).toEqual({
@@ -129,35 +129,35 @@ describe('api/image/structural', () => {
   });
 
   it('should return null when image does not exist', () => {
-    const { getResource } = image(
+    const { getResource } = annotation(
       s => s.resources.annotations['http://iiif.com/layer-1.json']
     );
     expect(getResource(state)).toEqual(null);
   });
 
   it('should not return image service if not valid service', () => {
-    const { getImageService } = image(
+    const { getImageService } = annotation(
       s => s.resources.annotations['http://iiif.com/image-1.json']
     );
     expect(getImageService(state)).toEqual(null);
   });
 
   it('should not return image service if no service', () => {
-    const { getImageService } = image(
+    const { getImageService } = annotation(
       s => s.resources.annotations['http://iiif.com/image-2.json']
     );
     expect(getImageService(state)).toEqual(null);
   });
 
   it('should not return image service if image does not exist', () => {
-    const { getImageService } = image(
+    const { getImageService } = annotation(
       s => s.resources.annotations['http://iiif.com/image-3.json']
     );
     expect(getImageService(state)).toEqual(null);
   });
 
   it('should return image service', () => {
-    const { getImageService } = image(
+    const { getImageService } = annotation(
       s => s.resources.annotations['http://iiif.com/image-find-me.json']
     );
     expect(getImageService(state)).toEqual({
