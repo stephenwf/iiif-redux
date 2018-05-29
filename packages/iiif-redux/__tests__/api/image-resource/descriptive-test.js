@@ -1,4 +1,4 @@
-import imageResource from '../../../src/api/imageResource';
+import imageResource from '../../../src/api/image-resource';
 
 describe('api/imageResource/descriptive', () => {
   const state = {

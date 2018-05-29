@@ -189,6 +189,7 @@ const annotation = memoize(selector => {
     getImageService,
     // Annotation specifics
     getOn,
+    getOnId,
   };
 });
 

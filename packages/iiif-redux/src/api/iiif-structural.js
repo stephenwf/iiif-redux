@@ -56,6 +56,8 @@ const getImages = resource => alwaysArray(resource.images);
 const getResource = resource =>
   resource ? (resource.resource ? resource.resource.id : null) : null;
 
+const getResources = resource => alwaysArray(resource.resources);
+
 export {
   getSequences,
   getCanvases,
@@ -67,4 +69,5 @@ export {
   getRanges,
   getStructures,
   getResource,
+  getResources,
 };

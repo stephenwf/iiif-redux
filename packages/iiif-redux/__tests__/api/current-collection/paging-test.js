@@ -12,6 +12,7 @@ import {
 } from '../../../src/api/current-collection';
 
 describe('api/current-collection/descriptive', () => {
+  const t = text => [{ '@value': text, '@language': 'en' }];
   const state = {
     routing: { currentCollection: 'http://iiif.com/collection-1.json?page=3' },
     config: { defaultLanguage: 'en' },
@@ -19,7 +20,7 @@ describe('api/current-collection/descriptive', () => {
       collections: {
         'http://iiif.com/collection-1.json?page=1': {
           '@id': 'http://iiif.com/collection-1.json',
-          label: 'Page 1',
+          label: t('Page 1'),
           first: ['http://iiif.com/collection-1.json?page=1'],
           last: ['http://iiif.com/collection-1.json?page=5'],
           total: 200,
@@ -28,7 +29,7 @@ describe('api/current-collection/descriptive', () => {
         },
         'http://iiif.com/collection-1.json?page=2': {
           '@id': 'http://iiif.com/collection-1.json',
-          label: 'Page 2',
+          label: t('Page 2'),
           first: ['http://iiif.com/collection-1.json?page=1'],
           last: ['http://iiif.com/collection-1.json?page=5'],
           total: 200,
@@ -38,7 +39,7 @@ describe('api/current-collection/descriptive', () => {
         },
         'http://iiif.com/collection-1.json?page=3': {
           '@id': 'http://iiif.com/collection-1.json',
-          label: 'Page 3',
+          label: t('Page 3'),
           first: ['http://iiif.com/collection-1.json?page=1'],
           last: ['http://iiif.com/collection-1.json?page=5'],
           total: 200,
@@ -48,7 +49,7 @@ describe('api/current-collection/descriptive', () => {
         },
         'http://iiif.com/collection-1.json?page=4': {
           '@id': 'http://iiif.com/collection-1.json',
-          label: 'Page 4',
+          label: t('Page 4'),
           first: ['http://iiif.com/collection-1.json?page=1'],
           last: ['http://iiif.com/collection-1.json?page=5'],
           total: 200,
@@ -58,7 +59,7 @@ describe('api/current-collection/descriptive', () => {
         },
         'http://iiif.com/collection-1.json?page=5': {
           '@id': 'http://iiif.com/collection-1.json',
-          label: 'Page 5',
+          label: t('Page 5'),
           first: ['http://iiif.com/collection-1.json?page=1'],
           last: ['http://iiif.com/collection-1.json?page=5'],
           total: 200,
@@ -75,7 +76,9 @@ describe('api/current-collection/descriptive', () => {
     );
   });
   it('should load getFirst', () => {
-    expect(getFirst(state).label).toEqual('Page 1');
+    expect(getFirst(state).label).toEqual([
+      { '@language': 'en', '@value': 'Page 1' },
+    ]);
   });
   it('should load getLastId', () => {
     expect(getLastId(state)).toEqual(
@@ -83,7 +86,9 @@ describe('api/current-collection/descriptive', () => {
     );
   });
   it('should load getLast', () => {
-    expect(getLast(state).label).toEqual('Page 5');
+    expect(getLast(state).label).toEqual([
+      { '@language': 'en', '@value': 'Page 5' },
+    ]);
   });
   it('should load getTotal', () => {
     expect(getTotal(state)).toEqual(200);
@@ -94,7 +99,9 @@ describe('api/current-collection/descriptive', () => {
     );
   });
   it('should load getNext', () => {
-    expect(getNext(state).label).toEqual('Page 4');
+    expect(getNext(state).label).toEqual([
+      { '@language': 'en', '@value': 'Page 4' },
+    ]);
   });
   it('should load getPreviousId', () => {
     expect(getPreviousId(state)).toEqual(
@@ -102,7 +109,9 @@ describe('api/current-collection/descriptive', () => {
     );
   });
   it('should load getPrevious', () => {
-    expect(getPrevious(state).label).toEqual('Page 2');
+    expect(getPrevious(state).label).toEqual([
+      { '@language': 'en', '@value': 'Page 2' },
+    ]);
   });
   it('should load getStartIndex', () => {
     expect(getStartIndex(state)).toEqual(0);

@@ -29,16 +29,10 @@ const canvas = memoize(selector => {
 
   const getType = createSelector(selector, technical.getType);
 
-  const getViewingHint = createSelector(selector, canvasEntity => {
-    const viewingHint = technical.getViewingHint(canvasEntity);
-    switch (viewingHint) {
-      case 'non-paged':
-      case 'facing-pages':
-        return viewingHint;
-      default:
-        return validUrl.isWebUri(viewingHint) ? viewingHint : null;
-    }
-  });
+  const getViewingHint = createSelector(
+    selector,
+    technical.getWhitelistedViewingHint(['non-paged', 'facing-pages'])
+  );
 
   const getHeight = createSelector(selector, technical.getHeight);
 
