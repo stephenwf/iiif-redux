@@ -9,9 +9,9 @@ import {
   getRanges,
   getStructures,
   getResource,
-} from '../../src/api/iiif-structural';
+} from '../../../src/api/iiif-structural';
 
-describe('api/iiif-structural', () => {
+describe('api/iiif/structural', () => {
   describe('getSequences', () => {
     it('should get Sequences from resource', () => {
       expect(

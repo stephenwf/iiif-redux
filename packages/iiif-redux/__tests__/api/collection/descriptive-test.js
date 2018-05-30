@@ -1,29 +1,33 @@
-import {
-  getLabel,
-  getDescription,
-  getMetadata,
-  getLogo,
-  getLicense,
-  getAttribution,
-  getThumbnailId,
-  getThumbnail,
-} from '../../../src/api/current-canvas';
+import collection from '../../../src/api/collection';
 
-describe('api/current-canvas/descriptive', () => {
+describe('api/collection/descriptive', () => {
+  const {
+    getLabel,
+    getDescription,
+    getMetadata,
+    getLogo,
+    getLicense,
+    getAttribution,
+    getThumbnailId,
+    getThumbnail,
+  } = collection(
+    s => s.resources.collections['http://iiif.com/collection-1.json']
+  );
   const state = {
-    routing: { currentCanvas: 'http://iiif.com/canvas-1.json' },
-    config: { defaultLanguage: 'en' },
     resources: {
-      canvases: {
-        'http://iiif.com/canvas-1.json': {
-          '@id': 'http://iiif.com/canvas-1.json',
-          '@type': 'sc:Canvas',
-          label: [{ '@value': 'Test canvas label', '@language': 'en' }],
+      collections: {
+        'http://iiif.com/collection-1.json': {
+          '@id': 'http://iiif.com/collection-1.json',
+          '@type': 'sc:Collection',
+          label: [{ '@value': 'Test collection label', '@language': 'en' }],
           viewingDirection: 'top-to-bottom',
           viewingHint: 'individuals',
           navDate: '1856-01-01T00:00:00Z',
           description: [
-            { '@value': 'Test canvas <b>description</b>', '@language': 'en' },
+            {
+              '@value': 'Test collection <b>description</b>',
+              '@language': 'en',
+            },
           ],
           metadata: [
             {
@@ -40,7 +44,7 @@ describe('api/current-canvas/descriptive', () => {
           license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
           attribution: [
             {
-              '@value': 'Some <b>attribution</b> for test canvas',
+              '@value': 'Some <b>attribution</b> for test collection',
               '@language': 'en',
             },
           ],
@@ -63,26 +67,26 @@ describe('api/current-canvas/descriptive', () => {
   };
 
   describe('getLabel', () => {
-    it('should load label from canvas', () => {
+    it('should load label from collection', () => {
       expect(getLabel(state)).toEqual([
-        { '@language': 'en', '@value': 'Test canvas label' },
+        { '@language': 'en', '@value': 'Test collection label' },
       ]);
     });
   });
 
   describe('getDescription', () => {
-    it('should load description from canvas', () => {
+    it('should load description from collection', () => {
       expect(getDescription(state)).toEqual([
         {
           '@language': 'en',
-          '@value': 'Test canvas <b>description</b>',
+          '@value': 'Test collection <b>description</b>',
         },
       ]);
     });
   });
 
   describe('getMetadata', () => {
-    it('should load metadata from canvas', () => {
+    it('should load metadata from collection', () => {
       expect(getMetadata(state)).toEqual([
         {
           label: [{ '@language': 'en', '@value': 'test metadata label' }],
@@ -93,7 +97,7 @@ describe('api/current-canvas/descriptive', () => {
   });
 
   describe('getLogo', () => {
-    it('should load logo from canvas', () => {
+    it('should load logo from collection', () => {
       expect(getLogo(state)).toEqual(
         'http://example.org/logos/institution1.jpg'
       );
@@ -101,7 +105,7 @@ describe('api/current-canvas/descriptive', () => {
   });
 
   describe('getLicense', () => {
-    it('should load license from canvas', () => {
+    it('should load license from collection', () => {
       expect(getLicense(state)).toEqual([
         'http://rightsstatements.org/vocab/NoC-NC/1.0/',
       ]);
@@ -109,7 +113,7 @@ describe('api/current-canvas/descriptive', () => {
   });
 
   describe('getThumbnailId', () => {
-    it('should load thumbnail id from canvas', () => {
+    it('should load thumbnail id from collection', () => {
       expect(getThumbnailId(state)).toEqual(
         'http://example.org/images/book1-page1/full/80,100/0/default.jpg'
       );
@@ -146,11 +150,11 @@ describe('api/current-canvas/descriptive', () => {
   });
 
   describe('getAttribution', () => {
-    it('should load attribution from canvas', () => {
+    it('should load attribution from collection', () => {
       expect(getAttribution(state)).toEqual([
         {
           '@language': 'en',
-          '@value': 'Some <b>attribution</b> for test canvas',
+          '@value': 'Some <b>attribution</b> for test collection',
         },
       ]);
     });

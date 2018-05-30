@@ -1,15 +1,10 @@
-import {
-  getHeight,
-  getId,
-  getType,
-  getViewingHint,
-  getWidth,
-} from '../../../src/api/current-canvas';
+import canvas from '../../../src/api/canvas';
 
-describe('api/current-canvas/technical', () => {
+describe('api/canvas/technical', () => {
+  const { getHeight, getId, getType, getViewingHint, getWidth } = canvas(
+    s => s.resources.canvases['http://iiif.com/canvas-1.json']
+  );
   const createStateWithCustomProperties = props => ({
-    routing: { currentCanvas: 'http://iiif.com/canvas-1.json' },
-    config: { defaultLanguage: 'en' },
     resources: {
       canvases: {
         'http://iiif.com/canvas-1.json': {
@@ -21,8 +16,6 @@ describe('api/current-canvas/technical', () => {
   });
 
   const state = {
-    routing: { currentCanvas: 'http://iiif.com/canvas-1.json' },
-    config: { defaultLanguage: 'en' },
     resources: {
       canvases: {
         'http://iiif.com/canvas-1.json': {

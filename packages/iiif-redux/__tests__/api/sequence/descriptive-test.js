@@ -1,32 +1,25 @@
-import {
-  getLabel,
-  getDescription,
-  getMetadata,
-  getLogo,
-  getLicense,
-  getAttribution,
-  getThumbnailId,
-  getThumbnail,
-} from '../../../src/api/current-collection';
+import sequence from '../../../src/api/sequence';
 
-describe('api/current-collection/descriptive', () => {
+describe('api/sequence/descriptive', () => {
+  const {
+    getLabel,
+    getDescription,
+    getMetadata,
+    getAttribution,
+    getLicense,
+    getLogo,
+    getThumbnailId,
+    getThumbnail,
+  } = sequence(s => s.resources.sequences['http://iiif.com/sequence-1.json']);
   const state = {
-    routing: { currentCollection: 'http://iiif.com/collection-1.json' },
-    config: { defaultLanguage: 'en' },
     resources: {
-      collections: {
-        'http://iiif.com/collection-1.json': {
-          '@id': 'http://iiif.com/collection-1.json',
-          '@type': 'sc:Collection',
-          label: [{ '@value': 'Test collection label', '@language': 'en' }],
-          viewingDirection: 'top-to-bottom',
-          viewingHint: 'individuals',
-          navDate: '1856-01-01T00:00:00Z',
+      sequences: {
+        'http://iiif.com/sequence-1.json': {
+          '@id': 'http://iiif.com/sequence-1.json',
+          '@type': 'sc:Sequence',
+          label: [{ '@value': 'Sequence label 1', '@language': 'en' }],
           description: [
-            {
-              '@value': 'Test collection <b>description</b>',
-              '@language': 'en',
-            },
+            { '@value': 'Sequence description', '@language': 'en' },
           ],
           metadata: [
             {
@@ -39,14 +32,14 @@ describe('api/current-collection/descriptive', () => {
               ],
             },
           ],
-          logo: 'http://example.org/logos/institution1.jpg',
-          license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
           attribution: [
             {
-              '@value': 'Some <b>attribution</b> for test collection',
+              '@value': 'Some <b>attribution</b> for test sequence',
               '@language': 'en',
             },
           ],
+          license: 'http://rightsstatements.org/vocab/NoC-NC/1.0/',
+          logo: 'http://example.org/logos/institution1.jpg',
           thumbnail:
             'http://example.org/images/book1-page1/full/80,100/0/default.jpg',
         },
@@ -65,27 +58,26 @@ describe('api/current-collection/descriptive', () => {
     },
   };
 
+  /**
+   * Descriptive properties
+   *  - getLabel (Required)
+   *  - getMetadata (Recommended)
+   *  - getDescription (Recommended)
+   *  - getThumbnailId (Recommended)
+   *  - getAttribution (Optional)
+   *  - getLicense (Optional)
+   *  - getLogo (Optional)
+   */
   describe('getLabel', () => {
-    it('should load label from collection', () => {
+    it('should load label from sequence', () => {
       expect(getLabel(state)).toEqual([
-        { '@language': 'en', '@value': 'Test collection label' },
-      ]);
-    });
-  });
-
-  describe('getDescription', () => {
-    it('should load description from collection', () => {
-      expect(getDescription(state)).toEqual([
-        {
-          '@language': 'en',
-          '@value': 'Test collection <b>description</b>',
-        },
+        { '@language': 'en', '@value': 'Sequence label 1' },
       ]);
     });
   });
 
   describe('getMetadata', () => {
-    it('should load metadata from collection', () => {
+    it('should load metadata from sequence', () => {
       expect(getMetadata(state)).toEqual([
         {
           label: [{ '@language': 'en', '@value': 'test metadata label' }],
@@ -95,18 +87,10 @@ describe('api/current-collection/descriptive', () => {
     });
   });
 
-  describe('getLogo', () => {
-    it('should load logo from collection', () => {
-      expect(getLogo(state)).toEqual(
-        'http://example.org/logos/institution1.jpg'
-      );
-    });
-  });
-
-  describe('getLicense', () => {
-    it('should load license from collection', () => {
-      expect(getLicense(state)).toEqual([
-        'http://rightsstatements.org/vocab/NoC-NC/1.0/',
+  describe('getDescription', () => {
+    it('should load description from sequence', () => {
+      expect(getDescription(state)).toEqual([
+        { '@language': 'en', '@value': 'Sequence description' },
       ]);
     });
   });
@@ -149,13 +133,29 @@ describe('api/current-collection/descriptive', () => {
   });
 
   describe('getAttribution', () => {
-    it('should load attribution from collection', () => {
+    it('should load attribution from sequence', () => {
       expect(getAttribution(state)).toEqual([
         {
           '@language': 'en',
-          '@value': 'Some <b>attribution</b> for test collection',
+          '@value': 'Some <b>attribution</b> for test sequence',
         },
       ]);
+    });
+  });
+
+  describe('getLicense', () => {
+    it('should load license from sequence', () => {
+      expect(getLicense(state)).toEqual([
+        'http://rightsstatements.org/vocab/NoC-NC/1.0/',
+      ]);
+    });
+  });
+
+  describe('getLogo', () => {
+    it('should load logo from sequence', () => {
+      expect(getLogo(state)).toEqual(
+        'http://example.org/logos/institution1.jpg'
+      );
     });
   });
 });

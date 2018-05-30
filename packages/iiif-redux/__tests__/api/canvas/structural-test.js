@@ -1,15 +1,14 @@
-import {
-  getOtherContentIds,
-  getOtherContent,
-  getImageIds,
-  getImages,
-} from '../../../src/api/current-canvas';
+import canvas from '../../../src/api/canvas';
 
-describe('api/current-canvas/structural', () => {
+describe('api/canvas/structural', () => {
+  const {
+    getOtherContentIds,
+    getOtherContent,
+    getImageIds,
+    getImages,
+  } = canvas(s => s.resources.canvases['http://iiif.com/canvas-1.json']);
   const t = text => [{ '@value': text, '@language': 'en' }];
   const state = {
-    routing: { currentCanvas: 'http://iiif.com/canvas-1.json' },
-    config: { defaultLanguage: 'en' },
     resources: {
       canvases: {
         'http://iiif.com/canvas-1.json': {

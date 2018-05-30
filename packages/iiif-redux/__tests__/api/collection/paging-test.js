@@ -1,21 +1,23 @@
-import {
-  getFirstId,
-  getFirst,
-  getLastId,
-  getLast,
-  getTotal,
-  getNextId,
-  getNext,
-  getPreviousId,
-  getPrevious,
-  getStartIndex,
-} from '../../../src/api/current-collection';
+import collection from '../../../src/api/collection';
 
-describe('api/current-collection/descriptive', () => {
+describe('api/collection/descriptive', () => {
+  const {
+    getFirstId,
+    getFirst,
+    getLastId,
+    getLast,
+    getTotal,
+    getNextId,
+    getNext,
+    getPreviousId,
+    getPrevious,
+    getStartIndex,
+  } = collection(
+    s => s.resources.collections['http://iiif.com/collection-1.json?page=3']
+  );
+
   const t = text => [{ '@value': text, '@language': 'en' }];
   const state = {
-    routing: { currentCollection: 'http://iiif.com/collection-1.json?page=3' },
-    config: { defaultLanguage: 'en' },
     resources: {
       collections: {
         'http://iiif.com/collection-1.json?page=1': {

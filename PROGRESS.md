@@ -185,14 +185,14 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   * [ ] getType (Required - probably not needed for this)
   * [ ] getViewingDirection (Optional)
   * [ ] getViewingHint (Optional)
-* [x] Image Content
+* [x] Image Content (imageResources)
   * [x] getId (Required)
   * [x] getType (Required - probably not needed for this)
   * [x] getFormat (Optional - default?)
   * [x] getHeight (Optional)
   * [x] getWidth (Optional)
   * [x] getViewingHint (Optional)
-* [ ] Other Content
+* [ ] Other Content (externalResources)
   * [ ] getId (Required)
   * [ ] getType (Required - probably not needed for this)
   * [ ] getFormat (Optional - [ ] default?)
@@ -252,13 +252,13 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   * [ ] getRelated
   * [ ] getRendering
   * [ ] getWithin
-* [x] Image Content
+* [x] Image Content (imageResources)
   * [x] getSeeAlso
   * [x] getService
   * [x] getRelated
   * [x] getRendering
   * [x] getWithin
-* [ ] Other Content
+* [ ] Other Content (externalResources)
   * [ ] getSeeAlso
   * [ ] getService
   * [ ] getRelated
@@ -320,4 +320,4 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
 * [ ] Range (Optional)
 * [ ] Layer (Optional)
 * [ ] Image Content (Required)
-* [ ] Other Content (Required)
+* [ ] Other Content (externalResources) (Required)

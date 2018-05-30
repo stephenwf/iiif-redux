@@ -1,19 +1,18 @@
-import {
-  getSequenceIds,
-  getSequences,
-  getRangeIds,
-  getRanges,
-  getStructureIds,
-  getStructures,
-  getOtherContent,
-  getOtherContentIds,
-} from '../../../src/api/current-manifest';
+import manifest from '../../../src/api/manifest';
 
-describe('api/current-manifest/structural', () => {
+describe('api/manifest/structural', () => {
+  const {
+    getSequenceIds,
+    getSequences,
+    getRangeIds,
+    getRanges,
+    getStructureIds,
+    getStructures,
+    getOtherContent,
+    getOtherContentIds,
+  } = manifest(s => s.resources.manifests['http://iiif.com/manifest-1.json']);
   const t = text => [{ '@value': text, '@language': 'en' }];
   const state = {
-    routing: { currentManifest: 'http://iiif.com/manifest-1.json' },
-    config: { defaultLanguage: 'en' },
     resources: {
       manifests: {
         'http://iiif.com/manifest-1.json': {

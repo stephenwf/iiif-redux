@@ -1,18 +1,17 @@
-import {
-  getLabel,
-  getDescription,
-  getMetadata,
-  getAttribution,
-  getLicense,
-  getLogo,
-  getThumbnailId,
-  getThumbnail,
-} from '../../../src/api/current-manifest';
+import manifest from '../../../src/api/manifest';
 
-describe('api/current-manifest/descriptive', () => {
+describe('api/manifest/descriptive', () => {
+  const {
+    getLabel,
+    getDescription,
+    getMetadata,
+    getAttribution,
+    getLicense,
+    getLogo,
+    getThumbnailId,
+    getThumbnail,
+  } = manifest(s => s.resources.manifests['http://iiif.com/manifest-1.json']);
   const state = {
-    routing: { currentManifest: 'http://iiif.com/manifest-1.json' },
-    config: { defaultLanguage: 'en' },
     resources: {
       manifests: {
         'http://iiif.com/manifest-1.json': {

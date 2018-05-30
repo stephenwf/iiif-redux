@@ -6,9 +6,9 @@ import {
   getThumbnailId,
   getLicense,
   getLogo,
-} from '../../src/api/iiif-descriptive';
+} from '../../../src/api/iiif-descriptive';
 
-describe('api/iiif-descriptive', () => {
+describe('api/iiif/descriptive', () => {
   describe('getThumbnailId', () => {
     it('should parse image service thumbnails', () => {
       expect(

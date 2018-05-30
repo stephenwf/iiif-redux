@@ -1,8 +1,10 @@
-import { getCanvases, getCanvasIds } from '../../../src/api/current-sequence';
+import sequence from '../../../src/api/sequence';
 
-describe('api/current-sequence/structural', () => {
+describe('api/sequence/structural', () => {
+  const { getCanvases, getCanvasIds } = sequence(
+    s => s.resources.sequences['http://iiif.com/sequence-1.json']
+  );
   const state = {
-    routing: { currentSequence: 'http://iiif.com/sequence-1.json' },
     resources: {
       sequences: {
         'http://iiif.com/sequence-1.json': {

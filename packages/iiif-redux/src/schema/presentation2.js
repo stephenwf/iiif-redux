@@ -48,20 +48,23 @@ const externalResource = createEntity('externalResources');
 const service = createEntity('services', true);
 const within = new schema.Array(
   {
+    collection,
+    manifest,
     externalResource,
     layer,
   },
-  entity => (entity['@type'] === 'sc:Layer' ? 'layer' : 'externalResource')
-);
-const otherContent = new schema.Union(
-  {
-    externalResource,
-    annotationList,
-  },
-  entity =>
-    entity['@type'] === 'sc:AnnotationList'
-      ? 'annotationList'
-      : 'externalResource'
+  entity => {
+    switch (entity['@type']) {
+      case 'sc:Collection':
+        return 'collection';
+      case 'sc:Manifest':
+        return 'manifest';
+      case 'sc:Layer':
+        return 'layer';
+      default:
+        return 'externalResource';
+    }
+  }
 );
 
 /**
@@ -139,7 +142,7 @@ collection.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
-  otherContent: [otherContent],
+  otherContent: [annotationList],
   within: within,
 
   // Extra
@@ -158,7 +161,7 @@ manifest.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
-  otherContent: [otherContent],
+  otherContent: [annotationList],
   within: within,
 
   // Extra
@@ -176,7 +179,7 @@ sequence.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
-  otherContent: [otherContent],
+  otherContent: [annotationList],
   within: within,
   startCanvas: canvas,
 
@@ -195,7 +198,7 @@ canvas.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
-  otherContent: [otherContent],
+  otherContent: [annotationList],
   within: within,
 
   // Extra
