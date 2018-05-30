@@ -249,6 +249,7 @@ annotationList.define({
 // ===========================================================================
 range.define({
   resources: [annotation],
+  ranges: [range],
 
   // Linking
   seeAlso: [externalResource],
