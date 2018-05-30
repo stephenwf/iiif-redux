@@ -12,18 +12,8 @@ describe('schema/presentation-2/smoke-tests', () => {
             '@type': 'sc:AnnotationList',
           },
           {
-            '@id': 'http://example.org/external-content-1',
-            '@type': 'dctypes:Text',
-            format: 'text/html',
-          },
-          {
             '@id': 'http://example.org/annotation-list-2.json',
             '@type': 'sc:AnnotationList',
-          },
-          {
-            '@id': 'http://example.org/external-content-2',
-            '@type': 'dctypes:Text',
-            format: 'text/html',
           },
         ],
       })
@@ -39,39 +29,13 @@ describe('schema/presentation-2/smoke-tests', () => {
             '@type': 'sc:AnnotationList',
           },
         },
-        externalResources: {
-          'http://example.org/external-content-1': {
-            '@id': 'http://example.org/external-content-1',
-            '@type': 'dctypes:Text',
-            format: 'text/html',
-          },
-          'http://example.org/external-content-2': {
-            '@id': 'http://example.org/external-content-2',
-            '@type': 'dctypes:Text',
-            format: 'text/html',
-          },
-        },
         manifests: {
           'http://example.org/collection-1.json': {
             '@id': 'http://example.org/collection-1.json',
             '@type': 'sc:Manifest',
             otherContent: [
-              {
-                id: 'http://example.org/annotation-list-1.json',
-                schema: 'annotationList',
-              },
-              {
-                id: 'http://example.org/external-content-1',
-                schema: 'externalResource',
-              },
-              {
-                id: 'http://example.org/annotation-list-2.json',
-                schema: 'annotationList',
-              },
-              {
-                id: 'http://example.org/external-content-2',
-                schema: 'externalResource',
-              },
+              'http://example.org/annotation-list-1.json',
+              'http://example.org/annotation-list-2.json',
             ],
           },
         },
@@ -274,6 +238,73 @@ describe('schema/presentation-2/smoke-tests', () => {
           'http://example.org/service-1.json': {
             '@id': 'http://example.org/service-1.json',
             profile: 'http://example.org/service/1',
+          },
+        },
+      },
+      result: {
+        id: 'http://example.org/collection-1.json',
+        schema: 'collection',
+      },
+    });
+  });
+  it('should differentiate between within layers and within external (manifest)', () => {
+    const normalized = normalize({
+      '@id': 'http://example.org/canvas-1.json',
+      '@type': 'sc:Canvas',
+      within: {
+        '@id': 'http://example.org/manifest-1.json',
+        '@type': 'sc:Manifest',
+      },
+    });
+
+    expect(normalized).toEqual({
+      entities: {
+        canvases: {
+          'http://example.org/canvas-1.json': {
+            '@id': 'http://example.org/canvas-1.json',
+            '@type': 'sc:Canvas',
+            within: [
+              { id: 'http://example.org/manifest-1.json', schema: 'manifest' },
+            ],
+          },
+        },
+        manifests: {
+          'http://example.org/manifest-1.json': {
+            '@id': 'http://example.org/manifest-1.json',
+            '@type': 'sc:Manifest',
+          },
+        },
+      },
+      result: { id: 'http://example.org/canvas-1.json', schema: 'canvas' },
+    });
+  });
+
+  it('should differentiate between within layers and within external (collection)', () => {
+    const normalized = normalize({
+      '@id': 'http://example.org/collection-1.json',
+      '@type': 'sc:Collection',
+      within: {
+        '@id': 'http://example.org/collection-2.json',
+        '@type': 'sc:Collection',
+      },
+    });
+
+    expect(normalized).toEqual({
+      entities: {
+        collections: {
+          'http://example.org/collection-1.json': {
+            '@id': 'http://example.org/collection-1.json',
+            '@type': 'sc:Collection',
+            within: [
+              {
+                id: 'http://example.org/collection-2.json',
+                schema: 'collection',
+              },
+            ],
+          },
+          'http://example.org/collection-2.json': {
+            '@id': 'http://example.org/collection-2.json',
+            '@type': 'sc:Collection',
           },
         },
       },
