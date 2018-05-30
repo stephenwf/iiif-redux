@@ -134,14 +134,14 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   * [x] getAttribution (Optional)
   * [x] getLicence (Optional)
   * [x] getLogo (Optional)
-* [ ] Other content
-  * [ ] getLabel (Optional)
-  * [ ] getMetadata (Optional)
-  * [ ] getDescription (Optional)
-  * [ ] getThumbnail (Optional)
-  * [ ] getAttribution (Optional)
-  * [ ] getLicence (Optional)
-  * [ ] getLogo (Optional)
+* [x] Other content
+  * [x] getLabel (Optional)
+  * [x] getMetadata (Optional)
+  * [x] getDescription (Optional)
+  * [x] getThumbnail (Optional)
+  * [x] getAttribution (Optional)
+  * [x] getLicence (Optional)
+  * [x] getLogo (Optional)
 
 ### Technical properties
 
@@ -192,13 +192,13 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   * [x] getHeight (Optional)
   * [x] getWidth (Optional)
   * [x] getViewingHint (Optional)
-* [ ] Other Content (externalResources)
-  * [ ] getId (Required)
-  * [ ] getType (Required - probably not needed for this)
-  * [ ] getFormat (Optional - [ ] default?)
-  * [ ] getHeight (Optional)
-  * [ ] getWidth (Optional)
-  * [ ] getViewingHint (Optional)
+* [x] Other Content (externalResources)
+  * [x] getId (Required)
+  * [x] getType (Required - probably not needed for this)
+  * [x] getFormat (Optional - default?)
+  * [x] getHeight (Optional)
+  * [x] getWidth (Optional)
+  * [x] getViewingHint (Optional)
 
 ### Linking Properties (all optional)
 
@@ -258,12 +258,12 @@ Methods that work on specific resources. (currentCollection, currentManifest etc
   * [x] getRelated
   * [x] getRendering
   * [x] getWithin
-* [ ] Other Content (externalResources)
-  * [ ] getSeeAlso
-  * [ ] getService
-  * [ ] getRelated
-  * [ ] getRendering
-  * [ ] getWithin
+* [x] Other Content (externalResources)
+  * [x] getSeeAlso
+  * [x] getService
+  * [x] getRelated
+  * [x] getRendering
+  * [x] getWithin
 
 ### Paging properties (all optional)
 
