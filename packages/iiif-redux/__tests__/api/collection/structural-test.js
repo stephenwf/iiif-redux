@@ -1,19 +1,20 @@
-import {
-  getCollectionIds,
-  getCollections,
-  getManifestIds,
-  getManifests,
-  getMemberIds,
-  getMembers,
-  getOtherContent,
-  getOtherContentIds,
-} from '../../../src/api/current-collection';
+import collection from '../../../src/api/collection';
 
-describe('api/current-collection/structural', () => {
+describe('api/collection/structural', () => {
+  const {
+    getCollectionIds,
+    getCollections,
+    getManifestIds,
+    getManifests,
+    getMemberIds,
+    getMembers,
+    getOtherContent,
+    getOtherContentIds,
+  } = collection(
+    s => s.resources.collections['http://iiif.com/collection-1.json']
+  );
   const t = text => [{ '@value': text, '@language': 'en' }];
   const state = {
-    routing: { currentCollection: 'http://iiif.com/collection-1.json' },
-    config: { defaultLanguage: 'en' },
     resources: {
       collections: {
         'http://iiif.com/collection-1.json': {
@@ -155,7 +156,9 @@ describe('api/current-collection/structural', () => {
 
   it('should getCollections', () => {
     expect(
-      getCollections(state).map(collection => collection.label[0]['@value'])
+      getCollections(state).map(
+        singleCollection => singleCollection.label[0]['@value']
+      )
     ).toEqual(['Collection 2', 'Collection 3']);
   });
 

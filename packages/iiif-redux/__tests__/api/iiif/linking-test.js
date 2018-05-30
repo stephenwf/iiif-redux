@@ -7,9 +7,9 @@ import {
   getRendering,
   getStartCanvas,
   getWithin,
-} from '../../src/api/iiif-linking';
+} from '../../../src/api/iiif-linking';
 
-describe('api/iiif-linking', () => {
+describe('api/iiif/linking', () => {
   describe('getSeeAlso', () => {
     it('should getSeeAlso', () => {
       expect(

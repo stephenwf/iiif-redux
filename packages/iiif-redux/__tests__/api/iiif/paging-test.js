@@ -5,9 +5,9 @@ import {
   getPrevious,
   getStartIndex,
   getTotal,
-} from '../../src/api/iiif-paging';
+} from '../../../src/api/iiif-paging';
 
-describe('api/iiif-paging', () => {
+describe('api/iiif/paging', () => {
   describe('getFirst', () => {
     it('should get First property', () => {
       expect(

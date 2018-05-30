@@ -1,27 +1,29 @@
-import {
-  getSeeAlso,
-  getServiceIds,
-  getService,
-  getRelatedIds,
-  getRelated,
-  getRenderingIds,
-  getRendering,
-  getWithinIds,
-  getWithin,
-} from '../../../src/api/current-collection';
+import sequence from '../../../src/api/sequence';
 
-describe('api/current-collection/linking', () => {
+describe('api/sequence/linking', () => {
+  const {
+    getSeeAlso,
+    getServiceIds,
+    getService,
+    getRelatedIds,
+    getRelated,
+    getRenderingIds,
+    getRendering,
+    getWithinIds,
+    getWithin,
+    getStartCanvas,
+    getStartCanvasId,
+  } = sequence(s => s.resources.sequences['http://iiif.com/sequence-1.json']);
   const t = text => [{ '@value': text, '@language': 'en' }];
   const state = {
-    routing: { currentCollection: 'http://iiif.com/collection-1.json' },
-    config: { defaultLanguage: 'en' },
     resources: {
-      collections: {
-        'http://iiif.com/collection-1.json': {
+      sequences: {
+        'http://iiif.com/sequence-1.json': {
           seeAlso: ['http://iiif.com/extern-1.json'],
           service: ['http://iiif.com/service-1.json'],
           related: ['http://iiif.com/extern-2.json'],
           rendering: ['http://iiif.com/extern-3.json'],
+          startCanvas: 'http://iiif.com/canvas-1.json',
           within: [
             { id: 'http://iiif.com/layer-1.json', schema: 'layer' },
             { id: 'http://iiif.com/extern-4.json', schema: 'externalResource' },
@@ -58,6 +60,12 @@ describe('api/current-collection/linking', () => {
           label: t('Layer 1'),
         },
       },
+      canvases: {
+        'http://iiif.com/canvas-1.json': {
+          '@id': 'http://iiif.com/canvas-1.json',
+          label: t('Canvas 1'),
+        },
+      },
     },
   };
 
@@ -91,5 +99,11 @@ describe('api/current-collection/linking', () => {
   it('should get Within', () => {
     expect(getWithin(state)[0].label[0]['@value']).toEqual('Layer 1');
     expect(getWithin(state)[1].label[0]['@value']).toEqual('External 4');
+  });
+  it('should get start canvas id', () => {
+    expect(getStartCanvasId(state)).toEqual('http://iiif.com/canvas-1.json');
+  });
+  it('should get start canvas', () => {
+    expect(getStartCanvas(state).label[0]['@value']).toEqual('Canvas 1');
   });
 });

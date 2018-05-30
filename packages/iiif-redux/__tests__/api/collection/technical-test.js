@@ -1,14 +1,10 @@
-import {
-  getId,
-  getType,
-  getViewingHint,
-  getNavDate,
-} from '../../../src/api/current-collection';
+import collection from '../../../src/api/collection';
 
-describe('api/current-collection/descriptive', () => {
+describe('api/collection/descriptive', () => {
+  const { getId, getType, getViewingHint, getNavDate } = collection(
+    s => s.resources.collections['http://iiif.com/collection-1.json']
+  );
   const createStateWithCustomProperties = props => ({
-    routing: { currentCollection: 'http://iiif.com/collection-1.json' },
-    config: { defaultLanguage: 'en' },
     resources: {
       collections: {
         'http://iiif.com/collection-1.json': {
@@ -20,8 +16,6 @@ describe('api/current-collection/descriptive', () => {
   });
 
   const state1 = {
-    routing: { currentCollection: 'http://iiif.com/collection-1.json' },
-    config: { defaultLanguage: 'en' },
     resources: {
       collections: {
         'http://iiif.com/collection-1.json': {

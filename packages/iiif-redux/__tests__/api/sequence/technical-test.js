@@ -1,33 +1,25 @@
-import {
-  getViewingDirection,
-  getNavDate,
-  getId,
-  getType,
-  getViewingHint,
-} from '../../../src/api/current-manifest';
+import sequence from '../../../src/api/sequence';
 
-describe('api/current-manifest/technical', () => {
+describe('api/sequence/technical', () => {
+  const { getId, getType, getViewingHint, getViewingDirection } = sequence(
+    s => s.resources.sequences['http://iiif.com/sequence-1.json']
+  );
   const createStateWithCustomProperties = props => ({
-    routing: { currentManifest: 'http://iiif.com/manifest-1.json' },
-    config: { defaultLanguage: 'en' },
     resources: {
-      manifests: {
-        'http://iiif.com/manifest-1.json': {
-          '@id': 'http://iiif.com/manifest-1.json',
+      sequences: {
+        'http://iiif.com/sequence-1.json': {
+          '@id': 'http://iiif.com/sequence-1.json',
           ...props,
         },
       },
     },
   });
   const state = {
-    routing: { currentManifest: 'http://iiif.com/manifest-1.json' },
-    config: { defaultLanguage: 'en' },
     resources: {
-      manifests: {
-        'http://iiif.com/manifest-1.json': {
-          '@id': 'http://iiif.com/manifest-1.json',
-          '@type': 'sc:Manifest',
-          navDate: '1856-01-01T00:00:00Z',
+      sequences: {
+        'http://iiif.com/sequence-1.json': {
+          '@id': 'http://iiif.com/sequence-1.json',
+          '@type': 'sc:Sequence',
           viewingDirection: 'top-to-bottom',
           viewingHint: 'individuals',
         },
@@ -36,19 +28,19 @@ describe('api/current-manifest/technical', () => {
   };
 
   describe('getId', () => {
-    it('should load id from manifest', () => {
-      expect(getId(state)).toEqual('http://iiif.com/manifest-1.json');
+    it('should load id from sequence', () => {
+      expect(getId(state)).toEqual('http://iiif.com/sequence-1.json');
     });
   });
 
   describe('getType', () => {
-    it('should load type from manifest', () => {
-      expect(getType(state)).toEqual('sc:Manifest');
+    it('should load type from sequence', () => {
+      expect(getType(state)).toEqual('sc:Sequence');
     });
   });
 
   describe('getViewingDirection', () => {
-    it('should load viewingDirection from manifest', () => {
+    it('should load viewingDirection from sequence', () => {
       expect(getViewingDirection(state)).toEqual('top-to-bottom');
     });
 
@@ -104,7 +96,7 @@ describe('api/current-manifest/technical', () => {
   });
 
   describe('getViewingHint', () => {
-    it('should load a valid viewing hint from manifest', () => {
+    it('should load a valid viewing hint from sequence', () => {
       expect(
         getViewingHint(
           createStateWithCustomProperties({
@@ -129,12 +121,6 @@ describe('api/current-manifest/technical', () => {
           })
         )
       ).toEqual(null);
-    });
-  });
-
-  describe('getNavDate', () => {
-    it('should load navDate from manifest', () => {
-      expect(getNavDate(state)).toEqual('1856-01-01T00:00:00Z');
     });
   });
 });

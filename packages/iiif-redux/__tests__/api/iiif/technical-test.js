@@ -10,9 +10,9 @@ import {
   getWidth,
   VIEWING_HINTS,
   VIEWING_DIRECTIONS,
-} from '../../src/api/iiif-technical';
+} from '../../../src/api/iiif-technical';
 
-describe('api/iiif-technical', () => {
+describe('api/iiif/technical', () => {
   describe('getId', () => {
     it('should get Id fields', () => {
       expect(getId({ '@id': 'http://example.org/resource.json' })).toEqual(

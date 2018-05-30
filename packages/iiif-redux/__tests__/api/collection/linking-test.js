@@ -1,28 +1,25 @@
-import {
-  getSeeAlso,
-  getServiceIds,
-  getService,
-  getRelatedIds,
-  getRelated,
-  getRenderingIds,
-  getRendering,
-  getWithinIds,
-  getWithin,
-} from '../../../src/api/current-canvas';
+import collection from '../../../src/api/collection';
 
-describe('api/current-canvas/linking', () => {
+describe('api/collection/linking', () => {
+  const {
+    getSeeAlso,
+    getServiceIds,
+    getService,
+    getRelatedIds,
+    getRelated,
+    getRenderingIds,
+    getRendering,
+    getWithinIds,
+    getWithin,
+  } = collection(
+    s => s.resources.collections['http://iiif.com/collection-1.json']
+  );
   const t = text => [{ '@value': text, '@language': 'en' }];
   const state = {
-    routing: { currentCanvas: 'http://iiif.com/canvas-1.json' },
-    config: { defaultLanguage: 'en' },
     resources: {
-      canvases: {
-        'http://iiif.com/canvas-1.json': {
-          '@type': 'sc:Canvas',
-          seeAlso: [
-            'http://iiif.com/extern-1.json',
-            'http://iiif.com/extern-5.json',
-          ],
+      collections: {
+        'http://iiif.com/collection-1.json': {
+          seeAlso: ['http://iiif.com/extern-1.json'],
           service: ['http://iiif.com/service-1.json'],
           related: ['http://iiif.com/extern-2.json'],
           rendering: ['http://iiif.com/extern-3.json'],
@@ -67,7 +64,6 @@ describe('api/current-canvas/linking', () => {
 
   it('should get SeeAlso', () => {
     expect(getSeeAlso(state)[0].label[0]['@value']).toEqual('External 1');
-    expect(getSeeAlso(state)[1].label[0]['@value']).toEqual('unknown');
   });
   it('should get ServiceIds', () => {
     expect(getServiceIds(state)).toEqual(['http://iiif.com/service-1.json']);

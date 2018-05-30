@@ -1,9 +1,11 @@
-import { getImageService } from '../../../src/api/current-canvas';
+import canvas from '../../../src/api/canvas';
 
-describe('api/current-canvas/algorithms', () => {
+describe('api/canvas/algorithms', () => {
+  const { getImageService } = canvas(
+    s => s.resources.canvases['http://iiif.com/canvas-1.json']
+  );
+
   const state = {
-    routing: { currentCanvas: 'http://iiif.com/canvas-1.json' },
-    config: { defaultLanguage: 'en' },
     resources: {
       canvases: {
         'http://iiif.com/canvas-1.json': {
