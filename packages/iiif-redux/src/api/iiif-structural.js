@@ -15,9 +15,16 @@ const alwaysArray = maybeArray =>
   Array.isArray(maybeArray) ? maybeArray : maybeArray || [];
 
 const getCollections = resource =>
-  alwaysArray(resource.collections)
-    .filter(collection => collection.schema === 'collection')
-    .map(collection => collection.id);
+  Array.from(
+    new Set([
+      ...alwaysArray(resource.collections)
+        .filter(collection => collection.schema === 'collection')
+        .map(collection => collection.id),
+      ...alwaysArray(resource.members)
+        .filter(member => member.schema === 'collection')
+        .map(member => member.id),
+    ])
+  );
 
 const getManifests = resource => [
   ...alwaysArray(resource.manifests),
