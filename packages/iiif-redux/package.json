@@ -1,12 +1,15 @@
 {
   "name": "iiif-redux",
   "version": "1.0.0",
-  "description":
-    "IIIF Redux current state is a request for comments from the community with a proposal for managing IIIF resources state on the frontend for both presentational and content creation purposes.",
+  "description": "IIIF Redux current state is a request for comments from the community with a proposal for managing IIIF resources state on the frontend for both presentational and content creation purposes.",
   "main": "lib/index.js",
   "module": "es/index",
   "jsnext:main": "es/index",
-  "files": ["es", "lib", "umd"],
+  "files": [
+    "es",
+    "lib",
+    "umd"
+  ],
   "scripts": {
     "watch": "nwb-watch-module",
     "build": "nwb build-web-module",
@@ -23,6 +26,7 @@
     "normalizr": "^3.2.4",
     "npm-watch": "^0.3.0",
     "object-hash": "^1.3.0",
+    "query-string": "^6.1.0",
     "reduce-reducers": "^0.3.0",
     "redux": "^4.0.0",
     "redux-actions": "^2.3.0",

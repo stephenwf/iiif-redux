@@ -48,6 +48,14 @@ const DEFAULT_STATE = {
   },
 };
 
+async function preloadList(list) {
+  for (const listItem of list) {
+    await new Promise(resolve => {
+      setTimeout(() => resolve(normalize(listItem)), 0);
+    });
+  }
+}
+
 const resourceReducer = handleActions(
   {
     [iiifResourceSuccess]: (state, { payload: { normalizedResponse } }) =>
@@ -158,12 +166,30 @@ function* requestIiifResource({ payload }) {
       response['@id'] = resourceId;
     }
 
+    debug('Starting normalize resource (warm up) %s', resourceId);
+
+    let entityList = {};
+
+    // Warm cache async.
+    if (response['@type'] === 'sc:Collection') {
+      if (response.collections) {
+        yield call(preloadList, response.collections);
+      }
+      if (response.members) {
+        yield call(preloadList, response.members);
+      }
+      if (response.manifests) {
+        yield call(preloadList, response.manifests);
+      }
+    }
+
     debug('Starting normalize resource %s', resourceId);
+
     const { result, entities } = normalize(response, schema);
 
     debug('Finished normalize resource %s', result);
 
-    yield call(successAction, SUCCESS, result, entities);
+    yield call(successAction, SUCCESS, result, deepmerge(entities, entityList));
   } catch (err) {
     debug('Error: %O', err);
     yield call(errorAction, ERROR, resourceId, err);
