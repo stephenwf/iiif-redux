@@ -34,7 +34,9 @@ describe('iiif/api/annotationList', () => {
         type: annotationList.getType,
         label: annotationList.getLabel,
       }),
-      () => 'http://iiif.com/annotation-list-1.json'
+      {
+        getId: () => 'http://iiif.com/annotation-list-1.json',
+      }
     );
 
     expect(select2(state)).toEqual({

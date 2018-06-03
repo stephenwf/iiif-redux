@@ -2,7 +2,7 @@ import { createStructuredSelector, createSelector } from 'reselect';
 import createStore from '../src/createStore';
 import bridges from './fixtures/bridges';
 import { iiifResourceRequest } from '../src/spaces/iiif-resource';
-import { manifest } from '../src/schema/presentation2';
+import { collection, manifest } from '../src/schema/presentation2';
 import * as currentManifest from '../src/api/current-manifest';
 import * as currentSequence from '../src/api/current-sequence';
 import * as currentCanvas from '../src/api/current-canvas';
@@ -875,6 +875,105 @@ describe('store', () => {
       '@context': 'http://iiif.io/api/image/2/context.json',
       '@id': 'https://view.nls.uk/iiif/7443/74438561.5',
       profile: 'http://iiif.io/api/image/2/profiles/level2.json',
+    });
+  });
+
+  it('should preload normalized entities in collections', async () => {
+    const collectionJson = {
+      '@id': 'http://iiif.com/collection-1.json',
+      '@type': 'sc:Collection',
+      label: 'Collection label 1',
+      members: [
+        {
+          '@id': 'http://iiif.com/collection-2.json',
+          '@type': 'sc:Collection',
+          label: 'Collection label 2',
+        },
+        {
+          '@id': 'http://iiif.com/collection-3.json',
+          '@type': 'sc:Collection',
+          label: 'Collection label 3',
+        },
+      ],
+      manifests: [
+        {
+          '@id': 'http://iiif.com/manifest-1.json',
+          '@type': 'sc:Manifest',
+          label: 'Manifest label 1',
+        },
+        {
+          '@id': 'http://iiif.com/manifest-2.json',
+          '@type': 'sc:Manifest',
+          label: 'Manifest label 2',
+        },
+      ],
+    };
+
+    const store = createStore();
+    fetch.mockResponseOnce(JSON.stringify(collectionJson));
+
+    const whenRequestFinishes = waitForRequest(
+      store,
+      'http://iiif.com/collection-1.json'
+    );
+
+    store.dispatch(
+      iiifResourceRequest(
+        'http://iiif.com/collection-1.json',
+        ['COLLECTION_REQUEST', 'COLLECTION_SUCCESS', 'COLLECTION_ERROR'],
+        collection
+      )
+    );
+
+    await whenRequestFinishes;
+
+    const state = store.getState();
+
+    expect(state.resources).toEqual({
+      annotationLists: {},
+      annotations: {},
+      canvases: {},
+      collections: {
+        'http://iiif.com/collection-1.json': {
+          '@id': 'http://iiif.com/collection-1.json',
+          '@type': 'sc:Collection',
+          label: [{ '@language': 'en', '@value': 'Collection label 1' }],
+          manifests: [
+            'http://iiif.com/manifest-1.json',
+            'http://iiif.com/manifest-2.json',
+          ],
+          members: [
+            { id: 'http://iiif.com/collection-2.json', schema: 'collection' },
+            { id: 'http://iiif.com/collection-3.json', schema: 'collection' },
+          ],
+        },
+        'http://iiif.com/collection-2.json': {
+          '@id': 'http://iiif.com/collection-2.json',
+          '@type': 'sc:Collection',
+          label: [{ '@language': 'en', '@value': 'Collection label 2' }],
+        },
+        'http://iiif.com/collection-3.json': {
+          '@id': 'http://iiif.com/collection-3.json',
+          '@type': 'sc:Collection',
+          label: [{ '@language': 'en', '@value': 'Collection label 3' }],
+        },
+      },
+      imageResources: {},
+      layers: {},
+      manifests: {
+        'http://iiif.com/manifest-1.json': {
+          '@id': 'http://iiif.com/manifest-1.json',
+          '@type': 'sc:Manifest',
+          label: [{ '@language': 'en', '@value': 'Manifest label 1' }],
+        },
+        'http://iiif.com/manifest-2.json': {
+          '@id': 'http://iiif.com/manifest-2.json',
+          '@type': 'sc:Manifest',
+          label: [{ '@language': 'en', '@value': 'Manifest label 2' }],
+        },
+      },
+      ranges: {},
+      sequences: {},
     });
   });
 });

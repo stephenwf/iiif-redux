@@ -28,7 +28,9 @@ describe('iiif/api/sequence', () => {
         id: sequence.getId,
         type: sequence.getType,
       }),
-      () => 'http://iiif.com/sequence-1.json'
+      {
+        getId: () => 'http://iiif.com/sequence-1.json',
+      }
     );
 
     expect(select2(state)).toEqual({

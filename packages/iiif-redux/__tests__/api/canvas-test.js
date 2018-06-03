@@ -28,7 +28,9 @@ describe('iiif/api/canvas', () => {
         id: canvas.getId,
         type: canvas.getType,
       }),
-      () => 'http://iiif.com/canvas-1.json'
+      {
+        getId: () => 'http://iiif.com/canvas-1.json',
+      }
     );
 
     expect(select2(state)).toEqual({

@@ -13,6 +13,8 @@ import {
 import * as linking from './iiif-linking';
 import * as paging from './iiif-paging';
 import * as structural from './iiif-structural';
+import byIdSelectorFactory from '../utility/byIdSelectorFactory';
+import resourceListSelectorFactory from '../utility/resourceListSelectorFactory';
 
 const annotationList = memoize(selector => {
   /**************************************************
@@ -200,13 +202,12 @@ const annotationList = memoize(selector => {
 
 export default annotationList;
 
-export function annotationListByIdSelector(callable, getId) {
-  return (state, props) =>
-    createStructuredSelector(
-      callable(
-        annotationList(
-          () => state.resources.annotationLists[getId ? getId(props) : props.id]
-        )
-      )
-    )(state);
-}
+export const annotationLists = resourceListSelectorFactory(
+  getAllAnnotationLists,
+  annotationList
+);
+
+export const annotationListByIdSelector = byIdSelectorFactory(
+  annotationList,
+  'annotationLists'
+);

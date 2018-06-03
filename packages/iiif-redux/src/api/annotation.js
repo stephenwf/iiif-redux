@@ -4,6 +4,7 @@ import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
 import * as structural from './iiif-structural';
 import {
+  getAllAnnotations,
   getAllCanvases,
   getAllExternalResources,
   getAllImages,
@@ -12,6 +13,8 @@ import {
 } from './all';
 import * as linking from './iiif-linking';
 import { isImageService } from '../constants/services';
+import byIdSelectorFactory from '../utility/byIdSelectorFactory';
+import resourceListSelectorFactory from '../utility/resourceListSelectorFactory';
 
 const annotation = memoize(selector => {
   /**************************************************
@@ -195,13 +198,12 @@ const annotation = memoize(selector => {
 
 export default annotation;
 
-export function annotationByIdSelector(callable, getId) {
-  return (state, props) =>
-    createStructuredSelector(
-      callable(
-        annotation(
-          () => state.resources.annotations[getId ? getId(props) : props.id]
-        )
-      )
-    )(state);
-}
+export const annotations = resourceListSelectorFactory(
+  getAllAnnotations,
+  annotation
+);
+
+export const annotationByIdSelector = byIdSelectorFactory(
+  annotation,
+  'annotations'
+);

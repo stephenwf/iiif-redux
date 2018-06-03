@@ -4,6 +4,7 @@ import { normalize } from '../schema/presentation2';
 import { call, put, select, all, takeEvery } from 'redux-saga/effects';
 import deepmerge from 'deepmerge';
 import update from 'immutability-helper';
+import preloadNormalizedList from '../utility/preloadNormalizedList';
 const debug = require('debug')('iiif-redux');
 
 const IIIF_RESOURCE_REQUEST = 'IIIF_RESOURCE_REQUEST';
@@ -47,14 +48,6 @@ const DEFAULT_STATE = {
     imageResources: {},
   },
 };
-
-async function preloadList(list) {
-  for (const listItem of list) {
-    await new Promise(resolve => {
-      setTimeout(() => resolve(normalize(listItem)), 0);
-    });
-  }
-}
 
 const resourceReducer = handleActions(
   {
@@ -173,13 +166,13 @@ function* requestIiifResource({ payload }) {
     // Warm cache async.
     if (response['@type'] === 'sc:Collection') {
       if (response.collections) {
-        yield call(preloadList, response.collections);
+        yield call(preloadNormalizedList, response.collections);
       }
       if (response.members) {
-        yield call(preloadList, response.members);
+        yield call(preloadNormalizedList, response.members);
       }
       if (response.manifests) {
-        yield call(preloadList, response.manifests);
+        yield call(preloadNormalizedList, response.manifests);
       }
     }
 

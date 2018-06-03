@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as currentManifest from 'iiif-redux/es/api/current-manifest';
 import { createStructuredSelector } from 'reselect';
 import { Row, Col, Card, Layout } from 'antd';
 import StructuralPanel from '../StructuralPanel/StructuralPanel';
@@ -8,17 +7,38 @@ import DescriptivePanel from '../DescriptivePanel/DescriptivePanel';
 import LinkingPanel from '../LinkingPanel/LinkingPanel';
 import TechnicalPanel from '../TechnicalPanel/TechnicalPanel';
 import SequencePreview from '../SequencePreview/SequencePreview';
-const { Content } = Layout;
-
-const Locale = str => {
-  return str.children ? str.children[0]['@value'] || '' : '';
-};
+import PageLayout from '../PageLayout/PageLayout';
+import { manifestByIdSelector } from 'iiif-redux/es/api/manifest';
+import { withRouter } from 'react-router-dom';
+import LoadingScreen from '../LoadingScreen/LoadingScreen';
+import { selectManifest } from 'iiif-redux/es/spaces/routing';
 
 class Manifest extends Component {
+  componentWillMount() {
+    this.fetchManifest(this.props);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.id !== this.props.id) {
+      this.fetchManifest(newProps);
+    }
+  }
+
+  fetchManifest({ fetched, id }) {
+    if (fetched === false) {
+      this.props.dispatch(selectManifest({ id }));
+    }
+  }
+
   render() {
-    const { onClickSequence, onClickCanvas } = this.props;
+    const { label, onClickSequence, onClickCanvas, fetched } = this.props;
+
+    if (fetched === false) {
+      return <LoadingScreen />;
+    }
+
     return (
-      <Content>
+      <PageLayout label={label}>
         <Row gutter={16} style={{ padding: 15 }}>
           <Col
             span={8}
@@ -77,36 +97,41 @@ class Manifest extends Component {
             ) : null}
           </Col>
         </Row>
-      </Content>
+      </PageLayout>
     );
   }
 }
 
-export default connect(
-  createStructuredSelector({
-    // Technical
-    id: currentManifest.getId,
-    type: currentManifest.getType,
-    viewingHint: currentManifest.getViewingHint,
-    viewingDirection: currentManifest.getViewingDirection,
-    navDate: currentManifest.getNavDate,
-    // Descriptive
-    label: currentManifest.getLabel,
-    description: currentManifest.getDescription,
-    metadata: currentManifest.getMetadata,
-    attribution: currentManifest.getAttribution,
-    logo: currentManifest.getLogo,
-    license: currentManifest.getLicense,
-    thumbnail: currentManifest.getThumbnail,
-    // Linking
-    within: currentManifest.getWithin,
-    rendering: currentManifest.getRendering,
-    related: currentManifest.getRelated,
-    service: currentManifest.getService,
-    seeAlso: currentManifest.getSeeAlso,
-    // Structural
-    sequences: currentManifest.getSequences,
-    ranges: currentManifest.getRanges,
-    otherContent: currentManifest.getOtherContent,
-  })
-)(Manifest);
+export default withRouter(
+  connect(
+    manifestByIdSelector(
+      currentManifest => ({
+        // Technical
+        id: currentManifest.getId,
+        type: currentManifest.getType,
+        viewingHint: currentManifest.getViewingHint,
+        viewingDirection: currentManifest.getViewingDirection,
+        navDate: currentManifest.getNavDate,
+        // Descriptive
+        label: currentManifest.getLabel,
+        description: currentManifest.getDescription,
+        metadata: currentManifest.getMetadata,
+        attribution: currentManifest.getAttribution,
+        logo: currentManifest.getLogo,
+        license: currentManifest.getLicense,
+        thumbnail: currentManifest.getThumbnail,
+        // Linking
+        within: currentManifest.getWithin,
+        rendering: currentManifest.getRendering,
+        related: currentManifest.getRelated,
+        service: currentManifest.getService,
+        seeAlso: currentManifest.getSeeAlso,
+        // Structural
+        sequences: currentManifest.getSequences,
+        ranges: currentManifest.getRanges,
+        otherContent: currentManifest.getOtherContent,
+      }),
+      { dereference: true }
+    )
+  )(Manifest)
+);

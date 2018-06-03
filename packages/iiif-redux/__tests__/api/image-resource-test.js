@@ -32,7 +32,9 @@ describe('iiif/api/imageResource', () => {
         type: image.getType,
         format: image.getFormat,
       }),
-      () => 'http://iiif.com/image-resource-1.json'
+      {
+        getId: () => 'http://iiif.com/image-resource-1.json',
+      }
     );
 
     expect(select2(state)).toEqual({

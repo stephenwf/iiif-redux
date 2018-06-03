@@ -1,6 +1,5 @@
 import memoize from 'lodash.memoize';
 import { createSelector, createStructuredSelector } from 'reselect';
-import validUrl from 'valid-url';
 import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
 import {
@@ -14,6 +13,8 @@ import {
 } from './all';
 import * as linking from './iiif-linking';
 import * as structural from './iiif-structural';
+import resourceListSelectorFactory from '../utility/resourceListSelectorFactory';
+import byIdSelectorFactory from '../utility/byIdSelectorFactory';
 
 const manifest = memoize(selector => {
   /**************************************************
@@ -207,13 +208,9 @@ const manifest = memoize(selector => {
 
 export default manifest;
 
-export function manifestByIdSelector(callable, getId) {
-  return (state, props) =>
-    createStructuredSelector(
-      callable(
-        manifest(
-          () => state.resources.manifests[getId ? getId(props) : props.id]
-        )
-      )
-    )(state);
-}
+export const manifests = resourceListSelectorFactory(
+  getAllAnnotationLists,
+  manifest
+);
+
+export const manifestByIdSelector = byIdSelectorFactory(manifest, 'manifests');

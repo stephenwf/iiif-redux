@@ -10,8 +10,12 @@ import {
   getAllServices,
   getAllCanvases,
   getAllImages,
+  getAllAnnotationLists,
 } from './all';
 import validUrl from 'valid-url';
+import resourceListSelectorFactory from '../utility/resourceListSelectorFactory';
+import byIdSelectorFactory from '../utility/byIdSelectorFactory';
+import collection from './collection';
 
 const sequence = memoize(selector => {
   /**************************************************
@@ -179,13 +183,9 @@ const sequence = memoize(selector => {
 
 export default sequence;
 
-export function sequenceByIdSelector(callable, getId) {
-  return (state, props) =>
-    createStructuredSelector(
-      callable(
-        sequence(
-          () => state.resources.sequences[getId ? getId(props) : props.id]
-        )
-      )
-    )(state);
-}
+export const sequences = resourceListSelectorFactory(
+  getAllAnnotationLists,
+  sequence
+);
+
+export const sequenceByIdSelector = byIdSelectorFactory(sequence, 'sequences');

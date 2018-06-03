@@ -4,11 +4,14 @@ import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
 import * as linking from './iiif-linking';
 import {
+  getAllAnnotationLists,
   getAllExternalResources,
   getAllImages,
   getAllLayers,
   getAllServices,
 } from './all';
+import resourceListSelectorFactory from '../utility/resourceListSelectorFactory';
+import byIdSelectorFactory from '../utility/byIdSelectorFactory';
 
 const externalResource = memoize(selector => {
   /**************************************************
@@ -158,14 +161,12 @@ const externalResource = memoize(selector => {
 
 export default externalResource;
 
-export function externalResourceByIdSelector(callable, getId) {
-  return (state, props) =>
-    createStructuredSelector(
-      callable(
-        externalResource(
-          () =>
-            state.resources.externalResources[getId ? getId(props) : props.id]
-        )
-      )
-    )(state);
-}
+export const externalResources = resourceListSelectorFactory(
+  getAllAnnotationLists,
+  externalResource
+);
+
+export const externalResourceByIdSelector = byIdSelectorFactory(
+  externalResource,
+  'externalResources'
+);
