@@ -156,5 +156,18 @@ describe('iiif/api/annotation', () => {
         label: [{ '@language': 'en', '@value': 'annotation label 3' }],
       },
     ]);
+
+    const selectIds = annotationListByIdSelector(
+      api =>
+        annotations(api.getResources, annotationApi => annotationApi.getId),
+      {
+        getId: () => 'http://iiif.com/annotation-list-1.json',
+      }
+    );
+    expect(selectIds(state)).toEqual([
+      'http://iiif.com/annotation-1.json',
+      'http://iiif.com/annotation-2.json',
+      'http://iiif.com/annotation-3.json',
+    ]);
   });
 });

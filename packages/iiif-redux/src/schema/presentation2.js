@@ -28,7 +28,7 @@ import addMissingIds from '../compat/addMissingIds';
 function createEntity(name, hasLinked = true) {
   const options = {
     idAttribute: '@id',
-    processStrategy: memoize(preprocessLinkedEntities),
+    processStrategy: preprocessLinkedEntities,
   };
 
   return new schema.Entity(name, {}, options);

@@ -26,6 +26,7 @@ describe('store', () => {
         manifests: {},
         ranges: {},
         sequences: {},
+        externalResources: {},
       },
       routing: {
         currentAnnotation: null,
@@ -76,6 +77,7 @@ describe('store', () => {
         manifests: {},
         ranges: {},
         sequences: {},
+        externalResources: {},
       },
       routing: {
         currentAnnotation: null,
@@ -127,6 +129,7 @@ describe('store', () => {
         manifests: {},
         ranges: {},
         sequences: {},
+        externalResources: {},
       },
       routing: {
         currentAnnotation: null,
@@ -174,6 +177,7 @@ describe('store', () => {
         manifests: {},
         ranges: {},
         sequences: {},
+        externalResources: {},
       },
       routing: {
         currentAnnotation: null,
@@ -231,8 +235,8 @@ describe('store', () => {
       'ranges',
       'layers',
       'imageResources',
-      'services',
       'externalResources',
+      'services',
     ]);
     expect(Object.keys(secondState.resources.services)).toEqual([
       'https://view.nls.uk/iiif/7443/74438561.5',
@@ -974,6 +978,7 @@ describe('store', () => {
       },
       ranges: {},
       sequences: {},
+      externalResources: {},
     });
   });
 });
