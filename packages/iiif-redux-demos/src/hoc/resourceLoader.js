@@ -24,69 +24,129 @@
  * @todo still a work in progress.
  */
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import * as qs from 'query-string';
+import { selectCollection, selectManifest } from 'iiif-redux/es/spaces/routing';
 
 function resourceLoader(WrappedComponent) {
-  return class extends Component {
-    getManifestId() {
-      const { location } = this.props;
-      const { id, manifestId } = qs.parse(location.search);
+  return connect()(
+    class extends Component {
+      getManifestId = () => {
+        const { location } = this.props;
+        const { id, manifestId } = qs.parse(location.search);
 
-      return manifestId ? manifestId : id;
-    }
+        return manifestId ? manifestId : id;
+      };
 
-    componentWillMount() {
-      const { location, pathname } = this.props;
-      const { id, manifestId } = qs.parse(location.search);
-      const type = pathname.slice(1);
+      getId = () => {
+        const { location } = this.props;
+        const { id } = qs.parse(location.search);
+        return id;
+      };
 
-      if (['sequence', 'canvas', 'image', 'range'].indexOf(type) === -1) {
-        // We are just loading the type.
-        this.loadResource(id, type);
-      } else {
-        // We are loading the manifest.
-        this.loadResource(manifestId, 'manifest');
+      getType = () => {
+        const { location } = this.props;
+        return location.pathname.slice(1);
+      };
+
+      updateResource({ location }) {
+        const { id, manifestId } = qs.parse(location.search);
+        const type = location.pathname.slice(1);
+
+        if (['sequence', 'canvas', 'image', 'range'].indexOf(type) === -1) {
+          // We are just loading the type.
+          this.loadResource(id, type);
+        } else {
+          // We are loading the manifest.
+          this.loadResource(manifestId, 'manifest');
+        }
+      }
+
+      componentWillMount() {
+        this.updateResource(this.props);
+      }
+
+      componentWillReceiveProps(newProps) {
+        if (this.props.location !== newProps.location) {
+          this.updateResource(newProps);
+        }
+      }
+
+      selectCollection = id => {
+        this.props.history.push(`/collection?id=${id}`);
+      };
+
+      selectManifest = id => {
+        this.props.history.push(`/manifest?id=${id}`);
+      };
+
+      selectSequence = id => {
+        const manifestId = this.getManifestId();
+        this.props.history.push(`/sequence?id=${id}&manifestId=${manifestId}`);
+      };
+
+      selectCanvas = id => {
+        const manifestId = this.getManifestId();
+        this.props.history.push(`/canvas?id=${id}&manifestId=${manifestId}`);
+      };
+
+      selectImage = id => {
+        const manifestId = this.getManifestId();
+        this.props.history.push(`/image?id=${id}&manifestId=${manifestId}`);
+      };
+
+      selectRange = id => {
+        const manifestId = this.getManifestId();
+        this.props.history.push(`/range?id=${id}&manifestId=${manifestId}`);
+      };
+
+      selectOtherContent = otherContentId => {
+        this.props.history.push(`/otherContent?id=${otherContentId}`);
+      };
+
+      loadResource = (id, type) => {
+        switch (type) {
+          case 'collection':
+            return this.props.dispatch(selectCollection({ id }));
+          case 'manifest':
+            return this.props.dispatch(selectManifest({ id }));
+          default:
+            console.warn('Come add this.', type, id);
+        }
+      };
+
+      getMethods() {
+        const type = this.getType();
+        switch (type) {
+          case 'collection':
+            return {
+              type,
+              selectCollection: this.selectCollection,
+              selectManifest: this.selectManifest,
+            };
+          default:
+            return {
+              type,
+              selectSequence: this.selectSequence,
+              selectCanvas: this.selectCanvas,
+              selectImage: this.selectImage,
+              selectRange: this.selectRange,
+              selectOtherContent: this.selectOtherContent,
+            };
+        }
+      }
+
+      render() {
+        return (
+          <WrappedComponent
+            {...this.props}
+            {...this.getMethods()}
+            id={this.getId()}
+          />
+        );
       }
     }
-
-    selectCollection(id) {
-      this.props.history.push(`/collection?id=${id}`);
-    }
-
-    selectManifest(id) {
-      this.props.history.push(`/manifest?id=${id}`);
-    }
-
-    selectSequence(id) {
-      const { manifestId } = this.getManifestId();
-      this.props.history.push(`/sequence?id=${id}&manifestId=${manifestId}`);
-    }
-
-    selectCanvas(id) {
-      const { manifestId } = this.getManifestId();
-      this.props.history.push(`/canvas?id=${id}&manifestId=${manifestId}`);
-    }
-
-    selectImage(id) {
-      const { manifestId } = this.getManifestId();
-      this.props.history.push(`/image?id=${id}&manifestId=${manifestId}`);
-    }
-
-    selectRange(id) {
-      const { manifestId } = this.getManifestId();
-      this.props.history.push(`/range?id=${id}&manifestId=${manifestId}`);
-    }
-
-    selectOtherContent(otherContentId) {
-      this.props.history.push(`/otherContent?id=${otherContentId}`);
-    }
-
-    loadResource(id, type) {
-      // requestIiifResource()
-    }
-
-    render() {
-      return <WrappedComponent {...this.props} />;
-    }
-  };
+  );
 }
+
+export default resourceLoader;

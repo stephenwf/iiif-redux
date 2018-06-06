@@ -9,30 +9,12 @@ import TechnicalPanel from '../TechnicalPanel/TechnicalPanel';
 import ManifestPreview from '../ManifestPreview/ManifestPreview';
 import CollectionPreview from '../CollectionPreview/CollectionPreview';
 import { collectionByIdSelector } from 'iiif-redux/es/api/collection';
-import { selectCollection } from 'iiif-redux/es/spaces/routing';
-import IntlString from '../IntlString/IntlString';
-const { Content, Header } = Layout;
-import { withRouter } from 'react-router-dom';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import PageLayout from '../PageLayout/PageLayout';
+import resourceLoader from '../../hoc/resourceLoader';
+import PaginatedList from '../PaginatedList/PaginatedList';
 
 class Collection extends Component {
-  componentWillMount() {
-    this.fetchCollection(this.props);
-  }
-
-  componentWillReceiveProps(newProps) {
-    if (newProps.id !== this.props.id) {
-      this.fetchCollection(newProps);
-    }
-  }
-
-  fetchCollection({ fetched, id }) {
-    if (fetched === false) {
-      this.props.dispatch(selectCollection({ id }));
-    }
-  }
-
   render() {
     const { label, loading, fetched } = this.props;
 
@@ -81,40 +63,46 @@ class Collection extends Component {
               <div>
                 <h3>Collections</h3>
                 <Row gutter={16} style={{ padding: 15 }}>
-                  {this.props.collections.map((collection, key) => (
-                    <Col span={12} key={key}>
-                      <CollectionPreview
-                        key={key}
-                        id={collection['@id']}
-                        onClick={() =>
-                          this.props.history.push(
-                            `/collection?id=${collection['@id']}`
-                          )
-                        }
-                      />
-                    </Col>
-                  ))}
+                  <PaginatedList dataSet={this.props.collections}>
+                    {collections => (
+                      <Row gutter={16} style={{ padding: 15 }}>
+                        {collections.map((collection, key) => (
+                          <Col span={12} key={key}>
+                            <CollectionPreview
+                              key={key}
+                              id={collection['@id']}
+                              onClick={() =>
+                                this.props.selectCollection(collection['@id'])
+                              }
+                            />
+                          </Col>
+                        ))}
+                      </Row>
+                    )}
+                  </PaginatedList>
                 </Row>
               </div>
             ) : null}
             {this.props.manifests.length ? (
               <div>
                 <h3>Manifests</h3>
-                <Row gutter={16} style={{ padding: 15 }}>
-                  {this.props.manifests.map((manifest, key) => (
-                    <Col span={12} key={key}>
-                      <ManifestPreview
-                        id={manifest['@id']}
-                        key={key}
-                        onClick={() =>
-                          this.props.history.push(
-                            `/manifest?id=${manifest['@id']}`
-                          )
-                        }
-                      />
-                    </Col>
-                  ))}
-                </Row>
+                <PaginatedList dataSet={this.props.manifests}>
+                  {manifests => (
+                    <Row gutter={16} style={{ padding: 15 }}>
+                      {manifests.map((manifest, key) => (
+                        <Col span={12} key={key}>
+                          <ManifestPreview
+                            id={manifest['@id']}
+                            key={key}
+                            onClick={() =>
+                              this.props.selectManifest(manifest['@id'])
+                            }
+                          />
+                        </Col>
+                      ))}
+                    </Row>
+                  )}
+                </PaginatedList>
               </div>
             ) : null}
           </Col>
@@ -124,7 +112,7 @@ class Collection extends Component {
   }
 }
 
-export default withRouter(
+export default resourceLoader(
   connect(
     collectionByIdSelector(
       currentCollection => ({

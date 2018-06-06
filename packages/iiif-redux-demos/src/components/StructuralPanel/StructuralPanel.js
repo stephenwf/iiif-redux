@@ -68,6 +68,7 @@ class StructuralPanel extends Component {
               <Badge
                 count={item.value}
                 showZero={true}
+                overflowCount={99999}
                 style={{ backgroundColor: item.value ? '#52c41a' : null }}
               />
             </List.Item>

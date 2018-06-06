@@ -12,26 +12,12 @@ import { manifestByIdSelector } from 'iiif-redux/es/api/manifest';
 import { withRouter } from 'react-router-dom';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { selectManifest } from 'iiif-redux/es/spaces/routing';
+import resourceLoader from '../../hoc/resourceLoader';
+import PaginatedList from '../PaginatedList/PaginatedList';
 
 class Manifest extends Component {
-  componentWillMount() {
-    this.fetchManifest(this.props);
-  }
-
-  componentWillReceiveProps(newProps) {
-    if (newProps.id !== this.props.id) {
-      this.fetchManifest(newProps);
-    }
-  }
-
-  fetchManifest({ fetched, id }) {
-    if (fetched === false) {
-      this.props.dispatch(selectManifest({ id }));
-    }
-  }
-
   render() {
-    const { label, onClickSequence, onClickCanvas, fetched } = this.props;
+    const { label, fetched } = this.props;
 
     if (fetched === false) {
       return <LoadingScreen />;
@@ -81,18 +67,22 @@ class Manifest extends Component {
             {this.props.sequences.length ? (
               <div>
                 <h3>Sequences</h3>
-                <Row gutter={16} style={{ padding: 15 }}>
-                  {this.props.sequences.map((sequence, key) => (
-                    <Col span={24} key={key}>
-                      <SequencePreview
-                        id={sequence['@id']}
-                        key={key}
-                        onClick={onClickSequence}
-                        onClickCanvas={onClickCanvas}
-                      />
-                    </Col>
-                  ))}
-                </Row>
+                <PaginatedList perPage={20} dataSet={this.props.sequences}>
+                  {sequences => (
+                    <Row gutter={16} style={{ padding: 15 }}>
+                      {sequences.map((sequence, key) => (
+                        <Col span={24} key={key}>
+                          <SequencePreview
+                            id={sequence['@id']}
+                            key={key}
+                            onClick={this.props.selectSequence}
+                            onClickCanvas={this.props.selectCanvas}
+                          />
+                        </Col>
+                      ))}
+                    </Row>
+                  )}
+                </PaginatedList>
               </div>
             ) : null}
           </Col>
@@ -102,7 +92,7 @@ class Manifest extends Component {
   }
 }
 
-export default withRouter(
+export default resourceLoader(
   connect(
     manifestByIdSelector(
       currentManifest => ({

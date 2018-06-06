@@ -2,13 +2,10 @@ import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Collection from './components/Collection/Collection';
-import * as qs from 'query-string';
 import { Layout } from 'antd';
 import Manifest from './components/Manifest/Manifest';
-
-function renderId(Comp) {
-  return ({ location }) => <Comp id={qs.parse(location.search).id} />;
-}
+import Sequence from './components/Sequence/Sequence';
+import Canvas from './components/Canvas/Canvas';
 
 export default () => {
   return (
@@ -16,8 +13,10 @@ export default () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Layout>
-          <Route path="/collection" render={renderId(Collection)} />
-          <Route path="/manifest" render={renderId(Manifest)} />
+          <Route path="/collection" component={Collection} />
+          <Route path="/manifest" component={Manifest} />
+          <Route path="/sequence" component={Sequence} />
+          <Route path="/canvas" component={Canvas} />
         </Layout>
       </Switch>
     </HashRouter>
