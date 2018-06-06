@@ -46,6 +46,7 @@ const DEFAULT_STATE = {
     ranges: {},
     layers: {},
     imageResources: {},
+    externalResources: {},
   },
 };
 
@@ -161,9 +162,8 @@ function* requestIiifResource({ payload }) {
 
     debug('Starting normalize resource (warm up) %s', resourceId);
 
-    let entityList = {};
-
     // Warm cache async.
+    // @todo memoize issue.
     if (response['@type'] === 'sc:Collection') {
       if (response.collections) {
         yield call(preloadNormalizedList, response.collections);
@@ -182,7 +182,7 @@ function* requestIiifResource({ payload }) {
 
     debug('Finished normalize resource %s', result);
 
-    yield call(successAction, SUCCESS, result, deepmerge(entities, entityList));
+    yield call(successAction, SUCCESS, result, entities);
   } catch (err) {
     debug('Error: %O', err);
     yield call(errorAction, ERROR, resourceId, err);

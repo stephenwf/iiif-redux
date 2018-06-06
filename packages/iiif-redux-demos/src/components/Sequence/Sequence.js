@@ -74,7 +74,7 @@ class Sequence extends Component {
                       {dataSet.map((canvas, key) => (
                         <Col span={8} key={key}>
                           <CanvasPreview
-                            id={canvas['@id']}
+                            id={canvas}
                             key={key}
                             onClick={selectCanvas}
                           />
@@ -116,7 +116,7 @@ export default resourceLoader(
       seeAlso: currentSequence.getSeeAlso,
       startCanvas: currentSequence.getStartCanvas,
       // Structural
-      canvases: currentSequence.getCanvases,
+      canvases: currentSequence.getCanvasIds,
     }))
   )(Sequence)
 );

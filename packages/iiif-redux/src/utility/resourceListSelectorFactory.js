@@ -8,18 +8,22 @@ export default function resourceListSelectorFactory(getAllOfResource, rootApi) {
       getAllOfResource,
       s => s,
       (list, allResources, state) =>
-        list.map(idOrResource =>
-          createStructuredSelector(
-            api(
-              rootApi(
-                () =>
-                  typeof idOrResource === 'string'
-                    ? allResources[idOrResource]
-                    : idOrResource
-              )
+        list.map(idOrResource => {
+          const selectorOrStructured = api(
+            rootApi(
+              () =>
+                typeof idOrResource === 'string'
+                  ? allResources[idOrResource]
+                  : idOrResource
             )
-          )(state)
-        )
+          );
+
+          if (typeof selectorOrStructured === 'function') {
+            return selectorOrStructured(state);
+          }
+
+          return createStructuredSelector(selectorOrStructured)(state);
+        })
     );
   });
 }

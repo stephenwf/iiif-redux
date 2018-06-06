@@ -14,6 +14,8 @@ import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { selectManifest } from 'iiif-redux/es/spaces/routing';
 import resourceLoader from '../../hoc/resourceLoader';
 import PaginatedList from '../PaginatedList/PaginatedList';
+import { canvases } from '../../../../iiif-redux/src/api/canvas';
+import { sequences } from '../../../../iiif-redux/src/api/sequence';
 
 class Manifest extends Component {
   render() {
@@ -68,12 +70,12 @@ class Manifest extends Component {
               <div>
                 <h3>Sequences</h3>
                 <PaginatedList perPage={20} dataSet={this.props.sequences}>
-                  {sequences => (
+                  {allSequences => (
                     <Row gutter={16} style={{ padding: 15 }}>
-                      {sequences.map((sequence, key) => (
+                      {allSequences.map((sequence, key) => (
                         <Col span={24} key={key}>
                           <SequencePreview
-                            id={sequence['@id']}
+                            id={sequence}
                             key={key}
                             onClick={this.props.selectSequence}
                             onClickCanvas={this.props.selectCanvas}
@@ -117,7 +119,7 @@ export default resourceLoader(
         service: currentManifest.getService,
         seeAlso: currentManifest.getSeeAlso,
         // Structural
-        sequences: currentManifest.getSequences,
+        sequences: currentManifest.getSequenceIds,
         ranges: currentManifest.getRanges,
         otherContent: currentManifest.getOtherContent,
       }),
