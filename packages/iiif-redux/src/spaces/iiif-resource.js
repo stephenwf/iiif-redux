@@ -4,6 +4,7 @@ import { normalize } from '../schema/presentation2';
 import { call, put, select, all, takeEvery } from 'redux-saga/effects';
 import deepmerge from 'deepmerge';
 import update from 'immutability-helper';
+import preloadNormalizedList from '../utility/preloadNormalizedList';
 const debug = require('debug')('iiif-redux');
 
 const IIIF_RESOURCE_REQUEST = 'IIIF_RESOURCE_REQUEST';
@@ -158,12 +159,30 @@ function* requestIiifResource({ payload }) {
       response['@id'] = resourceId;
     }
 
+    debug('Starting normalize resource (warm up) %s', resourceId);
+
+    let entityList = {};
+
+    // Warm cache async.
+    if (response['@type'] === 'sc:Collection') {
+      if (response.collections) {
+        yield call(preloadNormalizedList, response.collections);
+      }
+      if (response.members) {
+        yield call(preloadNormalizedList, response.members);
+      }
+      if (response.manifests) {
+        yield call(preloadNormalizedList, response.manifests);
+      }
+    }
+
     debug('Starting normalize resource %s', resourceId);
+
     const { result, entities } = normalize(response, schema);
 
     debug('Finished normalize resource %s', result);
 
-    yield call(successAction, SUCCESS, result, entities);
+    yield call(successAction, SUCCESS, result, deepmerge(entities, entityList));
   } catch (err) {
     debug('Error: %O', err);
     yield call(errorAction, ERROR, resourceId, err);

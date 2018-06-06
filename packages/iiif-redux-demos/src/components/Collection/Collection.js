@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as currentCollection from 'iiif-redux/es/api/current-collection';
 import { createStructuredSelector } from 'reselect';
-import { Row, Col, Card, Layout } from 'antd';
+import { Row, Col, Spin, Icon, Layout } from 'antd';
 import StructuralPanel from '../StructuralPanel/StructuralPanel';
 import DescriptivePanel from '../DescriptivePanel/DescriptivePanel';
 import LinkingPanel from '../LinkingPanel/LinkingPanel';
 import TechnicalPanel from '../TechnicalPanel/TechnicalPanel';
 import ManifestPreview from '../ManifestPreview/ManifestPreview';
 import CollectionPreview from '../CollectionPreview/CollectionPreview';
-const { Content } = Layout;
+import { collectionByIdSelector } from 'iiif-redux/es/api/collection';
+import LoadingScreen from '../LoadingScreen/LoadingScreen';
+import PageLayout from '../PageLayout/PageLayout';
+import resourceLoader from '../../hoc/resourceLoader';
+import PaginatedList from '../PaginatedList/PaginatedList';
 
 class Collection extends Component {
   render() {
-    const { onClickCollection, onClickManifest } = this.props;
+    const { label, loading, fetched } = this.props;
+
+    if (fetched === false) {
+      return <LoadingScreen />;
+    }
+
     return (
-      <Content>
-        <Row gutter={16} style={{ padding: 15 }}>
+      <PageLayout label={label}>
+        <Row gutter={16} style={{ padding: 15, paddingTop: 30 }}>
           <Col span={8}>
             <TechnicalPanel
               id={this.props.id}
@@ -46,65 +54,89 @@ class Collection extends Component {
             />
           </Col>
           <Col span={16}>
+            {loading ? (
+              <div style={{ paddingTop: 200, textAlign: 'center' }}>
+                <Spin />
+              </div>
+            ) : null}
             {this.props.collections.length ? (
               <div>
                 <h3>Collections</h3>
                 <Row gutter={16} style={{ padding: 15 }}>
-                  {this.props.collections.map((collection, key) => (
-                    <Col span={12} key={key}>
-                      <CollectionPreview
-                        key={key}
-                        id={collection['@id']}
-                        onClick={onClickCollection}
-                      />
-                    </Col>
-                  ))}
+                  <PaginatedList dataSet={this.props.collections}>
+                    {collections => (
+                      <Row gutter={16} style={{ padding: 15 }}>
+                        {collections.map((collection, key) => (
+                          <Col span={12} key={key}>
+                            <CollectionPreview
+                              key={key}
+                              id={collection['@id']}
+                              onClick={() =>
+                                this.props.selectCollection(collection['@id'])
+                              }
+                            />
+                          </Col>
+                        ))}
+                      </Row>
+                    )}
+                  </PaginatedList>
                 </Row>
               </div>
             ) : null}
             {this.props.manifests.length ? (
               <div>
                 <h3>Manifests</h3>
-                <Row gutter={16} style={{ padding: 15 }}>
-                  {this.props.manifests.map((manifest, key) => (
-                    <Col span={12} key={key}>
-                      <ManifestPreview
-                        id={manifest['@id']}
-                        key={key}
-                        onClick={onClickManifest}
-                      />
-                    </Col>
-                  ))}
-                </Row>
+                <PaginatedList dataSet={this.props.manifests}>
+                  {manifests => (
+                    <Row gutter={16} style={{ padding: 15 }}>
+                      {manifests.map((manifest, key) => (
+                        <Col span={12} key={key}>
+                          <ManifestPreview
+                            id={manifest['@id']}
+                            key={key}
+                            onClick={() =>
+                              this.props.selectManifest(manifest['@id'])
+                            }
+                          />
+                        </Col>
+                      ))}
+                    </Row>
+                  )}
+                </PaginatedList>
               </div>
             ) : null}
           </Col>
         </Row>
-      </Content>
+      </PageLayout>
     );
   }
 }
 
-export default connect(
-  createStructuredSelector({
-    id: currentCollection.getId,
-    type: currentCollection.getType,
-    viewingHint: currentCollection.getViewingHint,
-    navDate: currentCollection.getNavDate,
-    collections: currentCollection.getCollections,
-    manifests: currentCollection.getManifests,
-    members: currentCollection.getMemberIds,
-    otherContent: currentCollection.getOtherContent,
-    label: currentCollection.getLabel,
-    description: currentCollection.getDescription,
-    metadata: currentCollection.getMetadata,
-    attribution: currentCollection.getAttribution,
-    logo: currentCollection.getLogo,
-    license: currentCollection.getLicense,
-    thumbnail: currentCollection.getThumbnail,
-    seeAlso: currentCollection.getSeeAlso,
-    service: currentCollection.getService,
-    related: currentCollection.getRelated,
-    within: currentCollection.getWithin,
-  })
-)(Collection);
+export default resourceLoader(
+  connect(
+    collectionByIdSelector(
+      currentCollection => ({
+        id: currentCollection.getId,
+        type: currentCollection.getType,
+        viewingHint: currentCollection.getViewingHint,
+        navDate: currentCollection.getNavDate,
+        collections: currentCollection.getCollections,
+        manifests: currentCollection.getManifests,
+        members: currentCollection.getMemberIds,
+        otherContent: currentCollection.getOtherContent,
+        label: currentCollection.getLabel,
+        description: currentCollection.getDescription,
+        metadata: currentCollection.getMetadata,
+        attribution: currentCollection.getAttribution,
+        logo: currentCollection.getLogo,
+        license: currentCollection.getLicense,
+        thumbnail: currentCollection.getThumbnail,
+        seeAlso: currentCollection.getSeeAlso,
+        service: currentCollection.getService,
+        related: currentCollection.getRelated,
+        within: currentCollection.getWithin,
+      }),
+      { dereference: true }
+    )
+  )(Collection)
+);

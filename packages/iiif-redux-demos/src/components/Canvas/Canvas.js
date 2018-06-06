@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as currentCanvas from 'iiif-redux/es/api/current-canvas';
 import { createStructuredSelector } from 'reselect';
 import { Row, Col, Layout } from 'antd';
 import StructuralPanel from '../StructuralPanel/StructuralPanel';
 import DescriptivePanel from '../DescriptivePanel/DescriptivePanel';
 import LinkingPanel from '../LinkingPanel/LinkingPanel';
 import TechnicalPanel from '../TechnicalPanel/TechnicalPanel';
+import LoadingScreen from '../LoadingScreen/LoadingScreen';
+import PageLayout from '../PageLayout/PageLayout';
+import { canvasByIdSelector } from '../../../../iiif-redux/src/api/canvas';
+import resourceLoader from '../../hoc/resourceLoader';
 const { Content } = Layout;
 
 class Canvas extends Component {
   render() {
-    const { onClickImage, onClickOtherContent } = this.props;
+    const { label, fetched, selectOtherContent } = this.props;
+
+    if (fetched === false) {
+      return <LoadingScreen />;
+    }
+
     return (
-      <Content>
+      <PageLayout label={label}>
         <Row gutter={16} style={{ padding: 15 }}>
           <Col span={8}>
             <TechnicalPanel
@@ -50,37 +58,39 @@ class Canvas extends Component {
             })}
           </Col>
         </Row>
-      </Content>
+      </PageLayout>
     );
   }
 }
 
-export default connect(
-  createStructuredSelector({
-    // Technical
-    id: currentCanvas.getId,
-    type: currentCanvas.getType,
-    viewingHint: currentCanvas.getViewingHint,
-    height: currentCanvas.getHeight,
-    width: currentCanvas.getWidth,
-    // Descriptive
-    label: currentCanvas.getLabel,
-    description: currentCanvas.getDescription,
-    metadata: currentCanvas.getMetadata,
-    attribution: currentCanvas.getAttribution,
-    logo: currentCanvas.getLogo,
-    license: currentCanvas.getLicense,
-    thumbnail: currentCanvas.getThumbnail,
-    // Linking
-    within: currentCanvas.getWithin,
-    rendering: currentCanvas.getRendering,
-    related: currentCanvas.getRelated,
-    service: currentCanvas.getService,
-    seeAlso: currentCanvas.getSeeAlso,
-    // Structural
-    images: currentCanvas.getImages,
-    otherContent: currentCanvas.getOtherContent,
-    // Other
-    imageService: currentCanvas.getImageService,
-  })
-)(Canvas);
+export default resourceLoader(
+  connect(
+    canvasByIdSelector(currentCanvas => ({
+      // Technical
+      id: currentCanvas.getId,
+      type: currentCanvas.getType,
+      viewingHint: currentCanvas.getViewingHint,
+      height: currentCanvas.getHeight,
+      width: currentCanvas.getWidth,
+      // Descriptive
+      label: currentCanvas.getLabel,
+      description: currentCanvas.getDescription,
+      metadata: currentCanvas.getMetadata,
+      attribution: currentCanvas.getAttribution,
+      logo: currentCanvas.getLogo,
+      license: currentCanvas.getLicense,
+      thumbnail: currentCanvas.getThumbnail,
+      // Linking
+      within: currentCanvas.getWithin,
+      rendering: currentCanvas.getRendering,
+      related: currentCanvas.getRelated,
+      service: currentCanvas.getService,
+      seeAlso: currentCanvas.getSeeAlso,
+      // Structural
+      images: currentCanvas.getImages,
+      otherContent: currentCanvas.getOtherContent,
+      // Other
+      imageService: currentCanvas.getImageService,
+    }))
+  )(Canvas)
+);

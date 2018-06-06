@@ -28,7 +28,9 @@ describe('iiif/api/collection', () => {
         id: collection.getId,
         type: collection.getType,
       }),
-      () => 'http://iiif.com/collection-1.json'
+      {
+        getId: () => 'http://iiif.com/collection-1.json',
+      }
     );
 
     expect(select2(state)).toEqual({

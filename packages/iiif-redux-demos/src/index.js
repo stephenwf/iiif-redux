@@ -2,7 +2,8 @@ import { createStore } from 'iiif-redux';
 import { Provider } from 'react-redux';
 import React from 'react';
 import { render } from 'react-dom';
-import App from './App';
+import Routes from './routes';
+
 const debug = require('debug')('iiif-redux');
 
 // Development debugging.
@@ -28,7 +29,7 @@ const store = createStore();
 
 render(
   <Provider store={store}>
-    <App />
+    <Routes />
   </Provider>,
   document.querySelector('#app')
 );

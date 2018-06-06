@@ -28,7 +28,9 @@ describe('iiif/api/manifest', () => {
         id: manifest.getId,
         type: manifest.getType,
       }),
-      () => 'http://iiif.com/manifest-1.json'
+      {
+        getId: () => 'http://iiif.com/manifest-1.json',
+      }
     );
 
     expect(select2(state)).toEqual({

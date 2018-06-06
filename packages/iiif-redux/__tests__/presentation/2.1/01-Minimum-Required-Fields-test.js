@@ -36,7 +36,9 @@ describe('iiif/presentation/2.1/01 Minimum Required Fields', () => {
               on: image.getOn,
               resource: image.getResource,
             }),
-            () => 'https://23b7cac9e952d1868e598100cd25352f482db919'
+            {
+              getId: () => 'https://23b7cac9e952d1868e598100cd25352f482db919',
+            }
           ),
         }),
       })(state)

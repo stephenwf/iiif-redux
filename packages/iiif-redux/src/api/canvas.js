@@ -1,6 +1,5 @@
 import memoize from 'lodash.memoize';
 import { createSelector, createStructuredSelector } from 'reselect';
-import validUrl from 'valid-url';
 import * as technical from './iiif-technical';
 import * as descriptive from './iiif-descriptive';
 import * as linking from './iiif-linking';
@@ -14,6 +13,8 @@ import {
   getAllServices,
 } from './all';
 import { isImageService } from '../constants/services';
+import resourceListSelectorFactory from '../utility/resourceListSelectorFactory';
+import byIdSelectorFactory from '../utility/byIdSelectorFactory';
 
 const canvas = memoize(selector => {
   /**************************************************
@@ -225,11 +226,9 @@ const canvas = memoize(selector => {
 
 export default canvas;
 
-export function canvasByIdSelector(callable, getId) {
-  return (state, props) =>
-    createStructuredSelector(
-      callable(
-        canvas(() => state.resources.canvases[getId ? getId(props) : props.id])
-      )
-    )(state);
-}
+export const canvases = resourceListSelectorFactory(
+  getAllAnnotationLists,
+  canvas
+);
+
+export const canvasByIdSelector = byIdSelectorFactory(canvas, 'canvases');

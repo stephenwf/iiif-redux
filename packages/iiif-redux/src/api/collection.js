@@ -14,7 +14,8 @@ import {
   getAllAnnotationLists,
   getAllImages,
 } from './all';
-import manifest from './manifest';
+import resourceListSelectorFactory from '../utility/resourceListSelectorFactory';
+import byIdSelectorFactory from '../utility/byIdSelectorFactory';
 
 const collection = memoize(selector => {
   /**************************************************
@@ -263,13 +264,12 @@ const collection = memoize(selector => {
 
 export default collection;
 
-export function collectionByIdSelector(callable, getId) {
-  return (state, props) =>
-    createStructuredSelector(
-      callable(
-        collection(
-          () => state.resources.collections[getId ? getId(props) : props.id]
-        )
-      )
-    )(state);
-}
+export const collections = resourceListSelectorFactory(
+  getAllAnnotationLists,
+  collection
+);
+
+export const collectionByIdSelector = byIdSelectorFactory(
+  collection,
+  'collections'
+);
