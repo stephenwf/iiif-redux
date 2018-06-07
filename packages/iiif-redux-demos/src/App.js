@@ -76,6 +76,14 @@ class App extends Component {
                 enterButton="View collection"
               />
               <br />
+              <Input.Search
+                size="large"
+                placeholder="Enter a manifest URL."
+                onSearch={value =>
+                  (window.location.hash = `?manifest=${value}`)
+                }
+                enterButton="View manifest"
+              />
               <br />
               <h3>Alternatively choose from here</h3>
               <List

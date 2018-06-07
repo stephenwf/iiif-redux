@@ -42,6 +42,16 @@ class Home extends Component {
             />
             <br />
             <br />
+            <Input.Search
+              size="large"
+              placeholder="Enter a manifest URL."
+              onSearch={value =>
+                this.props.history.push(`/manifest?id=${value}`)
+              }
+              enterButton="View manifest"
+            />
+            <br />
+            <br />
             <h3>Alternatively choose from here</h3>
             <List
               size="large"
