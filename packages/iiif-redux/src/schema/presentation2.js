@@ -43,7 +43,7 @@ const annotationList = createEntity('annotationLists');
 const range = createEntity('ranges');
 const layer = createEntity('layers');
 const imageResource = createEntity('imageResources'); // thumbnails + image service
-const choice = createEntity('choice');
+const choice = createEntity('choices');
 
 // Unofficial types?
 const externalResource = createEntity('externalResources');
