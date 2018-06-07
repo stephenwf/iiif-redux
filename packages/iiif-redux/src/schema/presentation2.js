@@ -43,6 +43,7 @@ const annotationList = createEntity('annotationLists');
 const range = createEntity('ranges');
 const layer = createEntity('layers');
 const imageResource = createEntity('imageResources'); // thumbnails + image service
+const choice = createEntity('choices');
 
 // Unofficial types?
 const externalResource = createEntity('externalResources');
@@ -214,9 +215,18 @@ annotation.define({
     {
       imageResource,
       externalResource,
+      choice,
     },
-    input =>
-      input['@type'] === 'dctypes:Image' ? 'imageResource' : 'externalResource'
+    input => {
+      switch (input['@type']) {
+        case 'dctypes:Image':
+          return 'imageResource';
+        case 'oa:Choice':
+          return 'choice';
+        default:
+          return 'externalResource';
+      }
+    }
   ),
   on: canvas,
 
@@ -284,6 +294,14 @@ layer.define({
 // ===========================================================================
 imageResource.define({
   service: [service],
+});
+
+// ===========================================================================
+// 10) Choice
+// ===========================================================================
+choice.define({
+  default: annotation,
+  item: [annotation],
 });
 
 const preprocess = compose(

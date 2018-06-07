@@ -1,0 +1,458 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`schema/presentation-2/manifest/bronze-amulet should parse manifest 1`] = `
+Object {
+  "entities": Object {
+    "annotationLists": Object {
+      "http://jubilees.stmarytx.edu/iiifp/TAW-113/list/recto.json": Object {
+        "@id": "http://jubilees.stmarytx.edu/iiifp/TAW-113/list/recto.json",
+        "@type": "sc:AnnotationList",
+      },
+      "http://jubilees.stmarytx.edu/iiifp/TAW-113/list/verso.json": Object {
+        "@id": "http://jubilees.stmarytx.edu/iiifp/TAW-113/list/verso.json",
+        "@type": "sc:AnnotationList",
+      },
+    },
+    "annotations": Object {
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2/full/full/0/default.jpg": Object {
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2/full/full/0/default.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 8181,
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Accurate Color Diffuse",
+          },
+        ],
+        "service": Array [
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2",
+        ],
+        "width": 6132,
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-02.jp2/full/full/0/default.jpg": Object {
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-02.jp2/full/full/0/default.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 8181,
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Accurate Color Raking 1",
+          },
+        ],
+        "service": Array [
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-02.jp2",
+        ],
+        "width": 6132,
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-07.jp2/full/full/0/default.jpg": Object {
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-07.jp2/full/full/0/default.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 8181,
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Accurate Color Raking 2",
+          },
+        ],
+        "service": Array [
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-07.jp2",
+        ],
+        "width": 6132,
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-51.jp2/full/full/0/default.jpg": Object {
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-51.jp2/full/full/0/default.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 8181,
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Accurate Color Raking 3",
+          },
+        ],
+        "service": Array [
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-51.jp2",
+        ],
+        "width": 6132,
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-55.jp2/full/full/0/default.jpg": Object {
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-55.jp2/full/full/0/default.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 8181,
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Accurate Color Raking 4",
+          },
+        ],
+        "service": Array [
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-55.jp2",
+        ],
+        "width": 6132,
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-00.jp2/full/full/0/default.jpg": Object {
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-00.jp2/full/full/0/default.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 7216,
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Accurate Color Diffuse",
+          },
+        ],
+        "service": Array [
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-00.jp2",
+        ],
+        "width": 5412,
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-02.jp2/full/full/0/default.jpg": Object {
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-02.jp2/full/full/0/default.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 7216,
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Accurate Color Raking 1",
+          },
+        ],
+        "service": Array [
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-02.jp2",
+        ],
+        "width": 5412,
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-07.jp2/full/full/0/default.jpg": Object {
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-07.jp2/full/full/0/default.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 7216,
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Accurate Color Raking 2",
+          },
+        ],
+        "service": Array [
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-07.jp2",
+        ],
+        "width": 5412,
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-51.jp2/full/full/0/default.jpg": Object {
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-51.jp2/full/full/0/default.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 7216,
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Accurate Color Raking 3",
+          },
+        ],
+        "service": Array [
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-51.jp2",
+        ],
+        "width": 5412,
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-55.jp2/full/full/0/default.jpg": Object {
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-55.jp2/full/full/0/default.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 7216,
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Accurate Color Raking 4",
+          },
+        ],
+        "service": Array [
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-55.jp2",
+        ],
+        "width": 5412,
+      },
+      "https://975b3341312ee6360d90ff9f623da6e040babcdd": Object {
+        "@id": "https://975b3341312ee6360d90ff9f623da6e040babcdd",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "http://jubilees.stmarytx.edu/iiifp/TAW-113/canvas/Amulet-Recto",
+        "resource": Object {
+          "id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2/full/full/0/default.jpg",
+          "schema": "choice",
+        },
+      },
+      "https://f03efc7dcfeb75acc48a1ad0b63451eff8e6b7de": Object {
+        "@id": "https://f03efc7dcfeb75acc48a1ad0b63451eff8e6b7de",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "http://jubilees.stmarytx.edu/iiifp/TAW-113/canvas/Amulet-Verso",
+        "resource": Object {
+          "id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-00.jp2/full/full/0/default.jpg",
+          "schema": "choice",
+        },
+      },
+    },
+    "canvases": Object {
+      "http://jubilees.stmarytx.edu/iiifp/TAW-113/canvas/Amulet-Recto": Object {
+        "@context": "http://iiif.io/api/presentation/2/context.json",
+        "@id": "http://jubilees.stmarytx.edu/iiifp/TAW-113/canvas/Amulet-Recto",
+        "@type": "sc:Canvas",
+        "height": 8176,
+        "images": Array [
+          "https://975b3341312ee6360d90ff9f623da6e040babcdd",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Amulet-Recto",
+          },
+        ],
+        "otherContent": Array [
+          "http://jubilees.stmarytx.edu/iiifp/TAW-113/list/recto.json",
+        ],
+        "thumbnail": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2/square/100,100/0/default.jpg",
+        "width": 6132,
+      },
+      "http://jubilees.stmarytx.edu/iiifp/TAW-113/canvas/Amulet-Verso": Object {
+        "@context": "http://iiif.io/api/presentation/2/context.json",
+        "@id": "http://jubilees.stmarytx.edu/iiifp/TAW-113/canvas/Amulet-Verso",
+        "@type": "sc:Canvas",
+        "height": 7216,
+        "images": Array [
+          "https://f03efc7dcfeb75acc48a1ad0b63451eff8e6b7de",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Amulet-Verso",
+          },
+        ],
+        "otherContent": Array [
+          "http://jubilees.stmarytx.edu/iiifp/TAW-113/list/verso.json",
+        ],
+        "thumbnail": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-00.jp2/square/100,100/0/default.jpg",
+        "width": 5412,
+      },
+    },
+    "choices": Object {
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2/full/full/0/default.jpg": Object {
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2/full/full/0/default.jpg",
+        "@type": "oa:Choice",
+        "default": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2/full/full/0/default.jpg",
+        "item": Array [
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2/full/full/0/default.jpg",
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-02.jp2/full/full/0/default.jpg",
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-07.jp2/full/full/0/default.jpg",
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-51.jp2/full/full/0/default.jpg",
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-55.jp2/full/full/0/default.jpg",
+        ],
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-00.jp2/full/full/0/default.jpg": Object {
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-00.jp2/full/full/0/default.jpg",
+        "@type": "oa:Choice",
+        "default": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-00.jp2/full/full/0/default.jpg",
+        "item": Array [
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-00.jp2/full/full/0/default.jpg",
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-02.jp2/full/full/0/default.jpg",
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-07.jp2/full/full/0/default.jpg",
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-51.jp2/full/full/0/default.jpg",
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-55.jp2/full/full/0/default.jpg",
+        ],
+      },
+    },
+    "externalResources": Object {
+      "http://jubilees.stmarytx.edu/index.html": Object {
+        "@id": "http://jubilees.stmarytx.edu/index.html",
+        "@type": "dctypes:text",
+        "format": "text/html",
+      },
+    },
+    "imageResources": Object {
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2/square/100,100/0/default.jpg": Object {
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2/square/100,100/0/default.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "service": Array [
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2",
+        ],
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-00.jp2/square/100,100/0/default.jpg": Object {
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-00.jp2/square/100,100/0/default.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "service": Array [
+          "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-00.jp2",
+        ],
+      },
+    },
+    "manifests": Object {
+      "http://jubilees.stmarytx.edu/iiifp/TAW-113/manifest.json": Object {
+        "@context": "http://iiif.io/api/presentation/2/context.json",
+        "@id": "http://jubilees.stmarytx.edu/iiifp/TAW-113/manifest.json",
+        "@type": "sc:Manifest",
+        "attribution": Array [
+          Object {
+            "@language": "en",
+            "@value": "Jubilees Palimpsest Project, TAW",
+          },
+        ],
+        "description": Array [
+          Object {
+            "@language": "en",
+            "@value": "Bronze Amulet, 3rd-4th Century CE, Greek Inscriptions of Various Hebrew and Greek Names of God",
+          },
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Bronze Amulet",
+          },
+        ],
+        "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+        "logo": Object {
+          "@id": "http://jubilees.stmarytx.edu/iiif/Logo-JubPalProj.jp2/full/full/0/default.jpg",
+          "@type": "dctypes:Image",
+          "service": Object {
+            "@context": "http://iiif.io/api/image/2/context.json",
+            "@id": "http://jubilees.stmarytx.edu/iiif/Logo-JubPalProj.jp2",
+            "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+          },
+        },
+        "metadata": Array [
+          Object {
+            "label": Array [
+              Object {
+                "@language": "en",
+                "@value": "Author",
+              },
+            ],
+            "value": Array [
+              Object {
+                "@language": "en",
+                "@value": "Jubilees Palimpest Project",
+              },
+            ],
+          },
+          Object {
+            "label": Array [
+              Object {
+                "@language": "en",
+                "@value": "Published",
+              },
+            ],
+            "value": Array [
+              Object {
+                "@language": "en",
+                "@value": "2016",
+              },
+            ],
+          },
+          Object {
+            "label": Array [
+              Object {
+                "@language": "en",
+                "@value": "Source",
+              },
+            ],
+            "value": Array [
+              Object {
+                "@language": "en",
+                "@value": "http://jubilees.stmarytx.edu",
+              },
+            ],
+          },
+        ],
+        "navDate": "300-01-01T00:00:00Z",
+        "related": Array [
+          "http://jubilees.stmarytx.edu/index.html",
+        ],
+        "sequences": Array [
+          "http://jubilees.stmarytx.edu/iiifp/TAW-113/sequence/chronological",
+        ],
+        "thumbnail": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2/square/100,100/0/default.jpg",
+        "viewingDirection": "left-to-right",
+        "viewingHint": "paged",
+      },
+    },
+    "sequences": Object {
+      "http://jubilees.stmarytx.edu/iiifp/TAW-113/sequence/chronological": Object {
+        "@context": "http://iiif.io/api/presentation/2/context.json",
+        "@id": "http://jubilees.stmarytx.edu/iiifp/TAW-113/sequence/chronological",
+        "@type": "sc:Sequence",
+        "canvases": Array [
+          "http://jubilees.stmarytx.edu/iiifp/TAW-113/canvas/Amulet-Recto",
+          "http://jubilees.stmarytx.edu/iiifp/TAW-113/canvas/Amulet-Verso",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Recto to Verso",
+          },
+        ],
+        "startCanvas": "http://jubilees.stmarytx.edu/iiifp/TAW-113/canvas/Amulet-Recto",
+        "viewingDirection": "left-to-right",
+        "viewingHint": "paged",
+      },
+    },
+    "services": Object {
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2",
+        "profile": "http://iiif.io/api/image/2/level1.json",
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-02.jp2": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-02.jp2",
+        "profile": "http://iiif.io/api/image/2/level1.json",
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-07.jp2": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-07.jp2",
+        "profile": "http://iiif.io/api/image/2/level1.json",
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-51.jp2": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-51.jp2",
+        "profile": "http://iiif.io/api/image/2/level1.json",
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-55.jp2": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-55.jp2",
+        "profile": "http://iiif.io/api/image/2/level1.json",
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-00.jp2": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-00.jp2",
+        "profile": "http://iiif.io/api/image/2/level1.json",
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-02.jp2": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-02.jp2",
+        "profile": "http://iiif.io/api/image/2/level1.json",
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-07.jp2": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-07.jp2",
+        "profile": "http://iiif.io/api/image/2/level1.json",
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-51.jp2": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-51.jp2",
+        "profile": "http://iiif.io/api/image/2/level1.json",
+      },
+      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-55.jp2": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-55.jp2",
+        "profile": "http://iiif.io/api/image/2/level1.json",
+      },
+    },
+  },
+  "result": Object {
+    "id": "http://jubilees.stmarytx.edu/iiifp/TAW-113/manifest.json",
+    "schema": "manifest",
+  },
+}
+`;
