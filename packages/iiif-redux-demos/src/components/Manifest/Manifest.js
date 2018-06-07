@@ -14,8 +14,6 @@ import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { selectManifest } from 'iiif-redux/es/spaces/routing';
 import resourceLoader from '../../hoc/resourceLoader';
 import PaginatedList from '../PaginatedList/PaginatedList';
-import { canvases } from '../../../../iiif-redux/src/api/canvas';
-import { sequences } from '../../../../iiif-redux/src/api/sequence';
 
 class Manifest extends Component {
   render() {
