@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { Row, Col, Card, Layout } from 'antd';
+import { Spin, Row, Col, Card, Layout } from 'antd';
 import StructuralPanel from '../StructuralPanel/StructuralPanel';
 import DescriptivePanel from '../DescriptivePanel/DescriptivePanel';
 import LinkingPanel from '../LinkingPanel/LinkingPanel';
@@ -14,12 +14,10 @@ import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import { selectManifest } from 'iiif-redux/es/spaces/routing';
 import resourceLoader from '../../hoc/resourceLoader';
 import PaginatedList from '../PaginatedList/PaginatedList';
-import { canvases } from '../../../../iiif-redux/src/api/canvas';
-import { sequences } from '../../../../iiif-redux/src/api/sequence';
 
 class Manifest extends Component {
   render() {
-    const { label, fetched } = this.props;
+    const { label, loading, fetched } = this.props;
 
     if (fetched === false) {
       return <LoadingScreen />;
@@ -66,6 +64,11 @@ class Manifest extends Component {
             />
           </Col>
           <Col span={16}>
+            {loading ? (
+              <div style={{ paddingTop: 200, textAlign: 'center' }}>
+                <Spin />
+              </div>
+            ) : null}
             {this.props.sequences.length ? (
               <div>
                 <h3>Sequences</h3>

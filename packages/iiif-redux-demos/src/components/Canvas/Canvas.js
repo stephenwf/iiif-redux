@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { Row, Col, Layout } from 'antd';
+import { Card, Row, Col, Layout } from 'antd';
+import ViewerComponent from '@canvas-panel/viewer-element/lib/ViewerComponent';
 import StructuralPanel from '../StructuralPanel/StructuralPanel';
 import DescriptivePanel from '../DescriptivePanel/DescriptivePanel';
 import LinkingPanel from '../LinkingPanel/LinkingPanel';
@@ -11,6 +12,20 @@ import PageLayout from '../PageLayout/PageLayout';
 import { canvasByIdSelector } from '../../../../iiif-redux/src/api/canvas';
 import resourceLoader from '../../hoc/resourceLoader';
 const { Content } = Layout;
+
+class CanvasPanelViewer extends Component {
+  state = { error: false };
+  componentDidCatch(err, errInfo) {
+    this.setState({ error: true });
+  }
+
+  render() {
+    if (this.state.error) {
+      return 'Canvas panel not available.';
+    }
+    return <ViewerComponent {...this.props} />;
+  }
+}
 
 class Canvas extends Component {
   render() {
@@ -52,7 +67,14 @@ class Canvas extends Component {
               startCanvas={this.props.startCanvas}
             />
           </Col>
-          <Col span={16}>
+          <Col span={16} style={{ height: '100vh' }}>
+            <h3>Canvas panel</h3>
+            <Card style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
+              <CanvasPanelViewer
+                manifest={this.props.manifestId}
+                canvas={this.props.id}
+              />
+            </Card>
             {this.props.images.map((image, key) => {
               return <div key={key} />;
             })}

@@ -85,6 +85,33 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@canvas-panel/core@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@canvas-panel/core/-/core-0.0.9.tgz#9efd394c7c716e7c3179197e57a5e05ad7b0e8c5"
+  dependencies:
+    "@fesk/bem-js" "^1.0.0"
+    "@iiif/manifold" "^1.2.19"
+    "@stephenwf-forks/manifesto.js" "^2.2.10"
+    core-js "^2.5.3"
+    create-react-context "^0.2.0"
+    openseadragon "^2.3.1"
+    react "^16.3.2"
+    react-dom "^16.3.2"
+    react-draggable "^3.0.5"
+    react-measure "^2.0.2"
+    screenfull "^3.3.2"
+    whatwg-fetch "^2.0.3"
+
+"@canvas-panel/viewer-element@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@canvas-panel/viewer-element/-/viewer-element-0.0.9.tgz#bad8f9a938e0b7511f0eb283df7e513f549ab63a"
+  dependencies:
+    "@canvas-panel/core" "^0.0.9"
+
+"@fesk/bem-js@^1.0.0":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@fesk/bem-js/-/bem-js-1.0.1.tgz#ac7c74351e34835274aef0506146709d3046cef1"
+
 "@fesk/module-release@0.0.2":
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/@fesk/module-release/-/module-release-0.0.2.tgz#394c45565813d98976565281ad240d32662ddba3"
@@ -95,11 +122,28 @@
     semver "^5.5.0"
     yargs "^11.0.0"
 
+"@iiif/manifold@^1.2.19":
+  version "1.2.24"
+  resolved "https://registry.yarnpkg.com/@iiif/manifold/-/manifold-1.2.24.tgz#d2a4a30ec1ef07d480b2c9f7b72d9e3110984ce9"
+  dependencies:
+    "@types/jquery" "^2.0.40"
+
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
   dependencies:
     any-observable "^0.3.0"
+
+"@stephenwf-forks/manifesto.js@^2.2.10":
+  version "2.2.10"
+  resolved "https://registry.yarnpkg.com/@stephenwf-forks/manifesto.js/-/manifesto.js-2.2.10.tgz#4bf643202cb77516d63e1d22d6ac386a6183e7be"
+  dependencies:
+    exjs BSick7/exjs#0.5.0
+    http-status-codes edsilv/http-status-codes#v0.0.7
+
+"@types/jquery@^2.0.40":
+  version "2.0.49"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-2.0.49.tgz#95bd7064caebf65bde10429dff491a1aea05b67d"
 
 "@types/reselect@2.2.0":
   version "2.2.0"
@@ -2605,6 +2649,10 @@ core-js@^2.2.0, core-js@^2.4.0, core-js@^2.5.0:
   version "2.5.4"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.4.tgz#f2c8bf181f2a80b92f360121429ce63a2f0aeae0"
 
+core-js@^2.5.3:
+  version "2.5.7"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.7.tgz#f972608ff0cead68b841a16a932d0b183791814e"
+
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
@@ -2679,6 +2727,13 @@ create-react-class@15.x, create-react-class@^15.5.2, create-react-class@^15.5.3,
     fbjs "^0.8.9"
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
+
+create-react-context@^0.2.0:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/create-react-context/-/create-react-context-0.2.2.tgz#9836542f9aaa22868cd7d4a6f82667df38019dca"
+  dependencies:
+    fbjs "^0.8.0"
+    gud "^1.0.0"
 
 cross-spawn@6.0.4:
   version "6.0.4"
@@ -3770,6 +3825,10 @@ exit@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/exit/-/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
 
+"exjs@github:BSick7/exjs#0.5.0":
+  version "0.5.0"
+  resolved "https://codeload.github.com/BSick7/exjs/tar.gz/98195810790c0e61cb5beb510da4b756528f92f2"
+
 expand-braces@^0.1.1:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/expand-braces/-/expand-braces-0.1.2.tgz#488b1d1d2451cb3d3a6b192cfc030f44c5855fea"
@@ -3975,7 +4034,7 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
-fbjs@^0.8.15, fbjs@^0.8.16, fbjs@^0.8.9:
+fbjs@^0.8.0, fbjs@^0.8.15, fbjs@^0.8.16, fbjs@^0.8.9:
   version "0.8.16"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
   dependencies:
@@ -4317,6 +4376,10 @@ get-caller-file@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-1.0.2.tgz#f702e63127e7e231c160a80c1554acb70d5047e5"
 
+get-node-dimensions@^1.2.0:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/get-node-dimensions/-/get-node-dimensions-1.2.1.tgz#fb7b4bb57060fb4247dd51c9d690dfbec56b0823"
+
 get-own-enumerable-property-symbols@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/get-own-enumerable-property-symbols/-/get-own-enumerable-property-symbols-2.0.1.tgz#5c4ad87f2834c4b9b4e84549dc1e0650fb38c24b"
@@ -4519,6 +4582,10 @@ growl@1.10.3:
 growly@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
+
+gud@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gud/-/gud-1.0.0.tgz#a489581b17e6a70beca9abe3ae57de7a499852c0"
 
 gzip-size@4.1.0:
   version "4.1.0"
@@ -4862,6 +4929,10 @@ http-signature@~1.2.0:
     assert-plus "^1.0.0"
     jsprim "^1.2.2"
     sshpk "^1.7.0"
+
+"http-status-codes@github:edsilv/http-status-codes#v0.0.7":
+  version "0.0.7"
+  resolved "https://codeload.github.com/edsilv/http-status-codes/tar.gz/af3a8ab9970b1f291a79b03c7382dc16aebee749"
 
 httpntlm@1.6.1:
   version "1.6.1"
@@ -7510,6 +7581,10 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
+openseadragon@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/openseadragon/-/openseadragon-2.3.1.tgz#efdcfee19d8b3c46d00d7f7dda787c7057f68364"
+
 opn@5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/opn/-/opn-5.2.0.tgz#71fdf934d6827d676cecbea1531f95d354641225"
@@ -8792,13 +8867,20 @@ react-deep-force-update@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-1.1.1.tgz#bcd31478027b64b3339f108921ab520b4313dc2c"
 
-react-dom@16.4.0:
+react-dom@16.4.0, react-dom@^16.3.2:
   version "16.4.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.0.tgz#099f067dd5827ce36a29eaf9a6cdc7cbf6216b1e"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
+    prop-types "^15.6.0"
+
+react-draggable@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/react-draggable/-/react-draggable-3.0.5.tgz#c031e0ed4313531f9409d6cd84c8ebcec0ddfe2d"
+  dependencies:
+    classnames "^2.2.5"
     prop-types "^15.6.0"
 
 react-is@^16.4.0:
@@ -8817,6 +8899,14 @@ react-lazy-load@^3.0.12:
 react-lifecycles-compat@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.2.tgz#7279047275bd727a912e25f734c0559527e84eff"
+
+react-measure@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-measure/-/react-measure-2.0.2.tgz#072a9a5fafc01dfbadc1fa5fb09fc351037f636c"
+  dependencies:
+    get-node-dimensions "^1.2.0"
+    prop-types "^15.5.10"
+    resize-observer-polyfill "^1.4.2"
 
 react-proxy@^1.1.7:
   version "1.1.8"
@@ -8889,7 +8979,7 @@ react-transform-hmr@1.0.4:
     global "^4.3.0"
     react-proxy "^1.1.7"
 
-react@16.4.0:
+react@16.4.0, react@^16.3.2:
   version "16.4.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.4.0.tgz#402c2db83335336fba1962c08b98c6272617d585"
   dependencies:
@@ -9337,7 +9427,7 @@ reselect@*, reselect@3.0.1, reselect@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/reselect/-/reselect-3.0.1.tgz#efdaa98ea7451324d092b2b2163a6a1d7a9a2147"
 
-resize-observer-polyfill@^1.5.0:
+resize-observer-polyfill@^1.4.2, resize-observer-polyfill@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.0.tgz#660ff1d9712a2382baa2cad450a4716209f9ca69"
 
@@ -9509,6 +9599,10 @@ schema-utils@^0.4.2, schema-utils@^0.4.3:
   dependencies:
     ajv "^6.1.0"
     ajv-keywords "^3.1.0"
+
+screenfull@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/screenfull/-/screenfull-3.3.2.tgz#a6adf3b3f5556da812725385880600f5b39fbf25"
 
 select-hose@^2.0.0:
   version "2.0.0"
@@ -11038,7 +11132,7 @@ whatwg-fetch@2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
 
-whatwg-fetch@>=0.10.0:
+whatwg-fetch@>=0.10.0, whatwg-fetch@^2.0.3:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
 

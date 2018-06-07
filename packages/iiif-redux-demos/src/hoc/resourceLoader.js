@@ -127,6 +127,7 @@ function resourceLoader(WrappedComponent) {
           default:
             return {
               type,
+              manifestId: this.getManifestId(),
               selectSequence: this.selectSequence,
               selectCanvas: this.selectCanvas,
               selectImage: this.selectImage,

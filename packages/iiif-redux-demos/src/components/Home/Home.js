@@ -24,6 +24,17 @@ class Home extends Component {
     },
   ];
 
+  manifests = [
+    {
+      label: 'Wunder der Vererbung',
+      url: 'https://wellcomelibrary.org/iiif/b18035723/manifest',
+    },
+    {
+      label: 'Forth Bridge illustrations 1886-1887',
+      url: 'https://view.nls.uk/manifest/7446/74464117/manifest.json',
+    },
+  ];
+
   render() {
     return (
       <div>
@@ -32,6 +43,7 @@ class Home extends Component {
             <div style={{ textAlign: 'center' }}>
               <img src={logo} width={510} />
             </div>
+            <h3>Collections</h3>
             <Input.Search
               size="large"
               placeholder="Enter a collection URL."
@@ -42,7 +54,6 @@ class Home extends Component {
             />
             <br />
             <br />
-            <h3>Alternatively choose from here</h3>
             <List
               size="large"
               bordered
@@ -52,6 +63,34 @@ class Home extends Component {
                   style={{ cursor: 'pointer' }}
                   onClick={() =>
                     this.props.history.push(`/collection?id=${item.url}`)
+                  }
+                >
+                  {item.label}
+                </List.Item>
+              )}
+            />
+            <br />
+            <br />
+            <h3>Manifests</h3>
+            <Input.Search
+              size="large"
+              placeholder="Enter a manifest URL."
+              onSearch={value =>
+                this.props.history.push(`/manifest?id=${value}`)
+              }
+              enterButton="View manifest"
+            />
+            <br />
+            <br />
+            <List
+              size="large"
+              bordered
+              dataSource={this.manifests}
+              renderItem={item => (
+                <List.Item
+                  style={{ cursor: 'pointer' }}
+                  onClick={() =>
+                    this.props.history.push(`/manifest?id=${item.url}`)
                   }
                 >
                   {item.label}
