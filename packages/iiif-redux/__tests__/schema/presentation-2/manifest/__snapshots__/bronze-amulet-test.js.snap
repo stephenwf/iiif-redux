@@ -180,7 +180,7 @@ Object {
         "motivation": "sc:painting",
         "on": "http://jubilees.stmarytx.edu/iiifp/TAW-113/canvas/Amulet-Recto",
         "resource": Object {
-          "id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2/full/full/0/default.jpg",
+          "id": "https://5cd37a424ec830b937c98c8a06935c97e8599a0b",
           "schema": "choice",
         },
       },
@@ -190,7 +190,7 @@ Object {
         "motivation": "sc:painting",
         "on": "http://jubilees.stmarytx.edu/iiifp/TAW-113/canvas/Amulet-Verso",
         "resource": Object {
-          "id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-00.jp2/full/full/0/default.jpg",
+          "id": "https://9cb40269ce28460693c8275e7184913e14e72875",
           "schema": "choice",
         },
       },
@@ -238,8 +238,8 @@ Object {
       },
     },
     "choices": Object {
-      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2/full/full/0/default.jpg": Object {
-        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2/full/full/0/default.jpg",
+      "https://5cd37a424ec830b937c98c8a06935c97e8599a0b": Object {
+        "@id": "https://5cd37a424ec830b937c98c8a06935c97e8599a0b",
         "@type": "oa:Choice",
         "default": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2/full/full/0/default.jpg",
         "item": Array [
@@ -250,8 +250,8 @@ Object {
           "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-55.jp2/full/full/0/default.jpg",
         ],
       },
-      "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-00.jp2/full/full/0/default.jpg": Object {
-        "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-00.jp2/full/full/0/default.jpg",
+      "https://9cb40269ce28460693c8275e7184913e14e72875": Object {
+        "@id": "https://9cb40269ce28460693c8275e7184913e14e72875",
         "@type": "oa:Choice",
         "default": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-v-Ac-00.jp2/full/full/0/default.jpg",
         "item": Array [
