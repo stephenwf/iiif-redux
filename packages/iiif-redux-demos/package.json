@@ -12,6 +12,7 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
+    "@canvas-panel/viewer-element": "^0.0.9",
     "antd": "3.6.1",
     "iiif-redux": "1.0.0",
     "react": "16.4.0",
