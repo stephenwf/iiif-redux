@@ -18,6 +18,8 @@ class Collection extends Component {
   render() {
     const { label, loading, fetched } = this.props;
 
+    console.log(this.props);
+
     if (fetched === false) {
       return <LoadingScreen />;
     }
