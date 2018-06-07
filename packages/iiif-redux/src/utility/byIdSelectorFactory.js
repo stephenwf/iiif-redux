@@ -10,7 +10,10 @@ export default function byIdSelectorFactory(rootApi, resourceKey) {
       const id = getId ? getId(props) : props ? props.id : null;
       if (!id) {
         // @todo invariant.
-        return {};
+        return {
+          fetched: false,
+          error: true,
+        };
       }
 
       if (dereference && (!state.dereferenced || !state.dereferenced[id])) {
