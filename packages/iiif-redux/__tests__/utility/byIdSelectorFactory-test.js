@@ -10,7 +10,7 @@ describe('utility/byIdSelectorFactory', () => {
       id: api.getId,
       label: api.getLabel,
     }));
-    expect(selector(state)).toEqual({});
+    expect(selector(state)).toEqual({ error: true, fetched: false });
   });
 
   it('should return neither loading or fetched for non-existant resource', () => {

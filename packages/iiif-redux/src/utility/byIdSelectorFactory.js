@@ -10,7 +10,10 @@ export default function byIdSelectorFactory(rootApi, resourceKey) {
       const id = getId ? getId(props) : props ? props.id : null;
       if (!id) {
         // @todo invariant.
-        return {};
+        return {
+          fetched: false,
+          error: true,
+        };
       }
 
       if (dereference && (!state.dereferenced || !state.dereferenced[id])) {
@@ -35,10 +38,15 @@ export default function byIdSelectorFactory(rootApi, resourceKey) {
         rootApi(s => s.resources[resourceKey][id])
       );
 
-      return (selectorOrStructure &&
+      const newProps = (selectorOrStructure &&
       {}.toString.call(selectorOrStructure) === '[object Function]'
         ? selector => passThroughState => selector(passThroughState)
         : createStructuredSelector)(selectorOrStructure)(state);
+      if (dereference) {
+        newProps.loading = state.dereferenced[id].loading;
+      }
+
+      return newProps;
     }
   );
 }

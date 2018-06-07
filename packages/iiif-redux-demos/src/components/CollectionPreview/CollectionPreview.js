@@ -10,7 +10,7 @@ class CollectionPreview extends Component {
     return (
       <Card
         onClick={() => onClick(id)}
-        style={{ margin: 15 }}
+        style={{ margin: 15, overflow: 'hidden' }}
         title={<IntlString>{label}</IntlString>}
       >
         {id}
