@@ -33,19 +33,6 @@ const preprocessLinkedEntities = value => {
         acc[entryKey] = resource ? resource[0] : null;
         break;
 
-      case 'resource':
-        // @todo better handle resources without IDs, maybe with a hash.
-        if (
-          !entryValue['@id'] &&
-          entryValue.default &&
-          entryValue.default['@id']
-        ) {
-          acc[entryKey] = { '@id': entryValue.default['@id'], ...entryValue };
-        } else {
-          acc[entryKey] = entryValue;
-        }
-        break;
-
       default:
         acc[entryKey] = entryValue;
         break;
