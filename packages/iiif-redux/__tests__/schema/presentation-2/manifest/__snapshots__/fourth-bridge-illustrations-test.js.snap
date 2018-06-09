@@ -1803,7 +1803,7 @@ Object {
       "sequences": Array [
         "https://view.nls.uk/manifest/7446/74464117/canvas/default",
       ],
-      "startCanvas": undefined,
+      "startCanvas": null,
       "structures": Array [
         "https://view.nls.uk/iiif/7446/74464117/range/r-1",
         "https://view.nls.uk/iiif/7446/74464117/range/r-2",

@@ -1,19 +1,20 @@
 import normalizeLinkedResources from './normalizeLinkedResources';
 import normalizeLanguageProperty from './normalizeLanguageProperty';
 import normalizeMetadataProperty from './normalizeMetadataProperty';
+import traverse from 'traverse';
 
 const preprocessLinkedEntities = value => {
-  return Object.entries(value).reduce((acc, [entryKey, entryValue]) => {
-    switch (entryKey) {
+  traverse(value).forEach(function(entryValue) {
+    switch (this.key) {
       // Descriptive
       case 'label':
       case 'description':
       case 'attribution':
-        acc[entryKey] = normalizeLanguageProperty(entryValue, 'en');
+        this.update(normalizeLanguageProperty(entryValue, 'en'));
         break;
 
       case 'metadata':
-        acc[entryKey] = normalizeMetadataProperty(entryValue, 'en');
+        this.update(normalizeMetadataProperty(entryValue, 'en'));
         break;
 
       case 'seeAlso':
@@ -21,7 +22,7 @@ const preprocessLinkedEntities = value => {
       case 'related':
       case 'rendering':
       case 'within':
-        acc[entryKey] = normalizeLinkedResources(entryValue);
+        this.update(normalizeLinkedResources(entryValue));
         break;
 
       case 'startCanvas':
@@ -29,16 +30,17 @@ const preprocessLinkedEntities = value => {
       case 'last':
       case 'next':
       case 'prev':
-        const resource = normalizeLinkedResources(entryValue);
-        acc[entryKey] = resource ? resource[0] : null;
+        const linkedResources = normalizeLinkedResources(entryValue);
+        this.update(
+          linkedResources && linkedResources.length ? linkedResources[0] : null
+        );
         break;
 
       default:
-        acc[entryKey] = entryValue;
         break;
     }
-    return acc;
-  }, {});
+  });
+  return value;
 };
 
 export default preprocessLinkedEntities;
