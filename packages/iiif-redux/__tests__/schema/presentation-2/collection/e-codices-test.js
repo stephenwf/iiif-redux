@@ -1,5 +1,4 @@
-import { normalize } from 'normalizr';
-import { collection } from '../../../../src/schema/presentation2';
+import { collection, normalize } from '../../../../src/schema/presentation2';
 import eCodicesFixture from '../../../fixtures/e-codices';
 import * as currentCollection from '../../../../src/api/current-collection';
 

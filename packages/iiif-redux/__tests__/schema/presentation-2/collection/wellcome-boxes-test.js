@@ -1,5 +1,4 @@
-import { normalize } from 'normalizr';
-import { collection } from '../../../../src/schema/presentation2';
+import { collection, normalize } from '../../../../src/schema/presentation2';
 import boxes from '../../../fixtures/wellcome-boxes';
 import * as currentCollection from '../../../../src/api/current-collection';
 

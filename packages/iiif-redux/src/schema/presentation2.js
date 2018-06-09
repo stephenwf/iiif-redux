@@ -19,16 +19,14 @@
 
 // @todo Image Service API.
 import { compose } from 'redux';
-import memoize from 'lodash.memoize';
 import { schema, normalize } from 'normalizr';
 import moveStartCanvasToSequence from '../compat/moveStartCanvasToSequence';
 import preprocessLinkedEntities from '../compat/preprocessLinkedEntities';
 import addMissingIds from '../compat/addMissingIds';
 
-function createEntity(name, hasLinked = true) {
+function createEntity(name) {
   const options = {
     idAttribute: '@id',
-    processStrategy: preprocessLinkedEntities,
   };
 
   return new schema.Entity(name, {}, options);
@@ -306,6 +304,7 @@ choice.define({
 
 const preprocess = compose(
   moveStartCanvasToSequence,
+  preprocessLinkedEntities,
   addMissingIds
 );
 
