@@ -315,11 +315,13 @@ Object {
         "logo": Object {
           "@id": "http://jubilees.stmarytx.edu/iiif/Logo-JubPalProj.jp2/full/full/0/default.jpg",
           "@type": "dctypes:Image",
-          "service": Object {
-            "@context": "http://iiif.io/api/image/2/context.json",
-            "@id": "http://jubilees.stmarytx.edu/iiif/Logo-JubPalProj.jp2",
-            "profile": "http://iiif.io/api/image/2/profiles/level2.json",
-          },
+          "service": Array [
+            Object {
+              "@context": "http://iiif.io/api/image/2/context.json",
+              "@id": "http://jubilees.stmarytx.edu/iiif/Logo-JubPalProj.jp2",
+              "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+            },
+          ],
         },
         "metadata": Array [
           Object {

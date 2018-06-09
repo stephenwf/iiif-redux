@@ -1,10 +1,9 @@
 import { createActions, handleActions } from 'redux-actions';
 import validUrl from 'valid-url';
 import { normalize } from '../schema/presentation2';
-import { call, put, select, all, takeEvery } from 'redux-saga/effects';
+import { call, put, select, takeEvery } from 'redux-saga/effects';
 import deepmerge from 'deepmerge';
 import update from 'immutability-helper';
-import preloadNormalizedList from '../utility/preloadNormalizedList';
 const debug = require('debug')('iiif-redux');
 
 const IIIF_RESOURCE_REQUEST = 'IIIF_RESOURCE_REQUEST';
@@ -158,22 +157,6 @@ function* requestIiifResource({ payload }) {
         resourceId
       );
       response['@id'] = resourceId;
-    }
-
-    debug('Starting normalize resource (warm up) %s', resourceId);
-
-    // Warm cache async.
-    // @todo memoize issue.
-    if (response['@type'] === 'sc:Collection') {
-      if (response.collections) {
-        yield call(preloadNormalizedList, response.collections);
-      }
-      if (response.members) {
-        yield call(preloadNormalizedList, response.members);
-      }
-      if (response.manifests) {
-        yield call(preloadNormalizedList, response.manifests);
-      }
     }
 
     debug('Starting normalize resource %s', resourceId);
