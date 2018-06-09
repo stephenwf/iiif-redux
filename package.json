@@ -1,5 +1,7 @@
 {
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "private": true,
   "devDependencies": {
     "@fesk/module-release": "0.0.2",
@@ -24,7 +26,7 @@
   },
   "scripts": {
     "start": "lerna run start --stream --parallel --concurrency 100",
-    "build": "lerna run build && lerna link",
+    "build": "NODE_ENV=production lerna run build && lerna link",
     "build-all": "lerna run build",
     "precommit": "lint-staged",
     "release": "fesk-release",
@@ -36,8 +38,14 @@
     "test:watch": "jest --coverage --watch"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"],
-    "*.{js,json,scss,md}": ["prettier --write", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{js,json,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "jest": {
     "transform": {

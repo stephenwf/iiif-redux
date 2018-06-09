@@ -1,3 +1,4 @@
+import cachedFetch from 'fetch-unless-cached';
 import { createActions, handleActions } from 'redux-actions';
 import validUrl from 'valid-url';
 import { normalize } from '../schema/presentation2';
@@ -92,6 +93,11 @@ const dereferencedReducer = handleActions(
 );
 
 async function requestResource(resourceId, options) {
+  /* istanbul ignore if */
+  if (process.env.NODE_ENV === 'production') {
+    return cachedFetch(resourceId);
+  }
+
   return fetch(resourceId).then(resp => resp.json());
 }
 
