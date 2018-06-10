@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { Spin, Row, Col, Card, Layout } from 'antd';
+import { Spin, Row, Col, Card } from 'antd';
 import StructuralPanel from '../StructuralPanel/StructuralPanel';
 import DescriptivePanel from '../DescriptivePanel/DescriptivePanel';
 import LinkingPanel from '../LinkingPanel/LinkingPanel';
@@ -9,11 +9,10 @@ import TechnicalPanel from '../TechnicalPanel/TechnicalPanel';
 import SequencePreview from '../SequencePreview/SequencePreview';
 import PageLayout from '../PageLayout/PageLayout';
 import { manifestByIdSelector } from 'iiif-redux/es/api/manifest';
-import { withRouter } from 'react-router-dom';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
-import { selectManifest } from 'iiif-redux/es/spaces/routing';
 import resourceLoader from '../../hoc/resourceLoader';
 import PaginatedList from '../PaginatedList/PaginatedList';
+import RangePreview from '../RangePreview/RangePreview';
 
 class Manifest extends Component {
   render() {
@@ -62,6 +61,21 @@ class Manifest extends Component {
               related={this.props.related}
               within={this.props.within}
             />
+            {this.props.ranges.length ? (
+              <div>
+                <h3>Ranges</h3>
+                <Card style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                  {this.props.ranges.length
+                    ? this.props.ranges.map(range => (
+                        <RangePreview
+                          selectCanvas={this.props.selectCanvas}
+                          id={range}
+                        />
+                      ))
+                    : null}
+                </Card>
+              </div>
+            ) : null}
           </Col>
           <Col span={16}>
             {loading ? (
@@ -123,7 +137,7 @@ export default resourceLoader(
         seeAlso: currentManifest.getSeeAlso,
         // Structural
         sequences: currentManifest.getSequenceIds,
-        ranges: currentManifest.getRanges,
+        ranges: currentManifest.getRangeIds,
         otherContent: currentManifest.getOtherContent,
       }),
       { dereference: true }
