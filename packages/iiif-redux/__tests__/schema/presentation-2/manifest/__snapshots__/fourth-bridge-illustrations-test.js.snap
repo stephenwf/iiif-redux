@@ -1845,10 +1845,68 @@ Object {
         "https://view.nls.uk/iiif/7446/74464117/range/r-38",
         "https://view.nls.uk/iiif/7446/74464117/range/r-39",
         "https://view.nls.uk/iiif/7446/74464117/range/r-40",
+        "https://view.nls.uk/iiif/7446/74464117/range/custom-ranges",
+        "https://view.nls.uk/iiif/7446/74464117/range/custom",
       ],
     },
   },
   "ranges": Object {
+    "https://view.nls.uk/iiif/7446/74464117/range/custom": Object {
+      "@id": "https://view.nls.uk/iiif/7446/74464117/range/custom",
+      "@type": "sc:Range",
+      "canvases": Array [
+        "https://view.nls.uk/iiif/7446/74464117/canvas/5",
+        "https://view.nls.uk/iiif/7446/74464117/canvas/6",
+        "https://view.nls.uk/iiif/7446/74464117/canvas/7",
+        "https://view.nls.uk/iiif/7446/74464117/canvas/8",
+      ],
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Custom range with canvases and ranges",
+        },
+      ],
+      "ranges": Array [
+        "https://view.nls.uk/iiif/7446/74464117/range/r-3",
+        "https://view.nls.uk/iiif/7446/74464117/range/r-4",
+      ],
+    },
+    "https://view.nls.uk/iiif/7446/74464117/range/custom-ranges": Object {
+      "@id": "https://view.nls.uk/iiif/7446/74464117/range/custom-ranges",
+      "@type": "sc:Range",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Custom range with members",
+        },
+      ],
+      "members": Array [
+        Object {
+          "id": "https://view.nls.uk/iiif/7446/74464117/canvas/1",
+          "schema": "canvas",
+        },
+        Object {
+          "id": "https://view.nls.uk/iiif/7446/74464117/canvas/2",
+          "schema": "canvas",
+        },
+        Object {
+          "id": "https://view.nls.uk/iiif/7446/74464117/canvas/3",
+          "schema": "canvas",
+        },
+        Object {
+          "id": "https://view.nls.uk/iiif/7446/74464117/canvas/4",
+          "schema": "canvas",
+        },
+        Object {
+          "id": "https://view.nls.uk/iiif/7446/74464117/canvas/4",
+          "schema": "canvas",
+        },
+        Object {
+          "id": "https://view.nls.uk/iiif/7446/74464117/range/custom",
+          "schema": "range",
+        },
+      ],
+    },
     "https://view.nls.uk/iiif/7446/74464117/range/r-1": Object {
       "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-1",
       "@type": "sc:Range",

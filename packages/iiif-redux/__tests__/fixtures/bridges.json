@@ -1660,6 +1660,52 @@
       "canvases": ["https://view.nls.uk/iiif/7446/74464117/canvas/40"],
       "label":
         "Part of Inchgarvie and Queensferry works, showing the span to be bridged"
+    },
+    {
+      "@id": "https://view.nls.uk/iiif/7446/74464117/range/custom-ranges",
+      "@type": "sc:Range",
+      "label": "Custom range with members",
+      "members": [
+        {
+          "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/1",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/2",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/3",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/4",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/4",
+          "@type": "sc:Canvas"
+        },
+        {
+          "@id": "https://view.nls.uk/iiif/7446/74464117/range/custom",
+          "@type": "sc:Range"
+        }
+      ]
+    },
+    {
+      "@id": "https://view.nls.uk/iiif/7446/74464117/range/custom",
+      "@type": "sc:Range",
+      "label": "Custom range with canvases and ranges",
+      "canvases": [
+        "https://view.nls.uk/iiif/7446/74464117/canvas/5",
+        "https://view.nls.uk/iiif/7446/74464117/canvas/6",
+        "https://view.nls.uk/iiif/7446/74464117/canvas/7",
+        "https://view.nls.uk/iiif/7446/74464117/canvas/8"
+      ],
+      "ranges": [
+        "https://view.nls.uk/iiif/7446/74464117/range/r-3",
+        "https://view.nls.uk/iiif/7446/74464117/range/r-4"
+      ]
     }
   ]
 }

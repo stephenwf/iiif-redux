@@ -175,6 +175,8 @@ describe('Forth Bridge illustrations manifest', () => {
       'https://view.nls.uk/iiif/7446/74464117/range/r-38',
       'https://view.nls.uk/iiif/7446/74464117/range/r-39',
       'https://view.nls.uk/iiif/7446/74464117/range/r-40',
+      'https://view.nls.uk/iiif/7446/74464117/range/custom-ranges',
+      'https://view.nls.uk/iiif/7446/74464117/range/custom',
     ]);
   });
 
@@ -222,6 +224,8 @@ describe('Forth Bridge illustrations manifest', () => {
       'Queensferry cantilever from end of Hawes Pier',
       'Inchgarvie superstructure at full height',
       'Part of Inchgarvie and Queensferry works, showing the span to be bridged',
+      'Custom range with members',
+      'Custom range with canvases and ranges',
     ]);
   });
 });

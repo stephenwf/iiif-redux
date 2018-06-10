@@ -47,6 +47,35 @@ const getMembers = resource =>
     ])
   );
 
+const getRangeMembers = resource =>
+  Array.from(
+    new Set([
+      ...alwaysArray(resource.members).map(member => member.id),
+      ...(resource.canvases || []),
+      ...(resource.ranges || []),
+    ])
+  );
+
+const getRangeRanges = resource =>
+  Array.from(
+    new Set([
+      ...alwaysArray(resource.members)
+        .filter(member => member.schema === 'range')
+        .map(member => member.id),
+      ...(resource.ranges || []),
+    ])
+  );
+
+const getRangeCanvases = resource =>
+  Array.from(
+    new Set([
+      ...alwaysArray(resource.members)
+        .filter(member => member.schema === 'canvas')
+        .map(member => member.id),
+      ...(resource.canvases || []),
+    ])
+  );
+
 const getSequences = resource => alwaysArray(resource.sequences);
 
 const getCanvases = resource => alwaysArray(resource.canvases);
@@ -74,6 +103,9 @@ export {
   getMembers,
   getOtherContent,
   getRanges,
+  getRangeCanvases,
+  getRangeMembers,
+  getRangeRanges,
   getStructures,
   getResource,
   getResources,

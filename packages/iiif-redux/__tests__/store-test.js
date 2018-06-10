@@ -494,6 +494,8 @@ describe('store', () => {
       'https://view.nls.uk/iiif/7446/74464117/range/r-38',
       'https://view.nls.uk/iiif/7446/74464117/range/r-39',
       'https://view.nls.uk/iiif/7446/74464117/range/r-40',
+      'https://view.nls.uk/iiif/7446/74464117/range/custom',
+      'https://view.nls.uk/iiif/7446/74464117/range/custom-ranges',
     ]);
 
     expect(Object.keys(secondState.resources.externalResources)).toEqual([
