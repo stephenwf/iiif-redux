@@ -3,8 +3,6 @@ import memoize from 'lodash.memoize';
 import { createSelector } from 'reselect';
 
 const frame = selector => {
-  const noop = () => null;
-
   // Metadata API.
   const getId = createSelector(selector, currentFrame => currentFrame.id);
   const isFocused = createSelector(
@@ -40,7 +38,7 @@ const frame = selector => {
   );
   const getCurrentResourceByType = memoize(schema =>
     createSelector(getCurrentPath, path =>
-      path.reduce((acc, next) => (next.schema === schema ? next : acc))
+      path.reduce((acc, next) => (next.schema === schema ? next : acc), null)
     )
   );
 
