@@ -67,6 +67,14 @@ const within = new schema.Array(
   }
 );
 
+const rangeMember = new schema.Union(
+  {
+    canvas,
+    range,
+  },
+  input => (input['@type'] === 'sc:Canvas' ? 'canvas' : 'range')
+);
+
 /**
  * Dereferencable resources:
  *
@@ -261,6 +269,9 @@ annotationList.define({
 // ===========================================================================
 range.define({
   resources: [annotation],
+  members: [rangeMember],
+  canvases: [canvas],
+  ranges: [range],
 
   // Linking
   seeAlso: [externalResource],
