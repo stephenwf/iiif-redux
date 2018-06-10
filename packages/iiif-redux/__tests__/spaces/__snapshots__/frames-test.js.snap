@@ -1,0 +1,898 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`spaces/services actions frameConfigureExtension 1`] = `"Dev error: missing required prop extensionId"`;
+
+exports[`spaces/services actions frameConfigureExtension 2`] = `
+Object {
+  "payload": Object {
+    "extensionConfig": undefined,
+    "extensionId": "extension-id-1",
+    "frameId": "default-frame",
+  },
+  "type": "FRAME_CONFIGURE_EXTENSION",
+}
+`;
+
+exports[`spaces/services actions frameConfigureExtension 3`] = `
+Object {
+  "payload": Object {
+    "extensionConfig": Object {
+      "someConfig": "someValue",
+    },
+    "extensionId": "extension-id-1",
+    "frameId": "default-frame",
+  },
+  "type": "FRAME_CONFIGURE_EXTENSION",
+}
+`;
+
+exports[`spaces/services actions frameConfigureExtension 4`] = `
+Object {
+  "payload": Object {
+    "extensionConfig": Object {},
+    "extensionId": "extension-id-1",
+    "frameId": "my-custom-frame",
+  },
+  "type": "FRAME_CONFIGURE_EXTENSION",
+}
+`;
+
+exports[`spaces/services actions frameCreate 1`] = `
+Object {
+  "payload": Object {
+    "config": Object {},
+    "frameId": "default-frame",
+    "resourceId": undefined,
+    "resourceType": undefined,
+  },
+  "type": "FRAME_CREATE",
+}
+`;
+
+exports[`spaces/services actions frameCreate 2`] = `
+Object {
+  "payload": Object {
+    "config": Object {},
+    "frameId": "default-frame",
+    "resourceId": "https://iiif.com/collection-1.json",
+    "resourceType": "collection",
+  },
+  "type": "FRAME_CREATE",
+}
+`;
+
+exports[`spaces/services actions frameCreate 3`] = `
+Object {
+  "payload": Object {
+    "config": Object {},
+    "frameId": "my-custom-frame",
+    "resourceId": "https://iiif.com/collection-1.json",
+    "resourceType": "collection",
+  },
+  "type": "FRAME_CREATE",
+}
+`;
+
+exports[`spaces/services actions frameCreate 4`] = `
+Object {
+  "payload": Object {
+    "config": Object {
+      "someConfigProp": Object {
+        "someBool": true,
+      },
+    },
+    "frameId": "my-custom-frame",
+    "resourceId": "https://iiif.com/collection-1.json",
+    "resourceType": "collection",
+  },
+  "type": "FRAME_CREATE",
+}
+`;
+
+exports[`spaces/services actions frameDisableExtension 1`] = `"Dev error: missing required prop extensionId"`;
+
+exports[`spaces/services actions frameDisableExtension 2`] = `
+Object {
+  "payload": Object {
+    "extensionId": "my-extension",
+    "frameId": "default-frame",
+  },
+  "type": "FRAME_DISABLE_EXTENSION",
+}
+`;
+
+exports[`spaces/services actions frameDisableExtension 3`] = `
+Object {
+  "payload": Object {
+    "extensionId": "my-extension",
+    "frameId": "my-custom-frame",
+  },
+  "type": "FRAME_DISABLE_EXTENSION",
+}
+`;
+
+exports[`spaces/services actions frameEnableExtension 1`] = `"Dev error: missing required prop extensionId"`;
+
+exports[`spaces/services actions frameEnableExtension 2`] = `
+Object {
+  "payload": Object {
+    "extensionConfig": undefined,
+    "extensionId": "extension-id-1",
+    "frameId": "default-frame",
+  },
+  "type": "FRAME_ENABLE_EXTENSION",
+}
+`;
+
+exports[`spaces/services actions frameEnableExtension 3`] = `
+Object {
+  "payload": Object {
+    "extensionConfig": Object {
+      "someConfig": "someValue",
+    },
+    "extensionId": "extension-id-1",
+    "frameId": "default-frame",
+  },
+  "type": "FRAME_ENABLE_EXTENSION",
+}
+`;
+
+exports[`spaces/services actions frameEnableExtension 4`] = `
+Object {
+  "payload": Object {
+    "extensionConfig": Object {},
+    "extensionId": "extension-id-1",
+    "frameId": "my-custom-frame",
+  },
+  "type": "FRAME_ENABLE_EXTENSION",
+}
+`;
+
+exports[`spaces/services actions frameFocus 1`] = `
+Object {
+  "payload": Object {
+    "frameId": "default-frame",
+  },
+  "type": "FRAME_FOCUS",
+}
+`;
+
+exports[`spaces/services actions frameFocus 2`] = `
+Object {
+  "payload": Object {
+    "frameId": "my-custom-frame",
+  },
+  "type": "FRAME_FOCUS",
+}
+`;
+
+exports[`spaces/services actions frameGoBack 1`] = `
+Object {
+  "payload": Object {
+    "frameId": "default-frame",
+  },
+  "type": "FRAME_GO_BACK",
+}
+`;
+
+exports[`spaces/services actions frameGoBack 2`] = `
+Object {
+  "payload": Object {
+    "frameId": "my-custom-frame",
+  },
+  "type": "FRAME_GO_BACK",
+}
+`;
+
+exports[`spaces/services actions frameGoBackToType 1`] = `"Dev error: missing required prop resourceType"`;
+
+exports[`spaces/services actions frameGoBackToType 2`] = `
+Object {
+  "payload": Object {
+    "frameId": "default-frame",
+    "resourceType": "collection",
+  },
+  "type": "FRAME_GO_BACK_TO_TYPE",
+}
+`;
+
+exports[`spaces/services actions frameGoBackToType 3`] = `
+Object {
+  "payload": Object {
+    "frameId": "my-custom-frame",
+    "resourceType": "manifest",
+  },
+  "type": "FRAME_GO_BACK_TO_TYPE",
+}
+`;
+
+exports[`spaces/services actions frameGoForward 1`] = `
+Object {
+  "payload": Object {
+    "frameId": "default-frame",
+  },
+  "type": "FRAME_GO_FORWARD",
+}
+`;
+
+exports[`spaces/services actions frameGoForward 2`] = `
+Object {
+  "payload": Object {
+    "frameId": "my-custom-frame",
+  },
+  "type": "FRAME_GO_FORWARD",
+}
+`;
+
+exports[`spaces/services actions frameGoToResource 1`] = `
+Object {
+  "payload": Object {
+    "frameId": "default-frame",
+    "resourceId": "https://iiif.com/collection-2.json",
+    "resourceType": "collection",
+    "smartJump": true,
+  },
+  "type": "FRAME_GO_TO_RESOURCE",
+}
+`;
+
+exports[`spaces/services actions frameGoToResource 2`] = `"Dev error: missing required prop resourceType"`;
+
+exports[`spaces/services actions frameGoToResource 3`] = `
+Object {
+  "payload": Object {
+    "frameId": "my-custom-frame",
+    "resourceId": "https://iiif.com/collection-2.json",
+    "resourceType": "collection",
+    "smartJump": true,
+  },
+  "type": "FRAME_GO_TO_RESOURCE",
+}
+`;
+
+exports[`spaces/services actions frameGoToResource 4`] = `
+Object {
+  "payload": Object {
+    "frameId": "my-custom-frame",
+    "resourceId": "https://iiif.com/collection-2.json",
+    "resourceType": "collection",
+    "smartJump": false,
+  },
+  "type": "FRAME_GO_TO_RESOURCE",
+}
+`;
+
+exports[`spaces/services actions frameNextCanvas 1`] = `
+Object {
+  "payload": Object {
+    "frameId": "default-frame",
+  },
+  "type": "FRAME_NEXT_CANVAS",
+}
+`;
+
+exports[`spaces/services actions frameNextCanvas 2`] = `
+Object {
+  "payload": Object {
+    "frameId": "my-custom-frame",
+  },
+  "type": "FRAME_NEXT_CANVAS",
+}
+`;
+
+exports[`spaces/services actions framePreviousCanvas 1`] = `
+Object {
+  "payload": Object {
+    "frameId": "default-frame",
+  },
+  "type": "FRAME_PREVIOUS_CANVAS",
+}
+`;
+
+exports[`spaces/services actions framePreviousCanvas 2`] = `
+Object {
+  "payload": Object {
+    "frameId": "my-custom-frame",
+  },
+  "type": "FRAME_PREVIOUS_CANVAS",
+}
+`;
+
+exports[`spaces/services actions frameSetInitialResource 1`] = `
+Object {
+  "payload": Object {
+    "frameId": "default-frame",
+    "resourceId": "https://iiif.com/collection-2.json",
+    "resourceType": "collection",
+  },
+  "type": "FRAME_SET_INITIAL_RESOURCE",
+}
+`;
+
+exports[`spaces/services actions frameSetInitialResource 2`] = `"Dev error: missing required prop resourceType"`;
+
+exports[`spaces/services actions frameSetInitialResource 3`] = `
+Object {
+  "payload": Object {
+    "frameId": "my-custom-frame",
+    "resourceId": "https://iiif.com/collection-2.json",
+    "resourceType": "collection",
+  },
+  "type": "FRAME_SET_INITIAL_RESOURCE",
+}
+`;
+
+exports[`spaces/services reducers default state 1`] = `
+Object {
+  "focusedFrame": null,
+  "list": Object {},
+}
+`;
+
+exports[`spaces/services reducers extensions configure 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [
+        "my-awesome-extension",
+      ],
+      "extensions": Object {
+        "my-awesome-extension": Object {
+          "inlineConfig": "something value",
+          "loaded": true,
+        },
+      },
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-1.json",
+          "schema": "collection",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers extensions disable enable twice - act like config 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [
+        "my-awesome-extension",
+      ],
+      "extensions": Object {
+        "my-awesome-extension": Object {
+          "someOtherValue": "something value",
+        },
+      },
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-1.json",
+          "schema": "collection",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers extensions disable extension 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [],
+      "extensions": Object {
+        "my-awesome-extension": Object {
+          "inlineConfig": "something value",
+        },
+      },
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-1.json",
+          "schema": "collection",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers extensions disable non-existent extension 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [
+        "my-awesome-extension",
+      ],
+      "extensions": Object {
+        "my-awesome-extension": Object {
+          "inlineConfig": "something value",
+        },
+      },
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-1.json",
+          "schema": "collection",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers extensions enable extension 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [
+        "my-awesome-extension",
+      ],
+      "extensions": Object {
+        "my-awesome-extension": undefined,
+      },
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-1.json",
+          "schema": "collection",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers extensions enable with js config 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [
+        "my-awesome-extension",
+      ],
+      "extensions": Object {
+        "my-awesome-extension": Object {
+          "inlineConfig": "something value",
+        },
+      },
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-1.json",
+          "schema": "collection",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers extensions enable with string config 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [
+        "my-awesome-extension",
+      ],
+      "extensions": Object {
+        "my-awesome-extension": "instance-id-of-extension",
+      },
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-1.json",
+          "schema": "collection",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers focus frame 1`] = `
+Object {
+  "focusedFrame": "frame-2",
+  "list": Object {
+    "frame-1": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "frame-1",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-1.json",
+          "schema": "collection",
+        },
+      ],
+    },
+    "frame-2": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "frame-2",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-2.json",
+          "schema": "collection",
+        },
+      ],
+    },
+    "frame-3": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "frame-3",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-3.json",
+          "schema": "collection",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers frameCreate create multiple 1`] = `
+Object {
+  "focusedFrame": "manifest-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-1.json",
+          "schema": "collection",
+        },
+      ],
+    },
+    "manifest-frame": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "manifest-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/manifest-1.json",
+          "schema": "manifest",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers frameCreate simple create 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "default-frame",
+      "path": Array [],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers frameGoBack/Forward go back and forward 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 1,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-1.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://iiif.com/collection-2.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://iiif.com/collection-3.json",
+          "schema": "collection",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers frameGoBack/Forward go back simple 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 1,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-1.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://iiif.com/collection-2.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://iiif.com/collection-3.json",
+          "schema": "collection",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers frameGoBack/Forward go back too far 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-1.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://iiif.com/collection-2.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://iiif.com/collection-3.json",
+          "schema": "collection",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers frameGoBack/Forward go forward too far 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 3,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-1.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://iiif.com/collection-2.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://iiif.com/collection-3.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://iiif.com/collection-4.json",
+          "schema": "collection",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers frameGoToResource go to back-track (smart=false) 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 3,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-1.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://iiif.com/collection-2.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://iiif.com/manifest-1.json",
+          "schema": "manifest",
+        },
+        Object {
+          "id": "https://iiif.com/collection-2.json",
+          "schema": "collection",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers frameGoToResource go to back-track (smart=true) 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 1,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-1.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://iiif.com/collection-2.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://iiif.com/manifest-1.json",
+          "schema": "manifest",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers frameGoToResource go to deep 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 2,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-1.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://iiif.com/collection-2.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://iiif.com/manifest-1.json",
+          "schema": "manifest",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers frameGoToResource go to simple 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-1.json",
+          "schema": "collection",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers frameSetInitialResource set custom resource 1`] = `
+Object {
+  "focusedFrame": "my-custom-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/collection-1.json",
+          "schema": "collection",
+        },
+      ],
+    },
+    "my-custom-frame": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "my-custom-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/manifest-1.json",
+          "schema": "manifest",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers frameSetInitialResource set single resource 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/manifest-1.json",
+          "schema": "manifest",
+        },
+      ],
+    },
+  },
+}
+`;

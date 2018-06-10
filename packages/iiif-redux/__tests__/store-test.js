@@ -16,6 +16,10 @@ describe('store', () => {
     const store = createStore();
     expect(store.getState()).toEqual({
       dereferenced: {},
+      frames: {
+        focusedFrame: null,
+        list: {},
+      },
       resources: {
         annotations: {},
         annotationLists: {},
@@ -66,6 +70,10 @@ describe('store', () => {
             'https://view.nls.uk/manifest/7446/74464117/manifest.json',
           ttl: 600,
         },
+      },
+      frames: {
+        focusedFrame: null,
+        list: {},
       },
       resources: {
         annotations: {},
@@ -119,6 +127,10 @@ describe('store', () => {
           ttl: 600,
         },
       },
+      frames: {
+        focusedFrame: null,
+        list: {},
+      },
       resources: {
         annotations: {},
         annotationLists: {},
@@ -166,6 +178,10 @@ describe('store', () => {
           resourceId: 'not-real-url',
           ttl: 600,
         },
+      },
+      frames: {
+        focusedFrame: null,
+        list: {},
       },
       resources: {
         annotations: {},
