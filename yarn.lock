@@ -102,7 +102,7 @@
     screenfull "^3.3.2"
     whatwg-fetch "^2.0.3"
 
-"@canvas-panel/viewer-element@^0.0.9":
+"@canvas-panel/viewer-element@0.0.9":
   version "0.0.9"
   resolved "https://registry.yarnpkg.com/@canvas-panel/viewer-element/-/viewer-element-0.0.9.tgz#bad8f9a938e0b7511f0eb283df7e513f549ab63a"
   dependencies:
