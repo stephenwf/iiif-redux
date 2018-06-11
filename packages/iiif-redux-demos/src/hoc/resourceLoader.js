@@ -35,13 +35,13 @@ function resourceLoader(WrappedComponent) {
         const { location } = this.props;
         const { id, manifestId } = qs.parse(location.search);
 
-        return manifestId ? manifestId : id;
+        return encodeURI(manifestId ? manifestId : id);
       };
 
       getId = () => {
         const { location } = this.props;
         const { id } = qs.parse(location.search);
-        return id;
+        return encodeURI(id);
       };
 
       getType = () => {
@@ -55,10 +55,10 @@ function resourceLoader(WrappedComponent) {
 
         if (['sequence', 'canvas', 'image', 'range'].indexOf(type) === -1) {
           // We are just loading the type.
-          this.loadResource(id, type);
+          this.loadResource(encodeURI(id), type);
         } else {
           // We are loading the manifest.
-          this.loadResource(manifestId, 'manifest');
+          this.loadResource(encodeURI(manifestId), 'manifest');
         }
       }
 
