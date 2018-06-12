@@ -48,9 +48,9 @@ const frame = selector => {
     currentPath => currentPath[0] || null
   );
   const getAllTypes = createSelector(getCurrentPath, currentPath =>
-    currentPath.reduce((types, type) => {
-      if (types.indexOf(type) !== -1) {
-        types.push(type);
+    currentPath.reduce((types, path) => {
+      if (types.indexOf(path.schema) === -1) {
+        types.push(path.schema);
       }
       return types;
     }, [])
@@ -62,20 +62,21 @@ const frame = selector => {
   const canGoForward = createSelector(
     getCurrentPath,
     getCurrentPathIndex,
-    (currentPath, currentIndex) => currentPath.length - 1 >= currentIndex
+    (currentPath, currentIndex) =>
+      currentPath.length === 0 ? false : currentPath.length - 1 > currentIndex
   );
   const getHistory = createSelector(
     getCurrentPath,
     getCurrentPathIndex,
     (currentPath, currentIndex) =>
-      currentPath.length ? currentPath.slice(0, currentIndex + 1) : []
+      currentPath.length ? currentPath.slice(0, currentIndex) : []
   );
   const getFullHistory = getCurrentPath;
   const canGoBackToType = memoize(schema =>
     createSelector(
       getHistory,
       history =>
-        history.filter(pathItem => pathItem.schema === schema).length !== 0
+        history.filter(pathItem => pathItem.schema === schema).length > 0
     )
   );
 
@@ -91,7 +92,11 @@ const frame = selector => {
     if (!allExtensions[id]) {
       return { id };
     }
-    if (typeof allExtensions[id] === 'string') {
+    if (
+      typeof allExtensions[id] === 'string' &&
+      state[id] &&
+      state[id][allExtensions[id]]
+    ) {
       return { id, config: state[id][allExtensions[id]] };
     }
     return { id, config: allExtensions[id] };
@@ -101,7 +106,7 @@ const frame = selector => {
     getAllExtensionsInternal,
     state => state,
     (extensionIds, allExtensions, state) => {
-      return allExtensions.map(id =>
+      return extensionIds.map(id =>
         mapSingleExtension(state, allExtensions, id)
       );
     }
@@ -139,7 +144,7 @@ const frame = selector => {
     getAllExtensionsInternal,
     state => state,
     (extensionIds, allExtensions, state) => {
-      return allExtensions.map(id =>
+      return extensionIds.map(id =>
         mapSingleExtension(state, allExtensions, id)
       );
     }
@@ -149,7 +154,7 @@ const frame = selector => {
     getAllExtensionsInternal,
     state => state,
     (extensionIds, allExtensions, state) => {
-      return allExtensions.map(id =>
+      return extensionIds.map(id =>
         mapSingleExtension(state, allExtensions, id)
       );
     }
@@ -187,6 +192,7 @@ const frame = selector => {
     canGoBackToType,
 
     // Extensions API.
+    getAllExtensionIds,
     getAllExtensions,
     getExtensionById,
     isExtensionEnabled,
@@ -206,6 +212,7 @@ const frame = selector => {
 
 export default frame;
 
+/*
 // Allows for Tab interface.
 export function focusedFrame() {}
 
@@ -235,3 +242,4 @@ export function connectFrameBehaviours(
 ) {
   // HOC for injecting actions + state, itself will wrap connect.
 }
+*/
