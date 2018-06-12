@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iiif/api/frame metadata getCurrentPath 1`] = `
+Array [
+  Object {
+    "id": "https://iiif.com/collection-1.json",
+    "schema": "collection",
+  },
+]
+`;

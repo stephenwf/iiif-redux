@@ -7,6 +7,8 @@ import {
 import * as currentManifest from './src/api/current-manifest';
 import * as currentSequence from './src/api/current-sequence';
 import * as currentCanvas from './src/api/current-canvas';
+import * as reducers from './src/reducers';
+import { combineReducers } from 'redux';
 
 export function waitForRequest(store, id) {
   return new Promise(resolve => {
@@ -21,6 +23,11 @@ export function waitForRequest(store, id) {
       }
     });
   });
+}
+
+const reducer = combineReducers(reducers);
+export function makeStateFromActions(...actions) {
+  return [{ type: '@@redux/INIT' }, ...actions].reduce(reducer, {});
 }
 
 export async function createStoreAndImportManifest(manifestJson) {
