@@ -342,4 +342,5 @@ export {
   // saga,
   reducer,
   DEFAULT_STATE,
+  DEFAULT_FRAME_ID,
 };

@@ -1,6 +1,7 @@
 // Frame API.
 import memoize from 'lodash.memoize';
-import { createSelector } from 'reselect';
+import { createSelector, createStructuredSelector } from 'reselect';
+import { DEFAULT_FRAME_ID } from '../spaces/frames';
 
 const frame = selector => {
   // Metadata API.
@@ -212,12 +213,23 @@ const frame = selector => {
 
 export default frame;
 
+// Allows for Window interface.
+export const frameByIdSelector = memoize(
+  (callable, { getId = null } = {}) => (state, props) => {
+    const id = getId ? getId(props) : props ? props.frameId : DEFAULT_FRAME_ID;
+
+    const selectorOrStructure = callable(frame(s => s.frames.list[id]));
+
+    return (selectorOrStructure &&
+    {}.toString.call(selectorOrStructure) === '[object Function]'
+      ? selector => passThroughState => selector(passThroughState)
+      : createStructuredSelector)(selectorOrStructure)(state);
+  }
+);
+
 /*
 // Allows for Tab interface.
 export function focusedFrame() {}
-
-// Allows for Window interface.
-export function frameByIdSelector() {}
 
 // Allows for lists, defaults to all.
 export function frames(arrayOfFramesSelector = null) {}
