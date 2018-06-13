@@ -12,8 +12,8 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "@canvas-panel/viewer-element": "^0.0.9",
-    "antd": "3.6.1",
+    "@canvas-panel/viewer-element": "0.0.9",
+    "antd": "3.6.2",
     "iiif-redux": "1.0.0",
     "react": "16.4.0",
     "react-dom": "16.4.0",
@@ -22,7 +22,7 @@
     "reselect": "3.0.1"
   },
   "devDependencies": {
-    "babel-plugin-import": "1.7.0",
+    "babel-plugin-import": "1.8.0",
     "nwb": "0.21.5",
     "nwb-less": "0.7.0"
   },

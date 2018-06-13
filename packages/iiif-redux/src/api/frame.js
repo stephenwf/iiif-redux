@@ -226,7 +226,6 @@ export const frameByIdSelector = memoize(
       : createStructuredSelector)(selectorOrStructure)(state);
   }
 );
-
 /*
 // Allows for Tab interface.
 export function focusedFrame() {}
