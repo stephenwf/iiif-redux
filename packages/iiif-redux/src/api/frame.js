@@ -1,6 +1,8 @@
 // Frame API.
 import memoize from 'lodash.memoize';
-import { createSelector } from 'reselect';
+import { createSelector, createStructuredSelector } from 'reselect';
+import { DEFAULT_FRAME_ID } from '../spaces/frames';
+import resourceListSelectorFactory from '../utility/resourceListSelectorFactory';
 
 const frame = selector => {
   // Metadata API.
@@ -212,15 +214,37 @@ const frame = selector => {
 
 export default frame;
 
-/*
-// Allows for Tab interface.
-export function focusedFrame() {}
-
 // Allows for Window interface.
-export function frameByIdSelector() {}
+export const frameByIdSelector = memoize(
+  (callable, { getId = null } = {}) => (state, props) => {
+    const id = getId ? getId(props) : props ? props.frameId : DEFAULT_FRAME_ID;
 
-// Allows for lists, defaults to all.
-export function frames(arrayOfFramesSelector = null) {}
+    const selectorOrStructure = callable(frame(s => s.frames.list[id]));
+
+    return (selectorOrStructure &&
+    {}.toString.call(selectorOrStructure) === '[object Function]'
+      ? selector => passThroughState => selector(passThroughState)
+      : createStructuredSelector)(selectorOrStructure)(state);
+  }
+);
+
+const getFocusedFrameId = state => state.frames.focusedFrame;
+
+const getAllFrames = state => state.frames.list;
+
+const getFocusedFrame = createSelector(
+  getFocusedFrameId,
+  getAllFrames,
+  (id, frames) => frames[id]
+);
+
+export const focusedFrame = api =>
+  createStructuredSelector(api(frame(getFocusedFrame)));
+
+export const frames = resourceListSelectorFactory(getAllFrames, frame);
+
+/*
+@todo check feasibility of this. Shouldn't be needed with simplified model.
 
 export function registerFrameExtension(
   name,

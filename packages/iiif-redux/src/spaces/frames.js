@@ -3,6 +3,7 @@ import { createActions, handleActions } from 'redux-actions';
 import update from 'immutability-helper';
 
 const FRAME_CREATE = 'FRAME_CREATE';
+const FRAME_DELETE = 'FRAME_DELETE';
 const FRAME_SET_INITIAL_RESOURCE = 'FRAME_SET_INITIAL_RESOURCE';
 const FRAME_GO_TO_RESOURCE = 'FRAME_GO_TO_RESOURCE';
 const FRAME_GO_BACK = 'FRAME_GO_BACK';
@@ -37,6 +38,7 @@ const requireProps = requiredProps => retValue => {
 
 const {
   frameCreate,
+  frameDelete,
   frameSetInitialResource,
   frameGoToResource,
   frameGoBack,
@@ -58,6 +60,11 @@ const {
       resourceType,
       resourceId,
       config,
+    }),
+
+  [FRAME_DELETE]: frameId =>
+    requireProps(['frameId'])({
+      frameId,
     }),
 
   [FRAME_SET_INITIAL_RESOURCE]: (
@@ -158,6 +165,21 @@ const reducer = handleActions(
               extensions: {},
               config,
             },
+          },
+        },
+      }),
+
+    [frameDelete]: (state, { payload: { frameId } }) =>
+      update(state, {
+        focusedFrame: {
+          $apply: focusedFrame =>
+            focusedFrame === frameId ? null : focusedFrame,
+        },
+        list: {
+          $apply: list => {
+            list[frameId] = null;
+            delete list[frameId];
+            return list;
           },
         },
       }),
@@ -315,6 +337,7 @@ const reducer = handleActions(
 export {
   // constants.
   FRAME_CREATE,
+  FRAME_DELETE,
   FRAME_SET_INITIAL_RESOURCE,
   FRAME_GO_TO_RESOURCE,
   FRAME_GO_BACK,
@@ -327,6 +350,7 @@ export {
   FRAME_PREVIOUS_CANVAS,
   // actions.
   frameCreate,
+  frameDelete,
   frameSetInitialResource,
   frameGoToResource,
   frameGoBack,
@@ -342,4 +366,5 @@ export {
   // saga,
   reducer,
   DEFAULT_STATE,
+  DEFAULT_FRAME_ID,
 };

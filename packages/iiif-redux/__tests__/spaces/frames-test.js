@@ -13,6 +13,7 @@ import {
   frameFocus,
   reducer,
   DEFAULT_STATE,
+  frameDelete,
 } from '../../src/spaces/frames';
 
 describe('spaces/services', () => {
@@ -47,6 +48,11 @@ describe('spaces/services', () => {
           'my-custom-frame'
         )
       ).toMatchSnapshot();
+    });
+    test('frameDelete', () => {
+      expect(() => frameDelete()).toThrowErrorMatchingSnapshot();
+
+      expect(frameDelete('frame-1')).toMatchSnapshot();
     });
     test('frameSetInitialResource', () => {
       expect(
@@ -196,6 +202,35 @@ describe('spaces/services', () => {
             ),
           ])
         ).toMatchSnapshot());
+    });
+    test('frame delete', () => {
+      expect(
+        runActions([
+          frameCreate(
+            {
+              resourceId: 'https://iiif.com/collection-1.json',
+              resourceType: 'collection',
+            },
+            'frame-1'
+          ),
+          frameCreate(
+            {
+              resourceId: 'https://iiif.com/manifest-1.json',
+              resourceType: 'manifest',
+            },
+            'frame-2'
+          ),
+          frameCreate(
+            {
+              resourceId: 'https://iiif.com/manifest-1.json',
+              resourceType: 'manifest',
+            },
+            'frame-3'
+          ),
+          frameDelete('frame-1'),
+          frameDelete('frame-3'),
+        ])
+      ).toMatchSnapshot();
     });
     describe('frameSetInitialResource', () => {
       test('set single resource', () =>
