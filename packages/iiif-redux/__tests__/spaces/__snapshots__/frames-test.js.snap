@@ -89,6 +89,17 @@ Object {
 }
 `;
 
+exports[`spaces/services actions frameDelete 1`] = `"Dev error: missing required prop frameId"`;
+
+exports[`spaces/services actions frameDelete 2`] = `
+Object {
+  "payload": Object {
+    "frameId": "frame-1",
+  },
+  "type": "FRAME_DELETE",
+}
+`;
+
 exports[`spaces/services actions frameDisableExtension 1`] = `"Dev error: missing required prop extensionId"`;
 
 exports[`spaces/services actions frameDisableExtension 2`] = `
@@ -553,6 +564,27 @@ Object {
         Object {
           "id": "https://iiif.com/collection-3.json",
           "schema": "collection",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers frame delete 1`] = `
+Object {
+  "focusedFrame": null,
+  "list": Object {
+    "frame-2": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "frame-2",
+      "path": Array [
+        Object {
+          "id": "https://iiif.com/manifest-1.json",
+          "schema": "manifest",
         },
       ],
     },

@@ -2,6 +2,7 @@
 import memoize from 'lodash.memoize';
 import { createSelector, createStructuredSelector } from 'reselect';
 import { DEFAULT_FRAME_ID } from '../spaces/frames';
+import resourceListSelectorFactory from '../utility/resourceListSelectorFactory';
 
 const frame = selector => {
   // Metadata API.
@@ -227,12 +228,23 @@ export const frameByIdSelector = memoize(
   }
 );
 
-/*
-// Allows for Tab interface.
-export function focusedFrame() {}
+const getFocusedFrameId = state => state.frames.focusedFrame;
 
-// Allows for lists, defaults to all.
-export function frames(arrayOfFramesSelector = null) {}
+const getAllFrames = state => state.frames.list;
+
+const getFocusedFrame = createSelector(
+  getFocusedFrameId,
+  getAllFrames,
+  (id, frames) => frames[id]
+);
+
+export const focusedFrame = api =>
+  createStructuredSelector(api(frame(getFocusedFrame)));
+
+export const frames = resourceListSelectorFactory(getAllFrames, frame);
+
+/*
+@todo check feasibility of this. Shouldn't be needed with simplified model.
 
 export function registerFrameExtension(
   name,
