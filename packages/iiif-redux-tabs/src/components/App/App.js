@@ -8,6 +8,7 @@ import ChromeIcon from '../ChromeIcon/ChromeIcon';
 import ChromeNavigation from '../ChromeNavigation/ChromeNavigation';
 import { sortTabs, tabActions } from '../../spaces/tabs';
 import './App.css';
+import { focusedFrame } from 'iiif-redux/es/api/frame';
 
 class App extends Component {
   state = {
@@ -17,6 +18,12 @@ class App extends Component {
 
   componentWillMount() {
     this.props.createNewTab('new-tab-0', 'new tab', 0);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.focused === null && newProps.allFrameIds.length) {
+      this.props.selectTab(newProps.allFrameIds[0]);
+    }
   }
 
   onSortEnd = ({ oldIndex, newIndex }) => {
@@ -37,6 +44,10 @@ class App extends Component {
     this.props.closeTab(id);
   };
 
+  handleSearch = text => {
+    this.props.setResource(this.props.focused, text, 'collection');
+  };
+
   render() {
     const { focused, allFrames } = this.props;
     const tabs = sortTabs(allFrames);
@@ -51,6 +62,12 @@ class App extends Component {
           onClose={this.onClose}
         />
         <ChromeNavigation
+          searchValue={
+            this.props.currentResource
+              ? this.props.currentResource.id || ''
+              : ''
+          }
+          onSearch={this.handleSearch}
           left={() => [
             <ChromeIcon key="left" type="left" />,
             <ChromeIcon key="right" type="right" />,
@@ -59,6 +76,38 @@ class App extends Component {
           ]}
           right={() => <ChromeIcon type="star" />}
         />
+
+        {this.props.currentResource && this.props.currentResource.id ? (
+          <div
+            style={{
+              color: '#fff',
+              marginTop: 100,
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              width: '50%',
+            }}
+          >
+            Current resource:
+            <h1 style={{ color: '#fff' }}>{this.props.currentResource.id}</h1>
+            <p>
+              Type: <strong>{this.props.currentResource.type}</strong>
+            </p>
+          </div>
+        ) : (
+          <div
+            style={{
+              color: '#fff',
+              marginTop: 100,
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              width: '50%',
+            }}
+          >
+            <h1 style={{ color: '#999' }}>
+              Enter a collection URL and hit enter...
+            </h1>
+          </div>
+        )}
       </div>
     );
   }
@@ -66,6 +115,10 @@ class App extends Component {
 
 export default connect(
   createStructuredSelector({
+    currentResource: focusedFrame(api => ({
+      id: api.getCurrentResourceId,
+      type: api.getCurrentResourceType,
+    })),
     focused: getFocusedFrameId,
     allFrameIds: getAllFrameIds,
     allFrames: frames(getAllFrameIds, singleFrame => ({

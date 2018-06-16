@@ -32,11 +32,11 @@ const frame = selector => {
   );
   const getCurrentResourceId = createSelector(
     getCurrentResource,
-    currentResource => currentResource.id
+    currentResource => (currentResource ? currentResource.id : null)
   );
   const getCurrentResourceType = createSelector(
     getCurrentResource,
-    currentResource => currentResource.schema
+    currentResource => (currentResource ? currentResource.schema : null)
   );
   const getCurrentResourceByType = memoize(schema =>
     createSelector(getCurrentPath, path =>
@@ -217,7 +217,11 @@ export default frame;
 // Allows for Window interface.
 export const frameByIdSelector = memoize(
   (callable, { getId = null } = {}) => (state, props) => {
-    const id = getId ? getId(props) : props ? props.frameId : DEFAULT_FRAME_ID;
+    const id = getId
+      ? getId(state, props)
+      : props
+        ? props.frameId
+        : DEFAULT_FRAME_ID;
 
     const selectorOrStructure = callable(frame(s => s.frames.list[id]));
 
@@ -242,8 +246,13 @@ export const getFocusedFrame = createSelector(
   (id, frames) => frames[id]
 );
 
-export const focusedFrame = api =>
-  createStructuredSelector(api(frame(getFocusedFrame)));
+export const focusedFrame = api => (state, props) => {
+  const focusedFrameId = getFocusedFrameId(state);
+  if (!focusedFrameId) {
+    return null;
+  }
+  return createStructuredSelector(api(frame(getFocusedFrame)))(state, props);
+};
 
 export const frames = resourceListSelectorFactory(getAllFrames, frame);
 

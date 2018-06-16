@@ -4,6 +4,8 @@ import {
   frameDelete,
   frameEnableExtension,
   frameFocus,
+  frameGoToResource,
+  frameSetInitialResource,
 } from '../../../iiif-redux/src/spaces/frames';
 import { arrayMove } from 'react-sortable-hoc';
 
@@ -48,6 +50,12 @@ function updateSortOrder(dispatch) {
   };
 }
 
+export function setResource(dispatch) {
+  return (frameId, resourceId, resourceType) => {
+    dispatch(frameSetInitialResource({ resourceId, resourceType }, frameId));
+  };
+}
+
 export function sortTabs(allFrames) {
   return allFrames
     .map(frame => ({
@@ -72,5 +80,6 @@ export function tabActions(dispatch) {
     selectTab: selectTab(dispatch),
     closeTab: closeTab(dispatch),
     updateSortOrder: updateSortOrder(dispatch),
+    setResource: setResource(dispatch),
   };
 }
