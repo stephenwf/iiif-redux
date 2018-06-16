@@ -16,6 +16,7 @@
     "antd": "3.6.2",
     "chrome-tabs": "^1.0.0",
     "iiif-redux": "1.0.0",
+    "nwb-sass": "^0.8.4",
     "react": "16.4.1",
     "react-dom": "16.4.1",
     "react-redux": "5.0.7",

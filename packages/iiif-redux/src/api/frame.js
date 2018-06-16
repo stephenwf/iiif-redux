@@ -113,13 +113,13 @@ const frame = selector => {
       );
     }
   );
-  const getExtensionById = memoize(id =>
+  const getExtensionById = id =>
     createSelector(
-      getAllExtensions,
+      getAllExtensionsInternal,
       state => state,
       (allExtensions, state) => mapSingleExtension(state, allExtensions, id)
-    )
-  );
+    );
+
   const getEnabledExtensionIds = createSelector(
     selector,
     currentFrame => currentFrame.enabledExtensions
@@ -228,11 +228,15 @@ export const frameByIdSelector = memoize(
   }
 );
 
-const getFocusedFrameId = state => state.frames.focusedFrame;
+export const getFocusedFrameId = state => state.frames.focusedFrame;
 
-const getAllFrames = state => state.frames.list;
+export const getAllFrames = state => state.frames.list;
 
-const getFocusedFrame = createSelector(
+export const getAllFrameIds = createSelector(getAllFrames, frames =>
+  Object.keys(frames)
+);
+
+export const getFocusedFrame = createSelector(
   getFocusedFrameId,
   getAllFrames,
   (id, frames) => frames[id]

@@ -1,94 +1,81 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector, createSelector } from 'reselect';
+import { frames, getAllFrameIds } from 'iiif-redux/es/api/frame';
+import { getFocusedFrameId } from 'iiif-redux/es/api/frame';
 import ChromeTabs from '../ChromeTabs/ChromeTabs';
-import { arrayMove } from 'react-sortable-hoc';
+import ChromeIcon from '../ChromeIcon/ChromeIcon';
+import ChromeNavigation from '../ChromeNavigation/ChromeNavigation';
+import { sortTabs, tabActions } from '../../spaces/tabs';
 import './App.css';
-import { Icon } from 'antd';
 
 class App extends Component {
   state = {
     tabs: [{ id: 0, value: 'testing - 1' }, { id: 1, value: 'testing - 2' }],
+    current: 0,
   };
 
+  componentWillMount() {
+    this.props.createNewTab('new-tab-0', 'new tab', 0);
+  }
+
   onSortEnd = ({ oldIndex, newIndex }) => {
-    this.setState(state => ({
-      tabs: arrayMove(state.tabs, oldIndex, newIndex),
-    }));
+    this.props.updateSortOrder(this.props.allFrames, oldIndex, newIndex);
+  };
+
+  addNewTab = () => {
+    const num = Math.round(Math.random() * 100000);
+    const id = `new-tab-${num}`;
+    this.props.createNewTab(id, 'new tab', this.props.allFrames.length);
+  };
+
+  onClickTab = id => {
+    this.props.selectTab(id);
+  };
+
+  onClose = id => {
+    this.props.closeTab(id);
   };
 
   render() {
+    const { focused, allFrames } = this.props;
+    const tabs = sortTabs(allFrames);
+
     return (
       <div>
-        <ChromeTabs tabs={this.state.tabs} onSortEnd={this.onSortEnd} />
-        <div style={{ height: 35, background: '#505050', display: 'flex' }}>
-          <div
-            onClick={() => {
-              this.setState({
-                tabs: [
-                  ...this.state.tabs,
-                  {
-                    id: this.state.tabs.length + 1,
-                    value: `testing - ${this.state.tabs.length + 1}`,
-                  },
-                ],
-              });
-            }}
-            style={{
-              lineHeight: '30px',
-              fontSize: 15,
-              color: '#fff',
-              width: 30,
-              height: 30,
-              textAlign: 'center',
-            }}
-          >
-            <Icon type="left" />
-          </div>
-          <div
-            style={{
-              lineHeight: '30px',
-              fontSize: 15,
-              color: '#fff',
-              width: 30,
-              height: 30,
-              textAlign: 'center',
-            }}
-          >
-            <Icon type="right" />
-          </div>
-          <div
-            style={{
-              lineHeight: '30px',
-              fontSize: 15,
-              color: '#fff',
-              width: 30,
-              height: 30,
-              textAlign: 'center',
-            }}
-          >
-            <Icon type="reload" />
-          </div>
-          <input
-            type="text"
-            style={{
-              flex: 1,
-              height: 28,
-              margin: 5,
-              marginTop: 2,
-              fontSize: 12,
-              padding: 0,
-              paddingLeft: 10,
-              color: '#fff',
-              lineHeight: 35,
-              border: 'none',
-              background: '#222',
-              outline: 'none',
-              borderRadius: 3,
-            }}
-          />
-        </div>
+        <ChromeTabs
+          tabs={tabs}
+          current={focused}
+          onClick={this.onClickTab}
+          onSortEnd={this.onSortEnd}
+          onClose={this.onClose}
+        />
+        <ChromeNavigation
+          left={() => [
+            <ChromeIcon key="left" type="left" />,
+            <ChromeIcon key="right" type="right" />,
+            <ChromeIcon key="reload" type="reload" />,
+            <ChromeIcon key="plus" type="plus" onClick={this.addNewTab} />,
+          ]}
+          right={() => <ChromeIcon type="star" />}
+        />
       </div>
     );
   }
 }
 
-export default App;
+export default connect(
+  createStructuredSelector({
+    focused: getFocusedFrameId,
+    allFrameIds: getAllFrameIds,
+    allFrames: frames(getAllFrameIds, singleFrame => ({
+      id: singleFrame.getId,
+      enabled: singleFrame.getEnabledExtensions,
+      tabState: createSelector(
+        singleFrame.getExtensionById('tabState'),
+        tabState => tabState.config
+      ),
+    })),
+  }),
+  tabActions
+)(App);

@@ -179,7 +179,7 @@ const reducer = handleActions(
           $apply: list => {
             list[frameId] = null;
             delete list[frameId];
-            return list;
+            return { ...list };
           },
         },
       }),
@@ -297,7 +297,7 @@ const reducer = handleActions(
         list: {
           [frameId]: {
             extensions: {
-              [extensionId]: { $set: extensionConfig },
+              [extensionId]: { $merge: extensionConfig },
             },
           },
         },

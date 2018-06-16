@@ -1,0 +1,19 @@
+.chrome-navigation {
+  height: 35px;
+  background: #505050;
+  display: flex;
+}
+
+.chrome-navigation__input {
+  flex: 1;
+  height: 28px;
+  margin: 2px 5px 5px;
+  font-size: 12px;
+  padding: 0 0 0 10px;
+  color: #fff;
+  line-height: 35px;
+  border: none;
+  background: #222;
+  outline: none;
+  border-radius: 3px;
+}
