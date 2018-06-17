@@ -76,6 +76,7 @@ export function sortTabs(allFrames) {
 
 export function tabActions(dispatch) {
   return {
+    dispatch,
     createNewTab: createNewTab(dispatch),
     selectTab: selectTab(dispatch),
     closeTab: closeTab(dispatch),

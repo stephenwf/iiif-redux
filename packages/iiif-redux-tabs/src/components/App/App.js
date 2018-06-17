@@ -9,6 +9,8 @@ import ChromeNavigation from '../ChromeNavigation/ChromeNavigation';
 import { sortTabs, tabActions } from '../../spaces/tabs';
 import './App.css';
 import { focusedFrame } from 'iiif-redux/es/api/frame';
+import { iiifResourceRequestUnknown } from '../../../../iiif-redux/src/spaces/iiif-resource';
+import resource from '../../../../iiif-redux/src/api/resource';
 
 class App extends Component {
   state = {
@@ -45,6 +47,7 @@ class App extends Component {
   };
 
   handleSearch = text => {
+    this.props.dispatch(iiifResourceRequestUnknown(text));
     this.props.setResource(this.props.focused, text, 'collection');
   };
 
@@ -77,6 +80,15 @@ class App extends Component {
           right={() => <ChromeIcon type="star" />}
         />
 
+        {this.props.currentResource &&
+        this.props.currentResource.entity &&
+        this.props.currentResource.entity.error ? (
+          <div>
+            <h1>Something went wrong</h1>
+            <p>{this.props.currentResource.entity.error}</p>
+          </div>
+        ) : null}
+
         {this.props.currentResource && this.props.currentResource.id ? (
           <div
             style={{
@@ -87,11 +99,23 @@ class App extends Component {
               width: '50%',
             }}
           >
-            Current resource:
-            <h1 style={{ color: '#fff' }}>{this.props.currentResource.id}</h1>
-            <p>
-              Type: <strong>{this.props.currentResource.type}</strong>
-            </p>
+            {this.props.currentResource.entity ? (
+              <div>
+                <h2 style={{ color: '#fff' }}>
+                  {this.props.currentResource.entity.label[0]['@value']}
+                </h2>
+              </div>
+            ) : (
+              <div>
+                Loading resource:
+                <h1 style={{ color: '#fff' }}>
+                  {this.props.currentResource.id}
+                </h1>
+                <p>
+                  Type: <strong>{this.props.currentResource.type}</strong>
+                </p>
+              </div>
+            )}
           </div>
         ) : (
           <div
@@ -118,6 +142,12 @@ export default connect(
     currentResource: focusedFrame(api => ({
       id: api.getCurrentResourceId,
       type: api.getCurrentResourceType,
+      entity: resource(api.getCurrentResource, {
+        collection: colApi => ({
+          id: colApi.getId,
+          label: colApi.getLabel,
+        }),
+      }),
     })),
     focused: getFocusedFrameId,
     allFrameIds: getAllFrameIds,
