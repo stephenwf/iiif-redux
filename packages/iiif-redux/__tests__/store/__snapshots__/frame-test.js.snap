@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iiif/store frames frame resources without types will automatically be searched for and added: after 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://view.nls.uk/manifest/7446/74464117/manifest.json",
+          "schema": "manifest",
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`iiif/store frames frame resources without types will automatically be searched for and added: before 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [],
+      "extensions": Object {},
+      "id": "default-frame",
+      "path": Array [
+        Object {
+          "id": "https://view.nls.uk/manifest/7446/74464117/manifest.json",
+          "schema": undefined,
+        },
+      ],
+    },
+  },
+}
+`;

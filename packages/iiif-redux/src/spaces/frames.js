@@ -1,6 +1,9 @@
 // Frames API.
 import { createActions, handleActions } from 'redux-actions';
 import update from 'immutability-helper';
+import { put, select, takeEvery, take } from 'redux-saga/effects';
+import { IIIF_RESOURCE_SUCCESS } from './iiif-resource';
+import { RESOURCE_TYPE_MAP } from '../schema/presentation2';
 
 const FRAME_CREATE = 'FRAME_CREATE';
 const FRAME_DELETE = 'FRAME_DELETE';
@@ -71,7 +74,7 @@ const {
     { resourceType, resourceId } = {},
     frameId = DEFAULT_FRAME_ID
   ) =>
-    requireProps(['resourceType', 'frameId', 'resourceId'])({
+    requireProps(['frameId', 'resourceId'])({
       frameId,
       resourceType,
       resourceId,
@@ -332,6 +335,51 @@ const reducer = handleActions(
   DEFAULT_STATE
 );
 
+/**
+ * Ensure type saga.
+ *
+ * This is required if an unknown resource type is selected. It will usually
+ * be imported as "unknown" and then selected. Its likely that at this point
+ * no one knows what the resource type is.
+ *
+ * This saga waits for the resource type to be known, from a subset of
+ * dereferenced types and will re-send the selectResource with the correct type.
+ *
+ * This is especially useful for importing user input, without them providing
+ * a resource type.
+ */
+function* ensureType({ payload: { frameId, resourceId, resourceType } }) {
+  if (resourceId && !resourceType) {
+    const resourceInState = currentState =>
+      currentState.resources.collections[resourceId] ||
+      currentState.resources.manifests[resourceId]; // @todo more?
+
+    let state = yield select(resourceInState);
+
+    while (!state) {
+      const {
+        payload: { resourceId: newResourceId },
+      } = yield take(IIIF_RESOURCE_SUCCESS);
+
+      /* istanbul ignore else */
+      if (resourceId === newResourceId) {
+        state = yield select(resourceInState);
+      }
+    }
+
+    yield put(
+      frameSetInitialResource(
+        { resourceId, resourceType: RESOURCE_TYPE_MAP[state['@type']] },
+        frameId
+      )
+    );
+  }
+}
+
+function* saga() {
+  yield takeEvery(FRAME_SET_INITIAL_RESOURCE, ensureType);
+}
+
 //function* saga() {
 // frameGoBackToType -> go to correct resource.
 // frameNextCanvas -> go to next canvas.
@@ -367,7 +415,7 @@ export {
   framePreviousCanvas,
   frameFocus,
   // redux.
-  // saga,
+  saga,
   reducer,
   DEFAULT_STATE,
   DEFAULT_FRAME_ID,

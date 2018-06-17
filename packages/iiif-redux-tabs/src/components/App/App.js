@@ -22,7 +22,7 @@ class App extends Component {
     this.props.createNewTab('new-tab-0', 'new tab', 0);
   }
 
-  componentWillReceiveProps(newProps) {
+  componentWillReceiveProps(newProps, newContext) {
     if (newProps.focused === null && newProps.allFrameIds.length) {
       this.props.selectTab(newProps.allFrameIds[0]);
     }
@@ -48,7 +48,10 @@ class App extends Component {
 
   handleSearch = text => {
     this.props.dispatch(iiifResourceRequestUnknown(text));
-    this.props.setResource(this.props.focused, text, 'collection');
+    this.props.setResource(this.props.focused, text);
+    this.setState({
+      pendingResource: text,
+    });
   };
 
   render() {
@@ -83,13 +86,24 @@ class App extends Component {
         {this.props.currentResource &&
         this.props.currentResource.entity &&
         this.props.currentResource.entity.error ? (
-          <div>
-            <h1>Something went wrong</h1>
+          <div
+            style={{
+              color: '#fff',
+              marginTop: 100,
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              width: '50%',
+            }}
+          >
+            <h1 style={{ color: '#fff' }}>Something went wrong</h1>
             <p>{this.props.currentResource.entity.error}</p>
           </div>
         ) : null}
 
-        {this.props.currentResource && this.props.currentResource.id ? (
+        {this.props.currentResource &&
+        this.props.currentResource.id &&
+        this.props.currentResource.entity &&
+        !this.props.currentResource.entity.error ? (
           <div
             style={{
               color: '#fff',
@@ -146,6 +160,10 @@ export default connect(
         collection: colApi => ({
           id: colApi.getId,
           label: colApi.getLabel,
+        }),
+        manifest: manApi => ({
+          id: manApi.getId,
+          label: manApi.getLabel,
         }),
       }),
     })),

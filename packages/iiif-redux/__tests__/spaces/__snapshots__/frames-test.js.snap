@@ -337,7 +337,7 @@ Object {
 }
 `;
 
-exports[`spaces/services actions frameSetInitialResource 2`] = `"Dev error: missing required prop resourceType"`;
+exports[`spaces/services actions frameSetInitialResource 2`] = `"Dev error: missing required prop resourceId"`;
 
 exports[`spaces/services actions frameSetInitialResource 3`] = `
 Object {

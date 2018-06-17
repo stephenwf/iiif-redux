@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './ChromeNavigation.css';
 
 class ChromeNavigation extends Component {
-  state = { textValue: '' };
+  state = { searchValue: '' };
 
   handleKeyUp = e => {
     if (e.keyCode === 13) {
