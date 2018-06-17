@@ -13,11 +13,6 @@ import { iiifResourceRequestUnknown } from '../../../../iiif-redux/src/spaces/ii
 import resource from '../../../../iiif-redux/src/api/resource';
 
 class App extends Component {
-  state = {
-    tabs: [{ id: 0, value: 'testing - 1' }, { id: 1, value: 'testing - 2' }],
-    current: 0,
-  };
-
   componentWillMount() {
     this.props.createNewTab('new-tab-0', 'new tab', 0);
   }
@@ -153,25 +148,36 @@ class App extends Component {
 
 export default connect(
   createStructuredSelector({
+    // Currently tabs resource.
     currentResource: focusedFrame(api => ({
       id: api.getCurrentResourceId,
       type: api.getCurrentResourceType,
+
+      // The resource itself.
       entity: resource(api.getCurrentResource, {
+        // When its a collection, we map like this:
         collection: colApi => ({
           id: colApi.getId,
           label: colApi.getLabel,
         }),
+        // When its a manifest, we map like this:
         manifest: manApi => ({
           id: manApi.getId,
           label: manApi.getLabel,
         }),
       }),
     })),
+
+    // Currently focused tab
     focused: getFocusedFrameId,
     allFrameIds: getAllFrameIds,
+
+    // All tabs.
     allFrames: frames(getAllFrameIds, singleFrame => ({
       id: singleFrame.getId,
       enabled: singleFrame.getEnabledExtensions,
+
+      // Custom extension for tab state
       tabState: createSelector(
         singleFrame.getExtensionById('tabState'),
         tabState => tabState.config
