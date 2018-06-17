@@ -44,7 +44,7 @@ function updateSortOrder(dispatch) {
 
     newOrder.forEach((tab, index) => {
       dispatch(
-        frameConfigureExtension('tabState', { tabIndex: index }, tab.id)
+        frameConfigureExtension('tabState', { tabIndex: index }, tab.id, true)
       );
     });
   };

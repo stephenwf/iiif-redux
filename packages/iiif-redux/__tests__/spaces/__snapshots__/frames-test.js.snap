@@ -8,6 +8,7 @@ Object {
     "extensionConfig": undefined,
     "extensionId": "extension-id-1",
     "frameId": "default-frame",
+    "merge": false,
   },
   "type": "FRAME_CONFIGURE_EXTENSION",
 }
@@ -21,6 +22,7 @@ Object {
     },
     "extensionId": "extension-id-1",
     "frameId": "default-frame",
+    "merge": false,
   },
   "type": "FRAME_CONFIGURE_EXTENSION",
 }
@@ -29,9 +31,24 @@ Object {
 exports[`spaces/services actions frameConfigureExtension 4`] = `
 Object {
   "payload": Object {
+    "extensionConfig": Object {
+      "someConfig": "someValue",
+    },
+    "extensionId": "extension-id-1",
+    "frameId": "my-custom-frame",
+    "merge": true,
+  },
+  "type": "FRAME_CONFIGURE_EXTENSION",
+}
+`;
+
+exports[`spaces/services actions frameConfigureExtension 5`] = `
+Object {
+  "payload": Object {
     "extensionConfig": Object {},
     "extensionId": "extension-id-1",
     "frameId": "my-custom-frame",
+    "merge": false,
   },
   "type": "FRAME_CONFIGURE_EXTENSION",
 }
@@ -587,6 +604,28 @@ Object {
           "schema": "manifest",
         },
       ],
+    },
+  },
+}
+`;
+
+exports[`spaces/services reducers frameConfigureExtension 1`] = `
+Object {
+  "focusedFrame": "default-frame",
+  "list": Object {
+    "default-frame": Object {
+      "config": Object {},
+      "current": 0,
+      "enabledExtensions": Array [],
+      "extensions": Object {
+        "extension-1": Object {
+          "key1": 1,
+          "key2": 4,
+          "key3": 3,
+        },
+      },
+      "id": "default-frame",
+      "path": Array [],
     },
   },
 }

@@ -147,6 +147,15 @@ describe('spaces/services', () => {
       ).toMatchSnapshot();
 
       expect(
+        frameConfigureExtension(
+          'extension-id-1',
+          { someConfig: 'someValue' },
+          'my-custom-frame',
+          true
+        )
+      ).toMatchSnapshot();
+
+      expect(
         frameConfigureExtension('extension-id-1', {}, 'my-custom-frame')
       ).toMatchSnapshot();
     });
@@ -559,6 +568,25 @@ describe('spaces/services', () => {
             'frame-3'
           ),
           frameFocus('frame-2'),
+        ])
+      ).toMatchSnapshot();
+    });
+    test('frameConfigureExtension', () => {
+      expect(
+        runActions([
+          frameCreate(),
+          frameConfigureExtension('extension-1', { key1: 0 }, 'default-frame'),
+          frameConfigureExtension(
+            'extension-1',
+            { key1: 1, key2: 2 },
+            'default-frame'
+          ),
+          frameConfigureExtension(
+            'extension-1',
+            { key3: 3, key2: 4 },
+            'default-frame',
+            true
+          ),
         ])
       ).toMatchSnapshot();
     });

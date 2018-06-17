@@ -114,12 +114,14 @@ const {
   [FRAME_CONFIGURE_EXTENSION]: (
     extensionId,
     extensionConfig,
-    frameId = DEFAULT_FRAME_ID
+    frameId = DEFAULT_FRAME_ID,
+    merge = false
   ) =>
     requireProps(['extensionId', 'frameId'])({
       extensionId,
       extensionConfig,
       frameId,
+      merge,
     }),
 
   [FRAME_DISABLE_EXTENSION]: (extensionId, frameId = DEFAULT_FRAME_ID) =>
@@ -291,13 +293,15 @@ const reducer = handleActions(
 
     [frameConfigureExtension]: (
       state,
-      { payload: { extensionId, extensionConfig, frameId } }
+      { payload: { extensionId, extensionConfig, frameId, merge } }
     ) =>
       update(state, {
         list: {
           [frameId]: {
             extensions: {
-              [extensionId]: { $merge: extensionConfig },
+              [extensionId]: merge
+                ? { $merge: extensionConfig }
+                : { $set: extensionConfig },
             },
           },
         },

@@ -8,7 +8,11 @@ import {
   frameGoBack,
   frameGoToResource,
 } from '../../src/spaces/frames';
-import { frameByIdSelector } from '../../src/api/frame';
+import {
+  focusedFrame,
+  frameByIdSelector,
+  getAllFrameIds,
+} from '../../src/api/frame';
 import { collection, manifest } from '../../src/schema/presentation2';
 import resource from '../../src/api/resource';
 
@@ -213,5 +217,37 @@ describe('iiif/store frames', () => {
         resource: resource(api.getCurrentResource, {}),
       }))(store.getState())
     ).toEqual({ resource: null });
+  });
+
+  test('getAllFrameIds', () => {
+    const store = createStore();
+
+    store.dispatch(frameCreate({}, 'frame-1'));
+    store.dispatch(frameCreate({}, 'frame-2'));
+    store.dispatch(frameCreate({}, 'frame-3'));
+
+    expect(getAllFrameIds(store.getState())).toEqual([
+      'frame-1',
+      'frame-2',
+      'frame-3',
+    ]);
+  });
+
+  test('focusedFrame', () => {
+    const store = createStore();
+
+    expect(
+      focusedFrame(api => ({
+        id: api.getId,
+      }))(store.getState())
+    ).toEqual(null);
+
+    store.dispatch(frameCreate({}, 'frame-1'));
+
+    expect(
+      focusedFrame(api => ({
+        id: api.getId,
+      }))(store.getState())
+    ).toEqual({ id: 'frame-1' });
   });
 });
