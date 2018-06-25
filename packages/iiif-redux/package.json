@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@types/reselect": "2.2.0",
-    "babel-jest": "23.0.1",
+    "babel-jest": "23.2.0",
     "nwb": "0.21.5",
     "nwb-watch": "1.0.0",
     "react-test-renderer": "16.4.1"
