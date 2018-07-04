@@ -4,7 +4,7 @@
   ],
   "private": true,
   "devDependencies": {
-    "@fesk/module-release": "0.0.2",
+    "@fesk/module-release": "0.0.3",
     "babel-eslint": "8.2.5",
     "eslint": "4.19.1",
     "eslint-plugin-babel": "5.1.0",
