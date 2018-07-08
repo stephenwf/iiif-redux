@@ -1,8 +1,16 @@
 import { schema, normalize } from 'normalizr';
+import {
+  annotationList,
+  imageResource,
+  layer,
+  sequence,
+} from './presentation2';
+import { compose } from 'redux';
+import addMissingIds from '../compat/addMissingIds';
 
 function createEntity(name) {
   const options = {
-    idAttribute: '@id',
+    idAttribute: 'id',
   };
 
   return new schema.Entity(name, {}, options);
@@ -15,13 +23,15 @@ const annotation = createEntity('annotations'); // 4
 const annotationPage = createEntity('annotationPages'); // 5
 const annotationCollection = createEntity('annotationCollection'); // 6
 const range = createEntity('ranges'); // 7
-const imageContent = createEntity('imageContents'); // 8
-const otherContent = createEntity('otherContents'); // 9
-const service = createEntity('services');
+const contentResource = createEntity('contentResources'); // 8
+const choice = createEntity('choices'); // 9
+const canvasReference = createEntity('canvasReference'); // 10
 
 // Unofficial types.
 const externalResource = createEntity('externalResources');
-const choice = createEntity('choices');
+const service = createEntity('services');
+
+// Union types
 const partOf = new schema.Array(
   {
     collection,
@@ -43,17 +53,106 @@ const partOf = new schema.Array(
   }
 );
 
-const rangeMember = new schema.Union(
+const annotationBody = new schema.Union(
+  {
+    contentResource,
+    externalResource,
+    choice,
+  },
+  input => {
+    switch (input.type) {
+      case 'Application':
+      case 'Dataset':
+      case 'Image':
+      case 'Sound':
+      case 'Text':
+      case 'Video':
+      case 'TextualBody':
+        return 'contentResource';
+      case 'Choice':
+        return 'choice';
+
+      // @todo more content to add.
+      default:
+        return 'externalResource';
+    }
+  }
+);
+
+const rangeItem = new schema.Union(
   {
     canvas,
     range,
+    canvasReference,
   },
-  input => (input['@type'] === 'sc:Canvas' ? 'canvas' : 'range')
+  input => {
+    switch (input.type) {
+      case 'Canvas':
+        return 'canvas';
+      case 'Range':
+        return 'range';
+      case 'SpecificResource':
+      default:
+        // @todo default?
+        return 'canvasReference';
+    }
+  }
 );
 
-const canvasReference = createEntity('canvasReference');
-
-// @todo add in choice.
+// Root resource
+/**
+ * Dereferencable resources:
+ *
+ * - Collection (Required)
+ * - Manifest (Required)
+ * - Canvas (Recommended)
+ * - Annotation (Recommended)
+ * - AnnotationPage (Required)
+ * - AnnotationCollection (Optional)
+ * - Content Resource (Required)
+ * - Range (Optional)
+ */
+const RESOURCE_TYPE_MAP = {
+  Collection: 'collection',
+  Sequence: 'sequence',
+  Manifest: 'manifest',
+  Canvas: 'canvas',
+  AnnotationList: 'annotationList',
+  Annotation: 'annotation',
+  Range: 'range',
+  Layer: 'layer',
+  // Content resources.
+  Application: 'contentResource',
+  Dataset: 'contentResource',
+  Image: 'contentResource',
+  Sound: 'contentResource',
+  Text: 'contentResource',
+  Video: 'contentResource',
+  TextualBody: 'contentResource',
+};
+const resource = new schema.Union(
+  {
+    collection,
+    sequence,
+    manifest,
+    canvas,
+    annotationList,
+    annotation,
+    range,
+    layer,
+    imageResource,
+    service,
+  },
+  entity => {
+    if (RESOURCE_TYPE_MAP[entity.type]) {
+      return RESOURCE_TYPE_MAP[entity.type];
+    }
+    if (entity.profile) {
+      return 'service';
+    }
+    throw Error('Unknown entity type');
+  }
+);
 
 // ===========================================================================
 // 1) Collections
@@ -77,7 +176,7 @@ collection.define({
   partOf: partOf,
 
   // Extra.
-  thumbnail: [imageContent],
+  thumbnail: [contentResource],
   posterCanvas: canvas,
 });
 
@@ -85,7 +184,7 @@ collection.define({
 // 2) Manifests
 // ===========================================================================
 manifest.define({
-  items: [canvases],
+  items: [canvas],
   structures: [range],
   annotations: [annotationPage],
 
@@ -98,7 +197,7 @@ manifest.define({
   partOf: partOf,
 
   // Extra
-  thumbnail: [imageContent],
+  thumbnail: [contentResource],
   start: canvas,
   posterCanvas: canvas,
 });
@@ -120,7 +219,7 @@ canvas.define({
   partOf: partOf,
 
   // Extra
-  thumbnail: [imageContent],
+  thumbnail: [contentResource],
   posterCanvas: canvas,
 });
 
@@ -129,25 +228,7 @@ canvas.define({
 // ===========================================================================
 annotation.define({
   // Structural.
-  body: new schema.Union(
-    {
-      imageContent,
-      externalResource,
-      choice,
-    },
-    input => {
-      switch (input.type) {
-        case 'Image':
-          return 'imageContent';
-        case 'Choice':
-          return 'choice';
-
-        // @todo more content to add.
-        default:
-          return 'externalResource';
-      }
-    }
-  ),
+  body: annotationBody,
   target: canvas,
 
   // Linking
@@ -158,7 +239,7 @@ annotation.define({
   partOf: partOf,
 
   // Extra
-  thumbnail: [imageContent],
+  thumbnail: [contentResource],
 });
 
 // ===========================================================================
@@ -176,7 +257,11 @@ annotationCollection.define({
   partOf: partOf,
 
   // extra
-  thumbnail: [imageContent],
+  thumbnail: [contentResource],
+
+  // Paging.
+  first: annotationPage,
+  last: annotationPage,
 });
 
 // ===========================================================================
@@ -192,38 +277,84 @@ annotationPage.define({
   homepage: [externalResource],
   rendering: [externalResource],
   partOf: partOf,
+
+  // Extra
+  thumbnail: [contentResource],
+
+  // Paging.
+  next: annotationPage,
+  previous: annotationPage,
 });
 
 // ===========================================================================
 // 7) Range
 // ===========================================================================
+range.define({
+  // Structural.
+  items: [rangeItem],
 
-// Range: posterCanvas: canvas,
-// Range: supplementary: annotationCollection
+  // Linking
+  seeAlso: [externalResource],
+  service: [service],
+  related: [externalResource],
+  rendering: [externalResource],
+  partOf: partOf,
 
-// ===========================================================================
-// 8) Image Content
-// ===========================================================================
-
-// ===========================================================================
-// 9) Other Content
-// ===========================================================================
-
-// ===========================================================================
-// 10) Service
-// ===========================================================================
-
-// ===========================================================================
-// 11) External Resource
-// ===========================================================================
+  // Extra
+  thumbnail: [contentResource],
+  supplementary: annotationCollection,
+});
 
 // ===========================================================================
-// 12) Choice
+// 8) Content Resource
 // ===========================================================================
+contentResource.define({
+  // Linking.
+  service: [service],
+  seeAlso: [externalResource],
+  related: [externalResource],
+  rendering: [externalResource],
+  partOf: partOf,
+});
 
 // ===========================================================================
-// 13) Canvas Reference
+// 9) Choice
+// ===========================================================================
+choice.define({
+  default: annotation,
+  item: [annotation],
+});
+
+// ===========================================================================
+// 10) Canvas Reference
 // ===========================================================================
 canvasReference.define({
   source: canvas,
 });
+
+const preprocess = compose(addMissingIds(3.0));
+
+const normalizeResource = (rawResource, customSchema = resource) =>
+  normalize(preprocess(rawResource), customSchema);
+
+export {
+  collection,
+  manifest,
+  canvas,
+  annotation,
+  annotationPage,
+  annotationCollection,
+  range,
+  contentResource,
+  choice,
+  canvasReference,
+  externalResource,
+  service,
+  partOf,
+  annotationBody,
+  rangeItem,
+  RESOURCE_TYPE_MAP,
+  resource,
+  preprocess,
+  normalizeResource as normalize,
+};

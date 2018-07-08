@@ -330,7 +330,7 @@ choice.define({
 const preprocess = compose(
   moveStartCanvasToSequence,
   preprocessLinkedEntities,
-  addMissingIds
+  addMissingIds(2.1)
 );
 
 const normalizeResource = (rawResource, customSchema = resource) =>
