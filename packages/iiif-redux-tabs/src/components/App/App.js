@@ -113,6 +113,9 @@ class App extends Component {
                 <h2 style={{ color: '#fff' }}>
                   {this.props.currentResource.entity.label[0]['@value']}
                 </h2>
+                <p>
+                  Type: <strong>{this.props.currentResource.type}</strong>
+                </p>
               </div>
             ) : (
               <div>

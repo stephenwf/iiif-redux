@@ -112,31 +112,32 @@ class Collection extends Component {
   }
 }
 
-export default resourceLoader(
-  connect(
-    collectionByIdSelector(
-      currentCollection => ({
-        id: currentCollection.getId,
-        type: currentCollection.getType,
-        viewingHint: currentCollection.getViewingHint,
-        navDate: currentCollection.getNavDate,
-        collections: currentCollection.getCollections,
-        manifests: currentCollection.getManifests,
-        members: currentCollection.getMemberIds,
-        otherContent: currentCollection.getOtherContent,
-        label: currentCollection.getLabel,
-        description: currentCollection.getDescription,
-        metadata: currentCollection.getMetadata,
-        attribution: currentCollection.getAttribution,
-        logo: currentCollection.getLogo,
-        license: currentCollection.getLicense,
-        thumbnail: currentCollection.getThumbnail,
-        seeAlso: currentCollection.getSeeAlso,
-        service: currentCollection.getService,
-        related: currentCollection.getRelated,
-        within: currentCollection.getWithin,
-      }),
-      { dereference: true }
-    )
-  )(Collection)
-);
+const ConnectedCollection = connect(
+  collectionByIdSelector(
+    currentCollection => ({
+      id: currentCollection.getId,
+      type: currentCollection.getType,
+      viewingHint: currentCollection.getViewingHint,
+      navDate: currentCollection.getNavDate,
+      collections: currentCollection.getCollections,
+      manifests: currentCollection.getManifests,
+      members: currentCollection.getMemberIds,
+      otherContent: currentCollection.getOtherContent,
+      label: currentCollection.getLabel,
+      description: currentCollection.getDescription,
+      metadata: currentCollection.getMetadata,
+      attribution: currentCollection.getAttribution,
+      logo: currentCollection.getLogo,
+      license: currentCollection.getLicense,
+      thumbnail: currentCollection.getThumbnail,
+      seeAlso: currentCollection.getSeeAlso,
+      service: currentCollection.getService,
+      related: currentCollection.getRelated,
+      within: currentCollection.getWithin,
+    }),
+    { dereference: true }
+  )
+)(Collection);
+
+export { ConnectedCollection };
+export default resourceLoader(ConnectedCollection);
