@@ -1,0 +1,130 @@
+{
+  "label": {
+    "@none": [
+      "\u5927\u6b63\u65b0\u8129\u5927\u85cf\u7d93\u56f3\u50cf\u90e8\u7b2c12b02\u5dfb"
+    ]
+  },
+  "metadata": [
+    {
+      "label": {
+        "@none": ["Author"]
+      },
+      "value": {
+        "@none": ["\u9ad8\u6960\u9806\u6b21\u90ce"]
+      }
+    },
+    {
+      "label": {
+        "@none": ["published"]
+      },
+      "value": {
+        "ja": ["\u5927\u8535\u51fa\u7248"]
+      }
+    },
+    {
+      "label": {
+        "@none": ["Source"]
+      },
+      "value": {
+        "@none": [
+          "\u5927\u6b63\u65b0\u8129\u5927\u85cf\u7d93\u3000\u56f3\u50cf\u90e8"
+        ]
+      }
+    },
+    {
+      "label": {
+        "@none": ["manifest URI"]
+      },
+      "value": {
+        "@none": [
+          "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/12b02/manifest.json"
+        ]
+      }
+    },
+    {
+      "label": {
+        "@none": ["Description"]
+      },
+      "value": {
+        "@none": [
+          "\u5927\u6b63\u65b0\u8129\u5927\u85cf\u7d93\u56f3\u50cf\u90e8"
+        ]
+      }
+    }
+  ],
+  "viewingDirection": "right-to-left",
+  "logo": [
+    {
+      "id": "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/satlogo80.png",
+      "type": "Image"
+    }
+  ],
+  "type": "Manifest",
+  "id": "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/12b02/manifest.json",
+  "rights": "http://creativecommons.org/licenses/by-sa/4.0/",
+  "requiredStatement": {
+    "label": {
+      "@none": ["Attribution"]
+    },
+    "value": {
+      "@none": [
+        "\u5927\u8535\u51fa\u7248(Daizo shuppan) and SAT\u5927\u8535\u7d4c\u30c6\u30ad\u30b9\u30c8\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u7814\u7a76\u4f1a(SAT Daiz\u014dky\u014d Text Database Committee) "
+      ]
+    }
+  },
+  "behavior": ["paged"],
+  "items": [
+    {
+      "label": {
+        "@none": [""]
+      },
+      "width": 22779,
+      "height": 30000,
+      "type": "Canvas",
+      "id": "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/12b02/p0001-0025",
+      "annotations": [
+        {
+          "type": "AnnotationPage",
+          "id":
+            "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/12b02/list/p0001-0025.json"
+        }
+      ],
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "motivation": "painting",
+              "type": "Annotation",
+              "id":
+                "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/12b02/ano0001-0025",
+              "target":
+                "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/12b02/p0001-0025",
+              "body": {
+                "format": "image/jpeg",
+                "width": 22779,
+                "height": 30000,
+                "service": [
+                  {
+                    "@id":
+                      "https://dzkimgs.l.u-tokyo.ac.jp/iiifimgs/zuzoubu/12b02/0001-0025.tif",
+                    "profile": "http://iiif.io/api/image/2/level1.json",
+                    "@type": "ImageService2"
+                  }
+                ],
+                "type": "Image",
+                "id":
+                  "https://dzkimgs.l.u-tokyo.ac.jp/iiifimgs/zuzoubu/12b02/0001-0025.tif/full/full/0/default.jpg"
+              }
+            }
+          ],
+          "id": "https://example.org/uuid/dda2a24b-25af-471a-8f25-1b583b38ce0b"
+        }
+      ]
+    }
+  ],
+  "@context": [
+    "http://www.w3.org/ns/anno.jsonld",
+    "http://iiif.io/api/presentation/3/context.json"
+  ]
+}

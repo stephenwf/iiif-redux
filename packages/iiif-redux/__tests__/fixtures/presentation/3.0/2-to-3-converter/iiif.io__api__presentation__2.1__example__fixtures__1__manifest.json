@@ -1,0 +1,51 @@
+{
+  "label": {
+    "@none": ["Test 1 Manifest: Minimum Required Fields"]
+  },
+  "type": "Manifest",
+  "id": "http://iiif.io/api/presentation/2.1/example/fixtures/1/manifest.json",
+  "partOf": [
+    {
+      "id": "https://example.org/uuid/07763657-cbbf-411d-8c3a-fd1f60b38aed"
+    }
+  ],
+  "items": [
+    {
+      "label": {
+        "@none": ["Test 1 Canvas: 1"]
+      },
+      "height": 1800,
+      "width": 1200,
+      "type": "Canvas",
+      "id":
+        "http://iiif.io/api/presentation/2.1/example/fixtures/canvas/1/c1.json",
+      "items": [
+        {
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "motivation": "painting",
+              "type": "Annotation",
+              "id":
+                "https://example.org/uuid/c2e3fd0e-159a-406b-a18a-1ad88be37aac",
+              "target":
+                "http://iiif.io/api/presentation/2.1/example/fixtures/canvas/1/c1.json",
+              "body": {
+                "height": 1800,
+                "width": 1200,
+                "type": "Image",
+                "id":
+                  "http://iiif.io/api/presentation/2.1/example/fixtures/resources/page1-full.png"
+              }
+            }
+          ],
+          "id": "https://example.org/uuid/1649617f-89a1-4567-8244-7d88a0ec6ce0"
+        }
+      ]
+    }
+  ],
+  "@context": [
+    "http://www.w3.org/ns/anno.jsonld",
+    "http://iiif.io/api/presentation/3/context.json"
+  ]
+}

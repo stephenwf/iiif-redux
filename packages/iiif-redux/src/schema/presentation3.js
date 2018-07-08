@@ -118,6 +118,7 @@ const RESOURCE_TYPE_MAP = {
   Manifest: 'manifest',
   Canvas: 'canvas',
   AnnotationList: 'annotationList',
+  AnnotationPage: 'annotationPage',
   Annotation: 'annotation',
   Range: 'range',
   Layer: 'layer',
@@ -137,6 +138,7 @@ const resource = new schema.Union(
     manifest,
     canvas,
     annotationList,
+    annotationPage,
     annotation,
     range,
     layer,
@@ -171,7 +173,7 @@ collection.define({
   // Linking.
   seeAlso: [externalResource],
   service: [service],
-  homepage: [externalResource],
+  homepage: externalResource,
   rendering: [externalResource],
   partOf: partOf,
 
@@ -191,7 +193,7 @@ manifest.define({
   // Linking
   seeAlso: [externalResource],
   service: [service],
-  homepage: [externalResource],
+  homepage: externalResource,
   rendering: [externalResource],
   otherContent: [annotationPage],
   partOf: partOf,
@@ -213,7 +215,7 @@ canvas.define({
   // Linking
   seeAlso: [externalResource],
   service: [service],
-  homepage: [externalResource],
+  homepage: externalResource,
   rendering: [externalResource],
   otherContent: [annotationPage],
   partOf: partOf,
@@ -234,7 +236,7 @@ annotation.define({
   // Linking
   seeAlso: [externalResource],
   service: [service],
-  homepage: [externalResource],
+  homepage: externalResource,
   rendering: [externalResource],
   partOf: partOf,
 
@@ -252,7 +254,7 @@ annotationCollection.define({
   // Linking
   seeAlso: [externalResource],
   service: [service],
-  homepage: [externalResource],
+  homepage: externalResource,
   rendering: [externalResource],
   partOf: partOf,
 
@@ -274,7 +276,7 @@ annotationPage.define({
   // Linking
   seeAlso: [externalResource],
   service: [service],
-  homepage: [externalResource],
+  homepage: externalResource,
   rendering: [externalResource],
   partOf: partOf,
 

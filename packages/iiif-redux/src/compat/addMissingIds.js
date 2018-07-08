@@ -20,7 +20,14 @@ const addMissingIds = presentationVersion => jsonLd => {
       presentationVersion === 3.0 &&
       (obj.type === 'AnnotationPage' ||
         obj.type === 'Annotation' ||
-        obj.format) &&
+        obj.type === 'Application' ||
+        obj.type === 'Dataset' ||
+        obj.type === 'Image' ||
+        obj.type === 'Sound' ||
+        obj.type === 'Text' ||
+        obj.type === 'Video' ||
+        obj.type === 'TextualBody' ||
+        obj.profile) &&
       !obj.id
     ) {
       this.update({ ...obj, id: `https://${hash(obj)}` });
