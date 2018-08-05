@@ -14,6 +14,8 @@ import {
   getAllAnnotationLists,
   getAllImages,
 } from '../all';
+import mapById from '../../utility/mapById';
+import mapAllById from '../../utility/mapAllById';
 
 const collection = memoize(selector => {
   /**************************************************
@@ -75,32 +77,24 @@ const collection = memoize(selector => {
   const getSeeAlso = createSelector(
     getSeeAlsoIds,
     getAllExternalResources,
-    (seeAlsoIds, allExternalResources) =>
-      seeAlsoIds.map(seeAlsoId => allExternalResources[seeAlsoId])
+    mapAllById
   );
 
   const getServiceIds = createSelector(selector, linking.getService);
-  const getService = createSelector(
-    getServiceIds,
-    getAllServices,
-    (serviceIds, allServices) =>
-      serviceIds.map(serviceId => allServices[serviceId])
-  );
+  const getService = createSelector(getServiceIds, getAllServices, mapAllById);
 
   const getRelatedIds = createSelector(selector, linking.getRelated);
   const getRelated = createSelector(
     getRelatedIds,
     getAllExternalResources,
-    (relatedIds, allExternalResources) =>
-      relatedIds.map(relatedId => allExternalResources[relatedId])
+    mapAllById
   );
 
   const getRenderingIds = createSelector(selector, linking.getRendering);
   const getRendering = createSelector(
     getRenderingIds,
     getAllExternalResources,
-    (renderingIds, allExternalResources) =>
-      renderingIds.map(renderingId => allExternalResources[renderingId])
+    mapAllById
   );
 
   const getWithinIds = createSelector(selector, linking.getWithin);
@@ -125,34 +119,18 @@ const collection = memoize(selector => {
    * - getStartIndex
    **************************************************/
   const getFirstId = createSelector(selector, paging.getFirst);
-  const getFirst = createSelector(
-    getFirstId,
-    getAllCollections,
-    (firstId, collections) => collections[firstId]
-  );
+  const getFirst = createSelector(getFirstId, getAllCollections, mapById);
 
   const getLastId = createSelector(selector, paging.getLast);
-  const getLast = createSelector(
-    getLastId,
-    getAllCollections,
-    (lastId, collections) => collections[lastId]
-  );
+  const getLast = createSelector(getLastId, getAllCollections, mapById);
 
   const getTotal = createSelector(selector, paging.getTotal);
 
   const getNextId = createSelector(selector, paging.getNext);
-  const getNext = createSelector(
-    getNextId,
-    getAllCollections,
-    (nextId, collections) => collections[nextId]
-  );
+  const getNext = createSelector(getNextId, getAllCollections, mapById);
 
   const getPreviousId = createSelector(selector, paging.getPrevious);
-  const getPrevious = createSelector(
-    getPreviousId,
-    getAllCollections,
-    (previousId, collections) => collections[previousId]
-  );
+  const getPrevious = createSelector(getPreviousId, getAllCollections, mapById);
 
   const getStartIndex = createSelector(selector, paging.getStartIndex);
 
@@ -170,8 +148,7 @@ const collection = memoize(selector => {
   const getCollections = createSelector(
     getCollectionIds,
     getAllCollections,
-    (collectionIds, allCollections) =>
-      collectionIds.map(collectionId => allCollections[collectionId])
+    mapAllById
   );
 
   const getManifestIds = createSelector(selector, structural.getManifests);
@@ -179,7 +156,7 @@ const collection = memoize(selector => {
     getMemberIds,
     getAllManifests,
     (memberIds, allManifests) =>
-      memberIds.map(memberId => allManifests[memberId] || null).filter(e => e)
+      memberIds.map(memberId => allManifests[memberId] || null).filter(Boolean)
   );
 
   const getMembers = createSelector(
@@ -189,7 +166,7 @@ const collection = memoize(selector => {
     (memberIds, allCollections, allManifests) =>
       memberIds
         .map(memberId => allCollections[memberId] || allManifests[memberId])
-        .filter(e => e)
+        .filter(Boolean)
   );
   const getOtherContentIds = createSelector(
     selector,

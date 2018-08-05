@@ -15,6 +15,8 @@ import {
   getAllCollections,
   getAllAnnotations,
 } from '../all';
+import mapById from '../../utility/mapById';
+import mapAllById from '../../utility/mapAllById';
 
 const collection = memoize(selector => {
   /**
@@ -71,7 +73,7 @@ const collection = memoize(selector => {
   const getPosterCanvas = createSelector(
     getPosterCanvasId,
     getAllCanvases,
-    (canvasId, allCanvases) => allCanvases[canvasId]
+    mapById
   );
 
   const getRequiredStatement = createSelector(
@@ -95,42 +97,30 @@ const collection = memoize(selector => {
    */
   // @todo Clarify with specification, since this can technically be anything in this model.
   const getSeeAlsoIds = createSelector(selector, linking.getSeeAlso);
-  const getSeeAlso = createSelector(
-    getSeeAlsoIds,
-    getAllResources,
-    (seeAlsoIds, resources) =>
-      seeAlsoIds.map(resource => resources[resource.schema][resource.id])
-  );
+  const getSeeAlso = createSelector(getSeeAlsoIds, getAllResources, mapAllById);
 
   const getServiceIds = createSelector(selector, linking.getService);
-  const getService = createSelector(
-    getServiceIds,
-    getAllServices,
-    (serviceIds, allServices) =>
-      serviceIds.map(serviceId => allServices[serviceId])
-  );
+  const getService = createSelector(getServiceIds, getAllServices, mapAllById);
 
   const getLogoIds = createSelector(selector, linking.getLogo);
   const getLogo = createSelector(
     getLogoIds,
     getAllContentResources,
-    (logoIds, contentResources) =>
-      logoIds.map(logoId => contentResources[logoId])
+    mapAllById
   );
 
   const getHomepageId = createSelector(selector, linking.getHomepage);
   const getHomepage = createSelector(
     getHomepageId,
     getAllExternalResources,
-    (homepageId, externalResources) => externalResources[homepageId]
+    mapById
   );
 
   const getRenderingIds = createSelector(selector, linking.getRendering);
   const getRendering = createSelector(
     getRenderingIds,
     getAllExternalResources,
-    (renderingIds, externalResources) =>
-      renderingIds.map(renderingId => externalResources[renderingId])
+    mapAllById
   );
 
   const getPartOfId = createSelector(selector, linking.getPartOf);
@@ -189,8 +179,7 @@ const collection = memoize(selector => {
   const getAnnotations = createSelector(
     getAnnotationIds,
     getAllAnnotations,
-    (annotationIds, allAnnotations) =>
-      annotationIds.map(annotationId => allAnnotations[annotationId])
+    mapAllById
   );
 
   return {

@@ -52,7 +52,8 @@
       "^.+\\.js$": "<rootDir>/jest.transform.js"
     },
     "modulePathIgnorePatterns": [
-      "packages/iiif-redux/__tests__/fixtures"
+      "packages/iiif-redux/__tests__/fixtures",
+      "packages/iiif-redux/__tests__/api/3\\.x/[A-Za-z]+/fixtures"
     ]
   }
 }

@@ -1,0 +1,6 @@
+{
+  "id": "https://example.org/iiif/collection/1",
+  "type": "Collection",
+  "viewingDirection": "right-to-left",
+  "behavior": ["individuals"]
+}

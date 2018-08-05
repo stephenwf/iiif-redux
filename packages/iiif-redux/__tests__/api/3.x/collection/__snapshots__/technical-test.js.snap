@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/collection/technical Collection number 0 getBehaviour 1`] = `undefined`;
+
+exports[`api/3.x/collection/technical Collection number 0 getId 1`] = `"https://example.org/iiif/collection/1"`;
+
+exports[`api/3.x/collection/technical Collection number 0 getType 1`] = `"Collection"`;
+
+exports[`api/3.x/collection/technical Collection number 0 getViewingDirection 1`] = `"right-to-left"`;

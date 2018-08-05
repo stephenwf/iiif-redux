@@ -10,7 +10,6 @@
  */
 
 import { getSeeAlso, getService, getRendering } from '../../2.x/iiif/linking';
-import { getLogo } from '../../2.x/iiif/descriptive';
 
 const getHomepage = resource => resource.homepage;
 
@@ -19,6 +18,8 @@ const getPartOf = resource => resource.partOf;
 const getStart = resource => resource.start;
 
 const getSupplementary = resource => resource.supplementary;
+
+const getLogo = resource => resource.logo;
 
 export {
   getSeeAlso,
