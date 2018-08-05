@@ -2438,7 +2438,7 @@ chownr@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.0.1.tgz#e2a75042a9551908bebd25b8523d5f9769d79181"
 
-chrome-tabs@^1.0.0:
+chrome-tabs@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/chrome-tabs/-/chrome-tabs-1.0.0.tgz#262c72a43a2e36aa88be37b4d2d9a294dae635ef"
   dependencies:
@@ -8333,7 +8333,7 @@ nwb-less@0.7.1:
     less "3.8.0"
     less-loader "4.1.0"
 
-nwb-sass@^0.8.4:
+nwb-sass@0.8.4:
   version "0.8.4"
   resolved "https://registry.yarnpkg.com/nwb-sass/-/nwb-sass-0.8.4.tgz#7f97a40f5ea4e62f8f63cad23fa6844f2b94c60b"
   dependencies:
@@ -10321,7 +10321,7 @@ react-slick@~0.23.1:
     lodash.debounce "^4.0.8"
     resize-observer-polyfill "^1.5.0"
 
-react-sortable-hoc@^0.8.3:
+react-sortable-hoc@0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-sortable-hoc/-/react-sortable-hoc-0.8.3.tgz#8537e8ab8d6bad6829885755a0f847817ed78648"
   dependencies:
