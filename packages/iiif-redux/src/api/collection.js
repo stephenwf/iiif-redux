@@ -1,10 +1,10 @@
 import memoize from 'lodash.memoize';
 import { createSelector, createStructuredSelector } from 'reselect';
-import * as technical from './iiif-technical';
-import * as descriptive from './iiif-descriptive';
-import * as linking from './iiif-linking';
-import * as paging from './iiif-paging';
-import * as structural from './iiif-structural';
+import * as technical from './2.x/iiif/technical';
+import * as descriptive from './2.x/iiif/descriptive';
+import * as linking from './2.x/iiif/linking';
+import * as paging from './2.x/iiif/paging';
+import * as structural from './2.x/iiif/structural';
 import {
   getAllCollections,
   getAllLayers,

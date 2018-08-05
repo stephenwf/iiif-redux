@@ -10,7 +10,7 @@ import {
   getWidth,
   VIEWING_HINTS,
   VIEWING_DIRECTIONS,
-} from '../../../src/api/iiif-technical';
+} from '../../../src/api/2.x/iiif/technical';
 
 describe('api/iiif/technical', () => {
   describe('getId', () => {

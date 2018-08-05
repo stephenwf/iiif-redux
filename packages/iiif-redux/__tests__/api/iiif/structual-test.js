@@ -9,7 +9,7 @@ import {
   getRanges,
   getStructures,
   getResource,
-} from '../../../src/api/iiif-structural';
+} from '../../../src/api/2.x/iiif/structural';
 
 describe('api/iiif/structural', () => {
   describe('getSequences', () => {

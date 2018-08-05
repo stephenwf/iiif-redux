@@ -1,8 +1,8 @@
 import memoize from 'lodash.memoize';
 import { createSelector, createStructuredSelector } from 'reselect';
-import * as technical from './iiif-technical';
-import * as descriptive from './iiif-descriptive';
-import * as structural from './iiif-structural';
+import * as technical from './2.x/iiif/technical';
+import * as descriptive from './2.x/iiif/descriptive';
+import * as structural from './2.x/iiif/structural';
 import {
   getAllAnnotations,
   getAllCanvases,
@@ -11,7 +11,7 @@ import {
   getAllLayers,
   getAllServices,
 } from './all';
-import * as linking from './iiif-linking';
+import * as linking from './2.x/iiif/linking';
 import { isImageService } from '../constants/services';
 import byIdSelectorFactory from '../utility/byIdSelectorFactory';
 import resourceListSelectorFactory from '../utility/resourceListSelectorFactory';

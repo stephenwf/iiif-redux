@@ -6,7 +6,7 @@ import {
   getThumbnailId,
   getLicense,
   getLogo,
-} from '../../../src/api/iiif-descriptive';
+} from '../../../src/api/2.x/iiif/descriptive';
 
 describe('api/iiif/descriptive', () => {
   describe('getThumbnailId', () => {

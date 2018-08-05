@@ -5,7 +5,7 @@ import {
   getPrevious,
   getStartIndex,
   getTotal,
-} from '../../../src/api/iiif-paging';
+} from '../../../src/api/2.x/iiif/paging';
 
 describe('api/iiif/paging', () => {
   describe('getFirst', () => {

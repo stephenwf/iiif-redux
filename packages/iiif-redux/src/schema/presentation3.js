@@ -1,10 +1,4 @@
 import { schema, normalize } from 'normalizr';
-import {
-  annotationList,
-  imageResource,
-  layer,
-  sequence,
-} from './presentation2';
 import { compose } from 'redux';
 import addMissingIds from '../compat/addMissingIds';
 
@@ -117,11 +111,10 @@ const RESOURCE_TYPE_MAP = {
   Sequence: 'sequence',
   Manifest: 'manifest',
   Canvas: 'canvas',
-  AnnotationList: 'annotationList',
+  AnnotationCollection: 'annotationCollection',
   AnnotationPage: 'annotationPage',
   Annotation: 'annotation',
   Range: 'range',
-  Layer: 'layer',
   // Content resources.
   Application: 'contentResource',
   Dataset: 'contentResource',
@@ -134,15 +127,13 @@ const RESOURCE_TYPE_MAP = {
 const resource = new schema.Union(
   {
     collection,
-    sequence,
     manifest,
     canvas,
-    annotationList,
+    annotationCollection,
     annotationPage,
     annotation,
     range,
-    layer,
-    imageResource,
+    contentResource,
     service,
   },
   entity => {

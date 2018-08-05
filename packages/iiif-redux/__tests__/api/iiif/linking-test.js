@@ -7,7 +7,7 @@ import {
   getRendering,
   getStartCanvas,
   getWithin,
-} from '../../../src/api/iiif-linking';
+} from '../../../src/api/2.x/iiif/linking';
 
 describe('api/iiif/linking', () => {
   describe('getSeeAlso', () => {

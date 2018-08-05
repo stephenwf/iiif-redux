@@ -9,11 +9,11 @@ import {
   getAllRanges,
   getAllServices,
 } from './all';
-import * as technical from './iiif-technical';
+import * as technical from './2.x/iiif/technical';
 import { createSelector } from 'reselect';
-import * as descriptive from './iiif-descriptive';
-import * as linking from './iiif-linking';
-import * as structural from './iiif-structural';
+import * as descriptive from './2.x/iiif/descriptive';
+import * as linking from './2.x/iiif/linking';
+import * as structural from './2.x/iiif/structural';
 
 const range = memoize(selector => {
   /**************************************************

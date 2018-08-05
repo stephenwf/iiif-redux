@@ -1,7 +1,7 @@
 import memoize from 'lodash.memoize';
 import { createSelector, createStructuredSelector } from 'reselect';
-import * as technical from './iiif-technical';
-import * as descriptive from './iiif-descriptive';
+import * as technical from './2.x/iiif/technical';
+import * as descriptive from './2.x/iiif/descriptive';
 import {
   getAllAnnotationLists,
   getAllExternalResources,
@@ -11,8 +11,8 @@ import {
   getAllSequences,
   getAllServices,
 } from './all';
-import * as linking from './iiif-linking';
-import * as structural from './iiif-structural';
+import * as linking from './2.x/iiif/linking';
+import * as structural from './2.x/iiif/structural';
 import resourceListSelectorFactory from '../utility/resourceListSelectorFactory';
 import byIdSelectorFactory from '../utility/byIdSelectorFactory';
 

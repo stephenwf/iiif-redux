@@ -9,7 +9,7 @@ import { collection, manifest } from '../src/schema/presentation2';
 import * as currentManifest from '../src/api/current-manifest';
 import * as currentSequence from '../src/api/current-sequence';
 import * as currentCanvas from '../src/api/current-canvas';
-import * as descriptive from '../src/api/iiif-descriptive';
+import * as descriptive from '../src/api/2.x/iiif/descriptive';
 import { waitForRequest } from '../test-utils';
 
 describe('store', () => {
