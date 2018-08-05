@@ -1,7 +1,10 @@
 import { createStructuredSelector, createSelector } from 'reselect';
 import createStore from '../src/createStore';
 import bridges from './fixtures/bridges';
-import { iiifResourceRequest } from '../src/spaces/iiif-resource';
+import {
+  iiifResourceRequest,
+  iiifResourceRequestUnknown,
+} from '../src/spaces/iiif-resource';
 import { collection, manifest } from '../src/schema/presentation2';
 import * as currentManifest from '../src/api/current-manifest';
 import * as currentSequence from '../src/api/current-sequence';
@@ -519,6 +522,31 @@ describe('store', () => {
       'http://seealso.com/page-2.json',
       'http://seealso.com/page-3.json',
     ]);
+
+    // Try fetching as unknown.
+    fetch.mockResponseOnce(JSON.stringify(bridges));
+    const whenRequestFinishes2 = waitForRequest(
+      store,
+      'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+    );
+
+    store.dispatch(
+      iiifResourceRequestUnknown(
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+      )
+    );
+
+    await whenRequestFinishes2;
+
+    expect(
+      store.getState().dereferenced[
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+      ]
+    ).toEqual({
+      loading: false,
+      resourceId: 'https://view.nls.uk/manifest/7446/74464117/manifest.json',
+      ttl: 600,
+    });
   });
 
   it('should only make 1 http request per resource by default', async () => {
@@ -997,6 +1025,122 @@ describe('store', () => {
       ranges: {},
       sequences: {},
       externalResources: {},
+    });
+  });
+
+  describe('iiifResourceRequestUnknown', () => {
+    test('basic resource', () => {
+      expect(
+        iiifResourceRequestUnknown('https://iiif.com/collection-1.json')
+      ).toMatchSnapshot();
+    });
+
+    test('http request', async () => {
+      const store = createStore();
+      fetch.mockResponseOnce(
+        JSON.stringify({
+          '@id': 'http://iiif.com/collection-1.json',
+          '@type': 'sc:Collection',
+          label: 'Collection label 1',
+        })
+      );
+
+      fetch.mockResponseOnce(
+        JSON.stringify({
+          '@id': 'http://iiif.com/collection-1.json',
+          '@type': 'sc:Collection',
+          label: 'Collection label 1',
+        })
+      );
+
+      const whenRequestFinishes = waitForRequest(
+        store,
+        'http://iiif.com/collection-1.json'
+      );
+
+      store.dispatch(
+        iiifResourceRequestUnknown('http://iiif.com/collection-1.json')
+      );
+
+      await whenRequestFinishes;
+
+      const state = store.getState();
+
+      expect(state.dereferenced.error).toEqual();
+
+      expect(state.resources).toMatchSnapshot();
+    });
+
+    test('invalid URL', async () => {
+      const store = createStore();
+
+      store.dispatch(iiifResourceRequestUnknown('NOT-REAL-URL'));
+      const state = store.getState();
+
+      expect(state.dereferenced['NOT-REAL-URL'].error).toEqual(
+        'Resource is not a valid URL.'
+      );
+    });
+
+    test('unknown type', async () => {
+      const store = createStore();
+      fetch.mockResponseOnce(
+        JSON.stringify({
+          '@id': 'http://iiif.com/NOT-REAL-1.json',
+          '@type': 'NOT REAL',
+          label: 'Collection label 1',
+        })
+      );
+      const whenRequestFinishes = waitForRequest(
+        store,
+        'http://iiif.com/NOT-REAL-1.json'
+      );
+      store.dispatch(
+        iiifResourceRequestUnknown('http://iiif.com/NOT-REAL-1.json')
+      );
+
+      await whenRequestFinishes;
+
+      const state = store.getState();
+
+      expect(
+        state.dereferenced['http://iiif.com/NOT-REAL-1.json'].error
+      ).toEqual('Unknown resource type');
+    });
+
+    test('unknown mapping', async () => {
+      const store = createStore();
+      fetch.mockResponseOnce(
+        JSON.stringify({
+          '@id': 'http://iiif.com/NOT-REAL-1.json',
+          '@type': 'sc:Collection',
+          label: 'Collection label 1',
+        })
+      );
+      const whenRequestFinishes = waitForRequest(
+        store,
+        'http://iiif.com/NOT-REAL-1.json'
+      );
+      store.dispatch(
+        iiifResourceRequestUnknown(
+          'http://iiif.com/NOT-REAL-1.json',
+          {},
+          {
+            canvas: () => null, // noop for test
+            manifest: () => null, // noop for test
+          }
+        )
+      );
+
+      await whenRequestFinishes;
+
+      const state = store.getState();
+
+      expect(
+        state.dereferenced['http://iiif.com/NOT-REAL-1.json'].error
+      ).toEqual(
+        'Resource type is not in configured mappings (canvas, manifest)'
+      );
     });
   });
 });

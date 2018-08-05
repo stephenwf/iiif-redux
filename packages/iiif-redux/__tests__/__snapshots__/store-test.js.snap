@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`store iiifResourceRequestUnknown basic resource 1`] = `
+Object {
+  "payload": Object {
+    "dereferenceIfMissing": false,
+    "forceFresh": undefined,
+    "mappings": Object {
+      "collection": Array [
+        "COLLECTION_REQUEST",
+        "COLLECTION_SUCCESS",
+        "COLLECTION_ERROR",
+      ],
+      "manifest": Array [
+        "MANIFEST_REQUEST",
+        "MANIFEST_SUCCESS",
+        "MANIFEST_ERROR",
+      ],
+    },
+    "resourceId": "https://iiif.com/collection-1.json",
+    "ttl": 600,
+  },
+  "type": "IIIF_RESOURCE_REQUEST_UNKNOWN",
+}
+`;
+
+exports[`store iiifResourceRequestUnknown http request 1`] = `
+Object {
+  "annotationLists": Object {},
+  "annotations": Object {},
+  "canvases": Object {},
+  "collections": Object {
+    "http://iiif.com/collection-1.json": Object {
+      "@id": "http://iiif.com/collection-1.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Collection label 1",
+        },
+      ],
+    },
+  },
+  "externalResources": Object {},
+  "imageResources": Object {},
+  "layers": Object {},
+  "manifests": Object {},
+  "ranges": Object {},
+  "sequences": Object {},
+}
+`;

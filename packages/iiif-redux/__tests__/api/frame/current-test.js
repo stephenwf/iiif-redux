@@ -70,6 +70,13 @@ describe('iiif/api/frame metadata', () => {
   });
 
   describe('getCurrentResource{Id,Type}', () => {
+    test('empty', () => {
+      const state = makeStateFromActions(frameCreate());
+
+      expect(defaultFrame.getCurrentResourceId(state)).toEqual(null);
+      expect(defaultFrame.getCurrentResourceType(state)).toEqual(null);
+    });
+
     test('initial current', () => {
       const state = makeStateFromActions(
         frameCreate({

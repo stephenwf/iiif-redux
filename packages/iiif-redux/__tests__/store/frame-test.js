@@ -7,8 +7,13 @@ import {
   frameCreate,
   frameGoBack,
   frameGoToResource,
+  frameSetInitialResource,
 } from '../../src/spaces/frames';
-import { frameByIdSelector } from '../../src/api/frame';
+import {
+  focusedFrame,
+  frameByIdSelector,
+  getAllFrameIds,
+} from '../../src/api/frame';
 import { collection, manifest } from '../../src/schema/presentation2';
 import resource from '../../src/api/resource';
 
@@ -102,7 +107,6 @@ describe('iiif/store frames', () => {
       schema: 'collection',
     });
   });
-
   test('collections can be returned from selectors in frames', async () => {
     const store = createStore();
 
@@ -213,5 +217,57 @@ describe('iiif/store frames', () => {
         resource: resource(api.getCurrentResource, {}),
       }))(store.getState())
     ).toEqual({ resource: null });
+  });
+  test('getAllFrameIds', () => {
+    const store = createStore();
+
+    store.dispatch(frameCreate({}, 'frame-1'));
+    store.dispatch(frameCreate({}, 'frame-2'));
+    store.dispatch(frameCreate({}, 'frame-3'));
+
+    expect(getAllFrameIds(store.getState())).toEqual([
+      'frame-1',
+      'frame-2',
+      'frame-3',
+    ]);
+  });
+  test('focusedFrame', () => {
+    const store = createStore();
+
+    expect(
+      focusedFrame(api => ({
+        id: api.getId,
+      }))(store.getState())
+    ).toEqual(null);
+
+    store.dispatch(frameCreate({}, 'frame-1'));
+
+    expect(
+      focusedFrame(api => ({
+        id: api.getId,
+      }))(store.getState())
+    ).toEqual({ id: 'frame-1' });
+  });
+  test('frame resources without types will automatically be searched for and added', async () => {
+    const store = createStore();
+
+    store.dispatch(frameCreate());
+
+    fetch.mockResponseOnce(JSON.stringify(bridges));
+    const whenRequestFinishes = waitForRequest(store, bridges['@id']);
+    store.dispatch(
+      iiifResourceRequest(
+        bridges['@id'],
+        ['MANIFEST_REQUEST', 'MANIFEST_SUCCESS', 'MANIFEST_ERROR'],
+        manifest
+      )
+    );
+    store.dispatch(frameSetInitialResource({ resourceId: bridges['@id'] }));
+
+    expect(store.getState().frames).toMatchSnapshot('before');
+
+    await whenRequestFinishes;
+
+    expect(store.getState().frames).toMatchSnapshot('after');
   });
 });

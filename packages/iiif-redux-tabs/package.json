@@ -1,30 +1,33 @@
 {
-  "name": "iiif-redux-demos",
+  "name": "iiif-redux-tabs",
   "version": "1.0.0",
-  "description": "Describe iiif-redux-demos here",
+  "description": "Redux tabs demo",
   "private": true,
   "scripts": {
     "build": "nwb build-react-app",
     "clean": "nwb clean-app",
-    "start": "nwb serve-react-app --port=3001",
+    "start": "nwb serve-react-app --port=3002",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
     "@canvas-panel/viewer-element": "0.0.9",
-    "antd": "3.8.0",
+    "antd": "3.6.2",
+    "chrome-tabs": "^1.0.0",
     "iiif-redux": "1.0.0",
-    "react": "16.4.2",
-    "react-dom": "16.4.2",
+    "nwb-sass": "^0.8.4",
+    "react": "16.4.1",
+    "react-dom": "16.4.1",
     "react-redux": "5.0.7",
     "react-router-dom": "4.3.1",
+    "react-sortable-hoc": "^0.8.3",
     "reselect": "3.0.1"
   },
   "devDependencies": {
     "babel-plugin-import": "1.8.0",
-    "nwb": "0.23.0",
-    "nwb-less": "0.7.1"
+    "nwb": "0.21.5",
+    "nwb-less": "0.7.0"
   },
   "author": "",
   "license": "MIT",

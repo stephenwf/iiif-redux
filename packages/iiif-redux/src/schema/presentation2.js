@@ -101,6 +101,20 @@ const RESOURCE_TYPE_MAP = {
   'sc:Layer': 'layer',
   'dctypes:Image': 'imageResource',
 };
+
+const SCHEMAS = {
+  collection,
+  sequence,
+  manifest,
+  canvas,
+  annotationList,
+  annotation,
+  range,
+  layer,
+  imageResource,
+  service,
+};
+
 const resource = new schema.Union(
   {
     collection,
@@ -323,6 +337,8 @@ const normalizeResource = (rawResource, customSchema = resource) =>
   normalize(preprocess(rawResource), customSchema);
 
 export {
+  RESOURCE_TYPE_MAP,
+  SCHEMAS,
   normalizeResource as normalize,
   preprocess,
   resource,

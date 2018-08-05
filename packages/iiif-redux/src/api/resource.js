@@ -26,7 +26,16 @@ const resource = memoize((selector, apiMap) => {
   return createSelector(
     selector,
     s => s,
-    ({ id, schema }, state) => {
+    (entity, state) => {
+      if (!entity) return null;
+      const { id, schema } = entity;
+
+      if (state.dereferenced[id] && state.dereferenced[id].loading === true) {
+        return null;
+      }
+      if (state.dereferenced[id] && state.dereferenced[id].error) {
+        return { error: state.dereferenced[id].error };
+      }
       if (apiMap[schema] && resourceApiMap[schema]) {
         const api = apiMap[schema];
         const rootApi = resourceApiMap[schema];
