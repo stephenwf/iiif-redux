@@ -9,6 +9,8 @@ const getAllCanvases = state => state.resources.canvases;
 const getAllImages = state => state.resources.imageResources;
 const getAllAnnotations = state => state.resources.annotations;
 const getAllAnnotationLists = state => state.resources.annotationLists;
+const getAllContentResources = state => state.resources.contentResources;
+const getAllResources = state => state.resources;
 
 export {
   getAllCollections,
@@ -22,4 +24,6 @@ export {
   getAllImages,
   getAllAnnotationLists,
   getAllAnnotations,
+  getAllContentResources,
+  getAllResources,
 };

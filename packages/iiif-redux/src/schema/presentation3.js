@@ -47,6 +47,19 @@ const partOf = new schema.Array(
   }
 );
 
+const canvasOrReference = new schema.Union(
+  {
+    canvasReference,
+    canvas,
+  },
+  entity => {
+    if (entity.type === 'SpecificResource') {
+      return 'canvasReference';
+    }
+    return 'canvas';
+  }
+);
+
 const annotationBody = new schema.Union(
   {
     contentResource,
@@ -164,6 +177,7 @@ collection.define({
   // Linking.
   seeAlso: [externalResource],
   service: [service],
+  logo: [contentResource],
   homepage: externalResource,
   rendering: [externalResource],
   partOf: partOf,
@@ -184,14 +198,14 @@ manifest.define({
   // Linking
   seeAlso: [externalResource],
   service: [service],
+  logo: [contentResource],
   homepage: externalResource,
   rendering: [externalResource],
-  otherContent: [annotationPage],
   partOf: partOf,
+  start: canvasOrReference,
 
   // Extra
   thumbnail: [contentResource],
-  start: canvas,
   posterCanvas: canvas,
 });
 
@@ -206,9 +220,9 @@ canvas.define({
   // Linking
   seeAlso: [externalResource],
   service: [service],
+  logo: [contentResource],
   homepage: externalResource,
   rendering: [externalResource],
-  otherContent: [annotationPage],
   partOf: partOf,
 
   // Extra
@@ -227,6 +241,7 @@ annotation.define({
   // Linking
   seeAlso: [externalResource],
   service: [service],
+  logo: [contentResource],
   homepage: externalResource,
   rendering: [externalResource],
   partOf: partOf,
@@ -245,6 +260,7 @@ annotationCollection.define({
   // Linking
   seeAlso: [externalResource],
   service: [service],
+  logo: [contentResource],
   homepage: externalResource,
   rendering: [externalResource],
   partOf: partOf,
@@ -267,6 +283,7 @@ annotationPage.define({
   // Linking
   seeAlso: [externalResource],
   service: [service],
+  logo: [contentResource],
   homepage: externalResource,
   rendering: [externalResource],
   partOf: partOf,
@@ -289,13 +306,15 @@ range.define({
   // Linking
   seeAlso: [externalResource],
   service: [service],
-  related: [externalResource],
+  logo: [contentResource],
+  homepage: externalResource,
   rendering: [externalResource],
   partOf: partOf,
+  start: canvasOrReference,
+  supplementary: annotationCollection,
 
   // Extra
   thumbnail: [contentResource],
-  supplementary: annotationCollection,
 });
 
 // ===========================================================================
@@ -303,9 +322,9 @@ range.define({
 // ===========================================================================
 contentResource.define({
   // Linking.
-  service: [service],
   seeAlso: [externalResource],
-  related: [externalResource],
+  service: [service],
+  logo: [contentResource],
   rendering: [externalResource],
   partOf: partOf,
 });
