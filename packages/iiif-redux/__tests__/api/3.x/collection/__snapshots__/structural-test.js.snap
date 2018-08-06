@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/collection/structural Collection number 0 getAnnotationIds: getAnnotationIds 0 1`] = `
+Array [
+  "https://example.org/iiif/book1/page/collection/1",
+]
+`;
+
+exports[`api/3.x/collection/structural Collection number 0 getAnnotations: getAnnotations 0 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/book1/page/collection/1",
+    "items": Array [
+      "https://example.org/iiif/book1/page/collection/a1",
+    ],
+    "type": "AnnotationPage",
+  },
+]
+`;
+
+exports[`api/3.x/collection/structural Collection number 0 getCollectionIds: getCollectionIds 0 1`] = `
+Array [
+  "https://example.org/iiif/collection2",
+]
+`;
+
+exports[`api/3.x/collection/structural Collection number 0 getCollections: getCollections 0 1`] = `
+Object {
+  "id": "https://example.org/iiif/collection2",
+  "type": "Collection",
+}
+`;
+
+exports[`api/3.x/collection/structural Collection number 0 getItemIds: getItemIds 0 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/manifest1",
+    "schema": "manifest",
+  },
+  Object {
+    "id": "https://example.org/iiif/collection2",
+    "schema": "collection",
+  },
+]
+`;
+
+exports[`api/3.x/collection/structural Collection number 0 getItems: getItems 0 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/manifest1",
+    "type": "Manifest",
+  },
+  Object {
+    "id": "https://example.org/iiif/collection2",
+    "type": "Collection",
+  },
+]
+`;
+
+exports[`api/3.x/collection/structural Collection number 0 getManifestIds: getManifestIds 0 1`] = `
+Array [
+  "https://example.org/iiif/manifest1",
+]
+`;
+
+exports[`api/3.x/collection/structural Collection number 0 getManifests: getManifests 0 1`] = `
+Object {
+  "id": "https://example.org/iiif/manifest1",
+  "type": "Manifest",
+}
+`;
+
+exports[`api/3.x/collection/structural Collection number 1 getAnnotationIds: getAnnotationIds 1 1`] = `Array []`;
+
+exports[`api/3.x/collection/structural Collection number 1 getAnnotations: getAnnotations 1 1`] = `Array []`;
+
+exports[`api/3.x/collection/structural Collection number 1 getCollectionIds: getCollectionIds 1 1`] = `Array []`;
+
+exports[`api/3.x/collection/structural Collection number 1 getCollections: getCollections 1 1`] = `null`;
+
+exports[`api/3.x/collection/structural Collection number 1 getItemIds: getItemIds 1 1`] = `Array []`;
+
+exports[`api/3.x/collection/structural Collection number 1 getItems: getItems 1 1`] = `Array []`;
+
+exports[`api/3.x/collection/structural Collection number 1 getManifestIds: getManifestIds 1 1`] = `Array []`;
+
+exports[`api/3.x/collection/structural Collection number 1 getManifests: getManifests 1 1`] = `null`;

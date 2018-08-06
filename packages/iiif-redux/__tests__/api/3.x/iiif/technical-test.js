@@ -7,7 +7,7 @@ import {
   getWidth,
   getDuration,
   getViewingDirection,
-  getBehaviour,
+  getBehavior,
   getTimeMode,
 } from '../../../../src/api/3.x/iiif/technical';
 import { createStructuredSelector } from 'reselect';
@@ -53,8 +53,8 @@ describe('api/3.x/iiif/technical', () => {
     );
   });
 
-  test('behaviour', () => {
-    expect(getBehaviour({ behaviour: ['paged'] })).toEqual(['paged']);
+  test('behavior', () => {
+    expect(getBehavior({ behavior: ['paged'] })).toEqual(['paged']);
   });
 
   test('timeMode', () => {
@@ -71,7 +71,7 @@ describe('api/3.x/iiif/technical', () => {
       width: 3000,
       duration: 20.34,
       viewingDirection: 'top-to-bottom',
-      behaviour: ['paged'],
+      behavior: ['paged'],
       timeMode: 'trim',
     };
 
@@ -84,7 +84,7 @@ describe('api/3.x/iiif/technical', () => {
       width: getWidth,
       duration: getDuration,
       viewingDirection: getViewingDirection,
-      behaviour: getBehaviour,
+      behavior: getBehavior,
       timeMode: getTimeMode,
     });
 

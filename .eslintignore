@@ -3,3 +3,4 @@
 
 # Build products
 dist/
+**/*.snap

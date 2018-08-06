@@ -11,15 +11,15 @@
 
 import { getSeeAlso, getService, getRendering } from '../../2.x/iiif/linking';
 
-const getHomepage = resource => resource.homepage;
+const getHomepage = resource => resource.homepage || null;
 
-const getPartOf = resource => resource.partOf;
+const getPartOf = resource => resource.partOf || null;
 
-const getStart = resource => resource.start;
+const getStart = resource => resource.start || null;
 
 const getSupplementary = resource => resource.supplementary;
 
-const getLogo = resource => resource.logo;
+const getLogo = resource => resource.logo || [];
 
 export {
   getSeeAlso,

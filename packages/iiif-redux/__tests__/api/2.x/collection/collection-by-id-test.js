@@ -1,6 +1,6 @@
 import { collectionByIdSelector } from '../../../../src/api/collection';
 
-describe('iiif/api/2.x/collection-by-id', () => {
+describe('api/2.x/collection/collection-by-id', () => {
   it('should be able to generate selector for any collection', () => {
     const state = {
       resources: {

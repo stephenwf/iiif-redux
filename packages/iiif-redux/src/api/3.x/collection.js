@@ -6,17 +6,18 @@ import * as structural from '../3.x/iiif/structural';
 import { createSelector } from 'reselect';
 import {
   getAllCanvases,
-  getAllImages,
   getAllResources,
   getAllServices,
   getAllContentResources,
   getAllExternalResources,
   getAllManifests,
   getAllCollections,
-  getAllAnnotations,
+  getAllAnnotationPages,
 } from '../all';
 import mapById from '../../utility/mapById';
 import mapAllById from '../../utility/mapAllById';
+import mapAllResources from '../../utility/mapAllResources';
+import mapByIdOrId from '../../utility/mapByIdOrId';
 
 const collection = memoize(selector => {
   /**
@@ -25,7 +26,7 @@ const collection = memoize(selector => {
    * - getId
    * - getType
    * - getViewingDirection
-   * - getBehaviour
+   * - getBehavior
    */
   const getId = createSelector(selector, technical.getId);
 
@@ -36,7 +37,7 @@ const collection = memoize(selector => {
     technical.getViewingDirection
   );
 
-  const getBehaviour = createSelector(selector, technical.getBehaviour);
+  const getBehavior = createSelector(selector, technical.getBehavior);
 
   /**
    * Descriptive Properties
@@ -49,7 +50,6 @@ const collection = memoize(selector => {
    * - getRequiredStatement
    * - getRights
    * - getNavDate
-   * - getLanguage
    */
   const getLabel = createSelector(selector, descriptive.getLabel);
 
@@ -61,8 +61,8 @@ const collection = memoize(selector => {
 
   const getThumbnail = createSelector(
     getThumbnailId,
-    getAllImages,
-    (thumbnailId, allImages) => allImages[thumbnailId] || thumbnailId
+    getAllContentResources,
+    mapByIdOrId
   );
 
   const getPosterCanvasId = createSelector(
@@ -97,7 +97,11 @@ const collection = memoize(selector => {
    */
   // @todo Clarify with specification, since this can technically be anything in this model.
   const getSeeAlsoIds = createSelector(selector, linking.getSeeAlso);
-  const getSeeAlso = createSelector(getSeeAlsoIds, getAllResources, mapAllById);
+  const getSeeAlso = createSelector(
+    getSeeAlsoIds,
+    getAllExternalResources,
+    mapAllById
+  );
 
   const getServiceIds = createSelector(selector, linking.getService);
   const getService = createSelector(getServiceIds, getAllServices, mapAllById);
@@ -127,7 +131,7 @@ const collection = memoize(selector => {
   const getPartOf = createSelector(
     getPartOfId,
     getAllResources,
-    (partOfId, resources) => resources[partOfId.schema][partOfId.id]
+    mapAllResources
   );
 
   /**
@@ -151,34 +155,29 @@ const collection = memoize(selector => {
       )
   );
 
-  const getManifests = createSelector(
-    getItemIds,
-    getAllManifests,
-    (items, allManifests) =>
-      items
-        .map(
-          item => (item.schema === 'manifest' ? allManifests[item.id] : null)
-        )
-        .filter(Boolean)
+  const getManifestIds = createSelector(getItemIds, items =>
+    items
+      .map(item => (item.schema === 'manifest' ? item.id : null))
+      .filter(Boolean)
   );
+  const getManifests = createSelector(getManifestIds, getAllManifests, mapById);
 
+  const getCollectionIds = createSelector(getItemIds, items =>
+    items
+      .map(item => (item.schema === 'collection' ? item.id : null))
+      .filter(Boolean)
+  );
   const getCollections = createSelector(
-    getItemIds,
+    getCollectionIds,
     getAllCollections,
-    (items, allCollections) =>
-      items
-        .map(
-          item =>
-            item.schema === 'collection' ? allCollections[item.id] : null
-        )
-        .filter(Boolean)
+    mapById
   );
 
   // @todo kinda misleading, as these are annotation pages.
   const getAnnotationIds = createSelector(selector, structural.getAnnotations);
   const getAnnotations = createSelector(
     getAnnotationIds,
-    getAllAnnotations,
+    getAllAnnotationPages,
     mapAllById
   );
 
@@ -187,7 +186,7 @@ const collection = memoize(selector => {
     getId,
     getType,
     getViewingDirection,
-    getBehaviour,
+    getBehavior,
     getLabel,
     getMetadata,
     getSummary,
@@ -212,7 +211,9 @@ const collection = memoize(selector => {
     getPartOf,
     getItemIds,
     getItems,
+    getManifestIds,
     getManifests,
+    getCollectionIds,
     getCollections,
     getAnnotationIds,
     getAnnotations,

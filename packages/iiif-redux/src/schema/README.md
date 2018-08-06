@@ -11,13 +11,13 @@ to the latest stable presentation version.
 ## API Changes
 
 When presentation updates happen, some parts of the API are deprecated and finally removed, and as such this library does not support calling deprecated
-APIs on sources that are not the latest version. For example, between Presentation 2.1 and 3.0 the property `viewingHint` was changed to `behaviour`. Along
-with this change the scope of the property changed to expand what `behaviour` may contain. Because of this, the following behaviour applies:
+APIs on sources that are not the latest version. For example, between Presentation 2.1 and 3.0 the property `viewingHint` was changed to `behavior`. Along
+with this change the scope of the property changed to expand what `behavior` may contain. Because of this, the following behavior applies:
 
 - Calling `getViewingHint` on Presentation 2 document will return `document.viewingHint` (deprecation notice logged in development)
-- Calling `getBehaviour` on Presentation 2 document will return `document.viewingHint`
+- Calling `getBehavior` on Presentation 2 document will return `document.viewingHint`
 - Calling `getViewingHint` on Presentation 3 document will return `null` (deprecation notice logged in development)
-- Calling `getBehaviour` on Presentation 3 document will return `document.behaviour`
+- Calling `getBehavior` on Presentation 3 document will return `document.behavior`
 
 Although this library does aim to have full coverage of all presentation versions, it also provides an upgrade path where possible from lower versions of
 the specification in your application. If remove all deprecation notices from your application, your application will be compatible with the latest versions

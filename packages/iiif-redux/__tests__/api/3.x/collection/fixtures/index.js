@@ -1,3 +1,4 @@
 import collectionComplete from './collection-complete';
+import collectionMinimal from './collection-minimal';
 
-export default [collectionComplete];
+export default [collectionComplete, collectionMinimal];

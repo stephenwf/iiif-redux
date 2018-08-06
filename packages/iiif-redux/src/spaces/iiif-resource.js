@@ -75,12 +75,16 @@ const DEFAULT_STATE = {
     sequences: {},
     manifests: {},
     canvases: {},
-    annotationLists: {},
+    canvasReferences: {},
     annotations: {},
+    annotationLists: {},
+    annotationPages: {},
+    annotationCollections: {},
     ranges: {},
     layers: {},
     imageResources: {},
     externalResources: {},
+    contentResources: {},
   },
 };
 

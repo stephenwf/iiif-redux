@@ -1,3 +1,3 @@
 export default function mapById(id, mappedList) {
-  return mappedList[id];
+  return typeof mappedList[id] === 'undefined' ? null : mappedList[id];
 }

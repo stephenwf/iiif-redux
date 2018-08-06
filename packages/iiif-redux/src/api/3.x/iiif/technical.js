@@ -23,7 +23,7 @@ const getDuration = resource => {
   return 0 + resource.duration || 0.0;
 };
 
-const getBehaviour = resource => resource.behaviour;
+const getBehavior = resource => resource.behavior;
 
 const getTimeMode = resource => resource.timeMode;
 
@@ -36,6 +36,6 @@ export {
   getWidth,
   getDuration,
   getViewingDirection,
-  getBehaviour,
+  getBehavior,
   getTimeMode,
 };
