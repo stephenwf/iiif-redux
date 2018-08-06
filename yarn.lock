@@ -6278,19 +6278,6 @@ less-loader@4.1.0:
     loader-utils "^1.1.0"
     pify "^3.0.0"
 
-less@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/less/-/less-3.0.1.tgz#ba2fea24a5632ccb8c84230d6043c0bf91855e37"
-  optionalDependencies:
-    errno "^0.1.1"
-    graceful-fs "^4.1.2"
-    image-size "~0.5.0"
-    mime "^1.4.1"
-    mkdirp "^0.5.0"
-    promise "^7.1.1"
-    request "2.81.0"
-    source-map "^0.5.3"
-
 less@3.8.0:
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/less/-/less-3.8.0.tgz#44785e40c23841c15ba3be741d36bd2775dd0596"
@@ -7439,13 +7426,6 @@ num2fraction@^1.2.2:
 number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
-
-nwb-less@0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/nwb-less/-/nwb-less-0.7.0.tgz#3d0a460e20ea0891bd2555ab96edcab40c8e6622"
-  dependencies:
-    less "3.0.1"
-    less-loader "4.1.0"
 
 nwb-less@0.7.1:
   version "0.7.1"
