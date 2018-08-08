@@ -253,6 +253,11 @@ Object {
       "type": "TextualBody",
       "value": "<h2 class=\\"annotatedzoom-annotation-detail__label\\">Third-class four berth room</h2><div class=\\"annotatedzoom-annotation-detail__content\\"><p>Liners were strictly organised spaces which reflected social hierarchies. Although people travelling in third class could account for 60% of the total number of passengers, they were segregated into a relatively small space in the lower decks of the ship, close to the noisy engine room. These four-berth rooms had none of the luxurious furnishings or fabrics found in first class, but they were an improvement on the communal sleeping quarters provided for steerage-class passengers on earlier liners.</p></div>",
     },
+    "https://collections.vam.ac.uk/item/O1023003.jsonld": Object {
+      "@format": "application/ld+json",
+      "id": "https://collections.vam.ac.uk/item/O1023003.jsonld",
+      "type": "Dataset",
+    },
     "https://ecdf18bbcc90ea739fcd8d2f6353ba407fb73857": Object {
       "format": "text/html",
       "id": "https://ecdf18bbcc90ea739fcd8d2f6353ba407fb73857",
@@ -268,13 +273,6 @@ Object {
       ],
       "type": "Image",
       "width": 3788,
-    },
-  },
-  "externalResources": Object {
-    "https://collections.vam.ac.uk/item/O1023003.jsonld": Object {
-      "@format": "application/ld+json",
-      "id": "https://collections.vam.ac.uk/item/O1023003.jsonld",
-      "type": "Dataset",
     },
   },
   "manifests": Object {

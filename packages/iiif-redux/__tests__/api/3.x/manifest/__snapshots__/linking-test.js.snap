@@ -1,17 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`api/3.x/manifest/linking Manifest number 0 getHomepage: getHomepage 0 1`] = `
-Object {
-  "format": "text/html",
-  "id": "https://example.org/info/book1/",
-  "label": Object {
-    "en": Array [
-      "Home page for Book 1",
-    ],
-  },
-  "type": "Text",
-}
-`;
+exports[`api/3.x/manifest/linking Manifest number 0 getHomepage: getHomepage 0 1`] = `null`;
 
 exports[`api/3.x/manifest/linking Manifest number 0 getHomepageId: getHomepageId 0 1`] = `"https://example.org/info/book1/"`;
 
@@ -57,16 +46,7 @@ Array [
 
 exports[`api/3.x/manifest/linking Manifest number 0 getRendering: getRendering 0 1`] = `
 Array [
-  Object {
-    "format": "application/pdf",
-    "id": "https://example.org/iiif/book1.pdf",
-    "label": Object {
-      "en": Array [
-        "Download as PDF",
-      ],
-    },
-    "type": "Text",
-  },
+  undefined,
 ]
 `;
 
@@ -78,12 +58,7 @@ Array [
 
 exports[`api/3.x/manifest/linking Manifest number 0 getSeeAlso: getSeeAlso 0 1`] = `
 Array [
-  Object {
-    "format": "text/xml",
-    "id": "https://example.org/library/catalog/book1.xml",
-    "profile": "https://example.org/profiles/bibliographic",
-    "type": "Dataset",
-  },
+  undefined,
 ]
 `;
 

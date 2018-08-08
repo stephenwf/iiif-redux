@@ -22,7 +22,6 @@ const choice = createEntity('choices'); // 9
 const canvasReference = createEntity('canvasReference'); // 10
 
 // Unofficial types.
-const externalResource = createEntity('externalResources');
 const service = createEntity('services');
 
 // Union types
@@ -30,7 +29,7 @@ const partOf = new schema.Array(
   {
     collection,
     manifest,
-    externalResource,
+    contentResource,
     annotationCollection,
   },
   entity => {
@@ -42,7 +41,7 @@ const partOf = new schema.Array(
       case 'AnnotationCollection':
         return 'annotationCollection';
       default:
-        return 'externalResource';
+        return 'contentResource';
     }
   }
 );
@@ -63,11 +62,12 @@ const canvasOrReference = new schema.Union(
 const annotationBody = new schema.Union(
   {
     contentResource,
-    externalResource,
     choice,
   },
   input => {
     switch (input.type) {
+      case 'Choice':
+        return 'choice';
       case 'Application':
       case 'Dataset':
       case 'Image':
@@ -75,13 +75,8 @@ const annotationBody = new schema.Union(
       case 'Text':
       case 'Video':
       case 'TextualBody':
-        return 'contentResource';
-      case 'Choice':
-        return 'choice';
-
-      // @todo more content to add.
       default:
-        return 'externalResource';
+        return 'contentResource';
     }
   }
 );
@@ -175,11 +170,11 @@ collection.define({
   annotations: [annotationPage],
 
   // Linking.
-  seeAlso: [externalResource],
+  seeAlso: [contentResource],
   service: [service],
   logo: [contentResource],
-  homepage: externalResource,
-  rendering: [externalResource],
+  homepage: contentResource,
+  rendering: [contentResource],
   partOf: partOf,
 
   // Extra.
@@ -196,11 +191,11 @@ manifest.define({
   annotations: [annotationPage],
 
   // Linking
-  seeAlso: [externalResource],
+  seeAlso: [contentResource],
   service: [service],
   logo: [contentResource],
-  homepage: externalResource,
-  rendering: [externalResource],
+  homepage: contentResource,
+  rendering: [contentResource],
   partOf: partOf,
   start: canvasOrReference,
 
@@ -218,11 +213,11 @@ canvas.define({
   annotations: [annotationPage],
 
   // Linking
-  seeAlso: [externalResource],
+  seeAlso: [contentResource],
   service: [service],
   logo: [contentResource],
-  homepage: externalResource,
-  rendering: [externalResource],
+  homepage: contentResource,
+  rendering: [contentResource],
   partOf: partOf,
 
   // Extra
@@ -239,11 +234,11 @@ annotation.define({
   target: canvas,
 
   // Linking
-  seeAlso: [externalResource],
+  seeAlso: [contentResource],
   service: [service],
   logo: [contentResource],
-  homepage: externalResource,
-  rendering: [externalResource],
+  homepage: contentResource,
+  rendering: [contentResource],
   partOf: partOf,
 
   // Extra
@@ -258,11 +253,11 @@ annotationCollection.define({
   items: [annotationPage],
 
   // Linking
-  seeAlso: [externalResource],
+  seeAlso: [contentResource],
   service: [service],
   logo: [contentResource],
-  homepage: externalResource,
-  rendering: [externalResource],
+  homepage: contentResource,
+  rendering: [contentResource],
   partOf: partOf,
 
   // extra
@@ -281,11 +276,11 @@ annotationPage.define({
   items: [annotation],
 
   // Linking
-  seeAlso: [externalResource],
+  seeAlso: [contentResource],
   service: [service],
   logo: [contentResource],
-  homepage: externalResource,
-  rendering: [externalResource],
+  homepage: contentResource,
+  rendering: [contentResource],
   partOf: partOf,
 
   // Extra
@@ -304,11 +299,11 @@ range.define({
   items: [rangeItem],
 
   // Linking
-  seeAlso: [externalResource],
+  seeAlso: [contentResource],
   service: [service],
   logo: [contentResource],
-  homepage: externalResource,
-  rendering: [externalResource],
+  homepage: contentResource,
+  rendering: [contentResource],
   partOf: partOf,
   start: canvasOrReference,
   supplementary: annotationCollection,
@@ -322,10 +317,10 @@ range.define({
 // ===========================================================================
 contentResource.define({
   // Linking.
-  seeAlso: [externalResource],
+  seeAlso: [contentResource],
   service: [service],
   logo: [contentResource],
-  rendering: [externalResource],
+  rendering: [contentResource],
   partOf: partOf,
 });
 
@@ -360,7 +355,6 @@ export {
   contentResource,
   choice,
   canvasReference,
-  externalResource,
   service,
   partOf,
   annotationBody,
