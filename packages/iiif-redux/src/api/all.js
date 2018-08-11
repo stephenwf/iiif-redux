@@ -11,7 +11,8 @@ const getAllImages = state => state.resources.imageResources;
 const getAllAnnotations = state => state.resources.annotations;
 const getAllAnnotationLists = state => state.resources.annotationLists;
 const getAllAnnotationPages = state => state.resources.annotationPages;
-// const getAllAnnotationCollections = state => state.resources.annotationCollections;
+const getAllAnnotationCollections = state =>
+  state.resources.annotationCollections;
 const getAllContentResources = state => state.resources.contentResources;
 const getAllResources = state => state.resources;
 
@@ -28,7 +29,7 @@ export {
   getAllImages,
   getAllAnnotationLists,
   getAllAnnotationPages,
-  // getAllAnnotationCollections,
+  getAllAnnotationCollections,
   getAllAnnotations,
   getAllContentResources,
   getAllResources,

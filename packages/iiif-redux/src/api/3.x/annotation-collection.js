@@ -4,7 +4,9 @@ import mapById from '../../utility/mapById';
 import * as technical from './iiif/technical';
 import * as descriptive from './iiif/descriptive';
 import * as linking from './iiif/linking';
+import * as structural from './iiif/structural';
 import {
+  getAllAnnotations,
   getAllContentResources,
   getAllExternalResources,
   getAllResources,
@@ -14,22 +16,20 @@ import mapByIdOrId from '../../utility/mapByIdOrId';
 import mapAllResources from '../../utility/mapAllResources';
 import mapAllById from '../../utility/mapAllById';
 
-const annotation = memoize(selector => {
+const annotationCollection = memoize(selector => {
   /**
    * Technical properties
    *
    * - getId
    * - getType
+   * - getViewingDirection
    * - getBehavior
-   * - getTimeMode
    */
   const getId = createSelector(selector, technical.getId);
 
   const getType = createSelector(selector, technical.getType);
 
   const getBehavior = createSelector(selector, technical.getBehavior);
-
-  const getTimeMode = createSelector(selector, technical.getTimeMode);
 
   /**
    * Descriptive Properties
@@ -110,10 +110,11 @@ const annotation = memoize(selector => {
     mapAllResources
   );
 
+  // @todo add relation to annotation pages, somehow...
+
   return {
     getId,
     getType,
-    getTimeMode,
     getBehavior,
     getLabel,
     getMetadata,
@@ -137,4 +138,4 @@ const annotation = memoize(selector => {
   };
 });
 
-export default annotation;
+export default annotationCollection;

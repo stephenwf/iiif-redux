@@ -4,7 +4,13 @@ import mapById from '../../utility/mapById';
 import * as technical from './iiif/technical';
 import * as descriptive from './iiif/descriptive';
 import * as linking from './iiif/linking';
+import * as structural from './iiif/structural';
 import {
+  getAllAnnotationCollections,
+  getAllAnnotationPages,
+  getAllAnnotations,
+  getAllCanvases,
+  getAllCanvasReferences,
   getAllContentResources,
   getAllExternalResources,
   getAllResources,
@@ -14,22 +20,25 @@ import mapByIdOrId from '../../utility/mapByIdOrId';
 import mapAllResources from '../../utility/mapAllResources';
 import mapAllById from '../../utility/mapAllById';
 
-const annotation = memoize(selector => {
+const range = memoize(selector => {
   /**
    * Technical properties
    *
    * - getId
    * - getType
    * - getBehavior
-   * - getTimeMode
+   * - getViewingDirection
    */
   const getId = createSelector(selector, technical.getId);
 
   const getType = createSelector(selector, technical.getType);
 
-  const getBehavior = createSelector(selector, technical.getBehavior);
+  const getViewingDirection = createSelector(
+    selector,
+    technical.getViewingDirection
+  );
 
-  const getTimeMode = createSelector(selector, technical.getTimeMode);
+  const getBehavior = createSelector(selector, technical.getBehavior);
 
   /**
    * Descriptive Properties
@@ -38,8 +47,10 @@ const annotation = memoize(selector => {
    * - getMetadata
    * - getSummary
    * - getThumbnail
+   * - getPosterCanvas
    * - getRequiredStatement
    * - getRights
+   * - getNavDate
    */
   const getLabel = createSelector(selector, descriptive.getLabel);
 
@@ -55,12 +66,24 @@ const annotation = memoize(selector => {
     mapByIdOrId
   );
 
+  const getPosterCanvasId = createSelector(
+    selector,
+    descriptive.getPosterCanvas
+  );
+  const getPosterCanvas = createSelector(
+    getPosterCanvasId,
+    getAllCanvases,
+    mapById
+  );
+
   const getRequiredStatement = createSelector(
     selector,
     descriptive.getRequiredStatement
   );
 
   const getRights = createSelector(selector, descriptive.getRights);
+
+  const getNavDate = createSelector(selector, descriptive.getNavDate);
 
   /**
    * Linking properties
@@ -110,18 +133,64 @@ const annotation = memoize(selector => {
     mapAllResources
   );
 
+  const getStartId = createSelector(selector, linking.getStart);
+  const getStart = createSelector(
+    getStartId,
+    getAllCanvases,
+    getAllCanvasReferences,
+    (start, allCanvases, allCanvasReferences) => {
+      if (!start) {
+        return null;
+      }
+      if (start.schema === 'canvas') {
+        return allCanvases[start.id];
+      }
+      return allCanvasReferences[start.id] || null;
+    }
+  );
+
+  const getSupplementaryId = createSelector(selector, linking.getSupplementary);
+  const getSupplementary = createSelector(
+    getSupplementaryId,
+    getAllAnnotationCollections,
+    mapById
+  );
+
+  /**
+   * Structural Properties
+   *
+   * - getItems
+   * - getRanges
+   * - getAnnotations
+   */
+  const getItemIds = createSelector(selector, structural.getItems);
+  const getItems = createSelector(getItemIds, getAllAnnotations, mapAllById);
+
+  const getRangeIds = getItemIds;
+  const getRanges = getItems;
+
+  const getAnnotationIds = createSelector(selector, structural.getAnnotations);
+  const getAnnotations = createSelector(
+    getAnnotationIds,
+    getAllAnnotationPages,
+    mapAllById
+  );
+
   return {
     getId,
     getType,
-    getTimeMode,
+    getViewingDirection,
     getBehavior,
     getLabel,
     getMetadata,
     getSummary,
     getThumbnailId,
     getThumbnail,
+    getPosterCanvasId,
+    getPosterCanvas,
     getRequiredStatement,
     getRights,
+    getNavDate,
     getSeeAlsoIds,
     getSeeAlso,
     getServiceIds,
@@ -134,7 +203,17 @@ const annotation = memoize(selector => {
     getRendering,
     getPartOfId,
     getPartOf,
+    getStartId,
+    getStart,
+    getSupplementaryId,
+    getSupplementary,
+    getItemIds,
+    getItems,
+    getRangeIds,
+    getRanges,
+    getAnnotationIds,
+    getAnnotations,
   };
 });
 
-export default annotation;
+export default range;

@@ -4,7 +4,9 @@ import mapById from '../../utility/mapById';
 import * as technical from './iiif/technical';
 import * as descriptive from './iiif/descriptive';
 import * as linking from './iiif/linking';
+import * as structural from './iiif/structural';
 import {
+  getAllAnnotations,
   getAllContentResources,
   getAllExternalResources,
   getAllResources,
@@ -14,22 +16,19 @@ import mapByIdOrId from '../../utility/mapByIdOrId';
 import mapAllResources from '../../utility/mapAllResources';
 import mapAllById from '../../utility/mapAllById';
 
-const annotation = memoize(selector => {
+const annotationPage = memoize(selector => {
   /**
    * Technical properties
    *
    * - getId
    * - getType
    * - getBehavior
-   * - getTimeMode
    */
   const getId = createSelector(selector, technical.getId);
 
   const getType = createSelector(selector, technical.getType);
 
   const getBehavior = createSelector(selector, technical.getBehavior);
-
-  const getTimeMode = createSelector(selector, technical.getTimeMode);
 
   /**
    * Descriptive Properties
@@ -110,10 +109,21 @@ const annotation = memoize(selector => {
     mapAllResources
   );
 
+  /**
+   * Structural Properties
+   *
+   * - getItems
+   * - getAnnotations
+   */
+  const getItemIds = createSelector(selector, structural.getItems);
+  const getItems = createSelector(getItemIds, getAllAnnotations, mapAllById);
+
+  const getAnnotationIds = getItemIds;
+  const getAnnotations = getItems;
+
   return {
     getId,
     getType,
-    getTimeMode,
     getBehavior,
     getLabel,
     getMetadata,
@@ -134,7 +144,9 @@ const annotation = memoize(selector => {
     getRendering,
     getPartOfId,
     getPartOf,
+    getAnnotationIds,
+    getAnnotations,
   };
 });
 
-export default annotation;
+export default annotationPage;

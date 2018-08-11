@@ -8,10 +8,8 @@ import * as structural from './iiif/structural';
 import {
   getAllAnnotationPages,
   getAllCanvases,
-  getAllCanvasReferences,
   getAllContentResources,
   getAllExternalResources,
-  getAllRanges,
   getAllResources,
   getAllServices,
 } from '../all';

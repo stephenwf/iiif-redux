@@ -297,6 +297,7 @@ annotationPage.define({
 range.define({
   // Structural.
   items: [rangeItem],
+  annotations: [annotationPage],
 
   // Linking
   seeAlso: [contentResource],
@@ -322,6 +323,8 @@ contentResource.define({
   logo: [contentResource],
   rendering: [contentResource],
   partOf: partOf,
+  // Structural
+  annotations: [annotationPage],
 });
 
 // ===========================================================================
