@@ -662,7 +662,7 @@ describe('store', () => {
 
       expect(
         state.dereferenced['http://iiif.com/NOT-REAL-1.json'].error
-      ).toEqual('Unknown resource type');
+      ).toEqual('Unknown Presentation 2 resource type');
     });
 
     test('unknown mapping', async () => {
