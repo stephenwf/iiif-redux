@@ -1,7 +1,7 @@
 import { createStructuredSelector } from 'reselect';
 import testJson from '../../fixtures/presentation/2.1/06/manifest';
-import * as currentManifest from '../../../src/api/current-manifest';
 import { createStoreAndImportManifest } from '../../../test-utils';
+import { manifestByIdSelector } from '../../../src/api/manifest';
 
 describe('iiif/presentation/2.1/06 Description field', () => {
   global.fetch = require('jest-fetch-mock');
@@ -11,9 +11,14 @@ describe('iiif/presentation/2.1/06 Description field', () => {
     const state = store.getState();
 
     expect(
-      createStructuredSelector({
-        description: currentManifest.getDescription,
-      })(state)
+      manifestByIdSelector(
+        currentManifest => ({
+          description: currentManifest.getDescription,
+        }),
+        {
+          getId: () => testJson['@id'],
+        }
+      )(state)
     ).toMatchSnapshot();
   });
 });

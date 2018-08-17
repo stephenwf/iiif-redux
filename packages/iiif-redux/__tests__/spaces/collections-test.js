@@ -1,6 +1,6 @@
+import { collectionByIdSelector } from '../../src/api/collection';
 import createStore from '../../src/createStore';
 import nlsTop from '../fixtures/nls-top';
-import * as currentCollection from '../../src/api/current-collection';
 import { selectCollection } from '../../src/spaces/routing';
 import { waitForRequest } from '../../test-utils';
 
@@ -56,7 +56,11 @@ describe('spaces/collections', () => {
       'https://view.nls.uk/collections/top.json',
     ]);
 
-    expect(currentCollection.getLabel(store.getState())).toEqual([
+    expect(
+      collectionByIdSelector(currentCollection => currentCollection.getLabel, {
+        getId: () => 'https://view.nls.uk/collections/top.json',
+      })(store.getState())
+    ).toEqual([
       {
         '@language': 'en',
         '@value': 'National Library of Scotland IIIF Collections',

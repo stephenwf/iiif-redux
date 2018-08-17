@@ -1,7 +1,7 @@
+import { manifestByIdSelector } from '../../src/api/manifest';
 import createStore from '../../src/createStore';
 import bridges from '../fixtures/bridges';
-import * as currentManifest from '../../src/api/current-manifest';
-import { selectCollection, selectManifest } from '../../src/spaces/routing';
+import { selectManifest } from '../../src/spaces/routing';
 import { waitForRequest } from '../../test-utils';
 
 describe('spaces/collections', () => {
@@ -96,7 +96,11 @@ describe('spaces/collections', () => {
       'https://view.nls.uk/iiif/7446/74464117/canvas/40',
     ]);
 
-    expect(currentManifest.getLabel(store.getState())).toEqual([
+    expect(
+      manifestByIdSelector(currentManifest => currentManifest.getLabel, {
+        getId: () => 'https://view.nls.uk/manifest/7446/74464117/manifest.json',
+      })(store.getState())
+    ).toEqual([
       { '@language': 'en', '@value': 'Forth Bridge illustrations 1886-1887' },
     ]);
   });

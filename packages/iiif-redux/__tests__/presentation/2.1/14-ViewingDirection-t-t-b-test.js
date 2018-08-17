@@ -1,6 +1,6 @@
 import { createStructuredSelector } from 'reselect';
+import { manifestByIdSelector } from '../../../src/api/manifest';
 import testJson from '../../fixtures/presentation/2.1/13/manifest';
-import * as currentManifest from '../../../src/api/current-manifest';
 import { createStoreAndImportManifest } from '../../../test-utils';
 
 describe('iiif/presentation/2.1/13 Manifest: ViewingDirection: t-t-b', () => {
@@ -11,9 +11,14 @@ describe('iiif/presentation/2.1/13 Manifest: ViewingDirection: t-t-b', () => {
     const state = store.getState();
 
     expect(
-      createStructuredSelector({
-        service: currentManifest.getViewingDirection,
-      })(state)
+      manifestByIdSelector(
+        currentManifest => ({
+          service: currentManifest.getViewingDirection,
+        }),
+        {
+          getId: () => testJson['@id'],
+        }
+      )(state)
     ).toMatchSnapshot();
   });
 });

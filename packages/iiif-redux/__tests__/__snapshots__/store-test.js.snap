@@ -54,6 +54,41 @@ Object {
 }
 `;
 
+exports[`store should create state that works with selectors 1`] = `
+Array [
+  Object {
+    "@language": "en",
+    "@value": "Forth Bridge illustrations 1886-1887",
+  },
+]
+`;
+
+exports[`store should create state that works with selectors 2`] = `
+Array [
+  Object {
+    "@language": "en",
+    "@value": "default",
+  },
+]
+`;
+
+exports[`store should create state that works with selectors 3`] = `
+Object {
+  "imageService": Object {
+    "@context": "http://iiif.io/api/image/2/context.json",
+    "@id": "https://view.nls.uk/iiif/7443/74438561.5",
+    "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+  },
+  "label": Array [
+    Object {
+      "@language": "en",
+      "@value": "1",
+    },
+  ],
+  "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438561.4.jpg",
+}
+`;
+
 exports[`store should have default state 1`] = `
 Object {
   "dereferenced": Object {},

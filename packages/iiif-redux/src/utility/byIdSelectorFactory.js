@@ -13,6 +13,7 @@ export default function byIdSelectorFactory(rootApi, resourceKey) {
         return {
           fetched: false,
           error: true,
+          errorMessage: 'No ID found on resource',
         };
       }
 

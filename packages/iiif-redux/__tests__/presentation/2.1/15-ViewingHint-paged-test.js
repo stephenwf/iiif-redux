@@ -1,6 +1,6 @@
 import { createStructuredSelector } from 'reselect';
+import { manifestByIdSelector } from '../../../src/api/manifest';
 import testJson from '../../fixtures/presentation/2.1/15/manifest';
-import * as currentManifest from '../../../src/api/current-manifest';
 import { createStoreAndImportManifest } from '../../../test-utils';
 
 describe('iiif/presentation/2.1/15 Manifest: ViewingHint: paged', () => {
@@ -11,9 +11,14 @@ describe('iiif/presentation/2.1/15 Manifest: ViewingHint: paged', () => {
     const state = store.getState();
 
     expect(
-      createStructuredSelector({
-        viewingHint: currentManifest.getViewingHint,
-      })(state)
+      manifestByIdSelector(
+        currentManifest => ({
+          viewingHint: currentManifest.getViewingHint,
+        }),
+        {
+          getId: () => testJson['@id'],
+        }
+      )(state)
     ).toMatchSnapshot();
   });
 });

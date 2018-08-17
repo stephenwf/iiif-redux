@@ -1,12 +1,11 @@
+import { manifestByIdSelector } from './src/api/manifest';
+import { sequences } from './src/api/sequence';
 import createStore from './src/createStore';
 import {
   selectCanvas,
   selectManifest,
   selectSequence,
 } from './src/spaces/routing';
-import * as currentManifest from './src/api/current-manifest';
-import * as currentSequence from './src/api/current-sequence';
-import * as currentCanvas from './src/api/current-canvas';
 import * as reducers from './src/reducers';
 import { combineReducers } from 'redux';
 
@@ -41,11 +40,21 @@ export async function createStoreAndImportManifest(manifestJson) {
 
   await whenRequestFinishes;
 
-  const sequences = currentManifest.getSequenceIds(store.getState());
-  store.dispatch(selectSequence({ id: sequences[0] }));
+  const sequenceIds = manifestByIdSelector(
+    currentManifest => currentManifest.getSequenceIds,
+    { getId: () => id }
+  )(store.getState());
+  store.dispatch(selectSequence({ id: sequenceIds[0] }));
 
-  const canvases = currentSequence.getCanvasIds(store.getState());
-  store.dispatch(selectCanvas({ id: canvases[0] }));
+  const canvasIds = manifestByIdSelector(
+    currentManifest =>
+      sequences(
+        currentManifest.getSequences,
+        currentSequence => currentSequence.getCanvasIds
+      ),
+    { getId: () => id }
+  )(store.getState());
+  store.dispatch(selectCanvas({ id: canvasIds[0] }));
 
   return store;
 }
