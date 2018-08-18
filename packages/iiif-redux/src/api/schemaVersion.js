@@ -6,7 +6,7 @@ export const getSchemaVersionForResource = selector =>
     getAllSchemaVersions,
     selector,
     (allSchemaVersions, resource) => {
-      const id = resource['@id'] || resource.id;
+      const id = resource ? resource['@id'] || resource.id : null;
       if (!id) {
         return null;
       }

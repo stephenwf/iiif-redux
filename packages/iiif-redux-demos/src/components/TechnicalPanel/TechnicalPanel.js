@@ -5,7 +5,7 @@ class TechnicalPanel extends Component {
   render() {
     const {
       id,
-      type,
+      type = '',
       viewingHint,
       navDate,
       viewingDirection,
