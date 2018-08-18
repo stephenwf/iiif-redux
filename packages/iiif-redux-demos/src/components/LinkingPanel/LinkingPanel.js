@@ -15,8 +15,6 @@ class LinkingPanel extends Component {
       startCanvas,
     } = this.props;
 
-    console.warn('===>', seeAlso);
-
     const dataSource = [
       seeAlso && seeAlso.length
         ? {

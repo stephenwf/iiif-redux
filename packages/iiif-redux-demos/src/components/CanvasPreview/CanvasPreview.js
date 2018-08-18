@@ -8,7 +8,6 @@ import Thumbnail from '../Thumbnail/Thumbnail';
 class CanvasPreview extends Component {
   render() {
     const { id, label, thumbnail, onClick } = this.props;
-    console.log(thumbnail);
     return (
       <Card
         style={{ margin: 5 }}

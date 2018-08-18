@@ -4,6 +4,10 @@ class Thumbnail extends Component {
   render() {
     const { style, data, ...props } = this.props;
 
+    if (!data) {
+      return <div />;
+    }
+
     if (typeof data === 'string') {
       return (
         <div

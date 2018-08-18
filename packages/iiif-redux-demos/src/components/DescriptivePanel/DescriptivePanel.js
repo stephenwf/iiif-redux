@@ -31,7 +31,11 @@ class DescriptivePanel extends Component {
         value: logo ? (
           <img
             style={{ maxWidth: '100%' }}
-            src={logo['@id'] || logo[0].id ? logo['@id'] || logo[0].id : logo}
+            src={
+              logo['@id'] || logo.id || (logo[0] && logo[0].id)
+                ? logo['@id'] || logo.id || (logo[0] && logo[0].id)
+                : logo
+            }
           />
         ) : (
           <Muted>no logo</Muted>
