@@ -24,8 +24,6 @@ export default function resourceSelectorFactory(
       const exists = doesResourceExist(selector)(state);
       const fetched = hasResourceBeenFetched(selector, resourceKey)(state);
 
-      console.log({ resource, version });
-
       // No resource, error reported.
       if (!resource) {
         return selectorError('Resource not found.');
@@ -65,8 +63,6 @@ export default function resourceSelectorFactory(
 
       // Take user input to make selector.
       const selectorOrStructure = apiRequest(selectorApi(selector));
-
-      console.info('=> RESOURCE', selectorApi(() => resource).getId);
 
       function filterEmpty(selectorMap) {
         return Object.keys(selectorMap).reduce((acc, next) => {
