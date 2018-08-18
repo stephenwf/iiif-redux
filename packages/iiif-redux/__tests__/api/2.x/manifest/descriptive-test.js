@@ -1,4 +1,4 @@
-import manifest from '../../../../src/api/manifest';
+import manifest from '../../../../src/api/2.x/manifest';
 
 describe('api/2.x/manifest/descriptive', () => {
   const {

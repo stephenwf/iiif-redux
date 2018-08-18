@@ -369,7 +369,10 @@ function* ensureType({ payload: { frameId, resourceId, resourceType } }) {
 
     yield put(
       frameSetInitialResource(
-        { resourceId, resourceType: RESOURCE_TYPE_MAP[state['@type']] },
+        {
+          resourceId,
+          resourceType: RESOURCE_TYPE_MAP[state.type || state['@type']],
+        },
         frameId
       )
     );

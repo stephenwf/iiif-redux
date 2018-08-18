@@ -15,6 +15,8 @@ const getAllAnnotationCollections = state =>
   state.resources.annotationCollections;
 const getAllContentResources = state => state.resources.contentResources;
 const getAllResources = state => state.resources;
+const getAllSchemaVersions = state => state.schemaVersions;
+const getAllDereferenced = state => state.dereferenced;
 
 export {
   getAllCollections,
@@ -33,4 +35,6 @@ export {
   getAllAnnotations,
   getAllContentResources,
   getAllResources,
+  getAllSchemaVersions,
+  getAllDereferenced,
 };

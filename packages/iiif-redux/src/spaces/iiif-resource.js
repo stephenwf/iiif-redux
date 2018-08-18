@@ -6,6 +6,7 @@ import deepmerge from 'deepmerge';
 import update from 'immutability-helper';
 import * as presentation2 from '../schema/presentation2';
 import * as presentation3 from '../schema/presentation3';
+import trackPresentationVersion from '../utility/trackPresentationVersion';
 import {
   COLLECTION_ERROR,
   COLLECTION_REQUEST,
@@ -239,7 +240,10 @@ function* importPresentation2Resource(response, resourceId) {
 
   debug('Starting normalize presentation 2 resource %s', resourceId);
 
-  return presentation2.normalize(response, presentation2.resource);
+  return trackPresentationVersion(
+    2,
+    presentation2.normalize(response, presentation2.resource)
+  );
 }
 
 function* importPresentation3Resource(response, resourceId) {
@@ -255,7 +259,10 @@ function* importPresentation3Resource(response, resourceId) {
 
   debug('Starting normalize presentation 3 resource %s', resourceId);
 
-  return presentation3.normalize(response, presentation3.resource);
+  return trackPresentationVersion(
+    3,
+    presentation3.normalize(response, presentation3.resource)
+  );
 }
 
 function* getResourceType(resourceId, response) {
