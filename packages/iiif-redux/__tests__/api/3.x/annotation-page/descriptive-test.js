@@ -3,7 +3,7 @@ import { normalize } from '../../../../src/schema/presentation3';
 import fixtures from './fixtures';
 import { DEFAULT_STATE } from '../../../../src/spaces/iiif-resource';
 
-describe('api/3.x/annotation-page/technical', () => {
+describe('api/3.x/annotation-page/descriptive', () => {
   fixtures.forEach(({ fixture, name }) => {
     describe(`AnnotationPage: ${name}`, () => {
       const {

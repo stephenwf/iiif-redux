@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getHomepage: getHomepage Complete Annotation Page 1`] = `
+exports[`api/3.x/annotation-page/linking AnnotationPage: Complete Annotation Page getHomepage: getHomepage Complete Annotation Page 1`] = `
 Object {
   "format": "text/html",
   "id": "https://example.org/info/book1/",
@@ -13,9 +13,9 @@ Object {
 }
 `;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getHomepageId: getHomepageId Complete Annotation Page 1`] = `"https://example.org/info/book1/"`;
+exports[`api/3.x/annotation-page/linking AnnotationPage: Complete Annotation Page getHomepageId: getHomepageId Complete Annotation Page 1`] = `"https://example.org/info/book1/"`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getLogo: getLogo Complete Annotation Page 1`] = `
+exports[`api/3.x/annotation-page/linking AnnotationPage: Complete Annotation Page getLogo: getLogo Complete Annotation Page 1`] = `
 Array [
   Object {
     "id": "https://example.org/logos/institution1.jpg",
@@ -27,13 +27,13 @@ Array [
 ]
 `;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getLogoIds: getLogoIds Complete Annotation Page 1`] = `
+exports[`api/3.x/annotation-page/linking AnnotationPage: Complete Annotation Page getLogoIds: getLogoIds Complete Annotation Page 1`] = `
 Array [
   "https://example.org/logos/institution1.jpg",
 ]
 `;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getPartOf: getPartOf Complete Annotation Page 1`] = `
+exports[`api/3.x/annotation-page/linking AnnotationPage: Complete Annotation Page getPartOf: getPartOf Complete Annotation Page 1`] = `
 Array [
   Object {
     "id": "https://example.org/collections/books/",
@@ -42,7 +42,7 @@ Array [
 ]
 `;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getPartOfId: getPartOfId Complete Annotation Page 1`] = `
+exports[`api/3.x/annotation-page/linking AnnotationPage: Complete Annotation Page getPartOfId: getPartOfId Complete Annotation Page 1`] = `
 Array [
   Object {
     "id": "https://example.org/collections/books/",
@@ -51,7 +51,7 @@ Array [
 ]
 `;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getRendering: getRendering Complete Annotation Page 1`] = `
+exports[`api/3.x/annotation-page/linking AnnotationPage: Complete Annotation Page getRendering: getRendering Complete Annotation Page 1`] = `
 Array [
   Object {
     "format": "application/pdf",
@@ -66,13 +66,13 @@ Array [
 ]
 `;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getRenderingIds: getRenderingIds Complete Annotation Page 1`] = `
+exports[`api/3.x/annotation-page/linking AnnotationPage: Complete Annotation Page getRenderingIds: getRenderingIds Complete Annotation Page 1`] = `
 Array [
   "https://example.org/iiif/book1.pdf",
 ]
 `;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getSeeAlso: getSeeAlso Complete Annotation Page 1`] = `
+exports[`api/3.x/annotation-page/linking AnnotationPage: Complete Annotation Page getSeeAlso: getSeeAlso Complete Annotation Page 1`] = `
 Array [
   Object {
     "format": "text/xml",
@@ -83,13 +83,13 @@ Array [
 ]
 `;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getSeeAlsoIds: getSeeAlsoIds Complete Annotation Page 1`] = `
+exports[`api/3.x/annotation-page/linking AnnotationPage: Complete Annotation Page getSeeAlsoIds: getSeeAlsoIds Complete Annotation Page 1`] = `
 Array [
   "https://example.org/library/catalog/book1.xml",
 ]
 `;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getService: getService Complete Annotation Page 1`] = `
+exports[`api/3.x/annotation-page/linking AnnotationPage: Complete Annotation Page getService: getService Complete Annotation Page 1`] = `
 Array [
   Object {
     "id": "https://example.org/service/example",
@@ -99,32 +99,32 @@ Array [
 ]
 `;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getServiceIds: getServiceIds Complete Annotation Page 1`] = `
+exports[`api/3.x/annotation-page/linking AnnotationPage: Complete Annotation Page getServiceIds: getServiceIds Complete Annotation Page 1`] = `
 Array [
   "https://example.org/service/example",
 ]
 `;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getHomepage: getHomepage Minimal Annotation Page 1`] = `null`;
+exports[`api/3.x/annotation-page/linking AnnotationPage: Minimal Annotation Page getHomepage: getHomepage Minimal Annotation Page 1`] = `null`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getHomepageId: getHomepageId Minimal Annotation Page 1`] = `null`;
+exports[`api/3.x/annotation-page/linking AnnotationPage: Minimal Annotation Page getHomepageId: getHomepageId Minimal Annotation Page 1`] = `null`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getLogo: getLogo Minimal Annotation Page 1`] = `Array []`;
+exports[`api/3.x/annotation-page/linking AnnotationPage: Minimal Annotation Page getLogo: getLogo Minimal Annotation Page 1`] = `Array []`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getLogoIds: getLogoIds Minimal Annotation Page 1`] = `Array []`;
+exports[`api/3.x/annotation-page/linking AnnotationPage: Minimal Annotation Page getLogoIds: getLogoIds Minimal Annotation Page 1`] = `Array []`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getPartOf: getPartOf Minimal Annotation Page 1`] = `null`;
+exports[`api/3.x/annotation-page/linking AnnotationPage: Minimal Annotation Page getPartOf: getPartOf Minimal Annotation Page 1`] = `null`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getPartOfId: getPartOfId Minimal Annotation Page 1`] = `null`;
+exports[`api/3.x/annotation-page/linking AnnotationPage: Minimal Annotation Page getPartOfId: getPartOfId Minimal Annotation Page 1`] = `null`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getRendering: getRendering Minimal Annotation Page 1`] = `Array []`;
+exports[`api/3.x/annotation-page/linking AnnotationPage: Minimal Annotation Page getRendering: getRendering Minimal Annotation Page 1`] = `Array []`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getRenderingIds: getRenderingIds Minimal Annotation Page 1`] = `Array []`;
+exports[`api/3.x/annotation-page/linking AnnotationPage: Minimal Annotation Page getRenderingIds: getRenderingIds Minimal Annotation Page 1`] = `Array []`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getSeeAlso: getSeeAlso Minimal Annotation Page 1`] = `Array []`;
+exports[`api/3.x/annotation-page/linking AnnotationPage: Minimal Annotation Page getSeeAlso: getSeeAlso Minimal Annotation Page 1`] = `Array []`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getSeeAlsoIds: getSeeAlsoIds Minimal Annotation Page 1`] = `Array []`;
+exports[`api/3.x/annotation-page/linking AnnotationPage: Minimal Annotation Page getSeeAlsoIds: getSeeAlsoIds Minimal Annotation Page 1`] = `Array []`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getService: getService Minimal Annotation Page 1`] = `Array []`;
+exports[`api/3.x/annotation-page/linking AnnotationPage: Minimal Annotation Page getService: getService Minimal Annotation Page 1`] = `Array []`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getServiceIds: getServiceIds Minimal Annotation Page 1`] = `Array []`;
+exports[`api/3.x/annotation-page/linking AnnotationPage: Minimal Annotation Page getServiceIds: getServiceIds Minimal Annotation Page 1`] = `Array []`;

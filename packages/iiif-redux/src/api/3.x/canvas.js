@@ -154,12 +154,14 @@ const canvas = memoize(selector => {
   );
 
   return {
+    // Technical
     getId,
     getType,
     getHeight,
     getWidth,
     getDuration,
     getBehavior,
+    // Descriptive
     getLabel,
     getMetadata,
     getSummary,
@@ -170,6 +172,7 @@ const canvas = memoize(selector => {
     getRequiredStatement,
     getRights,
     getNavDate,
+    // Linking
     getSeeAlsoIds,
     getSeeAlso,
     getServiceIds,
@@ -182,6 +185,7 @@ const canvas = memoize(selector => {
     getRendering,
     getPartOfId,
     getPartOf,
+    // Structural
     getItemIds,
     getItems,
     getPaintingAnnotationIds,

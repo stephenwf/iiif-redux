@@ -1,11 +1,11 @@
-import annotationPage from '../../../../src/api/3.x/annotation-page';
+import canvas from '../../../../src/api/3.x/canvas';
 import { normalize } from '../../../../src/schema/presentation3';
 import fixtures from './fixtures';
 import { DEFAULT_STATE } from '../../../../src/spaces/iiif-resource';
 
-describe('api/3.x/annotation-page/linking', () => {
+describe('api/3.x/canvas/linking', () => {
   fixtures.forEach(({ fixture, name }) => {
-    describe(`AnnotationPage: ${name}`, () => {
+    describe(`Canvas: ${name}`, () => {
       const {
         result: { id },
         entities,
@@ -13,9 +13,10 @@ describe('api/3.x/annotation-page/linking', () => {
       const state = {
         resources: { ...DEFAULT_STATE.resources, ...entities },
       };
-      const selectAnnotationPage = s => s.resources.annotationPages[id];
+      const selectCanvas = s => s.resources.canvases[id];
 
       const {
+        // Linking
         getSeeAlsoIds,
         getSeeAlso,
         getServiceIds,
@@ -28,7 +29,9 @@ describe('api/3.x/annotation-page/linking', () => {
         getRendering,
         getPartOfId,
         getPartOf,
-      } = annotationPage(selectAnnotationPage);
+      } = canvas(selectCanvas);
+
+      // Linking
 
       test('getSeeAlsoIds', () => {
         expect(getSeeAlsoIds(state)).toMatchSnapshot(`getSeeAlsoIds ${name}`);

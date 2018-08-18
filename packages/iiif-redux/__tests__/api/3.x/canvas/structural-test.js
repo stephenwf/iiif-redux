@@ -1,11 +1,11 @@
-import annotationPage from '../../../../src/api/3.x/annotation-page';
+import canvas from '../../../../src/api/3.x/canvas';
 import { normalize } from '../../../../src/schema/presentation3';
 import fixtures from './fixtures';
 import { DEFAULT_STATE } from '../../../../src/spaces/iiif-resource';
 
-describe('api/3.x/annotation-page/structural', () => {
+describe('api/3.x/canvas/structural', () => {
   fixtures.forEach(({ fixture, name }) => {
-    describe(`AnnotationPage: ${name}`, () => {
+    describe(`Canvas: ${name}`, () => {
       const {
         result: { id },
         entities,
@@ -13,14 +13,18 @@ describe('api/3.x/annotation-page/structural', () => {
       const state = {
         resources: { ...DEFAULT_STATE.resources, ...entities },
       };
-      const selectAnnotationPage = s => s.resources.annotationPages[id];
+      const selectCanvas = s => s.resources.canvases[id];
 
       const {
         getItemIds,
         getItems,
+        getPaintingAnnotationIds,
+        getPaintingAnnotations,
         getAnnotationIds,
         getAnnotations,
-      } = annotationPage(selectAnnotationPage);
+      } = canvas(selectCanvas);
+
+      // Structural
 
       test('getItemIds', () => {
         expect(getItemIds(state)).toMatchSnapshot(`getItemIds ${name}`);
@@ -28,6 +32,18 @@ describe('api/3.x/annotation-page/structural', () => {
 
       test('getItems', () => {
         expect(getItems(state)).toMatchSnapshot(`getItems ${name}`);
+      });
+
+      test('getPaintingAnnotationIds', () => {
+        expect(getPaintingAnnotationIds(state)).toMatchSnapshot(
+          `getPaintingAnnotationIds ${name}`
+        );
+      });
+
+      test('getPaintingAnnotations', () => {
+        expect(getPaintingAnnotations(state)).toMatchSnapshot(
+          `getPaintingAnnotations ${name}`
+        );
       });
 
       test('getAnnotationIds', () => {

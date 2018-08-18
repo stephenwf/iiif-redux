@@ -1,11 +1,11 @@
-import annotationCollection from '../../../../src/api/3.x/annotation-collection';
+import canvas from '../../../../src/api/3.x/canvas';
 import { normalize } from '../../../../src/schema/presentation3';
 import fixtures from './fixtures';
 import { DEFAULT_STATE } from '../../../../src/spaces/iiif-resource';
 
-describe('api/3.x/annotation-collection/descriptive', () => {
+describe('api/3.x/canvas/descriptive', () => {
   fixtures.forEach(({ fixture, name }) => {
-    describe(`AnnotationCollection: ${name}`, () => {
+    describe(`Canvas: ${name}`, () => {
       const {
         result: { id },
         entities,
@@ -13,8 +13,7 @@ describe('api/3.x/annotation-collection/descriptive', () => {
       const state = {
         resources: { ...DEFAULT_STATE.resources, ...entities },
       };
-      const selectAnnotationCollection = s =>
-        s.resources.annotationCollections[id];
+      const selectCanvas = s => s.resources.canvases[id];
 
       const {
         getLabel,
@@ -22,9 +21,14 @@ describe('api/3.x/annotation-collection/descriptive', () => {
         getSummary,
         getThumbnailId,
         getThumbnail,
+        getPosterCanvasId,
+        getPosterCanvas,
         getRequiredStatement,
         getRights,
-      } = annotationCollection(selectAnnotationCollection);
+        getNavDate,
+      } = canvas(selectCanvas);
+
+      // Descriptive
 
       test('getLabel', () => {
         expect(getLabel(state)).toMatchSnapshot(`getLabel ${name}`);
@@ -46,6 +50,18 @@ describe('api/3.x/annotation-collection/descriptive', () => {
         expect(getThumbnail(state)).toMatchSnapshot(`getThumbnail ${name}`);
       });
 
+      test('getPosterCanvasId', () => {
+        expect(getPosterCanvasId(state)).toMatchSnapshot(
+          `getPosterCanvasId ${name}`
+        );
+      });
+
+      test('getPosterCanvas', () => {
+        expect(getPosterCanvas(state)).toMatchSnapshot(
+          `getPosterCanvas ${name}`
+        );
+      });
+
       test('getRequiredStatement', () => {
         expect(getRequiredStatement(state)).toMatchSnapshot(
           `getRequiredStatement ${name}`
@@ -54,6 +70,10 @@ describe('api/3.x/annotation-collection/descriptive', () => {
 
       test('getRights', () => {
         expect(getRights(state)).toMatchSnapshot(`getRights ${name}`);
+      });
+
+      test('getNavDate', () => {
+        expect(getNavDate(state)).toMatchSnapshot(`getNavDate ${name}`);
       });
     });
   });

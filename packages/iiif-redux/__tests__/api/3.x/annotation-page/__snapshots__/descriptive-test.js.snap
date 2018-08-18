@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getLabel: getLabel Complete Annotation Page 1`] = `
+exports[`api/3.x/annotation-page/descriptive AnnotationPage: Complete Annotation Page getLabel: getLabel Complete Annotation Page 1`] = `
 Object {
   "en": Array [
     "Annotation 1",
@@ -8,7 +8,7 @@ Object {
 }
 `;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getMetadata: getMetadata Complete Annotation Page 1`] = `
+exports[`api/3.x/annotation-page/descriptive AnnotationPage: Complete Annotation Page getMetadata: getMetadata Complete Annotation Page 1`] = `
 Array [
   Object {
     "label": Object {
@@ -65,7 +65,7 @@ Array [
 ]
 `;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getRequiredStatement: getRequiredStatement Complete Annotation Page 1`] = `
+exports[`api/3.x/annotation-page/descriptive AnnotationPage: Complete Annotation Page getRequiredStatement: getRequiredStatement Complete Annotation Page 1`] = `
 Object {
   "label": Object {
     "en": Array [
@@ -80,9 +80,9 @@ Object {
 }
 `;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getRights: getRights Complete Annotation Page 1`] = `"https://creativecommons.org/licenses/by/4.0/"`;
+exports[`api/3.x/annotation-page/descriptive AnnotationPage: Complete Annotation Page getRights: getRights Complete Annotation Page 1`] = `"https://creativecommons.org/licenses/by/4.0/"`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getSummary: getSummary Complete Annotation Page 1`] = `
+exports[`api/3.x/annotation-page/descriptive AnnotationPage: Complete Annotation Page getSummary: getSummary Complete Annotation Page 1`] = `
 Object {
   "en": Array [
     "Book 1, written be Anne Author, published in Paris around 1400.",
@@ -90,7 +90,7 @@ Object {
 }
 `;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getThumbnail: getThumbnail Complete Annotation Page 1`] = `
+exports[`api/3.x/annotation-page/descriptive AnnotationPage: Complete Annotation Page getThumbnail: getThumbnail Complete Annotation Page 1`] = `
 Object {
   "id": "https://example.org/images/book1-page1/full/80,100/0/default.jpg",
   "service": Array [
@@ -100,18 +100,18 @@ Object {
 }
 `;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getThumbnailId: getThumbnailId Complete Annotation Page 1`] = `"https://example.org/images/book1-page1/full/80,100/0/default.jpg"`;
+exports[`api/3.x/annotation-page/descriptive AnnotationPage: Complete Annotation Page getThumbnailId: getThumbnailId Complete Annotation Page 1`] = `"https://example.org/images/book1-page1/full/80,100/0/default.jpg"`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getLabel: getLabel Minimal Annotation Page 1`] = `null`;
+exports[`api/3.x/annotation-page/descriptive AnnotationPage: Minimal Annotation Page getLabel: getLabel Minimal Annotation Page 1`] = `null`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getMetadata: getMetadata Minimal Annotation Page 1`] = `Array []`;
+exports[`api/3.x/annotation-page/descriptive AnnotationPage: Minimal Annotation Page getMetadata: getMetadata Minimal Annotation Page 1`] = `Array []`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getRequiredStatement: getRequiredStatement Minimal Annotation Page 1`] = `null`;
+exports[`api/3.x/annotation-page/descriptive AnnotationPage: Minimal Annotation Page getRequiredStatement: getRequiredStatement Minimal Annotation Page 1`] = `null`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getRights: getRights Minimal Annotation Page 1`] = `null`;
+exports[`api/3.x/annotation-page/descriptive AnnotationPage: Minimal Annotation Page getRights: getRights Minimal Annotation Page 1`] = `null`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getSummary: getSummary Minimal Annotation Page 1`] = `null`;
+exports[`api/3.x/annotation-page/descriptive AnnotationPage: Minimal Annotation Page getSummary: getSummary Minimal Annotation Page 1`] = `null`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getThumbnail: getThumbnail Minimal Annotation Page 1`] = `null`;
+exports[`api/3.x/annotation-page/descriptive AnnotationPage: Minimal Annotation Page getThumbnail: getThumbnail Minimal Annotation Page 1`] = `null`;
 
-exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getThumbnailId: getThumbnailId Minimal Annotation Page 1`] = `null`;
+exports[`api/3.x/annotation-page/descriptive AnnotationPage: Minimal Annotation Page getThumbnailId: getThumbnailId Minimal Annotation Page 1`] = `null`;
