@@ -1,7 +1,7 @@
 import collection from '../../src/api/collection';
 
-describe('collection combined', () => {
-  test('collections combined', () => {
+describe('api/collection', () => {
+  test('Presentation 2 and 3 collections with single selector', () => {
     const state = {
       dereferenced: {
         'http://iiif.com/collection-1.json': {
@@ -33,20 +33,15 @@ describe('collection combined', () => {
       },
     };
 
-    const selectorP2 = collection(
-      s => s.resources.collections['http://iiif.com/collection-1.json'],
-      api => api.getLabel
-    );
+    const selectLabelById = id =>
+      collection(s => s.resources.collections[id], api => api.getLabel);
 
+    const selectorP2 = selectLabelById('http://iiif.com/collection-1.json');
     expect(selectorP2(state)).toEqual([
       { '@language': 'en', '@value': 'Test collection label' },
     ]);
 
-    const selectorP3 = collection(
-      s => s.resources.collections['http://iiif.com/collection-2.json'],
-      api => api.getLabel
-    );
-
+    const selectorP3 = selectLabelById('http://iiif.com/collection-2.json');
     expect(selectorP3(state)).toEqual({ en: ['Test collection label'] });
   });
 });
