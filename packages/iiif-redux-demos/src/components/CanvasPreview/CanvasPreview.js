@@ -8,11 +8,12 @@ import Thumbnail from '../Thumbnail/Thumbnail';
 class CanvasPreview extends Component {
   render() {
     const { id, label, thumbnail, onClick } = this.props;
+    console.log(thumbnail);
     return (
       <Card
         style={{ margin: 5 }}
         onClick={() => onClick(id)}
-        cover={<Thumbnail {...thumbnail} style={{ minHeight: 130 }} />}
+        cover={<Thumbnail data={thumbnail} style={{ minHeight: 130 }} />}
       >
         <IntlString>{label}</IntlString>
       </Card>

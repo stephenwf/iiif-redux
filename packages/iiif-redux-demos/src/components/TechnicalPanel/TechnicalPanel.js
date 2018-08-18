@@ -14,15 +14,17 @@ class TechnicalPanel extends Component {
       width,
     } = this.props;
     const data = [
-      { title: 'id', value: id },
-      {
-        title: 'type',
-        value: (
-          <Tag color="volcano">
-            {type.indexOf('sc:') === 0 ? type.slice(3) : type}
-          </Tag>
-        ),
-      },
+      id ? { title: 'id', value: id } : null,
+      type
+        ? {
+            title: 'type',
+            value: (
+              <Tag color="volcano">
+                {type.indexOf('sc:') === 0 ? type.slice(3) : type}
+              </Tag>
+            ),
+          }
+        : null,
       viewingHint
         ? {
             title: 'viewing hint',

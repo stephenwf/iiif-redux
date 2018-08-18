@@ -26,10 +26,10 @@ describe('api/collection', () => {
             label: { en: ['Test collection label'] },
           },
         },
-      },
-      schemaVersions: {
-        'http://iiif.com/collection-1.json': 2,
-        'http://iiif.com/collection-2.json': 3,
+        schemaVersions: {
+          'http://iiif.com/collection-1.json': 2,
+          'http://iiif.com/collection-2.json': 3,
+        },
       },
     };
 

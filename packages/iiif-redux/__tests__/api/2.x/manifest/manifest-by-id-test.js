@@ -76,6 +76,7 @@ describe('api/2.x/manifest/manifest-by-id', () => {
       id: 'http://iiif.com/manifest-1.json',
       type: 'sc:Manifest',
       loading: false,
+      fetched: true,
     });
   });
 
@@ -138,6 +139,7 @@ describe('api/2.x/manifest/manifest-by-id', () => {
       id: 'http://iiif.com/manifest-1.json',
       type: 'sc:Manifest',
       loading: true,
+      fetched: true,
     });
   });
 });

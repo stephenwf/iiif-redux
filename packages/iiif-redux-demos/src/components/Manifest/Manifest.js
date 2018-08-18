@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { Spin, Row, Col, Card } from 'antd';
+import CanvasPreview from '../CanvasPreview/CanvasPreview';
 import StructuralPanel from '../StructuralPanel/StructuralPanel';
 import DescriptivePanel from '../DescriptivePanel/DescriptivePanel';
 import LinkingPanel from '../LinkingPanel/LinkingPanel';
@@ -61,7 +62,7 @@ class Manifest extends Component {
               related={this.props.related}
               within={this.props.within}
             />
-            {this.props.ranges.length ? (
+            {this.props.ranges && this.props.ranges.length ? (
               <div>
                 <h3>Ranges</h3>
                 <Card style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>
@@ -83,7 +84,24 @@ class Manifest extends Component {
                 <Spin />
               </div>
             ) : null}
-            {this.props.sequences.length ? (
+            {this.props.canvases && this.props.canvases.length ? (
+              <PaginatedList perPage={20} dataSet={this.props.canvases}>
+                {allCanvases => (
+                  <Row gutter={16} style={{ padding: 15 }}>
+                    {allCanvases.map((canvas, key) => (
+                      <Col span={6} key={key}>
+                        <CanvasPreview
+                          id={canvas}
+                          key={key}
+                          onClick={this.props.selectCanvas}
+                        />
+                      </Col>
+                    ))}
+                  </Row>
+                )}
+              </PaginatedList>
+            ) : null}
+            {this.props.sequences && this.props.sequences.length ? (
               <div>
                 <h3>Sequences</h3>
                 <PaginatedList perPage={20} dataSet={this.props.sequences}>
@@ -137,6 +155,7 @@ export default resourceLoader(
         seeAlso: currentManifest.getSeeAlso,
         // Structural
         sequences: currentManifest.getSequenceIds,
+        canvases: currentManifest.getCanvasIds,
         ranges: currentManifest.getRangeIds,
         otherContent: currentManifest.getOtherContent,
       }),

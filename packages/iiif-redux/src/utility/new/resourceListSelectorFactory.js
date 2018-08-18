@@ -2,7 +2,7 @@ import { createSelector, createStructuredSelector } from 'reselect';
 import memoize from 'lodash.memoize';
 
 export default function resourceListSelectorFactory(getAllOfResource, rootApi) {
-  return memoize((selector, api, config) => {
+  return (selector, api, config) => {
     return createSelector(
       selector,
       getAllOfResource,
@@ -19,5 +19,5 @@ export default function resourceListSelectorFactory(getAllOfResource, rootApi) {
           )(state)
         )
     );
-  });
+  };
 }

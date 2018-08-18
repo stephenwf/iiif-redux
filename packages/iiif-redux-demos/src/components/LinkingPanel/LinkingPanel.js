@@ -15,11 +15,13 @@ class LinkingPanel extends Component {
       startCanvas,
     } = this.props;
 
+    console.warn('===>', seeAlso);
+
     const dataSource = [
-      seeAlso.length
+      seeAlso && seeAlso.length
         ? {
             label: 'See also links',
-            value: seeAlso.map((seeAlsoLink, key) => (
+            value: seeAlso.filter(e => e).map((seeAlsoLink, key) => (
               <li key={key}>
                 <a href={seeAlsoLink['@id']} target="_blank">
                   {seeAlsoLink.label ? (
@@ -32,10 +34,10 @@ class LinkingPanel extends Component {
             )),
           }
         : null,
-      service.length
+      service && service.length
         ? {
             label: 'Services',
-            value: service.map((serviceLink, key) => (
+            value: service.filter(e => e).map((serviceLink, key) => (
               <li key={key}>
                 <a href={serviceLink['@id']} target="_blank">
                   {serviceLink.label ? (
@@ -48,10 +50,10 @@ class LinkingPanel extends Component {
             )),
           }
         : null,
-      related.length
+      related && related.length
         ? {
             label: 'Related',
-            value: related.map((relatedLink, key) => (
+            value: related.filter(e => e).map((relatedLink, key) => (
               <li key={key}>
                 <a href={relatedLink['@id']} target="_blank">
                   {relatedLink.label ? (
@@ -64,8 +66,8 @@ class LinkingPanel extends Component {
             )),
           }
         : null,
-      rendering.length
-        ? rendering.map((renderingLink, key) => (
+      rendering && rendering.length
+        ? rendering.filter(e => e).map((renderingLink, key) => (
             <li key={key}>
               <a href={renderingLink['@id']} target="_blank">
                 {renderingLink.label ? (
@@ -77,10 +79,10 @@ class LinkingPanel extends Component {
             </li>
           ))
         : null,
-      within.length
+      within && within.length
         ? {
             label: 'Within',
-            value: within.map((withinLink, key) => (
+            value: within.filter(e => e).map((withinLink, key) => (
               <li key={key}>
                 <a href={withinLink['@id']} target="_blank">
                   {withinLink.label ? (

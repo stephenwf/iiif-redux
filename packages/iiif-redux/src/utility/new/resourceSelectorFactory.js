@@ -3,6 +3,7 @@ import memoize from 'lodash.memoize';
 import {
   doesResourceExist,
   hasResourceBeenFetched,
+  isResourceLoading,
 } from '../../api/dereferenced';
 import { getSchemaVersionForResource } from '../../api/schemaVersion';
 import selectorError from './selectorError';
@@ -17,11 +18,13 @@ export default function resourceSelectorFactory(
     apiRequest,
     { dereference = false } = { dereference: false }
   ) => {
-    return memoize(state => {
+    return state => {
       const resource = selector(state);
       const version = getSchemaVersionForResource(selector)(state);
       const exists = doesResourceExist(selector)(state);
       const fetched = hasResourceBeenFetched(selector, resourceKey)(state);
+
+      console.log({ resource, version });
 
       // No resource, error reported.
       if (!resource) {
@@ -63,11 +66,31 @@ export default function resourceSelectorFactory(
       // Take user input to make selector.
       const selectorOrStructure = apiRequest(selectorApi(selector));
 
+      console.info('=> RESOURCE', selectorApi(() => resource).getId);
+
+      function filterEmpty(selectorMap) {
+        return Object.keys(selectorMap).reduce((acc, next) => {
+          if (selectorMap[next]) {
+            acc[next] = selectorMap[next];
+          } else {
+            acc[next] = () => null;
+          }
+          return acc;
+        }, {});
+      }
+
       // Return result.
-      return (selectorOrStructure &&
+      const newProps = (selectorOrStructure &&
       {}.toString.call(selectorOrStructure) === '[object Function]'
         ? selectorOrStructure
-        : createStructuredSelector(selectorOrStructure))(state);
-    });
+        : createStructuredSelector(filterEmpty(selectorOrStructure)))(state);
+
+      if (dereference) {
+        newProps.fetched = true;
+        newProps.loading = isResourceLoading(selector)(state);
+      }
+
+      return newProps;
+    };
   };
 }
