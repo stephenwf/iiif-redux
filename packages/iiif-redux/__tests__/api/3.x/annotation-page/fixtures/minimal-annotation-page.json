@@ -1,0 +1,8 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/anno.jsonld",
+    "http://iiif.io/api/presentation/3/context.json"
+  ],
+  "id": "http://example.org/iiif/annotation-page/2",
+  "type": "AnnotationPage"
+}

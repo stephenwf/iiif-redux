@@ -116,6 +116,7 @@ You can opt-out of this extra overhead by creating a store targeting a specific 
 ## Presentation 3 questions
 
 - For the field `seeAlso` and `partOf`, the specification does not provide a list of valid IIIF resources that can be found here, implying all IIIF resources are valid.
+- Annotation pages only have one required field `type` which seems counter productive as it cannot function as an annotation page without annotations, should ID also be required?
 
 ## Changes to selector framework
 

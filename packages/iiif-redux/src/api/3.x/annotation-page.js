@@ -121,9 +121,11 @@ const annotationPage = memoize(selector => {
   const getAnnotations = getItems;
 
   return {
+    // Technical.
     getId,
     getType,
     getBehavior,
+    // Descriptive.
     getLabel,
     getMetadata,
     getSummary,
@@ -131,6 +133,7 @@ const annotationPage = memoize(selector => {
     getThumbnail,
     getRequiredStatement,
     getRights,
+    // Linking
     getSeeAlsoIds,
     getSeeAlso,
     getServiceIds,
@@ -143,6 +146,9 @@ const annotationPage = memoize(selector => {
     getRendering,
     getPartOfId,
     getPartOf,
+    // Structural
+    getItemIds,
+    getItems,
     getAnnotationIds,
     getAnnotations,
   };

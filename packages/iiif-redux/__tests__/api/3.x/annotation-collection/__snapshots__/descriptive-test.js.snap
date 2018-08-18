@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Full Annotation Collection getLabel: getLabel Full Annotation Collection 1`] = `
+Object {
+  "en": Array [
+    "Annotation Collection 1",
+  ],
+}
+`;
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Full Annotation Collection getMetadata: getMetadata Full Annotation Collection 1`] = `
+Array [
+  Object {
+    "label": Object {
+      "en": Array [
+        "Author",
+      ],
+    },
+    "value": Object {
+      "@none": Array [
+        "Anne Author",
+      ],
+    },
+  },
+  Object {
+    "label": Object {
+      "en": Array [
+        "Published",
+      ],
+    },
+    "value": Object {
+      "en": Array [
+        "Paris, circa 1400",
+      ],
+      "fr": Array [
+        "Paris, environ 1400",
+      ],
+    },
+  },
+  Object {
+    "label": Object {
+      "en": Array [
+        "Notes",
+      ],
+    },
+    "value": Object {
+      "en": Array [
+        "Text of note 1",
+        "Text of note 2",
+      ],
+    },
+  },
+  Object {
+    "label": Object {
+      "en": Array [
+        "Source",
+      ],
+    },
+    "value": Object {
+      "@none": Array [
+        "<span>From: <a href=\\"https://example.org/db/1.html\\">Some Collection</a></span>",
+      ],
+    },
+  },
+]
+`;
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Full Annotation Collection getRequiredStatement: getRequiredStatement Full Annotation Collection 1`] = `
+Object {
+  "label": Object {
+    "en": Array [
+      "Attribution",
+    ],
+  },
+  "value": Object {
+    "en": Array [
+      "Provided by Example Organization",
+    ],
+  },
+}
+`;
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Full Annotation Collection getRights: getRights Full Annotation Collection 1`] = `"https://creativecommons.org/licenses/by/4.0/"`;
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Full Annotation Collection getSummary: getSummary Full Annotation Collection 1`] = `
+Object {
+  "en": Array [
+    "Book 1, written be Anne Author, published in Paris around 1400.",
+  ],
+}
+`;
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Full Annotation Collection getThumbnail: getThumbnail Full Annotation Collection 1`] = `
+Object {
+  "id": "https://example.org/images/book1-page1/full/80,100/0/default.jpg",
+  "service": Array [
+    "https://example.org/images/book1-page1",
+  ],
+  "type": "Image",
+}
+`;
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Full Annotation Collection getThumbnailId: getThumbnailId Full Annotation Collection 1`] = `"https://example.org/images/book1-page1/full/80,100/0/default.jpg"`;
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Minimal Annotation Collection getLabel: getLabel Minimal Annotation Collection 1`] = `null`;
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Minimal Annotation Collection getMetadata: getMetadata Minimal Annotation Collection 1`] = `Array []`;
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Minimal Annotation Collection getRequiredStatement: getRequiredStatement Minimal Annotation Collection 1`] = `null`;
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Minimal Annotation Collection getRights: getRights Minimal Annotation Collection 1`] = `null`;
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Minimal Annotation Collection getSummary: getSummary Minimal Annotation Collection 1`] = `null`;
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Minimal Annotation Collection getThumbnail: getThumbnail Minimal Annotation Collection 1`] = `null`;
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Minimal Annotation Collection getThumbnailId: getThumbnailId Minimal Annotation Collection 1`] = `null`;
