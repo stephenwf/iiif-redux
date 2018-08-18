@@ -10,7 +10,6 @@ import {
   getAllCanvases,
   getAllCanvasReferences,
   getAllContentResources,
-  getAllExternalResources,
   getAllRanges,
   getAllResources,
   getAllServices,
@@ -99,7 +98,7 @@ const manifest = memoize(selector => {
   const getSeeAlsoIds = createSelector(selector, linking.getSeeAlso);
   const getSeeAlso = createSelector(
     getSeeAlsoIds,
-    getAllExternalResources,
+    getAllContentResources,
     mapAllById
   );
 
@@ -116,14 +115,14 @@ const manifest = memoize(selector => {
   const getHomepageId = createSelector(selector, linking.getHomepage);
   const getHomepage = createSelector(
     getHomepageId,
-    getAllExternalResources,
+    getAllContentResources,
     mapById
   );
 
   const getRenderingIds = createSelector(selector, linking.getRendering);
   const getRendering = createSelector(
     getRenderingIds,
-    getAllExternalResources,
+    getAllContentResources,
     mapAllById
   );
 

@@ -9,7 +9,6 @@ import {
   getAllResources,
   getAllServices,
   getAllContentResources,
-  getAllExternalResources,
   getAllManifests,
   getAllCollections,
   getAllAnnotationPages,
@@ -99,7 +98,7 @@ const collection = memoize(selector => {
   const getSeeAlsoIds = createSelector(selector, linking.getSeeAlso);
   const getSeeAlso = createSelector(
     getSeeAlsoIds,
-    getAllExternalResources,
+    getAllContentResources,
     mapAllById
   );
 
@@ -116,14 +115,14 @@ const collection = memoize(selector => {
   const getHomepageId = createSelector(selector, linking.getHomepage);
   const getHomepage = createSelector(
     getHomepageId,
-    getAllExternalResources,
+    getAllContentResources,
     mapById
   );
 
   const getRenderingIds = createSelector(selector, linking.getRendering);
   const getRendering = createSelector(
     getRenderingIds,
-    getAllExternalResources,
+    getAllContentResources,
     mapAllById
   );
 

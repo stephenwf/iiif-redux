@@ -9,7 +9,7 @@ const getId = resource => resource.id;
 
 const getType = resource => resource.type;
 
-const getProfile = resource => resource.profile;
+const getProfile = resource => resource.profile || null;
 
 const getDuration = resource => {
   if (typeof resource.duration === 'string') {
@@ -23,9 +23,11 @@ const getDuration = resource => {
   return 0 + resource.duration || 0.0;
 };
 
-const getBehavior = resource => resource.behavior;
+const getBehavior = resource => resource.behavior || null;
 
-const getTimeMode = resource => resource.timeMode;
+const getTimeMode = resource => resource.timeMode || null;
+
+const getMotivation = resource => resource.motivation || null;
 
 export {
   getId,
@@ -38,4 +40,5 @@ export {
   getViewingDirection,
   getBehavior,
   getTimeMode,
+  getMotivation,
 };

@@ -1,19 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`api/3.x/manifest/linking Manifest number 0 getHomepage: getHomepage 0 1`] = `null`;
+exports[`api/3.x/manifest/linking Manifest number 0 getHomepage: getHomepage 0 1`] = `
+Object {
+  "format": "text/html",
+  "id": "https://example.org/info/book1/",
+  "label": Object {
+    "en": Array [
+      "Home page for Book 1",
+    ],
+  },
+  "type": "Text",
+}
+`;
 
 exports[`api/3.x/manifest/linking Manifest number 0 getHomepageId: getHomepageId 0 1`] = `"https://example.org/info/book1/"`;
 
 exports[`api/3.x/manifest/linking Manifest number 0 getLogo: getLogo 0 1`] = `
 Array [
-  undefined,
-  undefined,
   Object {
-    "0": Object {
-      "id": "https://example.org/service/inst1",
-      "profile": "level2",
-      "type": "ImageService3",
-    },
+    "id": "https://example.org/logos/institution1.jpg",
+    "service": Array [
+      "https://example.org/service/inst1",
+    ],
+    "type": "Image",
   },
 ]
 `;
@@ -21,8 +30,6 @@ Array [
 exports[`api/3.x/manifest/linking Manifest number 0 getLogoIds: getLogoIds 0 1`] = `
 Array [
   "https://example.org/logos/institution1.jpg",
-  "Image",
-  undefined,
 ]
 `;
 
@@ -46,7 +53,16 @@ Array [
 
 exports[`api/3.x/manifest/linking Manifest number 0 getRendering: getRendering 0 1`] = `
 Array [
-  undefined,
+  Object {
+    "format": "application/pdf",
+    "id": "https://example.org/iiif/book1.pdf",
+    "label": Object {
+      "en": Array [
+        "Download as PDF",
+      ],
+    },
+    "type": "Text",
+  },
 ]
 `;
 
@@ -58,7 +74,12 @@ Array [
 
 exports[`api/3.x/manifest/linking Manifest number 0 getSeeAlso: getSeeAlso 0 1`] = `
 Array [
-  undefined,
+  Object {
+    "format": "text/xml",
+    "id": "https://example.org/library/catalog/book1.xml",
+    "profile": "https://example.org/profiles/bibliographic",
+    "type": "Dataset",
+  },
 ]
 `;
 
@@ -162,4 +183,9 @@ exports[`api/3.x/manifest/linking Manifest number 2 getServiceIds: getServiceIds
 
 exports[`api/3.x/manifest/linking Manifest number 2 getStart: getStart 2 1`] = `null`;
 
-exports[`api/3.x/manifest/linking Manifest number 2 getStartId: getStartId 2 1`] = `null`;
+exports[`api/3.x/manifest/linking Manifest number 2 getStartId: getStartId 2 1`] = `
+Object {
+  "id": "https://example.org/iiif/start/2",
+  "schema": "canvasReference",
+}
+`;

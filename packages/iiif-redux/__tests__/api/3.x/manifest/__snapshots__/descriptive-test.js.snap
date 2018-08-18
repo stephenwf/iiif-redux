@@ -115,36 +115,36 @@ Object {
 
 exports[`api/3.x/manifest/descriptive Manifest number 1 getLabel 1`] = `"Minimal Manifest"`;
 
-exports[`api/3.x/manifest/descriptive Manifest number 1 getMetadata 1`] = `undefined`;
+exports[`api/3.x/manifest/descriptive Manifest number 1 getMetadata 1`] = `Array []`;
 
 exports[`api/3.x/manifest/descriptive Manifest number 1 getNavDate 1`] = `null`;
 
 exports[`api/3.x/manifest/descriptive Manifest number 1 getPosterCanvas 1`] = `null`;
 
-exports[`api/3.x/manifest/descriptive Manifest number 1 getPosterCanvasId 1`] = `undefined`;
+exports[`api/3.x/manifest/descriptive Manifest number 1 getPosterCanvasId 1`] = `null`;
 
-exports[`api/3.x/manifest/descriptive Manifest number 1 getRequiredStatement 1`] = `undefined`;
+exports[`api/3.x/manifest/descriptive Manifest number 1 getRequiredStatement 1`] = `null`;
 
-exports[`api/3.x/manifest/descriptive Manifest number 1 getRights 1`] = `undefined`;
+exports[`api/3.x/manifest/descriptive Manifest number 1 getRights 1`] = `null`;
 
-exports[`api/3.x/manifest/descriptive Manifest number 1 getSummary 1`] = `undefined`;
+exports[`api/3.x/manifest/descriptive Manifest number 1 getSummary 1`] = `null`;
 
 exports[`api/3.x/manifest/descriptive Manifest number 1 getThumbnail 1`] = `null`;
 
 exports[`api/3.x/manifest/descriptive Manifest number 2 getLabel 1`] = `"Minimal Manifest"`;
 
-exports[`api/3.x/manifest/descriptive Manifest number 2 getMetadata 1`] = `undefined`;
+exports[`api/3.x/manifest/descriptive Manifest number 2 getMetadata 1`] = `Array []`;
 
 exports[`api/3.x/manifest/descriptive Manifest number 2 getNavDate 1`] = `null`;
 
 exports[`api/3.x/manifest/descriptive Manifest number 2 getPosterCanvas 1`] = `null`;
 
-exports[`api/3.x/manifest/descriptive Manifest number 2 getPosterCanvasId 1`] = `undefined`;
+exports[`api/3.x/manifest/descriptive Manifest number 2 getPosterCanvasId 1`] = `null`;
 
-exports[`api/3.x/manifest/descriptive Manifest number 2 getRequiredStatement 1`] = `undefined`;
+exports[`api/3.x/manifest/descriptive Manifest number 2 getRequiredStatement 1`] = `null`;
 
-exports[`api/3.x/manifest/descriptive Manifest number 2 getRights 1`] = `undefined`;
+exports[`api/3.x/manifest/descriptive Manifest number 2 getRights 1`] = `null`;
 
-exports[`api/3.x/manifest/descriptive Manifest number 2 getSummary 1`] = `undefined`;
+exports[`api/3.x/manifest/descriptive Manifest number 2 getSummary 1`] = `null`;
 
 exports[`api/3.x/manifest/descriptive Manifest number 2 getThumbnail 1`] = `null`;

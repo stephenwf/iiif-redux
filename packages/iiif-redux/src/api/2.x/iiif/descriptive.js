@@ -1,17 +1,17 @@
-const getLabel = resource => resource.label;
+const getLabel = resource => resource.label || null;
 
-const getDescription = resource => resource.description;
+const getDescription = resource => resource.description || null;
 
-const getAttribution = resource => resource.attribution;
+const getAttribution = resource => resource.attribution || null;
 
-const getMetadata = resource => resource.metadata;
+const getMetadata = resource => resource.metadata || [];
 
 // Returns ID to service.
 const getThumbnailId = resource => {
   if (Array.isArray(resource.thumbnail)) {
     return resource.thumbnail[0];
   }
-  return resource.thumbnail;
+  return resource.thumbnail || null;
 };
 
 const getLicense = resource => {

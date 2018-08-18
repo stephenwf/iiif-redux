@@ -9,6 +9,7 @@ import {
   getViewingDirection,
   getBehavior,
   getTimeMode,
+  getMotivation,
 } from '../../../../src/api/3.x/iiif/technical';
 import { createStructuredSelector } from 'reselect';
 
@@ -27,6 +28,7 @@ describe('api/3.x/iiif/technical', () => {
 
   test('profile', () => {
     expect(getProfile({ profile: 'level1' })).toEqual('level1');
+    expect(getProfile({})).toEqual(null);
   });
 
   test('height', () => {
@@ -59,6 +61,11 @@ describe('api/3.x/iiif/technical', () => {
 
   test('timeMode', () => {
     expect(getTimeMode({ timeMode: 'trim' })).toEqual('trim');
+  });
+
+  test('motivation', () => {
+    expect(getMotivation({ motivation: 'painting' })).toEqual('painting');
+    expect(getMotivation({})).toEqual(null);
   });
 
   test('full document', () => {

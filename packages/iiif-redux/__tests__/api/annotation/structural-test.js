@@ -221,6 +221,6 @@ describe('api/annotation/structural', () => {
 
     const { getLabel } = canvas(getOn);
 
-    expect(getLabel(state)).toEqual();
+    expect(getLabel(state)).toEqual(null);
   });
 });

@@ -4,11 +4,8 @@ import mapById from '../../utility/mapById';
 import * as technical from './iiif/technical';
 import * as descriptive from './iiif/descriptive';
 import * as linking from './iiif/linking';
-import * as structural from './iiif/structural';
 import {
-  getAllAnnotations,
   getAllContentResources,
-  getAllExternalResources,
   getAllResources,
   getAllServices,
 } from '../all';
@@ -75,7 +72,7 @@ const annotationCollection = memoize(selector => {
   const getSeeAlsoIds = createSelector(selector, linking.getSeeAlso);
   const getSeeAlso = createSelector(
     getSeeAlsoIds,
-    getAllExternalResources,
+    getAllContentResources,
     mapAllById
   );
 
@@ -92,14 +89,14 @@ const annotationCollection = memoize(selector => {
   const getHomepageId = createSelector(selector, linking.getHomepage);
   const getHomepage = createSelector(
     getHomepageId,
-    getAllExternalResources,
+    getAllContentResources,
     mapById
   );
 
   const getRenderingIds = createSelector(selector, linking.getRendering);
   const getRendering = createSelector(
     getRenderingIds,
-    getAllExternalResources,
+    getAllContentResources,
     mapAllById
   );
 
@@ -113,9 +110,11 @@ const annotationCollection = memoize(selector => {
   // @todo add relation to annotation pages, somehow...
 
   return {
+    // Technical
     getId,
     getType,
     getBehavior,
+    // Descriptive.
     getLabel,
     getMetadata,
     getSummary,
@@ -123,6 +122,7 @@ const annotationCollection = memoize(selector => {
     getThumbnail,
     getRequiredStatement,
     getRights,
+    // Linking
     getSeeAlsoIds,
     getSeeAlso,
     getServiceIds,

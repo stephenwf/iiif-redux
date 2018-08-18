@@ -12,7 +12,6 @@ import {
   getAllCanvases,
   getAllCanvasReferences,
   getAllContentResources,
-  getAllExternalResources,
   getAllResources,
   getAllServices,
 } from '../all';
@@ -98,7 +97,7 @@ const range = memoize(selector => {
   const getSeeAlsoIds = createSelector(selector, linking.getSeeAlso);
   const getSeeAlso = createSelector(
     getSeeAlsoIds,
-    getAllExternalResources,
+    getAllContentResources,
     mapAllById
   );
 
@@ -115,14 +114,14 @@ const range = memoize(selector => {
   const getHomepageId = createSelector(selector, linking.getHomepage);
   const getHomepage = createSelector(
     getHomepageId,
-    getAllExternalResources,
+    getAllContentResources,
     mapById
   );
 
   const getRenderingIds = createSelector(selector, linking.getRendering);
   const getRendering = createSelector(
     getRenderingIds,
-    getAllExternalResources,
+    getAllContentResources,
     mapAllById
   );
 

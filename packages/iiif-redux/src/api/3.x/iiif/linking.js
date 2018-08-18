@@ -21,6 +21,10 @@ const getSupplementary = resource => resource.supplementary;
 
 const getLogo = resource => resource.logo || [];
 
+const getBody = resource => resource.body || null;
+
+const getTarget = resource => resource.target || null;
+
 export {
   getSeeAlso,
   getService,
@@ -30,4 +34,6 @@ export {
   getPartOf,
   getStart,
   getSupplementary,
+  getBody,
+  getTarget,
 };

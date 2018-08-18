@@ -12,7 +12,7 @@ exports[`api/3.x/collection/technical Collection number 0 getType: getType 0 1`]
 
 exports[`api/3.x/collection/technical Collection number 0 getViewingDirection: getViewingDirection 0 1`] = `"right-to-left"`;
 
-exports[`api/3.x/collection/technical Collection number 1 getBehavior: getBehavior 1 1`] = `undefined`;
+exports[`api/3.x/collection/technical Collection number 1 getBehavior: getBehavior 1 1`] = `null`;
 
 exports[`api/3.x/collection/technical Collection number 1 getId: getId 1 1`] = `"https://example.org/iiif/collection/2"`;
 

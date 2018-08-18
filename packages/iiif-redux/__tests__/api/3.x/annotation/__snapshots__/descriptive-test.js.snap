@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/annotation/descriptive Annotation: Complete annotation getLabel: getLabel Complete annotation 1`] = `
+Object {
+  "en": Array [
+    "Annotation 1",
+  ],
+}
+`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Complete annotation getMetadata: getMetadata Complete annotation 1`] = `
+Array [
+  Object {
+    "label": Object {
+      "en": Array [
+        "Author",
+      ],
+    },
+    "value": Object {
+      "@none": Array [
+        "Anne Author",
+      ],
+    },
+  },
+  Object {
+    "label": Object {
+      "en": Array [
+        "Published",
+      ],
+    },
+    "value": Object {
+      "en": Array [
+        "Paris, circa 1400",
+      ],
+      "fr": Array [
+        "Paris, environ 1400",
+      ],
+    },
+  },
+  Object {
+    "label": Object {
+      "en": Array [
+        "Notes",
+      ],
+    },
+    "value": Object {
+      "en": Array [
+        "Text of note 1",
+        "Text of note 2",
+      ],
+    },
+  },
+  Object {
+    "label": Object {
+      "en": Array [
+        "Source",
+      ],
+    },
+    "value": Object {
+      "@none": Array [
+        "<span>From: <a href=\\"https://example.org/db/1.html\\">Some Collection</a></span>",
+      ],
+    },
+  },
+]
+`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Complete annotation getRequiredStatement: getRequiredStatement Complete annotation 1`] = `
+Object {
+  "label": Object {
+    "en": Array [
+      "Attribution",
+    ],
+  },
+  "value": Object {
+    "en": Array [
+      "Provided by Example Organization",
+    ],
+  },
+}
+`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Complete annotation getRights: getRights Complete annotation 1`] = `"https://creativecommons.org/licenses/by/4.0/"`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Complete annotation getSummary: getSummary Complete annotation 1`] = `
+Object {
+  "en": Array [
+    "Book 1, written be Anne Author, published in Paris around 1400.",
+  ],
+}
+`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Complete annotation getThumbnail: getThumbnail Complete annotation 1`] = `
+Object {
+  "id": "https://example.org/images/book1-page1/full/80,100/0/default.jpg",
+  "service": Array [
+    "https://example.org/images/book1-page1",
+  ],
+  "type": "Image",
+}
+`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Complete annotation getThumbnailId: getThumbnailId Complete annotation 1`] = `"https://example.org/images/book1-page1/full/80,100/0/default.jpg"`;
+
+exports[`api/3.x/annotation/descriptive Annotation: IIIF Documentation fixture getLabel: getLabel IIIF Documentation fixture 1`] = `null`;
+
+exports[`api/3.x/annotation/descriptive Annotation: IIIF Documentation fixture getMetadata: getMetadata IIIF Documentation fixture 1`] = `Array []`;
+
+exports[`api/3.x/annotation/descriptive Annotation: IIIF Documentation fixture getRequiredStatement: getRequiredStatement IIIF Documentation fixture 1`] = `null`;
+
+exports[`api/3.x/annotation/descriptive Annotation: IIIF Documentation fixture getRights: getRights IIIF Documentation fixture 1`] = `null`;
+
+exports[`api/3.x/annotation/descriptive Annotation: IIIF Documentation fixture getSummary: getSummary IIIF Documentation fixture 1`] = `null`;
+
+exports[`api/3.x/annotation/descriptive Annotation: IIIF Documentation fixture getThumbnail: getThumbnail IIIF Documentation fixture 1`] = `null`;
+
+exports[`api/3.x/annotation/descriptive Annotation: IIIF Documentation fixture getThumbnailId: getThumbnailId IIIF Documentation fixture 1`] = `null`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Minimal annotation getLabel: getLabel Minimal annotation 1`] = `null`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Minimal annotation getMetadata: getMetadata Minimal annotation 1`] = `Array []`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Minimal annotation getRequiredStatement: getRequiredStatement Minimal annotation 1`] = `null`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Minimal annotation getRights: getRights Minimal annotation 1`] = `null`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Minimal annotation getSummary: getSummary Minimal annotation 1`] = `null`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Minimal annotation getThumbnail: getThumbnail Minimal annotation 1`] = `null`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Minimal annotation getThumbnailId: getThumbnailId Minimal annotation 1`] = `null`;

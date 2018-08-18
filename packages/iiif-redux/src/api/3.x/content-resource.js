@@ -8,7 +8,6 @@ import * as structural from './iiif/structural';
 import {
   getAllAnnotationPages,
   getAllContentResources,
-  getAllExternalResources,
   getAllResources,
   getAllServices,
 } from '../all';
@@ -92,7 +91,7 @@ const canvas = memoize(selector => {
   const getSeeAlsoIds = createSelector(selector, linking.getSeeAlso);
   const getSeeAlso = createSelector(
     getSeeAlsoIds,
-    getAllExternalResources,
+    getAllContentResources,
     mapAllById
   );
 
@@ -109,14 +108,14 @@ const canvas = memoize(selector => {
   const getHomepageId = createSelector(selector, linking.getHomepage);
   const getHomepage = createSelector(
     getHomepageId,
-    getAllExternalResources,
+    getAllContentResources,
     mapById
   );
 
   const getRenderingIds = createSelector(selector, linking.getRendering);
   const getRendering = createSelector(
     getRenderingIds,
-    getAllExternalResources,
+    getAllContentResources,
     mapAllById
   );
 

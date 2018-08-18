@@ -5,8 +5,8 @@ import * as technical from './iiif/technical';
 import * as descriptive from './iiif/descriptive';
 import * as linking from './iiif/linking';
 import {
+  getAllCanvases,
   getAllContentResources,
-  getAllExternalResources,
   getAllResources,
   getAllServices,
 } from '../all';
@@ -75,7 +75,7 @@ const annotation = memoize(selector => {
   const getSeeAlsoIds = createSelector(selector, linking.getSeeAlso);
   const getSeeAlso = createSelector(
     getSeeAlsoIds,
-    getAllExternalResources,
+    getAllContentResources,
     mapAllById
   );
 
@@ -92,14 +92,14 @@ const annotation = memoize(selector => {
   const getHomepageId = createSelector(selector, linking.getHomepage);
   const getHomepage = createSelector(
     getHomepageId,
-    getAllExternalResources,
+    getAllContentResources,
     mapById
   );
 
   const getRenderingIds = createSelector(selector, linking.getRendering);
   const getRendering = createSelector(
     getRenderingIds,
-    getAllExternalResources,
+    getAllContentResources,
     mapAllById
   );
 
@@ -110,11 +110,23 @@ const annotation = memoize(selector => {
     mapAllResources
   );
 
+  const getBodyId = createSelector(selector, linking.getBody);
+  const getBody = createSelector(
+    getBodyId,
+    getAllContentResources,
+    mapByIdOrId
+  );
+
+  const getTargetId = createSelector(selector, linking.getTarget);
+  const getTarget = createSelector(getTargetId, getAllCanvases, mapByIdOrId);
+
   return {
+    // Technical
     getId,
     getType,
     getTimeMode,
     getBehavior,
+    // Descriptive.
     getLabel,
     getMetadata,
     getSummary,
@@ -122,6 +134,7 @@ const annotation = memoize(selector => {
     getThumbnail,
     getRequiredStatement,
     getRights,
+    // Linking
     getSeeAlsoIds,
     getSeeAlso,
     getServiceIds,
@@ -134,6 +147,10 @@ const annotation = memoize(selector => {
     getRendering,
     getPartOfId,
     getPartOf,
+    getBodyId,
+    getBody,
+    getTargetId,
+    getTarget,
   };
 });
 

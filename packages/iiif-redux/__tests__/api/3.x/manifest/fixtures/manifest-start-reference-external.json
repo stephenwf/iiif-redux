@@ -19,9 +19,9 @@
     }
   ],
   "start": {
-    "id": "https://example.org/iiif/start/2",
+    "id": "https://example.org/iiif/start/1",
     "type": "SpecificResource",
-    "source": "https://example.org/iiif/book1/canvas/p1",
+    "source": "https://example.org/iiif/book1/canvas/p2",
     "selector": {
       "type": "PointSelector",
       "t": 14.5

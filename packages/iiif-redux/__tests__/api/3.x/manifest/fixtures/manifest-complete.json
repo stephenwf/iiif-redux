@@ -60,17 +60,19 @@
     "label": { "en": ["Attribution"] },
     "value": { "en": ["Provided by Example Organization"] }
   },
-  "logo": {
-    "id": "https://example.org/logos/institution1.jpg",
-    "type": "Image",
-    "service": [
-      {
-        "id": "https://example.org/service/inst1",
-        "type": "ImageService3",
-        "profile": "level2"
-      }
-    ]
-  },
+  "logo": [
+    {
+      "id": "https://example.org/logos/institution1.jpg",
+      "type": "Image",
+      "service": [
+        {
+          "id": "https://example.org/service/inst1",
+          "type": "ImageService3",
+          "profile": "level2"
+        }
+      ]
+    }
+  ],
 
   "homepage": {
     "id": "https://example.org/info/book1/",

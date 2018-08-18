@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/annotation/technical Annotation: Complete annotation getBehavior: getBehavior Complete annotation 1`] = `
+Array [
+  "hidden",
+]
+`;
+
+exports[`api/3.x/annotation/technical Annotation: Complete annotation getId: getId Complete annotation 1`] = `"https://example.org/iiif/book1/annotation/p0001-image"`;
+
+exports[`api/3.x/annotation/technical Annotation: Complete annotation getTimeMode: getTimeMode Complete annotation 1`] = `"trim"`;
+
+exports[`api/3.x/annotation/technical Annotation: Complete annotation getType: getType Complete annotation 1`] = `"Annotation"`;
+
+exports[`api/3.x/annotation/technical Annotation: IIIF Documentation fixture getBehavior: getBehavior IIIF Documentation fixture 1`] = `null`;
+
+exports[`api/3.x/annotation/technical Annotation: IIIF Documentation fixture getId: getId IIIF Documentation fixture 1`] = `"https://example.org/iiif/book1/annotation/p0001-image"`;
+
+exports[`api/3.x/annotation/technical Annotation: IIIF Documentation fixture getTimeMode: getTimeMode IIIF Documentation fixture 1`] = `null`;
+
+exports[`api/3.x/annotation/technical Annotation: IIIF Documentation fixture getType: getType IIIF Documentation fixture 1`] = `"Annotation"`;
+
+exports[`api/3.x/annotation/technical Annotation: Minimal annotation getBehavior: getBehavior Minimal annotation 1`] = `null`;
+
+exports[`api/3.x/annotation/technical Annotation: Minimal annotation getId: getId Minimal annotation 1`] = `"https://example.org/iiif/annotation/2"`;
+
+exports[`api/3.x/annotation/technical Annotation: Minimal annotation getTimeMode: getTimeMode Minimal annotation 1`] = `null`;
+
+exports[`api/3.x/annotation/technical Annotation: Minimal annotation getType: getType Minimal annotation 1`] = `"Annotation"`;
