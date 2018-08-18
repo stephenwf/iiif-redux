@@ -1,6 +1,6 @@
-import { sequenceByIdSelector } from '../../src/api/sequence';
+import { sequenceByIdSelector } from '../../../../src/api/sequence';
 
-describe('iiif/api/sequence', () => {
+describe('iiif/api/2.x/sequence/sequence-by-id', () => {
   it('should be able to generate selector for any sequence', () => {
     const state = {
       resources: {

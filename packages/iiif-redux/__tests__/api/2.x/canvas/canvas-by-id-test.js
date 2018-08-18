@@ -1,6 +1,6 @@
-import { canvasByIdSelector } from '../../src/api/canvas';
+import { canvasByIdSelector } from '../../../../src/api/canvas';
 
-describe('iiif/api/canvas', () => {
+describe('iiif/api/2.x/canvas/canvas-by-id', () => {
   it('should be able to generate selector for any canvas', () => {
     const state = {
       resources: {

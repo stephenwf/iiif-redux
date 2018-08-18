@@ -1,7 +1,10 @@
-import { annotationByIdSelector, annotations } from '../../src/api/annotation';
-import { annotationListByIdSelector } from '../../src/api/annotation-list';
+import {
+  annotationByIdSelector,
+  annotations,
+} from '../../../../src/api/annotation';
+import { annotationListByIdSelector } from '../../../../src/api/annotation-list';
 
-describe('iiif/api/annotation', () => {
+describe('iiif/api/2.x/annotation/annotation-by-id', () => {
   it('should be able to generate selector for any annotation', () => {
     const state = {
       resources: {

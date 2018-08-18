@@ -1,6 +1,6 @@
-import { externalResourceByIdSelector } from '../../src/api/external-resource';
+import { externalResourceByIdSelector } from '../../../../src/api/external-resource';
 
-describe('iiif/api/externalResource', () => {
+describe('iiif/api/2.x/external-resource/external-resource-by-id', () => {
   it('should be able to generate selector for any externalResource', () => {
     const state = {
       resources: {

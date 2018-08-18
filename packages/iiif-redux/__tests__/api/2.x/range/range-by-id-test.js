@@ -1,12 +1,12 @@
-import { rangeByIdSelector, ranges } from '../../src/api/range';
-import bridges from '../fixtures/bridges';
-import createStore from '../../src/createStore';
-import { iiifResourceRequest } from '../../src/spaces/iiif-resource';
-import { manifest } from '../../src/schema/presentation2';
-import { waitForRequest } from '../../test-utils';
-import { canvases } from '../../src/api/canvas';
+import { rangeByIdSelector, ranges } from '../../../../src/api/range';
+import bridges from '../../../fixtures/bridges';
+import createStore from '../../../../src/createStore';
+import { iiifResourceRequest } from '../../../../src/spaces/iiif-resource';
+import { manifest } from '../../../../src/schema/presentation2';
+import { waitForRequest } from '../../../../test-utils';
+import { canvases } from '../../../../src/api/canvas';
 
-describe('iiif/api/range', () => {
+describe('iiif/api/2.x/range/range-by-id', () => {
   global.fetch = require('jest-fetch-mock');
 
   it('should be able to generate selector for any range', async () => {
