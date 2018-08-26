@@ -1009,9 +1009,9 @@ ansi-styles@^3.2.0, ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-antd@3.8.2:
-  version "3.8.2"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-3.8.2.tgz#cb2af23243522e75fc09707a52799c01f6230704"
+antd@3.8.3:
+  version "3.8.3"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-3.8.3.tgz#2415980a1de271a6c3526039efd87a21f4e1c9c8"
   dependencies:
     array-tree-filter "^2.0.0"
     babel-runtime "6.x"
