@@ -15,8 +15,8 @@
     "@canvas-panel/viewer-element": "0.0.9",
     "antd": "3.9.1",
     "iiif-redux": "1.0.0",
-    "react": "16.4.2",
-    "react-dom": "16.4.2",
+    "react": "16.5.0",
+    "react-dom": "16.5.0",
     "react-redux": "5.0.7",
     "react-router-dom": "4.3.1",
     "reselect": "3.0.1"
