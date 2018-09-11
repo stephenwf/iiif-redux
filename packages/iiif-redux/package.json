@@ -17,7 +17,7 @@
     "start": "run-p watch"
   },
   "dependencies": {
-    "debug": "^3.1.0",
+    "debug": "^4.0.0",
     "deepmerge": "^2.1.0",
     "fetch-unless-cached": "^2.0.2",
     "immutability-helper": "^2.6.6",
