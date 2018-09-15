@@ -9,7 +9,7 @@ cache:
 notifications:
   email: false
 node_js:
-  - 8.9.4
+  - 8.12.0
 
 script:
   - yarn run test:coverage

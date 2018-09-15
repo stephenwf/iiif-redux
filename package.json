@@ -22,7 +22,7 @@
     "prettier": "1.14.2"
   },
   "devEngines": {
-    "node": "8.x"
+    "node": "8.12.0"
   },
   "scripts": {
     "start": "lerna run start --stream --parallel --concurrency 100",
