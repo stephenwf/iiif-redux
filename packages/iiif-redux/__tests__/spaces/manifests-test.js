@@ -1,11 +1,66 @@
 import { manifestByIdSelector } from '../../src/api/manifest';
 import createStore from '../../src/createStore';
 import bridges from '../fixtures/bridges';
+import presentation3 from '../fixtures/presentation/3.0/2-to-3-converter/dams.llgc.org.uk__iiif__newspaper__issue__3320640__manifest';
 import { selectManifest } from '../../src/spaces/routing';
 import { waitForRequest } from '../../test-utils';
 
 describe('spaces/collections', () => {
   global.fetch = require('jest-fetch-mock');
+
+  it('should load manifest (presentation 3) when selected', async () => {
+    const manifestId =
+      'http://dams.llgc.org.uk/iiif/newspaper/issue/3320640/manifest.json';
+    const store = createStore();
+
+    fetch.mockResponseOnce(JSON.stringify(presentation3));
+
+    store.dispatch(
+      selectManifest({
+        id: manifestId,
+      })
+    );
+
+    const loadingState = store.getState();
+    expect(loadingState.dereferenced).toEqual({
+      'http://dams.llgc.org.uk/iiif/newspaper/issue/3320640/manifest.json': {
+        loading: true,
+        requested: loadingState.dereferenced[manifestId].requested,
+        resourceId:
+          'http://dams.llgc.org.uk/iiif/newspaper/issue/3320640/manifest.json',
+        ttl: 600,
+      },
+    });
+
+    await waitForRequest(store, manifestId);
+
+    const loadedState = store.getState();
+    expect(loadedState.dereferenced).toEqual({
+      'http://dams.llgc.org.uk/iiif/newspaper/issue/3320640/manifest.json': {
+        loading: false,
+        requested: loadingState.dereferenced[manifestId].requested,
+        resourceId:
+          'http://dams.llgc.org.uk/iiif/newspaper/issue/3320640/manifest.json',
+        ttl: 600,
+      },
+    });
+
+    expect(Object.keys(store.getState().resources.manifests)).toEqual([
+      'http://dams.llgc.org.uk/iiif/newspaper/issue/3320640/manifest.json',
+    ]);
+    expect(Object.keys(store.getState().resources.canvases)).toEqual([
+      'http://dams.llgc.org.uk/iiif/3320640/canvas/3320641',
+      'http://dams.llgc.org.uk/iiif/3320640/canvas/3320642',
+      'http://dams.llgc.org.uk/iiif/3320640/canvas/3320643',
+      'http://dams.llgc.org.uk/iiif/3320640/canvas/3320644',
+    ]);
+
+    expect(
+      manifestByIdSelector(currentManifest => currentManifest.getLabel, {
+        getId: () => manifestId,
+      })(store.getState())
+    ).toEqual({ '@none': ['Cambrian (1804-01-28)'] });
+  });
 
   it('should load manifest when selected', async () => {
     const store = createStore();

@@ -1,6 +1,7 @@
 import { schema, normalize } from 'normalizr';
 import { compose } from 'redux';
 import addMissingIds from '../compat/addMissingIds';
+import parseSelectorTarget from '../utility/parseTargetSelector';
 
 function createEntity(name) {
   const options = {
@@ -20,6 +21,24 @@ const range = createEntity('ranges'); // 7
 const contentResource = createEntity('contentResources'); // 8
 const choice = createEntity('choices'); // 9
 const canvasReference = createEntity('canvasReference'); // 10
+const canvasSelector = new schema.Entity(
+  'canvasSelector',
+  {
+    id: canvas,
+  },
+  {
+    processStrategy(value, parent, key) {
+      if (typeof value === 'string') {
+        return parseSelectorTarget(value);
+      }
+      const id = value['@id'] || value.id;
+      if (id) {
+        return parseSelectorTarget(id);
+      }
+      return value;
+    },
+  }
+);
 
 // Unofficial types.
 const service = createEntity('services');
@@ -84,10 +103,15 @@ const annotationBody = new schema.Union(
 const rangeItem = new schema.Union(
   {
     canvas,
+    canvasSelector,
     range,
     canvasReference,
   },
   input => {
+    if (input && input.id && input.id.indexOf('#') !== -1) {
+      return 'canvasSelector';
+    }
+
     switch (input.type) {
       case 'Canvas':
         return 'canvas';
@@ -231,7 +255,7 @@ canvas.define({
 annotation.define({
   // Structural.
   body: annotationBody,
-  target: canvas,
+  target: canvasSelector,
 
   // Linking
   seeAlso: [contentResource],
