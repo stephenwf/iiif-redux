@@ -75,7 +75,7 @@
       },
       "value": {
         "@none": [
-          "Vincent van Gogh, Arles, (1888,) gift;  to Paul Gauguin, (1888-1897) sold. [Ambroise Vollard, Paris.] [Paul Cassirer Gallery, Berlin.] Dr. Hugo von Tschudi, Berlin, (1906-1911), by descent; to his widow, Angela von Tschudi, Munich (1911-1919),  to Neue Staatsgalerie, Munich (1919-1938); removed from the collection by the National Socialist (Nazi) authorities in 1938, consigned; to [Theodor Fischer Gallery, Lucerne, Switzerland, for sale June 30, 1939, lot 45]; to Maurice Wertheim (1939-1951) bequest; to Fogg Art Museum, 1951.\r\n\r\n \r\n\r\nNotes:\r\nGauguin sold the painting for Fr 300\r\nHugo von Tschudi bought the painting for the Nationalgalerie, Berlin, with funds from sponsors, but did not submit it to the Kaiser for pre-approval. He took the painting to Munich when he assumed a post there.\r\nAccording to Stephanie Barron, the van Gogh was removed from the Neue Staatsgalerie on March 27, 1938 and stored at Schloss Niedersch\u00f6nhausen in August of that year. (Barron, 1990,pp. 135-146)\r\n"
+          "Vincent van Gogh, Arles, (1888,) gift;  to Paul Gauguin, (1888-1897) sold. [Ambroise Vollard, Paris.] [Paul Cassirer Gallery, Berlin.] Dr. Hugo von Tschudi, Berlin, (1906-1911), by descent; to his widow, Angela von Tschudi, Munich (1911-1919),  to Neue Staatsgalerie, Munich (1919-1938); removed from the collection by the National Socialist (Nazi) authorities in 1938, consigned; to [Theodor Fischer Gallery, Lucerne, Switzerland, for sale June 30, 1939, lot 45]; to Maurice Wertheim (1939-1951) bequest; to Fogg Art Museum, 1951.\r\n\r\n \r\n\r\nNotes:\r\nGauguin sold the painting for Fr 300\r\nHugo von Tschudi bought the painting for the Nationalgalerie, Berlin, with funds from sponsors, but did not submit it to the Kaiser for pre-approval. He took the painting to Munich when he assumed a post there.\r\nAccording to Stephanie Barron, the van Gogh was removed from the Neue Staatsgalerie on March 27, 1938 and stored at Schloss Niederschönhausen in August of that year. (Barron, 1990,pp. 135-146)\r\n"
         ]
       }
     },
@@ -110,7 +110,8 @@
   },
   "partOf": [
     {
-      "id": "https://example.org/uuid/d331bf6f-4c15-439a-bd7f-1078e03bd205"
+      "id": "https://www.harvardartmuseums.org/collections",
+      "type": "Collection"
     }
   ],
   "items": [
@@ -121,13 +122,11 @@
       },
       "width": 2087,
       "type": "Canvas",
-      "id":
-        "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-47174896",
+      "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-47174896",
       "annotations": [
         {
           "type": "AnnotationPage",
-          "id":
-            "https://iiif.harvardartmuseums.org/manifests/object/299843/list/47174896"
+          "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/list/47174896"
         }
       ],
       "items": [
@@ -137,29 +136,25 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://iiif.harvardartmuseums.org/manifests/object/299843/annotation/anno-47174896",
-              "target":
-                "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-47174896",
+              "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/annotation/anno-47174896",
+              "target": "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-47174896",
               "body": {
                 "format": "image/jpeg",
                 "height": 2550,
                 "service": [
                   {
-                    "@id": "https://ids.lib.harvard.edu/ids/iiif/47174896",
-                    "profile":
-                      "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
-                    "@type": "ImageService1"
+                    "profile": "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
+                    "id": "https://ids.lib.harvard.edu/ids/iiif/47174896",
+                    "type": "ImageService1"
                   }
                 ],
                 "width": 2087,
                 "type": "Image",
-                "id":
-                  "https://ids.lib.harvard.edu/ids/iiif/47174896/full/full/0/native.jpg"
+                "id": "https://ids.lib.harvard.edu/ids/iiif/47174896/full/full/0/native.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/d6de871b-0466-42b8-87d9-705c27751954"
+          "id": "https://example.org/uuid/b9064845-7e07-41f0-bb32-6b7348d79301"
         }
       ]
     },
@@ -170,13 +165,11 @@
       },
       "width": 2088,
       "type": "Canvas",
-      "id":
-        "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-18737483",
+      "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-18737483",
       "annotations": [
         {
           "type": "AnnotationPage",
-          "id":
-            "https://iiif.harvardartmuseums.org/manifests/object/299843/list/18737483"
+          "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/list/18737483"
         }
       ],
       "items": [
@@ -186,29 +179,25 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://iiif.harvardartmuseums.org/manifests/object/299843/annotation/anno-18737483",
-              "target":
-                "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-18737483",
+              "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/annotation/anno-18737483",
+              "target": "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-18737483",
               "body": {
                 "format": "image/jpeg",
                 "height": 2550,
                 "service": [
                   {
-                    "@id": "https://ids.lib.harvard.edu/ids/iiif/18737483",
-                    "profile":
-                      "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
-                    "@type": "ImageService1"
+                    "profile": "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
+                    "id": "https://ids.lib.harvard.edu/ids/iiif/18737483",
+                    "type": "ImageService1"
                   }
                 ],
                 "width": 2088,
                 "type": "Image",
-                "id":
-                  "https://ids.lib.harvard.edu/ids/iiif/18737483/full/full/0/native.jpg"
+                "id": "https://ids.lib.harvard.edu/ids/iiif/18737483/full/full/0/native.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/90bdcafc-8a58-43f7-aefa-4f611e4d7d02"
+          "id": "https://example.org/uuid/f2d02b70-5c3b-4b96-91e9-0e091f49a971"
         }
       ]
     },
@@ -219,13 +208,11 @@
       },
       "width": 2259,
       "type": "Canvas",
-      "id":
-        "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-47174892",
+      "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-47174892",
       "annotations": [
         {
           "type": "AnnotationPage",
-          "id":
-            "https://iiif.harvardartmuseums.org/manifests/object/299843/list/47174892"
+          "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/list/47174892"
         }
       ],
       "items": [
@@ -235,29 +222,25 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://iiif.harvardartmuseums.org/manifests/object/299843/annotation/anno-47174892",
-              "target":
-                "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-47174892",
+              "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/annotation/anno-47174892",
+              "target": "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-47174892",
               "body": {
                 "format": "image/jpeg",
                 "height": 2550,
                 "service": [
                   {
-                    "@id": "https://ids.lib.harvard.edu/ids/iiif/47174892",
-                    "profile":
-                      "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
-                    "@type": "ImageService1"
+                    "profile": "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
+                    "id": "https://ids.lib.harvard.edu/ids/iiif/47174892",
+                    "type": "ImageService1"
                   }
                 ],
                 "width": 2259,
                 "type": "Image",
-                "id":
-                  "https://ids.lib.harvard.edu/ids/iiif/47174892/full/full/0/native.jpg"
+                "id": "https://ids.lib.harvard.edu/ids/iiif/47174892/full/full/0/native.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/9379aea6-24c3-4bc5-ac13-2154cdf7ef65"
+          "id": "https://example.org/uuid/1482eefd-13db-4120-a171-215132add606"
         }
       ]
     },
@@ -268,13 +251,11 @@
       },
       "width": 2100,
       "type": "Canvas",
-      "id":
-        "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-43182083",
+      "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-43182083",
       "annotations": [
         {
           "type": "AnnotationPage",
-          "id":
-            "https://iiif.harvardartmuseums.org/manifests/object/299843/list/43182083"
+          "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/list/43182083"
         }
       ],
       "items": [
@@ -284,29 +265,25 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://iiif.harvardartmuseums.org/manifests/object/299843/annotation/anno-43182083",
-              "target":
-                "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-43182083",
+              "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/annotation/anno-43182083",
+              "target": "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-43182083",
               "body": {
                 "format": "image/jpeg",
                 "height": 2550,
                 "service": [
                   {
-                    "@id": "https://ids.lib.harvard.edu/ids/iiif/43182083",
-                    "profile":
-                      "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
-                    "@type": "ImageService1"
+                    "profile": "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
+                    "id": "https://ids.lib.harvard.edu/ids/iiif/43182083",
+                    "type": "ImageService1"
                   }
                 ],
                 "width": 2100,
                 "type": "Image",
-                "id":
-                  "https://ids.lib.harvard.edu/ids/iiif/43182083/full/full/0/native.jpg"
+                "id": "https://ids.lib.harvard.edu/ids/iiif/43182083/full/full/0/native.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/0b7204e3-5c21-4b9a-85a3-74b456ad39b5"
+          "id": "https://example.org/uuid/f74688bc-7900-45f9-aaac-a83a214fce00"
         }
       ]
     },
@@ -317,13 +294,11 @@
       },
       "width": 2082,
       "type": "Canvas",
-      "id":
-        "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-43183405",
+      "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-43183405",
       "annotations": [
         {
           "type": "AnnotationPage",
-          "id":
-            "https://iiif.harvardartmuseums.org/manifests/object/299843/list/43183405"
+          "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/list/43183405"
         }
       ],
       "items": [
@@ -333,29 +308,25 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://iiif.harvardartmuseums.org/manifests/object/299843/annotation/anno-43183405",
-              "target":
-                "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-43183405",
+              "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/annotation/anno-43183405",
+              "target": "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-43183405",
               "body": {
                 "format": "image/jpeg",
                 "height": 2550,
                 "service": [
                   {
-                    "@id": "https://ids.lib.harvard.edu/ids/iiif/43183405",
-                    "profile":
-                      "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
-                    "@type": "ImageService1"
+                    "profile": "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
+                    "id": "https://ids.lib.harvard.edu/ids/iiif/43183405",
+                    "type": "ImageService1"
                   }
                 ],
                 "width": 2082,
                 "type": "Image",
-                "id":
-                  "https://ids.lib.harvard.edu/ids/iiif/43183405/full/full/0/native.jpg"
+                "id": "https://ids.lib.harvard.edu/ids/iiif/43183405/full/full/0/native.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/7943dedf-7454-4e1a-8968-481c52d7dff5"
+          "id": "https://example.org/uuid/0e70d236-f549-4115-950c-da04b0d2eb4e"
         }
       ]
     },
@@ -366,13 +337,11 @@
       },
       "width": 2093,
       "type": "Canvas",
-      "id":
-        "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-43183422",
+      "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-43183422",
       "annotations": [
         {
           "type": "AnnotationPage",
-          "id":
-            "https://iiif.harvardartmuseums.org/manifests/object/299843/list/43183422"
+          "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/list/43183422"
         }
       ],
       "items": [
@@ -382,29 +351,58 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://iiif.harvardartmuseums.org/manifests/object/299843/annotation/anno-43183422",
-              "target":
-                "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-43183422",
+              "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/annotation/anno-43183422",
+              "target": "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-43183422",
               "body": {
                 "format": "image/jpeg",
                 "height": 2550,
                 "service": [
                   {
-                    "@id": "https://ids.lib.harvard.edu/ids/iiif/43183422",
-                    "profile":
-                      "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
-                    "@type": "ImageService1"
+                    "profile": "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
+                    "id": "https://ids.lib.harvard.edu/ids/iiif/43183422",
+                    "type": "ImageService1"
                   }
                 ],
                 "width": 2093,
                 "type": "Image",
-                "id":
-                  "https://ids.lib.harvard.edu/ids/iiif/43183422/full/full/0/native.jpg"
+                "id": "https://ids.lib.harvard.edu/ids/iiif/43183422/full/full/0/native.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/e211f30b-0ef4-4e6a-ae67-0207a71e9d6e"
+          "id": "https://example.org/uuid/90467f9d-9ebc-4dc1-8728-dabb8ea8c953"
+        }
+      ]
+    }
+  ],
+  "structures": [
+    {
+      "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/sequence/normal",
+      "type": "Range",
+      "behavior": ["sequence", "individuals"],
+      "items": [
+        {
+          "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-47174896",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-18737483",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-47174892",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-43182083",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-43183405",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://iiif.harvardartmuseums.org/manifests/object/299843/canvas/canvas-43183422",
+          "type": "Canvas"
         }
       ]
     }

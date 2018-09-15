@@ -6,7 +6,8 @@
   "id": "http://iiif.io/api/presentation/2.1/example/fixtures/1/manifest.json",
   "partOf": [
     {
-      "id": "https://example.org/uuid/07763657-cbbf-411d-8c3a-fd1f60b38aed"
+      "id": "http://iiif.io/api/presentation/2.1/example/fixtures/collection.json",
+      "type": "Collection"
     }
   ],
   "items": [
@@ -17,8 +18,7 @@
       "height": 1800,
       "width": 1200,
       "type": "Canvas",
-      "id":
-        "http://iiif.io/api/presentation/2.1/example/fixtures/canvas/1/c1.json",
+      "id": "http://iiif.io/api/presentation/2.1/example/fixtures/canvas/1/c1.json",
       "items": [
         {
           "type": "AnnotationPage",
@@ -26,20 +26,17 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://example.org/uuid/c2e3fd0e-159a-406b-a18a-1ad88be37aac",
-              "target":
-                "http://iiif.io/api/presentation/2.1/example/fixtures/canvas/1/c1.json",
+              "id": "https://example.org/uuid/3644c005-bf7a-48d0-9fa9-1e1757bf8df1",
+              "target": "http://iiif.io/api/presentation/2.1/example/fixtures/canvas/1/c1.json",
               "body": {
                 "height": 1800,
                 "width": 1200,
                 "type": "Image",
-                "id":
-                  "http://iiif.io/api/presentation/2.1/example/fixtures/resources/page1-full.png"
+                "id": "http://iiif.io/api/presentation/2.1/example/fixtures/resources/page1-full.png"
               }
             }
           ],
-          "id": "https://example.org/uuid/1649617f-89a1-4567-8244-7d88a0ec6ce0"
+          "id": "https://example.org/uuid/1dad04b3-79c6-4a97-a831-634f2ee50a26"
         }
       ]
     }

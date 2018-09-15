@@ -3,28 +3,24 @@
     "@none": ["Test 65 List 1"]
   },
   "type": "AnnotationPage",
-  "id":
-    "http://iiif.io/api/presentation/2.0/example/fixtures/list/65/list1.json",
+  "id": "http://iiif.io/api/presentation/2.0/example/fixtures/list/65/list1.json",
   "items": [
     {
       "motivation": "painting",
       "type": "Annotation",
-      "id": "https://example.org/uuid/1d48800a-124d-4ab0-8024-d12f683d9bf0",
+      "id": "https://example.org/uuid/12badf4b-9e14-4076-a63b-cb5fb4cc2e22",
       "target": {
         "selector": {
           "value": "xywh=225,70,750,150",
-          "type": "FragmentSelector",
-          "id": "https://example.org/uuid/4aa95f28-77ad-4a7e-9106-7ceff77d5cdf"
+          "type": "FragmentSelector"
         },
         "type": "SpecificResource",
-        "id": "https://example.org/uuid/197932f1-d50b-4d9a-9691-ddc54ef70ab3",
         "source": {
           "label": {
             "@none": ["Test 65 Canvas: 1"]
           },
           "type": "Canvas",
-          "id":
-            "http://iiif.io/api/presentation/2.0/example/fixtures/canvas/65/c1.json"
+          "id": "http://iiif.io/api/presentation/2.0/example/fixtures/canvas/65/c1.json"
         }
       },
       "body": {

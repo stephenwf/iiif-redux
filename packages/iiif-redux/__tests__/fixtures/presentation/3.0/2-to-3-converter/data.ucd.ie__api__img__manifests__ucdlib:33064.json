@@ -174,12 +174,11 @@
       "height": 14214,
       "service": [
         {
-          "@context":
-            "http://iiif.io/api/annex/services/physdim/1/context.json",
+          "@context": "http://iiif.io/api/annex/services/physdim/1/context.json",
           "profile": "http://iiif.io/api/annex/services/physdim",
           "physicalScale": 0.00333333333333333,
           "physicalUnits": "in",
-          "@type": "Service"
+          "type": "Service"
         }
       ],
       "type": "Canvas",
@@ -191,30 +190,44 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://data.ucd.ie/api/img/ucdlib:33064/annotation/ucdlib:33543",
-              "target":
-                "https://data.ucd.ie/api/img/ucdlib:33064/canvas/ucdlib:33543",
+              "id": "https://data.ucd.ie/api/img/ucdlib:33064/annotation/ucdlib:33543",
+              "target": "https://data.ucd.ie/api/img/ucdlib:33064/canvas/ucdlib:33543",
               "body": {
                 "service": [
                   {
-                    "@id": "https://iiif.ucd.ie/loris/ucdlib:33543",
                     "profile": "http://iiif.io/api/image/2/level2.json",
-                    "@type": "ImageService2"
+                    "id": "https://iiif.ucd.ie/loris/ucdlib:33543",
+                    "type": "ImageService2"
                   }
                 ],
                 "format": "image/jpeg",
                 "height": 14214,
                 "width": 14451,
                 "type": "dcTypes:Image",
-                "id":
-                  "https://iiif.ucd.ie/loris/ucdlib:33543/full/full/0/default.jpg"
+                "id": "https://iiif.ucd.ie/loris/ucdlib:33543/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/1fb418af-1465-43ad-8db5-e61a2a229c0d"
+          "id": "https://example.org/uuid/46df4103-9fa4-4f30-b85d-f01fc6bbaa9c"
         }
       ]
+    }
+  ],
+  "structures": [
+    {
+      "id": "https://data.ucd.ie/api/img/manifests/ucdlib:33064/sequence/normal",
+      "type": "Range",
+      "behavior": ["sequence", "individuals"],
+      "items": [
+        {
+          "id": "https://data.ucd.ie/api/img/ucdlib:33064/canvas/ucdlib:33543",
+          "type": "Canvas"
+        }
+      ],
+      "@context": "http://iiif.io/api/presentation/2/context.json",
+      "label": {
+        "@none": ["Current Page Order"]
+      }
     }
   ],
   "@context": [

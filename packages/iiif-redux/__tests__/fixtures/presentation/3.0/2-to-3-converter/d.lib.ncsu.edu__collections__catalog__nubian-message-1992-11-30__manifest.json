@@ -5,8 +5,7 @@
   "logo": [
     {
       "type": "Image",
-      "id":
-        "https://d.lib.ncsu.edu/collections/assets/ncsu-libraries-white-logo-placement-8e3a4e918262aa5993b0e0475989b02f.jpg"
+      "id": "https://d.lib.ncsu.edu/collections/assets/ncsu-libraries-white-logo-placement-8e3a4e918262aa5993b0e0475989b02f.jpg"
     }
   ],
   "metadata": [
@@ -69,30 +68,29 @@
     {
       "service": [
         {
-          "@id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30",
           "profile": "http://iiif.io/api/image/2/level2.json",
-          "@type": "ImageService2"
+          "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30",
+          "type": "ImageService2"
         }
       ],
       "type": "Image",
-      "id":
-        "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30/full/150,/0/default.jpg"
+      "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30/full/150,/0/default.jpg"
     }
   ],
   "service": [
     {
-      "@id": "https://ocr.lib.ncsu.edu/search/nubian-message-1992-11-30",
       "profile": "http://iiif.io/api/search/0/search",
       "label": "Search within this thing",
       "service": [
         {
-          "@id": "https://ocr.lib.ncsu.edu/suggest/nubian-message-1992-11-30",
           "profile": "http://iiif.io/api/search/0/autocomplete",
           "label": "Get suggested words",
-          "@type": "AutoCompleteService1"
+          "id": "https://ocr.lib.ncsu.edu/suggest/nubian-message-1992-11-30",
+          "type": "AutoCompleteService1"
         }
       ],
-      "@type": "SearchService1"
+      "id": "https://ocr.lib.ncsu.edu/search/nubian-message-1992-11-30",
+      "type": "SearchService1"
     }
   ],
   "seeAlso": [
@@ -102,8 +100,7 @@
         "@none": ["Dublin Core XML via OAI-PMH"]
       },
       "type": "Dataset",
-      "id":
-        "https://d.lib.ncsu.edu/collections/catalog/oai?identifier=ncsul%2Fnubian-message-1992-11-30&metadataPrefix=oai_dc&verb=GetRecord"
+      "id": "https://d.lib.ncsu.edu/collections/catalog/oai?identifier=ncsul%2Fnubian-message-1992-11-30&metadataPrefix=oai_dc&verb=GetRecord"
     },
     {
       "format": "application/ld+json",
@@ -112,15 +109,13 @@
         "@none": ["Schema.org metadata as JSON-LD"]
       },
       "type": "Dataset",
-      "id":
-        "https://d.lib.ncsu.edu/collections/catalog/nubian-message-1992-11-30/schemaorg.json"
+      "id": "https://d.lib.ncsu.edu/collections/catalog/nubian-message-1992-11-30/schemaorg.json"
     }
   ],
   "dcterms:modified": "2018-05-04T19:54:03.000Z",
   "dcterms:created": "2016-02-19T16:47:04.000Z",
   "type": "Manifest",
-  "id":
-    "https://d.lib.ncsu.edu/collections/catalog/nubian-message-1992-11-30/manifest.json",
+  "id": "https://d.lib.ncsu.edu/collections/catalog/nubian-message-1992-11-30/manifest.json",
   "requiredStatement": {
     "label": {
       "@none": ["Attribution"]
@@ -150,14 +145,12 @@
       "seeAlso": [
         {
           "format": "text/vnd.hocr+html",
-          "profile":
-            "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
+          "profile": "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
           "label": {
             "@none": ["hOCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0001/nubian-message-1992-11-30_0001.hocr"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0001/nubian-message-1992-11-30_0001.hocr"
         },
         {
           "format": "text/plain",
@@ -165,37 +158,32 @@
             "@none": ["plain text OCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0001/nubian-message-1992-11-30_0001.txt"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0001/nubian-message-1992-11-30_0001.txt"
         }
       ],
       "type": "Canvas",
-      "id":
-        "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0001",
+      "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0001",
       "annotations": [
         {
           "label": {
             "@none": ["Text of this page (word level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0001/nubian-message-1992-11-30_0001-annotation-list-word.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0001/nubian-message-1992-11-30_0001-annotation-list-word.json"
         },
         {
           "label": {
             "@none": ["Text of this page (line level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0001/nubian-message-1992-11-30_0001-annotation-list-line.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0001/nubian-message-1992-11-30_0001-annotation-list-line.json"
         },
         {
           "label": {
             "@none": ["Text of this page (paragraph level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0001/nubian-message-1992-11-30_0001-annotation-list-paragraph.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0001/nubian-message-1992-11-30_0001-annotation-list-paragraph.json"
         }
       ],
       "items": [
@@ -205,28 +193,24 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0001/image",
-              "target":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0001",
+              "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0001/image",
+              "target": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0001",
               "body": {
                 "width": 1170,
                 "height": 1403,
                 "service": [
                   {
                     "profile": "http://iiif.io/api/image/2/level2.json",
-                    "@id":
-                      "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0001",
-                    "@type": "ImageService2"
+                    "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0001",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0001/full/1170,/0/default.jpg"
+                "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0001/full/1170,/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/b8812f28-30c4-491e-8bd2-968e9de15969"
+          "id": "https://example.org/uuid/207a5c53-5a00-4edb-8253-73f9126d5077"
         }
       ]
     },
@@ -239,14 +223,12 @@
       "seeAlso": [
         {
           "format": "text/vnd.hocr+html",
-          "profile":
-            "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
+          "profile": "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
           "label": {
             "@none": ["hOCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0002/nubian-message-1992-11-30_0002.hocr"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0002/nubian-message-1992-11-30_0002.hocr"
         },
         {
           "format": "text/plain",
@@ -254,37 +236,32 @@
             "@none": ["plain text OCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0002/nubian-message-1992-11-30_0002.txt"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0002/nubian-message-1992-11-30_0002.txt"
         }
       ],
       "type": "Canvas",
-      "id":
-        "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0002",
+      "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0002",
       "annotations": [
         {
           "label": {
             "@none": ["Text of this page (word level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0002/nubian-message-1992-11-30_0002-annotation-list-word.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0002/nubian-message-1992-11-30_0002-annotation-list-word.json"
         },
         {
           "label": {
             "@none": ["Text of this page (line level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0002/nubian-message-1992-11-30_0002-annotation-list-line.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0002/nubian-message-1992-11-30_0002-annotation-list-line.json"
         },
         {
           "label": {
             "@none": ["Text of this page (paragraph level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0002/nubian-message-1992-11-30_0002-annotation-list-paragraph.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0002/nubian-message-1992-11-30_0002-annotation-list-paragraph.json"
         }
       ],
       "items": [
@@ -294,28 +271,24 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0002/image",
-              "target":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0002",
+              "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0002/image",
+              "target": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0002",
               "body": {
                 "width": 1170,
                 "height": 1401,
                 "service": [
                   {
                     "profile": "http://iiif.io/api/image/2/level2.json",
-                    "@id":
-                      "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0002",
-                    "@type": "ImageService2"
+                    "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0002",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0002/full/1170,/0/default.jpg"
+                "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0002/full/1170,/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/784e99ad-867a-4ee7-ac03-48c10b695284"
+          "id": "https://example.org/uuid/a65dfe60-d9da-4052-8b50-2d25e39e47ca"
         }
       ]
     },
@@ -328,14 +301,12 @@
       "seeAlso": [
         {
           "format": "text/vnd.hocr+html",
-          "profile":
-            "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
+          "profile": "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
           "label": {
             "@none": ["hOCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0003/nubian-message-1992-11-30_0003.hocr"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0003/nubian-message-1992-11-30_0003.hocr"
         },
         {
           "format": "text/plain",
@@ -343,37 +314,32 @@
             "@none": ["plain text OCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0003/nubian-message-1992-11-30_0003.txt"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0003/nubian-message-1992-11-30_0003.txt"
         }
       ],
       "type": "Canvas",
-      "id":
-        "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0003",
+      "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0003",
       "annotations": [
         {
           "label": {
             "@none": ["Text of this page (word level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0003/nubian-message-1992-11-30_0003-annotation-list-word.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0003/nubian-message-1992-11-30_0003-annotation-list-word.json"
         },
         {
           "label": {
             "@none": ["Text of this page (line level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0003/nubian-message-1992-11-30_0003-annotation-list-line.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0003/nubian-message-1992-11-30_0003-annotation-list-line.json"
         },
         {
           "label": {
             "@none": ["Text of this page (paragraph level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0003/nubian-message-1992-11-30_0003-annotation-list-paragraph.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0003/nubian-message-1992-11-30_0003-annotation-list-paragraph.json"
         }
       ],
       "items": [
@@ -383,28 +349,24 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0003/image",
-              "target":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0003",
+              "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0003/image",
+              "target": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0003",
               "body": {
                 "width": 1170,
                 "height": 1399,
                 "service": [
                   {
                     "profile": "http://iiif.io/api/image/2/level2.json",
-                    "@id":
-                      "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0003",
-                    "@type": "ImageService2"
+                    "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0003",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0003/full/1170,/0/default.jpg"
+                "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0003/full/1170,/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/31a798af-1ee4-4150-94b4-d23c76f70851"
+          "id": "https://example.org/uuid/229fb135-7adb-4165-a38e-948dacc5eed6"
         }
       ]
     },
@@ -417,14 +379,12 @@
       "seeAlso": [
         {
           "format": "text/vnd.hocr+html",
-          "profile":
-            "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
+          "profile": "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
           "label": {
             "@none": ["hOCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0004/nubian-message-1992-11-30_0004.hocr"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0004/nubian-message-1992-11-30_0004.hocr"
         },
         {
           "format": "text/plain",
@@ -432,37 +392,32 @@
             "@none": ["plain text OCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0004/nubian-message-1992-11-30_0004.txt"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0004/nubian-message-1992-11-30_0004.txt"
         }
       ],
       "type": "Canvas",
-      "id":
-        "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0004",
+      "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0004",
       "annotations": [
         {
           "label": {
             "@none": ["Text of this page (word level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0004/nubian-message-1992-11-30_0004-annotation-list-word.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0004/nubian-message-1992-11-30_0004-annotation-list-word.json"
         },
         {
           "label": {
             "@none": ["Text of this page (line level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0004/nubian-message-1992-11-30_0004-annotation-list-line.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0004/nubian-message-1992-11-30_0004-annotation-list-line.json"
         },
         {
           "label": {
             "@none": ["Text of this page (paragraph level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0004/nubian-message-1992-11-30_0004-annotation-list-paragraph.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0004/nubian-message-1992-11-30_0004-annotation-list-paragraph.json"
         }
       ],
       "items": [
@@ -472,28 +427,24 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0004/image",
-              "target":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0004",
+              "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0004/image",
+              "target": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0004",
               "body": {
                 "width": 1170,
                 "height": 1400,
                 "service": [
                   {
                     "profile": "http://iiif.io/api/image/2/level2.json",
-                    "@id":
-                      "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0004",
-                    "@type": "ImageService2"
+                    "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0004",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0004/full/1170,/0/default.jpg"
+                "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0004/full/1170,/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/d52759dd-4af1-4fea-a04f-489cd8cac286"
+          "id": "https://example.org/uuid/c060b274-0e46-4d91-9a94-8346dadbeb1b"
         }
       ]
     },
@@ -506,14 +457,12 @@
       "seeAlso": [
         {
           "format": "text/vnd.hocr+html",
-          "profile":
-            "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
+          "profile": "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
           "label": {
             "@none": ["hOCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0005/nubian-message-1992-11-30_0005.hocr"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0005/nubian-message-1992-11-30_0005.hocr"
         },
         {
           "format": "text/plain",
@@ -521,37 +470,32 @@
             "@none": ["plain text OCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0005/nubian-message-1992-11-30_0005.txt"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0005/nubian-message-1992-11-30_0005.txt"
         }
       ],
       "type": "Canvas",
-      "id":
-        "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0005",
+      "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0005",
       "annotations": [
         {
           "label": {
             "@none": ["Text of this page (word level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0005/nubian-message-1992-11-30_0005-annotation-list-word.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0005/nubian-message-1992-11-30_0005-annotation-list-word.json"
         },
         {
           "label": {
             "@none": ["Text of this page (line level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0005/nubian-message-1992-11-30_0005-annotation-list-line.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0005/nubian-message-1992-11-30_0005-annotation-list-line.json"
         },
         {
           "label": {
             "@none": ["Text of this page (paragraph level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0005/nubian-message-1992-11-30_0005-annotation-list-paragraph.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0005/nubian-message-1992-11-30_0005-annotation-list-paragraph.json"
         }
       ],
       "items": [
@@ -561,28 +505,24 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0005/image",
-              "target":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0005",
+              "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0005/image",
+              "target": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0005",
               "body": {
                 "width": 1170,
                 "height": 1401,
                 "service": [
                   {
                     "profile": "http://iiif.io/api/image/2/level2.json",
-                    "@id":
-                      "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0005",
-                    "@type": "ImageService2"
+                    "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0005",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0005/full/1170,/0/default.jpg"
+                "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0005/full/1170,/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/cf5345bb-9a13-4144-8422-2516a7201685"
+          "id": "https://example.org/uuid/f1ca7673-6281-4ce9-abbe-3ba7d086c424"
         }
       ]
     },
@@ -595,14 +535,12 @@
       "seeAlso": [
         {
           "format": "text/vnd.hocr+html",
-          "profile":
-            "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
+          "profile": "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
           "label": {
             "@none": ["hOCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0006/nubian-message-1992-11-30_0006.hocr"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0006/nubian-message-1992-11-30_0006.hocr"
         },
         {
           "format": "text/plain",
@@ -610,37 +548,32 @@
             "@none": ["plain text OCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0006/nubian-message-1992-11-30_0006.txt"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0006/nubian-message-1992-11-30_0006.txt"
         }
       ],
       "type": "Canvas",
-      "id":
-        "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0006",
+      "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0006",
       "annotations": [
         {
           "label": {
             "@none": ["Text of this page (word level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0006/nubian-message-1992-11-30_0006-annotation-list-word.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0006/nubian-message-1992-11-30_0006-annotation-list-word.json"
         },
         {
           "label": {
             "@none": ["Text of this page (line level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0006/nubian-message-1992-11-30_0006-annotation-list-line.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0006/nubian-message-1992-11-30_0006-annotation-list-line.json"
         },
         {
           "label": {
             "@none": ["Text of this page (paragraph level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0006/nubian-message-1992-11-30_0006-annotation-list-paragraph.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0006/nubian-message-1992-11-30_0006-annotation-list-paragraph.json"
         }
       ],
       "items": [
@@ -650,28 +583,24 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0006/image",
-              "target":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0006",
+              "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0006/image",
+              "target": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0006",
               "body": {
                 "width": 1170,
                 "height": 1401,
                 "service": [
                   {
                     "profile": "http://iiif.io/api/image/2/level2.json",
-                    "@id":
-                      "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0006",
-                    "@type": "ImageService2"
+                    "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0006",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0006/full/1170,/0/default.jpg"
+                "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0006/full/1170,/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/bdd02ce3-b1c8-4ce7-a1ff-ca42b9b59b79"
+          "id": "https://example.org/uuid/38b00c8f-f934-45af-b9ec-3cd03e373b18"
         }
       ]
     },
@@ -684,14 +613,12 @@
       "seeAlso": [
         {
           "format": "text/vnd.hocr+html",
-          "profile":
-            "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
+          "profile": "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
           "label": {
             "@none": ["hOCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0007/nubian-message-1992-11-30_0007.hocr"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0007/nubian-message-1992-11-30_0007.hocr"
         },
         {
           "format": "text/plain",
@@ -699,37 +626,32 @@
             "@none": ["plain text OCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0007/nubian-message-1992-11-30_0007.txt"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0007/nubian-message-1992-11-30_0007.txt"
         }
       ],
       "type": "Canvas",
-      "id":
-        "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0007",
+      "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0007",
       "annotations": [
         {
           "label": {
             "@none": ["Text of this page (word level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0007/nubian-message-1992-11-30_0007-annotation-list-word.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0007/nubian-message-1992-11-30_0007-annotation-list-word.json"
         },
         {
           "label": {
             "@none": ["Text of this page (line level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0007/nubian-message-1992-11-30_0007-annotation-list-line.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0007/nubian-message-1992-11-30_0007-annotation-list-line.json"
         },
         {
           "label": {
             "@none": ["Text of this page (paragraph level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0007/nubian-message-1992-11-30_0007-annotation-list-paragraph.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0007/nubian-message-1992-11-30_0007-annotation-list-paragraph.json"
         }
       ],
       "items": [
@@ -739,28 +661,24 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0007/image",
-              "target":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0007",
+              "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0007/image",
+              "target": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0007",
               "body": {
                 "width": 1170,
                 "height": 1397,
                 "service": [
                   {
                     "profile": "http://iiif.io/api/image/2/level2.json",
-                    "@id":
-                      "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0007",
-                    "@type": "ImageService2"
+                    "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0007",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0007/full/1170,/0/default.jpg"
+                "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0007/full/1170,/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/c00da15d-7cd8-4c79-b81d-12ec759c4c66"
+          "id": "https://example.org/uuid/87b178dd-bd1a-4e55-84dc-d3a02ff47ece"
         }
       ]
     },
@@ -773,14 +691,12 @@
       "seeAlso": [
         {
           "format": "text/vnd.hocr+html",
-          "profile":
-            "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
+          "profile": "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
           "label": {
             "@none": ["hOCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0008/nubian-message-1992-11-30_0008.hocr"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0008/nubian-message-1992-11-30_0008.hocr"
         },
         {
           "format": "text/plain",
@@ -788,37 +704,32 @@
             "@none": ["plain text OCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0008/nubian-message-1992-11-30_0008.txt"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0008/nubian-message-1992-11-30_0008.txt"
         }
       ],
       "type": "Canvas",
-      "id":
-        "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0008",
+      "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0008",
       "annotations": [
         {
           "label": {
             "@none": ["Text of this page (word level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0008/nubian-message-1992-11-30_0008-annotation-list-word.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0008/nubian-message-1992-11-30_0008-annotation-list-word.json"
         },
         {
           "label": {
             "@none": ["Text of this page (line level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0008/nubian-message-1992-11-30_0008-annotation-list-line.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0008/nubian-message-1992-11-30_0008-annotation-list-line.json"
         },
         {
           "label": {
             "@none": ["Text of this page (paragraph level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0008/nubian-message-1992-11-30_0008-annotation-list-paragraph.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0008/nubian-message-1992-11-30_0008-annotation-list-paragraph.json"
         }
       ],
       "items": [
@@ -828,28 +739,24 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0008/image",
-              "target":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0008",
+              "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0008/image",
+              "target": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0008",
               "body": {
                 "width": 1170,
                 "height": 1404,
                 "service": [
                   {
                     "profile": "http://iiif.io/api/image/2/level2.json",
-                    "@id":
-                      "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0008",
-                    "@type": "ImageService2"
+                    "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0008",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0008/full/1170,/0/default.jpg"
+                "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0008/full/1170,/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/c1fefef3-722d-4f17-9aee-fe1ecf8ecb86"
+          "id": "https://example.org/uuid/4918d5be-70d2-4451-8f7e-15ea17fc462d"
         }
       ]
     },
@@ -862,14 +769,12 @@
       "seeAlso": [
         {
           "format": "text/vnd.hocr+html",
-          "profile":
-            "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
+          "profile": "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
           "label": {
             "@none": ["hOCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0009/nubian-message-1992-11-30_0009.hocr"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0009/nubian-message-1992-11-30_0009.hocr"
         },
         {
           "format": "text/plain",
@@ -877,37 +782,32 @@
             "@none": ["plain text OCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0009/nubian-message-1992-11-30_0009.txt"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0009/nubian-message-1992-11-30_0009.txt"
         }
       ],
       "type": "Canvas",
-      "id":
-        "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0009",
+      "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0009",
       "annotations": [
         {
           "label": {
             "@none": ["Text of this page (word level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0009/nubian-message-1992-11-30_0009-annotation-list-word.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0009/nubian-message-1992-11-30_0009-annotation-list-word.json"
         },
         {
           "label": {
             "@none": ["Text of this page (line level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0009/nubian-message-1992-11-30_0009-annotation-list-line.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0009/nubian-message-1992-11-30_0009-annotation-list-line.json"
         },
         {
           "label": {
             "@none": ["Text of this page (paragraph level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0009/nubian-message-1992-11-30_0009-annotation-list-paragraph.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0009/nubian-message-1992-11-30_0009-annotation-list-paragraph.json"
         }
       ],
       "items": [
@@ -917,28 +817,24 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0009/image",
-              "target":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0009",
+              "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0009/image",
+              "target": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0009",
               "body": {
                 "width": 1170,
                 "height": 1392,
                 "service": [
                   {
                     "profile": "http://iiif.io/api/image/2/level2.json",
-                    "@id":
-                      "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0009",
-                    "@type": "ImageService2"
+                    "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0009",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0009/full/1170,/0/default.jpg"
+                "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0009/full/1170,/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/dccd38ff-7ff1-43c6-adba-12d0bea4b66e"
+          "id": "https://example.org/uuid/1189e9ce-58ac-4b76-805e-9e3ee45f52c8"
         }
       ]
     },
@@ -951,14 +847,12 @@
       "seeAlso": [
         {
           "format": "text/vnd.hocr+html",
-          "profile":
-            "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
+          "profile": "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
           "label": {
             "@none": ["hOCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0010/nubian-message-1992-11-30_0010.hocr"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0010/nubian-message-1992-11-30_0010.hocr"
         },
         {
           "format": "text/plain",
@@ -966,37 +860,32 @@
             "@none": ["plain text OCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0010/nubian-message-1992-11-30_0010.txt"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0010/nubian-message-1992-11-30_0010.txt"
         }
       ],
       "type": "Canvas",
-      "id":
-        "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0010",
+      "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0010",
       "annotations": [
         {
           "label": {
             "@none": ["Text of this page (word level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0010/nubian-message-1992-11-30_0010-annotation-list-word.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0010/nubian-message-1992-11-30_0010-annotation-list-word.json"
         },
         {
           "label": {
             "@none": ["Text of this page (line level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0010/nubian-message-1992-11-30_0010-annotation-list-line.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0010/nubian-message-1992-11-30_0010-annotation-list-line.json"
         },
         {
           "label": {
             "@none": ["Text of this page (paragraph level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0010/nubian-message-1992-11-30_0010-annotation-list-paragraph.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0010/nubian-message-1992-11-30_0010-annotation-list-paragraph.json"
         }
       ],
       "items": [
@@ -1006,28 +895,24 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0010/image",
-              "target":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0010",
+              "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0010/image",
+              "target": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0010",
               "body": {
                 "width": 1170,
                 "height": 1398,
                 "service": [
                   {
                     "profile": "http://iiif.io/api/image/2/level2.json",
-                    "@id":
-                      "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0010",
-                    "@type": "ImageService2"
+                    "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0010",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0010/full/1170,/0/default.jpg"
+                "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0010/full/1170,/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/d0d49fd3-214d-4dd7-ba5b-dd1d35ee7712"
+          "id": "https://example.org/uuid/92f52714-23d5-48fb-9eff-ac69682e0af4"
         }
       ]
     },
@@ -1040,14 +925,12 @@
       "seeAlso": [
         {
           "format": "text/vnd.hocr+html",
-          "profile":
-            "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
+          "profile": "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
           "label": {
             "@none": ["hOCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0011/nubian-message-1992-11-30_0011.hocr"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0011/nubian-message-1992-11-30_0011.hocr"
         },
         {
           "format": "text/plain",
@@ -1055,37 +938,32 @@
             "@none": ["plain text OCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0011/nubian-message-1992-11-30_0011.txt"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0011/nubian-message-1992-11-30_0011.txt"
         }
       ],
       "type": "Canvas",
-      "id":
-        "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0011",
+      "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0011",
       "annotations": [
         {
           "label": {
             "@none": ["Text of this page (word level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0011/nubian-message-1992-11-30_0011-annotation-list-word.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0011/nubian-message-1992-11-30_0011-annotation-list-word.json"
         },
         {
           "label": {
             "@none": ["Text of this page (line level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0011/nubian-message-1992-11-30_0011-annotation-list-line.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0011/nubian-message-1992-11-30_0011-annotation-list-line.json"
         },
         {
           "label": {
             "@none": ["Text of this page (paragraph level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0011/nubian-message-1992-11-30_0011-annotation-list-paragraph.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0011/nubian-message-1992-11-30_0011-annotation-list-paragraph.json"
         }
       ],
       "items": [
@@ -1095,28 +973,24 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0011/image",
-              "target":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0011",
+              "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0011/image",
+              "target": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0011",
               "body": {
                 "width": 1170,
                 "height": 1394,
                 "service": [
                   {
                     "profile": "http://iiif.io/api/image/2/level2.json",
-                    "@id":
-                      "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0011",
-                    "@type": "ImageService2"
+                    "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0011",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0011/full/1170,/0/default.jpg"
+                "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0011/full/1170,/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/029a0c34-9d5f-4a89-83f1-75d930ec7322"
+          "id": "https://example.org/uuid/54d739b0-76ef-4c7c-abf5-03bda0105f17"
         }
       ]
     },
@@ -1129,14 +1003,12 @@
       "seeAlso": [
         {
           "format": "text/vnd.hocr+html",
-          "profile":
-            "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
+          "profile": "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
           "label": {
             "@none": ["hOCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0012/nubian-message-1992-11-30_0012.hocr"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0012/nubian-message-1992-11-30_0012.hocr"
         },
         {
           "format": "text/plain",
@@ -1144,37 +1016,32 @@
             "@none": ["plain text OCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0012/nubian-message-1992-11-30_0012.txt"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0012/nubian-message-1992-11-30_0012.txt"
         }
       ],
       "type": "Canvas",
-      "id":
-        "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0012",
+      "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0012",
       "annotations": [
         {
           "label": {
             "@none": ["Text of this page (word level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0012/nubian-message-1992-11-30_0012-annotation-list-word.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0012/nubian-message-1992-11-30_0012-annotation-list-word.json"
         },
         {
           "label": {
             "@none": ["Text of this page (line level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0012/nubian-message-1992-11-30_0012-annotation-list-line.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0012/nubian-message-1992-11-30_0012-annotation-list-line.json"
         },
         {
           "label": {
             "@none": ["Text of this page (paragraph level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0012/nubian-message-1992-11-30_0012-annotation-list-paragraph.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0012/nubian-message-1992-11-30_0012-annotation-list-paragraph.json"
         }
       ],
       "items": [
@@ -1184,28 +1051,24 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0012/image",
-              "target":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0012",
+              "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0012/image",
+              "target": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0012",
               "body": {
                 "width": 1170,
                 "height": 1396,
                 "service": [
                   {
                     "profile": "http://iiif.io/api/image/2/level2.json",
-                    "@id":
-                      "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0012",
-                    "@type": "ImageService2"
+                    "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0012",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0012/full/1170,/0/default.jpg"
+                "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0012/full/1170,/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/d4b40fca-f762-4d1b-acb8-472edf26705b"
+          "id": "https://example.org/uuid/fcafbb67-f1cb-47bd-a0b6-561f6f683a2c"
         }
       ]
     },
@@ -1218,14 +1081,12 @@
       "seeAlso": [
         {
           "format": "text/vnd.hocr+html",
-          "profile":
-            "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
+          "profile": "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
           "label": {
             "@none": ["hOCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0013/nubian-message-1992-11-30_0013.hocr"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0013/nubian-message-1992-11-30_0013.hocr"
         },
         {
           "format": "text/plain",
@@ -1233,37 +1094,32 @@
             "@none": ["plain text OCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0013/nubian-message-1992-11-30_0013.txt"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0013/nubian-message-1992-11-30_0013.txt"
         }
       ],
       "type": "Canvas",
-      "id":
-        "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0013",
+      "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0013",
       "annotations": [
         {
           "label": {
             "@none": ["Text of this page (word level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0013/nubian-message-1992-11-30_0013-annotation-list-word.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0013/nubian-message-1992-11-30_0013-annotation-list-word.json"
         },
         {
           "label": {
             "@none": ["Text of this page (line level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0013/nubian-message-1992-11-30_0013-annotation-list-line.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0013/nubian-message-1992-11-30_0013-annotation-list-line.json"
         },
         {
           "label": {
             "@none": ["Text of this page (paragraph level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0013/nubian-message-1992-11-30_0013-annotation-list-paragraph.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0013/nubian-message-1992-11-30_0013-annotation-list-paragraph.json"
         }
       ],
       "items": [
@@ -1273,28 +1129,24 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0013/image",
-              "target":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0013",
+              "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0013/image",
+              "target": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0013",
               "body": {
                 "width": 1170,
                 "height": 1389,
                 "service": [
                   {
                     "profile": "http://iiif.io/api/image/2/level2.json",
-                    "@id":
-                      "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0013",
-                    "@type": "ImageService2"
+                    "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0013",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0013/full/1170,/0/default.jpg"
+                "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0013/full/1170,/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/fa779c3a-84ce-4cf9-8959-7790c3b6c5ff"
+          "id": "https://example.org/uuid/0ec31c24-b34d-4562-a524-73ef1eab8b8d"
         }
       ]
     },
@@ -1307,14 +1159,12 @@
       "seeAlso": [
         {
           "format": "text/vnd.hocr+html",
-          "profile":
-            "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
+          "profile": "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
           "label": {
             "@none": ["hOCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0014/nubian-message-1992-11-30_0014.hocr"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0014/nubian-message-1992-11-30_0014.hocr"
         },
         {
           "format": "text/plain",
@@ -1322,37 +1172,32 @@
             "@none": ["plain text OCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0014/nubian-message-1992-11-30_0014.txt"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0014/nubian-message-1992-11-30_0014.txt"
         }
       ],
       "type": "Canvas",
-      "id":
-        "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0014",
+      "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0014",
       "annotations": [
         {
           "label": {
             "@none": ["Text of this page (word level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0014/nubian-message-1992-11-30_0014-annotation-list-word.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0014/nubian-message-1992-11-30_0014-annotation-list-word.json"
         },
         {
           "label": {
             "@none": ["Text of this page (line level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0014/nubian-message-1992-11-30_0014-annotation-list-line.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0014/nubian-message-1992-11-30_0014-annotation-list-line.json"
         },
         {
           "label": {
             "@none": ["Text of this page (paragraph level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0014/nubian-message-1992-11-30_0014-annotation-list-paragraph.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0014/nubian-message-1992-11-30_0014-annotation-list-paragraph.json"
         }
       ],
       "items": [
@@ -1362,28 +1207,24 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0014/image",
-              "target":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0014",
+              "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0014/image",
+              "target": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0014",
               "body": {
                 "width": 1170,
                 "height": 1392,
                 "service": [
                   {
                     "profile": "http://iiif.io/api/image/2/level2.json",
-                    "@id":
-                      "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0014",
-                    "@type": "ImageService2"
+                    "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0014",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0014/full/1170,/0/default.jpg"
+                "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0014/full/1170,/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/1a2d7fd2-082e-450b-bc0a-8a9a5e34a19b"
+          "id": "https://example.org/uuid/a3e08dd6-f168-4471-9b98-75048684b5f4"
         }
       ]
     },
@@ -1396,14 +1237,12 @@
       "seeAlso": [
         {
           "format": "text/vnd.hocr+html",
-          "profile":
-            "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
+          "profile": "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
           "label": {
             "@none": ["hOCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0015/nubian-message-1992-11-30_0015.hocr"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0015/nubian-message-1992-11-30_0015.hocr"
         },
         {
           "format": "text/plain",
@@ -1411,37 +1250,32 @@
             "@none": ["plain text OCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0015/nubian-message-1992-11-30_0015.txt"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0015/nubian-message-1992-11-30_0015.txt"
         }
       ],
       "type": "Canvas",
-      "id":
-        "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0015",
+      "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0015",
       "annotations": [
         {
           "label": {
             "@none": ["Text of this page (word level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0015/nubian-message-1992-11-30_0015-annotation-list-word.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0015/nubian-message-1992-11-30_0015-annotation-list-word.json"
         },
         {
           "label": {
             "@none": ["Text of this page (line level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0015/nubian-message-1992-11-30_0015-annotation-list-line.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0015/nubian-message-1992-11-30_0015-annotation-list-line.json"
         },
         {
           "label": {
             "@none": ["Text of this page (paragraph level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0015/nubian-message-1992-11-30_0015-annotation-list-paragraph.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0015/nubian-message-1992-11-30_0015-annotation-list-paragraph.json"
         }
       ],
       "items": [
@@ -1451,28 +1285,24 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0015/image",
-              "target":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0015",
+              "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0015/image",
+              "target": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0015",
               "body": {
                 "width": 1170,
                 "height": 1394,
                 "service": [
                   {
                     "profile": "http://iiif.io/api/image/2/level2.json",
-                    "@id":
-                      "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0015",
-                    "@type": "ImageService2"
+                    "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0015",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0015/full/1170,/0/default.jpg"
+                "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0015/full/1170,/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/11c9d370-184b-4697-b8cd-16bf5e99f84e"
+          "id": "https://example.org/uuid/07be8bb0-1728-46f7-bcd6-fb4055312022"
         }
       ]
     },
@@ -1485,14 +1315,12 @@
       "seeAlso": [
         {
           "format": "text/vnd.hocr+html",
-          "profile":
-            "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
+          "profile": "https://github.com/kba/hocr-spec/blob/master/hocr-spec.md",
           "label": {
             "@none": ["hOCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0016/nubian-message-1992-11-30_0016.hocr"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0016/nubian-message-1992-11-30_0016.hocr"
         },
         {
           "format": "text/plain",
@@ -1500,37 +1328,32 @@
             "@none": ["plain text OCR"]
           },
           "type": "Dataset",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0016/nubian-message-1992-11-30_0016.txt"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0016/nubian-message-1992-11-30_0016.txt"
         }
       ],
       "type": "Canvas",
-      "id":
-        "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0016",
+      "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0016",
       "annotations": [
         {
           "label": {
             "@none": ["Text of this page (word level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0016/nubian-message-1992-11-30_0016-annotation-list-word.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0016/nubian-message-1992-11-30_0016-annotation-list-word.json"
         },
         {
           "label": {
             "@none": ["Text of this page (line level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0016/nubian-message-1992-11-30_0016-annotation-list-line.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0016/nubian-message-1992-11-30_0016-annotation-list-line.json"
         },
         {
           "label": {
             "@none": ["Text of this page (paragraph level)"]
           },
           "type": "AnnotationPage",
-          "id":
-            "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0016/nubian-message-1992-11-30_0016-annotation-list-paragraph.json"
+          "id": "https://ocr.lib.ncsu.edu/ocr/nu/nubian-message-1992-11-30_0016/nubian-message-1992-11-30_0016-annotation-list-paragraph.json"
         }
       ],
       "items": [
@@ -1540,28 +1363,24 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0016/image",
-              "target":
-                "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0016",
+              "id": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0016/image",
+              "target": "https://d.lib.ncsu.edu/collections/canvas/nubian-message-1992-11-30_0016",
               "body": {
                 "width": 1170,
                 "height": 1406,
                 "service": [
                   {
                     "profile": "http://iiif.io/api/image/2/level2.json",
-                    "@id":
-                      "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0016",
-                    "@type": "ImageService2"
+                    "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0016",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0016/full/1170,/0/default.jpg"
+                "id": "https://iiif.lib.ncsu.edu/iiif/nubian-message-1992-11-30_0016/full/1170,/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/6b7c538b-0215-4252-b189-7728e14c1e59"
+          "id": "https://example.org/uuid/699d41bf-5d71-4c20-87c0-01c15709a64c"
         }
       ]
     }

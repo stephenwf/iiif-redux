@@ -1,6 +1,6 @@
 {
   "label": {
-    "@none": ["\u5510\u7cf8\u8349\u7d19"]
+    "@none": ["唐糸草紙"]
   },
   "metadata": [
     {
@@ -98,19 +98,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00000.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00000.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00000.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00000.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/c434a861-0656-4f4b-a1d9-e0dbef4a116a"
+          "id": "https://example.org/uuid/be1c28f6-7ec7-4a05-a85a-b15320a56822"
         }
       ]
     },
@@ -137,19 +135,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00001.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00001.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00001.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00001.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/94aa0297-e486-49e6-9b49-32d0193db389"
+          "id": "https://example.org/uuid/905c468b-d65a-4703-bb97-51382f695051"
         }
       ]
     },
@@ -176,19 +172,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00002.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00002.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00002.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00002.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/c95767e0-460f-4faa-93ea-9c5d62db35d0"
+          "id": "https://example.org/uuid/44f03f45-da75-4fa5-b710-6aec0e82de87"
         }
       ]
     },
@@ -215,19 +209,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00003.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00003.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00003.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00003.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/0e4d66e0-f4bb-4ad7-951c-ee079060eaef"
+          "id": "https://example.org/uuid/18194b84-6f17-48fa-941d-c42eaeb567ea"
         }
       ]
     },
@@ -260,19 +252,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00004.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00004.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00004.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00004.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/6eeeb716-411c-428c-a381-cd3d4b886627"
+          "id": "https://example.org/uuid/864d6dd4-017c-41e6-9bb3-89c90abd846a"
         }
       ]
     },
@@ -305,19 +295,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00005.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00005.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00005.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00005.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/2e06197c-4cd2-457f-bfa8-8b064a3fb5d2"
+          "id": "https://example.org/uuid/fe4c92e3-88ed-45ef-9718-de09d781a557"
         }
       ]
     },
@@ -350,19 +338,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00006.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00006.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00006.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00006.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/a3f355c4-bd89-485c-950d-fec96d5927fa"
+          "id": "https://example.org/uuid/68d2dcf1-309d-41d7-b206-c1923b63b1ea"
         }
       ]
     },
@@ -395,19 +381,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00007.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00007.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00007.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00007.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/dad18a00-416e-41cb-b742-780891de16c7"
+          "id": "https://example.org/uuid/b742fd4c-3226-4512-9dfa-2ce89a723d3d"
         }
       ]
     },
@@ -440,19 +424,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00008.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00008.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00008.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00008.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/ad838b91-7a58-48e2-9a2c-16dff37eca2f"
+          "id": "https://example.org/uuid/8de80fe2-9fb7-45d5-9e42-b511afaa8237"
         }
       ]
     },
@@ -485,19 +467,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00009.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00009.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00009.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00009.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/8d9b62c4-03ea-4ffb-b2a5-b7c9be35d566"
+          "id": "https://example.org/uuid/c02537b2-0d7d-4408-aacb-e7edfa9889b0"
         }
       ]
     },
@@ -530,19 +510,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00010.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00010.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00010.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00010.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/6a3971fa-570d-42d8-9a03-822f04b17ccc"
+          "id": "https://example.org/uuid/3d0a724b-064e-4b76-aa6c-aa903f49bf9f"
         }
       ]
     },
@@ -575,19 +553,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00011.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00011.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00011.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00011.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/42e63718-df38-4b8c-aff2-f26676afd037"
+          "id": "https://example.org/uuid/468e9e16-927d-4f99-ad9e-33c261eeb27e"
         }
       ]
     },
@@ -620,19 +596,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00012.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00012.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00012.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00012.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/de6eafc5-1478-4d4f-8897-8a5e4a5c583b"
+          "id": "https://example.org/uuid/6071ed82-2cfa-43b3-8eae-606845d2aa9a"
         }
       ]
     },
@@ -665,19 +639,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00013.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00013.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00013.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00013.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/20a2e7d5-c558-44cb-a9a2-b2d8e05598de"
+          "id": "https://example.org/uuid/4922f1cd-5009-470b-8918-dbee4c13a592"
         }
       ]
     },
@@ -710,19 +682,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00014.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00014.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00014.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00014.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/5812b809-fbe2-42ea-ae1d-216f802930e2"
+          "id": "https://example.org/uuid/407962ea-9ed5-49e0-b375-b5a042741d55"
         }
       ]
     },
@@ -755,19 +725,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00015.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00015.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00015.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00015.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/64045e10-f843-4924-804a-cd739e57b844"
+          "id": "https://example.org/uuid/2bf3221d-21e9-412c-9fda-95f85392ea22"
         }
       ]
     },
@@ -800,19 +768,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00016.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00016.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00016.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00016.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/c760a33f-7c5c-4530-a44d-e1fbd81037e9"
+          "id": "https://example.org/uuid/a17b9084-912f-4f63-8dbe-267dcf42d93c"
         }
       ]
     },
@@ -845,19 +811,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00017.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00017.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00017.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00017.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/63030e66-89e4-47aa-ac6a-29a07bfebc54"
+          "id": "https://example.org/uuid/4f35cb4f-4a08-4581-8f82-f2159fb46466"
         }
       ]
     },
@@ -884,19 +848,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00018.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00018.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00018.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00018.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/c777dc39-9735-4fd6-a7cd-fb91c2d9b626"
+          "id": "https://example.org/uuid/f73c21f6-92f3-490f-9b4e-f16243255436"
         }
       ]
     },
@@ -923,19 +885,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00019.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00019.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00019.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00019.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/f3164796-8257-407e-a841-846c17290230"
+          "id": "https://example.org/uuid/ee3d5852-7b5a-421f-a564-a899fcaa6396"
         }
       ]
     },
@@ -962,19 +922,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00020.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00020.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00020.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00020.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/deec3865-e04f-4886-8aa4-f5effa100dee"
+          "id": "https://example.org/uuid/c5bb99e8-8a93-41d8-87b9-1063b3acd745"
         }
       ]
     },
@@ -1001,19 +959,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00021.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00021.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00021.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00021.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/7145d2d6-5577-4c65-abee-57e87cd01e8d"
+          "id": "https://example.org/uuid/3875eeb7-f72c-4f86-9e14-1f7fa002b26a"
         }
       ]
     },
@@ -1040,19 +996,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00022.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00022.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00022.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00022.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/fe35425e-e115-492e-bb72-5d3ca0fbbaab"
+          "id": "https://example.org/uuid/763f160c-994b-48ea-ace3-ac50ed154d64"
         }
       ]
     },
@@ -1079,19 +1033,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00023.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00023.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00023.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00023.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/2eb98d50-c4db-44ec-9384-94d2b201f5fd"
+          "id": "https://example.org/uuid/59ac2d49-2b8d-407c-a69c-f817cdb9e8b9"
         }
       ]
     },
@@ -1124,19 +1076,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00024.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00024.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00024.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00024.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/e139920b-ac53-4e54-9c3e-94a577196556"
+          "id": "https://example.org/uuid/ea5f5453-4c42-43d2-815d-16c0030126ea"
         }
       ]
     },
@@ -1169,19 +1119,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00025.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00025.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00025.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00025.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/5d6ea91f-2d00-4dfb-a096-03e5a3d84aee"
+          "id": "https://example.org/uuid/9d953b83-9ce7-4cd5-9532-1c3dd73904de"
         }
       ]
     },
@@ -1214,19 +1162,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00026.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00026.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00026.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00026.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/7129df0e-ac7b-492e-9810-953fdfa9445d"
+          "id": "https://example.org/uuid/b0b7e61a-fe77-4ca4-9105-1069cbfd013d"
         }
       ]
     },
@@ -1259,19 +1205,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00027.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00027.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00027.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00027.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/89e73a34-60c3-47e2-bd37-df45b1972f59"
+          "id": "https://example.org/uuid/a8424ad7-b09a-429e-a1e9-f09c01fa194d"
         }
       ]
     },
@@ -1304,19 +1248,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00028.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00028.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00028.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00028.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/9a698b36-0d45-4369-9daf-ac7881229820"
+          "id": "https://example.org/uuid/827dec7b-9f24-4287-a969-23d713498488"
         }
       ]
     },
@@ -1349,19 +1291,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00029.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00029.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00029.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00029.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/1263e454-2c29-4f64-ab90-164ea3a018da"
+          "id": "https://example.org/uuid/06025b60-9147-4cfd-9b85-ad5efbac58a1"
         }
       ]
     },
@@ -1394,19 +1334,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00030.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00030.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00030.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00030.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/295463ba-ec0a-40a1-a92c-6705dd36e020"
+          "id": "https://example.org/uuid/2e6353c4-9d52-42c0-b87c-c07f4d874b50"
         }
       ]
     },
@@ -1439,19 +1377,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00031.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00031.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00031.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00031.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/efaafa9e-0dd1-4d28-873a-650c7bcf3d6e"
+          "id": "https://example.org/uuid/7ec1dfa6-a85a-4136-8b18-6c75fa401e60"
         }
       ]
     },
@@ -1484,19 +1420,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00032.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00032.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00032.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00032.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/a0403060-4fa7-4f26-b651-f16bb5af15c7"
+          "id": "https://example.org/uuid/bb813dd4-cf18-43bc-bdfd-4c5dea396cc0"
         }
       ]
     },
@@ -1529,19 +1463,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00033.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00033.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00033.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00033.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/3a730d86-b84c-47d8-8df6-096d10285729"
+          "id": "https://example.org/uuid/2221646b-8819-4514-b44d-c90fa382666f"
         }
       ]
     },
@@ -1574,19 +1506,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00034.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00034.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00034.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00034.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/fe19face-538e-4eb3-9c43-21db00d4d40d"
+          "id": "https://example.org/uuid/4e963cff-6dcc-4df4-bda6-8701a6a9bd46"
         }
       ]
     },
@@ -1619,19 +1549,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00035.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00035.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00035.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00035.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/921d9914-b874-4439-93c5-565e603fd418"
+          "id": "https://example.org/uuid/cd3a47b9-843d-45fb-9faf-f2774f047ded"
         }
       ]
     },
@@ -1664,19 +1592,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00036.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00036.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00036.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00036.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/246ed484-e140-4665-ab3d-a80bc32252c3"
+          "id": "https://example.org/uuid/b3017a40-0575-4bed-8a8b-fdd07f1c13cf"
         }
       ]
     },
@@ -1709,19 +1635,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00037.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00037.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00037.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00037.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/22d4968d-2bd9-48f8-9d0f-570c1d555536"
+          "id": "https://example.org/uuid/fe6da15e-8b49-44be-8cc7-b5ab85d98c76"
         }
       ]
     },
@@ -1754,19 +1678,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00038.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00038.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00038.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00038.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/8ea66ad9-ac48-4d83-94ea-77a0e3a988ff"
+          "id": "https://example.org/uuid/df295177-ff96-4382-b320-48c806c54502"
         }
       ]
     },
@@ -1799,19 +1721,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00039.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00039.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00039.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00039.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/cf11c14e-fa37-44f5-b340-4d0966b27841"
+          "id": "https://example.org/uuid/fdba19fe-9431-40a3-940c-506775215066"
         }
       ]
     },
@@ -1844,19 +1764,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00040.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00040.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00040.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00040.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/b1bbb5ef-955b-4777-9f83-039cafe0d471"
+          "id": "https://example.org/uuid/55f4d884-42a5-46cc-856e-f5b6c19ee793"
         }
       ]
     },
@@ -1889,19 +1807,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00041.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00041.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00041.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00041.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/3e207eec-62b1-4094-aafe-40a2e5159b4d"
+          "id": "https://example.org/uuid/d6987c7e-1543-4b93-a66c-e514c2e9a9de"
         }
       ]
     },
@@ -1934,19 +1850,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00042.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00042.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00042.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00042.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/ff23d3cc-e659-4e2d-a88e-ac4b435cdc13"
+          "id": "https://example.org/uuid/eefca492-693c-45d5-a832-8af6531a6088"
         }
       ]
     },
@@ -1979,19 +1893,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00043.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00043.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00043.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00043.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/ad3af98a-67d5-4ef4-83de-049571f6294d"
+          "id": "https://example.org/uuid/b11c4244-7aae-4067-a0ce-bce1558908ee"
         }
       ]
     },
@@ -2024,19 +1936,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00044.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00044.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00044.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00044.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/096ef42e-02db-4142-9074-61ade82c3005"
+          "id": "https://example.org/uuid/d435cfef-9020-467a-a08f-670ea78f2da0"
         }
       ]
     },
@@ -2069,19 +1979,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00045.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00045.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00045.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00045.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/0ac50d2f-2424-4176-93c0-4bf74a1467b5"
+          "id": "https://example.org/uuid/210e528d-2d0d-40eb-a6c0-ee9e4cda1323"
         }
       ]
     },
@@ -2114,19 +2022,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00046.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00046.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00046.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00046.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/cbaf0840-12da-4754-aaf0-b138d285cfc9"
+          "id": "https://example.org/uuid/a74bb21f-7d77-4496-8749-3e2905c3e540"
         }
       ]
     },
@@ -2153,19 +2059,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00047.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00047.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00047.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00047.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/0e0a2e9f-224f-437c-9efa-ff793627acc4"
+          "id": "https://example.org/uuid/9d0b3462-be0c-4b47-b52d-0ae8c929932b"
         }
       ]
     },
@@ -2192,19 +2096,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00048.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00048.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00048.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00048.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/8c0719f6-50e8-4011-b9a3-c4954ca95661"
+          "id": "https://example.org/uuid/216e8ae6-65ba-46f6-a598-ee72db2836ed"
         }
       ]
     },
@@ -2231,19 +2133,17 @@
                 "height": 3744,
                 "service": [
                   {
-                    "@id":
-                      "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00049.jpg",
                     "profile": "http://iiif.io/api/image/2/level1.json",
-                    "@type": "ImageService2"
+                    "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00049.jpg",
+                    "type": "ImageService2"
                   }
                 ],
                 "type": "Image",
-                "id":
-                  "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00049.jpg/full/full/0/default.jpg"
+                "id": "http://www2.dhii.jp/loris/NIJL0018/099-0014/099-0014-00049.jpg/full/full/0/default.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/fd5766b1-1087-446a-a208-656acc28af91"
+          "id": "https://example.org/uuid/b0edaca8-e4eb-4cf5-a260-3bc2833cb0bd"
         }
       ]
     }

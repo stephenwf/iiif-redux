@@ -1,7 +1,7 @@
 {
   "label": {
     "@none": [
-      "Peter Gaspar Scheemakers, 1691\u20131781, Flemish, active in Britain (from ca. 1720), Alexander Pope, ca. 1740, Marble, Yale Center for British Art, B1977.14.29, Paintings and Sculpture"
+      "Peter Gaspar Scheemakers, 1691–1781, Flemish, active in Britain (from ca. 1720), Alexander Pope, ca. 1740, Marble, Yale Center for British Art, B1977.14.29, Paintings and Sculpture"
     ]
   },
   "metadata": [
@@ -11,7 +11,7 @@
       },
       "value": {
         "@none": [
-          "Peter Gaspar Scheemakers, 1691\u20131781, Flemish, active in Britain (from ca. 1720)"
+          "Peter Gaspar Scheemakers, 1691–1781, Flemish, active in Britain (from ca. 1720)"
         ]
       }
     },
@@ -164,18 +164,14 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://manifests.britishart.yale.edu/annotation/ba-obj-1474-0001-pub",
-              "target":
-                "https://manifests.britishart.yale.edu/canvas/ba-obj-1474-0001-pub",
+              "id": "https://manifests.britishart.yale.edu/annotation/ba-obj-1474-0001-pub",
+              "target": "https://manifests.britishart.yale.edu/canvas/ba-obj-1474-0001-pub",
               "body": {
                 "service": [
                   {
-                    "profile":
-                      "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
-                    "@id":
-                      "https://images.britishart.yale.edu/iiif/1778fd7f-0dd6-4229-b667-fb682255a8f1",
-                    "@type": "ImageService1"
+                    "profile": "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
+                    "id": "https://images.britishart.yale.edu/iiif/1778fd7f-0dd6-4229-b667-fb682255a8f1",
+                    "type": "ImageService1"
                   }
                 ],
                 "format": "image/jpeg",
@@ -185,12 +181,11 @@
                 },
                 "height": 8173,
                 "type": "Image",
-                "id":
-                  "https://images.britishart.yale.edu/iiif/1778fd7f-0dd6-4229-b667-fb682255a8f1/full/full/0/native.jpg"
+                "id": "https://images.britishart.yale.edu/iiif/1778fd7f-0dd6-4229-b667-fb682255a8f1/full/full/0/native.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/f35d8852-8165-49a3-a77b-13d7c0cd64e5"
+          "id": "https://example.org/uuid/ad8fecde-2b8a-4760-aaf9-e7a700c6ac41"
         }
       ]
     },
@@ -209,18 +204,14 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://manifests.britishart.yale.edu/annotation/ba-obj-1474-0001-bar",
-              "target":
-                "https://manifests.britishart.yale.edu/canvas/ba-obj-1474-0001-bar",
+              "id": "https://manifests.britishart.yale.edu/annotation/ba-obj-1474-0001-bar",
+              "target": "https://manifests.britishart.yale.edu/canvas/ba-obj-1474-0001-bar",
               "body": {
                 "service": [
                   {
-                    "profile":
-                      "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
-                    "@id":
-                      "https://images.britishart.yale.edu/iiif/915ba5d3-e38a-4d3c-a81a-ca858dc5cdb6",
-                    "@type": "ImageService1"
+                    "profile": "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
+                    "id": "https://images.britishart.yale.edu/iiif/915ba5d3-e38a-4d3c-a81a-ca858dc5cdb6",
+                    "type": "ImageService1"
                   }
                 ],
                 "format": "image/jpeg",
@@ -230,12 +221,11 @@
                 },
                 "height": 8955,
                 "type": "Image",
-                "id":
-                  "https://images.britishart.yale.edu/iiif/915ba5d3-e38a-4d3c-a81a-ca858dc5cdb6/full/full/0/native.jpg"
+                "id": "https://images.britishart.yale.edu/iiif/915ba5d3-e38a-4d3c-a81a-ca858dc5cdb6/full/full/0/native.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/4bb53dda-8a6f-4d98-aaf8-b92ad659ac10"
+          "id": "https://example.org/uuid/4548bc75-6b36-41b7-b72c-df2bdaa6a397"
         }
       ]
     },
@@ -254,18 +244,14 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://manifests.britishart.yale.edu/annotation/ba-obj-1474-0002-pub",
-              "target":
-                "https://manifests.britishart.yale.edu/canvas/ba-obj-1474-0002-pub",
+              "id": "https://manifests.britishart.yale.edu/annotation/ba-obj-1474-0002-pub",
+              "target": "https://manifests.britishart.yale.edu/canvas/ba-obj-1474-0002-pub",
               "body": {
                 "service": [
                   {
-                    "profile":
-                      "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
-                    "@id":
-                      "https://images.britishart.yale.edu/iiif/2057e87a-de16-4e59-ba15-3bcdaae7d8b0",
-                    "@type": "ImageService1"
+                    "profile": "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
+                    "id": "https://images.britishart.yale.edu/iiif/2057e87a-de16-4e59-ba15-3bcdaae7d8b0",
+                    "type": "ImageService1"
                   }
                 ],
                 "format": "image/jpeg",
@@ -275,12 +261,11 @@
                 },
                 "height": 8173,
                 "type": "Image",
-                "id":
-                  "https://images.britishart.yale.edu/iiif/2057e87a-de16-4e59-ba15-3bcdaae7d8b0/full/full/0/native.jpg"
+                "id": "https://images.britishart.yale.edu/iiif/2057e87a-de16-4e59-ba15-3bcdaae7d8b0/full/full/0/native.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/7c26da56-6e71-4e9d-a9d5-ec20c238cb27"
+          "id": "https://example.org/uuid/dad6c14f-17b7-4503-9a44-d384a6ce0937"
         }
       ]
     },
@@ -299,18 +284,14 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://manifests.britishart.yale.edu/annotation/ba-obj-1474-0003-pub",
-              "target":
-                "https://manifests.britishart.yale.edu/canvas/ba-obj-1474-0003-pub",
+              "id": "https://manifests.britishart.yale.edu/annotation/ba-obj-1474-0003-pub",
+              "target": "https://manifests.britishart.yale.edu/canvas/ba-obj-1474-0003-pub",
               "body": {
                 "service": [
                   {
-                    "profile":
-                      "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
-                    "@id":
-                      "https://images.britishart.yale.edu/iiif/4c630d19-d059-40ca-ba8c-0646bec2ab13",
-                    "@type": "ImageService1"
+                    "profile": "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
+                    "id": "https://images.britishart.yale.edu/iiif/4c630d19-d059-40ca-ba8c-0646bec2ab13",
+                    "type": "ImageService1"
                   }
                 ],
                 "format": "image/jpeg",
@@ -320,12 +301,11 @@
                 },
                 "height": 8173,
                 "type": "Image",
-                "id":
-                  "https://images.britishart.yale.edu/iiif/4c630d19-d059-40ca-ba8c-0646bec2ab13/full/full/0/native.jpg"
+                "id": "https://images.britishart.yale.edu/iiif/4c630d19-d059-40ca-ba8c-0646bec2ab13/full/full/0/native.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/475f2283-ab6b-445c-9563-f5b23b034767"
+          "id": "https://example.org/uuid/452f5a8a-56c0-4992-b4a7-11ea06c53129"
         }
       ]
     },
@@ -344,18 +324,14 @@
             {
               "motivation": "painting",
               "type": "Annotation",
-              "id":
-                "https://manifests.britishart.yale.edu/annotation/ba-obj-1474-0004-pub",
-              "target":
-                "https://manifests.britishart.yale.edu/canvas/ba-obj-1474-0004-pub",
+              "id": "https://manifests.britishart.yale.edu/annotation/ba-obj-1474-0004-pub",
+              "target": "https://manifests.britishart.yale.edu/canvas/ba-obj-1474-0004-pub",
               "body": {
                 "service": [
                   {
-                    "profile":
-                      "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
-                    "@id":
-                      "https://images.britishart.yale.edu/iiif/0d02621e-57b7-46c8-9674-2c1e419b8b91",
-                    "@type": "ImageService1"
+                    "profile": "http://library.stanford.edu/iiif/image-api/1.1/conformance.html#level1",
+                    "id": "https://images.britishart.yale.edu/iiif/0d02621e-57b7-46c8-9674-2c1e419b8b91",
+                    "type": "ImageService1"
                   }
                 ],
                 "format": "image/jpeg",
@@ -365,14 +341,45 @@
                 },
                 "height": 8173,
                 "type": "Image",
-                "id":
-                  "https://images.britishart.yale.edu/iiif/0d02621e-57b7-46c8-9674-2c1e419b8b91/full/full/0/native.jpg"
+                "id": "https://images.britishart.yale.edu/iiif/0d02621e-57b7-46c8-9674-2c1e419b8b91/full/full/0/native.jpg"
               }
             }
           ],
-          "id": "https://example.org/uuid/df1fae9b-9af5-48f5-9095-a60783f81810"
+          "id": "https://example.org/uuid/9949ee68-442c-44d6-9510-426b94bfedc4"
         }
       ]
+    }
+  ],
+  "structures": [
+    {
+      "id": "https://manifests.britishart.yale.edu/sequence/1474",
+      "type": "Range",
+      "behavior": ["sequence", "individuals"],
+      "items": [
+        {
+          "id": "https://manifests.britishart.yale.edu/canvas/ba-obj-1474-0001-pub",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://manifests.britishart.yale.edu/canvas/ba-obj-1474-0001-bar",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://manifests.britishart.yale.edu/canvas/ba-obj-1474-0002-pub",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://manifests.britishart.yale.edu/canvas/ba-obj-1474-0003-pub",
+          "type": "Canvas"
+        },
+        {
+          "id": "https://manifests.britishart.yale.edu/canvas/ba-obj-1474-0004-pub",
+          "type": "Canvas"
+        }
+      ],
+      "label": {
+        "@none": ["default sequence"]
+      }
     }
   ],
   "@context": [

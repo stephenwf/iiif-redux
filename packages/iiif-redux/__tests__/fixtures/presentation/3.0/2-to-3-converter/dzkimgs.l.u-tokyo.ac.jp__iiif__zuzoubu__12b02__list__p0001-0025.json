@@ -1,38 +1,31 @@
 {
   "type": "AnnotationPage",
-  "id":
-    "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/12b02/list/p0001-0025.json",
+  "id": "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/12b02/list/p0001-0025.json",
   "items": [
     {
       "motivation": "classifying",
       "type": "Annotation",
       "id": "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/12b02/p0001-0025/1",
-      "target":
-        "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/12b02/p0001-0025#xywh=9912,13519,2583,2663",
+      "target": "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/12b02/p0001-0025#xywh=9912,13519,2583,2663",
       "body": {
-        "@id":
-          "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/12b02/p0001-0025/1/1",
+        "@id": "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/12b02/p0001-0025/1/1",
         "language": "ja",
         "format": "text/html",
         "type": "TextualBody",
-        "value":
-          "<div style=\"font-weight:bold\" span class=\"ksch\" s=\"title\">\u5927\u65e5\u5982\u4f86</div><div>\uff08\u4ecf\u30fb\u5982\u4f86\uff09</div>  <span class=\"ecat\">\u76ee\u306e\u6570</span>: <span class=\"ksch\" s=\"eye\">\u4e8c\u76ee</span>  <span class=\"ecat\">\u984d</span>: <span class=\"ksch\" s=\"brow\">\u767d\u6beb\u7121</span> <span class=\"ecat\">\u6301\u7269</span>: <span class=\"ksch\" s=\"stuff\">\u8f2a\u5b9d </span>, <span class=\"ksch\" s=\"stuff\"></span> <span class=\"ecat\">\u81c2\u6570</span>: <span class=\"ksch\" s=\"elbow\">\u4e8c\u81c2</span>   <span class=\"ecat\">\u53f0\u5ea7</span>: <span class=\"ksch\" s=\"base\">\u84ee\u83ef </span>, <span class=\"ksch\" s=\"base\"></span> <span class=\"ecat\">\u5149\u80cc</span>: <span class=\"ksch\" s=\"backl\">\u708e\u5149 </span>, <span class=\"ksch\" s=\"backl\"></span>  <span class=\"ecat\">\u9854\u306e\u5411\u304d</span>: <span class=\"ksch\" s=\"facial\">\u6b63\u9762</span> <div style=\"font-size:9px\">\u30bf\u30b0\u4ed8\u3051\u62c5\u5f53: \u6c38\u5d0e\u7814\u5ba3</div>"
+        "value": "<div style=\"font-weight:bold\" span class=\"ksch\" s=\"title\">大日如來</div><div>（仏・如來）</div>  <span class=\"ecat\">目の数</span>: <span class=\"ksch\" s=\"eye\">二目</span>  <span class=\"ecat\">額</span>: <span class=\"ksch\" s=\"brow\">白毫無</span> <span class=\"ecat\">持物</span>: <span class=\"ksch\" s=\"stuff\">輪宝 </span>, <span class=\"ksch\" s=\"stuff\"></span> <span class=\"ecat\">臂数</span>: <span class=\"ksch\" s=\"elbow\">二臂</span>   <span class=\"ecat\">台座</span>: <span class=\"ksch\" s=\"base\">蓮華 </span>, <span class=\"ksch\" s=\"base\"></span> <span class=\"ecat\">光背</span>: <span class=\"ksch\" s=\"backl\">炎光 </span>, <span class=\"ksch\" s=\"backl\"></span>  <span class=\"ecat\">顔の向き</span>: <span class=\"ksch\" s=\"facial\">正面</span> <div style=\"font-size:9px\">タグ付け担当: 永崎研宣</div>"
       }
     },
     {
       "motivation": "classifying",
       "type": "Annotation",
       "id": "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/12b02/p0001-0025/2",
-      "target":
-        "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/12b02/p0001-0025#xywh=8457,11791,5583,6317",
+      "target": "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/12b02/p0001-0025#xywh=8457,11791,5583,6317",
       "body": {
-        "@id":
-          "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/12b02/p0001-0025/2/1",
+        "@id": "https://dzkimgs.l.u-tokyo.ac.jp/iiif/zuzoubu/12b02/p0001-0025/2/1",
         "language": "ja",
         "format": "text/html",
         "type": "TextualBody",
-        "value":
-          "<div style=\"font-weight:bold\" span class=\"ksch\" s=\"title\">\u516b\u8449\u9662</div><div>\uff08\u66fc\u837c\u7f85\uff09</div>  <span class=\"ecat\">\u76ee\u306e\u6570</span>: <span class=\"ksch\" s=\"eye\">\u4e8c\u76ee</span>  <span class=\"ecat\">\u984d</span>: <span class=\"ksch\" s=\"brow\">\u767d\u6beb\u7121</span>  <span class=\"ecat\">\u81c2\u6570</span>: <span class=\"ksch\" s=\"elbow\">\u4e8c\u81c2</span>       <div style=\"font-size:9px\">\u30bf\u30b0\u4ed8\u3051\u62c5\u5f53: \u6c38\u5d0e\u7814\u5ba3</div>"
+        "value": "<div style=\"font-weight:bold\" span class=\"ksch\" s=\"title\">八葉院</div><div>（曼荼羅）</div>  <span class=\"ecat\">目の数</span>: <span class=\"ksch\" s=\"eye\">二目</span>  <span class=\"ecat\">額</span>: <span class=\"ksch\" s=\"brow\">白毫無</span>  <span class=\"ecat\">臂数</span>: <span class=\"ksch\" s=\"elbow\">二臂</span>       <div style=\"font-size:9px\">タグ付け担当: 永崎研宣</div>"
       }
     }
   ],
