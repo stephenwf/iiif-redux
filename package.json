@@ -6,7 +6,7 @@
   "devDependencies": {
     "@fesk/module-release": "0.0.3",
     "babel-eslint": "9.0.0",
-    "eslint": "4.19.1",
+    "eslint": "5.6.0",
     "eslint-plugin-babel": "5.2.0",
     "eslint-plugin-flow": "2.29.1",
     "eslint-plugin-flowtype": "2.50.0",
@@ -22,7 +22,7 @@
     "prettier": "1.14.2"
   },
   "devEngines": {
-    "node": "8.x"
+    "node": "8.12.0"
   },
   "scripts": {
     "start": "lerna run start --stream --parallel --concurrency 100",
