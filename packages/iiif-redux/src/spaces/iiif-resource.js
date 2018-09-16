@@ -83,6 +83,7 @@ const DEFAULT_STATE = {
     imageResources: {},
     externalResources: {},
     contentResources: {},
+    choices: {},
   },
 };
 

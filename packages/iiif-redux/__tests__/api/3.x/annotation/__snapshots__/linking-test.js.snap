@@ -1,17 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`api/3.x/annotation/linking Annotation: Complete annotation getBody: getBody Complete annotation 1`] = `
-Object {
-  "id": "https://example.org/iiif/book1/res/page1.jpg",
-  "schema": "contentResource",
-}
+Array [
+  Object {
+    "format": "image/jpeg",
+    "id": "https://example.org/iiif/book1/res/page1.jpg",
+    "type": "Image",
+  },
+]
 `;
 
 exports[`api/3.x/annotation/linking Annotation: Complete annotation getBodyId: getBodyId Complete annotation 1`] = `
-Object {
-  "id": "https://example.org/iiif/book1/res/page1.jpg",
-  "schema": "contentResource",
-}
+Array [
+  Object {
+    "id": "https://example.org/iiif/book1/res/page1.jpg",
+    "schema": "contentResource",
+  },
+]
 `;
 
 exports[`api/3.x/annotation/linking Annotation: Complete annotation getHomepage: getHomepage Complete annotation 1`] = `
@@ -119,22 +124,35 @@ Array [
 ]
 `;
 
-exports[`api/3.x/annotation/linking Annotation: Complete annotation getTarget: getTarget Complete annotation 1`] = `"https://example.org/iiif/book1/canvas/p1"`;
+exports[`api/3.x/annotation/linking Annotation: Complete annotation getTarget: getTarget Complete annotation 1`] = `
+Array [
+  "https://example.org/iiif/book1/canvas/p1",
+]
+`;
 
-exports[`api/3.x/annotation/linking Annotation: Complete annotation getTargetId: getTargetId Complete annotation 1`] = `"https://example.org/iiif/book1/canvas/p1"`;
+exports[`api/3.x/annotation/linking Annotation: Complete annotation getTargetId: getTargetId Complete annotation 1`] = `
+Array [
+  "https://example.org/iiif/book1/canvas/p1",
+]
+`;
 
 exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getBody: getBody IIIF Documentation fixture 1`] = `
-Object {
-  "id": "https://example.org/iiif/book1/res/page1.jpg",
-  "schema": "contentResource",
-}
+Array [
+  Object {
+    "format": "image/jpeg",
+    "id": "https://example.org/iiif/book1/res/page1.jpg",
+    "type": "Image",
+  },
+]
 `;
 
 exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getBodyId: getBodyId IIIF Documentation fixture 1`] = `
-Object {
-  "id": "https://example.org/iiif/book1/res/page1.jpg",
-  "schema": "contentResource",
-}
+Array [
+  Object {
+    "id": "https://example.org/iiif/book1/res/page1.jpg",
+    "schema": "contentResource",
+  },
+]
 `;
 
 exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getHomepage: getHomepage IIIF Documentation fixture 1`] = `null`;
@@ -161,13 +179,21 @@ exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getSe
 
 exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getServiceIds: getServiceIds IIIF Documentation fixture 1`] = `Array []`;
 
-exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getTarget: getTarget IIIF Documentation fixture 1`] = `"https://example.org/iiif/book1/canvas/p1"`;
+exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getTarget: getTarget IIIF Documentation fixture 1`] = `
+Array [
+  "https://example.org/iiif/book1/canvas/p1",
+]
+`;
 
-exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getTargetId: getTargetId IIIF Documentation fixture 1`] = `"https://example.org/iiif/book1/canvas/p1"`;
+exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getTargetId: getTargetId IIIF Documentation fixture 1`] = `
+Array [
+  "https://example.org/iiif/book1/canvas/p1",
+]
+`;
 
-exports[`api/3.x/annotation/linking Annotation: Minimal annotation getBody: getBody Minimal annotation 1`] = `null`;
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getBody: getBody Minimal annotation 1`] = `Array []`;
 
-exports[`api/3.x/annotation/linking Annotation: Minimal annotation getBodyId: getBodyId Minimal annotation 1`] = `null`;
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getBodyId: getBodyId Minimal annotation 1`] = `Array []`;
 
 exports[`api/3.x/annotation/linking Annotation: Minimal annotation getHomepage: getHomepage Minimal annotation 1`] = `null`;
 
@@ -193,6 +219,6 @@ exports[`api/3.x/annotation/linking Annotation: Minimal annotation getService: g
 
 exports[`api/3.x/annotation/linking Annotation: Minimal annotation getServiceIds: getServiceIds Minimal annotation 1`] = `Array []`;
 
-exports[`api/3.x/annotation/linking Annotation: Minimal annotation getTarget: getTarget Minimal annotation 1`] = `null`;
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getTarget: getTarget Minimal annotation 1`] = `Array []`;
 
-exports[`api/3.x/annotation/linking Annotation: Minimal annotation getTargetId: getTargetId Minimal annotation 1`] = `null`;
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getTargetId: getTargetId Minimal annotation 1`] = `Array []`;

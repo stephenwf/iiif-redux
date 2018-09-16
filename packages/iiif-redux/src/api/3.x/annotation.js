@@ -9,10 +9,12 @@ import {
   getAllContentResources,
   getAllResources,
   getAllServices,
+  getAllChoices,
 } from '../all';
 import mapByIdOrId from '../../utility/mapByIdOrId';
 import mapAllResources from '../../utility/mapAllResources';
 import mapAllById from '../../utility/mapAllById';
+import mapAllByIdOrId from '../../utility/mapAllByIdOrId';
 
 const annotation = memoize(selector => {
   /**
@@ -110,15 +112,26 @@ const annotation = memoize(selector => {
     mapAllResources
   );
 
-  const getBodyId = createSelector(selector, linking.getBody);
+  const getBodyIds = createSelector(selector, linking.getBody);
   const getBody = createSelector(
-    getBodyId,
+    getBodyIds,
     getAllContentResources,
-    mapByIdOrId
+    getAllChoices,
+    (ids, allContentResources, allChoices) =>
+      ids.map(
+        resource =>
+          resource.schema === 'contentResource'
+            ? allContentResources[resource.id]
+            : allChoices[resource.id]
+      )
   );
 
-  const getTargetId = createSelector(selector, linking.getTarget);
-  const getTarget = createSelector(getTargetId, getAllCanvases, mapByIdOrId);
+  const getTargetIds = createSelector(selector, linking.getTarget);
+  const getTarget = createSelector(
+    getTargetIds,
+    getAllCanvases,
+    mapAllByIdOrId
+  );
 
   return {
     // Technical
@@ -147,9 +160,9 @@ const annotation = memoize(selector => {
     getRendering,
     getPartOfId,
     getPartOf,
-    getBodyId,
+    getBodyIds,
     getBody,
-    getTargetId,
+    getTargetIds,
     getTarget,
   };
 });

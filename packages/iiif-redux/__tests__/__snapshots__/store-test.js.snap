@@ -32,6 +32,7 @@ Object {
   "annotations": Object {},
   "canvasReferences": Object {},
   "canvases": Object {},
+  "choices": Object {},
   "collections": Object {
     "http://iiif.com/collection-1.json": Object {
       "@id": "http://iiif.com/collection-1.json",
@@ -106,6 +107,7 @@ Object {
     "annotations": Object {},
     "canvasReferences": Object {},
     "canvases": Object {},
+    "choices": Object {},
     "collections": Object {},
     "contentResources": Object {},
     "externalResources": Object {},
@@ -1192,6 +1194,7 @@ Object {
         "width": 2500,
       },
     },
+    "choices": Object {},
     "collections": Object {},
     "contentResources": Object {},
     "externalResources": Object {
@@ -3107,6 +3110,7 @@ Object {
   "annotations": Object {},
   "canvasReferences": Object {},
   "canvases": Object {},
+  "choices": Object {},
   "collections": Object {
     "http://iiif.com/collection-1.json": Object {
       "@id": "http://iiif.com/collection-1.json",
@@ -3213,6 +3217,7 @@ Object {
     "annotations": Object {},
     "canvasReferences": Object {},
     "canvases": Object {},
+    "choices": Object {},
     "collections": Object {},
     "contentResources": Object {},
     "externalResources": Object {},
@@ -3258,6 +3263,7 @@ Object {
     "annotations": Object {},
     "canvasReferences": Object {},
     "canvases": Object {},
+    "choices": Object {},
     "collections": Object {},
     "contentResources": Object {},
     "externalResources": Object {},
@@ -3303,6 +3309,7 @@ Object {
     "annotations": Object {},
     "canvasReferences": Object {},
     "canvases": Object {},
+    "choices": Object {},
     "collections": Object {},
     "contentResources": Object {},
     "externalResources": Object {},

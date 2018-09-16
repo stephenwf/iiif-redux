@@ -29,206 +29,158 @@ Object {
   },
   "annotations": Object {
     "https://4690e58b9c5d17ac09c43444606ba7a64f283c94": Object {
-      "body": Object {
-        "id": "https://framemark.vam.ac.uk/collections/2013GU2911/full/full/0/default.jpg",
-        "schema": "contentResource",
-      },
+      "body": Array [
+        Object {
+          "id": "https://framemark.vam.ac.uk/collections/2013GU2911/full/full/0/default.jpg",
+          "schema": "contentResource",
+        },
+      ],
       "id": "https://4690e58b9c5d17ac09c43444606ba7a64f283c94",
       "motivation": "painting",
-      "target": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      ],
       "type": "Annotation",
     },
     "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a1": Object {
-      "body": Object {
-        "id": "https://ecdf18bbcc90ea739fcd8d2f6353ba407fb73857",
-        "schema": "contentResource",
-      },
+      "body": Array [
+        Object {
+          "id": "https://ecdf18bbcc90ea739fcd8d2f6353ba407fb73857",
+          "schema": "contentResource",
+        },
+      ],
       "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a1",
       "motivation": "describing",
-      "target": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=1800,2000,500,500",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=1800,2000,500,500",
+      ],
       "type": "Annotation",
     },
     "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a10": Object {
-      "body": Object {
-        "id": "https://39adbabca37c35498b4030616f8519e624a553da",
-        "schema": "contentResource",
-      },
+      "body": Array [
+        Object {
+          "id": "https://39adbabca37c35498b4030616f8519e624a553da",
+          "schema": "contentResource",
+        },
+      ],
       "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a10",
       "motivation": "describing",
-      "target": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=1500,3250,100,200",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=1500,3250,100,200",
+      ],
       "type": "Annotation",
     },
     "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a2": Object {
-      "body": Object {
-        "id": "https://ab26c29a6aedf7f2aa4a07ae46fd61d8c796eca5",
-        "schema": "contentResource",
-      },
+      "body": Array [
+        Object {
+          "id": "https://ab26c29a6aedf7f2aa4a07ae46fd61d8c796eca5",
+          "schema": "contentResource",
+        },
+      ],
       "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a2",
       "motivation": "describing",
-      "target": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=3000,2100,100,200",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=3000,2100,100,200",
+      ],
       "type": "Annotation",
     },
     "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a3": Object {
-      "body": Object {
-        "id": "https://2c0a3005a18bd3e8c6ad40908a3afd5f9fd2bce1",
-        "schema": "contentResource",
-      },
+      "body": Array [
+        Object {
+          "id": "https://2c0a3005a18bd3e8c6ad40908a3afd5f9fd2bce1",
+          "schema": "contentResource",
+        },
+      ],
       "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a3",
       "motivation": "describing",
-      "target": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2000,2800,400,400",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2000,2800,400,400",
+      ],
       "type": "Annotation",
     },
     "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a4": Object {
-      "body": Object {
-        "id": "https://437947330c66ec142bd17a824080eba0f066b937",
-        "schema": "contentResource",
-      },
+      "body": Array [
+        Object {
+          "id": "https://437947330c66ec142bd17a824080eba0f066b937",
+          "schema": "contentResource",
+        },
+      ],
       "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a4",
       "motivation": "describing",
-      "target": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=1400,2500,100,200",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=1400,2500,100,200",
+      ],
       "type": "Annotation",
     },
     "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a5": Object {
-      "body": Object {
-        "id": "https://1b3ff4e6ffb432a8a8fe6bea7ab3b48d2f82fbae",
-        "schema": "contentResource",
-      },
+      "body": Array [
+        Object {
+          "id": "https://1b3ff4e6ffb432a8a8fe6bea7ab3b48d2f82fbae",
+          "schema": "contentResource",
+        },
+      ],
       "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a5",
       "motivation": "describing",
-      "target": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2450,3800,100,200",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2450,3800,100,200",
+      ],
       "type": "Annotation",
     },
     "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a6": Object {
-      "body": Object {
-        "id": "https://c7ba45495c5b2f5c60aba1fc0d3d39473a6133e4",
-        "schema": "contentResource",
-      },
+      "body": Array [
+        Object {
+          "id": "https://c7ba45495c5b2f5c60aba1fc0d3d39473a6133e4",
+          "schema": "contentResource",
+        },
+      ],
       "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a6",
       "motivation": "describing",
-      "target": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=800,3500,100,200",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=800,3500,100,200",
+      ],
       "type": "Annotation",
     },
     "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a7": Object {
-      "body": Object {
-        "id": "https://128d4cabccf4d66a471d3a7d3a3ed5f778f588aa",
-        "schema": "contentResource",
-      },
+      "body": Array [
+        Object {
+          "id": "https://128d4cabccf4d66a471d3a7d3a3ed5f778f588aa",
+          "schema": "contentResource",
+        },
+      ],
       "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a7",
       "motivation": "describing",
-      "target": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2500,4500,500,800",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2500,4500,500,800",
+      ],
       "type": "Annotation",
     },
     "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a8": Object {
-      "body": Object {
-        "id": "https://73da0a6c52bc43d784830e1574c342d29505de4f",
-        "schema": "contentResource",
-      },
+      "body": Array [
+        Object {
+          "id": "https://73da0a6c52bc43d784830e1574c342d29505de4f",
+          "schema": "contentResource",
+        },
+      ],
       "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a8",
       "motivation": "describing",
-      "target": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=3000,4000,100,200",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=3000,4000,100,200",
+      ],
       "type": "Annotation",
     },
     "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a9": Object {
-      "body": Object {
-        "id": "https://70346c5922a35a132e66980430c49e4cb089e8a1",
-        "schema": "contentResource",
-      },
+      "body": Array [
+        Object {
+          "id": "https://70346c5922a35a132e66980430c49e4cb089e8a1",
+          "schema": "contentResource",
+        },
+      ],
       "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a9",
       "motivation": "describing",
-      "target": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2100,4000,100,200",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2100,4000,100,200",
+      ],
       "type": "Annotation",
-    },
-  },
-  "canvasSelector": Object {
-    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=1400,2500,100,200": Object {
-      "expanded": true,
-      "height": 200,
-      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
-      "unit": "pixel",
-      "width": 100,
-      "x": 1400,
-      "y": 2500,
-    },
-    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=1500,3250,100,200": Object {
-      "expanded": true,
-      "height": 200,
-      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
-      "unit": "pixel",
-      "width": 100,
-      "x": 1500,
-      "y": 3250,
-    },
-    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=1800,2000,500,500": Object {
-      "expanded": true,
-      "height": 500,
-      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
-      "unit": "pixel",
-      "width": 500,
-      "x": 1800,
-      "y": 2000,
-    },
-    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2000,2800,400,400": Object {
-      "expanded": true,
-      "height": 400,
-      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
-      "unit": "pixel",
-      "width": 400,
-      "x": 2000,
-      "y": 2800,
-    },
-    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2100,4000,100,200": Object {
-      "expanded": true,
-      "height": 200,
-      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
-      "unit": "pixel",
-      "width": 100,
-      "x": 2100,
-      "y": 4000,
-    },
-    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2450,3800,100,200": Object {
-      "expanded": true,
-      "height": 200,
-      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
-      "unit": "pixel",
-      "width": 100,
-      "x": 2450,
-      "y": 3800,
-    },
-    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2500,4500,500,800": Object {
-      "expanded": true,
-      "height": 800,
-      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
-      "unit": "pixel",
-      "width": 500,
-      "x": 2500,
-      "y": 4500,
-    },
-    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=3000,2100,100,200": Object {
-      "expanded": true,
-      "height": 200,
-      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
-      "unit": "pixel",
-      "width": 100,
-      "x": 3000,
-      "y": 2100,
-    },
-    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=3000,4000,100,200": Object {
-      "expanded": true,
-      "height": 200,
-      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
-      "unit": "pixel",
-      "width": 100,
-      "x": 3000,
-      "y": 4000,
-    },
-    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=800,3500,100,200": Object {
-      "expanded": true,
-      "height": 200,
-      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
-      "unit": "pixel",
-      "width": 100,
-      "x": 800,
-      "y": 3500,
     },
   },
   "canvases": Object {
@@ -460,6 +412,98 @@ Object {
       ],
       "type": "Manifest",
       "viewingDirection": "left-to-right",
+    },
+  },
+  "selectors": Object {
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=1400,2500,100,200": Object {
+      "expanded": true,
+      "height": 200,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 100,
+      "x": 1400,
+      "y": 2500,
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=1500,3250,100,200": Object {
+      "expanded": true,
+      "height": 200,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 100,
+      "x": 1500,
+      "y": 3250,
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=1800,2000,500,500": Object {
+      "expanded": true,
+      "height": 500,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 500,
+      "x": 1800,
+      "y": 2000,
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2000,2800,400,400": Object {
+      "expanded": true,
+      "height": 400,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 400,
+      "x": 2000,
+      "y": 2800,
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2100,4000,100,200": Object {
+      "expanded": true,
+      "height": 200,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 100,
+      "x": 2100,
+      "y": 4000,
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2450,3800,100,200": Object {
+      "expanded": true,
+      "height": 200,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 100,
+      "x": 2450,
+      "y": 3800,
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2500,4500,500,800": Object {
+      "expanded": true,
+      "height": 800,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 500,
+      "x": 2500,
+      "y": 4500,
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=3000,2100,100,200": Object {
+      "expanded": true,
+      "height": 200,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 100,
+      "x": 3000,
+      "y": 2100,
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=3000,4000,100,200": Object {
+      "expanded": true,
+      "height": 200,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 100,
+      "x": 3000,
+      "y": 4000,
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=800,3500,100,200": Object {
+      "expanded": true,
+      "height": 200,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 100,
+      "x": 800,
+      "y": 3500,
     },
   },
   "services": Object {

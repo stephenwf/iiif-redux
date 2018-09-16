@@ -6,9 +6,12 @@
   "id": "https://example.org/iiif/book1/annotation/p0001-image",
   "type": "Annotation",
   "motivation": "painting",
-  "body": {
-    "id": "https://example.org/iiif/book1/res/page1.jpg",
-    "type": "Image"
-  },
-  "target": "https://example.org/iiif/book1/canvas/p1"
+  "body": [
+    {
+      "id": "https://example.org/iiif/book1/res/page1.jpg",
+      "format": "image/jpeg",
+      "type": "Image"
+    }
+  ],
+  "target": ["https://example.org/iiif/book1/canvas/p1"]
 }

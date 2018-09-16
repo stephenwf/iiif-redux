@@ -28,9 +28,9 @@ describe('api/3.x/annotation/linking', () => {
         getRendering,
         getPartOfId,
         getPartOf,
-        getBodyId,
+        getBodyIds,
         getBody,
-        getTargetId,
+        getTargetIds,
         getTarget,
       } = annotation(selectAnnotation);
 
@@ -85,7 +85,7 @@ describe('api/3.x/annotation/linking', () => {
       });
 
       test('getBodyId', () => {
-        expect(getBodyId(state)).toMatchSnapshot(`getBodyId ${name}`);
+        expect(getBodyIds(state)).toMatchSnapshot(`getBodyId ${name}`);
       });
 
       test('getBody', () => {
@@ -93,7 +93,7 @@ describe('api/3.x/annotation/linking', () => {
       });
 
       test('getTargetId', () => {
-        expect(getTargetId(state)).toMatchSnapshot(`getTargetId ${name}`);
+        expect(getTargetIds(state)).toMatchSnapshot(`getTargetId ${name}`);
       });
 
       test('getTarget', () => {

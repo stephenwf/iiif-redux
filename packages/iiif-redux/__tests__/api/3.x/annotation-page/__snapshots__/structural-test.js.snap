@@ -9,13 +9,17 @@ Array [
 exports[`api/3.x/annotation-page/structural AnnotationPage: Complete Annotation Page getAnnotations: getAnnotations Complete Annotation Page 1`] = `
 Array [
   Object {
-    "body": Object {
-      "id": "https://example.org/iiif/book1/res/page2.jpg",
-      "schema": "contentResource",
-    },
+    "body": Array [
+      Object {
+        "id": "https://example.org/iiif/book1/res/page2.jpg",
+        "schema": "contentResource",
+      },
+    ],
     "id": "https://example.org/iiif/book1/annotation/p0002-image",
     "motivation": "painting",
-    "target": "https://example.org/iiif/book1/canvas/p2",
+    "target": Array [
+      "https://example.org/iiif/book1/canvas/p2",
+    ],
     "type": "Annotation",
   },
 ]
@@ -30,13 +34,17 @@ Array [
 exports[`api/3.x/annotation-page/structural AnnotationPage: Complete Annotation Page getItems: getItems Complete Annotation Page 1`] = `
 Array [
   Object {
-    "body": Object {
-      "id": "https://example.org/iiif/book1/res/page2.jpg",
-      "schema": "contentResource",
-    },
+    "body": Array [
+      Object {
+        "id": "https://example.org/iiif/book1/res/page2.jpg",
+        "schema": "contentResource",
+      },
+    ],
     "id": "https://example.org/iiif/book1/annotation/p0002-image",
     "motivation": "painting",
-    "target": "https://example.org/iiif/book1/canvas/p2",
+    "target": Array [
+      "https://example.org/iiif/book1/canvas/p2",
+    ],
     "type": "Annotation",
   },
 ]

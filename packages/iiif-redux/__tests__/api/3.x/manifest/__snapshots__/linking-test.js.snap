@@ -181,7 +181,17 @@ exports[`api/3.x/manifest/linking Manifest number 2 getService: getService 2 1`]
 
 exports[`api/3.x/manifest/linking Manifest number 2 getServiceIds: getServiceIds 2 1`] = `Array []`;
 
-exports[`api/3.x/manifest/linking Manifest number 2 getStart: getStart 2 1`] = `null`;
+exports[`api/3.x/manifest/linking Manifest number 2 getStart: getStart 2 1`] = `
+Object {
+  "id": "https://example.org/iiif/start/2",
+  "selector": Object {
+    "t": 14.5,
+    "type": "PointSelector",
+  },
+  "source": "https://example.org/iiif/book1/canvas/p1",
+  "type": "SpecificResource",
+}
+`;
 
 exports[`api/3.x/manifest/linking Manifest number 2 getStartId: getStartId 2 1`] = `
 Object {

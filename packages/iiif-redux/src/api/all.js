@@ -13,6 +13,7 @@ const getAllAnnotationLists = state => state.resources.annotationLists;
 const getAllAnnotationPages = state => state.resources.annotationPages;
 const getAllAnnotationCollections = state =>
   state.resources.annotationCollections;
+const getAllChoices = state => state.resources.choices;
 const getAllContentResources = state => state.resources.contentResources;
 const getAllResources = state => state.resources;
 const getAllSchemaVersions = state => state.resources.schemaVersions;
@@ -33,6 +34,7 @@ export {
   getAllAnnotationPages,
   getAllAnnotationCollections,
   getAllAnnotations,
+  getAllChoices,
   getAllContentResources,
   getAllResources,
   getAllSchemaVersions,

@@ -3,10 +3,13 @@ import { compose } from 'redux';
 import addMissingIds from '../compat/addMissingIds';
 import parseSelectorTarget from '../utility/parseTargetSelector';
 
-function createEntity(name) {
+function createEntity(name, processStrategy) {
   const options = {
     idAttribute: 'id',
   };
+  if (processStrategy) {
+    options.processStrategy = processStrategy;
+  }
 
   return new schema.Entity(name, {}, options);
 }
@@ -14,15 +17,28 @@ function createEntity(name) {
 const collection = createEntity('collections'); // 1
 const manifest = createEntity('manifests'); // 2
 const canvas = createEntity('canvases'); // 3
-const annotation = createEntity('annotations'); // 4
+const annotation = createEntity('annotations', original => {
+  const body = Array.isArray(original.body) ? original.body : [original.body];
+  const target = Array.isArray(original.target)
+    ? original.target
+    : [original.target];
+  const newObj = { ...original };
+  if (original.body) {
+    newObj.body = body;
+  }
+  if (original.target) {
+    newObj.target = target;
+  }
+  return newObj;
+}); // 4
 const annotationPage = createEntity('annotationPages'); // 5
 const annotationCollection = createEntity('annotationCollections'); // 6
 const range = createEntity('ranges'); // 7
 const contentResource = createEntity('contentResources'); // 8
 const choice = createEntity('choices'); // 9
-const canvasReference = createEntity('canvasReference'); // 10
-const canvasSelector = new schema.Entity(
-  'canvasSelector',
+const canvasReference = createEntity('canvasReferences'); // 10
+const selector = new schema.Entity(
+  'selectors',
   {
     id: canvas,
   },
@@ -103,13 +119,13 @@ const annotationBody = new schema.Union(
 const rangeItem = new schema.Union(
   {
     canvas,
-    canvasSelector,
+    selector,
     range,
     canvasReference,
   },
   input => {
     if (input && input.id && input.id.indexOf('#') !== -1) {
-      return 'canvasSelector';
+      return 'selector';
     }
 
     switch (input.type) {
@@ -254,8 +270,8 @@ canvas.define({
 // ===========================================================================
 annotation.define({
   // Structural.
-  body: annotationBody,
-  target: canvasSelector,
+  body: [annotationBody],
+  target: [selector],
 
   // Linking
   seeAlso: [contentResource],
