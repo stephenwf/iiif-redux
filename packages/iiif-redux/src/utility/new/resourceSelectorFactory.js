@@ -5,7 +5,7 @@ import {
   hasResourceBeenFetched,
   isResourceLoading,
 } from '../../api/dereferenced';
-import { getSchemaVersionForResource } from '../../api/schemaVersion';
+import { getSchemaVersionForResource } from '../../api/schema-version';
 import selectorError from './selectorError';
 
 export default function resourceSelectorFactory(
