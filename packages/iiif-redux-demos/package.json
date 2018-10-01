@@ -19,7 +19,7 @@
     "react-dom": "16.5.2",
     "react-redux": "5.0.7",
     "react-router-dom": "4.3.1",
-    "reselect": "3.0.1"
+    "reselect": "4.0.0"
   },
   "devDependencies": {
     "babel-plugin-import": "1.9.1",
