@@ -287,11 +287,11 @@ function* getPresentation2ResourceType(resourceId, response) {
 }
 
 function* getPresentation3ResourceType(resourceId, response) {
-  if (!presentation3.RESOURCE_TYPE_MAP[response['@type']]) {
+  if (!presentation3.RESOURCE_TYPE_MAP[response.type]) {
     throw new Error('Unknown Presentation 3 resource type');
   }
 
-  return presentation3.RESOURCE_TYPE_MAP[response['@type']];
+  return presentation3.RESOURCE_TYPE_MAP[response.type];
 }
 
 function* requestUnknownResource({
