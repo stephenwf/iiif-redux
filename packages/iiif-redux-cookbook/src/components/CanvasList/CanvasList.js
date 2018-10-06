@@ -3,16 +3,8 @@ import { connect } from 'react-redux';
 import { manifestByIdSelector } from 'iiif-redux/es/api/manifest';
 import { canvases } from 'iiif-redux/es/api/canvas';
 import { iiifResourceRequestUnknown } from 'iiif-redux/es/spaces/iiif-resource';
-
-function t(str) {
-  if (!str) {
-    return '';
-  }
-  if (Array.isArray(str)) {
-    return str && str[0] ? str[0]['@value'] || '' : '';
-  }
-  return str[Object.keys(str)[0]][0] || '';
-}
+import withLoadingState from '../../hoc/withLoadingState';
+import t from '../../utils/t';
 
 class CanvasList extends Component {
   componentWillMount() {
@@ -20,15 +12,7 @@ class CanvasList extends Component {
   }
 
   render() {
-    const { label, canvasList, fetched, error } = this.props;
-
-    if (error) {
-      return <div>Error</div>;
-    }
-
-    if (fetched === false) {
-      return <div>Loading...</div>;
-    }
+    const { label, canvasList } = this.props;
 
     return (
       <div>
@@ -52,4 +36,4 @@ export default connect(
     })),
   })),
   { iiifResourceRequestUnknown }
-)(CanvasList);
+)(withLoadingState(CanvasList));
