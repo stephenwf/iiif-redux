@@ -4,6 +4,7 @@ import * as technical from './iiif/technical';
 import * as descriptive from './iiif/descriptive';
 import {
   getAllAnnotationLists,
+  getAllCanvases,
   getAllExternalResources,
   getAllImages,
   getAllLayers,
@@ -164,6 +165,24 @@ const manifest = memoize(selector => {
       )
   );
 
+  /**
+   * Presentation 3 compatibility layer.
+   */
+  const getCanvasIds = createSelector(getSequences, sequences => {
+    return sequences.reduce(
+      (sequenceCanvasList, nextSequence) => [
+        ...sequenceCanvasList,
+        ...structural.getCanvases(nextSequence),
+      ],
+      []
+    );
+  });
+  const getCanvases = createSelector(
+    getCanvasIds,
+    getAllCanvases,
+    (canvasIds, allCanvases) => canvasIds.map(canvasId => allCanvases[canvasId])
+  );
+
   return {
     selector,
     // Technical
@@ -201,6 +220,8 @@ const manifest = memoize(selector => {
     getStructures,
     getOtherContentIds,
     getOtherContent,
+    getCanvasIds,
+    getCanvases,
   };
 });
 

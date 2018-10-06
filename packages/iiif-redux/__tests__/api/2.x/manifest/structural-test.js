@@ -10,6 +10,8 @@ describe('api/2.x/manifest/structural', () => {
     getStructures,
     getOtherContent,
     getOtherContentIds,
+    getCanvasIds,
+    getCanvases,
   } = manifest(s => s.resources.manifests['http://iiif.com/manifest-1.json']);
   const t = text => [{ '@value': text, '@language': 'en' }];
   const state = {
@@ -51,7 +53,30 @@ describe('api/2.x/manifest/structural', () => {
         'http://iiif.com/sequence-1.json': {
           '@id': 'http://iiif.com/sequence-1.json',
           label: t('Sequence 1'),
-          canvases: ['http://iiif.com/canvas-1.json'],
+          canvases: [
+            'http://iiif.com/canvas-1.json',
+            'http://iiif.com/canvas-2.json',
+            'http://iiif.com/canvas-3.json',
+            'http://iiif.com/canvas-4.json',
+          ],
+        },
+      },
+      canvases: {
+        'http://iiif.com/canvas-1.json': {
+          '@id': 'http://iiif.com/canvas-1.json',
+          label: t('Canvas 1'),
+        },
+        'http://iiif.com/canvas-2.json': {
+          '@id': 'http://iiif.com/canvas-2.json',
+          label: t('Canvas 2'),
+        },
+        'http://iiif.com/canvas-3.json': {
+          '@id': 'http://iiif.com/canvas-3.json',
+          label: t('Canvas 3'),
+        },
+        'http://iiif.com/canvas-4.json': {
+          '@id': 'http://iiif.com/canvas-4.json',
+          label: t('Canvas 4'),
         },
       },
       ranges: {
@@ -87,17 +112,17 @@ describe('api/2.x/manifest/structural', () => {
     },
   };
 
-  it('should load sequence ids', () => {
+  test('sequence ids', () => {
     expect(getSequenceIds(state)).toEqual(['http://iiif.com/sequence-1.json']);
   });
 
-  it('should load full sequences', () => {
+  test('full sequences', () => {
     expect(
       getSequences(state).map(sequence => sequence.label[0]['@value'])
     ).toEqual(['Sequence 1']);
   });
 
-  it('should load range ids', () => {
+  test('range ids', () => {
     expect(getRangeIds(state)).toEqual([
       'http://iiif.com/range-1.json',
       'http://iiif.com/range-2.json',
@@ -107,7 +132,7 @@ describe('api/2.x/manifest/structural', () => {
       'http://iiif.com/range-2.json',
     ]);
   });
-  it('should load ranges', () => {
+  test('ranges', () => {
     expect(getRanges(state).map(range => range.label[0]['@value'])).toEqual([
       'Range 1',
       'Range 2',
@@ -117,7 +142,7 @@ describe('api/2.x/manifest/structural', () => {
     );
   });
 
-  it('should get other content ids', () => {
+  test('other content ids', () => {
     expect(getOtherContentIds(state)).toEqual([
       'http://iiif.com/external-1.json',
       'http://iiif.com/annotation-list-1.json',
@@ -127,7 +152,7 @@ describe('api/2.x/manifest/structural', () => {
     ]);
   });
 
-  it('should get Other content', () => {
+  test('Other content', () => {
     expect(
       getOtherContent(state).map(
         otherContent => otherContent.label[0]['@value']
@@ -139,5 +164,20 @@ describe('api/2.x/manifest/structural', () => {
       'Annotation List 2',
       'unknown',
     ]);
+  });
+
+  test('getCanvasIds', () => {
+    expect(getCanvasIds(state)).toEqual([
+      'http://iiif.com/canvas-1.json',
+      'http://iiif.com/canvas-2.json',
+      'http://iiif.com/canvas-3.json',
+      'http://iiif.com/canvas-4.json',
+    ]);
+  });
+
+  test('getCanvases', () => {
+    expect(getCanvases(state).map(canvas => canvas.label[0]['@value'])).toEqual(
+      ['Canvas 1', 'Canvas 2', 'Canvas 3', 'Canvas 4']
+    );
   });
 });
