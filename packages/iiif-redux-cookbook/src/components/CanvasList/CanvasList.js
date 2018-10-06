@@ -7,10 +7,6 @@ import withLoadingState from '../../hoc/withLoadingState';
 import t from '../../utils/t';
 
 class CanvasList extends Component {
-  componentWillMount() {
-    this.props.iiifResourceRequestUnknown(this.props.id);
-  }
-
   render() {
     const { label, canvasList } = this.props;
 
