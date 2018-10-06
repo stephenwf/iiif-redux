@@ -8,7 +8,7 @@ const normalizeLinkedResources = memoize(property => {
   }
   if (typeof property === 'string') {
     if (!validUrl.isWebUri(property)) {
-      return null;
+      return [];
     }
     return [{ '@id': property }];
   }

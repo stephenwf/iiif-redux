@@ -359,7 +359,9 @@ Object {
           "@value": "e-codices – Virtual Manuscript Library of Switzerland",
         },
       ],
-      "logo": "http://www.e-codices.ch/img/logo-for-iiif-manifest.png",
+      "logo": Array [
+        "http://www.e-codices.ch/img/logo-for-iiif-manifest.png",
+      ],
     },
     "http://www.e-codices.unifr.ch/metadata/iiif/collection/aasm.json": Object {
       "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/aasm.json",
@@ -1190,6 +1192,11 @@ Object {
           "@value": "Zofingen, Stadtbibliothek",
         },
       ],
+    },
+  },
+  "imageResources": Object {
+    "http://www.e-codices.ch/img/logo-for-iiif-manifest.png": Object {
+      "@id": "http://www.e-codices.ch/img/logo-for-iiif-manifest.png",
     },
   },
 }
