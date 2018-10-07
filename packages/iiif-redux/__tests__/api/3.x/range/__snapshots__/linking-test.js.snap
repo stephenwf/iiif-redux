@@ -1,0 +1,230 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/range/linking Fixture: Full range getHomepage: getHomepage 1`] = `
+Object {
+  "format": "text/html",
+  "id": "https://example.org/info/book1/",
+  "label": Object {
+    "en": Array [
+      "Home page for Book 1",
+    ],
+  },
+  "type": "Text",
+}
+`;
+
+exports[`api/3.x/range/linking Fixture: Full range getHomepageId: getHomepageId 1`] = `"https://example.org/info/book1/"`;
+
+exports[`api/3.x/range/linking Fixture: Full range getLogo: getLogo 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/logos/institution1.jpg",
+    "service": Array [
+      "https://example.org/service/inst1",
+    ],
+    "type": "Image",
+  },
+]
+`;
+
+exports[`api/3.x/range/linking Fixture: Full range getLogoIds: getLogoIds 1`] = `
+Array [
+  "https://example.org/logos/institution1.jpg",
+]
+`;
+
+exports[`api/3.x/range/linking Fixture: Full range getPartOf: getPartOf 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/collections/books/",
+    "type": "Collection",
+  },
+]
+`;
+
+exports[`api/3.x/range/linking Fixture: Full range getPartOfId: getPartOfId 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/collections/books/",
+    "schema": "collection",
+  },
+]
+`;
+
+exports[`api/3.x/range/linking Fixture: Full range getRendering: getRendering 1`] = `
+Array [
+  Object {
+    "format": "application/pdf",
+    "id": "https://example.org/iiif/book1.pdf",
+    "label": Object {
+      "en": Array [
+        "Download as PDF",
+      ],
+    },
+    "type": "Text",
+  },
+]
+`;
+
+exports[`api/3.x/range/linking Fixture: Full range getRenderingIds: getRenderingIds 1`] = `
+Array [
+  "https://example.org/iiif/book1.pdf",
+]
+`;
+
+exports[`api/3.x/range/linking Fixture: Full range getSeeAlso: getSeeAlso 1`] = `
+Array [
+  Object {
+    "format": "text/xml",
+    "id": "https://example.org/library/catalog/book1.xml",
+    "profile": "https://example.org/profiles/bibliographic",
+    "type": "Dataset",
+  },
+]
+`;
+
+exports[`api/3.x/range/linking Fixture: Full range getSeeAlsoIds: getSeeAlsoIds 1`] = `
+Array [
+  "https://example.org/library/catalog/book1.xml",
+]
+`;
+
+exports[`api/3.x/range/linking Fixture: Full range getService: getService 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/service/example",
+    "profile": "https://example.org/docs/example-service.html",
+    "type": "Service",
+  },
+]
+`;
+
+exports[`api/3.x/range/linking Fixture: Full range getServiceIds: getServiceIds 1`] = `
+Array [
+  "https://example.org/service/example",
+]
+`;
+
+exports[`api/3.x/range/linking Fixture: Full range getStart: getStart 1`] = `
+Object {
+  "id": "https://example.org/iiif/book1/canvas/p2",
+  "type": "Canvas",
+}
+`;
+
+exports[`api/3.x/range/linking Fixture: Full range getStartId: getStartId 1`] = `
+Object {
+  "id": "https://example.org/iiif/book1/canvas/p2",
+  "schema": "canvas",
+}
+`;
+
+exports[`api/3.x/range/linking Fixture: Full range getSupplementary: getSupplementary 1`] = `
+Object {
+  "id": "https://example.org/iiif/1/annos/1",
+  "type": "AnnotationCollection",
+}
+`;
+
+exports[`api/3.x/range/linking Fixture: Full range getSupplementaryId: getSupplementaryId 1`] = `"https://example.org/iiif/1/annos/1"`;
+
+exports[`api/3.x/range/linking Fixture: Range from IIIF spec getHomepage: getHomepage 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range from IIIF spec getHomepageId: getHomepageId 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range from IIIF spec getLogo: getLogo 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range from IIIF spec getLogoIds: getLogoIds 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range from IIIF spec getPartOf: getPartOf 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range from IIIF spec getPartOfId: getPartOfId 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range from IIIF spec getRendering: getRendering 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range from IIIF spec getRenderingIds: getRenderingIds 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range from IIIF spec getSeeAlso: getSeeAlso 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range from IIIF spec getSeeAlsoIds: getSeeAlsoIds 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range from IIIF spec getService: getService 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range from IIIF spec getServiceIds: getServiceIds 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range from IIIF spec getStart: getStart 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range from IIIF spec getStartId: getStartId 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range from IIIF spec getSupplementary: getSupplementary 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range from IIIF spec getSupplementaryId: getSupplementaryId 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range minimal getHomepage: getHomepage 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range minimal getHomepageId: getHomepageId 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range minimal getLogo: getLogo 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range minimal getLogoIds: getLogoIds 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range minimal getPartOf: getPartOf 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range minimal getPartOfId: getPartOfId 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range minimal getRendering: getRendering 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range minimal getRenderingIds: getRenderingIds 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range minimal getSeeAlso: getSeeAlso 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range minimal getSeeAlsoIds: getSeeAlsoIds 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range minimal getService: getService 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range minimal getServiceIds: getServiceIds 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range minimal getStart: getStart 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range minimal getStartId: getStartId 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range minimal getSupplementary: getSupplementary 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range minimal getSupplementaryId: getSupplementaryId 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range with start property getHomepage: getHomepage 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range with start property getHomepageId: getHomepageId 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range with start property getLogo: getLogo 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range with start property getLogoIds: getLogoIds 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range with start property getPartOf: getPartOf 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range with start property getPartOfId: getPartOfId 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range with start property getRendering: getRendering 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range with start property getRenderingIds: getRenderingIds 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range with start property getSeeAlso: getSeeAlso 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range with start property getSeeAlsoIds: getSeeAlsoIds 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range with start property getService: getService 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range with start property getServiceIds: getServiceIds 1`] = `Array []`;
+
+exports[`api/3.x/range/linking Fixture: Range with start property getStart: getStart 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range with start property getStartId: getStartId 1`] = `
+Object {
+  "id": "https://example.org/iiif/book1/canvas/p1#xywh=10,20,30,40",
+  "schema": "selector",
+}
+`;
+
+exports[`api/3.x/range/linking Fixture: Range with start property getSupplementary: getSupplementary 1`] = `null`;
+
+exports[`api/3.x/range/linking Fixture: Range with start property getSupplementaryId: getSupplementaryId 1`] = `Array []`;

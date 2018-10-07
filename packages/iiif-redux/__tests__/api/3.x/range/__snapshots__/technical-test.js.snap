@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/range/technical Fixture: Full range getBehavior: getBehavior Full range 1`] = `
+Array [
+  "hidden",
+]
+`;
+
+exports[`api/3.x/range/technical Fixture: Full range getId: getId Full range 1`] = `"https://example.org/iiif/range/1"`;
+
+exports[`api/3.x/range/technical Fixture: Full range getType: getType Full range 1`] = `"Range"`;
+
+exports[`api/3.x/range/technical Fixture: Full range getViewingDirection: getViewingDirection Full range 1`] = `"right-to-left"`;
+
+exports[`api/3.x/range/technical Fixture: Range from IIIF spec getBehavior: getBehavior Range from IIIF spec 1`] = `null`;
+
+exports[`api/3.x/range/technical Fixture: Range from IIIF spec getId: getId Range from IIIF spec 1`] = `"https://example.org/iiif/book1/range/r0"`;
+
+exports[`api/3.x/range/technical Fixture: Range from IIIF spec getType: getType Range from IIIF spec 1`] = `"Range"`;
+
+exports[`api/3.x/range/technical Fixture: Range from IIIF spec getViewingDirection: getViewingDirection Range from IIIF spec 1`] = `"left-to-right"`;
+
+exports[`api/3.x/range/technical Fixture: Range minimal getBehavior: getBehavior Range minimal 1`] = `null`;
+
+exports[`api/3.x/range/technical Fixture: Range minimal getId: getId Range minimal 1`] = `"https://example.org/iiif/range/1"`;
+
+exports[`api/3.x/range/technical Fixture: Range minimal getType: getType Range minimal 1`] = `"Range"`;
+
+exports[`api/3.x/range/technical Fixture: Range minimal getViewingDirection: getViewingDirection Range minimal 1`] = `"left-to-right"`;
+
+exports[`api/3.x/range/technical Fixture: Range with start property getBehavior: getBehavior Range with start property 1`] = `null`;
+
+exports[`api/3.x/range/technical Fixture: Range with start property getId: getId Range with start property 1`] = `"https://example.org/iiif/range/1"`;
+
+exports[`api/3.x/range/technical Fixture: Range with start property getType: getType Range with start property 1`] = `"Range"`;
+
+exports[`api/3.x/range/technical Fixture: Range with start property getViewingDirection: getViewingDirection Range with start property 1`] = `"left-to-right"`;

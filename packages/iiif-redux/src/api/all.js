@@ -18,6 +18,7 @@ const getAllContentResources = state => state.resources.contentResources;
 const getAllResources = state => state.resources;
 const getAllSchemaVersions = state => state.resources.schemaVersions;
 const getAllDereferenced = state => state.dereferenced;
+const getAllSelectors = state => state.selectors;
 
 export {
   getAllCollections,
@@ -39,4 +40,5 @@ export {
   getAllResources,
   getAllSchemaVersions,
   getAllDereferenced,
+  getAllSelectors,
 };

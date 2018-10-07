@@ -83,10 +83,14 @@ const partOf = new schema.Array(
 
 const canvasOrReference = new schema.Union(
   {
+    selector,
     canvasReference,
     canvas,
   },
   entity => {
+    if (entity && entity.id && entity.id.indexOf('#') !== -1) {
+      return 'selector';
+    }
     if (entity.type === 'SpecificResource') {
       return 'canvasReference';
     }

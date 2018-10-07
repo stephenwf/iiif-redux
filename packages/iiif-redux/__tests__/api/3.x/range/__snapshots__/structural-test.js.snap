@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/range/structural Fixture: Full range getAnnotationIds: getAnnotationIds 1`] = `
+Array [
+  "https://example.org/iiif/annotation/1",
+]
+`;
+
+exports[`api/3.x/range/structural Fixture: Full range getAnnotations: getAnnotations 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/annotation/1",
+    "motivation": "bookmarking",
+    "type": "Annotation",
+  },
+]
+`;
+
+exports[`api/3.x/range/structural Fixture: Full range getItemIds: getItemIds 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/book1/canvas/p1",
+    "schema": "canvas",
+  },
+]
+`;
+
+exports[`api/3.x/range/structural Fixture: Full range getItems: getItems 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/book1/canvas/p1",
+    "type": "Canvas",
+  },
+]
+`;
+
+exports[`api/3.x/range/structural Fixture: Full range getRangeIds: getRangeIds 1`] = `Array []`;
+
+exports[`api/3.x/range/structural Fixture: Full range getRanges: getRanges 1`] = `Array []`;
+
+exports[`api/3.x/range/structural Fixture: Range from IIIF spec getAnnotationIds: getAnnotationIds 1`] = `Array []`;
+
+exports[`api/3.x/range/structural Fixture: Range from IIIF spec getAnnotations: getAnnotations 1`] = `Array []`;
+
+exports[`api/3.x/range/structural Fixture: Range from IIIF spec getItemIds: getItemIds 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/book1/range/r1",
+    "schema": "range",
+  },
+]
+`;
+
+exports[`api/3.x/range/structural Fixture: Range from IIIF spec getItems: getItems 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/book1/range/r1",
+    "items": Array [
+      Object {
+        "id": "https://example.org/iiif/book1/canvas/p1",
+        "schema": "canvas",
+      },
+      Object {
+        "id": "https://automatic-id/1",
+        "schema": "canvasReference",
+      },
+    ],
+    "label": Object {
+      "en": Array [
+        "Introduction",
+      ],
+    },
+    "supplementary": "https://example.org/iiif/book1/annocoll/introTexts",
+    "type": "Range",
+  },
+]
+`;
+
+exports[`api/3.x/range/structural Fixture: Range from IIIF spec getRangeIds: getRangeIds 1`] = `
+Array [
+  "https://example.org/iiif/book1/range/r1",
+]
+`;
+
+exports[`api/3.x/range/structural Fixture: Range from IIIF spec getRanges: getRanges 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/book1/range/r1",
+    "items": Array [
+      Object {
+        "id": "https://example.org/iiif/book1/canvas/p1",
+        "schema": "canvas",
+      },
+      Object {
+        "id": "https://automatic-id/1",
+        "schema": "canvasReference",
+      },
+    ],
+    "label": Object {
+      "en": Array [
+        "Introduction",
+      ],
+    },
+    "supplementary": "https://example.org/iiif/book1/annocoll/introTexts",
+    "type": "Range",
+  },
+]
+`;
+
+exports[`api/3.x/range/structural Fixture: Range minimal getAnnotationIds: getAnnotationIds 1`] = `Array []`;
+
+exports[`api/3.x/range/structural Fixture: Range minimal getAnnotations: getAnnotations 1`] = `Array []`;
+
+exports[`api/3.x/range/structural Fixture: Range minimal getItemIds: getItemIds 1`] = `Array []`;
+
+exports[`api/3.x/range/structural Fixture: Range minimal getItems: getItems 1`] = `Array []`;
+
+exports[`api/3.x/range/structural Fixture: Range minimal getRangeIds: getRangeIds 1`] = `Array []`;
+
+exports[`api/3.x/range/structural Fixture: Range minimal getRanges: getRanges 1`] = `Array []`;
+
+exports[`api/3.x/range/structural Fixture: Range with start property getAnnotationIds: getAnnotationIds 1`] = `Array []`;
+
+exports[`api/3.x/range/structural Fixture: Range with start property getAnnotations: getAnnotations 1`] = `Array []`;
+
+exports[`api/3.x/range/structural Fixture: Range with start property getItemIds: getItemIds 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/book1/canvas/p1",
+    "schema": "canvas",
+  },
+]
+`;
+
+exports[`api/3.x/range/structural Fixture: Range with start property getItems: getItems 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/book1/canvas/p1",
+    "type": "Canvas",
+  },
+]
+`;
+
+exports[`api/3.x/range/structural Fixture: Range with start property getRangeIds: getRangeIds 1`] = `Array []`;
+
+exports[`api/3.x/range/structural Fixture: Range with start property getRanges: getRanges 1`] = `Array []`;

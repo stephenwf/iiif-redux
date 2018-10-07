@@ -17,7 +17,7 @@ const getPartOf = resource => resource.partOf || null;
 
 const getStart = resource => resource.start || null;
 
-const getSupplementary = resource => resource.supplementary;
+const getSupplementary = resource => resource.supplementary || [];
 
 const getLogo = resource => resource.logo || [];
 

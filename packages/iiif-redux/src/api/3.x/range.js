@@ -12,7 +12,9 @@ import {
   getAllCanvases,
   getAllCanvasReferences,
   getAllContentResources,
+  getAllRanges,
   getAllResources,
+  getAllSelectors,
   getAllServices,
 } from '../all';
 import mapByIdOrId from '../../utility/mapByIdOrId';
@@ -163,10 +165,41 @@ const range = memoize(selector => {
    * - getAnnotations
    */
   const getItemIds = createSelector(selector, structural.getItems);
-  const getItems = createSelector(getItemIds, getAllAnnotations, mapAllById);
+  const getItems = createSelector(
+    getItemIds,
+    getAllAnnotations,
+    getAllCanvases,
+    getAllRanges,
+    getAllResources,
+    getAllCanvasReferences,
+    getAllSelectors,
+    (
+      itemIds,
+      allAnnotations,
+      allCanvases,
+      allRanges,
+      allResources,
+      allCanvasReferences,
+      allSelectors
+    ) => {
+      const map = {
+        annotation: allAnnotations,
+        canvas: allCanvases,
+        range: allRanges,
+        resource: allResources,
+        canvasReference: allCanvasReferences,
+        selector: allSelectors,
+      };
+      return itemIds.map(({ schema, id }) => map[schema][id]);
+    }
+  );
 
-  const getRangeIds = getItemIds;
-  const getRanges = getItems;
+  const getRangeIds = createSelector(getItemIds, rangeIds =>
+    rangeIds
+      .filter(({ schema }) => schema === 'range')
+      .map(singleRange => singleRange.id)
+  );
+  const getRanges = createSelector(getRangeIds, getAllRanges, mapAllById);
 
   const getAnnotationIds = createSelector(selector, structural.getAnnotations);
   const getAnnotations = createSelector(
@@ -176,10 +209,13 @@ const range = memoize(selector => {
   );
 
   return {
+    // Technical.
     getId,
     getType,
-    getViewingDirection,
     getBehavior,
+    getViewingDirection,
+
+    // Descriptive.
     getLabel,
     getMetadata,
     getSummary,
@@ -190,6 +226,8 @@ const range = memoize(selector => {
     getRequiredStatement,
     getRights,
     getNavDate,
+
+    // Linking
     getSeeAlsoIds,
     getSeeAlso,
     getServiceIds,
@@ -206,6 +244,8 @@ const range = memoize(selector => {
     getStart,
     getSupplementaryId,
     getSupplementary,
+
+    // Structural.
     getItemIds,
     getItems,
     getRangeIds,

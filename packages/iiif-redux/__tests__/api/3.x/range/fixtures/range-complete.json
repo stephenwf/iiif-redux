@@ -1,0 +1,156 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/anno.jsonld",
+    "http://iiif.io/api/presentation/3/context.json"
+  ],
+  "id": "https://example.org/iiif/range/1",
+  "type": "Range",
+  "viewingDirection": "right-to-left",
+  "behavior": ["hidden"],
+  "label": {
+    "en": ["Annotation 1"]
+  },
+  "metadata": [
+    {
+      "label": {
+        "en": ["Author"]
+      },
+      "value": {
+        "@none": ["Anne Author"]
+      }
+    },
+    {
+      "label": {
+        "en": ["Published"]
+      },
+      "value": {
+        "en": ["Paris, circa 1400"],
+        "fr": ["Paris, environ 1400"]
+      }
+    },
+    {
+      "label": {
+        "en": ["Notes"]
+      },
+      "value": {
+        "en": ["Text of note 1", "Text of note 2"]
+      }
+    },
+    {
+      "label": {
+        "en": ["Source"]
+      },
+      "value": {
+        "@none": [
+          "<span>From: <a href=\"https://example.org/db/1.html\">Some Collection</a></span>"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "en": ["Book 1, written be Anne Author, published in Paris around 1400."]
+  },
+  "thumbnail": [
+    {
+      "id": "https://example.org/images/book1-page1/full/80,100/0/default.jpg",
+      "type": "Image",
+      "service": [
+        {
+          "id": "https://example.org/images/book1-page1",
+          "type": "ImageService3",
+          "profile": "level1"
+        }
+      ]
+    }
+  ],
+  "posterCanvas": {
+    "id": "https://example.org/iiif/1/canvas/poster",
+    "type": "Canvas",
+    "height": 1400,
+    "width": 1200
+  },
+  "requiredStatement": {
+    "label": {
+      "en": ["Attribution"]
+    },
+    "value": {
+      "en": ["Provided by Example Organization"]
+    }
+  },
+  "rights": "https://creativecommons.org/licenses/by/4.0/",
+  "navDate": "300-01-01T00:00:00Z",
+  "///////// Linking": "///////////////////////////////////////////",
+  "seeAlso": [
+    {
+      "id": "https://example.org/library/catalog/book1.xml",
+      "type": "Dataset",
+      "format": "text/xml",
+      "profile": "https://example.org/profiles/bibliographic"
+    }
+  ],
+  "service": [
+    {
+      "id": "https://example.org/service/example",
+      "type": "Service",
+      "profile": "https://example.org/docs/example-service.html"
+    }
+  ],
+  "logo": [
+    {
+      "id": "https://example.org/logos/institution1.jpg",
+      "type": "Image",
+      "service": [
+        {
+          "id": "https://example.org/service/inst1",
+          "type": "ImageService3",
+          "profile": "level2"
+        }
+      ]
+    }
+  ],
+  "homepage": {
+    "id": "https://example.org/info/book1/",
+    "type": "Text",
+    "label": {
+      "en": ["Home page for Book 1"]
+    },
+    "format": "text/html"
+  },
+  "rendering": [
+    {
+      "id": "https://example.org/iiif/book1.pdf",
+      "type": "Text",
+      "label": {
+        "en": ["Download as PDF"]
+      },
+      "format": "application/pdf"
+    }
+  ],
+  "partOf": [
+    {
+      "id": "https://example.org/collections/books/",
+      "type": "Collection"
+    }
+  ],
+  "start": {
+    "id": "https://example.org/iiif/book1/canvas/p2",
+    "type": "Canvas"
+  },
+  "supplementary": {
+    "id": "https://example.org/iiif/1/annos/1",
+    "type": "AnnotationCollection"
+  },
+  "items": [
+    {
+      "id": "https://example.org/iiif/book1/canvas/p1",
+      "type": "Canvas"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "https://example.org/iiif/annotation/1",
+      "type": "Annotation",
+      "motivation": "bookmarking"
+    }
+  ]
+}
