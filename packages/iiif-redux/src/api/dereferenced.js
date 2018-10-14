@@ -1,17 +1,13 @@
 import { createSelector } from 'reselect';
 import { getAllDereferenced, getAllResources } from './all';
 
-export const doesResourceExist = selector =>
-  createSelector(
-    getAllDereferenced,
-    selector,
-    (allDereferenced, resource) =>
-      !!(
-        resource &&
-        allDereferenced &&
-        allDereferenced[resource.id || resource['@id'] || resource]
-      )
-  );
+export const doesResourceExist = (selector, id) =>
+  createSelector(getAllDereferenced, selector, (allDereferenced, resource) => {
+    const idToCheck = resource
+      ? resource.id || resource['@id'] || resource
+      : id;
+    return !!(idToCheck && allDereferenced && allDereferenced[idToCheck]);
+  });
 
 export const hasResourceBeenFetched = (selector, resourceType) =>
   createSelector(getAllResources, selector, (allResources, resource) => {
@@ -23,16 +19,15 @@ export const hasResourceBeenFetched = (selector, resourceType) =>
     );
   });
 
-export const isResourceLoading = selector =>
-  createSelector(
-    getAllDereferenced,
-    selector,
-    (allDereferenced, resource) =>
-      !!(
-        resource &&
-        allDereferenced &&
-        allDereferenced[resource.id || resource['@id'] || resource] &&
-        allDereferenced[resource.id || resource['@id'] || resource].loading ===
-          true
-      )
-  );
+export const isResourceLoading = (selector, id) =>
+  createSelector(getAllDereferenced, selector, (allDereferenced, resource) => {
+    const idToCheck = resource
+      ? resource.id || resource['@id'] || resource
+      : id;
+    return !!(
+      idToCheck &&
+      allDereferenced &&
+      allDereferenced[idToCheck] &&
+      allDereferenced[idToCheck].loading === true
+    );
+  });
