@@ -1,5 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`api/3.x/annotation/linking Annotation: Choice body example getBody: getBody Choice body example 1`] = `
+Array [
+  Object {
+    "default": "http://iiif.io/api/presentation/2.1/example/fixtures/resources/page1-full.png",
+    "id": "https://example.org/iiif/choice/1",
+    "item": Array [
+      "http://iiif.io/api/image/2.1/example/reference/page1-full/full/full/0/gray.jpg",
+    ],
+    "type": "Choice",
+  },
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getBodyId: getBodyId Choice body example 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/choice/1",
+    "schema": "choice",
+  },
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getHomepage: getHomepage Choice body example 1`] = `null`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getHomepageId: getHomepageId Choice body example 1`] = `null`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getLogo: getLogo Choice body example 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getLogoIds: getLogoIds Choice body example 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getPartOf: getPartOf Choice body example 1`] = `null`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getPartOfId: getPartOfId Choice body example 1`] = `null`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getRendering: getRendering Choice body example 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getRenderingIds: getRenderingIds Choice body example 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getSeeAlso: getSeeAlso Choice body example 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getSeeAlsoIds: getSeeAlsoIds Choice body example 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getService: getService Choice body example 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getServiceIds: getServiceIds Choice body example 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getTarget: getTarget Choice body example 1`] = `
+Array [
+  "https://example.org/iiif/book1/canvas/p1",
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getTargetId: getTargetId Choice body example 1`] = `
+Array [
+  "https://example.org/iiif/book1/canvas/p1",
+]
+`;
+
 exports[`api/3.x/annotation/linking Annotation: Complete annotation getBody: getBody Complete annotation 1`] = `
 Array [
   Object {

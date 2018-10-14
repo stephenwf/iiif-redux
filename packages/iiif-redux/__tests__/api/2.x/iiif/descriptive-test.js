@@ -9,6 +9,18 @@ import {
 } from '../../../../src/api/2.x/iiif/descriptive';
 
 describe('api/iiif/descriptive', () => {
+  describe('getDescription', () => {
+    test('it will return null for not found values', () => {
+      expect(getDescription({})).toEqual(null);
+    });
+  });
+
+  describe('getAttribution', () => {
+    test('it will return null for not found values', () => {
+      expect(getAttribution({})).toEqual(null);
+    });
+  });
+
   describe('getThumbnailId', () => {
     it('should parse image service thumbnails', () => {
       expect(

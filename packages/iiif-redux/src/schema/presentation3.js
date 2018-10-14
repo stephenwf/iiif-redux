@@ -44,9 +44,11 @@ const selector = new schema.Entity(
   },
   {
     processStrategy(value, parent, key) {
-      if (typeof value === 'string') {
-        return parseSelectorTarget(value);
-      }
+      // @todo This is an impossible path to hit. The process strategy is a strange function that
+      // doesn't always hit the containing code. Will need to review at a later date.
+      // if (typeof value === 'string') {
+      //   return parseSelectorTarget(value);
+      // }
       const id = value['@id'] || value.id;
       if (id) {
         return parseSelectorTarget(id);
@@ -98,25 +100,26 @@ const canvasOrReference = new schema.Union(
   }
 );
 
+const annotationBodyMappings = {
+  Choice: 'choice',
+  Application: 'contentResource',
+  Dataset: 'contentResource',
+  Image: 'contentResource',
+  Sound: 'contentResource',
+  Text: 'contentResource',
+  Video: 'contentResource',
+  TextualBody: 'contentResource',
+};
 const annotationBody = new schema.Union(
   {
     contentResource,
     choice,
   },
   input => {
-    switch (input.type) {
-      case 'Choice':
-        return 'choice';
-      case 'Application':
-      case 'Dataset':
-      case 'Image':
-      case 'Sound':
-      case 'Text':
-      case 'Video':
-      case 'TextualBody':
-      default:
-        return 'contentResource';
+    if (annotationBodyMappings[input.type]) {
+      return annotationBodyMappings[input.type];
     }
+    return 'contentResource';
   }
 );
 

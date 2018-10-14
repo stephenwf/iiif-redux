@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`api/3.x/annotation/descriptive Annotation: Choice body example getLabel: getLabel Choice body example 1`] = `null`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Choice body example getMetadata: getMetadata Choice body example 1`] = `Array []`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Choice body example getRequiredStatement: getRequiredStatement Choice body example 1`] = `null`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Choice body example getRights: getRights Choice body example 1`] = `null`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Choice body example getSummary: getSummary Choice body example 1`] = `null`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Choice body example getThumbnail: getThumbnail Choice body example 1`] = `null`;
+
+exports[`api/3.x/annotation/descriptive Annotation: Choice body example getThumbnailId: getThumbnailId Choice body example 1`] = `null`;
+
 exports[`api/3.x/annotation/descriptive Annotation: Complete annotation getLabel: getLabel Complete annotation 1`] = `
 Object {
   "en": Array [

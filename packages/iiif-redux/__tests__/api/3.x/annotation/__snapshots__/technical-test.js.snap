@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`api/3.x/annotation/technical Annotation: Choice body example getBehavior: getBehavior Choice body example 1`] = `null`;
+
+exports[`api/3.x/annotation/technical Annotation: Choice body example getId: getId Choice body example 1`] = `"https://example.org/iiif/book1/annotation/p0001-image"`;
+
+exports[`api/3.x/annotation/technical Annotation: Choice body example getTimeMode: getTimeMode Choice body example 1`] = `null`;
+
+exports[`api/3.x/annotation/technical Annotation: Choice body example getType: getType Choice body example 1`] = `"Annotation"`;
+
 exports[`api/3.x/annotation/technical Annotation: Complete annotation getBehavior: getBehavior Complete annotation 1`] = `
 Array [
   "hidden",

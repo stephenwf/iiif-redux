@@ -5,4 +5,5 @@ export default [
     fixture: require('./annotation-iiif-docs'),
   },
   { name: 'Minimal annotation', fixture: require('./annotation-minimal') },
+  { name: 'Choice body example', fixture: require('./annotation-choice') },
 ];
