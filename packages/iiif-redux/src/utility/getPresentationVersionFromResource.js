@@ -1,4 +1,8 @@
 export default function getPresentationVersionFromResource(resource) {
+  if (!resource) {
+    throw new Error('Resource cannot be null or undefined');
+  }
+
   const context = Array.isArray(resource['@context'])
     ? resource['@context']
     : [resource['@context']];

@@ -145,7 +145,7 @@ const manifest = memoize(selector => {
       if (start.schema === 'canvas') {
         return allCanvases[start.id];
       }
-      return allCanvasReferences[start.id] || null;
+      return allCanvasReferences[start.id];
     }
   );
 

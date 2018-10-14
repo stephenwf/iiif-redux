@@ -1,6 +1,7 @@
 import { createStructuredSelector, createSelector } from 'reselect';
 import createStore from '../src/createStore';
 import bridges from './fixtures/bridges';
+import presentation3fixture from './fixtures/presentation/3.0/2-to-3-converter/adore.ugent.be__IIIF__manifests__archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91';
 import {
   iiifResourceRequest,
   iiifResourceRequestUnknown,
@@ -148,6 +149,122 @@ describe('store', () => {
       resourceId: 'https://view.nls.uk/manifest/7446/74464117/manifest.json',
       ttl: 600,
     });
+  });
+
+  it('should import a presentatino 3 manifest', async () => {
+    const manifestId =
+      'http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91';
+    const store = createStore();
+    fetch.mockResponseOnce(JSON.stringify(presentation3fixture));
+    mockDate('2017-11-25T00:00:00z');
+
+    const whenRequestFinishes = waitForRequest(store, manifestId);
+
+    store.dispatch(
+      iiifResourceRequest(
+        manifestId,
+        ['MANIFEST_REQUEST', 'MANIFEST_SUCCESS', 'MANIFEST_ERROR'],
+        manifest
+      )
+    );
+    const state = store.getState();
+
+    const manifestState = state.dereferenced[manifestId];
+
+    expect(manifestState.loading).toEqual(true);
+    expect(manifestState.resourceId).toEqual(manifestId);
+    expect(manifestState.ttl).toEqual(600);
+
+    await whenRequestFinishes;
+
+    const secondState = store.getState();
+    expect(secondState).toMatchSnapshot('second state');
+
+    // Try fetching as unknown.
+    fetch.mockResponseOnce(JSON.stringify(presentation3fixture));
+    const whenRequestFinishes2 = waitForRequest(store, manifestId);
+
+    store.dispatch(iiifResourceRequestUnknown(manifestId));
+
+    await whenRequestFinishes2;
+
+    expect(store.getState().dereferenced[manifestId]).toEqual({
+      loading: false,
+      resourceId: manifestId,
+      ttl: 600,
+    });
+  });
+
+  it('should return error when JSON response is empty', async () => {
+    const store = createStore();
+    fetch.mockResponseOnce(JSON.stringify(null));
+    mockDate('2017-11-25T00:00:00z');
+
+    const whenRequestFinishes = waitForRequest(
+      store,
+      'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+    );
+
+    store.dispatch(
+      iiifResourceRequest(
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json',
+        ['MANIFEST_REQUEST', 'MANIFEST_SUCCESS', 'MANIFEST_ERROR'],
+        manifest
+      )
+    );
+    const state = store.getState();
+
+    const manifestState =
+      state.dereferenced[
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+      ];
+
+    expect(manifestState).toMatchSnapshot();
+
+    await whenRequestFinishes;
+
+    expect(
+      store
+        .getState()
+        .dereferenced[
+          'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+        ].error.toString()
+    ).toEqual('Error: Resource cannot be null or undefined');
+  });
+
+  it('should return error when JSON response is empty (unknown resource)', async () => {
+    const store = createStore();
+    fetch.mockResponseOnce(JSON.stringify(null));
+    mockDate('2017-11-25T00:00:00z');
+
+    const whenRequestFinishes = waitForRequest(
+      store,
+      'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+    );
+
+    store.dispatch(
+      iiifResourceRequestUnknown(
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+      )
+    );
+    const state = store.getState();
+
+    const manifestState =
+      state.dereferenced[
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+      ];
+
+    expect(manifestState).toMatchSnapshot();
+
+    await whenRequestFinishes;
+
+    expect(
+      store
+        .getState()
+        .dereferenced[
+          'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+        ].error.toString()
+    ).toEqual('Error: Resource cannot be null or undefined');
   });
 
   it('should only make 1 http request per resource by default', async () => {
@@ -436,6 +553,32 @@ describe('store', () => {
       expect(
         state.dereferenced['http://iiif.com/NOT-REAL-1.json'].error
       ).toEqual('Unknown Presentation 2 resource type');
+    });
+
+    test('unknown type (p3)', async () => {
+      const store = createStore();
+      fetch.mockResponseOnce(
+        JSON.stringify({
+          id: 'http://iiif.com/NOT-REAL-1.json',
+          type: 'NOT REAL',
+          label: 'Collection label 1',
+        })
+      );
+      const whenRequestFinishes = waitForRequest(
+        store,
+        'http://iiif.com/NOT-REAL-1.json'
+      );
+      store.dispatch(
+        iiifResourceRequestUnknown('http://iiif.com/NOT-REAL-1.json')
+      );
+
+      await whenRequestFinishes;
+
+      const state = store.getState();
+
+      expect(
+        state.dereferenced['http://iiif.com/NOT-REAL-1.json'].error
+      ).toEqual('Unknown Presentation 3 resource type');
     });
 
     test('unknown mapping', async () => {

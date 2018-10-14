@@ -168,4 +168,80 @@ describe('spaces/collections', () => {
       })(store.getState())
     );
   });
+
+  test('unknown presentation version', async () => {
+    const collectionId =
+      'http://iiif.io/api/presentation/2.1/example/fixtures/collection.json';
+    const store = createStore();
+
+    fetch.mockResponseOnce(
+      JSON.stringify({
+        id:
+          'http://iiif.io/api/presentation/2.1/example/fixtures/collection.json',
+      })
+    );
+
+    store.dispatch(selectCollection({ id: collectionId }));
+
+    const loadingState = store.getState();
+    expect(loadingState.dereferenced).toEqual({
+      'http://iiif.io/api/presentation/2.1/example/fixtures/collection.json': {
+        loading: true,
+        requested: loadingState.dereferenced[collectionId].requested,
+        resourceId:
+          'http://iiif.io/api/presentation/2.1/example/fixtures/collection.json',
+        ttl: 600,
+      },
+    });
+
+    await waitForRequest(store, collectionId);
+
+    expect(
+      store
+        .getState()
+        .dereferenced[
+          'http://iiif.io/api/presentation/2.1/example/fixtures/collection.json'
+        ].error.toString()
+    ).toEqual('Error: Unknown entity type');
+  });
+
+  test('p3 id mis-match', async () => {
+    const collectionId =
+      'http://iiif.io/api/presentation/2.1/example/fixtures/collection.json';
+    const store = createStore();
+
+    fetch.mockResponseOnce(
+      JSON.stringify({
+        id:
+          'http://iiif.io/api/presentation/2.1/example/fixtures/collection-wrong-id.json',
+        type: 'Collection',
+      })
+    );
+
+    store.dispatch(selectCollection({ id: collectionId }));
+
+    const loadingState = store.getState();
+    expect(loadingState.dereferenced).toEqual({
+      'http://iiif.io/api/presentation/2.1/example/fixtures/collection.json': {
+        loading: true,
+        requested: loadingState.dereferenced[collectionId].requested,
+        resourceId:
+          'http://iiif.io/api/presentation/2.1/example/fixtures/collection.json',
+        ttl: 600,
+      },
+    });
+
+    await waitForRequest(store, collectionId);
+
+    const loadedState = store.getState();
+    expect(loadedState.dereferenced).toEqual({
+      'http://iiif.io/api/presentation/2.1/example/fixtures/collection.json': {
+        loading: false,
+        requested: loadedState.dereferenced[collectionId].requested,
+        resourceId:
+          'http://iiif.io/api/presentation/2.1/example/fixtures/collection.json',
+        ttl: 600,
+      },
+    });
+  });
 });

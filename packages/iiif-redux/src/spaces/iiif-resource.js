@@ -221,11 +221,7 @@ function* importResource(response, resourceId) {
   if (version === 2) {
     return yield call(importPresentation2Resource, response, resourceId);
   }
-  if (version === 3) {
-    return yield call(importPresentation3Resource, response, resourceId);
-  }
-
-  throw new Error('Unknown IIIF Presentation version');
+  return yield call(importPresentation3Resource, response, resourceId);
 }
 
 function* importPresentation2Resource(response, resourceId) {
@@ -271,11 +267,7 @@ function* getResourceType(resourceId, response) {
   if (presentationVersion === 2) {
     return yield call(getPresentation2ResourceType, resourceId, response);
   }
-  if (presentationVersion === 3) {
-    return yield call(getPresentation3ResourceType, resourceId, response);
-  }
-
-  throw new Error('Unknown IIIF Presentation version');
+  return yield call(getPresentation3ResourceType, resourceId, response);
 }
 
 function* getPresentation2ResourceType(resourceId, response) {
@@ -307,7 +299,12 @@ function* requestUnknownResource({
     debug('Fetching unknown resource %s', resourceId);
     const response = yield call(requestResource, resourceId, options);
     if (!response) {
-      yield put(iiifResourceError(resourceId, 'Unknown resource'));
+      yield put(
+        iiifResourceError(
+          resourceId,
+          new Error('Resource cannot be null or undefined')
+        )
+      );
       return;
     }
 

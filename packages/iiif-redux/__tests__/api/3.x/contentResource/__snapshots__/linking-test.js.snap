@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/content-resource/linking Fixture: Full content resource getHomepage: getHomepage 1`] = `null`;
+
+exports[`api/3.x/content-resource/linking Fixture: Full content resource getHomepageId: getHomepageId 1`] = `
+Object {
+  "format": "text/html",
+  "id": "https://example.org/info/book1/",
+  "label": Object {
+    "en": Array [
+      "Home page for Book 1",
+    ],
+  },
+  "type": "Text",
+}
+`;
+
+exports[`api/3.x/content-resource/linking Fixture: Full content resource getLogo: getLogo 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/logos/institution1.jpg",
+    "service": Array [
+      "https://example.org/service/inst1",
+    ],
+    "type": "Image",
+  },
+]
+`;
+
+exports[`api/3.x/content-resource/linking Fixture: Full content resource getLogoIds: getLogoIds 1`] = `
+Array [
+  "https://example.org/logos/institution1.jpg",
+]
+`;
+
+exports[`api/3.x/content-resource/linking Fixture: Full content resource getPartOf: getPartOf 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/collections/books/",
+    "type": "Collection",
+  },
+]
+`;
+
+exports[`api/3.x/content-resource/linking Fixture: Full content resource getPartOfId: getPartOfId 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/collections/books/",
+    "schema": "collection",
+  },
+]
+`;
+
+exports[`api/3.x/content-resource/linking Fixture: Full content resource getRendering: getRendering 1`] = `
+Array [
+  Object {
+    "format": "application/pdf",
+    "id": "https://example.org/iiif/book1.pdf",
+    "label": Object {
+      "en": Array [
+        "Download as PDF",
+      ],
+    },
+    "type": "Text",
+  },
+]
+`;
+
+exports[`api/3.x/content-resource/linking Fixture: Full content resource getRenderingIds: getRenderingIds 1`] = `
+Array [
+  "https://example.org/iiif/book1.pdf",
+]
+`;
+
+exports[`api/3.x/content-resource/linking Fixture: Full content resource getSeeAlso: getSeeAlso 1`] = `
+Array [
+  Object {
+    "format": "text/xml",
+    "id": "https://example.org/library/catalog/book1.xml",
+    "profile": "https://example.org/profiles/bibliographic",
+    "type": "Dataset",
+  },
+]
+`;
+
+exports[`api/3.x/content-resource/linking Fixture: Full content resource getSeeAlsoIds: getSeeAlsoIds 1`] = `
+Array [
+  "https://example.org/library/catalog/book1.xml",
+]
+`;
+
+exports[`api/3.x/content-resource/linking Fixture: Full content resource getService: getService 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/service/example",
+    "profile": "https://example.org/docs/example-service.html",
+    "type": "Service",
+  },
+]
+`;
+
+exports[`api/3.x/content-resource/linking Fixture: Full content resource getServiceIds: getServiceIds 1`] = `
+Array [
+  "https://example.org/service/example",
+]
+`;
+
+exports[`api/3.x/content-resource/linking Fixture: IIIF spec example getHomepage: getHomepage 1`] = `null`;
+
+exports[`api/3.x/content-resource/linking Fixture: IIIF spec example getHomepageId: getHomepageId 1`] = `null`;
+
+exports[`api/3.x/content-resource/linking Fixture: IIIF spec example getLogo: getLogo 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: IIIF spec example getLogoIds: getLogoIds 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: IIIF spec example getPartOf: getPartOf 1`] = `null`;
+
+exports[`api/3.x/content-resource/linking Fixture: IIIF spec example getPartOfId: getPartOfId 1`] = `null`;
+
+exports[`api/3.x/content-resource/linking Fixture: IIIF spec example getRendering: getRendering 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: IIIF spec example getRenderingIds: getRenderingIds 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: IIIF spec example getSeeAlso: getSeeAlso 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: IIIF spec example getSeeAlsoIds: getSeeAlsoIds 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: IIIF spec example getService: getService 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/images/book1-page1",
+    "profile": "level2",
+    "type": "ImageService3",
+  },
+]
+`;
+
+exports[`api/3.x/content-resource/linking Fixture: IIIF spec example getServiceIds: getServiceIds 1`] = `
+Array [
+  "https://example.org/images/book1-page1",
+]
+`;
+
+exports[`api/3.x/content-resource/linking Fixture: Minimum content resource getHomepage: getHomepage 1`] = `null`;
+
+exports[`api/3.x/content-resource/linking Fixture: Minimum content resource getHomepageId: getHomepageId 1`] = `null`;
+
+exports[`api/3.x/content-resource/linking Fixture: Minimum content resource getLogo: getLogo 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: Minimum content resource getLogoIds: getLogoIds 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: Minimum content resource getPartOf: getPartOf 1`] = `null`;
+
+exports[`api/3.x/content-resource/linking Fixture: Minimum content resource getPartOfId: getPartOfId 1`] = `null`;
+
+exports[`api/3.x/content-resource/linking Fixture: Minimum content resource getRendering: getRendering 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: Minimum content resource getRenderingIds: getRenderingIds 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: Minimum content resource getSeeAlso: getSeeAlso 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: Minimum content resource getSeeAlsoIds: getSeeAlsoIds 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: Minimum content resource getService: getService 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: Minimum content resource getServiceIds: getServiceIds 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: Thumbnail getHomepage: getHomepage 1`] = `null`;
+
+exports[`api/3.x/content-resource/linking Fixture: Thumbnail getHomepageId: getHomepageId 1`] = `null`;
+
+exports[`api/3.x/content-resource/linking Fixture: Thumbnail getLogo: getLogo 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: Thumbnail getLogoIds: getLogoIds 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: Thumbnail getPartOf: getPartOf 1`] = `null`;
+
+exports[`api/3.x/content-resource/linking Fixture: Thumbnail getPartOfId: getPartOfId 1`] = `null`;
+
+exports[`api/3.x/content-resource/linking Fixture: Thumbnail getRendering: getRendering 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: Thumbnail getRenderingIds: getRenderingIds 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: Thumbnail getSeeAlso: getSeeAlso 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: Thumbnail getSeeAlsoIds: getSeeAlsoIds 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/linking Fixture: Thumbnail getService: getService 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/images/book1-page1",
+    "profile": "level1",
+    "type": "ImageService3",
+  },
+]
+`;
+
+exports[`api/3.x/content-resource/linking Fixture: Thumbnail getServiceIds: getServiceIds 1`] = `
+Array [
+  "https://example.org/images/book1-page1",
+]
+`;

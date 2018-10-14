@@ -25,7 +25,7 @@ export default function resourceSelectorFactory(
       const fetched = hasResourceBeenFetched(selector, resourceKey)(state);
 
       // No resource, error reported.
-      if (!resource) {
+      if (!resource && exists === false && dereference === false) {
         return selectorError('Resource not found.');
       }
 
@@ -37,24 +37,26 @@ export default function resourceSelectorFactory(
         };
       }
 
-      // Resource exists and is fetching.
-      if (!fetched) {
-        return {
-          fetched: false,
-          loading: true,
-        };
-      }
+      // @todo find a way to hit this path.
+      // // Resource exists and is fetching.
+      // if (!fetched) {
+      //   return {
+      //     fetched: false,
+      //     loading: true,
+      //   };
+      // }
 
+      // @todo this is guarded by fallbacks and other places catching these presentation version errors.
       // No valid presentation version.
-      if (
-        (!defaultVersion && !presentationVersionMap[version]) ||
-        (!presentationVersionMap[version] &&
-          !presentationVersionMap[defaultVersion])
-      ) {
-        return selectorError(
-          `Schema version ${version} not found for resource`
-        );
-      }
+      // if (
+      //   (!defaultVersion && !presentationVersionMap[version]) ||
+      //   (!presentationVersionMap[version] &&
+      //     !presentationVersionMap[defaultVersion])
+      // ) {
+      //   return selectorError(
+      //     `Schema version ${version} not found for resource`
+      //   );
+      // }
 
       // Grab the correct selector api (2 or 3).
       const selectorApi =
@@ -66,10 +68,10 @@ export default function resourceSelectorFactory(
 
       function filterEmpty(selectorMap) {
         return Object.keys(selectorMap).reduce((acc, next) => {
-          if (selectorMap[next]) {
+          if (typeof selectorMap[next] === 'function') {
             acc[next] = selectorMap[next];
           } else {
-            acc[next] = () => null;
+            acc[next] = () => selectorMap[next];
           }
           return acc;
         }, {});

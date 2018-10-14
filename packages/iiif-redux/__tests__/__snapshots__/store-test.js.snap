@@ -3102,6 +3102,423 @@ Object {
 }
 `;
 
+exports[`store should import a presentatino 3 manifest: second state 1`] = `
+Object {
+  "dereferenced": Object {
+    "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91": Object {
+      "loading": false,
+      "requested": 2017-11-25T00:00:00.000Z,
+      "resourceId": "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91",
+      "ttl": 600,
+    },
+  },
+  "frames": Object {
+    "focusedFrame": null,
+    "list": Object {},
+  },
+  "resources": Object {
+    "annotationCollections": Object {},
+    "annotationLists": Object {},
+    "annotationPages": Object {
+      "https://example.org/uuid/e68bf9f3-4544-4e31-a4cf-ef0810019f76": Object {
+        "id": "https://example.org/uuid/e68bf9f3-4544-4e31-a4cf-ef0810019f76",
+        "items": Array [
+          "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.1/image-annotations/0",
+        ],
+        "type": "AnnotationPage",
+      },
+      "https://example.org/uuid/edb590d9-43f7-4e52-b2e8-17112e87843b": Object {
+        "id": "https://example.org/uuid/edb590d9-43f7-4e52-b2e8-17112e87843b",
+        "items": Array [
+          "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.3/image-annotations/0",
+        ],
+        "type": "AnnotationPage",
+      },
+    },
+    "annotations": Object {
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.1/image-annotations/0": Object {
+        "body": Array [
+          Object {
+            "id": "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/full/full/0/native.jpg",
+            "schema": "contentResource",
+          },
+        ],
+        "id": "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.1/image-annotations/0",
+        "motivation": "painting",
+        "target": Array [
+          "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.1",
+        ],
+        "type": "Annotation",
+      },
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.3/image-annotations/0": Object {
+        "body": Array [
+          Object {
+            "id": "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3/full/full/0/native.jpg",
+            "schema": "contentResource",
+          },
+        ],
+        "id": "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.3/image-annotations/0",
+        "motivation": "painting",
+        "target": Array [
+          "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.3",
+        ],
+        "type": "Annotation",
+      },
+    },
+    "canvasReferences": Object {},
+    "canvases": Object {
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.1": Object {
+        "height": 15076,
+        "id": "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.1",
+        "items": Array [
+          "https://example.org/uuid/e68bf9f3-4544-4e31-a4cf-ef0810019f76",
+        ],
+        "label": Object {
+          "@none": Array [
+            "1",
+          ],
+        },
+        "rendering": Array [
+          "http://adore.ugent.be/OpenURL/resolve?rft_id=archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1&svc_id=original",
+        ],
+        "requiredStatement": Object {
+          "label": Object {
+            "@none": Array [
+              "Attribution",
+            ],
+          },
+          "value": Object {
+            "@none": Array [
+              "Provided by Ghent University Library",
+            ],
+          },
+        },
+        "rights": "http://rightsstatements.org/vocab/UND/1.0/",
+        "thumbnail": Array [
+          "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/0,0,6215,15076/226,/0/default.jpg",
+        ],
+        "type": "Canvas",
+        "width": 6215,
+      },
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.3": Object {
+        "height": 15036,
+        "id": "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.3",
+        "items": Array [
+          "https://example.org/uuid/edb590d9-43f7-4e52-b2e8-17112e87843b",
+        ],
+        "label": Object {
+          "@none": Array [
+            "2",
+          ],
+        },
+        "rendering": Array [
+          "http://adore.ugent.be/OpenURL/resolve?rft_id=archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3&svc_id=original",
+        ],
+        "requiredStatement": Object {
+          "label": Object {
+            "@none": Array [
+              "Attribution",
+            ],
+          },
+          "value": Object {
+            "@none": Array [
+              "Provided by Ghent University Library",
+            ],
+          },
+        },
+        "rights": "http://rightsstatements.org/vocab/UND/1.0/",
+        "thumbnail": Array [
+          "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3/0,0,6235,15036/226,/0/default.jpg",
+        ],
+        "type": "Canvas",
+        "width": 6235,
+      },
+    },
+    "choices": Object {},
+    "collections": Object {},
+    "contentResources": Object {
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/0,0,6215,15076/226,/0/default.jpg": Object {
+        "id": "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/0,0,6215,15076/226,/0/default.jpg",
+        "type": "Image",
+      },
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/full/full/0/native.jpg": Object {
+        "format": "image/jpeg",
+        "height": 15076,
+        "id": "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/full/full/0/native.jpg",
+        "label": Object {
+          "@none": Array [
+            "BHSL-PAP-000044_2010_0001_AC.jp2",
+          ],
+        },
+        "service": Array [
+          "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1",
+        ],
+        "type": "Image",
+        "width": 6215,
+      },
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3/0,0,6235,15036/226,/0/default.jpg": Object {
+        "id": "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3/0,0,6235,15036/226,/0/default.jpg",
+        "type": "Image",
+      },
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3/full/full/0/native.jpg": Object {
+        "format": "image/jpeg",
+        "height": 15036,
+        "id": "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3/full/full/0/native.jpg",
+        "label": Object {
+          "@none": Array [
+            "BHSL-PAP-000044_2010_0002_AC.jp2",
+          ],
+        },
+        "service": Array [
+          "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3",
+        ],
+        "type": "Image",
+        "width": 6235,
+      },
+      "http://adore.ugent.be/IIIF/img/logo_i.svg": Object {
+        "id": "http://adore.ugent.be/IIIF/img/logo_i.svg",
+        "type": "Image",
+      },
+      "http://adore.ugent.be/OpenURL/resolve?rft_id=archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1&svc_id=original": Object {
+        "format": "image/jp2",
+        "id": "http://adore.ugent.be/OpenURL/resolve?rft_id=archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1&svc_id=original",
+        "label": Object {
+          "@none": Array [
+            "Download as jpeg2000 (78.77 MB)",
+          ],
+        },
+        "type": "Image",
+      },
+      "http://adore.ugent.be/OpenURL/resolve?rft_id=archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3&svc_id=original": Object {
+        "format": "image/jp2",
+        "id": "http://adore.ugent.be/OpenURL/resolve?rft_id=archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3&svc_id=original",
+        "label": Object {
+          "@none": Array [
+            "Download as jpeg2000 (78.29 MB)",
+          ],
+        },
+        "type": "Image",
+      },
+      "https://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/0,0,6215,15076/226,/0/default.jpg": Object {
+        "id": "https://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/0,0,6215,15076/226,/0/default.jpg",
+        "type": "Image",
+      },
+      "https://lib.ugent.be/catalog/rug01%3A001484515.marcxml": Object {
+        "dcterms:format": "application/marcxml+xml",
+        "id": "https://lib.ugent.be/catalog/rug01%3A001484515.marcxml",
+        "type": "Dataset",
+      },
+      "https://lib.ugent.be/viewer/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91": Object {
+        "format": "text/html",
+        "id": "https://lib.ugent.be/viewer/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91",
+        "type": "Text",
+      },
+    },
+    "externalResources": Object {},
+    "imageResources": Object {},
+    "layers": Object {},
+    "manifests": Object {
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91": Object {
+        "@context": Array [
+          "http://www.w3.org/ns/anno.jsonld",
+          "http://iiif.io/api/presentation/3/context.json",
+        ],
+        "homepage": "https://lib.ugent.be/viewer/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91",
+        "id": "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91",
+        "items": Array [
+          "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.1",
+          "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.3",
+        ],
+        "label": Object {
+          "@none": Array [
+            "Document uit het archief van de dichter Dioskoros van Aphrodite (?)[manuscript]",
+          ],
+        },
+        "logo": Array [
+          "http://adore.ugent.be/IIIF/img/logo_i.svg",
+        ],
+        "metadata": Array [
+          Object {
+            "label": Object {
+              "@none": Array [
+                "Record",
+              ],
+            },
+            "value": Object {
+              "@none": Array [
+                "<a href=\\"https://lib.ugent.be/catalog/rug01%3A001484515/items/800000096237\\">https://lib.ugent.be/catalog/rug01%3A001484515/items/800000096237</a>",
+              ],
+            },
+          },
+          Object {
+            "label": Object {
+              "@none": Array [
+                "Title",
+              ],
+            },
+            "value": Object {
+              "@none": Array [
+                "[papyrus] Document uit het archief van de dichter Dioskoros van Aphrodite (?).",
+              ],
+            },
+          },
+          Object {
+            "label": Object {
+              "@none": Array [
+                "Description",
+              ],
+            },
+            "value": Object {
+              "@none": Array [
+                "34 regels ; 29 x 72,5 cm.",
+              ],
+            },
+          },
+          Object {
+            "label": Object {
+              "@none": Array [
+                "Description",
+              ],
+            },
+            "value": Object {
+              "@none": Array [
+                "Papyrus",
+              ],
+            },
+          },
+          Object {
+            "label": Object {
+              "@none": Array [
+                "Publisher",
+              ],
+            },
+            "value": Object {
+              "@none": Array [
+                "537-538?",
+              ],
+            },
+          },
+          Object {
+            "label": Object {
+              "@none": Array [
+                "Provenance",
+              ],
+            },
+            "value": Object {
+              "@none": Array [
+                "BHSL.PAP.000044 Herkomst: Aphroditô",
+              ],
+            },
+          },
+          Object {
+            "label": Object {
+              "@none": Array [
+                "Contents",
+              ],
+            },
+            "value": Object {
+              "@none": Array [
+                "Het document bevat een overeenkomst tussen een corporatie en haar leiders. De leden van de corporatie van jagers (en waarschijnlijk ook van vissers) gaan de verbintenis aan t.o.v. Flavius Hermauos en Flavius Dios, hen als hun chefs te erkennen voor de duu",
+              ],
+            },
+          },
+          Object {
+            "label": Object {
+              "@none": Array [
+                "Object ID",
+              ],
+            },
+            "value": Object {
+              "@none": Array [
+                "archive.ugent.be:4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91",
+              ],
+            },
+          },
+          Object {
+            "label": Object {
+              "@none": Array [
+                "Description",
+              ],
+            },
+            "value": Object {
+              "@none": Array [
+                "Het document bevat een overeenkomst tussen een corporatie en haar leiders. De leden van de corporatie van jagers (en waarschijnlijk ook van vissers) gaan de verbintenis aan t.o.v. Flavius Hermauos en Flavius Dios, hen als hun chefs te erkennen voor de duu",
+              ],
+            },
+          },
+        ],
+        "requiredStatement": Object {
+          "label": Object {
+            "@none": Array [
+              "Attribution",
+            ],
+          },
+          "value": Object {
+            "@none": Array [
+              "Provided by Ghent University Library",
+            ],
+          },
+        },
+        "rights": "http://rightsstatements.org/vocab/UND/1.0/",
+        "seeAlso": Array [
+          "https://lib.ugent.be/catalog/rug01%3A001484515.marcxml",
+        ],
+        "thumbnail": Array [
+          "https://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/0,0,6215,15076/226,/0/default.jpg",
+        ],
+        "type": "Manifest",
+      },
+    },
+    "ranges": Object {},
+    "schemaVersions": Object {
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1": 3,
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/0,0,6215,15076/226,/0/default.jpg": 3,
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/full/full/0/native.jpg": 3,
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3": 3,
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3/0,0,6235,15036/226,/0/default.jpg": 3,
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3/full/full/0/native.jpg": 3,
+      "http://adore.ugent.be/IIIF/img/logo_i.svg": 3,
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91": 3,
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.1": 3,
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.1/image-annotations/0": 3,
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.3": 3,
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.3/image-annotations/0": 3,
+      "http://adore.ugent.be/OpenURL/resolve?rft_id=archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1&svc_id=original": 3,
+      "http://adore.ugent.be/OpenURL/resolve?rft_id=archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3&svc_id=original": 3,
+      "https://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/0,0,6215,15076/226,/0/default.jpg": 3,
+      "https://example.org/uuid/e68bf9f3-4544-4e31-a4cf-ef0810019f76": 3,
+      "https://example.org/uuid/edb590d9-43f7-4e52-b2e8-17112e87843b": 3,
+      "https://lib.ugent.be/catalog/rug01%3A001484515.marcxml": 3,
+      "https://lib.ugent.be/viewer/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91": 3,
+    },
+    "sequences": Object {},
+    "services": Object {
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1": Object {
+        "id": "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1",
+        "profile": "http://iiif.io/api/image/2/level1.json",
+        "type": "ImageService2",
+      },
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3": Object {
+        "id": "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3",
+        "profile": "http://iiif.io/api/image/2/level1.json",
+        "type": "ImageService2",
+      },
+    },
+  },
+  "routing": Object {
+    "currentAnnotation": null,
+    "currentAnnotationList": null,
+    "currentCanvas": null,
+    "currentCollection": null,
+    "currentImageResource": null,
+    "currentLayer": null,
+    "currentManifest": null,
+    "currentRange": null,
+    "currentSequence": null,
+  },
+}
+`;
+
 exports[`store should preload normalized entities in collections 1`] = `
 Object {
   "annotationCollections": Object {},
@@ -3192,6 +3609,23 @@ Object {
     "http://iiif.com/manifest-2.json": 2,
   },
   "sequences": Object {},
+}
+`;
+
+exports[`store should return error when JSON response is empty (unknown resource) 1`] = `
+Object {
+  "loading": true,
+  "resourceId": "https://view.nls.uk/manifest/7446/74464117/manifest.json",
+  "ttl": 600,
+}
+`;
+
+exports[`store should return error when JSON response is empty 1`] = `
+Object {
+  "loading": true,
+  "requested": 2017-11-25T00:00:00.000Z,
+  "resourceId": "https://view.nls.uk/manifest/7446/74464117/manifest.json",
+  "ttl": 600,
 }
 `;
 

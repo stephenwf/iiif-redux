@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/content-resource/technical Fixture: Full content resource getBehavior: getBehavior 1`] = `
+Array [
+  "hidden",
+]
+`;
+
+exports[`api/3.x/content-resource/technical Fixture: Full content resource getDuration: getDuration 1`] = `12.34`;
+
+exports[`api/3.x/content-resource/technical Fixture: Full content resource getFormat: getFormat 1`] = `"text/html"`;
+
+exports[`api/3.x/content-resource/technical Fixture: Full content resource getHeight: getHeight 1`] = `1000`;
+
+exports[`api/3.x/content-resource/technical Fixture: Full content resource getId: getId 1`] = `"https://example.org/iiif/content-resource/1"`;
+
+exports[`api/3.x/content-resource/technical Fixture: Full content resource getProfile: getProfile 1`] = `"https://example.org/docs/service"`;
+
+exports[`api/3.x/content-resource/technical Fixture: Full content resource getType: getType 1`] = `"Text"`;
+
+exports[`api/3.x/content-resource/technical Fixture: Full content resource getWidth: getWidth 1`] = `1000`;
+
+exports[`api/3.x/content-resource/technical Fixture: IIIF spec example getBehavior: getBehavior 1`] = `null`;
+
+exports[`api/3.x/content-resource/technical Fixture: IIIF spec example getDuration: getDuration 1`] = `0`;
+
+exports[`api/3.x/content-resource/technical Fixture: IIIF spec example getFormat: getFormat 1`] = `"image/jpeg"`;
+
+exports[`api/3.x/content-resource/technical Fixture: IIIF spec example getHeight: getHeight 1`] = `2000`;
+
+exports[`api/3.x/content-resource/technical Fixture: IIIF spec example getId: getId 1`] = `"https://example.org/iiif/book1/res/page1.jpg"`;
+
+exports[`api/3.x/content-resource/technical Fixture: IIIF spec example getProfile: getProfile 1`] = `null`;
+
+exports[`api/3.x/content-resource/technical Fixture: IIIF spec example getType: getType 1`] = `"Image"`;
+
+exports[`api/3.x/content-resource/technical Fixture: IIIF spec example getWidth: getWidth 1`] = `1500`;
+
+exports[`api/3.x/content-resource/technical Fixture: Minimum content resource getBehavior: getBehavior 1`] = `null`;
+
+exports[`api/3.x/content-resource/technical Fixture: Minimum content resource getDuration: getDuration 1`] = `0`;
+
+exports[`api/3.x/content-resource/technical Fixture: Minimum content resource getFormat: getFormat 1`] = `null`;
+
+exports[`api/3.x/content-resource/technical Fixture: Minimum content resource getHeight: getHeight 1`] = `0`;
+
+exports[`api/3.x/content-resource/technical Fixture: Minimum content resource getId: getId 1`] = `"https://example.org/manifest1/thumbnail.jpg"`;
+
+exports[`api/3.x/content-resource/technical Fixture: Minimum content resource getProfile: getProfile 1`] = `null`;
+
+exports[`api/3.x/content-resource/technical Fixture: Minimum content resource getType: getType 1`] = `"Image"`;
+
+exports[`api/3.x/content-resource/technical Fixture: Minimum content resource getWidth: getWidth 1`] = `0`;
+
+exports[`api/3.x/content-resource/technical Fixture: Thumbnail getBehavior: getBehavior 1`] = `null`;
+
+exports[`api/3.x/content-resource/technical Fixture: Thumbnail getDuration: getDuration 1`] = `0`;
+
+exports[`api/3.x/content-resource/technical Fixture: Thumbnail getFormat: getFormat 1`] = `null`;
+
+exports[`api/3.x/content-resource/technical Fixture: Thumbnail getHeight: getHeight 1`] = `0`;
+
+exports[`api/3.x/content-resource/technical Fixture: Thumbnail getId: getId 1`] = `"https://example.org/images/book1-page1/full/80,100/0/default.jpg"`;
+
+exports[`api/3.x/content-resource/technical Fixture: Thumbnail getProfile: getProfile 1`] = `null`;
+
+exports[`api/3.x/content-resource/technical Fixture: Thumbnail getType: getType 1`] = `"Image"`;
+
+exports[`api/3.x/content-resource/technical Fixture: Thumbnail getWidth: getWidth 1`] = `0`;
