@@ -1,0 +1,28 @@
+{
+  "name": "iiif-redux-cookbook",
+  "version": "1.0.0",
+  "description": "Describe iiif-redux-cookbook here",
+  "private": true,
+  "scripts": {
+    "build": "nwb build-react-app",
+    "clean": "nwb clean-app",
+    "start": "nwb serve-react-app",
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server"
+  },
+  "dependencies": {
+    "@reach/router": "^1.2.1",
+    "iiif-redux": "1.0.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
+  },
+  "devDependencies": {
+    "nwb": "0.21.x"
+  },
+  "author": "",
+  "license": "MIT",
+  "repository": ""
+}
