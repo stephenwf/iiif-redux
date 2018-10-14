@@ -1,0 +1,25 @@
+import __lowercaseName__ from '../../../../src/api/3.x/__lowercaseName__';
+import { normalize } from '../../../../src/schema/presentation3';
+import fixtures from './fixtures';
+import { DEFAULT_STATE } from '../../../../src/spaces/iiif-resource';
+
+describe('api/3.x/__lowercaseName__/technical', () => {
+  describe.each(fixtures)('Fixture: %s', (name, fixture) => {
+    const {
+      result: { id },
+      entities,
+    } = normalize(fixture);
+    const state = {
+      resources: { ...DEFAULT_STATE.resources, ...entities },
+    };
+    const select__uppercaseName__ = s => s.resources.__lowercaseName__s[id];
+
+    const { __FUNCTIONLIST__ } = __lowercaseName__(select__uppercaseName__);
+
+    test('__FUNCTIONNAME__', () => {
+      expect(__FUNCTIONNAME__(state)).toMatchSnapshot(
+        '__FUNCTIONNAME__'
+      );
+    });
+  });
+});

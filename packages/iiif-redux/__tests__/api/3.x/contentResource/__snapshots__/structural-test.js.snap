@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/content-resource/structural Fixture: Full content resource getAnnotationIds: getAnnotationIds 1`] = `
+Array [
+  "https://example.org/iiif/book1/page/content-resource/1",
+]
+`;
+
+exports[`api/3.x/content-resource/structural Fixture: Full content resource getAnnotations: getAnnotations 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/book1/page/content-resource/1",
+    "items": Array [
+      "https://example.org/iiif/book1/content-resource/a1",
+    ],
+    "type": "AnnotationPage",
+  },
+]
+`;
+
+exports[`api/3.x/content-resource/structural Fixture: IIIF spec example getAnnotationIds: getAnnotationIds 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/structural Fixture: IIIF spec example getAnnotations: getAnnotations 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/structural Fixture: Minimum content resource getAnnotationIds: getAnnotationIds 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/structural Fixture: Minimum content resource getAnnotations: getAnnotations 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/structural Fixture: Thumbnail getAnnotationIds: getAnnotationIds 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/structural Fixture: Thumbnail getAnnotations: getAnnotations 1`] = `Array []`;

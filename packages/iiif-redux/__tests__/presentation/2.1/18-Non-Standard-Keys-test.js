@@ -1,9 +1,9 @@
 import { createStructuredSelector } from 'reselect';
 import testJson from '../../fixtures/presentation/2.1/18/manifest';
-import * as currentManifest from '../../../src/api/current-manifest';
-import * as currentSequence from '../../../src/api/current-sequence';
-import * as currentCanvas from '../../../src/api/current-canvas';
 import { createStoreAndImportManifest } from '../../../test-utils';
+import { manifestByIdSelector } from '../../../src/api/manifest';
+import { sequences } from '../../../src/api/sequence';
+import { canvases } from '../../../src/api/canvas';
 
 describe('iiif/presentation/2.1/18 Manifest: Non Standard Keys', () => {
   global.fetch = require('jest-fetch-mock');
@@ -13,22 +13,30 @@ describe('iiif/presentation/2.1/18 Manifest: Non Standard Keys', () => {
     const state = store.getState();
 
     expect(
-      createStructuredSelector({
-        label: currentManifest.getLabel,
-        within: currentManifest.getWithin,
-        sequence: createStructuredSelector({
-          label: currentSequence.getLabel,
-          type: currentSequence.getType,
-          canvas: createStructuredSelector({
-            id: currentCanvas.getId,
-            type: currentCanvas.getType,
-            label: currentCanvas.getLabel,
-            height: currentCanvas.getHeight,
-            width: currentCanvas.getWidth,
-            images: currentCanvas.getImages,
-          }),
+      manifestByIdSelector(
+        currentManifest => ({
+          label: currentManifest.getLabel,
+          within: currentManifest.getWithin,
+          sequence: sequences(
+            currentManifest.getSequences,
+            currentSequence => ({
+              label: currentSequence.getLabel,
+              type: currentSequence.getType,
+              canvas: canvases(currentSequence.getCanvases, currentCanvas => ({
+                id: currentCanvas.getId,
+                type: currentCanvas.getType,
+                label: currentCanvas.getLabel,
+                height: currentCanvas.getHeight,
+                width: currentCanvas.getWidth,
+                images: currentCanvas.getImages,
+              })),
+            })
+          ),
         }),
-      })(state)
+        {
+          getId: () => testJson['@id'],
+        }
+      )(state)
     ).toMatchSnapshot();
   });
 });

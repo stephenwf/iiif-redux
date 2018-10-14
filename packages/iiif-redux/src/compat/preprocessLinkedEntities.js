@@ -22,19 +22,23 @@ const preprocessLinkedEntities = value => {
       case 'related':
       case 'rendering':
       case 'within':
-        this.update(normalizeLinkedResources(entryValue));
+      case 'logo':
+        this.update(
+          preprocessLinkedEntities(normalizeLinkedResources(entryValue))
+        );
         break;
 
       case 'startCanvas':
       case 'first':
       case 'last':
       case 'next':
-      case 'prev':
+      case 'prev': {
         const linkedResources = normalizeLinkedResources(entryValue);
         this.update(
           linkedResources && linkedResources.length ? linkedResources[0] : null
         );
         break;
+      }
 
       default:
         break;

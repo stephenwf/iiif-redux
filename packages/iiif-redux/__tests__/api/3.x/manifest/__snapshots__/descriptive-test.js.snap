@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/manifest/descriptive Manifest number 0 getLabel 1`] = `
+Object {
+  "en": Array [
+    "Book 1",
+  ],
+}
+`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 0 getMetadata 1`] = `
+Array [
+  Object {
+    "label": Object {
+      "en": Array [
+        "Author",
+      ],
+    },
+    "value": Object {
+      "@none": Array [
+        "Anne Author",
+      ],
+    },
+  },
+  Object {
+    "label": Object {
+      "en": Array [
+        "Published",
+      ],
+    },
+    "value": Object {
+      "en": Array [
+        "Paris, circa 1400",
+      ],
+      "fr": Array [
+        "Paris, environ 1400",
+      ],
+    },
+  },
+  Object {
+    "label": Object {
+      "en": Array [
+        "Notes",
+      ],
+    },
+    "value": Object {
+      "en": Array [
+        "Text of note 1",
+        "Text of note 2",
+      ],
+    },
+  },
+  Object {
+    "label": Object {
+      "en": Array [
+        "Source",
+      ],
+    },
+    "value": Object {
+      "@none": Array [
+        "<span>From: <a href=\\"https://example.org/db/1.html\\">Some Collection</a></span>",
+      ],
+    },
+  },
+]
+`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 0 getNavDate 1`] = `"1856-01-01T00:00:00Z"`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 0 getPosterCanvas 1`] = `
+Object {
+  "height": 1400,
+  "id": "https://example.org/iiif/1/canvas/poster",
+  "type": "Canvas",
+  "width": 1200,
+}
+`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 0 getPosterCanvasId 1`] = `"https://example.org/iiif/1/canvas/poster"`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 0 getRequiredStatement 1`] = `
+Object {
+  "label": Object {
+    "en": Array [
+      "Attribution",
+    ],
+  },
+  "value": Object {
+    "en": Array [
+      "Provided by Example Organization",
+    ],
+  },
+}
+`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 0 getRights 1`] = `"https://creativecommons.org/licenses/by/4.0/"`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 0 getSummary 1`] = `
+Object {
+  "en": Array [
+    "Book 1, written be Anne Author, published in Paris around 1400.",
+  ],
+}
+`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 0 getThumbnail 1`] = `
+Object {
+  "id": "https://example.org/images/book1-page1/full/80,100/0/default.jpg",
+  "service": Array [
+    "https://example.org/images/book1-page1",
+  ],
+  "type": "Image",
+}
+`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 1 getLabel 1`] = `"Minimal Manifest"`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 1 getMetadata 1`] = `Array []`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 1 getNavDate 1`] = `null`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 1 getPosterCanvas 1`] = `null`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 1 getPosterCanvasId 1`] = `null`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 1 getRequiredStatement 1`] = `null`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 1 getRights 1`] = `null`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 1 getSummary 1`] = `null`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 1 getThumbnail 1`] = `null`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 2 getLabel 1`] = `"Minimal Manifest"`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 2 getMetadata 1`] = `Array []`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 2 getNavDate 1`] = `null`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 2 getPosterCanvas 1`] = `null`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 2 getPosterCanvasId 1`] = `null`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 2 getRequiredStatement 1`] = `null`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 2 getRights 1`] = `null`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 2 getSummary 1`] = `null`;
+
+exports[`api/3.x/manifest/descriptive Manifest number 2 getThumbnail 1`] = `null`;

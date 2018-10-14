@@ -165,6 +165,7 @@ collection.define({
   related: [externalResource],
   rendering: [externalResource],
   otherContent: [annotationList],
+  logo: [imageResource],
   within: within,
 
   // Extra
@@ -184,6 +185,7 @@ manifest.define({
   related: [externalResource],
   rendering: [externalResource],
   otherContent: [annotationList],
+  logo: [imageResource],
   within: within,
 
   // Extra
@@ -202,6 +204,7 @@ sequence.define({
   related: [externalResource],
   rendering: [externalResource],
   otherContent: [annotationList],
+  logo: [imageResource],
   within: within,
   startCanvas: canvas,
 
@@ -221,6 +224,7 @@ canvas.define({
   related: [externalResource],
   rendering: [externalResource],
   otherContent: [annotationList],
+  logo: [imageResource],
   within: within,
 
   // Extra
@@ -255,6 +259,7 @@ annotation.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
+  logo: [imageResource],
   within: within,
 
   // Extra
@@ -272,6 +277,7 @@ annotationList.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
+  logo: [imageResource],
   within: within,
 
   // Extra
@@ -292,6 +298,7 @@ range.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
+  logo: [imageResource],
   within: within,
   startCanvas: canvas,
   contentLayer: layer,
@@ -309,6 +316,7 @@ layer.define({
   service: [service],
   related: [externalResource],
   rendering: [externalResource],
+  logo: [imageResource],
   within: within,
 });
 
@@ -330,7 +338,7 @@ choice.define({
 const preprocess = compose(
   moveStartCanvasToSequence,
   preprocessLinkedEntities,
-  addMissingIds
+  addMissingIds(2.1)
 );
 
 const normalizeResource = (rawResource, customSchema = resource) =>

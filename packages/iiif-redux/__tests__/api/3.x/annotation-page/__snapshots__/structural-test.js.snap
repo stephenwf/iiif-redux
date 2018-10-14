@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/annotation-page/structural AnnotationPage: Complete Annotation Page getAnnotationIds: getAnnotationIds Complete Annotation Page 1`] = `
+Array [
+  "https://example.org/iiif/book1/annotation/p0002-image",
+]
+`;
+
+exports[`api/3.x/annotation-page/structural AnnotationPage: Complete Annotation Page getAnnotations: getAnnotations Complete Annotation Page 1`] = `
+Array [
+  Object {
+    "body": Array [
+      Object {
+        "id": "https://example.org/iiif/book1/res/page2.jpg",
+        "schema": "contentResource",
+      },
+    ],
+    "id": "https://example.org/iiif/book1/annotation/p0002-image",
+    "motivation": "painting",
+    "target": Array [
+      "https://example.org/iiif/book1/canvas/p2",
+    ],
+    "type": "Annotation",
+  },
+]
+`;
+
+exports[`api/3.x/annotation-page/structural AnnotationPage: Complete Annotation Page getItemIds: getItemIds Complete Annotation Page 1`] = `
+Array [
+  "https://example.org/iiif/book1/annotation/p0002-image",
+]
+`;
+
+exports[`api/3.x/annotation-page/structural AnnotationPage: Complete Annotation Page getItems: getItems Complete Annotation Page 1`] = `
+Array [
+  Object {
+    "body": Array [
+      Object {
+        "id": "https://example.org/iiif/book1/res/page2.jpg",
+        "schema": "contentResource",
+      },
+    ],
+    "id": "https://example.org/iiif/book1/annotation/p0002-image",
+    "motivation": "painting",
+    "target": Array [
+      "https://example.org/iiif/book1/canvas/p2",
+    ],
+    "type": "Annotation",
+  },
+]
+`;
+
+exports[`api/3.x/annotation-page/structural AnnotationPage: Minimal Annotation Page getAnnotationIds: getAnnotationIds Minimal Annotation Page 1`] = `Array []`;
+
+exports[`api/3.x/annotation-page/structural AnnotationPage: Minimal Annotation Page getAnnotations: getAnnotations Minimal Annotation Page 1`] = `Array []`;
+
+exports[`api/3.x/annotation-page/structural AnnotationPage: Minimal Annotation Page getItemIds: getItemIds Minimal Annotation Page 1`] = `Array []`;
+
+exports[`api/3.x/annotation-page/structural AnnotationPage: Minimal Annotation Page getItems: getItems Minimal Annotation Page 1`] = `Array []`;

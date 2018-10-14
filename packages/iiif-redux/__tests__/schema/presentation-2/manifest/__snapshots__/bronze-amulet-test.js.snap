@@ -271,6 +271,13 @@ Object {
       },
     },
     "imageResources": Object {
+      "http://jubilees.stmarytx.edu/iiif/Logo-JubPalProj.jp2/full/full/0/default.jpg": Object {
+        "@id": "http://jubilees.stmarytx.edu/iiif/Logo-JubPalProj.jp2/full/full/0/default.jpg",
+        "@type": "dctypes:Image",
+        "service": Array [
+          "http://jubilees.stmarytx.edu/iiif/Logo-JubPalProj.jp2",
+        ],
+      },
       "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2/square/100,100/0/default.jpg": Object {
         "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2/square/100,100/0/default.jpg",
         "@type": "dctypes:Image",
@@ -312,17 +319,9 @@ Object {
           },
         ],
         "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
-        "logo": Object {
-          "@id": "http://jubilees.stmarytx.edu/iiif/Logo-JubPalProj.jp2/full/full/0/default.jpg",
-          "@type": "dctypes:Image",
-          "service": Array [
-            Object {
-              "@context": "http://iiif.io/api/image/2/context.json",
-              "@id": "http://jubilees.stmarytx.edu/iiif/Logo-JubPalProj.jp2",
-              "profile": "http://iiif.io/api/image/2/profiles/level2.json",
-            },
-          ],
-        },
+        "logo": Array [
+          "http://jubilees.stmarytx.edu/iiif/Logo-JubPalProj.jp2/full/full/0/default.jpg",
+        ],
         "metadata": Array [
           Object {
             "label": Array [
@@ -400,6 +399,11 @@ Object {
       },
     },
     "services": Object {
+      "http://jubilees.stmarytx.edu/iiif/Logo-JubPalProj.jp2": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "http://jubilees.stmarytx.edu/iiif/Logo-JubPalProj.jp2",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
       "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2": Object {
         "@context": "http://iiif.io/api/image/2/context.json",
         "@id": "http://jubilees.stmarytx.edu/iiif/TAW-113-Amulet-r-Ac-00.jp2",

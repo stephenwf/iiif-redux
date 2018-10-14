@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/collection/descriptive Collection number 0 getLabel 1`] = `
+Object {
+  "en": Array [
+    "Collection label",
+  ],
+}
+`;
+
+exports[`api/3.x/collection/descriptive Collection number 0 getMetadata 1`] = `
+Array [
+  Object {
+    "label": Object {
+      "en": Array [
+        "Creator",
+      ],
+    },
+    "value": Object {
+      "en": Array [
+        "Anne Artist (1776-1824)",
+      ],
+    },
+  },
+]
+`;
+
+exports[`api/3.x/collection/descriptive Collection number 0 getNavDate 1`] = `"2010-01-01T00:00:00Z"`;
+
+exports[`api/3.x/collection/descriptive Collection number 0 getPosterCanvas 1`] = `
+Object {
+  "height": 1400,
+  "id": "https://example.org/iiif/1/canvas/poster",
+  "type": "Canvas",
+  "width": 1200,
+}
+`;
+
+exports[`api/3.x/collection/descriptive Collection number 0 getPosterCanvasId 1`] = `"https://example.org/iiif/1/canvas/poster"`;
+
+exports[`api/3.x/collection/descriptive Collection number 0 getRequiredStatement 1`] = `
+Object {
+  "label": Object {
+    "en": Array [
+      "Attribution",
+    ],
+  },
+  "value": Object {
+    "en": Array [
+      "Provided courtesy of Example Institution",
+    ],
+  },
+}
+`;
+
+exports[`api/3.x/collection/descriptive Collection number 0 getRights 1`] = `"https://creativecommons.org/licenses/by/4.0/"`;
+
+exports[`api/3.x/collection/descriptive Collection number 0 getSummary 1`] = `
+Object {
+  "en": Array [
+    "This is a summary of the object.",
+  ],
+}
+`;
+
+exports[`api/3.x/collection/descriptive Collection number 0 getThumbnail 1`] = `
+Object {
+  "id": "https://example.org/img/thumb.jpg",
+  "type": "Image",
+}
+`;
+
+exports[`api/3.x/collection/descriptive Collection number 1 getLabel 1`] = `"Minimal Collection"`;
+
+exports[`api/3.x/collection/descriptive Collection number 1 getMetadata 1`] = `Array []`;
+
+exports[`api/3.x/collection/descriptive Collection number 1 getNavDate 1`] = `null`;
+
+exports[`api/3.x/collection/descriptive Collection number 1 getPosterCanvas 1`] = `null`;
+
+exports[`api/3.x/collection/descriptive Collection number 1 getPosterCanvasId 1`] = `null`;
+
+exports[`api/3.x/collection/descriptive Collection number 1 getRequiredStatement 1`] = `null`;
+
+exports[`api/3.x/collection/descriptive Collection number 1 getRights 1`] = `null`;
+
+exports[`api/3.x/collection/descriptive Collection number 1 getSummary 1`] = `null`;
+
+exports[`api/3.x/collection/descriptive Collection number 1 getThumbnail 1`] = `null`;

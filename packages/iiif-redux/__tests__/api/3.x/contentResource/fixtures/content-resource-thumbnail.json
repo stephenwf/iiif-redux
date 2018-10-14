@@ -1,0 +1,11 @@
+{
+  "id": "https://example.org/images/book1-page1/full/80,100/0/default.jpg",
+  "type": "Image",
+  "service": [
+    {
+      "id": "https://example.org/images/book1-page1",
+      "type": "ImageService3",
+      "profile": "level1"
+    }
+  ]
+}

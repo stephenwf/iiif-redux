@@ -1,15 +1,16 @@
 import { createSelector, createStructuredSelector } from 'reselect';
 import memoize from 'lodash.memoize';
-import annotation from './annotation';
-import canvas from './canvas';
-import collection from './collection';
-import externalResource from './external-resource';
-import imageResource from './image-resource';
-import manifest from './manifest';
-import range from './range';
+import annotation from './2.x/annotation';
+import canvas from './2.x/canvas';
+import collection from './2.x/collection';
+import externalResource from './2.x/external-resource';
+import imageResource from './2.x/image-resource';
+import manifest from './2.x/manifest';
+import range from './2.x/range';
 import resourceApi from './resource';
-import sequence from './sequence';
+import sequence from './2.x/sequence';
 
+// @todo make this work with presentation 2 + 3 and new structure.
 const resourceApiMap = {
   annotation: annotation,
   canvas: canvas,

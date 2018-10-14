@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/canvas/technical Canvas: Complete Canvas getBehavior: getBehavior Complete Canvas 1`] = `
+Array [
+  "hidden",
+]
+`;
+
+exports[`api/3.x/canvas/technical Canvas: Complete Canvas getDuration: getDuration Complete Canvas 1`] = `12.34`;
+
+exports[`api/3.x/canvas/technical Canvas: Complete Canvas getHeight: getHeight Complete Canvas 1`] = `1000`;
+
+exports[`api/3.x/canvas/technical Canvas: Complete Canvas getId: getId Complete Canvas 1`] = `"https://example.org/iiif/canvas/1"`;
+
+exports[`api/3.x/canvas/technical Canvas: Complete Canvas getType: getType Complete Canvas 1`] = `"Canvas"`;
+
+exports[`api/3.x/canvas/technical Canvas: Complete Canvas getWidth: getWidth Complete Canvas 1`] = `1000`;
+
+exports[`api/3.x/canvas/technical Canvas: Minimal Canvas getBehavior: getBehavior Minimal Canvas 1`] = `null`;
+
+exports[`api/3.x/canvas/technical Canvas: Minimal Canvas getDuration: getDuration Minimal Canvas 1`] = `0`;
+
+exports[`api/3.x/canvas/technical Canvas: Minimal Canvas getHeight: getHeight Minimal Canvas 1`] = `0`;
+
+exports[`api/3.x/canvas/technical Canvas: Minimal Canvas getId: getId Minimal Canvas 1`] = `"https://example.org/iiif/canvas/1"`;
+
+exports[`api/3.x/canvas/technical Canvas: Minimal Canvas getType: getType Minimal Canvas 1`] = `"Canvas"`;
+
+exports[`api/3.x/canvas/technical Canvas: Minimal Canvas getWidth: getWidth Minimal Canvas 1`] = `0`;

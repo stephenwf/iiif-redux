@@ -1,0 +1,284 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Wellcome Genre: Boxes collection should normalize 1`] = `
+Object {
+  "collections": Object {
+    "https://wellcomelibrary.org/service/collections/genres/Boxes/": Object {
+      "@context": "http://iiif.io/api/presentation/2/context.json",
+      "@id": "https://wellcomelibrary.org/service/collections/genres/Boxes/",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": " Genre: Boxes",
+        },
+      ],
+      "manifests": Array [
+        "https://wellcomelibrary.org/iiif/b28560577/manifest",
+        "https://wellcomelibrary.org/iiif/b28560644/manifest",
+        "https://wellcomelibrary.org/iiif/b28668844/manifest",
+        "https://wellcomelibrary.org/iiif/b28671624/manifest",
+        "https://wellcomelibrary.org/iiif/b28671600/manifest",
+      ],
+    },
+  },
+  "externalResources": Object {
+    "https://wellcomelibrary.org/data/b28560577.json": Object {
+      "@id": "https://wellcomelibrary.org/data/b28560577.json",
+      "format": "application/json",
+      "profile": "http://wellcomelibrary.org/profiles/res",
+    },
+    "https://wellcomelibrary.org/data/b28560644.json": Object {
+      "@id": "https://wellcomelibrary.org/data/b28560644.json",
+      "format": "application/json",
+      "profile": "http://wellcomelibrary.org/profiles/res",
+    },
+    "https://wellcomelibrary.org/data/b28668844.json": Object {
+      "@id": "https://wellcomelibrary.org/data/b28668844.json",
+      "format": "application/json",
+      "profile": "http://wellcomelibrary.org/profiles/res",
+    },
+    "https://wellcomelibrary.org/data/b28671600.json": Object {
+      "@id": "https://wellcomelibrary.org/data/b28671600.json",
+      "format": "application/json",
+      "profile": "http://wellcomelibrary.org/profiles/res",
+    },
+    "https://wellcomelibrary.org/data/b28671624.json": Object {
+      "@id": "https://wellcomelibrary.org/data/b28671624.json",
+      "format": "application/json",
+      "profile": "http://wellcomelibrary.org/profiles/res",
+    },
+    "https://wellcomelibrary.org/item/b28560577": Object {
+      "@id": "https://wellcomelibrary.org/item/b28560577",
+      "format": "text/html",
+    },
+    "https://wellcomelibrary.org/item/b28560644": Object {
+      "@id": "https://wellcomelibrary.org/item/b28560644",
+      "format": "text/html",
+    },
+    "https://wellcomelibrary.org/item/b28668844": Object {
+      "@id": "https://wellcomelibrary.org/item/b28668844",
+      "format": "text/html",
+    },
+    "https://wellcomelibrary.org/item/b28671600": Object {
+      "@id": "https://wellcomelibrary.org/item/b28671600",
+      "format": "text/html",
+    },
+    "https://wellcomelibrary.org/item/b28671624": Object {
+      "@id": "https://wellcomelibrary.org/item/b28671624",
+      "format": "text/html",
+    },
+    "https://wellcomelibrary.org/resource/dublincore/b28560577": Object {
+      "@id": "https://wellcomelibrary.org/resource/dublincore/b28560577",
+      "format": "application/ld+json",
+      "profile": "http://iiif.io/community/profiles/discovery/dc",
+    },
+    "https://wellcomelibrary.org/resource/dublincore/b28560644": Object {
+      "@id": "https://wellcomelibrary.org/resource/dublincore/b28560644",
+      "format": "application/ld+json",
+      "profile": "http://iiif.io/community/profiles/discovery/dc",
+    },
+    "https://wellcomelibrary.org/resource/dublincore/b28668844": Object {
+      "@id": "https://wellcomelibrary.org/resource/dublincore/b28668844",
+      "format": "application/ld+json",
+      "profile": "http://iiif.io/community/profiles/discovery/dc",
+    },
+    "https://wellcomelibrary.org/resource/dublincore/b28671600": Object {
+      "@id": "https://wellcomelibrary.org/resource/dublincore/b28671600",
+      "format": "application/ld+json",
+      "profile": "http://iiif.io/community/profiles/discovery/dc",
+    },
+    "https://wellcomelibrary.org/resource/dublincore/b28671624": Object {
+      "@id": "https://wellcomelibrary.org/resource/dublincore/b28671624",
+      "format": "application/ld+json",
+      "profile": "http://iiif.io/community/profiles/discovery/dc",
+    },
+    "https://wellcomelibrary.org/resource/schemaorg/b28560577": Object {
+      "@id": "https://wellcomelibrary.org/resource/schemaorg/b28560577",
+      "format": "application/ld+json",
+      "profile": "http://iiif.io/community/profiles/discovery/schema",
+    },
+    "https://wellcomelibrary.org/resource/schemaorg/b28560644": Object {
+      "@id": "https://wellcomelibrary.org/resource/schemaorg/b28560644",
+      "format": "application/ld+json",
+      "profile": "http://iiif.io/community/profiles/discovery/schema",
+    },
+    "https://wellcomelibrary.org/resource/schemaorg/b28668844": Object {
+      "@id": "https://wellcomelibrary.org/resource/schemaorg/b28668844",
+      "format": "application/ld+json",
+      "profile": "http://iiif.io/community/profiles/discovery/schema",
+    },
+    "https://wellcomelibrary.org/resource/schemaorg/b28671600": Object {
+      "@id": "https://wellcomelibrary.org/resource/schemaorg/b28671600",
+      "format": "application/ld+json",
+      "profile": "http://iiif.io/community/profiles/discovery/schema",
+    },
+    "https://wellcomelibrary.org/resource/schemaorg/b28671624": Object {
+      "@id": "https://wellcomelibrary.org/resource/schemaorg/b28671624",
+      "format": "application/ld+json",
+      "profile": "http://iiif.io/community/profiles/discovery/schema",
+    },
+  },
+  "imageResources": Object {
+    "https://dlcs.io/iiif-img/wellcome/1/19543f4a-a32c-4f4a-a361-47e4247924ce/full/!1024,1024/0/default.jpg": Object {
+      "@id": "https://dlcs.io/iiif-img/wellcome/1/19543f4a-a32c-4f4a-a361-47e4247924ce/full/!1024,1024/0/default.jpg",
+      "@type": "dctypes:Image",
+      "service": Array [
+        "https://dlcs.io/iiif-img/wellcome/1/19543f4a-a32c-4f4a-a361-47e4247924ce",
+      ],
+    },
+    "https://dlcs.io/iiif-img/wellcome/1/37b4ea18-0b5f-48ff-b727-cfc759f52f5c/full/!1024,1024/0/default.jpg": Object {
+      "@id": "https://dlcs.io/iiif-img/wellcome/1/37b4ea18-0b5f-48ff-b727-cfc759f52f5c/full/!1024,1024/0/default.jpg",
+      "@type": "dctypes:Image",
+      "service": Array [
+        "https://dlcs.io/iiif-img/wellcome/1/37b4ea18-0b5f-48ff-b727-cfc759f52f5c",
+      ],
+    },
+    "https://dlcs.io/iiif-img/wellcome/1/3b2667e0-1f3f-4a51-b85d-b04bc84a0306/full/!1024,1024/0/default.jpg": Object {
+      "@id": "https://dlcs.io/iiif-img/wellcome/1/3b2667e0-1f3f-4a51-b85d-b04bc84a0306/full/!1024,1024/0/default.jpg",
+      "@type": "dctypes:Image",
+      "service": Array [
+        "https://dlcs.io/iiif-img/wellcome/1/3b2667e0-1f3f-4a51-b85d-b04bc84a0306",
+      ],
+    },
+    "https://dlcs.io/iiif-img/wellcome/1/708ba0ea-09f7-44d9-a8f3-55f26201bbf9/full/!1024,1024/0/default.jpg": Object {
+      "@id": "https://dlcs.io/iiif-img/wellcome/1/708ba0ea-09f7-44d9-a8f3-55f26201bbf9/full/!1024,1024/0/default.jpg",
+      "@type": "dctypes:Image",
+      "service": Array [
+        "https://dlcs.io/iiif-img/wellcome/1/708ba0ea-09f7-44d9-a8f3-55f26201bbf9",
+      ],
+    },
+    "https://dlcs.io/iiif-img/wellcome/1/bbce4247-f975-4324-97aa-f6d41299404e/full/!1024,1024/0/default.jpg": Object {
+      "@id": "https://dlcs.io/iiif-img/wellcome/1/bbce4247-f975-4324-97aa-f6d41299404e/full/!1024,1024/0/default.jpg",
+      "@type": "dctypes:Image",
+      "service": Array [
+        "https://dlcs.io/iiif-img/wellcome/1/bbce4247-f975-4324-97aa-f6d41299404e",
+      ],
+    },
+  },
+  "manifests": Object {
+    "https://wellcomelibrary.org/iiif/b28560577/manifest": Object {
+      "@id": "https://wellcomelibrary.org/iiif/b28560577/manifest",
+      "@type": "sc:Manifest",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Bio-Light :the 3-day detox diet : lose weight, look good, feel great",
+        },
+      ],
+      "related": Array [
+        "https://wellcomelibrary.org/item/b28560577",
+      ],
+      "seeAlso": Array [
+        "https://wellcomelibrary.org/data/b28560577.json",
+        "https://wellcomelibrary.org/resource/schemaorg/b28560577",
+        "https://wellcomelibrary.org/resource/dublincore/b28560577",
+      ],
+      "thumbnail": "https://dlcs.io/iiif-img/wellcome/1/37b4ea18-0b5f-48ff-b727-cfc759f52f5c/full/!1024,1024/0/default.jpg",
+    },
+    "https://wellcomelibrary.org/iiif/b28560644/manifest": Object {
+      "@id": "https://wellcomelibrary.org/iiif/b28560644/manifest",
+      "@type": "sc:Manifest",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Disprin Extra fast and effective : Disprin Asprin fast and effective.",
+        },
+      ],
+      "related": Array [
+        "https://wellcomelibrary.org/item/b28560644",
+      ],
+      "seeAlso": Array [
+        "https://wellcomelibrary.org/data/b28560644.json",
+        "https://wellcomelibrary.org/resource/schemaorg/b28560644",
+        "https://wellcomelibrary.org/resource/dublincore/b28560644",
+      ],
+      "thumbnail": "https://dlcs.io/iiif-img/wellcome/1/bbce4247-f975-4324-97aa-f6d41299404e/full/!1024,1024/0/default.jpg",
+    },
+    "https://wellcomelibrary.org/iiif/b28668844/manifest": Object {
+      "@id": "https://wellcomelibrary.org/iiif/b28668844/manifest",
+      "@type": "sc:Manifest",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Coins from friends of the Foodchain :The Food Chain, feeding the fight against HIV and AIDS",
+        },
+      ],
+      "related": Array [
+        "https://wellcomelibrary.org/item/b28668844",
+      ],
+      "seeAlso": Array [
+        "https://wellcomelibrary.org/data/b28668844.json",
+        "https://wellcomelibrary.org/resource/schemaorg/b28668844",
+        "https://wellcomelibrary.org/resource/dublincore/b28668844",
+      ],
+      "thumbnail": "https://dlcs.io/iiif-img/wellcome/1/708ba0ea-09f7-44d9-a8f3-55f26201bbf9/full/!1024,1024/0/default.jpg",
+    },
+    "https://wellcomelibrary.org/iiif/b28671600/manifest": Object {
+      "@id": "https://wellcomelibrary.org/iiif/b28671600/manifest",
+      "@type": "sc:Manifest",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Questions about AIDS :call us at National AIDS Helplines : take a free card : phone free - in confidence",
+        },
+      ],
+      "related": Array [
+        "https://wellcomelibrary.org/item/b28671600",
+      ],
+      "seeAlso": Array [
+        "https://wellcomelibrary.org/data/b28671600.json",
+        "https://wellcomelibrary.org/resource/schemaorg/b28671600",
+        "https://wellcomelibrary.org/resource/dublincore/b28671600",
+      ],
+      "thumbnail": "https://dlcs.io/iiif-img/wellcome/1/3b2667e0-1f3f-4a51-b85d-b04bc84a0306/full/!1024,1024/0/default.jpg",
+    },
+    "https://wellcomelibrary.org/iiif/b28671624/manifest": Object {
+      "@id": "https://wellcomelibrary.org/iiif/b28671624/manifest",
+      "@type": "sc:Manifest",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Questions about HIV and AIDS :call us at National AIDS Helplines",
+        },
+      ],
+      "related": Array [
+        "https://wellcomelibrary.org/item/b28671624",
+      ],
+      "seeAlso": Array [
+        "https://wellcomelibrary.org/data/b28671624.json",
+        "https://wellcomelibrary.org/resource/schemaorg/b28671624",
+        "https://wellcomelibrary.org/resource/dublincore/b28671624",
+      ],
+      "thumbnail": "https://dlcs.io/iiif-img/wellcome/1/19543f4a-a32c-4f4a-a361-47e4247924ce/full/!1024,1024/0/default.jpg",
+    },
+  },
+  "services": Object {
+    "https://dlcs.io/iiif-img/wellcome/1/19543f4a-a32c-4f4a-a361-47e4247924ce": Object {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://dlcs.io/iiif-img/wellcome/1/19543f4a-a32c-4f4a-a361-47e4247924ce",
+      "profile": "http://iiif.io/api/image/2/level1.json",
+    },
+    "https://dlcs.io/iiif-img/wellcome/1/37b4ea18-0b5f-48ff-b727-cfc759f52f5c": Object {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://dlcs.io/iiif-img/wellcome/1/37b4ea18-0b5f-48ff-b727-cfc759f52f5c",
+      "profile": "http://iiif.io/api/image/2/level1.json",
+    },
+    "https://dlcs.io/iiif-img/wellcome/1/3b2667e0-1f3f-4a51-b85d-b04bc84a0306": Object {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://dlcs.io/iiif-img/wellcome/1/3b2667e0-1f3f-4a51-b85d-b04bc84a0306",
+      "profile": "http://iiif.io/api/image/2/level1.json",
+    },
+    "https://dlcs.io/iiif-img/wellcome/1/708ba0ea-09f7-44d9-a8f3-55f26201bbf9": Object {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://dlcs.io/iiif-img/wellcome/1/708ba0ea-09f7-44d9-a8f3-55f26201bbf9",
+      "profile": "http://iiif.io/api/image/2/level1.json",
+    },
+    "https://dlcs.io/iiif-img/wellcome/1/bbce4247-f975-4324-97aa-f6d41299404e": Object {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://dlcs.io/iiif-img/wellcome/1/bbce4247-f975-4324-97aa-f6d41299404e",
+      "profile": "http://iiif.io/api/image/2/level1.json",
+    },
+  },
+}
+`;

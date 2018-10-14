@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getBehavior: getBehavior Complete Annotation Page 1`] = `
+Array [
+  "hidden",
+]
+`;
+
+exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getId: getId Complete Annotation Page 1`] = `"https://example.org/iiif/annotation-page/1"`;
+
+exports[`api/3.x/annotation-page/technical AnnotationPage: Complete Annotation Page getType: getType Complete Annotation Page 1`] = `"AnnotationPage"`;
+
+exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getBehavior: getBehavior Minimal Annotation Page 1`] = `null`;
+
+exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getId: getId Minimal Annotation Page 1`] = `"http://example.org/iiif/annotation-page/2"`;
+
+exports[`api/3.x/annotation-page/technical AnnotationPage: Minimal Annotation Page getType: getType Minimal Annotation Page 1`] = `"AnnotationPage"`;

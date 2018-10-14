@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/content-resource/descriptive Fixture: Full content resource getLabel: getLabel 1`] = `
+Object {
+  "en": Array [
+    "Annotation 1",
+  ],
+}
+`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Full content resource getLanguage: getLanguage 1`] = `
+Array [
+  "en",
+]
+`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Full content resource getMetadata: getMetadata 1`] = `
+Array [
+  Object {
+    "label": Object {
+      "en": Array [
+        "Author",
+      ],
+    },
+    "value": Object {
+      "@none": Array [
+        "Anne Author",
+      ],
+    },
+  },
+  Object {
+    "label": Object {
+      "en": Array [
+        "Published",
+      ],
+    },
+    "value": Object {
+      "en": Array [
+        "Paris, circa 1400",
+      ],
+      "fr": Array [
+        "Paris, environ 1400",
+      ],
+    },
+  },
+  Object {
+    "label": Object {
+      "en": Array [
+        "Notes",
+      ],
+    },
+    "value": Object {
+      "en": Array [
+        "Text of note 1",
+        "Text of note 2",
+      ],
+    },
+  },
+  Object {
+    "label": Object {
+      "en": Array [
+        "Source",
+      ],
+    },
+    "value": Object {
+      "@none": Array [
+        "<span>From: <a href=\\"https://example.org/db/1.html\\">Some Collection</a></span>",
+      ],
+    },
+  },
+]
+`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Full content resource getRequiredStatement: getRequiredStatement 1`] = `
+Object {
+  "label": Object {
+    "en": Array [
+      "Attribution",
+    ],
+  },
+  "value": Object {
+    "en": Array [
+      "Provided by Example Organization",
+    ],
+  },
+}
+`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Full content resource getRights: getRights 1`] = `"https://creativecommons.org/licenses/by/4.0/"`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Full content resource getSummary: getSummary 1`] = `
+Object {
+  "en": Array [
+    "Book 1, written be Anne Author, published in Paris around 1400.",
+  ],
+}
+`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Full content resource getThumbnail: getThumbnail 1`] = `
+Object {
+  "id": "https://example.org/images/book1-page1/full/80,100/0/default.jpg",
+  "service": Array [
+    Object {
+      "id": "https://example.org/images/book1-page1",
+      "profile": "level1",
+      "type": "ImageService3",
+    },
+  ],
+  "type": "Image",
+}
+`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Full content resource getThumbnailId: getThumbnailId 1`] = `
+Object {
+  "id": "https://example.org/images/book1-page1/full/80,100/0/default.jpg",
+  "service": Array [
+    Object {
+      "id": "https://example.org/images/book1-page1",
+      "profile": "level1",
+      "type": "ImageService3",
+    },
+  ],
+  "type": "Image",
+}
+`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: IIIF spec example getLabel: getLabel 1`] = `
+Object {
+  "en": Array [
+    "Page 1",
+  ],
+  "es": Array [
+    "Página 1",
+  ],
+}
+`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: IIIF spec example getLanguage: getLanguage 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: IIIF spec example getMetadata: getMetadata 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: IIIF spec example getRequiredStatement: getRequiredStatement 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: IIIF spec example getRights: getRights 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: IIIF spec example getSummary: getSummary 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: IIIF spec example getThumbnail: getThumbnail 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: IIIF spec example getThumbnailId: getThumbnailId 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Minimum content resource getLabel: getLabel 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Minimum content resource getLanguage: getLanguage 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Minimum content resource getMetadata: getMetadata 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Minimum content resource getRequiredStatement: getRequiredStatement 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Minimum content resource getRights: getRights 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Minimum content resource getSummary: getSummary 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Minimum content resource getThumbnail: getThumbnail 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Minimum content resource getThumbnailId: getThumbnailId 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Thumbnail getLabel: getLabel 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Thumbnail getLanguage: getLanguage 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Thumbnail getMetadata: getMetadata 1`] = `Array []`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Thumbnail getRequiredStatement: getRequiredStatement 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Thumbnail getRights: getRights 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Thumbnail getSummary: getSummary 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Thumbnail getThumbnail: getThumbnail 1`] = `null`;
+
+exports[`api/3.x/content-resource/descriptive Fixture: Thumbnail getThumbnailId: getThumbnailId 1`] = `null`;

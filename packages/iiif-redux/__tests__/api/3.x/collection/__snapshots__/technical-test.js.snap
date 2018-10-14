@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/collection/technical Collection number 0 getBehavior: getBehavior 0 1`] = `
+Array [
+  "individuals",
+]
+`;
+
+exports[`api/3.x/collection/technical Collection number 0 getId: getId 0 1`] = `"https://example.org/iiif/collection/1"`;
+
+exports[`api/3.x/collection/technical Collection number 0 getType: getType 0 1`] = `"Collection"`;
+
+exports[`api/3.x/collection/technical Collection number 0 getViewingDirection: getViewingDirection 0 1`] = `"right-to-left"`;
+
+exports[`api/3.x/collection/technical Collection number 1 getBehavior: getBehavior 1 1`] = `null`;
+
+exports[`api/3.x/collection/technical Collection number 1 getId: getId 1 1`] = `"https://example.org/iiif/collection/2"`;
+
+exports[`api/3.x/collection/technical Collection number 1 getType: getType 1 1`] = `"Collection"`;
+
+exports[`api/3.x/collection/technical Collection number 1 getViewingDirection: getViewingDirection 1 1`] = `"left-to-right"`;

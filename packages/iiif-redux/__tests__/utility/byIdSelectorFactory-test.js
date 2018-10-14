@@ -10,10 +10,14 @@ describe('utility/byIdSelectorFactory', () => {
       id: api.getId,
       label: api.getLabel,
     }));
-    expect(selector(state)).toEqual({ error: true, fetched: false });
+    expect(selector(state)).toEqual({
+      error: true,
+      errorMessage: 'No ID found on resource',
+      fetched: false,
+    });
   });
 
-  it('should return neither loading or fetched for non-existant resource', () => {
+  it('should return neither loading or fetched for non-existent resource', () => {
     const state = { dereferenced: {}, resources: {} };
     const selector = getAnnotationById(
       api => ({

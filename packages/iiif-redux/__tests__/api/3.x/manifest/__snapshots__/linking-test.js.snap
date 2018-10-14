@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/manifest/linking Manifest number 0 getHomepage: getHomepage 0 1`] = `
+Object {
+  "format": "text/html",
+  "id": "https://example.org/info/book1/",
+  "label": Object {
+    "en": Array [
+      "Home page for Book 1",
+    ],
+  },
+  "type": "Text",
+}
+`;
+
+exports[`api/3.x/manifest/linking Manifest number 0 getHomepageId: getHomepageId 0 1`] = `"https://example.org/info/book1/"`;
+
+exports[`api/3.x/manifest/linking Manifest number 0 getLogo: getLogo 0 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/logos/institution1.jpg",
+    "service": Array [
+      "https://example.org/service/inst1",
+    ],
+    "type": "Image",
+  },
+]
+`;
+
+exports[`api/3.x/manifest/linking Manifest number 0 getLogoIds: getLogoIds 0 1`] = `
+Array [
+  "https://example.org/logos/institution1.jpg",
+]
+`;
+
+exports[`api/3.x/manifest/linking Manifest number 0 getPartOf: getPartOf 0 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/collections/books/",
+    "type": "Collection",
+  },
+]
+`;
+
+exports[`api/3.x/manifest/linking Manifest number 0 getPartOfId: getPartOfId 0 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/collections/books/",
+    "schema": "collection",
+  },
+]
+`;
+
+exports[`api/3.x/manifest/linking Manifest number 0 getRendering: getRendering 0 1`] = `
+Array [
+  Object {
+    "format": "application/pdf",
+    "id": "https://example.org/iiif/book1.pdf",
+    "label": Object {
+      "en": Array [
+        "Download as PDF",
+      ],
+    },
+    "type": "Text",
+  },
+]
+`;
+
+exports[`api/3.x/manifest/linking Manifest number 0 getRenderingIds: getRenderingIds 0 1`] = `
+Array [
+  "https://example.org/iiif/book1.pdf",
+]
+`;
+
+exports[`api/3.x/manifest/linking Manifest number 0 getSeeAlso: getSeeAlso 0 1`] = `
+Array [
+  Object {
+    "format": "text/xml",
+    "id": "https://example.org/library/catalog/book1.xml",
+    "profile": "https://example.org/profiles/bibliographic",
+    "type": "Dataset",
+  },
+]
+`;
+
+exports[`api/3.x/manifest/linking Manifest number 0 getSeeAlsoIds: getSeeAlsoIds 0 1`] = `
+Array [
+  "https://example.org/library/catalog/book1.xml",
+]
+`;
+
+exports[`api/3.x/manifest/linking Manifest number 0 getService: getService 0 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/service/example",
+    "profile": "https://example.org/docs/example-service.html",
+    "type": "Service",
+  },
+]
+`;
+
+exports[`api/3.x/manifest/linking Manifest number 0 getServiceIds: getServiceIds 0 1`] = `
+Array [
+  "https://example.org/service/example",
+]
+`;
+
+exports[`api/3.x/manifest/linking Manifest number 0 getStart: getStart 0 1`] = `
+Object {
+  "height": 1000,
+  "id": "https://example.org/iiif/book1/canvas/p2",
+  "items": Array [
+    "https://example.org/iiif/book1/page/p2/1",
+  ],
+  "label": Object {
+    "@none": Array [
+      "p. 2",
+    ],
+  },
+  "type": "Canvas",
+  "width": 750,
+}
+`;
+
+exports[`api/3.x/manifest/linking Manifest number 0 getStartId: getStartId 0 1`] = `
+Object {
+  "id": "https://example.org/iiif/book1/canvas/p2",
+  "schema": "canvas",
+}
+`;
+
+exports[`api/3.x/manifest/linking Manifest number 1 getHomepage: getHomepage 1 1`] = `null`;
+
+exports[`api/3.x/manifest/linking Manifest number 1 getHomepageId: getHomepageId 1 1`] = `null`;
+
+exports[`api/3.x/manifest/linking Manifest number 1 getLogo: getLogo 1 1`] = `Array []`;
+
+exports[`api/3.x/manifest/linking Manifest number 1 getLogoIds: getLogoIds 1 1`] = `Array []`;
+
+exports[`api/3.x/manifest/linking Manifest number 1 getPartOf: getPartOf 1 1`] = `null`;
+
+exports[`api/3.x/manifest/linking Manifest number 1 getPartOfId: getPartOfId 1 1`] = `null`;
+
+exports[`api/3.x/manifest/linking Manifest number 1 getRendering: getRendering 1 1`] = `Array []`;
+
+exports[`api/3.x/manifest/linking Manifest number 1 getRenderingIds: getRenderingIds 1 1`] = `Array []`;
+
+exports[`api/3.x/manifest/linking Manifest number 1 getSeeAlso: getSeeAlso 1 1`] = `Array []`;
+
+exports[`api/3.x/manifest/linking Manifest number 1 getSeeAlsoIds: getSeeAlsoIds 1 1`] = `Array []`;
+
+exports[`api/3.x/manifest/linking Manifest number 1 getService: getService 1 1`] = `Array []`;
+
+exports[`api/3.x/manifest/linking Manifest number 1 getServiceIds: getServiceIds 1 1`] = `Array []`;
+
+exports[`api/3.x/manifest/linking Manifest number 1 getStart: getStart 1 1`] = `null`;
+
+exports[`api/3.x/manifest/linking Manifest number 1 getStartId: getStartId 1 1`] = `null`;
+
+exports[`api/3.x/manifest/linking Manifest number 2 getHomepage: getHomepage 2 1`] = `null`;
+
+exports[`api/3.x/manifest/linking Manifest number 2 getHomepageId: getHomepageId 2 1`] = `null`;
+
+exports[`api/3.x/manifest/linking Manifest number 2 getLogo: getLogo 2 1`] = `Array []`;
+
+exports[`api/3.x/manifest/linking Manifest number 2 getLogoIds: getLogoIds 2 1`] = `Array []`;
+
+exports[`api/3.x/manifest/linking Manifest number 2 getPartOf: getPartOf 2 1`] = `null`;
+
+exports[`api/3.x/manifest/linking Manifest number 2 getPartOfId: getPartOfId 2 1`] = `null`;
+
+exports[`api/3.x/manifest/linking Manifest number 2 getRendering: getRendering 2 1`] = `Array []`;
+
+exports[`api/3.x/manifest/linking Manifest number 2 getRenderingIds: getRenderingIds 2 1`] = `Array []`;
+
+exports[`api/3.x/manifest/linking Manifest number 2 getSeeAlso: getSeeAlso 2 1`] = `Array []`;
+
+exports[`api/3.x/manifest/linking Manifest number 2 getSeeAlsoIds: getSeeAlsoIds 2 1`] = `Array []`;
+
+exports[`api/3.x/manifest/linking Manifest number 2 getService: getService 2 1`] = `Array []`;
+
+exports[`api/3.x/manifest/linking Manifest number 2 getServiceIds: getServiceIds 2 1`] = `Array []`;
+
+exports[`api/3.x/manifest/linking Manifest number 2 getStart: getStart 2 1`] = `
+Object {
+  "id": "https://example.org/iiif/start/2",
+  "selector": Object {
+    "t": 14.5,
+    "type": "PointSelector",
+  },
+  "source": "https://example.org/iiif/book1/canvas/p1",
+  "type": "SpecificResource",
+}
+`;
+
+exports[`api/3.x/manifest/linking Manifest number 2 getStartId: getStartId 2 1`] = `
+Object {
+  "id": "https://example.org/iiif/start/2",
+  "schema": "canvasReference",
+}
+`;

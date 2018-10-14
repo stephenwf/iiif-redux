@@ -12,7 +12,7 @@ class CanvasPreview extends Component {
       <Card
         style={{ margin: 5 }}
         onClick={() => onClick(id)}
-        cover={<Thumbnail {...thumbnail} style={{ minHeight: 130 }} />}
+        cover={<Thumbnail data={thumbnail} style={{ minHeight: 130 }} />}
       >
         <IntlString>{label}</IntlString>
       </Card>

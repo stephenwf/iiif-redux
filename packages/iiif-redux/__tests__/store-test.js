@@ -1,55 +1,50 @@
 import { createStructuredSelector, createSelector } from 'reselect';
 import createStore from '../src/createStore';
 import bridges from './fixtures/bridges';
+import presentation3fixture from './fixtures/presentation/3.0/2-to-3-converter/adore.ugent.be__IIIF__manifests__archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91';
 import {
   iiifResourceRequest,
   iiifResourceRequestUnknown,
 } from '../src/spaces/iiif-resource';
 import { collection, manifest } from '../src/schema/presentation2';
-import * as currentManifest from '../src/api/current-manifest';
-import * as currentSequence from '../src/api/current-sequence';
-import * as currentCanvas from '../src/api/current-canvas';
-import * as descriptive from '../src/api/iiif-descriptive';
 import { waitForRequest } from '../test-utils';
+import { manifestByIdSelector } from '../src/api/manifest';
+import { sequenceByIdSelector } from '../src/api/sequence';
+import { canvasByIdSelector } from '../src/api/canvas';
 
 describe('store', () => {
   global.fetch = require('jest-fetch-mock');
+  const RealDate = Date;
+
+  function mockDate(isoDate) {
+    // noinspection JSUnresolvedVariable
+    global.Date = class extends RealDate {
+      // noinspection JSAnnotator
+      constructor(...theArgs) {
+        if (theArgs.length) {
+          return new RealDate(...theArgs);
+        }
+        return new RealDate(isoDate);
+      }
+
+      static now() {
+        return new RealDate(isoDate).getTime();
+      }
+    };
+  }
+  afterEach(() => {
+    // noinspection JSUnresolvedVariable
+    global.Date = RealDate;
+  });
 
   it('should have default state', () => {
     const store = createStore();
-    expect(store.getState()).toEqual({
-      dereferenced: {},
-      frames: {
-        focusedFrame: null,
-        list: {},
-      },
-      resources: {
-        annotations: {},
-        annotationLists: {},
-        canvases: {},
-        collections: {},
-        imageResources: {},
-        layers: {},
-        manifests: {},
-        ranges: {},
-        sequences: {},
-        externalResources: {},
-      },
-      routing: {
-        currentAnnotation: null,
-        currentAnnotationList: null,
-        currentCanvas: null,
-        currentCollection: null,
-        currentImageResource: null,
-        currentLayer: null,
-        currentManifest: null,
-        currentRange: null,
-        currentSequence: null,
-      },
-    });
+    expect(store.getState()).toMatchSnapshot();
   });
 
   it('should throw an error if actions are not passed through', () => {
+    mockDate('2017-11-25T00:00:00z');
+
     const store = createStore();
     store.dispatch(
       iiifResourceRequest(
@@ -60,52 +55,12 @@ describe('store', () => {
     );
 
     const state = store.getState();
-    expect(state).toEqual({
-      dereferenced: {
-        'https://view.nls.uk/manifest/7446/74464117/manifest.json': {
-          loading: false,
-          requested:
-            state.dereferenced[
-              'https://view.nls.uk/manifest/7446/74464117/manifest.json'
-            ].requested,
-          error: 'DEV ERROR: You must pass in exactly 3 action types',
-          resourceId:
-            'https://view.nls.uk/manifest/7446/74464117/manifest.json',
-          ttl: 600,
-        },
-      },
-      frames: {
-        focusedFrame: null,
-        list: {},
-      },
-      resources: {
-        annotations: {},
-        annotationLists: {},
-        canvases: {},
-        collections: {},
-        imageResources: {},
-        layers: {},
-        manifests: {},
-        ranges: {},
-        sequences: {},
-        externalResources: {},
-      },
-      routing: {
-        currentAnnotation: null,
-        currentAnnotationList: null,
-        currentCanvas: null,
-        currentCollection: null,
-        currentImageResource: null,
-        currentLayer: null,
-        currentManifest: null,
-        currentRange: null,
-        currentSequence: null,
-      },
-    });
+    expect(state).toMatchSnapshot();
   });
 
   it('should set error in state when request errors', async () => {
     const store = createStore();
+    mockDate('2017-11-25T00:00:00z');
     fetch.mockRejectOnce('Excepted error found');
     store.dispatch(
       iiifResourceRequest(
@@ -116,52 +71,12 @@ describe('store', () => {
     );
     await new Promise(resolve => store.subscribe(resolve));
     const state = store.getState();
-    expect(state).toEqual({
-      dereferenced: {
-        'https://view.nls.uk/manifest/7446/74464117/manifest.json': {
-          error: 'Excepted error found',
-          loading: false,
-          requested:
-            state.dereferenced[
-              'https://view.nls.uk/manifest/7446/74464117/manifest.json'
-            ].requested,
-          resourceId:
-            'https://view.nls.uk/manifest/7446/74464117/manifest.json',
-          ttl: 600,
-        },
-      },
-      frames: {
-        focusedFrame: null,
-        list: {},
-      },
-      resources: {
-        annotations: {},
-        annotationLists: {},
-        canvases: {},
-        collections: {},
-        imageResources: {},
-        layers: {},
-        manifests: {},
-        ranges: {},
-        sequences: {},
-        externalResources: {},
-      },
-      routing: {
-        currentAnnotation: null,
-        currentAnnotationList: null,
-        currentCanvas: null,
-        currentCollection: null,
-        currentImageResource: null,
-        currentLayer: null,
-        currentManifest: null,
-        currentRange: null,
-        currentSequence: null,
-      },
-    });
+    expect(state).toMatchSnapshot();
   });
 
   it('should set error in state when malformed url is given', () => {
     const store = createStore();
+    mockDate('2017-11-25T00:00:00z');
     store.dispatch(
       iiifResourceRequest(
         'not-real-url',
@@ -172,49 +87,13 @@ describe('store', () => {
 
     const state = store.getState();
 
-    expect(state).toEqual({
-      dereferenced: {
-        'not-real-url': {
-          loading: false,
-          error: 'Resource is not a valid Web URI.',
-          requested: state.dereferenced['not-real-url'].requested,
-          resourceId: 'not-real-url',
-          ttl: 600,
-        },
-      },
-      frames: {
-        focusedFrame: null,
-        list: {},
-      },
-      resources: {
-        annotations: {},
-        annotationLists: {},
-        canvases: {},
-        collections: {},
-        imageResources: {},
-        layers: {},
-        manifests: {},
-        ranges: {},
-        sequences: {},
-        externalResources: {},
-      },
-      routing: {
-        currentAnnotation: null,
-        currentAnnotationList: null,
-        currentCanvas: null,
-        currentCollection: null,
-        currentImageResource: null,
-        currentLayer: null,
-        currentManifest: null,
-        currentRange: null,
-        currentSequence: null,
-      },
-    });
+    expect(state).toMatchSnapshot();
   });
 
   it('should import a manifest', async () => {
     const store = createStore();
     fetch.mockResponseOnce(JSON.stringify(bridges));
+    mockDate('2017-11-25T00:00:00z');
 
     const whenRequestFinishes = waitForRequest(
       store,
@@ -244,284 +123,7 @@ describe('store', () => {
     await whenRequestFinishes;
 
     const secondState = store.getState();
-    expect(Object.keys(secondState.resources)).toEqual([
-      'collections',
-      'sequences',
-      'manifests',
-      'canvases',
-      'annotationLists',
-      'annotations',
-      'ranges',
-      'layers',
-      'imageResources',
-      'externalResources',
-      'services',
-    ]);
-    expect(Object.keys(secondState.resources.services)).toEqual([
-      'https://view.nls.uk/iiif/7443/74438561.5',
-      'https://view.nls.uk/iiif/7443/74438562.5',
-      'https://view.nls.uk/iiif/7443/74438654.5',
-      'https://view.nls.uk/iiif/7443/74438655.5',
-      'https://view.nls.uk/iiif/7443/74438656.5',
-      'https://view.nls.uk/iiif/7443/74438657.5',
-      'https://view.nls.uk/iiif/7443/74438658.5',
-      'https://view.nls.uk/iiif/7443/74438659.5',
-      'https://view.nls.uk/iiif/7443/74438660.5',
-      'https://view.nls.uk/iiif/7443/74438661.5',
-      'https://view.nls.uk/iiif/7443/74438662.5',
-      'https://view.nls.uk/iiif/7443/74438663.5',
-      'https://view.nls.uk/iiif/7443/74438664.5',
-      'https://view.nls.uk/iiif/7443/74438665.5',
-      'https://view.nls.uk/iiif/7443/74438666.5',
-      'https://view.nls.uk/iiif/7443/74438667.5',
-      'https://view.nls.uk/iiif/7443/74438668.5',
-      'https://view.nls.uk/iiif/7443/74438669.5',
-      'https://view.nls.uk/iiif/7443/74438670.5',
-      'https://view.nls.uk/iiif/7443/74438671.5',
-      'https://view.nls.uk/iiif/7443/74438672.5',
-      'https://view.nls.uk/iiif/7443/74438673.5',
-      'https://view.nls.uk/iiif/7443/74438674.5',
-      'https://view.nls.uk/iiif/7443/74438675.5',
-      'https://view.nls.uk/iiif/7443/74438676.5',
-      'https://view.nls.uk/iiif/7443/74438677.5',
-      'https://view.nls.uk/iiif/7443/74438678.5',
-      'https://view.nls.uk/iiif/7443/74438679.5',
-      'https://view.nls.uk/iiif/7443/74438680.5',
-      'https://view.nls.uk/iiif/7443/74438681.5',
-      'https://view.nls.uk/iiif/7443/74438682.5',
-      'https://view.nls.uk/iiif/7443/74438683.5',
-      'https://view.nls.uk/iiif/7443/74438684.5',
-      'https://view.nls.uk/iiif/7443/74438685.5',
-      'https://view.nls.uk/iiif/7443/74438686.5',
-      'https://view.nls.uk/iiif/7443/74438687.5',
-      'https://view.nls.uk/iiif/7443/74439048.5',
-      'https://view.nls.uk/iiif/7443/74439050.5',
-      'https://view.nls.uk/iiif/7443/74439051.5',
-      'https://view.nls.uk/iiif/7443/74439052.5',
-    ]);
-    expect(Object.keys(secondState.resources.manifests)).toEqual([
-      'https://view.nls.uk/manifest/7446/74464117/manifest.json',
-    ]);
-    expect(Object.keys(secondState.resources.canvases)).toEqual([
-      'https://view.nls.uk/iiif/7446/74464117/canvas/1',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/2',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/3',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/4',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/5',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/6',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/7',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/8',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/9',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/10',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/11',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/12',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/13',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/14',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/15',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/16',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/17',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/18',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/19',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/20',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/21',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/22',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/23',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/24',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/25',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/26',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/27',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/28',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/29',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/30',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/31',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/32',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/33',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/34',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/35',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/36',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/37',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/38',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/39',
-      'https://view.nls.uk/iiif/7446/74464117/canvas/40',
-    ]);
-    expect(Object.keys(secondState.resources.annotations)).toEqual([
-      'https://view.nls.uk/iiif/7443/74438561.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438562.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438654.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438655.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438656.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438657.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438658.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438659.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438660.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438661.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438662.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438663.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438664.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438665.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438666.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438667.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438668.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438669.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438670.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438671.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438672.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438673.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438674.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438675.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438676.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438677.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438678.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438679.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438680.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438681.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438682.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438683.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438684.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438685.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438686.5/annotation',
-      'https://view.nls.uk/iiif/7443/74438687.5/annotation',
-      'https://view.nls.uk/iiif/7443/74439048.5/annotation',
-      'https://view.nls.uk/iiif/7443/74439050.5/annotation',
-      'https://view.nls.uk/iiif/7443/74439051.5/annotation',
-      'https://view.nls.uk/iiif/7443/74439052.5/annotation',
-    ]);
-    expect(Object.keys(secondState.resources.imageResources)).toEqual([
-      'https://view.nls.uk/iiif/7443/74438561.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438561.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438562.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438562.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438654.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438654.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438655.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438655.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438656.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438656.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438657.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438657.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438658.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438658.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438659.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438659.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438660.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438660.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438661.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438661.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438662.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438662.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438663.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438663.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438664.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438664.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438665.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438665.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438666.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438666.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438667.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438667.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438668.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438668.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438669.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438669.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438670.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438670.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438671.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438671.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438672.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438672.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438673.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438673.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438674.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438674.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438675.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438675.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438676.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438676.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438677.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438677.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438678.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438678.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438679.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438679.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438680.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438680.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438681.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438681.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438682.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438682.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438683.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438683.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438684.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438684.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438685.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438685.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438686.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438686.4.jpg',
-      'https://view.nls.uk/iiif/7443/74438687.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74438687.4.jpg',
-      'https://view.nls.uk/iiif/7443/74439048.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74439048.4.jpg',
-      'https://view.nls.uk/iiif/7443/74439050.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74439050.4.jpg',
-      'https://view.nls.uk/iiif/7443/74439051.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74439051.4.jpg',
-      'https://view.nls.uk/iiif/7443/74439052.5/full/full/0/native.jpg',
-      'https://deriv.nls.uk/dcn4/7443/74439052.4.jpg',
-    ]);
-
-    expect(Object.keys(secondState.resources.sequences)).toEqual([
-      'https://view.nls.uk/manifest/7446/74464117/canvas/default',
-    ]);
-    expect(Object.keys(secondState.resources.ranges)).toEqual([
-      'https://view.nls.uk/iiif/7446/74464117/range/r-1',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-2',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-3',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-4',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-5',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-6',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-7',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-8',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-9',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-10',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-11',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-12',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-13',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-14',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-15',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-16',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-17',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-18',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-19',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-20',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-21',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-22',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-23',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-24',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-25',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-26',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-27',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-28',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-29',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-30',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-31',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-32',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-33',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-34',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-35',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-36',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-37',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-38',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-39',
-      'https://view.nls.uk/iiif/7446/74464117/range/r-40',
-      'https://view.nls.uk/iiif/7446/74464117/range/custom',
-      'https://view.nls.uk/iiif/7446/74464117/range/custom-ranges',
-    ]);
-
-    expect(Object.keys(secondState.resources.externalResources)).toEqual([
-      'http://seealso.com/page-1.json',
-      'http://seealso.com/page-2.json',
-      'http://seealso.com/page-3.json',
-    ]);
+    expect(secondState).toMatchSnapshot('second state');
 
     // Try fetching as unknown.
     fetch.mockResponseOnce(JSON.stringify(bridges));
@@ -547,6 +149,122 @@ describe('store', () => {
       resourceId: 'https://view.nls.uk/manifest/7446/74464117/manifest.json',
       ttl: 600,
     });
+  });
+
+  it('should import a presentatino 3 manifest', async () => {
+    const manifestId =
+      'http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91';
+    const store = createStore();
+    fetch.mockResponseOnce(JSON.stringify(presentation3fixture));
+    mockDate('2017-11-25T00:00:00z');
+
+    const whenRequestFinishes = waitForRequest(store, manifestId);
+
+    store.dispatch(
+      iiifResourceRequest(
+        manifestId,
+        ['MANIFEST_REQUEST', 'MANIFEST_SUCCESS', 'MANIFEST_ERROR'],
+        manifest
+      )
+    );
+    const state = store.getState();
+
+    const manifestState = state.dereferenced[manifestId];
+
+    expect(manifestState.loading).toEqual(true);
+    expect(manifestState.resourceId).toEqual(manifestId);
+    expect(manifestState.ttl).toEqual(600);
+
+    await whenRequestFinishes;
+
+    const secondState = store.getState();
+    expect(secondState).toMatchSnapshot('second state');
+
+    // Try fetching as unknown.
+    fetch.mockResponseOnce(JSON.stringify(presentation3fixture));
+    const whenRequestFinishes2 = waitForRequest(store, manifestId);
+
+    store.dispatch(iiifResourceRequestUnknown(manifestId));
+
+    await whenRequestFinishes2;
+
+    expect(store.getState().dereferenced[manifestId]).toEqual({
+      loading: false,
+      resourceId: manifestId,
+      ttl: 600,
+    });
+  });
+
+  it('should return error when JSON response is empty', async () => {
+    const store = createStore();
+    fetch.mockResponseOnce(JSON.stringify(null));
+    mockDate('2017-11-25T00:00:00z');
+
+    const whenRequestFinishes = waitForRequest(
+      store,
+      'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+    );
+
+    store.dispatch(
+      iiifResourceRequest(
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json',
+        ['MANIFEST_REQUEST', 'MANIFEST_SUCCESS', 'MANIFEST_ERROR'],
+        manifest
+      )
+    );
+    const state = store.getState();
+
+    const manifestState =
+      state.dereferenced[
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+      ];
+
+    expect(manifestState).toMatchSnapshot();
+
+    await whenRequestFinishes;
+
+    expect(
+      store
+        .getState()
+        .dereferenced[
+          'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+        ].error.toString()
+    ).toEqual('Error: Resource cannot be null or undefined');
+  });
+
+  it('should return error when JSON response is empty (unknown resource)', async () => {
+    const store = createStore();
+    fetch.mockResponseOnce(JSON.stringify(null));
+    mockDate('2017-11-25T00:00:00z');
+
+    const whenRequestFinishes = waitForRequest(
+      store,
+      'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+    );
+
+    store.dispatch(
+      iiifResourceRequestUnknown(
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+      )
+    );
+    const state = store.getState();
+
+    const manifestState =
+      state.dereferenced[
+        'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+      ];
+
+    expect(manifestState).toMatchSnapshot();
+
+    await whenRequestFinishes;
+
+    expect(
+      store
+        .getState()
+        .dereferenced[
+          'https://view.nls.uk/manifest/7446/74464117/manifest.json'
+        ].error.toString()
+    ).toEqual('Error: Resource cannot be null or undefined');
   });
 
   it('should only make 1 http request per resource by default', async () => {
@@ -674,258 +392,32 @@ describe('store', () => {
 
     const state = store.getState();
 
-    expect(currentManifest.getLabel(state)).toEqual([
-      { '@language': 'en', '@value': 'Forth Bridge illustrations 1886-1887' },
-    ]);
+    // Assert manifest.
+    const manifestLabel = manifestByIdSelector(api => api.getLabel, {
+      getId: () => 'https://view.nls.uk/manifest/7446/74464117/manifest.json',
+    });
+    expect(manifestLabel(state)).toMatchSnapshot();
 
-    expect(currentSequence.getLabel(state)).toEqual([
-      { '@language': 'en', '@value': 'default' },
-    ]);
+    // Assert sequence.
+    const sequenceLabel = sequenceByIdSelector(api => api.getLabel, {
+      getId: () => 'https://view.nls.uk/manifest/7446/74464117/canvas/default',
+    });
 
-    expect(currentCanvas.getLabel(state)).toEqual([
-      { '@language': 'en', '@value': '1' },
-    ]);
+    expect(sequenceLabel(state)).toMatchSnapshot();
 
-    expect(currentCanvas.getThumbnailId(state)).toEqual(
-      'https://deriv.nls.uk/dcn4/7443/74438561.4.jpg'
+    // Assert canvas.
+    const canvasState = canvasByIdSelector(
+      api => ({
+        label: api.getLabel,
+        thumbnail: api.getThumbnailId,
+        imageService: api.getImageService,
+      }),
+      {
+        getId: () => 'https://view.nls.uk/iiif/7446/74464117/canvas/1',
+      }
     );
 
-    expect(currentCanvas.getImageService(state)).toEqual({
-      '@context': 'http://iiif.io/api/image/2/context.json',
-      '@id': 'https://view.nls.uk/iiif/7443/74438561.5',
-      profile: 'http://iiif.io/api/image/2/profiles/level2.json',
-    });
-
-    const structured = createStructuredSelector({
-      label: currentManifest.getLabel,
-      metadata: currentManifest.getMetadata,
-      canvasThumbnails: createSelector(currentSequence.getCanvases, canvases =>
-        canvases.map(
-          createStructuredSelector({
-            label: descriptive.getLabel,
-            thumbnail: descriptive.getThumbnailId,
-          })
-        )
-      ),
-    });
-    expect(structured(state)).toEqual({
-      label: [
-        { '@language': 'en', '@value': 'Forth Bridge illustrations 1886-1887' },
-      ],
-      canvasThumbnails: [
-        {
-          label: [{ '@language': 'en', '@value': '1' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438561.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '2' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438562.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '3' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438654.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '4' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438655.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '5' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438656.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '6' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438657.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '7' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438658.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '8' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438659.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '9' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438660.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '10' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438661.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '11' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438662.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '12' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438663.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '13' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438664.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '14' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438665.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '15' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438666.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '16' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438667.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '17' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438668.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '18' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438669.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '19' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438670.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '20' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438671.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '21' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438672.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '22' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438673.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '23' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438674.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '24' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438675.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '25' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438676.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '26' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438677.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '27' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438678.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '28' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438679.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '29' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438680.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '30' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438681.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '31' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438682.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '32' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438683.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '33' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438684.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '34' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438685.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '35' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438686.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '36' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74438687.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '37' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74439048.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '38' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74439050.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '39' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74439051.4.jpg',
-        },
-        {
-          label: [{ '@language': 'en', '@value': '40' }],
-          thumbnail: 'https://deriv.nls.uk/dcn4/7443/74439052.4.jpg',
-        },
-      ],
-      metadata: [
-        {
-          label: [{ '@language': 'en', '@value': 'Title' }],
-          value: [
-            {
-              '@language': 'en',
-              '@value': 'Forth Bridge illustrations 1886-1887',
-            },
-          ],
-        },
-        {
-          label: [{ '@language': 'en', '@value': 'Description' }],
-          value: [
-            {
-              '@language': 'en',
-              '@value':
-                '40 black-and-white photographs capturing the construction of the Forth Bridge by Glasgow-based Sir William Arrol & Co. Close-up and distance views of superstructure, cantilevers, lifting platforms and viaduct. Taken at weekly or fortnightly intervals from 1886-1887 by Philip Phillips, son of one of the contractors. Silver gelatin prints.',
-            },
-          ],
-        },
-        {
-          label: [{ '@language': 'en', '@value': 'Shelfmark' }],
-          value: [{ '@language': 'en', '@value': 'RB.l.229' }],
-        },
-        {
-          label: [],
-          value: [
-            {
-              '@language': 'en',
-              '@value':
-                '<a href="http://digital.nls.uk/74464117">View in our digital gallery</a>',
-            },
-          ],
-        },
-        {
-          label: [{ '@language': 'en', '@value': 'Full conditions of use' }],
-          value: [
-            {
-              '@language': 'en',
-              '@value':
-                'You have permission to make copies of this work under the <a target="_top" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a> unless otherwise stated.',
-            },
-          ],
-        },
-      ],
-    });
-
-    expect(currentCanvas.getImageService(state)).toEqual({
-      '@context': 'http://iiif.io/api/image/2/context.json',
-      '@id': 'https://view.nls.uk/iiif/7443/74438561.5',
-      profile: 'http://iiif.io/api/image/2/profiles/level2.json',
-    });
+    expect(canvasState(state)).toMatchSnapshot();
   });
 
   it('should preload normalized entities in collections', async () => {
@@ -961,6 +453,7 @@ describe('store', () => {
 
     const store = createStore();
     fetch.mockResponseOnce(JSON.stringify(collectionJson));
+    mockDate('2017-11-25T00:00:00z');
 
     const whenRequestFinishes = waitForRequest(
       store,
@@ -979,53 +472,7 @@ describe('store', () => {
 
     const state = store.getState();
 
-    expect(state.resources).toEqual({
-      annotationLists: {},
-      annotations: {},
-      canvases: {},
-      collections: {
-        'http://iiif.com/collection-1.json': {
-          '@id': 'http://iiif.com/collection-1.json',
-          '@type': 'sc:Collection',
-          label: [{ '@language': 'en', '@value': 'Collection label 1' }],
-          manifests: [
-            'http://iiif.com/manifest-1.json',
-            'http://iiif.com/manifest-2.json',
-          ],
-          members: [
-            { id: 'http://iiif.com/collection-2.json', schema: 'collection' },
-            { id: 'http://iiif.com/collection-3.json', schema: 'collection' },
-          ],
-        },
-        'http://iiif.com/collection-2.json': {
-          '@id': 'http://iiif.com/collection-2.json',
-          '@type': 'sc:Collection',
-          label: [{ '@language': 'en', '@value': 'Collection label 2' }],
-        },
-        'http://iiif.com/collection-3.json': {
-          '@id': 'http://iiif.com/collection-3.json',
-          '@type': 'sc:Collection',
-          label: [{ '@language': 'en', '@value': 'Collection label 3' }],
-        },
-      },
-      imageResources: {},
-      layers: {},
-      manifests: {
-        'http://iiif.com/manifest-1.json': {
-          '@id': 'http://iiif.com/manifest-1.json',
-          '@type': 'sc:Manifest',
-          label: [{ '@language': 'en', '@value': 'Manifest label 1' }],
-        },
-        'http://iiif.com/manifest-2.json': {
-          '@id': 'http://iiif.com/manifest-2.json',
-          '@type': 'sc:Manifest',
-          label: [{ '@language': 'en', '@value': 'Manifest label 2' }],
-        },
-      },
-      ranges: {},
-      sequences: {},
-      externalResources: {},
-    });
+    expect(state.resources).toMatchSnapshot();
   });
 
   describe('iiifResourceRequestUnknown', () => {
@@ -1105,7 +552,33 @@ describe('store', () => {
 
       expect(
         state.dereferenced['http://iiif.com/NOT-REAL-1.json'].error
-      ).toEqual('Unknown resource type');
+      ).toEqual('Unknown Presentation 2 resource type');
+    });
+
+    test('unknown type (p3)', async () => {
+      const store = createStore();
+      fetch.mockResponseOnce(
+        JSON.stringify({
+          id: 'http://iiif.com/NOT-REAL-1.json',
+          type: 'NOT REAL',
+          label: 'Collection label 1',
+        })
+      );
+      const whenRequestFinishes = waitForRequest(
+        store,
+        'http://iiif.com/NOT-REAL-1.json'
+      );
+      store.dispatch(
+        iiifResourceRequestUnknown('http://iiif.com/NOT-REAL-1.json')
+      );
+
+      await whenRequestFinishes;
+
+      const state = store.getState();
+
+      expect(
+        state.dereferenced['http://iiif.com/NOT-REAL-1.json'].error
+      ).toEqual('Unknown Presentation 3 resource type');
     });
 
     test('unknown mapping', async () => {

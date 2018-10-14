@@ -1,15 +1,12 @@
 import cachedFetch from 'fetch-unless-cached';
 import { createActions, handleActions } from 'redux-actions';
 import validUrl from 'valid-url';
-import {
-  manifest,
-  normalize,
-  RESOURCE_TYPE_MAP,
-  SCHEMAS,
-} from '../schema/presentation2';
 import { call, put, select, takeEvery, all } from 'redux-saga/effects';
 import deepmerge from 'deepmerge';
 import update from 'immutability-helper';
+import * as presentation2 from '../schema/presentation2';
+import * as presentation3 from '../schema/presentation3';
+import trackPresentationVersion from '../utility/trackPresentationVersion';
 import {
   COLLECTION_ERROR,
   COLLECTION_REQUEST,
@@ -20,6 +17,7 @@ import {
   MANIFEST_REQUEST,
   MANIFEST_SUCCESS,
 } from './manifests';
+import getPresentationVersionFromResource from '../utility/getPresentationVersionFromResource';
 const debug = require('debug')('iiif-redux');
 
 const IIIF_RESOURCE_REQUEST = 'IIIF_RESOURCE_REQUEST';
@@ -75,12 +73,17 @@ const DEFAULT_STATE = {
     sequences: {},
     manifests: {},
     canvases: {},
-    annotationLists: {},
+    canvasReferences: {},
     annotations: {},
+    annotationLists: {},
+    annotationPages: {},
+    annotationCollections: {},
     ranges: {},
     layers: {},
     imageResources: {},
     externalResources: {},
+    contentResources: {},
+    choices: {},
   },
 };
 
@@ -158,7 +161,7 @@ function* successAction(type, resourceId, normalizedResponse) {
 }
 
 function* requestIiifResource({ payload }) {
-  const { resourceId, types, schema, ...options } = payload;
+  const { resourceId, types, ...options } = payload;
   if (types.length !== 3 && process.env.NODE_ENV !== 'production') {
     yield call(
       errorAction,
@@ -199,27 +202,88 @@ function* requestIiifResource({ payload }) {
     debug('Fetching resource %s', resourceId);
     const response = yield call(requestResource, resourceId, options);
 
-    if (response['@id'] !== resourceId) {
-      // @todo this will not catch "partOf" fields.
-      debug(
-        'Resource ID does not match requested resource, patching... Found: %s Expected: %s',
-        response['@id'],
-        resourceId
-      );
-      response['@id'] = resourceId;
-    }
+    const { result, entities } = yield call(
+      importResource,
+      response,
+      resourceId
+    );
+    debug('Finished normalize resource %s', result.id);
 
-    debug('Starting normalize resource %s', resourceId);
-
-    const { result, entities } = normalize(response, schema);
-
-    debug('Finished normalize resource %s', result);
-
-    yield call(successAction, SUCCESS, result, entities);
+    yield call(successAction, SUCCESS, result.id, entities);
   } catch (err) {
     debug('Error: %O', err);
     yield call(errorAction, ERROR, resourceId, err);
   }
+}
+
+function* importResource(response, resourceId) {
+  const version = getPresentationVersionFromResource(response);
+  if (version === 2) {
+    return yield call(importPresentation2Resource, response, resourceId);
+  }
+  return yield call(importPresentation3Resource, response, resourceId);
+}
+
+function* importPresentation2Resource(response, resourceId) {
+  if (response['@id'] !== resourceId) {
+    // @todo this will not catch "partOf" fields.
+    debug(
+      'Resource ID does not match requested presentation 2 resource, patching... Found: %s Expected: %s',
+      response['@id'],
+      resourceId
+    );
+    response['@id'] = resourceId;
+  }
+
+  debug('Starting normalize presentation 2 resource %s', resourceId);
+
+  return trackPresentationVersion(
+    2,
+    presentation2.normalize(response, presentation2.resource)
+  );
+}
+
+function* importPresentation3Resource(response, resourceId) {
+  if (response.id !== resourceId) {
+    // @todo this will not catch "partOf" fields.
+    debug(
+      'Resource ID does not match requested presentation 3 resource, patching... Found: %s Expected: %s',
+      response.id,
+      resourceId
+    );
+    response.id = resourceId;
+  }
+
+  debug('Starting normalize presentation 3 resource %s', resourceId);
+
+  return trackPresentationVersion(
+    3,
+    presentation3.normalize(response, presentation3.resource)
+  );
+}
+
+function* getResourceType(resourceId, response) {
+  const presentationVersion = getPresentationVersionFromResource(response);
+  if (presentationVersion === 2) {
+    return yield call(getPresentation2ResourceType, resourceId, response);
+  }
+  return yield call(getPresentation3ResourceType, resourceId, response);
+}
+
+function* getPresentation2ResourceType(resourceId, response) {
+  if (!presentation2.RESOURCE_TYPE_MAP[response['@type']]) {
+    throw new Error('Unknown Presentation 2 resource type');
+  }
+
+  return presentation2.RESOURCE_TYPE_MAP[response['@type']];
+}
+
+function* getPresentation3ResourceType(resourceId, response) {
+  if (!presentation3.RESOURCE_TYPE_MAP[response.type]) {
+    throw new Error('Unknown Presentation 3 resource type');
+  }
+
+  return presentation3.RESOURCE_TYPE_MAP[response.type];
 }
 
 function* requestUnknownResource({
@@ -230,39 +294,42 @@ function* requestUnknownResource({
     return;
   }
 
-  // 1) Request the resource.
-  debug('Fetching unknown resource %s', resourceId);
-  const response = yield call(requestResource, resourceId, options);
-  if (
-    !response ||
-    !response['@type'] ||
-    !RESOURCE_TYPE_MAP[response['@type']]
-  ) {
-    yield put(iiifResourceError(resourceId, 'Unknown resource type'));
-    return;
+  try {
+    // 1) Request the resource.
+    debug('Fetching unknown resource %s', resourceId);
+    const response = yield call(requestResource, resourceId, options);
+    if (!response) {
+      yield put(
+        iiifResourceError(
+          resourceId,
+          new Error('Resource cannot be null or undefined')
+        )
+      );
+      return;
+    }
+
+    const type = yield call(getResourceType, resourceId, response);
+
+    if (!mappings[type]) {
+      yield put(
+        iiifResourceError(
+          resourceId,
+          `Resource type is not in configured mappings (${Object.keys(
+            mappings
+          ).join(', ')})`
+        )
+      );
+      return;
+    }
+
+    // 3) Grab constants from a map (to be created).
+    const [REQUEST, SUCCESS, ERROR] = mappings[type];
+
+    // 4) Send to regular import (will be cached).
+    yield put(iiifResourceRequest(resourceId, [REQUEST, SUCCESS, ERROR]));
+  } catch (err) {
+    yield put(iiifResourceError(resourceId, err.message));
   }
-
-  // 2) Inspect the JSON to get a type.
-  const type = RESOURCE_TYPE_MAP[response['@type']];
-
-  if (!mappings[type]) {
-    yield put(
-      iiifResourceError(
-        resourceId,
-        `Resource type is not in configured mappings (${Object.keys(
-          mappings
-        ).join(', ')})`
-      )
-    );
-    return;
-  }
-
-  // 3) Grab constants from a map (to be created).
-  const [REQUEST, SUCCESS, ERROR] = mappings[type];
-  const schema = SCHEMAS[type];
-
-  // 4) Send to regular import (will be cached).
-  yield put(iiifResourceRequest(resourceId, [REQUEST, SUCCESS, ERROR], schema));
 }
 
 function* saga() {

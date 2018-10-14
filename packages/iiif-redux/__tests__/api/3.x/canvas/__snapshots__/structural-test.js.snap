@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/canvas/structural Canvas: Complete Canvas getAnnotationIds: getAnnotationIds Complete Canvas 1`] = `
+Array [
+  "https://example.org/iiif/book1/page/manifest/1",
+]
+`;
+
+exports[`api/3.x/canvas/structural Canvas: Complete Canvas getAnnotations: getAnnotations Complete Canvas 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/book1/page/manifest/1",
+    "items": Array [
+      "https://example.org/iiif/book1/page/manifest/a1",
+    ],
+    "type": "AnnotationPage",
+  },
+]
+`;
+
+exports[`api/3.x/canvas/structural Canvas: Complete Canvas getItemIds: getItemIds Complete Canvas 1`] = `
+Array [
+  "https://example.org/iiif/book1/page/p2/1",
+]
+`;
+
+exports[`api/3.x/canvas/structural Canvas: Complete Canvas getItems: getItems Complete Canvas 1`] = `
+Array [
+  undefined,
+]
+`;
+
+exports[`api/3.x/canvas/structural Canvas: Complete Canvas getPaintingAnnotationIds: getPaintingAnnotationIds Complete Canvas 1`] = `
+Array [
+  "https://example.org/iiif/book1/page/p2/1",
+]
+`;
+
+exports[`api/3.x/canvas/structural Canvas: Complete Canvas getPaintingAnnotations: getPaintingAnnotations Complete Canvas 1`] = `
+Array [
+  undefined,
+]
+`;
+
+exports[`api/3.x/canvas/structural Canvas: Minimal Canvas getAnnotationIds: getAnnotationIds Minimal Canvas 1`] = `Array []`;
+
+exports[`api/3.x/canvas/structural Canvas: Minimal Canvas getAnnotations: getAnnotations Minimal Canvas 1`] = `Array []`;
+
+exports[`api/3.x/canvas/structural Canvas: Minimal Canvas getItemIds: getItemIds Minimal Canvas 1`] = `Array []`;
+
+exports[`api/3.x/canvas/structural Canvas: Minimal Canvas getItems: getItems Minimal Canvas 1`] = `Array []`;
+
+exports[`api/3.x/canvas/structural Canvas: Minimal Canvas getPaintingAnnotationIds: getPaintingAnnotationIds Minimal Canvas 1`] = `Array []`;
+
+exports[`api/3.x/canvas/structural Canvas: Minimal Canvas getPaintingAnnotations: getPaintingAnnotations Minimal Canvas 1`] = `Array []`;

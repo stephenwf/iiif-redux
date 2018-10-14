@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Full Annotation Collection getBehavior: getBehavior Full Annotation Collection 1`] = `
+Array [
+  "hidden",
+]
+`;
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Full Annotation Collection getId: getId Full Annotation Collection 1`] = `"https://example.org/iiif/annotation-collection/1"`;
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Full Annotation Collection getType: getType Full Annotation Collection 1`] = `"AnnotationCollection"`;
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Minimal Annotation Collection getBehavior: getBehavior Minimal Annotation Collection 1`] = `null`;
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Minimal Annotation Collection getId: getId Minimal Annotation Collection 1`] = `"https://example.org/iiif/annotation-collection/1"`;
+
+exports[`api/3.x/annotation-collection/technical AnnotationCollection: Minimal Annotation Collection getType: getType Minimal Annotation Collection 1`] = `"AnnotationCollection"`;

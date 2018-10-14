@@ -1,0 +1,127 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/anno.jsonld",
+    "http://iiif.io/api/presentation/3/context.json"
+  ],
+  "id": "https://example.org/iiif/collection/1",
+  "type": "Collection",
+  "viewingDirection": "right-to-left",
+  "behavior": ["individuals"],
+  "label": {
+    "en": ["Collection label"]
+  },
+  "metadata": [
+    {
+      "label": {
+        "en": ["Creator"]
+      },
+      "value": {
+        "en": ["Anne Artist (1776-1824)"]
+      }
+    }
+  ],
+  "summary": {
+    "en": ["This is a summary of the object."]
+  },
+  "requiredStatement": {
+    "label": {
+      "en": ["Attribution"]
+    },
+    "value": {
+      "en": ["Provided courtesy of Example Institution"]
+    }
+  },
+  "rights": "https://creativecommons.org/licenses/by/4.0/",
+  "thumbnail": [
+    {
+      "id": "https://example.org/img/thumb.jpg",
+      "type": "Image"
+    }
+  ],
+  "navDate": "2010-01-01T00:00:00Z",
+  "posterCanvas": {
+    "id": "https://example.org/iiif/1/canvas/poster",
+    "type": "Canvas",
+    "height": 1400,
+    "width": 1200
+  },
+  "seeAlso": [
+    {
+      "id": "https://example.org/library/catalog/book1.xml",
+      "type": "Dataset",
+      "format": "text/xml",
+      "profile": "https://example.org/profiles/bibliographic"
+    }
+  ],
+  "service": [
+    {
+      "@id": "https://example.org/iiif2/image1/identifier",
+      "@type": "ImageService2",
+      "profile": "http://iiif.io/api/image/2/level2.json"
+    },
+    {
+      "id": "https://example.org/iiif3/image1/identifier",
+      "type": "ImageService3",
+      "profile": "level2"
+    }
+  ],
+  "logo": [
+    {
+      "id": "https://example.org/img/logo.jpg",
+      "type": "Image"
+    }
+  ],
+  "homepage": {
+    "id": "https://example.com/info/",
+    "type": "Text",
+    "label": {
+      "en": ["Homepage for Example Object"]
+    },
+    "format": "text/html"
+  },
+  "rendering": [
+    {
+      "id": "https://example.org/1.pdf",
+      "type": "Text",
+      "label": {
+        "en": ["PDF Rendering of Book"]
+      },
+      "format": "application/pdf"
+    }
+  ],
+  "partOf": [
+    {
+      "id": "https://example.org/iiif/1",
+      "type": "Manifest"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://example.org/iiif/manifest1",
+      "type": "Manifest"
+    },
+    {
+      "id": "https://example.org/iiif/collection2",
+      "type": "Collection"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "https://example.org/iiif/book1/page/collection/1",
+      "type": "AnnotationPage",
+      "items": [
+        {
+          "id": "https://example.org/iiif/book1/page/collection/a1",
+          "type": "Annotation",
+          "motivation": "commenting",
+          "body": {
+            "type": "TextualBody",
+            "language": "en",
+            "value": "I love this collection!"
+          },
+          "target": "https://example.org/iiif/collection/1"
+        }
+      ]
+    }
+  ]
+}

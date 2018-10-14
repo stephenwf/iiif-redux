@@ -1,0 +1,517 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`schema/presentation-3 V&A - Ocean liners normalize: Normalized entities 1`] = `
+Object {
+  "annotationPages": Object {
+    "https://2f67922950558d28b92d4d51ec7a59ac167acb21": Object {
+      "id": "https://2f67922950558d28b92d4d51ec7a59ac167acb21",
+      "items": Array [
+        "https://4690e58b9c5d17ac09c43444606ba7a64f283c94",
+      ],
+      "type": "AnnotationPage",
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1": Object {
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1",
+      "items": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a1",
+        "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a2",
+        "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a3",
+        "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a4",
+        "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a5",
+        "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a6",
+        "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a7",
+        "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a8",
+        "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a9",
+        "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a10",
+      ],
+      "type": "AnnotationPage",
+    },
+  },
+  "annotations": Object {
+    "https://4690e58b9c5d17ac09c43444606ba7a64f283c94": Object {
+      "body": Array [
+        Object {
+          "id": "https://framemark.vam.ac.uk/collections/2013GU2911/full/full/0/default.jpg",
+          "schema": "contentResource",
+        },
+      ],
+      "id": "https://4690e58b9c5d17ac09c43444606ba7a64f283c94",
+      "motivation": "painting",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      ],
+      "type": "Annotation",
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a1": Object {
+      "body": Array [
+        Object {
+          "id": "https://ecdf18bbcc90ea739fcd8d2f6353ba407fb73857",
+          "schema": "contentResource",
+        },
+      ],
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a1",
+      "motivation": "describing",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=1800,2000,500,500",
+      ],
+      "type": "Annotation",
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a10": Object {
+      "body": Array [
+        Object {
+          "id": "https://39adbabca37c35498b4030616f8519e624a553da",
+          "schema": "contentResource",
+        },
+      ],
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a10",
+      "motivation": "describing",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=1500,3250,100,200",
+      ],
+      "type": "Annotation",
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a2": Object {
+      "body": Array [
+        Object {
+          "id": "https://ab26c29a6aedf7f2aa4a07ae46fd61d8c796eca5",
+          "schema": "contentResource",
+        },
+      ],
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a2",
+      "motivation": "describing",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=3000,2100,100,200",
+      ],
+      "type": "Annotation",
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a3": Object {
+      "body": Array [
+        Object {
+          "id": "https://2c0a3005a18bd3e8c6ad40908a3afd5f9fd2bce1",
+          "schema": "contentResource",
+        },
+      ],
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a3",
+      "motivation": "describing",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2000,2800,400,400",
+      ],
+      "type": "Annotation",
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a4": Object {
+      "body": Array [
+        Object {
+          "id": "https://437947330c66ec142bd17a824080eba0f066b937",
+          "schema": "contentResource",
+        },
+      ],
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a4",
+      "motivation": "describing",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=1400,2500,100,200",
+      ],
+      "type": "Annotation",
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a5": Object {
+      "body": Array [
+        Object {
+          "id": "https://1b3ff4e6ffb432a8a8fe6bea7ab3b48d2f82fbae",
+          "schema": "contentResource",
+        },
+      ],
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a5",
+      "motivation": "describing",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2450,3800,100,200",
+      ],
+      "type": "Annotation",
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a6": Object {
+      "body": Array [
+        Object {
+          "id": "https://c7ba45495c5b2f5c60aba1fc0d3d39473a6133e4",
+          "schema": "contentResource",
+        },
+      ],
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a6",
+      "motivation": "describing",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=800,3500,100,200",
+      ],
+      "type": "Annotation",
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a7": Object {
+      "body": Array [
+        Object {
+          "id": "https://128d4cabccf4d66a471d3a7d3a3ed5f778f588aa",
+          "schema": "contentResource",
+        },
+      ],
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a7",
+      "motivation": "describing",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2500,4500,500,800",
+      ],
+      "type": "Annotation",
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a8": Object {
+      "body": Array [
+        Object {
+          "id": "https://73da0a6c52bc43d784830e1574c342d29505de4f",
+          "schema": "contentResource",
+        },
+      ],
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a8",
+      "motivation": "describing",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=3000,4000,100,200",
+      ],
+      "type": "Annotation",
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a9": Object {
+      "body": Array [
+        Object {
+          "id": "https://70346c5922a35a132e66980430c49e4cb089e8a1",
+          "schema": "contentResource",
+        },
+      ],
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1/a9",
+      "motivation": "describing",
+      "target": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2100,4000,100,200",
+      ],
+      "type": "Annotation",
+    },
+  },
+  "canvases": Object {
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0": Object {
+      "annotations": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/annopage/p1",
+      ],
+      "height": 6000,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "items": Array [
+        "https://2f67922950558d28b92d4d51ec7a59ac167acb21",
+      ],
+      "label": Object {
+        "en": Array [
+          "Object image 0",
+        ],
+      },
+      "type": "Canvas",
+      "width": 3788,
+    },
+  },
+  "contentResources": Object {
+    "https://128d4cabccf4d66a471d3a7d3a3ed5f778f588aa": Object {
+      "format": "text/html",
+      "id": "https://128d4cabccf4d66a471d3a7d3a3ed5f778f588aa",
+      "type": "TextualBody",
+      "value": "<h2 class=\\"annotatedzoom-annotation-detail__label\\">Boiler room</h2><div class=\\"annotatedzoom-annotation-detail__content\\"><p>In 1919 the <i>Aquitania</i> was refitted and converted from coal-burning to oil-burning engines, which meant fewer crew were required to labour in the engine room.</p></div>",
+    },
+    "https://1b3ff4e6ffb432a8a8fe6bea7ab3b48d2f82fbae": Object {
+      "format": "text/html",
+      "id": "https://1b3ff4e6ffb432a8a8fe6bea7ab3b48d2f82fbae",
+      "type": "TextualBody",
+      "value": "<h2 class=\\"annotatedzoom-annotation-detail__label\\">Third-class dining saloon</h2><div class=\\"annotatedzoom-annotation-detail__content\\"><p>While extravagant dishes and refined delicacies were served in first class, third-class meals were less sophisticated. A third-class lunch on a Cunard ship in the 1920s could include rice soup, boiled haddock or braised beef with cabbage, boiled potatoes, bread and ‘cabin biscuits’, followed by bread and butter pudding. To save space, passengers sat at long communal tables on chairs bolted to the floor, in case of bad weather.</p></div>",
+    },
+    "https://2c0a3005a18bd3e8c6ad40908a3afd5f9fd2bce1": Object {
+      "format": "text/html",
+      "id": "https://2c0a3005a18bd3e8c6ad40908a3afd5f9fd2bce1",
+      "type": "TextualBody",
+      "value": "<h2 class=\\"annotatedzoom-annotation-detail__label\\">First-class restaurant</h2><div class=\\"annotatedzoom-annotation-detail__content\\"><img class=\\"annotatedzoom-annotation-detail__image\\" src=\\"https://media.vam.ac.uk/feature/annotatedzoom/O1023003/2017KE6204-Aquitania-restaurant-cropped.jpg\\" width=300 height=250/><p>Dining on ocean liners was a radically different experience depending on the class of travel. In first class, the <i>Aquitania</i>’s Louis XVI-style dining room offered seating in small isolated groups, echoing elegant restaurants on land. The ship’s architect, Arthur Davis, explained that a “cheerful room with comfortable surroundings” was a necessary distraction from “the often very unpleasant conditions” at sea. </p><p class=\\"annotatedzoom-annotation-detail__credit\\">Photograph from <em>The New Art of Going Abroad</em>, 1929, US. National Art Library: 38041986015030. © Victoria and Albert Museum, London</p></div>",
+    },
+    "https://39adbabca37c35498b4030616f8519e624a553da": Object {
+      "format": "text/html",
+      "id": "https://39adbabca37c35498b4030616f8519e624a553da",
+      "type": "TextualBody",
+      "value": "<h2 class=\\"annotatedzoom-annotation-detail__label\\">Second-class dining saloon</h2><div class=\\"annotatedzoom-annotation-detail__content\\"><p>The second-class spaces, like first class, were decorated in a neo-classical style. “The second-class accommodation on the vessel, though not so sumptuous as the first-class, is still very elaborate and comfortable”, explained the architect. “The dining-room, no less than 104 ft in length and extending across the whole width of the ship, is decorated with paintings adapted from panels by Pergolesi”– the 18th-century decorative artist. (Arthur Davis, <i>The Architectural Review</i>, April 1914)</p></div>",
+    },
+    "https://437947330c66ec142bd17a824080eba0f066b937": Object {
+      "format": "text/html",
+      "id": "https://437947330c66ec142bd17a824080eba0f066b937",
+      "type": "TextualBody",
+      "value": "<h2 class=\\"annotatedzoom-annotation-detail__label\\">First-class state room</h2><div class=\\"annotatedzoom-annotation-detail__content\\"><img class=\\"annotatedzoom-annotation-detail__image\\" src=\\"https://media.vam.ac.uk/feature/annotatedzoom/O1023003/2017KE6205-state-rooms-on-B-deck-+-D-deck-cropped.jpg\\" width=300 height=250/><p>The <i>Aquitania</i>’s first-class cabins were designed by architect Arthur Davis, whose firm, Mewès and Davis Architects, had decorated the famously opulent Ritz hotels in Paris and London. The cabins were “as spacious as a bedroom at the Ritz or the Barclay. The walls are panelled in grey silk. The carpets are vibrant blue and yellow, as are also the striped silk chair coverings. Note the bath – just off-stage, and the electric heater”. (<i>The New Art of Going Abroad</i>, 1929).</p><p class=\\"annotatedzoom-annotation-detail__credit\\">Photograph from <em>The New Art of Going Abroad</em>, 1929, US. National Art Library: 38041986015030. © Victoria and Albert Museum, London</p></div>",
+    },
+    "https://70346c5922a35a132e66980430c49e4cb089e8a1": Object {
+      "format": "text/html",
+      "id": "https://70346c5922a35a132e66980430c49e4cb089e8a1",
+      "type": "TextualBody",
+      "value": "<h2 class=\\"annotatedzoom-annotation-detail__label\\">Baggage</h2><div class=\\"annotatedzoom-annotation-detail__content\\"><p>Passengers travelling for weeks or months would bring a huge number of trunks, most of which were kept in the baggage store deep in the hull of the ship. Cabins could only accommodate smaller trunks. Louis Vuitton designed the ‘steamer trunk’ specifically to fit under a first-class cabin bed. The baggage store was opened daily so that maids or stewards could collect personal items that were needed during the voyage.</p></div>",
+    },
+    "https://73da0a6c52bc43d784830e1574c342d29505de4f": Object {
+      "format": "text/html",
+      "id": "https://73da0a6c52bc43d784830e1574c342d29505de4f",
+      "type": "TextualBody",
+      "value": "<h2 class=\\"annotatedzoom-annotation-detail__label\\">Stores</h2><div class=\\"annotatedzoom-annotation-detail__content\\"><p>Ocean liners required huge quantities of food, enough for all crew and passengers – the equivalent to feeding a floating city. Cunard catered for varied tastes. Provisions for one trip included 500 sheep kidneys, 400 ox tails, 800 tongues and large quantities of frogs’ legs, as well as geese, turkey, duck, game and “75 heads of cattle and calfs”.</p></div>",
+    },
+    "https://ab26c29a6aedf7f2aa4a07ae46fd61d8c796eca5": Object {
+      "format": "text/html",
+      "id": "https://ab26c29a6aedf7f2aa4a07ae46fd61d8c796eca5",
+      "type": "TextualBody",
+      "value": "<h2 class=\\"annotatedzoom-annotation-detail__label\\">Garden lounge</h2><div class=\\"annotatedzoom-annotation-detail__content\\"><img class=\\"annotatedzoom-annotation-detail__image\\" src=\\"https://media.vam.ac.uk/feature/annotatedzoom/O1023003/2017KE6202-Aquitania-Garden-Lounge-cropped.jpg\\" width=300 height=250/><p>“As cool, as restful, as any terrace overlooking a rose-garden.” (<i>The New Art of Going Abroad</i>, 1929). Overlooking the sea and decorated with palms, the garden lounge was a fashionable place to have tea and was sometimes used for dancing.</p><p class=\\"annotatedzoom-annotation-detail__credit\\">Photograph from <em>The New Art of Going Abroad</em>, 1929, US. National Art Library: 38041986015030. © Victoria and Albert Museum, London</p></div>",
+    },
+    "https://c7ba45495c5b2f5c60aba1fc0d3d39473a6133e4": Object {
+      "format": "text/html",
+      "id": "https://c7ba45495c5b2f5c60aba1fc0d3d39473a6133e4",
+      "type": "TextualBody",
+      "value": "<h2 class=\\"annotatedzoom-annotation-detail__label\\">Third-class four berth room</h2><div class=\\"annotatedzoom-annotation-detail__content\\"><p>Liners were strictly organised spaces which reflected social hierarchies. Although people travelling in third class could account for 60% of the total number of passengers, they were segregated into a relatively small space in the lower decks of the ship, close to the noisy engine room. These four-berth rooms had none of the luxurious furnishings or fabrics found in first class, but they were an improvement on the communal sleeping quarters provided for steerage-class passengers on earlier liners.</p></div>",
+    },
+    "https://collections.vam.ac.uk/item/O1023003.jsonld": Object {
+      "@format": "application/ld+json",
+      "id": "https://collections.vam.ac.uk/item/O1023003.jsonld",
+      "type": "Dataset",
+    },
+    "https://ecdf18bbcc90ea739fcd8d2f6353ba407fb73857": Object {
+      "format": "text/html",
+      "id": "https://ecdf18bbcc90ea739fcd8d2f6353ba407fb73857",
+      "type": "TextualBody",
+      "value": "<h2 class=\\"annotatedzoom-annotation-detail__label\\">First-class lounge</h2><div class=\\"annotatedzoom-annotation-detail__content\\"><img class=\\"annotatedzoom-annotation-detail__image\\" src=\\"https://media.vam.ac.uk/feature/annotatedzoom/O1023003/Aquitania-lounge-drawing-room-cropped.jpg\\" width=300 height=250/><p>First-class public rooms were located in the centre of the ship – the most stable and comfortable areas on board. The <i>Aquitania</i>'s opulent interiors were inspired by classical architecture &ndash; spot the Ionic columns in the lounge. Architect Arthur Davis recommended the use of plaster and papier-mâché for ceilings, domes, and other decorative moulding, but advised against using marble and brickwork, as these would make the ship top-heavy.</p><p class=\\"annotatedzoom-annotation-detail__credit\\">Photograph from <em>The New Art of Going Abroad</em>, 1929, US. National Art Library: 38041986015030. © Victoria and Albert Museum, London</p></div>",
+    },
+    "https://framemark.vam.ac.uk/collections/2013GU2911/full/full/0/default.jpg": Object {
+      "format": "image/jpeg",
+      "height": 6000,
+      "id": "https://framemark.vam.ac.uk/collections/2013GU2911/full/full/0/default.jpg",
+      "service": Array [
+        "https://framemark.vam.ac.uk/collections/2013GU2911",
+      ],
+      "type": "Image",
+      "width": 3788,
+    },
+  },
+  "manifests": Object {
+    "https://iiif.vam.ac.uk/collections/O1023003/manifest.json": Object {
+      "@context": Array [
+        "http://iiif.io/api/presentation/3/context.json",
+        "http://www.w3.org/ns.anno.jsonld",
+      ],
+      "behavior": Array [
+        "individuals",
+      ],
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/manifest.json",
+      "items": Array [
+        "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      ],
+      "label": Object {
+        "en": Array [
+          "Cunard Line - to all parts of the world",
+        ],
+      },
+      "metadata": Array [
+        Object {
+          "label": Object {
+            "en": Array [
+              "Museum number",
+            ],
+          },
+          "value": Object {
+            "en": Array [
+              "E.1829-2004",
+            ],
+          },
+        },
+        Object {
+          "label": Object {
+            "en": Array [
+              "title",
+            ],
+          },
+          "value": Object {
+            "en": Array [
+              "Cunard Line - to all parts of the world",
+            ],
+          },
+        },
+        Object {
+          "label": Object {
+            "en": Array [
+              "Descriptive Line",
+            ],
+          },
+          "value": Object {
+            "en": Array [
+              "Chromolithograph travel poster for \\"Cunard Line - to all parts of the world\\", depicting a cross section of the Aquitania at sea, printed by Thos. Forman & Sons, Nottingham, ca. 1920.",
+            ],
+          },
+        },
+        Object {
+          "label": Object {
+            "en": Array [
+              "Collection",
+            ],
+          },
+          "value": Object {
+            "en": Array [
+              "PDP",
+            ],
+          },
+        },
+        Object {
+          "label": Object {
+            "en": Array [
+              "Place",
+            ],
+          },
+          "value": Object {
+            "en": Array [
+              "Nottingham (printed)",
+            ],
+          },
+        },
+        Object {
+          "label": Object {
+            "en": Array [
+              "Materials & Techniques",
+            ],
+          },
+          "value": Object {
+            "en": Array [
+              "chromolithograph",
+            ],
+          },
+        },
+        Object {
+          "label": Object {
+            "en": Array [
+              "Date",
+            ],
+          },
+          "value": Object {
+            "en": Array [
+              "ca. 1920 (made)",
+            ],
+          },
+        },
+        Object {
+          "label": Object {
+            "en": Array [
+              "Categories",
+            ],
+          },
+          "value": Object {
+            "en": Array [
+              "Posters;Boats and ships;Tourism & Travel",
+            ],
+          },
+        },
+        Object {
+          "label": Object {
+            "en": Array [
+              "Description",
+            ],
+          },
+          "value": Object {
+            "en": Array [
+              "Chromolithograph travel poster for \\"Cunard Line - to all parts of the world\\", depicting a cross section of the Aquitania at sea, printed by Thos. Forman & Sons, Nottingham, ca. 1920.",
+            ],
+          },
+        },
+      ],
+      "seeAlso": Array [
+        "https://collections.vam.ac.uk/item/O1023003.jsonld",
+      ],
+      "type": "Manifest",
+      "viewingDirection": "left-to-right",
+    },
+  },
+  "selectors": Object {
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=1400,2500,100,200": Object {
+      "expanded": true,
+      "height": 200,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 100,
+      "x": 1400,
+      "y": 2500,
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=1500,3250,100,200": Object {
+      "expanded": true,
+      "height": 200,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 100,
+      "x": 1500,
+      "y": 3250,
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=1800,2000,500,500": Object {
+      "expanded": true,
+      "height": 500,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 500,
+      "x": 1800,
+      "y": 2000,
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2000,2800,400,400": Object {
+      "expanded": true,
+      "height": 400,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 400,
+      "x": 2000,
+      "y": 2800,
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2100,4000,100,200": Object {
+      "expanded": true,
+      "height": 200,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 100,
+      "x": 2100,
+      "y": 4000,
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2450,3800,100,200": Object {
+      "expanded": true,
+      "height": 200,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 100,
+      "x": 2450,
+      "y": 3800,
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=2500,4500,500,800": Object {
+      "expanded": true,
+      "height": 800,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 500,
+      "x": 2500,
+      "y": 4500,
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=3000,2100,100,200": Object {
+      "expanded": true,
+      "height": 200,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 100,
+      "x": 3000,
+      "y": 2100,
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=3000,4000,100,200": Object {
+      "expanded": true,
+      "height": 200,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 100,
+      "x": 3000,
+      "y": 4000,
+    },
+    "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0#xywh=800,3500,100,200": Object {
+      "expanded": true,
+      "height": 200,
+      "id": "https://iiif.vam.ac.uk/collections/O1023003/canvas/c0",
+      "unit": "pixel",
+      "width": 100,
+      "x": 800,
+      "y": 3500,
+    },
+  },
+  "services": Object {
+    "https://framemark.vam.ac.uk/collections/2013GU2911": Object {
+      "id": "https://framemark.vam.ac.uk/collections/2013GU2911",
+      "profile": "level1",
+      "type": "ImageService2",
+    },
+  },
+}
+`;

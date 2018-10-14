@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/manifest/structural Manifest number 0 getAnnotationIds: getAnnotationIds 0 1`] = `
+Array [
+  "https://example.org/iiif/book1/page/manifest/1",
+]
+`;
+
+exports[`api/3.x/manifest/structural Manifest number 0 getAnnotations: getAnnotations 0 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/book1/page/manifest/1",
+    "items": Array [
+      "https://example.org/iiif/book1/page/manifest/a1",
+    ],
+    "type": "AnnotationPage",
+  },
+]
+`;
+
+exports[`api/3.x/manifest/structural Manifest number 0 getCanvasIds: getCanvasIds 0 1`] = `
+Array [
+  "https://example.org/iiif/book1/canvas/p1",
+  "https://example.org/iiif/book1/canvas/p2",
+]
+`;
+
+exports[`api/3.x/manifest/structural Manifest number 0 getCanvases: getCanvases 0 1`] = `
+Array [
+  Object {
+    "height": 1000,
+    "id": "https://example.org/iiif/book1/canvas/p1",
+    "items": Array [
+      "https://example.org/iiif/book1/page/p1/1",
+    ],
+    "label": Object {
+      "@none": Array [
+        "p. 1",
+      ],
+    },
+    "type": "Canvas",
+    "width": 750,
+  },
+  Object {
+    "height": 1000,
+    "id": "https://example.org/iiif/book1/canvas/p2",
+    "items": Array [
+      "https://example.org/iiif/book1/page/p2/1",
+    ],
+    "label": Object {
+      "@none": Array [
+        "p. 2",
+      ],
+    },
+    "type": "Canvas",
+    "width": 750,
+  },
+]
+`;
+
+exports[`api/3.x/manifest/structural Manifest number 0 getItemIds: getItemIds 0 1`] = `
+Array [
+  "https://example.org/iiif/book1/canvas/p1",
+  "https://example.org/iiif/book1/canvas/p2",
+]
+`;
+
+exports[`api/3.x/manifest/structural Manifest number 0 getItems: getItems 0 1`] = `
+Array [
+  Object {
+    "height": 1000,
+    "id": "https://example.org/iiif/book1/canvas/p1",
+    "items": Array [
+      "https://example.org/iiif/book1/page/p1/1",
+    ],
+    "label": Object {
+      "@none": Array [
+        "p. 1",
+      ],
+    },
+    "type": "Canvas",
+    "width": 750,
+  },
+  Object {
+    "height": 1000,
+    "id": "https://example.org/iiif/book1/canvas/p2",
+    "items": Array [
+      "https://example.org/iiif/book1/page/p2/1",
+    ],
+    "label": Object {
+      "@none": Array [
+        "p. 2",
+      ],
+    },
+    "type": "Canvas",
+    "width": 750,
+  },
+]
+`;
+
+exports[`api/3.x/manifest/structural Manifest number 0 getStructureIds: getStructureIds 0 1`] = `
+Array [
+  "https://example.org/iiif/book1/range/r0",
+]
+`;
+
+exports[`api/3.x/manifest/structural Manifest number 0 getStructures: getStructures 0 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/book1/range/r0",
+    "items": Array [
+      Object {
+        "id": "https://example.org/iiif/book1/range/r1",
+        "schema": "range",
+      },
+    ],
+    "label": Object {
+      "en": Array [
+        "Table of Contents",
+      ],
+    },
+    "type": "Range",
+  },
+]
+`;
+
+exports[`api/3.x/manifest/structural Manifest number 1 getAnnotationIds: getAnnotationIds 1 1`] = `Array []`;
+
+exports[`api/3.x/manifest/structural Manifest number 1 getAnnotations: getAnnotations 1 1`] = `Array []`;
+
+exports[`api/3.x/manifest/structural Manifest number 1 getCanvasIds: getCanvasIds 1 1`] = `
+Array [
+  "https://example.org/iiif/book1/canvas/p1",
+]
+`;
+
+exports[`api/3.x/manifest/structural Manifest number 1 getCanvases: getCanvases 1 1`] = `
+Array [
+  Object {
+    "height": 1000,
+    "id": "https://example.org/iiif/book1/canvas/p1",
+    "label": Object {
+      "@none": Array [
+        "p. 1",
+      ],
+    },
+    "type": "Canvas",
+    "width": 750,
+  },
+]
+`;
+
+exports[`api/3.x/manifest/structural Manifest number 1 getItemIds: getItemIds 1 1`] = `
+Array [
+  "https://example.org/iiif/book1/canvas/p1",
+]
+`;
+
+exports[`api/3.x/manifest/structural Manifest number 1 getItems: getItems 1 1`] = `
+Array [
+  Object {
+    "height": 1000,
+    "id": "https://example.org/iiif/book1/canvas/p1",
+    "label": Object {
+      "@none": Array [
+        "p. 1",
+      ],
+    },
+    "type": "Canvas",
+    "width": 750,
+  },
+]
+`;
+
+exports[`api/3.x/manifest/structural Manifest number 1 getStructureIds: getStructureIds 1 1`] = `Array []`;
+
+exports[`api/3.x/manifest/structural Manifest number 1 getStructures: getStructures 1 1`] = `Array []`;
+
+exports[`api/3.x/manifest/structural Manifest number 2 getAnnotationIds: getAnnotationIds 2 1`] = `Array []`;
+
+exports[`api/3.x/manifest/structural Manifest number 2 getAnnotations: getAnnotations 2 1`] = `Array []`;
+
+exports[`api/3.x/manifest/structural Manifest number 2 getCanvasIds: getCanvasIds 2 1`] = `
+Array [
+  "https://example.org/iiif/book1/canvas/p1",
+]
+`;
+
+exports[`api/3.x/manifest/structural Manifest number 2 getCanvases: getCanvases 2 1`] = `
+Array [
+  Object {
+    "duration": 50,
+    "height": 1000,
+    "id": "https://example.org/iiif/book1/canvas/p1",
+    "label": Object {
+      "@none": Array [
+        "p. 1",
+      ],
+    },
+    "type": "Canvas",
+    "width": 750,
+  },
+]
+`;
+
+exports[`api/3.x/manifest/structural Manifest number 2 getItemIds: getItemIds 2 1`] = `
+Array [
+  "https://example.org/iiif/book1/canvas/p1",
+]
+`;
+
+exports[`api/3.x/manifest/structural Manifest number 2 getItems: getItems 2 1`] = `
+Array [
+  Object {
+    "duration": 50,
+    "height": 1000,
+    "id": "https://example.org/iiif/book1/canvas/p1",
+    "label": Object {
+      "@none": Array [
+        "p. 1",
+      ],
+    },
+    "type": "Canvas",
+    "width": 750,
+  },
+]
+`;
+
+exports[`api/3.x/manifest/structural Manifest number 2 getStructureIds: getStructureIds 2 1`] = `Array []`;
+
+exports[`api/3.x/manifest/structural Manifest number 2 getStructures: getStructures 2 1`] = `Array []`;

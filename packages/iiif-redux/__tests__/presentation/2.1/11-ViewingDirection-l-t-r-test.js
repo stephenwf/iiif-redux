@@ -1,7 +1,7 @@
 import { createStructuredSelector } from 'reselect';
 import testJson from '../../fixtures/presentation/2.1/12/manifest';
-import * as currentManifest from '../../../src/api/current-manifest';
 import { createStoreAndImportManifest } from '../../../test-utils';
+import { manifestByIdSelector } from '../../../src/api/manifest';
 
 describe('iiif/presentation/2.1/12 ViewingDirection l-t-r', () => {
   global.fetch = require('jest-fetch-mock');
@@ -11,9 +11,14 @@ describe('iiif/presentation/2.1/12 ViewingDirection l-t-r', () => {
     const state = store.getState();
 
     expect(
-      createStructuredSelector({
-        service: currentManifest.getViewingDirection,
-      })(state)
+      manifestByIdSelector(
+        currentManifest => ({
+          service: currentManifest.getViewingDirection,
+        }),
+        {
+          getId: () => testJson['@id'],
+        }
+      )(state)
     ).toMatchSnapshot();
   });
 });

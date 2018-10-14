@@ -1,0 +1,18 @@
+{
+  "id": "https://example.org/iiif/book1/res/page1.jpg",
+  "type": "Image",
+  "label": {
+    "en": ["Page 1"],
+    "es": ["Página 1"]
+  },
+  "format": "image/jpeg",
+  "service": [
+    {
+      "id": "https://example.org/images/book1-page1",
+      "type": "ImageService3",
+      "profile": "level2"
+    }
+  ],
+  "height": 2000,
+  "width": 1500
+}

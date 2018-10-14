@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/collection/linking Collection number 0 getHomepage: getHomepage 0 1`] = `
+Object {
+  "format": "text/html",
+  "id": "https://example.com/info/",
+  "label": Object {
+    "en": Array [
+      "Homepage for Example Object",
+    ],
+  },
+  "type": "Text",
+}
+`;
+
+exports[`api/3.x/collection/linking Collection number 0 getHomepageId: getHomepageId 0 1`] = `"https://example.com/info/"`;
+
+exports[`api/3.x/collection/linking Collection number 0 getLogo: getLogo 0 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/img/logo.jpg",
+    "type": "Image",
+  },
+]
+`;
+
+exports[`api/3.x/collection/linking Collection number 0 getLogoIds: getLogoIds 0 1`] = `
+Array [
+  "https://example.org/img/logo.jpg",
+]
+`;
+
+exports[`api/3.x/collection/linking Collection number 0 getPartOf: getPartOf 0 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/1",
+    "type": "Manifest",
+  },
+]
+`;
+
+exports[`api/3.x/collection/linking Collection number 0 getPartOfId: getPartOfId 0 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/1",
+    "schema": "manifest",
+  },
+]
+`;
+
+exports[`api/3.x/collection/linking Collection number 0 getRendering: getRendering 0 1`] = `
+Array [
+  Object {
+    "format": "application/pdf",
+    "id": "https://example.org/1.pdf",
+    "label": Object {
+      "en": Array [
+        "PDF Rendering of Book",
+      ],
+    },
+    "type": "Text",
+  },
+]
+`;
+
+exports[`api/3.x/collection/linking Collection number 0 getRenderingIds: getRenderingIds 0 1`] = `
+Array [
+  "https://example.org/1.pdf",
+]
+`;
+
+exports[`api/3.x/collection/linking Collection number 0 getSeeAlso: getSeeAlso 0 1`] = `
+Array [
+  Object {
+    "format": "text/xml",
+    "id": "https://example.org/library/catalog/book1.xml",
+    "profile": "https://example.org/profiles/bibliographic",
+    "type": "Dataset",
+  },
+]
+`;
+
+exports[`api/3.x/collection/linking Collection number 0 getSeeAlsoIds: getSeeAlsoIds 0 1`] = `
+Array [
+  "https://example.org/library/catalog/book1.xml",
+]
+`;
+
+exports[`api/3.x/collection/linking Collection number 0 getService: getService 0 1`] = `
+Array [
+  Object {
+    "@id": "https://example.org/iiif2/image1/identifier",
+    "@type": "ImageService2",
+    "id": "https://4b170576c9c139706631e2544e31e8059aa0070e",
+    "profile": "http://iiif.io/api/image/2/level2.json",
+  },
+  Object {
+    "id": "https://example.org/iiif3/image1/identifier",
+    "profile": "level2",
+    "type": "ImageService3",
+  },
+]
+`;
+
+exports[`api/3.x/collection/linking Collection number 0 getServiceIds: getServiceIds 0 1`] = `
+Array [
+  "https://4b170576c9c139706631e2544e31e8059aa0070e",
+  "https://example.org/iiif3/image1/identifier",
+]
+`;
+
+exports[`api/3.x/collection/linking Collection number 1 getHomepage: getHomepage 1 1`] = `null`;
+
+exports[`api/3.x/collection/linking Collection number 1 getHomepageId: getHomepageId 1 1`] = `null`;
+
+exports[`api/3.x/collection/linking Collection number 1 getLogo: getLogo 1 1`] = `Array []`;
+
+exports[`api/3.x/collection/linking Collection number 1 getLogoIds: getLogoIds 1 1`] = `Array []`;
+
+exports[`api/3.x/collection/linking Collection number 1 getPartOf: getPartOf 1 1`] = `null`;
+
+exports[`api/3.x/collection/linking Collection number 1 getPartOfId: getPartOfId 1 1`] = `null`;
+
+exports[`api/3.x/collection/linking Collection number 1 getRendering: getRendering 1 1`] = `Array []`;
+
+exports[`api/3.x/collection/linking Collection number 1 getRenderingIds: getRenderingIds 1 1`] = `Array []`;
+
+exports[`api/3.x/collection/linking Collection number 1 getSeeAlso: getSeeAlso 1 1`] = `Array []`;
+
+exports[`api/3.x/collection/linking Collection number 1 getSeeAlsoIds: getSeeAlsoIds 1 1`] = `Array []`;
+
+exports[`api/3.x/collection/linking Collection number 1 getService: getService 1 1`] = `Array []`;
+
+exports[`api/3.x/collection/linking Collection number 1 getServiceIds: getServiceIds 1 1`] = `Array []`;

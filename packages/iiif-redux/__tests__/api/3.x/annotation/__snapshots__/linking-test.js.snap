@@ -1,0 +1,282 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getBody: getBody Choice body example 1`] = `
+Array [
+  Object {
+    "default": "http://iiif.io/api/presentation/2.1/example/fixtures/resources/page1-full.png",
+    "id": "https://example.org/iiif/choice/1",
+    "item": Array [
+      "http://iiif.io/api/image/2.1/example/reference/page1-full/full/full/0/gray.jpg",
+    ],
+    "type": "Choice",
+  },
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getBodyId: getBodyId Choice body example 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/choice/1",
+    "schema": "choice",
+  },
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getHomepage: getHomepage Choice body example 1`] = `null`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getHomepageId: getHomepageId Choice body example 1`] = `null`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getLogo: getLogo Choice body example 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getLogoIds: getLogoIds Choice body example 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getPartOf: getPartOf Choice body example 1`] = `null`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getPartOfId: getPartOfId Choice body example 1`] = `null`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getRendering: getRendering Choice body example 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getRenderingIds: getRenderingIds Choice body example 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getSeeAlso: getSeeAlso Choice body example 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getSeeAlsoIds: getSeeAlsoIds Choice body example 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getService: getService Choice body example 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getServiceIds: getServiceIds Choice body example 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getTarget: getTarget Choice body example 1`] = `
+Array [
+  "https://example.org/iiif/book1/canvas/p1",
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Choice body example getTargetId: getTargetId Choice body example 1`] = `
+Array [
+  "https://example.org/iiif/book1/canvas/p1",
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Complete annotation getBody: getBody Complete annotation 1`] = `
+Array [
+  Object {
+    "format": "image/jpeg",
+    "id": "https://example.org/iiif/book1/res/page1.jpg",
+    "type": "Image",
+  },
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Complete annotation getBodyId: getBodyId Complete annotation 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/book1/res/page1.jpg",
+    "schema": "contentResource",
+  },
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Complete annotation getHomepage: getHomepage Complete annotation 1`] = `
+Object {
+  "format": "text/html",
+  "id": "https://example.org/info/book1/",
+  "label": Object {
+    "en": Array [
+      "Home page for Book 1",
+    ],
+  },
+  "type": "Text",
+}
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Complete annotation getHomepageId: getHomepageId Complete annotation 1`] = `"https://example.org/info/book1/"`;
+
+exports[`api/3.x/annotation/linking Annotation: Complete annotation getLogo: getLogo Complete annotation 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/logos/institution1.jpg",
+    "service": Array [
+      "https://example.org/service/inst1",
+    ],
+    "type": "Image",
+  },
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Complete annotation getLogoIds: getLogoIds Complete annotation 1`] = `
+Array [
+  "https://example.org/logos/institution1.jpg",
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Complete annotation getPartOf: getPartOf Complete annotation 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/collections/books/",
+    "type": "Collection",
+  },
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Complete annotation getPartOfId: getPartOfId Complete annotation 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/collections/books/",
+    "schema": "collection",
+  },
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Complete annotation getRendering: getRendering Complete annotation 1`] = `
+Array [
+  Object {
+    "format": "application/pdf",
+    "id": "https://example.org/iiif/book1.pdf",
+    "label": Object {
+      "en": Array [
+        "Download as PDF",
+      ],
+    },
+    "type": "Text",
+  },
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Complete annotation getRenderingIds: getRenderingIds Complete annotation 1`] = `
+Array [
+  "https://example.org/iiif/book1.pdf",
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Complete annotation getSeeAlso: getSeeAlso Complete annotation 1`] = `
+Array [
+  Object {
+    "format": "text/xml",
+    "id": "https://example.org/library/catalog/book1.xml",
+    "profile": "https://example.org/profiles/bibliographic",
+    "type": "Dataset",
+  },
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Complete annotation getSeeAlsoIds: getSeeAlsoIds Complete annotation 1`] = `
+Array [
+  "https://example.org/library/catalog/book1.xml",
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Complete annotation getService: getService Complete annotation 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/service/example",
+    "profile": "https://example.org/docs/example-service.html",
+    "type": "Service",
+  },
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Complete annotation getServiceIds: getServiceIds Complete annotation 1`] = `
+Array [
+  "https://example.org/service/example",
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Complete annotation getTarget: getTarget Complete annotation 1`] = `
+Array [
+  "https://example.org/iiif/book1/canvas/p1",
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Complete annotation getTargetId: getTargetId Complete annotation 1`] = `
+Array [
+  "https://example.org/iiif/book1/canvas/p1",
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getBody: getBody IIIF Documentation fixture 1`] = `
+Array [
+  Object {
+    "format": "image/jpeg",
+    "id": "https://example.org/iiif/book1/res/page1.jpg",
+    "type": "Image",
+  },
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getBodyId: getBodyId IIIF Documentation fixture 1`] = `
+Array [
+  Object {
+    "id": "https://example.org/iiif/book1/res/page1.jpg",
+    "schema": "contentResource",
+  },
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getHomepage: getHomepage IIIF Documentation fixture 1`] = `null`;
+
+exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getHomepageId: getHomepageId IIIF Documentation fixture 1`] = `null`;
+
+exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getLogo: getLogo IIIF Documentation fixture 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getLogoIds: getLogoIds IIIF Documentation fixture 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getPartOf: getPartOf IIIF Documentation fixture 1`] = `null`;
+
+exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getPartOfId: getPartOfId IIIF Documentation fixture 1`] = `null`;
+
+exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getRendering: getRendering IIIF Documentation fixture 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getRenderingIds: getRenderingIds IIIF Documentation fixture 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getSeeAlso: getSeeAlso IIIF Documentation fixture 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getSeeAlsoIds: getSeeAlsoIds IIIF Documentation fixture 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getService: getService IIIF Documentation fixture 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getServiceIds: getServiceIds IIIF Documentation fixture 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getTarget: getTarget IIIF Documentation fixture 1`] = `
+Array [
+  "https://example.org/iiif/book1/canvas/p1",
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: IIIF Documentation fixture getTargetId: getTargetId IIIF Documentation fixture 1`] = `
+Array [
+  "https://example.org/iiif/book1/canvas/p1",
+]
+`;
+
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getBody: getBody Minimal annotation 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getBodyId: getBodyId Minimal annotation 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getHomepage: getHomepage Minimal annotation 1`] = `null`;
+
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getHomepageId: getHomepageId Minimal annotation 1`] = `null`;
+
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getLogo: getLogo Minimal annotation 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getLogoIds: getLogoIds Minimal annotation 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getPartOf: getPartOf Minimal annotation 1`] = `null`;
+
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getPartOfId: getPartOfId Minimal annotation 1`] = `null`;
+
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getRendering: getRendering Minimal annotation 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getRenderingIds: getRenderingIds Minimal annotation 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getSeeAlso: getSeeAlso Minimal annotation 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getSeeAlsoIds: getSeeAlsoIds Minimal annotation 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getService: getService Minimal annotation 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getServiceIds: getServiceIds Minimal annotation 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getTarget: getTarget Minimal annotation 1`] = `Array []`;
+
+exports[`api/3.x/annotation/linking Annotation: Minimal annotation getTargetId: getTargetId Minimal annotation 1`] = `Array []`;

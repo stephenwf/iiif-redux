@@ -1,0 +1,247 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`National Library of Scotland: Top level collection it should normalize 1`] = `
+Object {
+  "collections": Object {
+    "https://view.nls.uk/collections/1041/8410/104184103.json": Object {
+      "@id": "https://view.nls.uk/collections/1041/8410/104184103.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Chapbooks printed in Scotland",
+        },
+      ],
+    },
+    "https://view.nls.uk/collections/1208/2191/120821910.json": Object {
+      "@id": "https://view.nls.uk/collections/1208/2191/120821910.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Antiquarian books of Scotland",
+        },
+      ],
+    },
+    "https://view.nls.uk/collections/1256/4477/125644778.json": Object {
+      "@id": "https://view.nls.uk/collections/1256/4477/125644778.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Scottish History Society volumes",
+        },
+      ],
+    },
+    "https://view.nls.uk/collections/1256/5201/125652019.json": Object {
+      "@id": "https://view.nls.uk/collections/1256/5201/125652019.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Selected 'Wee Windaes' books",
+        },
+      ],
+    },
+    "https://view.nls.uk/collections/1258/8396/125883965.json": Object {
+      "@id": "https://view.nls.uk/collections/1258/8396/125883965.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Scottish School Certificate papers 1889-1963",
+        },
+      ],
+    },
+    "https://view.nls.uk/collections/1334/7486/133474867.json": Object {
+      "@id": "https://view.nls.uk/collections/1334/7486/133474867.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Manuscripts containing Middle English texts.",
+        },
+      ],
+    },
+    "https://view.nls.uk/collections/7446/74462370.json": Object {
+      "@id": "https://view.nls.uk/collections/7446/74462370.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "First World War 'Official Photographs'",
+        },
+      ],
+    },
+    "https://view.nls.uk/collections/7446/74466682.json": Object {
+      "@id": "https://view.nls.uk/collections/7446/74466682.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Hutton Drawings",
+        },
+      ],
+    },
+    "https://view.nls.uk/collections/7446/74466699.json": Object {
+      "@id": "https://view.nls.uk/collections/7446/74466699.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Scottish Bridges",
+        },
+      ],
+    },
+    "https://view.nls.uk/collections/7446/74466728.json": Object {
+      "@id": "https://view.nls.uk/collections/7446/74466728.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Theatre posters, 1870-1900",
+        },
+      ],
+    },
+    "https://view.nls.uk/collections/9350/93506071.json": Object {
+      "@id": "https://view.nls.uk/collections/9350/93506071.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Histories of Scottish families",
+        },
+      ],
+    },
+    "https://view.nls.uk/collections/top.json": Object {
+      "@context": "http://iiif.io/api/presentation/2/context.json",
+      "@id": "https://view.nls.uk/collections/top.json",
+      "@type": "sc:Collection",
+      "collections": Array [
+        Object {
+          "id": "https://view.nls.uk/collections/1208/2191/120821910.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://view.nls.uk/collections/1258/8396/125883965.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://view.nls.uk/collections/1334/7486/133474867.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://view.nls.uk/collections/1256/5201/125652019.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://view.nls.uk/manifest/7445/74457611/manifest.json",
+          "schema": "manifest",
+        },
+        Object {
+          "id": "https://view.nls.uk/manifest/7445/74457640/manifest.json",
+          "schema": "manifest",
+        },
+        Object {
+          "id": "https://view.nls.uk/manifest/7446/74464614/manifest.json",
+          "schema": "manifest",
+        },
+        Object {
+          "id": "https://view.nls.uk/manifest/7446/74465058/manifest.json",
+          "schema": "manifest",
+        },
+        Object {
+          "id": "https://view.nls.uk/manifest/7492/74921376/manifest.json",
+          "schema": "manifest",
+        },
+        Object {
+          "id": "https://view.nls.uk/collections/7446/74466699.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://view.nls.uk/collections/7446/74466728.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://view.nls.uk/collections/7446/74462370.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://view.nls.uk/collections/7446/74466682.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://view.nls.uk/collections/1256/4477/125644778.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://view.nls.uk/collections/9350/93506071.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "https://view.nls.uk/collections/1041/8410/104184103.json",
+          "schema": "collection",
+        },
+      ],
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "National Library of Scotland IIIF Collections",
+        },
+      ],
+    },
+  },
+  "manifests": Object {
+    "https://view.nls.uk/manifest/7445/74457611/manifest.json": Object {
+      "@id": "https://view.nls.uk/manifest/7445/74457611/manifest.json",
+      "@type": "sc:Manifest",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Photographs of the south side of Edinburgh",
+        },
+      ],
+    },
+    "https://view.nls.uk/manifest/7445/74457640/manifest.json": Object {
+      "@id": "https://view.nls.uk/manifest/7445/74457640/manifest.json",
+      "@type": "sc:Manifest",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Morall fabillis of Esope the Phyrgia[n]",
+        },
+      ],
+    },
+    "https://view.nls.uk/manifest/7446/74464614/manifest.json": Object {
+      "@id": "https://view.nls.uk/manifest/7446/74464614/manifest.json",
+      "@type": "sc:Manifest",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Poems, chiefly in the Scottish dialect",
+        },
+      ],
+    },
+    "https://view.nls.uk/manifest/7446/74465058/manifest.json": Object {
+      "@id": "https://view.nls.uk/manifest/7446/74465058/manifest.json",
+      "@type": "sc:Manifest",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Scotia depicta",
+        },
+      ],
+    },
+    "https://view.nls.uk/manifest/7492/74921376/manifest.json": Object {
+      "@id": "https://view.nls.uk/manifest/7492/74921376/manifest.json",
+      "@type": "sc:Manifest",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Soviet posters",
+        },
+      ],
+    },
+  },
+}
+`;

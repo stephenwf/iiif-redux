@@ -16,6 +16,7 @@ const { Content } = Layout;
 class CanvasPanelViewer extends Component {
   state = { error: false };
   componentDidCatch(err, errInfo) {
+    console.warn(errInfo);
     this.setState({ error: true });
   }
 
@@ -75,9 +76,11 @@ class Canvas extends Component {
                 canvas={this.props.id}
               />
             </Card>
-            {this.props.images.map((image, key) => {
-              return <div key={key} />;
-            })}
+            {this.props.images
+              ? this.props.images.map((image, key) => {
+                  return <div key={key} />;
+                })
+              : null}
           </Col>
         </Row>
       </PageLayout>

@@ -13,6 +13,7 @@ export default function byIdSelectorFactory(rootApi, resourceKey) {
         return {
           fetched: false,
           error: true,
+          errorMessage: 'No ID found on resource',
         };
       }
 
@@ -42,9 +43,6 @@ export default function byIdSelectorFactory(rootApi, resourceKey) {
       {}.toString.call(selectorOrStructure) === '[object Function]'
         ? selector => passThroughState => selector(passThroughState)
         : createStructuredSelector)(selectorOrStructure)(state);
-      if (dereference) {
-        newProps.loading = state.dereferenced[id].loading;
-      }
 
       return newProps;
     }

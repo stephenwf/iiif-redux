@@ -26,9 +26,13 @@ Object {
 
 exports[`store iiifResourceRequestUnknown http request 1`] = `
 Object {
+  "annotationCollections": Object {},
   "annotationLists": Object {},
+  "annotationPages": Object {},
   "annotations": Object {},
+  "canvasReferences": Object {},
   "canvases": Object {},
+  "choices": Object {},
   "collections": Object {
     "http://iiif.com/collection-1.json": Object {
       "@id": "http://iiif.com/collection-1.json",
@@ -41,11 +45,3724 @@ Object {
       ],
     },
   },
+  "contentResources": Object {},
   "externalResources": Object {},
   "imageResources": Object {},
   "layers": Object {},
   "manifests": Object {},
   "ranges": Object {},
+  "schemaVersions": Object {
+    "http://iiif.com/collection-1.json": 2,
+  },
   "sequences": Object {},
+}
+`;
+
+exports[`store should create state that works with selectors 1`] = `
+Array [
+  Object {
+    "@language": "en",
+    "@value": "Forth Bridge illustrations 1886-1887",
+  },
+]
+`;
+
+exports[`store should create state that works with selectors 2`] = `
+Array [
+  Object {
+    "@language": "en",
+    "@value": "default",
+  },
+]
+`;
+
+exports[`store should create state that works with selectors 3`] = `
+Object {
+  "imageService": Object {
+    "@context": "http://iiif.io/api/image/2/context.json",
+    "@id": "https://view.nls.uk/iiif/7443/74438561.5",
+    "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+  },
+  "label": Array [
+    Object {
+      "@language": "en",
+      "@value": "1",
+    },
+  ],
+  "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438561.4.jpg",
+}
+`;
+
+exports[`store should have default state 1`] = `
+Object {
+  "dereferenced": Object {},
+  "frames": Object {
+    "focusedFrame": null,
+    "list": Object {},
+  },
+  "resources": Object {
+    "annotationCollections": Object {},
+    "annotationLists": Object {},
+    "annotationPages": Object {},
+    "annotations": Object {},
+    "canvasReferences": Object {},
+    "canvases": Object {},
+    "choices": Object {},
+    "collections": Object {},
+    "contentResources": Object {},
+    "externalResources": Object {},
+    "imageResources": Object {},
+    "layers": Object {},
+    "manifests": Object {},
+    "ranges": Object {},
+    "sequences": Object {},
+  },
+  "routing": Object {
+    "currentAnnotation": null,
+    "currentAnnotationList": null,
+    "currentCanvas": null,
+    "currentCollection": null,
+    "currentImageResource": null,
+    "currentLayer": null,
+    "currentManifest": null,
+    "currentRange": null,
+    "currentSequence": null,
+  },
+}
+`;
+
+exports[`store should import a manifest: second state 1`] = `
+Object {
+  "dereferenced": Object {
+    "https://view.nls.uk/manifest/7446/74464117/manifest.json": Object {
+      "loading": false,
+      "requested": 2017-11-25T00:00:00.000Z,
+      "resourceId": "https://view.nls.uk/manifest/7446/74464117/manifest.json",
+      "ttl": 600,
+    },
+  },
+  "frames": Object {
+    "focusedFrame": null,
+    "list": Object {},
+  },
+  "resources": Object {
+    "annotationCollections": Object {},
+    "annotationLists": Object {},
+    "annotationPages": Object {},
+    "annotations": Object {
+      "https://view.nls.uk/iiif/7443/74438561.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438561.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/1",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438561.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438562.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438562.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/2",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438562.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438654.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438654.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/3",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438654.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438655.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438655.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/4",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438655.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438656.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438656.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/5",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438656.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438657.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438657.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/6",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438657.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438658.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438658.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/7",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438658.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438659.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438659.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/8",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438659.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438660.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438660.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/9",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438660.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438661.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438661.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/10",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438661.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438662.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438662.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/11",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438662.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438663.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438663.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/12",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438663.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438664.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438664.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/13",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438664.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438665.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438665.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/14",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438665.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438666.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438666.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/15",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438666.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438667.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438667.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/16",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438667.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438668.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438668.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/17",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438668.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438669.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438669.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/18",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438669.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438670.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438670.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/19",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438670.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438671.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438671.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/20",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438671.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438672.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438672.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/21",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438672.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438673.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438673.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/22",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438673.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438674.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438674.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/23",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438674.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438675.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438675.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/24",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438675.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438676.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438676.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/25",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438676.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438677.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438677.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/26",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438677.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438678.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438678.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/27",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438678.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438679.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438679.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/28",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438679.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438680.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438680.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/29",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438680.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438681.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438681.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/30",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438681.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438682.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438682.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/31",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438682.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438683.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438683.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/32",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438683.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438684.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438684.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/33",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438684.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438685.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438685.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/34",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438685.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438686.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438686.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/35",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438686.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74438687.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438687.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/36",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74438687.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74439048.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74439048.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/37",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74439048.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74439050.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74439050.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/38",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74439050.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74439051.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74439051.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/39",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74439051.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+      "https://view.nls.uk/iiif/7443/74439052.5/annotation": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74439052.5/annotation",
+        "@type": "oa:Annotation",
+        "motivation": "sc:painting",
+        "on": "https://view.nls.uk/iiif/7446/74464117/canvas/40",
+        "resource": Object {
+          "id": "https://view.nls.uk/iiif/7443/74439052.5/full/full/0/native.jpg",
+          "schema": "imageResource",
+        },
+      },
+    },
+    "canvasReferences": Object {},
+    "canvases": Object {
+      "https://view.nls.uk/iiif/7446/74464117/canvas/1": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/1",
+        "@type": "sc:Canvas",
+        "height": 1868,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438561.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "1",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438561.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/10": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/10",
+        "@type": "sc:Canvas",
+        "height": 1899,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438661.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "10",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438661.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/11": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/11",
+        "@type": "sc:Canvas",
+        "height": 1882,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438662.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "11",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438662.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/12": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/12",
+        "@type": "sc:Canvas",
+        "height": 1869,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438663.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "12",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438663.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/13": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/13",
+        "@type": "sc:Canvas",
+        "height": 1876,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438664.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "13",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438664.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/14": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/14",
+        "@type": "sc:Canvas",
+        "height": 3315,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438665.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "14",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438665.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/15": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/15",
+        "@type": "sc:Canvas",
+        "height": 1883,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438666.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "15",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438666.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/16": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/16",
+        "@type": "sc:Canvas",
+        "height": 1866,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438667.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "16",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438667.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/17": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/17",
+        "@type": "sc:Canvas",
+        "height": 1830,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438668.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "17",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438668.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/18": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/18",
+        "@type": "sc:Canvas",
+        "height": 1830,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438669.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "18",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438669.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/19": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/19",
+        "@type": "sc:Canvas",
+        "height": 3293,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438670.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "19",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438670.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/2": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/2",
+        "@type": "sc:Canvas",
+        "height": 1869,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438562.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "2",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438562.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/20": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/20",
+        "@type": "sc:Canvas",
+        "height": 1823,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438671.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "20",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438671.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/21": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/21",
+        "@type": "sc:Canvas",
+        "height": 3312,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438672.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "21",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438672.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/22": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/22",
+        "@type": "sc:Canvas",
+        "height": 1849,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438673.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "22",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438673.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/23": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/23",
+        "@type": "sc:Canvas",
+        "height": 1857,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438674.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "23",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438674.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/24": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/24",
+        "@type": "sc:Canvas",
+        "height": 3379,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438675.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "24",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438675.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/25": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/25",
+        "@type": "sc:Canvas",
+        "height": 1843,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438676.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "25",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438676.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/26": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/26",
+        "@type": "sc:Canvas",
+        "height": 1837,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438677.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "26",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438677.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/27": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/27",
+        "@type": "sc:Canvas",
+        "height": 1881,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438678.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "27",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438678.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/28": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/28",
+        "@type": "sc:Canvas",
+        "height": 1830,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438679.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "28",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438679.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/29": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/29",
+        "@type": "sc:Canvas",
+        "height": 1885,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438680.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "29",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438680.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/3": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/3",
+        "@type": "sc:Canvas",
+        "height": 1855,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438654.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "3",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438654.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/30": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/30",
+        "@type": "sc:Canvas",
+        "height": 1834,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438681.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "30",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438681.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/31": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/31",
+        "@type": "sc:Canvas",
+        "height": 1845,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438682.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "31",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438682.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/32": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/32",
+        "@type": "sc:Canvas",
+        "height": 1837,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438683.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "32",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438683.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/33": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/33",
+        "@type": "sc:Canvas",
+        "height": 1834,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438684.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "33",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438684.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/34": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/34",
+        "@type": "sc:Canvas",
+        "height": 1867,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438685.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "34",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438685.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/35": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/35",
+        "@type": "sc:Canvas",
+        "height": 1848,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438686.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "35",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438686.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/36": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/36",
+        "@type": "sc:Canvas",
+        "height": 1864,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438687.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "36",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438687.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/37": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/37",
+        "@type": "sc:Canvas",
+        "height": 1859,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74439048.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "37",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74439048.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/38": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/38",
+        "@type": "sc:Canvas",
+        "height": 1838,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74439050.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "38",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74439050.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/39": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/39",
+        "@type": "sc:Canvas",
+        "height": 1841,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74439051.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "39",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74439051.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/4": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/4",
+        "@type": "sc:Canvas",
+        "height": 1861,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438655.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "4",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438655.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/40": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/40",
+        "@type": "sc:Canvas",
+        "height": 1836,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74439052.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "40",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74439052.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/5": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/5",
+        "@type": "sc:Canvas",
+        "height": 1887,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438656.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "5",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438656.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/6": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/6",
+        "@type": "sc:Canvas",
+        "height": 1842,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438657.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "6",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438657.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/7": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/7",
+        "@type": "sc:Canvas",
+        "height": 1878,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438658.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "7",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438658.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/8": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/8",
+        "@type": "sc:Canvas",
+        "height": 1936,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438659.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "8",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438659.4.jpg",
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7446/74464117/canvas/9": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/canvas/9",
+        "@type": "sc:Canvas",
+        "height": 1899,
+        "images": Array [
+          "https://view.nls.uk/iiif/7443/74438660.5/annotation",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "9",
+          },
+        ],
+        "thumbnail": "https://deriv.nls.uk/dcn4/7443/74438660.4.jpg",
+        "width": 2500,
+      },
+    },
+    "choices": Object {},
+    "collections": Object {},
+    "contentResources": Object {},
+    "externalResources": Object {
+      "http://seealso.com/page-1.json": Object {
+        "@id": "http://seealso.com/page-1.json",
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Page 1",
+          },
+        ],
+      },
+      "http://seealso.com/page-2.json": Object {
+        "@id": "http://seealso.com/page-2.json",
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Page 2",
+          },
+        ],
+      },
+      "http://seealso.com/page-3.json": Object {
+        "@id": "http://seealso.com/page-3.json",
+      },
+    },
+    "imageResources": Object {
+      "https://deriv.nls.uk/dcn4/7443/74438561.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438561.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 113,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438562.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438562.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 113,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438654.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438654.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 112,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438655.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438655.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 112,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438656.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438656.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 114,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438657.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438657.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 111,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438658.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438658.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 113,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438659.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438659.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 117,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438660.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438660.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 114,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438661.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438661.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 114,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438662.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438662.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 113,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438663.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438663.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 113,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438664.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438664.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 113,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438665.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438665.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 199,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438666.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438666.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 113,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438667.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438667.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 112,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438668.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438668.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 110,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438669.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438669.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 110,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438670.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438670.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 198,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438671.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438671.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 110,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438672.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438672.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 199,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438673.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438673.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 111,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438674.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438674.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 112,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438675.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438675.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 203,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438676.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438676.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 111,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438677.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438677.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 111,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438678.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438678.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 113,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438679.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438679.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 110,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438680.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438680.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 114,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438681.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438681.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 111,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438682.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438682.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 111,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438683.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438683.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 111,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438684.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438684.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 111,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438685.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438685.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 113,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438686.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438686.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 111,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74438687.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74438687.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 112,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74439048.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74439048.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 112,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74439050.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74439050.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 111,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74439051.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74439051.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 111,
+        "width": 150,
+      },
+      "https://deriv.nls.uk/dcn4/7443/74439052.4.jpg": Object {
+        "@id": "https://deriv.nls.uk/dcn4/7443/74439052.4.jpg",
+        "@type": "dctypes:Image",
+        "height": 111,
+        "width": 150,
+      },
+      "https://view.nls.uk/iiif/7443/74438561.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438561.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1868,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438561.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438562.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438562.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1869,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438562.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438654.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438654.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1855,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438654.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438655.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438655.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1861,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438655.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438656.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438656.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1887,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438656.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438657.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438657.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1842,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438657.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438658.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438658.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1878,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438658.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438659.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438659.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1936,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438659.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438660.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438660.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1899,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438660.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438661.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438661.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1899,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438661.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438662.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438662.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1882,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438662.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438663.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438663.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1869,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438663.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438664.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438664.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1876,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438664.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438665.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438665.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 3315,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438665.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438666.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438666.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1883,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438666.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438667.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438667.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1866,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438667.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438668.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438668.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1830,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438668.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438669.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438669.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1830,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438669.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438670.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438670.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 3293,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438670.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438671.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438671.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1823,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438671.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438672.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438672.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 3312,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438672.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438673.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438673.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1849,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438673.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438674.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438674.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1857,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438674.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438675.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438675.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 3379,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438675.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438676.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438676.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1843,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438676.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438677.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438677.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1837,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438677.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438678.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438678.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1881,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438678.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438679.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438679.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1830,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438679.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438680.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438680.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1885,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438680.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438681.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438681.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1834,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438681.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438682.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438682.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1845,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438682.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438683.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438683.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1837,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438683.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438684.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438684.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1834,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438684.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438685.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438685.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1867,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438685.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438686.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438686.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1848,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438686.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74438687.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74438687.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1864,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74438687.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74439048.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74439048.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1859,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74439048.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74439050.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74439050.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1838,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74439050.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74439051.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74439051.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1841,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74439051.5",
+        ],
+        "width": 2500,
+      },
+      "https://view.nls.uk/iiif/7443/74439052.5/full/full/0/native.jpg": Object {
+        "@id": "https://view.nls.uk/iiif/7443/74439052.5/full/full/0/native.jpg",
+        "@type": "dctypes:Image",
+        "format": "image/jpeg",
+        "height": 1836,
+        "service": Array [
+          "https://view.nls.uk/iiif/7443/74439052.5",
+        ],
+        "width": 2500,
+      },
+    },
+    "layers": Object {},
+    "manifests": Object {
+      "https://view.nls.uk/manifest/7446/74464117/manifest.json": Object {
+        "@context": "http://iiif.io/api/presentation/2/context.json",
+        "@id": "https://view.nls.uk/manifest/7446/74464117/manifest.json",
+        "@type": "sc:Manifest",
+        "attribution": Array [
+          Object {
+            "@language": "en",
+            "@value": "National Library of Scotland<br/>License: <a target=\\"_top\\" href=\\"http://creativecommons.org/licenses/by/4.0/\\">CC BY 4.0</a>",
+          },
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Forth Bridge illustrations 1886-1887",
+          },
+        ],
+        "metadata": Array [
+          Object {
+            "label": Array [
+              Object {
+                "@language": "en",
+                "@value": "Title",
+              },
+            ],
+            "value": Array [
+              Object {
+                "@language": "en",
+                "@value": "Forth Bridge illustrations 1886-1887",
+              },
+            ],
+          },
+          Object {
+            "label": Array [
+              Object {
+                "@language": "en",
+                "@value": "Description",
+              },
+            ],
+            "value": Array [
+              Object {
+                "@language": "en",
+                "@value": "40 black-and-white photographs capturing the construction of the Forth Bridge by Glasgow-based Sir William Arrol & Co. Close-up and distance views of superstructure, cantilevers, lifting platforms and viaduct. Taken at weekly or fortnightly intervals from 1886-1887 by Philip Phillips, son of one of the contractors. Silver gelatin prints.",
+              },
+            ],
+          },
+          Object {
+            "label": Array [
+              Object {
+                "@language": "en",
+                "@value": "Shelfmark",
+              },
+            ],
+            "value": Array [
+              Object {
+                "@language": "en",
+                "@value": "RB.l.229",
+              },
+            ],
+          },
+          Object {
+            "label": Array [],
+            "value": Array [
+              Object {
+                "@language": "en",
+                "@value": "<a href=\\"http://digital.nls.uk/74464117\\">View in our digital gallery</a>",
+              },
+            ],
+          },
+          Object {
+            "label": Array [
+              Object {
+                "@language": "en",
+                "@value": "Full conditions of use",
+              },
+            ],
+            "value": Array [
+              Object {
+                "@language": "en",
+                "@value": "You have permission to make copies of this work under the <a target=\\"_top\\" href=\\"http://creativecommons.org/licenses/by/4.0/\\">Creative Commons Attribution 4.0 International License</a> unless otherwise stated.",
+              },
+            ],
+          },
+        ],
+        "seeAlso": Array [
+          "http://seealso.com/page-1.json",
+          "http://seealso.com/page-2.json",
+          "http://seealso.com/page-3.json",
+        ],
+        "sequences": Array [
+          "https://view.nls.uk/manifest/7446/74464117/canvas/default",
+        ],
+        "startCanvas": null,
+        "structures": Array [
+          "https://view.nls.uk/iiif/7446/74464117/range/r-1",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-2",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-3",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-4",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-5",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-6",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-7",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-8",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-9",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-10",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-11",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-12",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-13",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-14",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-15",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-16",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-17",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-18",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-19",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-20",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-21",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-22",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-23",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-24",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-25",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-26",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-27",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-28",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-29",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-30",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-31",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-32",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-33",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-34",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-35",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-36",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-37",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-38",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-39",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-40",
+          "https://view.nls.uk/iiif/7446/74464117/range/custom-ranges",
+          "https://view.nls.uk/iiif/7446/74464117/range/custom",
+        ],
+      },
+    },
+    "ranges": Object {
+      "https://view.nls.uk/iiif/7446/74464117/range/custom": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/custom",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/5",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/6",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/7",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/8",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Custom range with canvases and ranges",
+          },
+        ],
+        "ranges": Array [
+          "https://view.nls.uk/iiif/7446/74464117/range/r-3",
+          "https://view.nls.uk/iiif/7446/74464117/range/r-4",
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/custom-ranges": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/custom-ranges",
+        "@type": "sc:Range",
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Custom range with members",
+          },
+        ],
+        "members": Array [
+          Object {
+            "id": "https://view.nls.uk/iiif/7446/74464117/canvas/1",
+            "schema": "canvas",
+          },
+          Object {
+            "id": "https://view.nls.uk/iiif/7446/74464117/canvas/2",
+            "schema": "canvas",
+          },
+          Object {
+            "id": "https://view.nls.uk/iiif/7446/74464117/canvas/3",
+            "schema": "canvas",
+          },
+          Object {
+            "id": "https://view.nls.uk/iiif/7446/74464117/canvas/4",
+            "schema": "canvas",
+          },
+          Object {
+            "id": "https://view.nls.uk/iiif/7446/74464117/canvas/4",
+            "schema": "canvas",
+          },
+          Object {
+            "id": "https://view.nls.uk/iiif/7446/74464117/range/custom",
+            "schema": "range",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-1": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-1",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/1",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Imaginative depiction of the completed Forth Rail Bridge",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-10": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-10",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/10",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Detail of top member joint",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-11": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-11",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/11",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Works at Inchgarvie, showing completion of lifting platforms",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-12": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-12",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/12",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Queensferry cantilever from end of approach viaduct",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-13": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-13",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/13",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Detail of the top member",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-14": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-14",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/14",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Queensferry cantilever at rail level",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-15": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-15",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/15",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Inchgarvie cantilever as seen from the landing stage",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-16": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-16",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/16",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Fife cantilever from the east side",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-17": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-17",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/17",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Fife from Village Pier (west side)",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-18": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-18",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/18",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Works at Inchgarvie after first three lifts",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-19": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-19",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/19",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Queensferry cantilever two thirds full height",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-2": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-2",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/2",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "No. 2 - Fife S.W. skewback & tubes in  construction, 7 Sept. 1886",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-20": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-20",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/20",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Works at Inchgarvie from wind gauge on castle ruins",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-21": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-21",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/21",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Queensferry cantilever at full height from north end of approach viaduct",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-22": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-22",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/22",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Three cantilevers from the south shore on the occasion of Queensferry superstructure attaining its full height",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-23": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-23",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/23",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Three cantilevers from the south shore on the occasion of Queensferry superstructure attaining its full height",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-24": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-24",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/24",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Fife cantilever, at full height from village pier",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-25": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-25",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/25",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "General view from Port Edgar, with trees in the foreground",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-26": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-26",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/26",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "General view taken from the east end of South Queensferry",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-27": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-27",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/27",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "General view taken from Dalmeny Park at water level",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-28": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-28",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/28",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "General view taken late in the evening",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-29": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-29",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/29",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Queensferry cantilever and eight spans of approach viaduct",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-3": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-3",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/3",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "No. 3 - Superstructure, Fife, 15 Sept. 1886",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-30": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-30",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/30",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Inchgarvie cantilever, three-fourths full height",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-31": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-31",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/31",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "General view from North Queensferry hills depicting the three cantilevers at very nearly their full height",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-32": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-32",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/32",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Birds'-eye view of Inchgarvie and surrounding country",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-33": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-33",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/33",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Fife cantilever, showing arrangement of platforms for construction of struts and ties",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-34": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-34",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/34",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Queensferry approach viaduct and half span of cantilever",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-35": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-35",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/35",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "General view from the high ground situated S.W. of South Queensferry",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-36": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-36",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/36",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "General view from back of Newhalls Inn, South Queensferry",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-37": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-37",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/37",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Fife cantilever with No. 1 strut and lifting platform nearly up to rail level",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-38": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-38",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/38",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Queensferry cantilever from end of Hawes Pier",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-39": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-39",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/39",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Inchgarvie superstructure at full height",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-4": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-4",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/4",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "No. 4 - Superstructure, North Side",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-40": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-40",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/40",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Part of Inchgarvie and Queensferry works, showing the span to be bridged",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-5": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-5",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/5",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "General views from high ground back of South Queensferry",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-6": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-6",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/6",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "General views from high ground back of South Queensferry",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-7": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-7",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/7",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Fife superstructure from sea shore",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-8": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-8",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/8",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Queensferry superstructure, showing arrangement of lifting platforms",
+          },
+        ],
+      },
+      "https://view.nls.uk/iiif/7446/74464117/range/r-9": Object {
+        "@id": "https://view.nls.uk/iiif/7446/74464117/range/r-9",
+        "@type": "sc:Range",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/9",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "Inchgarvie superstructure, showing erection of skewbacks",
+          },
+        ],
+      },
+    },
+    "schemaVersions": Object {
+      "http://seealso.com/page-1.json": 2,
+      "http://seealso.com/page-2.json": 2,
+      "http://seealso.com/page-3.json": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438561.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438562.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438654.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438655.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438656.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438657.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438658.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438659.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438660.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438661.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438662.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438663.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438664.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438665.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438666.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438667.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438668.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438669.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438670.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438671.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438672.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438673.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438674.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438675.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438676.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438677.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438678.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438679.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438680.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438681.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438682.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438683.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438684.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438685.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438686.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74438687.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74439048.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74439050.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74439051.4.jpg": 2,
+      "https://deriv.nls.uk/dcn4/7443/74439052.4.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438561.5": 2,
+      "https://view.nls.uk/iiif/7443/74438561.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438561.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438562.5": 2,
+      "https://view.nls.uk/iiif/7443/74438562.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438562.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438654.5": 2,
+      "https://view.nls.uk/iiif/7443/74438654.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438654.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438655.5": 2,
+      "https://view.nls.uk/iiif/7443/74438655.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438655.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438656.5": 2,
+      "https://view.nls.uk/iiif/7443/74438656.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438656.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438657.5": 2,
+      "https://view.nls.uk/iiif/7443/74438657.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438657.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438658.5": 2,
+      "https://view.nls.uk/iiif/7443/74438658.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438658.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438659.5": 2,
+      "https://view.nls.uk/iiif/7443/74438659.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438659.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438660.5": 2,
+      "https://view.nls.uk/iiif/7443/74438660.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438660.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438661.5": 2,
+      "https://view.nls.uk/iiif/7443/74438661.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438661.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438662.5": 2,
+      "https://view.nls.uk/iiif/7443/74438662.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438662.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438663.5": 2,
+      "https://view.nls.uk/iiif/7443/74438663.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438663.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438664.5": 2,
+      "https://view.nls.uk/iiif/7443/74438664.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438664.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438665.5": 2,
+      "https://view.nls.uk/iiif/7443/74438665.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438665.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438666.5": 2,
+      "https://view.nls.uk/iiif/7443/74438666.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438666.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438667.5": 2,
+      "https://view.nls.uk/iiif/7443/74438667.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438667.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438668.5": 2,
+      "https://view.nls.uk/iiif/7443/74438668.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438668.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438669.5": 2,
+      "https://view.nls.uk/iiif/7443/74438669.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438669.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438670.5": 2,
+      "https://view.nls.uk/iiif/7443/74438670.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438670.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438671.5": 2,
+      "https://view.nls.uk/iiif/7443/74438671.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438671.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438672.5": 2,
+      "https://view.nls.uk/iiif/7443/74438672.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438672.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438673.5": 2,
+      "https://view.nls.uk/iiif/7443/74438673.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438673.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438674.5": 2,
+      "https://view.nls.uk/iiif/7443/74438674.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438674.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438675.5": 2,
+      "https://view.nls.uk/iiif/7443/74438675.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438675.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438676.5": 2,
+      "https://view.nls.uk/iiif/7443/74438676.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438676.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438677.5": 2,
+      "https://view.nls.uk/iiif/7443/74438677.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438677.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438678.5": 2,
+      "https://view.nls.uk/iiif/7443/74438678.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438678.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438679.5": 2,
+      "https://view.nls.uk/iiif/7443/74438679.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438679.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438680.5": 2,
+      "https://view.nls.uk/iiif/7443/74438680.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438680.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438681.5": 2,
+      "https://view.nls.uk/iiif/7443/74438681.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438681.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438682.5": 2,
+      "https://view.nls.uk/iiif/7443/74438682.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438682.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438683.5": 2,
+      "https://view.nls.uk/iiif/7443/74438683.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438683.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438684.5": 2,
+      "https://view.nls.uk/iiif/7443/74438684.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438684.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438685.5": 2,
+      "https://view.nls.uk/iiif/7443/74438685.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438685.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438686.5": 2,
+      "https://view.nls.uk/iiif/7443/74438686.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438686.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74438687.5": 2,
+      "https://view.nls.uk/iiif/7443/74438687.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74438687.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74439048.5": 2,
+      "https://view.nls.uk/iiif/7443/74439048.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74439048.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74439050.5": 2,
+      "https://view.nls.uk/iiif/7443/74439050.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74439050.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74439051.5": 2,
+      "https://view.nls.uk/iiif/7443/74439051.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74439051.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7443/74439052.5": 2,
+      "https://view.nls.uk/iiif/7443/74439052.5/annotation": 2,
+      "https://view.nls.uk/iiif/7443/74439052.5/full/full/0/native.jpg": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/1": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/10": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/11": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/12": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/13": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/14": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/15": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/16": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/17": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/18": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/19": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/2": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/20": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/21": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/22": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/23": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/24": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/25": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/26": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/27": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/28": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/29": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/3": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/30": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/31": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/32": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/33": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/34": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/35": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/36": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/37": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/38": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/39": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/4": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/40": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/5": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/6": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/7": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/8": 2,
+      "https://view.nls.uk/iiif/7446/74464117/canvas/9": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/custom": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/custom-ranges": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-1": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-10": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-11": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-12": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-13": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-14": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-15": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-16": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-17": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-18": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-19": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-2": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-20": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-21": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-22": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-23": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-24": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-25": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-26": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-27": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-28": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-29": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-3": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-30": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-31": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-32": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-33": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-34": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-35": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-36": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-37": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-38": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-39": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-4": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-40": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-5": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-6": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-7": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-8": 2,
+      "https://view.nls.uk/iiif/7446/74464117/range/r-9": 2,
+      "https://view.nls.uk/manifest/7446/74464117/canvas/default": 2,
+      "https://view.nls.uk/manifest/7446/74464117/manifest.json": 2,
+    },
+    "sequences": Object {
+      "https://view.nls.uk/manifest/7446/74464117/canvas/default": Object {
+        "@id": "https://view.nls.uk/manifest/7446/74464117/canvas/default",
+        "@type": "sc:Sequence",
+        "canvases": Array [
+          "https://view.nls.uk/iiif/7446/74464117/canvas/1",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/2",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/3",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/4",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/5",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/6",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/7",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/8",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/9",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/10",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/11",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/12",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/13",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/14",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/15",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/16",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/17",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/18",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/19",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/20",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/21",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/22",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/23",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/24",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/25",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/26",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/27",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/28",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/29",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/30",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/31",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/32",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/33",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/34",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/35",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/36",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/37",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/38",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/39",
+          "https://view.nls.uk/iiif/7446/74464117/canvas/40",
+        ],
+        "label": Array [
+          Object {
+            "@language": "en",
+            "@value": "default",
+          },
+        ],
+        "startCanvas": "https://view.nls.uk/iiif/7446/74464117/canvas/3",
+        "viewingHint": "individuals",
+      },
+    },
+    "services": Object {
+      "https://view.nls.uk/iiif/7443/74438561.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438561.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438562.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438562.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438654.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438654.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438655.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438655.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438656.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438656.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438657.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438657.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438658.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438658.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438659.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438659.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438660.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438660.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438661.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438661.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438662.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438662.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438663.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438663.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438664.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438664.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438665.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438665.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438666.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438666.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438667.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438667.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438668.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438668.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438669.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438669.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438670.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438670.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438671.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438671.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438672.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438672.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438673.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438673.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438674.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438674.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438675.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438675.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438676.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438676.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438677.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438677.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438678.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438678.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438679.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438679.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438680.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438680.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438681.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438681.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438682.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438682.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438683.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438683.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438684.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438684.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438685.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438685.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438686.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438686.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74438687.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74438687.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74439048.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74439048.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74439050.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74439050.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74439051.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74439051.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+      "https://view.nls.uk/iiif/7443/74439052.5": Object {
+        "@context": "http://iiif.io/api/image/2/context.json",
+        "@id": "https://view.nls.uk/iiif/7443/74439052.5",
+        "profile": "http://iiif.io/api/image/2/profiles/level2.json",
+      },
+    },
+  },
+  "routing": Object {
+    "currentAnnotation": null,
+    "currentAnnotationList": null,
+    "currentCanvas": null,
+    "currentCollection": null,
+    "currentImageResource": null,
+    "currentLayer": null,
+    "currentManifest": null,
+    "currentRange": null,
+    "currentSequence": null,
+  },
+}
+`;
+
+exports[`store should import a presentatino 3 manifest: second state 1`] = `
+Object {
+  "dereferenced": Object {
+    "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91": Object {
+      "loading": false,
+      "requested": 2017-11-25T00:00:00.000Z,
+      "resourceId": "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91",
+      "ttl": 600,
+    },
+  },
+  "frames": Object {
+    "focusedFrame": null,
+    "list": Object {},
+  },
+  "resources": Object {
+    "annotationCollections": Object {},
+    "annotationLists": Object {},
+    "annotationPages": Object {
+      "https://example.org/uuid/e68bf9f3-4544-4e31-a4cf-ef0810019f76": Object {
+        "id": "https://example.org/uuid/e68bf9f3-4544-4e31-a4cf-ef0810019f76",
+        "items": Array [
+          "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.1/image-annotations/0",
+        ],
+        "type": "AnnotationPage",
+      },
+      "https://example.org/uuid/edb590d9-43f7-4e52-b2e8-17112e87843b": Object {
+        "id": "https://example.org/uuid/edb590d9-43f7-4e52-b2e8-17112e87843b",
+        "items": Array [
+          "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.3/image-annotations/0",
+        ],
+        "type": "AnnotationPage",
+      },
+    },
+    "annotations": Object {
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.1/image-annotations/0": Object {
+        "body": Array [
+          Object {
+            "id": "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/full/full/0/native.jpg",
+            "schema": "contentResource",
+          },
+        ],
+        "id": "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.1/image-annotations/0",
+        "motivation": "painting",
+        "target": Array [
+          "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.1",
+        ],
+        "type": "Annotation",
+      },
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.3/image-annotations/0": Object {
+        "body": Array [
+          Object {
+            "id": "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3/full/full/0/native.jpg",
+            "schema": "contentResource",
+          },
+        ],
+        "id": "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.3/image-annotations/0",
+        "motivation": "painting",
+        "target": Array [
+          "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.3",
+        ],
+        "type": "Annotation",
+      },
+    },
+    "canvasReferences": Object {},
+    "canvases": Object {
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.1": Object {
+        "height": 15076,
+        "id": "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.1",
+        "items": Array [
+          "https://example.org/uuid/e68bf9f3-4544-4e31-a4cf-ef0810019f76",
+        ],
+        "label": Object {
+          "@none": Array [
+            "1",
+          ],
+        },
+        "rendering": Array [
+          "http://adore.ugent.be/OpenURL/resolve?rft_id=archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1&svc_id=original",
+        ],
+        "requiredStatement": Object {
+          "label": Object {
+            "@none": Array [
+              "Attribution",
+            ],
+          },
+          "value": Object {
+            "@none": Array [
+              "Provided by Ghent University Library",
+            ],
+          },
+        },
+        "rights": "http://rightsstatements.org/vocab/UND/1.0/",
+        "thumbnail": Array [
+          "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/0,0,6215,15076/226,/0/default.jpg",
+        ],
+        "type": "Canvas",
+        "width": 6215,
+      },
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.3": Object {
+        "height": 15036,
+        "id": "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.3",
+        "items": Array [
+          "https://example.org/uuid/edb590d9-43f7-4e52-b2e8-17112e87843b",
+        ],
+        "label": Object {
+          "@none": Array [
+            "2",
+          ],
+        },
+        "rendering": Array [
+          "http://adore.ugent.be/OpenURL/resolve?rft_id=archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3&svc_id=original",
+        ],
+        "requiredStatement": Object {
+          "label": Object {
+            "@none": Array [
+              "Attribution",
+            ],
+          },
+          "value": Object {
+            "@none": Array [
+              "Provided by Ghent University Library",
+            ],
+          },
+        },
+        "rights": "http://rightsstatements.org/vocab/UND/1.0/",
+        "thumbnail": Array [
+          "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3/0,0,6235,15036/226,/0/default.jpg",
+        ],
+        "type": "Canvas",
+        "width": 6235,
+      },
+    },
+    "choices": Object {},
+    "collections": Object {},
+    "contentResources": Object {
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/0,0,6215,15076/226,/0/default.jpg": Object {
+        "id": "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/0,0,6215,15076/226,/0/default.jpg",
+        "type": "Image",
+      },
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/full/full/0/native.jpg": Object {
+        "format": "image/jpeg",
+        "height": 15076,
+        "id": "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/full/full/0/native.jpg",
+        "label": Object {
+          "@none": Array [
+            "BHSL-PAP-000044_2010_0001_AC.jp2",
+          ],
+        },
+        "service": Array [
+          "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1",
+        ],
+        "type": "Image",
+        "width": 6215,
+      },
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3/0,0,6235,15036/226,/0/default.jpg": Object {
+        "id": "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3/0,0,6235,15036/226,/0/default.jpg",
+        "type": "Image",
+      },
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3/full/full/0/native.jpg": Object {
+        "format": "image/jpeg",
+        "height": 15036,
+        "id": "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3/full/full/0/native.jpg",
+        "label": Object {
+          "@none": Array [
+            "BHSL-PAP-000044_2010_0002_AC.jp2",
+          ],
+        },
+        "service": Array [
+          "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3",
+        ],
+        "type": "Image",
+        "width": 6235,
+      },
+      "http://adore.ugent.be/IIIF/img/logo_i.svg": Object {
+        "id": "http://adore.ugent.be/IIIF/img/logo_i.svg",
+        "type": "Image",
+      },
+      "http://adore.ugent.be/OpenURL/resolve?rft_id=archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1&svc_id=original": Object {
+        "format": "image/jp2",
+        "id": "http://adore.ugent.be/OpenURL/resolve?rft_id=archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1&svc_id=original",
+        "label": Object {
+          "@none": Array [
+            "Download as jpeg2000 (78.77 MB)",
+          ],
+        },
+        "type": "Image",
+      },
+      "http://adore.ugent.be/OpenURL/resolve?rft_id=archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3&svc_id=original": Object {
+        "format": "image/jp2",
+        "id": "http://adore.ugent.be/OpenURL/resolve?rft_id=archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3&svc_id=original",
+        "label": Object {
+          "@none": Array [
+            "Download as jpeg2000 (78.29 MB)",
+          ],
+        },
+        "type": "Image",
+      },
+      "https://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/0,0,6215,15076/226,/0/default.jpg": Object {
+        "id": "https://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/0,0,6215,15076/226,/0/default.jpg",
+        "type": "Image",
+      },
+      "https://lib.ugent.be/catalog/rug01%3A001484515.marcxml": Object {
+        "dcterms:format": "application/marcxml+xml",
+        "id": "https://lib.ugent.be/catalog/rug01%3A001484515.marcxml",
+        "type": "Dataset",
+      },
+      "https://lib.ugent.be/viewer/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91": Object {
+        "format": "text/html",
+        "id": "https://lib.ugent.be/viewer/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91",
+        "type": "Text",
+      },
+    },
+    "externalResources": Object {},
+    "imageResources": Object {},
+    "layers": Object {},
+    "manifests": Object {
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91": Object {
+        "@context": Array [
+          "http://www.w3.org/ns/anno.jsonld",
+          "http://iiif.io/api/presentation/3/context.json",
+        ],
+        "homepage": "https://lib.ugent.be/viewer/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91",
+        "id": "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91",
+        "items": Array [
+          "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.1",
+          "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.3",
+        ],
+        "label": Object {
+          "@none": Array [
+            "Document uit het archief van de dichter Dioskoros van Aphrodite (?)[manuscript]",
+          ],
+        },
+        "logo": Array [
+          "http://adore.ugent.be/IIIF/img/logo_i.svg",
+        ],
+        "metadata": Array [
+          Object {
+            "label": Object {
+              "@none": Array [
+                "Record",
+              ],
+            },
+            "value": Object {
+              "@none": Array [
+                "<a href=\\"https://lib.ugent.be/catalog/rug01%3A001484515/items/800000096237\\">https://lib.ugent.be/catalog/rug01%3A001484515/items/800000096237</a>",
+              ],
+            },
+          },
+          Object {
+            "label": Object {
+              "@none": Array [
+                "Title",
+              ],
+            },
+            "value": Object {
+              "@none": Array [
+                "[papyrus] Document uit het archief van de dichter Dioskoros van Aphrodite (?).",
+              ],
+            },
+          },
+          Object {
+            "label": Object {
+              "@none": Array [
+                "Description",
+              ],
+            },
+            "value": Object {
+              "@none": Array [
+                "34 regels ; 29 x 72,5 cm.",
+              ],
+            },
+          },
+          Object {
+            "label": Object {
+              "@none": Array [
+                "Description",
+              ],
+            },
+            "value": Object {
+              "@none": Array [
+                "Papyrus",
+              ],
+            },
+          },
+          Object {
+            "label": Object {
+              "@none": Array [
+                "Publisher",
+              ],
+            },
+            "value": Object {
+              "@none": Array [
+                "537-538?",
+              ],
+            },
+          },
+          Object {
+            "label": Object {
+              "@none": Array [
+                "Provenance",
+              ],
+            },
+            "value": Object {
+              "@none": Array [
+                "BHSL.PAP.000044 Herkomst: Aphroditô",
+              ],
+            },
+          },
+          Object {
+            "label": Object {
+              "@none": Array [
+                "Contents",
+              ],
+            },
+            "value": Object {
+              "@none": Array [
+                "Het document bevat een overeenkomst tussen een corporatie en haar leiders. De leden van de corporatie van jagers (en waarschijnlijk ook van vissers) gaan de verbintenis aan t.o.v. Flavius Hermauos en Flavius Dios, hen als hun chefs te erkennen voor de duu",
+              ],
+            },
+          },
+          Object {
+            "label": Object {
+              "@none": Array [
+                "Object ID",
+              ],
+            },
+            "value": Object {
+              "@none": Array [
+                "archive.ugent.be:4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91",
+              ],
+            },
+          },
+          Object {
+            "label": Object {
+              "@none": Array [
+                "Description",
+              ],
+            },
+            "value": Object {
+              "@none": Array [
+                "Het document bevat een overeenkomst tussen een corporatie en haar leiders. De leden van de corporatie van jagers (en waarschijnlijk ook van vissers) gaan de verbintenis aan t.o.v. Flavius Hermauos en Flavius Dios, hen als hun chefs te erkennen voor de duu",
+              ],
+            },
+          },
+        ],
+        "requiredStatement": Object {
+          "label": Object {
+            "@none": Array [
+              "Attribution",
+            ],
+          },
+          "value": Object {
+            "@none": Array [
+              "Provided by Ghent University Library",
+            ],
+          },
+        },
+        "rights": "http://rightsstatements.org/vocab/UND/1.0/",
+        "seeAlso": Array [
+          "https://lib.ugent.be/catalog/rug01%3A001484515.marcxml",
+        ],
+        "thumbnail": Array [
+          "https://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/0,0,6215,15076/226,/0/default.jpg",
+        ],
+        "type": "Manifest",
+      },
+    },
+    "ranges": Object {},
+    "schemaVersions": Object {
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1": 3,
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/0,0,6215,15076/226,/0/default.jpg": 3,
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/full/full/0/native.jpg": 3,
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3": 3,
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3/0,0,6235,15036/226,/0/default.jpg": 3,
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3/full/full/0/native.jpg": 3,
+      "http://adore.ugent.be/IIIF/img/logo_i.svg": 3,
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91": 3,
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.1": 3,
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.1/image-annotations/0": 3,
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.3": 3,
+      "http://adore.ugent.be/IIIF/manifests/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91/canvases/DS.3/image-annotations/0": 3,
+      "http://adore.ugent.be/OpenURL/resolve?rft_id=archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1&svc_id=original": 3,
+      "http://adore.ugent.be/OpenURL/resolve?rft_id=archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3&svc_id=original": 3,
+      "https://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1/0,0,6215,15076/226,/0/default.jpg": 3,
+      "https://example.org/uuid/e68bf9f3-4544-4e31-a4cf-ef0810019f76": 3,
+      "https://example.org/uuid/edb590d9-43f7-4e52-b2e8-17112e87843b": 3,
+      "https://lib.ugent.be/catalog/rug01%3A001484515.marcxml": 3,
+      "https://lib.ugent.be/viewer/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91": 3,
+    },
+    "sequences": Object {},
+    "services": Object {
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1": Object {
+        "id": "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.1",
+        "profile": "http://iiif.io/api/image/2/level1.json",
+        "type": "ImageService2",
+      },
+      "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3": Object {
+        "id": "http://adore.ugent.be/IIIF/images/archive.ugent.be%3A4B39C8CA-6FF9-11E1-8C42-C8A93B7C8C91%3ADS.3",
+        "profile": "http://iiif.io/api/image/2/level1.json",
+        "type": "ImageService2",
+      },
+    },
+  },
+  "routing": Object {
+    "currentAnnotation": null,
+    "currentAnnotationList": null,
+    "currentCanvas": null,
+    "currentCollection": null,
+    "currentImageResource": null,
+    "currentLayer": null,
+    "currentManifest": null,
+    "currentRange": null,
+    "currentSequence": null,
+  },
+}
+`;
+
+exports[`store should preload normalized entities in collections 1`] = `
+Object {
+  "annotationCollections": Object {},
+  "annotationLists": Object {},
+  "annotationPages": Object {},
+  "annotations": Object {},
+  "canvasReferences": Object {},
+  "canvases": Object {},
+  "choices": Object {},
+  "collections": Object {
+    "http://iiif.com/collection-1.json": Object {
+      "@id": "http://iiif.com/collection-1.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Collection label 1",
+        },
+      ],
+      "manifests": Array [
+        "http://iiif.com/manifest-1.json",
+        "http://iiif.com/manifest-2.json",
+      ],
+      "members": Array [
+        Object {
+          "id": "http://iiif.com/collection-2.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://iiif.com/collection-3.json",
+          "schema": "collection",
+        },
+      ],
+    },
+    "http://iiif.com/collection-2.json": Object {
+      "@id": "http://iiif.com/collection-2.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Collection label 2",
+        },
+      ],
+    },
+    "http://iiif.com/collection-3.json": Object {
+      "@id": "http://iiif.com/collection-3.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Collection label 3",
+        },
+      ],
+    },
+  },
+  "contentResources": Object {},
+  "externalResources": Object {},
+  "imageResources": Object {},
+  "layers": Object {},
+  "manifests": Object {
+    "http://iiif.com/manifest-1.json": Object {
+      "@id": "http://iiif.com/manifest-1.json",
+      "@type": "sc:Manifest",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Manifest label 1",
+        },
+      ],
+    },
+    "http://iiif.com/manifest-2.json": Object {
+      "@id": "http://iiif.com/manifest-2.json",
+      "@type": "sc:Manifest",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Manifest label 2",
+        },
+      ],
+    },
+  },
+  "ranges": Object {},
+  "schemaVersions": Object {
+    "http://iiif.com/collection-1.json": 2,
+    "http://iiif.com/collection-2.json": 2,
+    "http://iiif.com/collection-3.json": 2,
+    "http://iiif.com/manifest-1.json": 2,
+    "http://iiif.com/manifest-2.json": 2,
+  },
+  "sequences": Object {},
+}
+`;
+
+exports[`store should return error when JSON response is empty (unknown resource) 1`] = `
+Object {
+  "loading": true,
+  "resourceId": "https://view.nls.uk/manifest/7446/74464117/manifest.json",
+  "ttl": 600,
+}
+`;
+
+exports[`store should return error when JSON response is empty 1`] = `
+Object {
+  "loading": true,
+  "requested": 2017-11-25T00:00:00.000Z,
+  "resourceId": "https://view.nls.uk/manifest/7446/74464117/manifest.json",
+  "ttl": 600,
+}
+`;
+
+exports[`store should set error in state when malformed url is given 1`] = `
+Object {
+  "dereferenced": Object {
+    "not-real-url": Object {
+      "error": "Resource is not a valid Web URI.",
+      "loading": false,
+      "requested": 2017-11-25T00:00:00.000Z,
+      "resourceId": "not-real-url",
+      "ttl": 600,
+    },
+  },
+  "frames": Object {
+    "focusedFrame": null,
+    "list": Object {},
+  },
+  "resources": Object {
+    "annotationCollections": Object {},
+    "annotationLists": Object {},
+    "annotationPages": Object {},
+    "annotations": Object {},
+    "canvasReferences": Object {},
+    "canvases": Object {},
+    "choices": Object {},
+    "collections": Object {},
+    "contentResources": Object {},
+    "externalResources": Object {},
+    "imageResources": Object {},
+    "layers": Object {},
+    "manifests": Object {},
+    "ranges": Object {},
+    "sequences": Object {},
+  },
+  "routing": Object {
+    "currentAnnotation": null,
+    "currentAnnotationList": null,
+    "currentCanvas": null,
+    "currentCollection": null,
+    "currentImageResource": null,
+    "currentLayer": null,
+    "currentManifest": null,
+    "currentRange": null,
+    "currentSequence": null,
+  },
+}
+`;
+
+exports[`store should set error in state when request errors 1`] = `
+Object {
+  "dereferenced": Object {
+    "https://view.nls.uk/manifest/7446/74464117/manifest.json": Object {
+      "error": "Excepted error found",
+      "loading": false,
+      "requested": 2017-11-25T00:00:00.000Z,
+      "resourceId": "https://view.nls.uk/manifest/7446/74464117/manifest.json",
+      "ttl": 600,
+    },
+  },
+  "frames": Object {
+    "focusedFrame": null,
+    "list": Object {},
+  },
+  "resources": Object {
+    "annotationCollections": Object {},
+    "annotationLists": Object {},
+    "annotationPages": Object {},
+    "annotations": Object {},
+    "canvasReferences": Object {},
+    "canvases": Object {},
+    "choices": Object {},
+    "collections": Object {},
+    "contentResources": Object {},
+    "externalResources": Object {},
+    "imageResources": Object {},
+    "layers": Object {},
+    "manifests": Object {},
+    "ranges": Object {},
+    "sequences": Object {},
+  },
+  "routing": Object {
+    "currentAnnotation": null,
+    "currentAnnotationList": null,
+    "currentCanvas": null,
+    "currentCollection": null,
+    "currentImageResource": null,
+    "currentLayer": null,
+    "currentManifest": null,
+    "currentRange": null,
+    "currentSequence": null,
+  },
+}
+`;
+
+exports[`store should throw an error if actions are not passed through 1`] = `
+Object {
+  "dereferenced": Object {
+    "https://view.nls.uk/manifest/7446/74464117/manifest.json": Object {
+      "error": "DEV ERROR: You must pass in exactly 3 action types",
+      "loading": false,
+      "requested": 2017-11-25T00:00:00.000Z,
+      "resourceId": "https://view.nls.uk/manifest/7446/74464117/manifest.json",
+      "ttl": 600,
+    },
+  },
+  "frames": Object {
+    "focusedFrame": null,
+    "list": Object {},
+  },
+  "resources": Object {
+    "annotationCollections": Object {},
+    "annotationLists": Object {},
+    "annotationPages": Object {},
+    "annotations": Object {},
+    "canvasReferences": Object {},
+    "canvases": Object {},
+    "choices": Object {},
+    "collections": Object {},
+    "contentResources": Object {},
+    "externalResources": Object {},
+    "imageResources": Object {},
+    "layers": Object {},
+    "manifests": Object {},
+    "ranges": Object {},
+    "sequences": Object {},
+  },
+  "routing": Object {
+    "currentAnnotation": null,
+    "currentAnnotationList": null,
+    "currentCanvas": null,
+    "currentCollection": null,
+    "currentImageResource": null,
+    "currentLayer": null,
+    "currentManifest": null,
+    "currentRange": null,
+    "currentSequence": null,
+  },
 }
 `;

@@ -271,7 +271,7 @@ export function registerFrameExtension(
   // actions will be wrapped in dispatch and given to component, possibly?
 }
 
-export function connectFrameBehaviours(
+export function connectFramebehaviors(
   connect,
   extensions,
   mapStateToProps = null,

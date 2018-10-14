@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Presentation 3 annotations Annotation can be normalized 1`] = `
+Object {
+  "annotations": Object {
+    "http://example.org/iiif/annotation/1.json": Object {
+      "body": Array [
+        Object {
+          "id": "https://12ba91ae41c9dc7d04bae3ec44e230ec5a1d7d63",
+          "schema": "contentResource",
+        },
+      ],
+      "id": "http://example.org/iiif/annotation/1.json",
+      "type": "Annotation",
+    },
+  },
+  "contentResources": Object {
+    "https://12ba91ae41c9dc7d04bae3ec44e230ec5a1d7d63": Object {
+      "format": "text/plain",
+      "generator": "https://omeka.dlcs-ida.org/s/ida/montague/open",
+      "id": "https://12ba91ae41c9dc7d04bae3ec44e230ec5a1d7d63",
+      "purpose": "tagging",
+      "type": "TextualBody",
+      "value": "health",
+    },
+  },
+}
+`;
+
+exports[`Presentation 3 annotations Annotation with specific resource 1`] = `
+Object {
+  "annotations": Object {
+    "http://example.org/iiif/annotation/2.json": Object {
+      "body": Array [
+        undefined,
+      ],
+      "id": "http://example.org/iiif/annotation/2.json",
+      "type": "Annotation",
+    },
+  },
+  "contentResources": Object {
+    "undefined": Object {
+      "format": "application/html",
+      "generator": "https://omeka.dlcs-ida.org/s/ida/montague/open/topicmanager/",
+      "purpose": "tagging",
+      "source": "https://omeka.dlcs-ida.org/s/ida/page/topics/theme/health",
+      "type": "SpecificResource",
+    },
+  },
+}
+`;
+
+exports[`Presentation 3 annotations External web resource (from the data model) 1`] = `
+Object {
+  "annotations": Object {
+    "http://example.org/anno2": Object {
+      "@context": "http://www.w3.org/ns/anno.jsonld",
+      "body": Array [
+        Object {
+          "id": "http://example.org/analysis1.mp3",
+          "schema": "contentResource",
+        },
+      ],
+      "id": "http://example.org/anno2",
+      "target": Array [
+        "http://example.gov/patent1.pdf",
+      ],
+      "type": "Annotation",
+    },
+  },
+  "contentResources": Object {
+    "http://example.org/analysis1.mp3": Object {
+      "format": "audio/mpeg",
+      "id": "http://example.org/analysis1.mp3",
+      "language": "fr",
+    },
+  },
+  "selectors": Object {
+    "http://example.gov/patent1.pdf": "http://example.gov/patent1.pdf",
+  },
+}
+`;

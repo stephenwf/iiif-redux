@@ -2,11 +2,28 @@ import React, { Component } from 'react';
 
 class Thumbnail extends Component {
   render() {
-    const { style, ...props } = this.props;
+    const { style, data, ...props } = this.props;
+
+    if (!data) {
+      return <div />;
+    }
+
+    if (typeof data === 'string') {
+      return (
+        <div
+          style={{
+            backgroundImage: `url(${data})`,
+            backgroundSize: 'cover',
+            ...style,
+          }}
+          {...props}
+        />
+      );
+    }
     return (
       <div
         style={{
-          backgroundImage: `url(${this.props['@id']})`,
+          backgroundImage: `url(${data['@id'] || data.id})`,
           backgroundSize: 'cover',
           ...style,
         }}

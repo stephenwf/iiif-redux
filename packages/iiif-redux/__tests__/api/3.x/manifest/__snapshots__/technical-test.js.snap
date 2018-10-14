@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`api/3.x/manifest/technical Manifest number 0 getBehavior: getBehavior 0 1`] = `
+Array [
+  "paged",
+]
+`;
+
+exports[`api/3.x/manifest/technical Manifest number 0 getId: getId 0 1`] = `"https://example.org/iiif/book1/manifest"`;
+
+exports[`api/3.x/manifest/technical Manifest number 0 getType: getType 0 1`] = `"Manifest"`;
+
+exports[`api/3.x/manifest/technical Manifest number 0 getViewingDirection: getViewingDirection 0 1`] = `"right-to-left"`;
+
+exports[`api/3.x/manifest/technical Manifest number 1 getBehavior: getBehavior 1 1`] = `null`;
+
+exports[`api/3.x/manifest/technical Manifest number 1 getId: getId 1 1`] = `"https://example.org/iiif/collection/2"`;
+
+exports[`api/3.x/manifest/technical Manifest number 1 getType: getType 1 1`] = `"Manifest"`;
+
+exports[`api/3.x/manifest/technical Manifest number 1 getViewingDirection: getViewingDirection 1 1`] = `"left-to-right"`;
+
+exports[`api/3.x/manifest/technical Manifest number 2 getBehavior: getBehavior 2 1`] = `null`;
+
+exports[`api/3.x/manifest/technical Manifest number 2 getId: getId 2 1`] = `"https://example.org/iiif/manifest/2"`;
+
+exports[`api/3.x/manifest/technical Manifest number 2 getType: getType 2 1`] = `"Manifest"`;
+
+exports[`api/3.x/manifest/technical Manifest number 2 getViewingDirection: getViewingDirection 2 1`] = `"left-to-right"`;

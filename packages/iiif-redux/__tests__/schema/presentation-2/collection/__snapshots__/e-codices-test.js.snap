@@ -1,0 +1,1203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`e-codices collection it normalize 1`] = `
+Object {
+  "collections": Object {
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection.json": Object {
+      "@context": "http://iiif.io/api/presentation/2/context.json",
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection.json",
+      "@type": "sc:Collection",
+      "attribution": Array [
+        Object {
+          "@language": "en",
+          "@value": "e-codices - Virtual Manuscript Library of Switzerland",
+        },
+      ],
+      "collections": Array [
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/sl.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/kba.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/saa.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/laai.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/phmb.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/ubb.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bbb.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/sbb.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/dab.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/stab.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/mgb.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/caap.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/acv.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/chap.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/sag.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/clap.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/cma.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/fmb.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/daap.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bkd.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/sbe.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bke.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/psle.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/gf.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/kbt.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/kpfaf.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/aef.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bcuf.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/fcc.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bge.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/hba.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bj.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bcul.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/kol.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/pal.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/stalu.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/zhl.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/maap.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bkm.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bs.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bmm.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/kjm.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bpun.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/oms.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bnf.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/arcj.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bcj.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/quap.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/fdr.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/mdi.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/aasm.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/cps.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bks.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/staow.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/kgfs.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/stash.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/sbs.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/ebs.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/das.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/aev.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/acs.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/mvs.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/dss.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/staso.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/zbs.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/vad.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/ssg.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/csg.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/spl.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/nlr.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/teap.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/tap.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/cea.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/lsb.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/gau.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/utp.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/mhv.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/dsoz.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/kaw.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/zos.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bc.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/snm.json",
+          "schema": "collection",
+        },
+        Object {
+          "id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/zbz.json",
+          "schema": "collection",
+        },
+      ],
+      "description": Array [
+        Object {
+          "@language": "en",
+          "@value": "The goal of e-codices is to provide access to medieval and modern manuscripts of Switzerland by means of a virtual library.",
+        },
+      ],
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "e-codices – Virtual Manuscript Library of Switzerland",
+        },
+      ],
+      "logo": Array [
+        "http://www.e-codices.ch/img/logo-for-iiif-manifest.png",
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/aasm.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/aasm.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Saint-Maurice, Abbaye de Saint-Maurice",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/acs.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/acs.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Sion/Sitten, Archives du Chapitre/Kapitelsarchiv",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/acv.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/acv.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Chavannes-près-Renens, Archives cantonales vaudoises",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/aef.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/aef.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Fribourg/Freiburg, Archives de l'État de Fribourg/Staatsarchiv Freiburg",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/aev.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/aev.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Sion/Sitten, Archives de l'Etat du Valais/Staatsarchiv Wallis",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/arcj.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/arcj.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Porrentruy, Archives cantonales jurassiennes",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/bbb.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bbb.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Bern, Burgerbibliothek",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/bc.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bc.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Zürich, Braginsky Collection",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/bcj.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bcj.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Porrentruy, Bibliothèque cantonale jurassienne",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/bcuf.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bcuf.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Fribourg/Freiburg, Bibliothèque cantonale et universitaire/Kantons- und Universitätsbibliothek",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/bcul.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bcul.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Lausanne, Bibliothèque cantonale et universitaire de Lausanne",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/bge.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bge.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Genève, Bibliothèque de Genève",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/bj.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bj.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Krakow, Jagiellonian Library",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/bkd.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bkd.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Disentis, Romanische Bibliothek des Klosters Disentis",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/bke.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bke.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Engelberg, Stiftsbibliothek",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/bkm.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bkm.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Mariastein, Benediktinerkloster",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/bks.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bks.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Sarnen, Benediktinerkollegium",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/bmm.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bmm.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Mulhouse, Bibliothèque municipale",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/bnf.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bnf.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Paris, Bibliothèque nationale de France",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/bpun.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bpun.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Neuchâtel, Bibliothèque publique et universitaire de Neuchâtel",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/bs.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/bs.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Montreux, Bibliotheca Sefarad",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/caap.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/caap.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Castro, Archivio parrocchiale",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/cea.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/cea.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Trogen, Kantonsbibliothek Appenzell Ausserrhoden",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/chap.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/chap.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Chironico, Archivio parrocchiale",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/clap.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/clap.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Claro, Archivio parrocchiale",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/cma.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/cma.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Cleveland, The Cleveland Museum of Art",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/cps.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/cps.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Samedan, Chesa Planta Samedan",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/csg.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/csg.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "St. Gallen, Stiftsbibliothek",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/daap.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/daap.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Dalpe, Archivio parrocchiale",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/dab.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/dab.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Bever, Dorfarchiv Bever",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/das.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/das.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Sils / Segl Maria, Dorfarchiv Sils i.E. / Segl",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/dsoz.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/dsoz.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Wädenswil, Dokumentationsstelle Oberer Zürichsee",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/dss.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/dss.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Solothurn, Domschatz der St.-Ursen-Kathedrale",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/ebs.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/ebs.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Schlatt, Eisenbibliothek",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/fcc.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/fcc.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Fribourg/Freiburg, Couvent des Cordeliers/Franziskanerkloster",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/fdr.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/fdr.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Romont, Abbaye de la Fille-Dieu Romont",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/fmb.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/fmb.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Cologny, Fondation Martin Bodmer",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/gau.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/gau.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Urnäsch, Gemeindearchiv Urnäsch",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/gf.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/gf.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Flawil, Gemeinde Flawil",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/hba.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/hba.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Hermetschwil, Benediktinerinnenkloster",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/kaw.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/kaw.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Wil, Dominikanerinnenkloster St. Katharina",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/kba.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/kba.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Aarau, Aargauer Kantonsbibliothek",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/kbt.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/kbt.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Frauenfeld, Kantonsbibliothek Thurgau",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/kgfs.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/kgfs.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Schaffhausen, Konzernarchiv Georg Fischer AG",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/kjm.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/kjm.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Müstair, Benediktinerinnenkloster St. Johann",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/kol.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/kol.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Luzern, Korporation Luzern",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/kpfaf.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/kpfaf.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Frauenfeld, Katholisches Pfarrarchiv Frauenfeld",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/laai.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/laai.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Appenzell, Landesarchiv Appenzell Innerrhoden",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/lsb.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/lsb.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Überlingen, Leopold-Sophien-Bibliothek",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/maap.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/maap.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Mairengo, Archivio parrocchiale",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/mdi.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/mdi.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Saint-Imier, Mémoires d'Ici",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/mgb.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/mgb.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Bulle, Musée gruérien",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/mhv.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/mhv.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Vevey, Musée historique de Vevey",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/mvs.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/mvs.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Sion/Sitten, Médiathèque Valais",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/nlr.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/nlr.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "St. Petersburg, National Library of Russia",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/oms.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/oms.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Orselina, Convento della Madonna del Sasso",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/pal.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/pal.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Luzern, Provinzarchiv Schweizer Kapuziner Luzern",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/phmb.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/phmb.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Basel, Pharmazie-Historisches Museum der Universität Basel",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/psle.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/psle.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Estavayer-le-Lac, Paroisse catholique Saint-Laurent",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/quap.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/quap.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Quinto, Archivio parrocchiale",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/saa.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/saa.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Aarau, Staatsarchiv Aargau",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/sag.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/sag.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Chur, Staatsarchiv Graubünden",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/sbb.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/sbb.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Beromünster, Stiftskirche St. Michael",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/sbe.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/sbe.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Einsiedeln, Stiftsbibliothek",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/sbs.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/sbs.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Schaffhausen, Stadtbibliothek",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/sl.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/sl.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "[sine loco], codices restituti",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/snm.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/snm.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Zürich, Schweizerisches Nationalmuseum",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/spl.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/spl.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "St. Paul in Kärnten, Stiftsbibliothek St. Paul im Lavanttal",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/ssg.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/ssg.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "St. Gallen, Stiftsarchiv (Abtei Pfäfers)",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/stab.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/stab.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Bremgarten, Stadtarchiv Bremgarten",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/stalu.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/stalu.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Luzern, Staatsarchiv",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/staow.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/staow.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Sarnen, Staatsarchiv Obwalden",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/stash.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/stash.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Schaffhausen, Staatsarchiv",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/staso.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/staso.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Solothurn, Staatsarchiv",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/tap.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/tap.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Torre, Archivio parrocchiale",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/teap.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/teap.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Tesserete, Archivio parrocchiale",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/ubb.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/ubb.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Basel, Universitätsbibliothek",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/utp.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/utp.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Utopia, armarium codicum bibliophilorum",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/vad.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/vad.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "St. Gallen, Kantonsbibliothek, Vadianische Sammlung",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/zbs.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/zbs.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Solothurn, Zentralbibliothek",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/zbz.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/zbz.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Zürich, Zentralbibliothek",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/zhl.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/zhl.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Luzern, Zentral- und Hochschulbibliothek",
+        },
+      ],
+    },
+    "http://www.e-codices.unifr.ch/metadata/iiif/collection/zos.json": Object {
+      "@id": "http://www.e-codices.unifr.ch/metadata/iiif/collection/zos.json",
+      "@type": "sc:Collection",
+      "label": Array [
+        Object {
+          "@language": "en",
+          "@value": "Zofingen, Stadtbibliothek",
+        },
+      ],
+    },
+  },
+  "imageResources": Object {
+    "http://www.e-codices.ch/img/logo-for-iiif-manifest.png": Object {
+      "@id": "http://www.e-codices.ch/img/logo-for-iiif-manifest.png",
+    },
+  },
+}
+`;

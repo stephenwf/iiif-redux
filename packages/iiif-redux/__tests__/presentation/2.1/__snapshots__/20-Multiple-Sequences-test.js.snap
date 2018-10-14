@@ -1,29 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`iiif/presentation/2.1/20 Manifest: Multiple Canvases should load first sequence 1`] = `
-Object {
-  "canvases": Array [
-    "http://iiif.io/api/presentation/2.1/example/fixtures/canvas/20/c1.json",
-  ],
-  "label": Array [
-    Object {
-      "@language": "en",
-      "@value": "Test 20 Sequence 1",
-    },
-  ],
-  "type": "sc:Sequence",
-}
-`;
-
-exports[`iiif/presentation/2.1/20 Manifest: Multiple Canvases should load second canvas 1`] = `
-Object {
-  "canvases": Array [],
-  "label": Array [
-    Object {
-      "@language": "en",
-      "@value": "Test 20 Sequence 2",
-    },
-  ],
-  "type": "sc:Sequence",
-}
+exports[`iiif/presentation/2.1/20 Manifest: Multiple Canvases should load both sequences 1`] = `
+Array [
+  Object {
+    "canvases": Array [
+      "http://iiif.io/api/presentation/2.1/example/fixtures/canvas/20/c1.json",
+    ],
+    "label": Array [
+      Object {
+        "@language": "en",
+        "@value": "Test 20 Sequence 1",
+      },
+    ],
+    "type": "sc:Sequence",
+  },
+  Object {
+    "canvases": Array [],
+    "label": Array [
+      Object {
+        "@language": "en",
+        "@value": "Test 20 Sequence 2",
+      },
+    ],
+    "type": "sc:Sequence",
+  },
+]
 `;
