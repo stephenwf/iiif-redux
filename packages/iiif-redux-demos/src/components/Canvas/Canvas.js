@@ -9,12 +9,15 @@ import LinkingPanel from '../LinkingPanel/LinkingPanel';
 import TechnicalPanel from '../TechnicalPanel/TechnicalPanel';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import PageLayout from '../PageLayout/PageLayout';
+import OpenSeadragonViewer from '../OpenSeadragonViewer/OpenSeadragonViewer';
 import { canvasByIdSelector } from '../../../../iiif-redux/src/api/canvas';
 import resourceLoader from '../../hoc/resourceLoader';
+
 const { Content } = Layout;
 
 class CanvasPanelViewer extends Component {
   state = { error: false };
+
   componentDidCatch(err, errInfo) {
     console.warn(errInfo);
     this.setState({ error: true });
@@ -70,10 +73,17 @@ class Canvas extends Component {
           </Col>
           <Col span={16} style={{ height: '100vh' }}>
             <h3>Canvas panel</h3>
-            <Card style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
-              <CanvasPanelViewer
-                manifest={this.props.manifestId}
-                canvas={this.props.id}
+            <Card
+              style={{
+                width: '100%',
+                height: '100%',
+                overflow: 'hidden',
+              }}
+            >
+              <OpenSeadragonViewer
+                id={this.props.id}
+                height={window.innerHeight - 150}
+                style={{ background: '#000' }}
               />
             </Card>
             {this.props.images
