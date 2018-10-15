@@ -12,15 +12,15 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "@reach/router": "^1.2.1",
+    "@reach/router": "1.2.1",
     "iiif-redux": "1.0.0",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-redux": "^5.0.7",
-    "redux": "^4.0.0"
+    "react": "16.5.2",
+    "react-dom": "16.5.2",
+    "react-redux": "5.0.7",
+    "redux": "4.0.0"
   },
   "devDependencies": {
-    "nwb": "0.21.x"
+    "nwb": "0.21.5"
   },
   "author": "",
   "license": "MIT",
