@@ -22,7 +22,7 @@
     "reselect": "4.0.0"
   },
   "devDependencies": {
-    "babel-plugin-import": "1.9.1",
+    "babel-plugin-import": "1.10.0",
     "nwb": "0.23.0",
     "nwb-less": "0.7.1"
   },
