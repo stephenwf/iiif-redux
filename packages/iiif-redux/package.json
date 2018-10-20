@@ -32,6 +32,7 @@
     "redux": "^4.0.0",
     "redux-actions": "^2.3.0",
     "redux-saga": "^0.16.0",
+    "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "striptags": "^3.1.1",
     "traverse": "^0.6.6",

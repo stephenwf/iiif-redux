@@ -87,6 +87,42 @@ const DEFAULT_STATE = {
   },
 };
 
+const asyncAction = action => (...args) => dispatch => {
+  return new Promise((resolve, reject) => {
+    const actionData = action(...args);
+    const newActionPayload = {
+      ...actionData,
+      meta: {
+        ...(actionData.meta || {}),
+        resolve: a => {
+          console.log(a);
+          resolve(a);
+        },
+        reject,
+      },
+    };
+    dispatch(newActionPayload);
+  });
+};
+
+const chainAsyncAction = (action, { resolve, reject }) => (
+  ...args
+) => dispatch => {
+  const actionData = action(...args);
+  const newActionPayload = {
+    ...actionData,
+    meta: {
+      ...(actionData.meta || {}),
+      resolve: a => {
+        console.log(a);
+        resolve(a);
+      },
+      reject,
+    },
+  };
+  dispatch(newActionPayload);
+};
+
 const resourceReducer = handleActions(
   {
     [iiifResourceSuccess]: (state, { payload: { normalizedResponse } }) =>
@@ -148,10 +184,13 @@ async function requestResource(resourceId, options) {
   return fetch(resourceId).then(resp => resp.json());
 }
 
-function* errorAction(type, resourceId, error) {
+function* errorAction(type, resourceId, error, meta) {
   yield put(iiifResourceError(resourceId, error));
   if (type) {
     yield put({ type, payload: { resourceId, error } });
+  }
+  if (meta && meta.reject) {
+    meta.reject({ resourceId, error });
   }
 }
 
@@ -160,15 +199,17 @@ function* successAction(type, resourceId, normalizedResponse) {
   yield put({ type, payload: { resourceId, normalizedResponse } });
 }
 
-function* requestIiifResource({ payload }) {
+function* requestIiifResource({ payload, meta = {} }) {
   const { resourceId, types, ...options } = payload;
   if (types.length !== 3 && process.env.NODE_ENV !== 'production') {
     yield call(
       errorAction,
       null,
       resourceId,
-      'DEV ERROR: You must pass in exactly 3 action types'
+      'DEV ERROR: You must pass in exactly 3 action types',
+      meta
     );
+    return;
   }
 
   const [REQUEST, SUCCESS, ERROR] = types;
@@ -178,7 +219,8 @@ function* requestIiifResource({ payload }) {
       errorAction,
       ERROR,
       resourceId,
-      'Resource is not a valid Web URI.'
+      'Resource is not a valid Web URI.',
+      meta
     );
     return;
   }
@@ -192,7 +234,9 @@ function* requestIiifResource({ payload }) {
       false /*&& options.forceFresh === false*/
   ) {
     debug('Skipping fetch for resource %s using cache.', resourceId);
-
+    if (meta.resolve) {
+      meta.resolve(state);
+    }
     return;
   }
 
@@ -210,9 +254,12 @@ function* requestIiifResource({ payload }) {
     debug('Finished normalize resource %s', result.id);
 
     yield call(successAction, SUCCESS, result.id, entities);
+    if (meta.resolve) {
+      meta.resolve(yield select());
+    }
   } catch (err) {
     debug('Error: %O', err);
-    yield call(errorAction, ERROR, resourceId, err);
+    yield call(errorAction, ERROR, resourceId, err, meta);
   }
 }
 
@@ -288,6 +335,7 @@ function* getPresentation3ResourceType(resourceId, response) {
 
 function* requestUnknownResource({
   payload: { resourceId, mappings, ...options },
+  meta = {},
 }) {
   if (!validUrl.isWebUri(resourceId)) {
     yield put(iiifResourceError(resourceId, 'Resource is not a valid URL.'));
@@ -299,26 +347,24 @@ function* requestUnknownResource({
     debug('Fetching unknown resource %s', resourceId);
     const response = yield call(requestResource, resourceId, options);
     if (!response) {
-      yield put(
-        iiifResourceError(
-          resourceId,
-          new Error('Resource cannot be null or undefined')
-        )
-      );
+      const errorMessage = 'Resource cannot be null or undefined';
+      yield put(iiifResourceError(resourceId, new Error(errorMessage)));
+      if (meta.reject) {
+        meta.reject({ error: errorMessage });
+      }
       return;
     }
 
     const type = yield call(getResourceType, resourceId, response);
 
     if (!mappings[type]) {
-      yield put(
-        iiifResourceError(
-          resourceId,
-          `Resource type is not in configured mappings (${Object.keys(
-            mappings
-          ).join(', ')})`
-        )
-      );
+      const errorMessage = `Resource type is not in configured mappings (${Object.keys(
+        mappings
+      ).join(', ')})`;
+      yield put(iiifResourceError(resourceId, errorMessage));
+      if (meta.reject) {
+        meta.reject({ resourceId, error: errorMessage });
+      }
       return;
     }
 
@@ -326,9 +372,17 @@ function* requestUnknownResource({
     const [REQUEST, SUCCESS, ERROR] = mappings[type];
 
     // 4) Send to regular import (will be cached).
-    yield put(iiifResourceRequest(resourceId, [REQUEST, SUCCESS, ERROR]));
+    if (meta.resolve) {
+      const action = chainAsyncAction(iiifResourceRequest, meta);
+      yield put(action(resourceId, [REQUEST, SUCCESS, ERROR]));
+    } else {
+      yield put(iiifResourceRequest(resourceId, [REQUEST, SUCCESS, ERROR]));
+    }
   } catch (err) {
     yield put(iiifResourceError(resourceId, err.message));
+    if (meta.reject) {
+      meta.reject({ resourceId, error: err.message });
+    }
   }
 }
 
@@ -339,12 +393,17 @@ function* saga() {
   ]);
 }
 
+const iiifResourceRequestAsync = asyncAction(iiifResourceRequest);
+const iiifResourceRequestUnknownAsync = asyncAction(iiifResourceRequestUnknown);
+
 export {
   saga,
   resourceReducer,
   dereferencedReducer,
   iiifResourceRequest,
   iiifResourceRequestUnknown,
+  iiifResourceRequestAsync,
+  iiifResourceRequestUnknownAsync,
   DEFAULT_STATE,
   IIIF_RESOURCE_REQUEST,
   IIIF_RESOURCE_SUCCESS,

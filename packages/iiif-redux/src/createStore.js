@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import thunk from 'redux-thunk';
 import * as reducers from './reducers';
 import sagas from './sagas';
 
@@ -16,7 +17,7 @@ export default function createCustomStore(
   const store = createStore(
     combineReducers(reducers),
     defaultState,
-    composeEnhancers(applyMiddleware(sagaMiddleware, ...extraMiddleware))
+    composeEnhancers(applyMiddleware(sagaMiddleware, thunk, ...extraMiddleware))
   );
 
   sagas.map(saga => sagaMiddleware.run(saga));
