@@ -19,7 +19,7 @@
     "nwb-sass": "0.9.0",
     "react": "16.6.0",
     "react-dom": "16.6.0",
-    "react-redux": "5.0.7",
+    "react-redux": "5.1.0",
     "react-router-dom": "4.3.1",
     "react-sortable-hoc": "0.8.3",
     "reselect": "4.0.0"
