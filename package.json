@@ -6,7 +6,7 @@
   "devDependencies": {
     "@fesk/module-release": "0.0.3",
     "babel-eslint": "10.0.1",
-    "eslint": "5.7.0",
+    "eslint": "5.8.0",
     "eslint-plugin-babel": "5.2.1",
     "eslint-plugin-flow": "2.29.1",
     "eslint-plugin-flowtype": "3.1.1",
