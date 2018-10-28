@@ -235,7 +235,7 @@ function* requestIiifResource({ payload, meta = {} }) {
   ) {
     debug('Skipping fetch for resource %s using cache.', resourceId);
     if (meta.resolve) {
-      meta.resolve(state);
+      meta.resolve({ id: resourceId });
     }
     return;
   }
@@ -255,7 +255,7 @@ function* requestIiifResource({ payload, meta = {} }) {
 
     yield call(successAction, SUCCESS, result.id, entities);
     if (meta.resolve) {
-      meta.resolve(yield select());
+      meta.resolve(result);
     }
   } catch (err) {
     debug('Error: %O', err);

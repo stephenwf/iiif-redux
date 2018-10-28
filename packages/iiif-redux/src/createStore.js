@@ -4,7 +4,17 @@ import thunk from 'redux-thunk';
 import * as reducers from './reducers';
 import sagas from './sagas';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+function getWindow() {
+  try {
+    return window;
+  } catch (err) {
+    return null;
+  }
+}
+
+const composeEnhancers = getWindow()
+  ? getWindow().__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+  : compose;
 
 export default function createCustomStore(
   customReducers = {},

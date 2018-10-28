@@ -186,6 +186,8 @@ const collection = memoize(selector => {
           }
       )
   );
+  const getItemIds = getMemberIds;
+  const getItems = getMembers;
 
   return {
     // Technical
@@ -234,6 +236,8 @@ const collection = memoize(selector => {
     getOtherContentIds,
     getOtherContent,
     // Other
+    getItemIds,
+    getItems,
   };
 });
 

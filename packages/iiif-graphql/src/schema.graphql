@@ -9,7 +9,7 @@ interface CollectionItem {
 
   # Descriptive
   label: String @intl
-  metadata: Metadata
+  metadata: [Metadata]
   summary: String @intl
   thumbnail: [ContentResource]
   posterCanvas: Canvas
@@ -26,7 +26,7 @@ interface CollectionItem {
   partOf: PartOf
 }
 
-type Collection {
+type Collection implements CollectionItem {
   # Technical
   id: String
   type: String
@@ -35,7 +35,7 @@ type Collection {
 
   # Descriptive
   label: String @intl
-  metadata: Metadata
+  metadata: [Metadata]
   summary: String @intl
   thumbnail: [ContentResource]
   posterCanvas: Canvas
@@ -56,7 +56,7 @@ type Collection {
   annotations: [AnnotationPage]
 }
 
-type Manifest {
+type Manifest implements CollectionItem {
   # Technical
   id: String
   type: String
@@ -65,7 +65,7 @@ type Manifest {
 
   # Descriptive
   label: String @intl
-  metadata: Metadata
+  metadata: [Metadata]
   summary: String @intl
   thumbnail: [ContentResource]
   posterCanvas: Canvas
@@ -82,7 +82,8 @@ type Manifest {
   partOf: PartOf
 
   # Structural
-  items: [CollectionItem]
+  items: [Canvas]
+  canvases: [Canvas]
   annotations: [AnnotationPage]
   structures: [Range]
 }
@@ -99,7 +100,7 @@ type Canvas {
 
   # Descriptive
   label: String @intl
-  metadata: Metadata
+  metadata: [Metadata]
   summary: String @intl
   thumbnail: [ContentResource]
   posterCanvas: Canvas
@@ -117,6 +118,7 @@ type Canvas {
 
   # Structural
   items: [AnnotationPage]
+  paintingAnnotations: [AnnotationPage]
   annotations: [AnnotationPage]
 }
 
@@ -130,7 +132,7 @@ type Annotation {
 
   # Descriptive
   label: String @intl
-  metadata: Metadata
+  metadata: [Metadata]
   summary: String @intl
   thumbnail: [ContentResource]
   requiredStatement: String @intl
@@ -159,7 +161,7 @@ type AnnotationCollection {
 
   # Descriptive
   label: String @intl
-  metadata: Metadata
+  metadata: [Metadata]
   summary: String @intl
   thumbnail: [ContentResource]
   requiredStatement: String @intl
@@ -189,7 +191,7 @@ type AnnotationPage {
 
   # Descriptive
   label: String @intl
-  metadata: Metadata
+  metadata: [Metadata]
   summary: String @intl
   thumbnail: [ContentResource]
   requiredStatement: String @intl
@@ -207,6 +209,7 @@ type AnnotationPage {
   next: AnnotationPage
   previous: AnnotationPage
   items: [Annotation]
+  annotations: [Annotation]
 }
 
 type Range {
@@ -218,7 +221,7 @@ type Range {
 
   # Descriptive
   label: String @intl
-  metadata: Metadata
+  metadata: [Metadata]
   summary: String @intl
   thumbnail: [ContentResource]
   posterCanvas: Canvas
@@ -237,23 +240,24 @@ type Range {
   supplementary: AnnotationCollection
 
   # Structural
-  items: [RangeItem] 
+  items: [RangeItem]
   annotations: [AnnotationPage]
 }
 
 type ContentResource {
-  
+  id: String
 }
 
-# Maybe union?
-type RangeItem {}
+union RangeItem = Range | Canvas
 
 # Maybe union?
 type CanvasOrReference {
-
+  id: String
 }
 
-type Selector {}
+type Selector {
+  id: String
+}
 
 type Metadata {
   label: String @intl
@@ -261,17 +265,22 @@ type Metadata {
 }
 
 type AnnotationBody {
-
+  value: String
 }
 
 type PartOf {
-
+  id: String
 }
 
 type Service {
-
+  id: String
 }
 
 type Choice {
-  
+  id: String
+}
+
+type Query {
+  collection(id: String): Collection
+  manifest(id: String): Manifest
 }

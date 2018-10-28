@@ -15,7 +15,15 @@ const store = createStore();
 // ]);
 
 const client = new ApolloClient({
-  link: new SchemaLink({ schema, context: { store } }),
+  link: new SchemaLink({
+    schema,
+    context: {
+      store,
+      query: selector => {
+        return selector(store.getState());
+      },
+    },
+  }),
   cache: new InMemoryCache(),
 });
 

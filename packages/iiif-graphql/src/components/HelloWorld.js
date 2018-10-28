@@ -26,9 +26,6 @@ const queryText = gql`
         value
       }
     }
-    getTest {
-      label
-    }
   }
 `;
 

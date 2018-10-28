@@ -1,10 +1,8 @@
-import './App.css';
-
 import React, { Component } from 'react';
 import { ApolloProvider } from 'react-apollo';
-import HelloWorld from './components/HelloWorld';
+import HelloWorld from './HelloWorld';
 
-import client from './graphql/client';
+import client from '../graphql/client';
 
 class App extends Component {
   state = {
