@@ -28,7 +28,10 @@ const getLogo = resource => {
   if (!resource.logo) {
     return [];
   }
-  return resource.logo;
+  if (Array.isArray(resource.logo)) {
+    return resource.logo;
+  }
+  return [resource.logo];
 };
 
 export {

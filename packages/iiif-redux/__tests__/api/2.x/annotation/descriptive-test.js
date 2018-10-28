@@ -156,9 +156,9 @@ describe('api/2.x/annotation/descriptive', () => {
 
   describe('getLogo', () => {
     it('should load logo from annotation', () => {
-      expect(getLogo(state)).toEqual(
-        'http://example.org/logos/institution1.jpg'
-      );
+      expect(getLogo(state)).toEqual([
+        'http://example.org/logos/institution1.jpg',
+      ]);
     });
   });
 });

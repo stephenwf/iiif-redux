@@ -93,9 +93,9 @@ describe('api/2.x/canvas/descriptive', () => {
 
   describe('getLogo', () => {
     it('should load logo from canvas', () => {
-      expect(getLogo(state)).toEqual(
-        'http://example.org/logos/institution1.jpg'
-      );
+      expect(getLogo(state)).toEqual([
+        'http://example.org/logos/institution1.jpg',
+      ]);
     });
   });
 
