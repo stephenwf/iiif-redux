@@ -12,6 +12,7 @@ import { createSelector } from 'reselect';
 import * as descriptive from './iiif/descriptive';
 import * as linking from './iiif/linking';
 import * as structural from './iiif/structural';
+import { standardFieldMappingFactory } from '../../../es/utility/new/standardFieldMappingFactory';
 
 const range = memoize(selector => {
   /**************************************************
@@ -60,7 +61,14 @@ const range = memoize(selector => {
 
   const getAttribution = createSelector(selector, descriptive.getAttribution);
 
-  const getLogo = createSelector(selector, descriptive.getLogo);
+  const getLogoIds = createSelector(selector, descriptive.getLogo);
+  const getLogo = createSelector(
+    getLogoIds,
+    getAllImages,
+    (logoIds, allImages) => {
+      return logoIds.map(logoId => allImages[logoId] || logoId);
+    }
+  );
 
   const getLicense = createSelector(selector, descriptive.getLicense);
 
@@ -195,6 +203,7 @@ const range = memoize(selector => {
     getThumbnailId,
     getAttribution,
     getLicense,
+    getLogoIds,
     getLogo,
 
     // linking.
@@ -220,5 +229,7 @@ const range = memoize(selector => {
     getRangeIds,
   };
 });
+
+export const mappings = standardFieldMappingFactory(range);
 
 export default range;

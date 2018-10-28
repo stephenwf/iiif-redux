@@ -32,29 +32,6 @@ import { getSchemaVersionForResource } from 'iiif-redux/es/api/schema-version';
 // - All of the above for parent resource
 // - Return resources as simple objects with ID field (and schema/type). Maybe?
 
-function loadResource(id, type) {}
-
-function resourceExists(id, type) {}
-
-function fieldExists(id, type, field) {}
-
-function resourceDereferenced(id, type) {}
-
-function getFieldValue(id, type, field) {}
-
-const combinedResolver = (id, type, field) => {
-  if (!resourceExists(id, type)) {
-    return loadResource(id, type).then(() => combinedResolver(id, type, field));
-  }
-  if (!fieldExists(id, type, field)) {
-    if (resourceDereferenced(id, type)) {
-      return null;
-    }
-    return loadResource(id, type).then(() => combinedResolver(id, type, field));
-  }
-  return getFieldValue(id, type, field);
-};
-
 const reduxResolver = (typeFunc, stateType) => apiFunc => (
   data,
   opt,
@@ -184,6 +161,8 @@ const resolvers = {
   Manifest: {
     type: () => 'Manifest',
     summary: manifestResolver('getSummary'),
+    // label: (obj, _, context) =>
+    //   context.combinedResolver(obj.id, 'manifest', 'label'),
   },
   Collection: {
     type: () => 'Collection',

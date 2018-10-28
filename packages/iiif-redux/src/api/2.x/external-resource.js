@@ -9,6 +9,7 @@ import {
   getAllLayers,
   getAllServices,
 } from '../all';
+import { standardFieldMappingFactory } from '../../../es/utility/new/standardFieldMappingFactory';
 
 const externalResource = memoize(selector => {
   /**************************************************
@@ -55,7 +56,14 @@ const externalResource = memoize(selector => {
 
   const getAttribution = createSelector(selector, descriptive.getAttribution);
 
-  const getLogo = createSelector(selector, descriptive.getLogo);
+  const getLogoIds = createSelector(selector, descriptive.getLogo);
+  const getLogo = createSelector(
+    getLogoIds,
+    getAllImages,
+    (logoIds, allImages) => {
+      return logoIds.map(logoId => allImages[logoId] || logoId);
+    }
+  );
 
   const getLicense = createSelector(selector, descriptive.getLicense);
 
@@ -138,6 +146,7 @@ const externalResource = memoize(selector => {
     getDescription,
     getMetadata,
     getAttribution,
+    getLogoIds,
     getLogo,
     getLicense,
     getThumbnail,
@@ -155,5 +164,7 @@ const externalResource = memoize(selector => {
     getWithinIds,
   };
 });
+
+export const mappings = standardFieldMappingFactory(externalResource);
 
 export default externalResource;

@@ -17,6 +17,7 @@ import {
 import mapByIdOrId from '../../utility/mapByIdOrId';
 import mapAllResources from '../../utility/mapAllResources';
 import mapAllById from '../../utility/mapAllById';
+import { standardFieldMappingFactory } from '../../../es/utility/new/standardFieldMappingFactory';
 
 const manifest = memoize(selector => {
   /**
@@ -215,5 +216,7 @@ const manifest = memoize(selector => {
     getAnnotations,
   };
 });
+
+export const mappings = standardFieldMappingFactory(manifest);
 
 export default manifest;

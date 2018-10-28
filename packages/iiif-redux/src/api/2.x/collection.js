@@ -16,6 +16,7 @@ import {
 } from '../all';
 import mapById from '../../utility/mapById';
 import mapAllById from '../../utility/mapAllById';
+import { standardFieldMappingFactory } from '../../utility/new/standardFieldMappingFactory';
 
 const collection = memoize(selector => {
   /**************************************************
@@ -53,7 +54,14 @@ const collection = memoize(selector => {
 
   const getAttribution = createSelector(selector, descriptive.getAttribution);
 
-  const getLogo = createSelector(selector, descriptive.getLogo);
+  const getLogoIds = createSelector(selector, descriptive.getLogo);
+  const getLogo = createSelector(
+    getLogoIds,
+    getAllImages,
+    (logoIds, allImages) => {
+      return logoIds.map(logoId => allImages[logoId] || logoId);
+    }
+  );
 
   const getLicense = createSelector(selector, descriptive.getLicense);
 
@@ -200,6 +208,7 @@ const collection = memoize(selector => {
     getDescription,
     getMetadata,
     getAttribution,
+    getLogoIds,
     getLogo,
     getLicense,
     getThumbnailId,
@@ -240,5 +249,7 @@ const collection = memoize(selector => {
     getItems,
   };
 });
+
+export const mappings = standardFieldMappingFactory(collection);
 
 export default collection;

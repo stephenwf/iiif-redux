@@ -15,6 +15,7 @@ import {
 import mapByIdOrId from '../../utility/mapByIdOrId';
 import mapAllResources from '../../utility/mapAllResources';
 import mapAllById from '../../utility/mapAllById';
+import { standardFieldMappingFactory } from '../../utility/new/standardFieldMappingFactory';
 
 const canvas = memoize(selector => {
   /**
@@ -194,5 +195,7 @@ const canvas = memoize(selector => {
     getAnnotations,
   };
 });
+
+export const mappings = standardFieldMappingFactory(canvas);
 
 export default canvas;

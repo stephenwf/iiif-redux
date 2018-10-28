@@ -13,6 +13,7 @@ import {
   getAllServices,
 } from '../all';
 import { isImageService } from '../../constants/services';
+import { standardFieldMappingFactory } from '../../utility/new/standardFieldMappingFactory';
 
 const canvas = memoize(selector => {
   /**************************************************
@@ -56,7 +57,14 @@ const canvas = memoize(selector => {
 
   const getAttribution = createSelector(selector, descriptive.getAttribution);
 
-  const getLogo = createSelector(selector, descriptive.getLogo);
+  const getLogoIds = createSelector(selector, descriptive.getLogo);
+  const getLogo = createSelector(
+    getLogoIds,
+    getAllImages,
+    (logoIds, allImages) => {
+      return logoIds.map(logoId => allImages[logoId] || logoId);
+    }
+  );
 
   const getLicense = createSelector(selector, descriptive.getLicense);
 
@@ -200,6 +208,7 @@ const canvas = memoize(selector => {
     getThumbnail,
     getAttribution,
     getLicense,
+    getLogoIds,
     getLogo,
     // Linking
     getWithinIds,
@@ -221,5 +230,7 @@ const canvas = memoize(selector => {
     getImageService,
   };
 });
+
+export const mappings = standardFieldMappingFactory(canvas);
 
 export default canvas;

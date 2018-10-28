@@ -20,6 +20,7 @@ import {
 import mapByIdOrId from '../../utility/mapByIdOrId';
 import mapAllResources from '../../utility/mapAllResources';
 import mapAllById from '../../utility/mapAllById';
+import { standardFieldMappingFactory } from '../../../es/utility/new/standardFieldMappingFactory';
 
 const range = memoize(selector => {
   /**
@@ -254,5 +255,7 @@ const range = memoize(selector => {
     getAnnotations,
   };
 });
+
+export const mappings = standardFieldMappingFactory(range);
 
 export default range;

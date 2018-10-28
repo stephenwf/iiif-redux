@@ -14,8 +14,9 @@ import {
 import mapByIdOrId from '../../utility/mapByIdOrId';
 import mapAllResources from '../../utility/mapAllResources';
 import mapAllById from '../../utility/mapAllById';
+import { standardFieldMappingFactory } from '../../../es/utility/new/standardFieldMappingFactory';
 
-const canvas = memoize(selector => {
+const contentResource = memoize(selector => {
   /**
    * Technical properties
    *
@@ -176,4 +177,6 @@ const canvas = memoize(selector => {
   };
 });
 
-export default canvas;
+export const mappings = standardFieldMappingFactory(contentResource);
+
+export default contentResource;

@@ -4,9 +4,7 @@ import gql from 'graphql-tag';
 
 const queryText = gql`
   query {
-    getCollection(
-      collectionId: "https://view.nls.uk/collections/7446/74466699.json"
-    ) {
+    collection(id: "https://view.nls.uk/collections/7446/74466699.json") {
       id
       type
       label
@@ -15,9 +13,7 @@ const queryText = gql`
         value
       }
     }
-    getManifest(
-      manifestId: "https://wellcomelibrary.org/iiif/b20432033/manifest"
-    ) {
+    manifest(id: "https://wellcomelibrary.org/iiif/b20432033/manifest") {
       id
       type
       label

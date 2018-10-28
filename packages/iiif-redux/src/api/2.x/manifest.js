@@ -14,6 +14,7 @@ import {
 } from '../all';
 import * as linking from './iiif/linking';
 import * as structural from './iiif/structural';
+import { standardFieldMappingFactory } from '../../utility/new/standardFieldMappingFactory';
 
 const manifest = memoize(selector => {
   /**************************************************
@@ -59,7 +60,15 @@ const manifest = memoize(selector => {
   const getMetadata = createSelector(selector, descriptive.getMetadata);
 
   const getAttribution = createSelector(selector, descriptive.getAttribution);
-  const getLogo = createSelector(selector, descriptive.getLogo);
+
+  const getLogoIds = createSelector(selector, descriptive.getLogo);
+  const getLogo = createSelector(
+    getLogoIds,
+    getAllImages,
+    (logoIds, allImages) => {
+      return logoIds.map(logoId => allImages[logoId] || logoId);
+    }
+  );
 
   const getLicense = createSelector(selector, descriptive.getLicense);
 
@@ -196,6 +205,7 @@ const manifest = memoize(selector => {
     getDescription,
     getMetadata,
     getAttribution,
+    getLogoIds,
     getLogo,
     getLicense,
     getThumbnailId,
@@ -224,5 +234,7 @@ const manifest = memoize(selector => {
     getCanvases,
   };
 });
+
+export const mappings = standardFieldMappingFactory(manifest);
 
 export default manifest;

@@ -17,6 +17,7 @@ import mapById from '../../utility/mapById';
 import mapAllById from '../../utility/mapAllById';
 import mapAllResources from '../../utility/mapAllResources';
 import mapByIdOrId from '../../utility/mapByIdOrId';
+import { standardFieldMappingFactory } from '../../../es/utility/new/standardFieldMappingFactory';
 
 const collection = memoize(selector => {
   /**
@@ -218,5 +219,7 @@ const collection = memoize(selector => {
     getAnnotations,
   };
 });
+
+export const mappings = standardFieldMappingFactory(collection);
 
 export default collection;

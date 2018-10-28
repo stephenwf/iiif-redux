@@ -26,12 +26,9 @@ const getLicense = resource => {
 
 const getLogo = resource => {
   if (!resource.logo) {
-    return null;
+    return [];
   }
-  if (Array.isArray(resource.logo)) {
-    return resource.logo[0]['@id'] || resource.logo[0];
-  }
-  return resource.logo['@id'] || resource.logo;
+  return resource.logo;
 };
 
 export {

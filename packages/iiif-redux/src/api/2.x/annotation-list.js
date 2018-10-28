@@ -13,6 +13,7 @@ import {
 import * as linking from './iiif/linking';
 import * as paging from './iiif/paging';
 import * as structural from './iiif/structural';
+import { standardFieldMappingFactory } from '../../utility/new/standardFieldMappingFactory';
 
 const annotationList = memoize(selector => {
   /**************************************************
@@ -50,7 +51,14 @@ const annotationList = memoize(selector => {
 
   const getAttribution = createSelector(selector, descriptive.getAttribution);
 
-  const getLogo = createSelector(selector, descriptive.getLogo);
+  const getLogoIds = createSelector(selector, descriptive.getLogo);
+  const getLogo = createSelector(
+    getLogoIds,
+    getAllImages,
+    (logoIds, allImages) => {
+      return logoIds.map(logoId => allImages[logoId] || logoId);
+    }
+  );
 
   const getLicense = createSelector(selector, descriptive.getLicense);
 
@@ -166,6 +174,7 @@ const annotationList = memoize(selector => {
     getDescription,
     getMetadata,
     getAttribution,
+    getLogoIds,
     getLogo,
     getLicense,
     getThumbnail,
@@ -197,5 +206,7 @@ const annotationList = memoize(selector => {
     getAnnotationIds: getResourceIds,
   };
 });
+
+export const mappings = standardFieldMappingFactory(annotationList);
 
 export default annotationList;
