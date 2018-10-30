@@ -22,6 +22,10 @@ class Home extends Component {
       label: 'The Indigenous Digital Archive',
       url: 'https://manifests.dlcs-ida.org/top',
     },
+    {
+      label: 'Wellcome Archives',
+      url: 'https://wellcomelibrary.org/service/collections/archives/lightweight',
+    }
   ];
 
   manifests = [
