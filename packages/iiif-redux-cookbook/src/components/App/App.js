@@ -5,6 +5,7 @@ import { createStore } from 'iiif-redux';
 import './App.css';
 import ManifestSimple from '../ManifestSimple/ManifestSimple';
 import CanvasList from '../CanvasList/CanvasList';
+import ManifestContext from '../ManifestContext/ManifestContext';
 
 const store = createStore();
 
@@ -22,6 +23,9 @@ const Home = () => (
       </li>
       <li>
         <Link to="/canvases-simple-p3">Canvases simple (Presentation 3)</Link>
+      </li>
+      <li>
+        <Link to="/manifest-context-1">Manifest (using context)</Link>
       </li>
     </ul>
   </div>
@@ -50,6 +54,10 @@ class App extends Component {
             <CanvasList
               path="/canvases-simple-p3"
               id="https://raw.githubusercontent.com/digirati-co-uk/prezi2to3-js/master/tests/spec/fixtures/out/manifests.britishart.yale.edu__manifest__1474.json"
+            />
+            <ManifestContext
+              path="/manifest-context-1"
+              id="https://wellcomelibrary.org/iiif/b18035723/manifest"
             />
           </Router>
         </div>
