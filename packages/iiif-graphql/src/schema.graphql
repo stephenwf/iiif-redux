@@ -1,0 +1,286 @@
+directive @intl on FIELD_DEFINITION
+
+interface CollectionItem {
+  # Technical
+  id: String
+  type: String
+  viewingDirection: String
+  behaviour: String
+
+  # Descriptive
+  label: String @intl
+  metadata: [Metadata]
+  summary: String @intl
+  thumbnail: [ContentResource]
+  posterCanvas: Canvas
+  requiredStatement: String @intl
+  rights: String
+  navDate: String
+
+  # Linking
+  seeAlso: [ContentResource]
+  service: [Service]
+  logo: [ContentResource]
+  homepage: ContentResource
+  rendering: [ContentResource]
+  partOf: PartOf
+}
+
+type Collection implements CollectionItem {
+  # Technical
+  id: String
+  type: String
+  viewingDirection: String
+  behaviour: String
+
+  # Descriptive
+  label: String @intl
+  metadata: [Metadata]
+  summary: String @intl
+  thumbnail: [ContentResource]
+  posterCanvas: Canvas
+  requiredStatement: String @intl
+  rights: String
+  navDate: String
+
+  # Linking
+  seeAlso: [ContentResource]
+  service: [Service]
+  logo: [ContentResource]
+  homepage: ContentResource
+  rendering: [ContentResource]
+  partOf: PartOf
+
+  # Structural
+  items: [CollectionItem]
+  annotations: [AnnotationPage]
+}
+
+type Manifest implements CollectionItem {
+  # Technical
+  id: String
+  type: String
+  viewingDirection: String
+  behaviour: String
+
+  # Descriptive
+  label: String @intl
+  metadata: [Metadata]
+  summary: String @intl
+  thumbnail: [ContentResource]
+  posterCanvas: Canvas
+  requiredStatement: String @intl
+  rights: String
+  navDate: String
+
+  # Linking
+  seeAlso: [ContentResource]
+  service: [Service]
+  logo: [ContentResource]
+  homepage: ContentResource
+  rendering: [ContentResource]
+  partOf: PartOf
+
+  # Structural
+  items: [Canvas]
+  canvases: [Canvas]
+  annotations: [AnnotationPage]
+  structures: [Range]
+}
+
+type Canvas {
+  # Technical
+  id: String
+  type: String
+  viewingDirection: String
+  behaviour: String
+  height: Int
+  width: Int
+  duration: Int
+
+  # Descriptive
+  label: String @intl
+  metadata: [Metadata]
+  summary: String @intl
+  thumbnail: [ContentResource]
+  posterCanvas: Canvas
+  requiredStatement: String @intl
+  rights: String
+  navDate: String
+
+  # Linking
+  seeAlso: [ContentResource]
+  service: [Service]
+  logo: [ContentResource]
+  homepage: ContentResource
+  rendering: [ContentResource]
+  partOf: PartOf
+
+  # Structural
+  items: [AnnotationPage]
+  paintingAnnotations: [AnnotationPage]
+  annotations: [AnnotationPage]
+}
+
+type Annotation {
+  # Technical
+  id: String
+  type: String
+  viewingDirection: String
+  behaviour: String
+  timeMode: String
+
+  # Descriptive
+  label: String @intl
+  metadata: [Metadata]
+  summary: String @intl
+  thumbnail: [ContentResource]
+  requiredStatement: String @intl
+  rights: String
+
+  # Linking
+  seeAlso: [ContentResource]
+  service: [Service]
+  logo: [ContentResource]
+  homepage: ContentResource
+  rendering: [ContentResource]
+  partOf: PartOf
+
+  # Structural
+  body: [AnnotationBody]
+  target: [Selector]
+}
+
+type AnnotationCollection {
+  # Technical
+  id: String
+  type: String
+  viewingDirection: String
+  behaviour: String
+  timeMode: String
+
+  # Descriptive
+  label: String @intl
+  metadata: [Metadata]
+  summary: String @intl
+  thumbnail: [ContentResource]
+  requiredStatement: String @intl
+  rights: String
+
+  # Linking
+  seeAlso: [ContentResource]
+  service: [Service]
+  logo: [ContentResource]
+  homepage: ContentResource
+  rendering: [ContentResource]
+  partOf: PartOf
+
+  # Structural
+  items: [AnnotationPage]
+  first: AnnotationPage
+  last: AnnotationPage
+}
+
+type AnnotationPage {
+  # Technical
+  id: String
+  type: String
+  viewingDirection: String
+  behaviour: String
+  timeMode: String
+
+  # Descriptive
+  label: String @intl
+  metadata: [Metadata]
+  summary: String @intl
+  thumbnail: [ContentResource]
+  requiredStatement: String @intl
+  rights: String
+
+  # Linking
+  seeAlso: [ContentResource]
+  service: [Service]
+  logo: [ContentResource]
+  homepage: ContentResource
+  rendering: [ContentResource]
+  partOf: PartOf
+
+  # Structural
+  next: AnnotationPage
+  previous: AnnotationPage
+  items: [Annotation]
+  annotations: [Annotation]
+}
+
+type Range {
+  # Technical
+  id: String
+  type: String
+  viewingDirection: String
+  behaviour: String
+
+  # Descriptive
+  label: String @intl
+  metadata: [Metadata]
+  summary: String @intl
+  thumbnail: [ContentResource]
+  posterCanvas: Canvas
+  requiredStatement: String @intl
+  rights: String
+  navDate: String
+
+  # Linking
+  seeAlso: [ContentResource]
+  service: [Service]
+  logo: [ContentResource]
+  homepage: ContentResource
+  rendering: [ContentResource]
+  partOf: PartOf
+  start: Canvas
+  supplementary: AnnotationCollection
+
+  # Structural
+  items: [RangeItem]
+  annotations: [AnnotationPage]
+}
+
+type ContentResource {
+  id: String
+}
+
+union RangeItem = Range | Canvas
+
+# Maybe union?
+type CanvasOrReference {
+  id: String
+}
+
+type Selector {
+  id: String
+}
+
+type Metadata {
+  label: String @intl
+  value: String @intl
+}
+
+type AnnotationBody {
+  value: String
+}
+
+type PartOf {
+  id: String
+}
+
+type Service {
+  id: String
+}
+
+type Choice {
+  id: String
+}
+
+type Query {
+  collection(id: String): Collection
+  manifest(id: String): Manifest
+}

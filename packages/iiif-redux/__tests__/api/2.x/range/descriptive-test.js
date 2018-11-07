@@ -151,9 +151,9 @@ describe('api/2.x/range/descriptive', () => {
 
   describe('getLogo', () => {
     it('should load logo from range', () => {
-      expect(getLogo(state)).toEqual(
-        'http://example.org/logos/institution1.jpg'
-      );
+      expect(getLogo(state)).toEqual([
+        'http://example.org/logos/institution1.jpg',
+      ]);
     });
   });
 });

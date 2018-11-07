@@ -156,9 +156,9 @@ describe('api/2.x/imageResource/descriptive', () => {
 
   describe('getLogo', () => {
     it('should load logo from imageResource', () => {
-      expect(getLogo(state)).toEqual(
-        'http://example.org/logos/institution1.jpg'
-      );
+      expect(getLogo(state)).toEqual([
+        'http://example.org/logos/institution1.jpg',
+      ]);
     });
   });
 });

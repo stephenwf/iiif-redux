@@ -15,6 +15,7 @@ import mapByIdOrId from '../../utility/mapByIdOrId';
 import mapAllResources from '../../utility/mapAllResources';
 import mapAllById from '../../utility/mapAllById';
 import mapAllByIdOrId from '../../utility/mapAllByIdOrId';
+import { standardFieldMappingFactory } from '../../../es/utility/new/standardFieldMappingFactory';
 
 const annotation = memoize(selector => {
   /**
@@ -166,5 +167,7 @@ const annotation = memoize(selector => {
     getTarget,
   };
 });
+
+export const mappings = standardFieldMappingFactory(annotation);
 
 export default annotation;

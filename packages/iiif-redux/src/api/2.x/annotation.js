@@ -12,6 +12,7 @@ import {
 } from '../all';
 import * as linking from './iiif/linking';
 import { isImageService } from '../../constants/services';
+import { standardFieldMappingFactory } from '../../utility/new/standardFieldMappingFactory';
 const annotation = memoize(selector => {
   /**************************************************
    * Technical properties
@@ -51,7 +52,14 @@ const annotation = memoize(selector => {
 
   const getAttribution = createSelector(selector, descriptive.getAttribution);
 
-  const getLogo = createSelector(selector, descriptive.getLogo);
+  const getLogoIds = createSelector(selector, descriptive.getLogo);
+  const getLogo = createSelector(
+    getLogoIds,
+    getAllImages,
+    (logoIds, allImages) => {
+      return logoIds.map(logoId => allImages[logoId] || logoId);
+    }
+  );
 
   const getLicense = createSelector(selector, descriptive.getLicense);
 
@@ -169,6 +177,7 @@ const annotation = memoize(selector => {
     getThumbnail,
     getAttribution,
     getLicense,
+    getLogoIds,
     getLogo,
     // Linking
     getSeeAlso,
@@ -191,5 +200,7 @@ const annotation = memoize(selector => {
     getOnId,
   };
 });
+
+export const mappings = standardFieldMappingFactory(annotation);
 
 export default annotation;

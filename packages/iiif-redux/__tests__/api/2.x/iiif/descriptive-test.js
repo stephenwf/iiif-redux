@@ -104,7 +104,7 @@ describe('api/iiif/descriptive', () => {
 
   describe('getLogo', () => {
     it('should ignore missing logos', () => {
-      expect(getLogo({})).toEqual(null);
+      expect(getLogo({})).toEqual([]);
     });
     it('should unwrap service to ID', () => {
       expect(
@@ -118,14 +118,23 @@ describe('api/iiif/descriptive', () => {
             },
           },
         })
-      ).toEqual('http://example.org/logos/institution1.jpg');
+      ).toEqual([
+        {
+          '@id': 'http://example.org/logos/institution1.jpg',
+          service: {
+            '@context': 'http://iiif.io/api/image/2/context.json',
+            '@id': 'http://example.org/service/inst1',
+            profile: 'http://iiif.io/api/image/2/level2.json',
+          },
+        },
+      ]);
       expect(
         getLogo({
           logo: 'http://example.org/logos/institution1.jpg',
         })
-      ).toEqual('http://example.org/logos/institution1.jpg');
+      ).toEqual(['http://example.org/logos/institution1.jpg']);
     });
-    it('should return the first service', () => {
+    it('should return all images', () => {
       expect(
         getLogo({
           logo: [
@@ -133,7 +142,10 @@ describe('api/iiif/descriptive', () => {
             'http://example.org/logos/institution2.jpg',
           ],
         })
-      ).toEqual('http://example.org/logos/institution1.jpg');
+      ).toEqual([
+        'http://example.org/logos/institution1.jpg',
+        'http://example.org/logos/institution2.jpg',
+      ]);
       expect(
         getLogo({
           logo: [
@@ -155,7 +167,24 @@ describe('api/iiif/descriptive', () => {
             },
           ],
         })
-      ).toEqual('http://example.org/logos/institution1.jpg');
+      ).toEqual([
+        {
+          '@id': 'http://example.org/logos/institution1.jpg',
+          service: {
+            '@context': 'http://iiif.io/api/image/2/context.json',
+            '@id': 'http://example.org/service/inst1',
+            profile: 'http://iiif.io/api/image/2/level2.json',
+          },
+        },
+        {
+          '@id': 'http://example.org/logos/institution2.jpg',
+          service: {
+            '@context': 'http://iiif.io/api/image/2/context.json',
+            '@id': 'http://example.org/service/inst1',
+            profile: 'http://iiif.io/api/image/2/level2.json',
+          },
+        },
+      ]);
     });
   });
 });

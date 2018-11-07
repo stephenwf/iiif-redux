@@ -12,6 +12,7 @@ import {
   getAllCanvases,
   getAllImages,
 } from '../all';
+import { standardFieldMappingFactory } from '../../../es/utility/new/standardFieldMappingFactory';
 
 const sequence = memoize(selector => {
   /**************************************************
@@ -59,7 +60,14 @@ const sequence = memoize(selector => {
 
   const getAttribution = createSelector(selector, descriptive.getAttribution);
 
-  const getLogo = createSelector(selector, descriptive.getLogo);
+  const getLogoIds = createSelector(selector, descriptive.getLogo);
+  const getLogo = createSelector(
+    getLogoIds,
+    getAllImages,
+    (logoIds, allImages) => {
+      return logoIds.map(logoId => allImages[logoId] || logoId);
+    }
+  );
 
   const getLicense = createSelector(selector, descriptive.getLicense);
 
@@ -154,6 +162,7 @@ const sequence = memoize(selector => {
     getDescription,
     getMetadata,
     getAttribution,
+    getLogoIds,
     getLogo,
     getLicense,
     getThumbnailId,
@@ -176,5 +185,7 @@ const sequence = memoize(selector => {
     getCanvases,
   };
 });
+
+export const mappings = standardFieldMappingFactory(sequence);
 
 export default sequence;

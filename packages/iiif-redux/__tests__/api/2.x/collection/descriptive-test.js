@@ -98,9 +98,9 @@ describe('api/2.x/collection/descriptive', () => {
 
   describe('getLogo', () => {
     it('should load logo from collection', () => {
-      expect(getLogo(state)).toEqual(
-        'http://example.org/logos/institution1.jpg'
-      );
+      expect(getLogo(state)).toEqual([
+        'http://example.org/logos/institution1.jpg',
+      ]);
     });
   });
 

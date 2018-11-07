@@ -153,9 +153,9 @@ describe('api/2.x/sequence/descriptive', () => {
 
   describe('getLogo', () => {
     it('should load logo from sequence', () => {
-      expect(getLogo(state)).toEqual(
-        'http://example.org/logos/institution1.jpg'
-      );
+      expect(getLogo(state)).toEqual([
+        'http://example.org/logos/institution1.jpg',
+      ]);
     });
   });
 });
