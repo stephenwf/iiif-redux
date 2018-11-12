@@ -123,28 +123,30 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@canvas-panel/core@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@canvas-panel/core/-/core-0.0.9.tgz#9efd394c7c716e7c3179197e57a5e05ad7b0e8c5"
+"@canvas-panel/core@0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@canvas-panel/core/-/core-0.1.0.tgz#27aa03bad7e4ff823a83dbcd6ee3a124b80b36b5"
   dependencies:
     "@fesk/bem-js" "^1.0.0"
     "@iiif/manifold" "^1.2.19"
-    "@stephenwf-forks/manifesto.js" "^2.2.10"
+    "@stephenwf-forks/manifesto.js" "2.2.25"
     core-js "^2.5.3"
     create-react-context "^0.2.0"
+    detect-it "^3.0.5"
+    mobile-detect "^1.4.2"
     openseadragon "^2.3.1"
     react "^16.3.2"
     react-dom "^16.3.2"
     react-draggable "^3.0.5"
     react-measure "^2.0.2"
     screenfull "^3.3.2"
-    whatwg-fetch "^2.0.3"
+    whatwg-fetch "^3.0.0"
 
-"@canvas-panel/viewer-element@0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@canvas-panel/viewer-element/-/viewer-element-0.0.9.tgz#bad8f9a938e0b7511f0eb283df7e513f549ab63a"
+"@canvas-panel/viewer-element@0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@canvas-panel/viewer-element/-/viewer-element-0.1.0.tgz#9305128c374f4ca8e3a0f98e4f050b4e5d065363"
   dependencies:
-    "@canvas-panel/core" "^0.0.9"
+    "@canvas-panel/core" "0.1.0"
 
 "@fesk/bem-js@^1.0.0":
   version "1.0.1"
@@ -713,12 +715,13 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@stephenwf-forks/manifesto.js@^2.2.10":
-  version "2.2.10"
-  resolved "https://registry.yarnpkg.com/@stephenwf-forks/manifesto.js/-/manifesto.js-2.2.10.tgz#4bf643202cb77516d63e1d22d6ac386a6183e7be"
+"@stephenwf-forks/manifesto.js@2.2.25":
+  version "2.2.25"
+  resolved "https://registry.yarnpkg.com/@stephenwf-forks/manifesto.js/-/manifesto.js-2.2.25.tgz#69a7251479648c4078dc439c33dcbb2384916567"
   dependencies:
-    exjs BSick7/exjs#0.5.0
-    http-status-codes edsilv/http-status-codes#v0.0.7
+    exjs "github:BSick7/exjs#0.5.0"
+    http-status-codes "github:edsilv/http-status-codes#v0.0.7"
+    request "^2.83.0"
 
 "@types/jquery@^2.0.40":
   version "2.0.49"
@@ -4148,6 +4151,10 @@ destroy@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
 
+detect-hover@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/detect-hover/-/detect-hover-1.0.2.tgz#589fb0b469220897a9eee3fa36a917e1eda37a21"
+
 detect-indent@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/detect-indent/-/detect-indent-4.0.0.tgz#f76d064352cdf43a1cb6ce619c4ee3a9475de208"
@@ -4157,6 +4164,15 @@ detect-indent@^4.0.0:
 detect-indent@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/detect-indent/-/detect-indent-5.0.0.tgz#3871cc0a6a002e8c3e5b3cf7f336264675f06b9d"
+
+detect-it@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/detect-it/-/detect-it-3.0.5.tgz#816396c0fe12b11af08299a7c2b8381e58d15175"
+  dependencies:
+    detect-hover "^1.0.2"
+    detect-passive-events "^1.0.4"
+    detect-pointer "^1.0.2"
+    detect-touch-events "^2.0.1"
 
 detect-libc@^1.0.2:
   version "1.0.3"
@@ -4169,6 +4185,14 @@ detect-newline@^2.1.0:
 detect-node@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.0.3.tgz#a2033c09cc8e158d37748fbde7507832bd6ce127"
+
+detect-passive-events@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/detect-passive-events/-/detect-passive-events-1.0.4.tgz#6ed477e6e5bceb79079735dcd357789d37f9a91a"
+
+detect-pointer@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/detect-pointer/-/detect-pointer-1.0.2.tgz#1e0e4e261dab45055c50c74fb5a4ff09ceb18fbd"
 
 detect-port@1.2.2:
   version "1.2.2"
@@ -4183,6 +4207,10 @@ detect-port@1.2.3:
   dependencies:
     address "^1.0.1"
     debug "^2.6.0"
+
+detect-touch-events@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/detect-touch-events/-/detect-touch-events-2.0.1.tgz#365833cf0c5c40c4090a08096b8a688db00fa337"
 
 detective@^4.0.0:
   version "4.7.1"
@@ -4909,8 +4937,9 @@ exit@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/exit/-/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
 
-exjs@BSick7/exjs#0.5.0:
+"exjs@github:BSick7/exjs#0.5.0":
   version "0.5.0"
+  uid "98195810790c0e61cb5beb510da4b756528f92f2"
   resolved "https://codeload.github.com/BSick7/exjs/tar.gz/98195810790c0e61cb5beb510da4b756528f92f2"
 
 expand-braces@^0.1.1:
@@ -6230,8 +6259,9 @@ http-signature@~1.2.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
-http-status-codes@edsilv/http-status-codes#v0.0.7:
+"http-status-codes@github:edsilv/http-status-codes#v0.0.7":
   version "0.0.7"
+  uid af3a8ab9970b1f291a79b03c7382dc16aebee749
   resolved "https://codeload.github.com/edsilv/http-status-codes/tar.gz/af3a8ab9970b1f291a79b03c7382dc16aebee749"
 
 httpntlm@1.6.1:
@@ -8583,6 +8613,10 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdi
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
+
+mobile-detect@^1.4.2:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/mobile-detect/-/mobile-detect-1.4.3.tgz#e436a3839f5807dd4d3cd4e081f7d3a51ffda2dd"
 
 mocha@4.1.0:
   version "4.1.0"
@@ -13882,9 +13916,13 @@ whatwg-fetch@2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
 
-whatwg-fetch@2.0.4, whatwg-fetch@>=0.10.0, whatwg-fetch@^2.0.3:
+whatwg-fetch@2.0.4, whatwg-fetch@>=0.10.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
+
+whatwg-fetch@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-3.0.0.tgz#fc804e458cc460009b1a2b966bc8817d2578aefb"
 
 whatwg-mimetype@^2.0.0, whatwg-mimetype@^2.1.0:
   version "2.1.0"
