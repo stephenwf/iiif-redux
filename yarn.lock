@@ -123,9 +123,9 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@canvas-panel/core@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@canvas-panel/core/-/core-0.1.0.tgz#27aa03bad7e4ff823a83dbcd6ee3a124b80b36b5"
+"@canvas-panel/core@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@canvas-panel/core/-/core-0.1.1.tgz#5d03f160f863b130dd200ec6f7eefa56d56a4ca5"
   dependencies:
     "@fesk/bem-js" "^1.0.0"
     "@iiif/manifold" "^1.2.19"
@@ -142,11 +142,11 @@
     screenfull "^3.3.2"
     whatwg-fetch "^3.0.0"
 
-"@canvas-panel/viewer-element@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@canvas-panel/viewer-element/-/viewer-element-0.1.0.tgz#9305128c374f4ca8e3a0f98e4f050b4e5d065363"
+"@canvas-panel/viewer-element@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@canvas-panel/viewer-element/-/viewer-element-0.1.1.tgz#2f9769e5e3870837a0f127c40645397fab21178f"
   dependencies:
-    "@canvas-panel/core" "0.1.0"
+    "@canvas-panel/core" "0.1.1"
 
 "@fesk/bem-js@^1.0.0":
   version "1.0.1"
