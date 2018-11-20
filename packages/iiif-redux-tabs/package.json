@@ -12,7 +12,7 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "@canvas-panel/viewer-element": "0.1.0",
+    "@canvas-panel/viewer-element": "0.1.1",
     "antd": "3.10.8",
     "chrome-tabs": "2.0.0",
     "iiif-redux": "1.0.0",
