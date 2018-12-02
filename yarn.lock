@@ -1124,9 +1124,9 @@ ant-design-palettes@^1.1.3:
   dependencies:
     tinycolor2 "^1.4.1"
 
-antd@3.10.9:
-  version "3.10.9"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-3.10.9.tgz#6f9eec6d2b85e04fa97a7d9997b29317a9e5238e"
+antd@3.11.0:
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-3.11.0.tgz#e9ff4e37bd1301bb085730e26a38e633270a38f1"
   dependencies:
     "@ant-design/icons" "~1.1.15"
     "@ant-design/icons-react" "~1.1.2"
@@ -1134,7 +1134,7 @@ antd@3.10.9:
     babel-runtime "6.x"
     classnames "~2.2.6"
     create-react-class "^15.6.3"
-    create-react-context "0.2.3"
+    create-react-context "0.2.2"
     css-animation "^1.5.0"
     dom-closest "^0.2.0"
     enquire.js "^2.1.6"
@@ -1145,7 +1145,7 @@ antd@3.10.9:
     prop-types "^15.6.2"
     raf "^3.4.0"
     rc-animate "^2.5.4"
-    rc-calendar "~9.7.9"
+    rc-calendar "~9.8.0"
     rc-cascader "~0.16.0"
     rc-checkbox "~2.1.5"
     rc-collapse "~1.10.0"
@@ -1156,16 +1156,16 @@ antd@3.10.9:
     rc-form "^2.2.3"
     rc-input-number "~4.3.0"
     rc-menu "~7.4.12"
-    rc-notification "~3.2.0"
+    rc-notification "~3.3.0"
     rc-pagination "~1.17.3"
     rc-progress "~2.2.6"
     rc-rate "~2.4.2"
-    rc-select "~8.4.0"
+    rc-select "~8.6.0"
     rc-slider "~8.6.3"
     rc-steps "~3.3.0"
     rc-switch "~1.8.0"
-    rc-table "~6.3.4"
-    rc-tabs "~9.5.1"
+    rc-table "~6.4.0"
+    rc-tabs "~9.5.2"
     rc-time-picker "~3.4.0"
     rc-tooltip "~3.7.3"
     rc-tree "~1.14.6"
@@ -1176,6 +1176,7 @@ antd@3.10.9:
     react-lazy-load "^3.0.13"
     react-lifecycles-compat "^3.0.4"
     react-slick "~0.23.2"
+    resize-observer-polyfill "^1.5.0"
     shallowequal "^1.1.0"
     warning "~4.0.2"
 
@@ -3713,16 +3714,16 @@ create-react-class@^15.5.2, create-react-class@^15.5.3, create-react-class@^15.6
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
-create-react-context@0.2.3, create-react-context@^0.2.1:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/create-react-context/-/create-react-context-0.2.3.tgz#9ec140a6914a22ef04b8b09b7771de89567cb6f3"
+create-react-context@0.2.2, create-react-context@^0.2.0:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/create-react-context/-/create-react-context-0.2.2.tgz#9836542f9aaa22868cd7d4a6f82667df38019dca"
   dependencies:
     fbjs "^0.8.0"
     gud "^1.0.0"
 
-create-react-context@^0.2.0:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/create-react-context/-/create-react-context-0.2.2.tgz#9836542f9aaa22868cd7d4a6f82667df38019dca"
+create-react-context@^0.2.1, create-react-context@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/create-react-context/-/create-react-context-0.2.3.tgz#9ec140a6914a22ef04b8b09b7771de89567cb6f3"
   dependencies:
     fbjs "^0.8.0"
     gud "^1.0.0"
@@ -10605,6 +10606,12 @@ raf@^3.4.0:
   dependencies:
     performance-now "^2.1.0"
 
+raf@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.1.tgz#0742e99a4a6552f445d73e3ee0328af0ff1ede39"
+  dependencies:
+    performance-now "^2.1.0"
+
 randomatic@^1.1.3:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/randomatic/-/randomatic-1.1.7.tgz#c7abe9cc8b87c0baa876b19fde83fd464797e38c"
@@ -10711,9 +10718,9 @@ rc-animate@^3.0.0-rc.4, rc-animate@^3.0.0-rc.5:
     rc-util "^4.5.0"
     react-lifecycles-compat "^3.0.4"
 
-rc-calendar@~9.7.9:
-  version "9.7.10"
-  resolved "https://registry.yarnpkg.com/rc-calendar/-/rc-calendar-9.7.10.tgz#269393d9b5d4b5091cff65096bac7900ac809373"
+rc-calendar@~9.8.0:
+  version "9.8.0"
+  resolved "https://registry.yarnpkg.com/rc-calendar/-/rc-calendar-9.8.0.tgz#c3241320eae61c07b444c98ce34fde72b96c8059"
   dependencies:
     babel-runtime "6.x"
     classnames "2.x"
@@ -10863,9 +10870,9 @@ rc-menu@~7.4.12:
     rc-util "^4.1.0"
     resize-observer-polyfill "^1.5.0"
 
-rc-notification@~3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/rc-notification/-/rc-notification-3.2.0.tgz#bbfb6a92c4e54c9eeb7ac51a7e8c64011ea12ab1"
+rc-notification@~3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/rc-notification/-/rc-notification-3.3.0.tgz#af74fe7fc9ee4040eaa5e72dbd6d4088a3ecae2d"
   dependencies:
     babel-runtime "6.x"
     classnames "2.x"
@@ -10896,9 +10903,9 @@ rc-rate@~2.4.2:
     prop-types "^15.5.8"
     rc-util "^4.3.0"
 
-rc-select@~8.4.0:
-  version "8.4.0"
-  resolved "https://registry.yarnpkg.com/rc-select/-/rc-select-8.4.0.tgz#809891a4ed57651d8bd8e2d7916080fe66c03b65"
+rc-select@~8.6.0:
+  version "8.6.2"
+  resolved "https://registry.yarnpkg.com/rc-select/-/rc-select-8.6.2.tgz#bce840874cc8d6f6744255eba414b14f71fba7c4"
   dependencies:
     babel-runtime "^6.23.0"
     classnames "2.x"
@@ -10942,9 +10949,9 @@ rc-switch@~1.8.0:
     classnames "^2.2.1"
     prop-types "^15.5.6"
 
-rc-table@~6.3.4:
-  version "6.3.7"
-  resolved "https://registry.yarnpkg.com/rc-table/-/rc-table-6.3.7.tgz#0de4f71415abe3a8d9f9937ab7ddd142ab6143b7"
+rc-table@~6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/rc-table/-/rc-table-6.4.0.tgz#ea26a4002a3fde9a26f7d7889bb016e7b8e5a598"
   dependencies:
     babel-runtime "6.x"
     classnames "^2.2.5"
@@ -10957,14 +10964,16 @@ rc-table@~6.3.4:
     shallowequal "^1.0.2"
     warning "^3.0.0"
 
-rc-tabs@~9.5.1:
-  version "9.5.2"
-  resolved "https://registry.yarnpkg.com/rc-tabs/-/rc-tabs-9.5.2.tgz#e037b1e699a4b303eb31b9ee20873d5fea60435d"
+rc-tabs@~9.5.2:
+  version "9.5.5"
+  resolved "https://registry.yarnpkg.com/rc-tabs/-/rc-tabs-9.5.5.tgz#dd9499f816838a618d908c92d6411378d1f2d7f2"
   dependencies:
     babel-runtime "6.x"
     classnames "2.x"
+    create-react-context "^0.2.3"
     lodash "^4.17.5"
     prop-types "15.x"
+    raf "^3.4.1"
     rc-hammerjs "~0.6.0"
     rc-util "^4.0.4"
     warning "^3.0.0"
