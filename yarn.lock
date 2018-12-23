@@ -1151,9 +1151,9 @@ ant-design-palettes@^1.1.3:
   dependencies:
     tinycolor2 "^1.4.1"
 
-antd@3.11.3:
-  version "3.11.3"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-3.11.3.tgz#f6d05023262d1a4961cc98c2e874cecb4b0b2f25"
+antd@3.11.4:
+  version "3.11.4"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-3.11.4.tgz#39c4a0e9ff1a944da4bdcb23c91432f0e8729158"
   dependencies:
     "@ant-design/icons" "~1.1.15"
     "@ant-design/icons-react" "~1.1.2"
@@ -1180,7 +1180,7 @@ antd@3.11.3:
     rc-drawer "~1.7.6"
     rc-dropdown "~2.2.1"
     rc-editor-mention "^1.1.7"
-    rc-form "^2.2.7"
+    rc-form "^2.4.0"
     rc-input-number "~4.3.7"
     rc-menu "~7.4.12"
     rc-notification "~3.3.0"
@@ -11056,9 +11056,9 @@ rc-editor-mention@^1.1.7:
     rc-animate "^2.3.0"
     rc-editor-core "~0.8.3"
 
-rc-form@^2.2.7:
-  version "2.2.7"
-  resolved "https://registry.yarnpkg.com/rc-form/-/rc-form-2.2.7.tgz#8880851b9cd4a9c911f5272c91db73978a72377d"
+rc-form@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/rc-form/-/rc-form-2.4.0.tgz#7488619a2ed73fc2f776afc8705e587539d16e19"
   dependencies:
     async-validator "~1.8.5"
     babel-runtime "6.x"
