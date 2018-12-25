@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@canvas-panel/viewer-element": "0.1.1",
-    "antd": "3.11.5",
+    "antd": "3.11.6",
     "chrome-tabs": "2.0.0",
     "iiif-redux": "1.0.0",
     "nwb-sass": "0.9.0",
