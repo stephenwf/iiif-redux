@@ -26,7 +26,13 @@ Array [
 
 exports[`api/3.x/canvas/structural Canvas: Complete Canvas getItems: getItems Complete Canvas 1`] = `
 Array [
-  undefined,
+  Object {
+    "id": "https://example.org/iiif/book1/page/p2/1",
+    "items": Array [
+      "https://example.org/iiif/book1/annotation/p0002-image",
+    ],
+    "type": "AnnotationPage",
+  },
 ]
 `;
 
@@ -38,7 +44,13 @@ Array [
 
 exports[`api/3.x/canvas/structural Canvas: Complete Canvas getPaintingAnnotations: getPaintingAnnotations Complete Canvas 1`] = `
 Array [
-  undefined,
+  Object {
+    "id": "https://example.org/iiif/book1/page/p2/1",
+    "items": Array [
+      "https://example.org/iiif/book1/annotation/p0002-image",
+    ],
+    "type": "AnnotationPage",
+  },
 ]
 `;
 

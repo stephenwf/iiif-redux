@@ -12,14 +12,14 @@ type OpenSeadragonViewerPropTypes = {
   width: number,
   height: number,
   tileSources: Array<any>,
-  onImageLoaded: (typeof OpenSeadragon, any) => any,
-  maxWidth: ?number,
-  maxHeight: ?number,
-  getRef: any => void,
-  osdOptions: any,
-  useMaxDimensions: boolean,
-  imageService: { ['@id']: string },
-  style: any,
+  onImageLoaded?: (typeof OpenSeadragon, any) => any,
+  maxWidth?: ?number,
+  maxHeight?: ?number,
+  getRef?: any => void,
+  osdOptions?: any,
+  useMaxDimensions?: boolean,
+  imageService?: { ['@id']: string } | { id: string },
+  style?: any,
 };
 
 type OpenSeadragonViewerState = {
@@ -53,11 +53,8 @@ class OpenSeadragonViewer extends Component<
 
   loadImageService(imageService) {
     if (imageService) {
-      fetch(
-        imageService['@id'].endsWith('info.json')
-          ? imageService['@id']
-          : `${imageService['@id']}/info.json`
-      )
+      const id = imageService['@id'] || imageService.id;
+      fetch(id.endsWith('info.json') ? id : `${id}/info.json`)
         .then(resp => resp.json())
         .then(tileSource => {
           if (tileSource) {

@@ -7,6 +7,7 @@ import * as linking from './iiif/linking';
 import * as structural from './iiif/structural';
 import {
   getAllAnnotationPages,
+  getAllAnnotations,
   getAllCanvases,
   getAllContentResources,
   getAllResources,
@@ -15,6 +16,7 @@ import {
 import mapByIdOrId from '../../utility/mapByIdOrId';
 import mapAllResources from '../../utility/mapAllResources';
 import mapAllById from '../../utility/mapAllById';
+import { isImageService } from '../../constants/services';
 
 const canvas = memoize(selector => {
   /**
@@ -141,7 +143,11 @@ const canvas = memoize(selector => {
    * - getAnnotations
    */
   const getItemIds = createSelector(selector, structural.getItems);
-  const getItems = createSelector(getItemIds, getAllCanvases, mapAllById);
+  const getItems = createSelector(
+    getItemIds,
+    getAllAnnotationPages,
+    mapAllById
+  );
 
   const getPaintingAnnotationIds = getItemIds;
   const getPaintingAnnotations = getItems;
@@ -151,6 +157,44 @@ const canvas = memoize(selector => {
     getAnnotationIds,
     getAllAnnotationPages,
     mapAllById
+  );
+
+  /**************************************************
+   * Algorithms
+   *
+   * - getImageService
+   **************************************************/
+  const getImageService = createSelector(
+    getItems,
+    getAllAnnotations,
+    getAllServices,
+    getAllContentResources,
+    (images, allAnnotations, allServices, allImages) =>
+      // The basic path is canvas.annotationPage[x].annotation[x].body[x].service
+      images
+        .reduce((annotationList, next) => {
+          (next.items || []).forEach(annotationId => {
+            allAnnotations[annotationId].body.forEach(body => {
+              annotationList.push(body);
+            });
+          });
+          return annotationList;
+        }, [])
+        .reduce((result, image) => {
+          if (result) return result;
+          const resource =
+            image.schema === 'contentResource'
+              ? allImages[image.id]
+              : { service: [] };
+
+          return (resource.service || []).reduce((innerResult, serviceId) => {
+            if (innerResult) return innerResult;
+            const service = allServices[serviceId];
+            if (isImageService(service.profile)) {
+              return service;
+            }
+          }, null);
+        }, null)
   );
 
   return {
@@ -192,6 +236,8 @@ const canvas = memoize(selector => {
     getPaintingAnnotations,
     getAnnotationIds,
     getAnnotations,
+    // Algorithms
+    getImageService,
   };
 });
 

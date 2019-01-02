@@ -40,6 +40,9 @@ export const IIIF_2_IMAGE_LEVEL_1_PROFILE =
 export const IIIF_2_IMAGE_LEVEL_2 = 'http://iiif.io/api/image/2/level2.json';
 export const IIIF_2_IMAGE_LEVEL_2_PROFILE =
   'http://iiif.io/api/image/2/profiles/level2.json';
+export const IIIF_3_IMAGE_LEVEL_0 = 'level0';
+export const IIIF_3_IMAGE_LEVEL_1 = 'level1';
+export const IIIF_3_IMAGE_LEVEL_2 = 'level2';
 
 export function isImageService(service) {
   switch (service) {
@@ -67,6 +70,9 @@ export function isImageService(service) {
     case IIIF_2_IMAGE_LEVEL_1_PROFILE:
     case IIIF_2_IMAGE_LEVEL_2:
     case IIIF_2_IMAGE_LEVEL_2_PROFILE:
+    case IIIF_3_IMAGE_LEVEL_0:
+    case IIIF_3_IMAGE_LEVEL_1:
+    case IIIF_3_IMAGE_LEVEL_2:
       return true;
     default:
       return false;
