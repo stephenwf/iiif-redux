@@ -3127,9 +3127,9 @@ chownr@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.1.1.tgz#54726b8b8fff4df053c42187e801fb4412df1494"
 
-chrome-tabs@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/chrome-tabs/-/chrome-tabs-2.0.0.tgz#c331f1858a678a8915fdf46ffbb4bbd4b2a636bf"
+chrome-tabs@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/chrome-tabs/-/chrome-tabs-3.2.0.tgz#b559bc71bcb804504606832eb4a1b2737946251b"
   dependencies:
     draggabilly "2.1.1"
 
