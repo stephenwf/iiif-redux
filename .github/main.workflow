@@ -4,12 +4,12 @@ workflow "IIIF Redux" {
 }
 
 action "Yarn install" {
-  uses = "borales/actions-yarn@master"
-  args = "install"
+  uses = "docker://node:8"
+  args = "yarn install"
 }
 
 action "Yarn tests" {
-  uses = "borales/actions-yarn@master"
-  args = "test"
+  uses = "docker://node:8"
+  args = "yarn test"
   needs = ["Yarn install"]
 }
