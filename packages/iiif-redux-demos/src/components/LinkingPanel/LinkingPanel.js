@@ -13,84 +13,99 @@ class LinkingPanel extends Component {
       // Single
       within = [],
       startCanvas,
+      // Presentation 3
+      homepage,
+      partOf,
+      start,
+      supplementary,
     } = this.props;
 
     const dataSource = [
       seeAlso && seeAlso.length
         ? {
             label: 'See also links',
-            value: seeAlso.filter(e => e).map((seeAlsoLink, key) => (
-              <li key={key}>
-                <a href={seeAlsoLink['@id']} target="_blank">
-                  {seeAlsoLink.label ? (
-                    <IntlString>{seeAlsoLink.label}</IntlString>
-                  ) : (
-                    seeAlsoLink['@id']
-                  )}
-                </a>
-              </li>
-            )),
+            value: seeAlso
+              .filter(e => e)
+              .map((seeAlsoLink, key) => (
+                <li key={key}>
+                  <a href={seeAlsoLink['@id']} target="_blank">
+                    {seeAlsoLink.label ? (
+                      <IntlString>{seeAlsoLink.label}</IntlString>
+                    ) : (
+                      seeAlsoLink['@id']
+                    )}
+                  </a>
+                </li>
+              )),
           }
         : null,
       service && service.length
         ? {
             label: 'Services',
-            value: service.filter(e => e).map((serviceLink, key) => (
-              <li key={key}>
-                <a href={serviceLink['@id']} target="_blank">
-                  {serviceLink.label ? (
-                    <IntlString>{serviceLink.label}</IntlString>
-                  ) : (
-                    serviceLink['@id']
-                  )}
-                </a>
-              </li>
-            )),
+            value: service
+              .filter(e => e)
+              .map((serviceLink, key) => (
+                <li key={key}>
+                  <a href={serviceLink['@id']} target="_blank">
+                    {serviceLink.label ? (
+                      <IntlString>{serviceLink.label}</IntlString>
+                    ) : (
+                      serviceLink['@id']
+                    )}
+                  </a>
+                </li>
+              )),
           }
         : null,
       related && related.length
         ? {
             label: 'Related',
-            value: related.filter(e => e).map((relatedLink, key) => (
-              <li key={key}>
-                <a href={relatedLink['@id']} target="_blank">
-                  {relatedLink.label ? (
-                    <IntlString>{relatedLink.label}</IntlString>
-                  ) : (
-                    relatedLink['@id']
-                  )}
-                </a>
-              </li>
-            )),
+            value: related
+              .filter(e => e)
+              .map((relatedLink, key) => (
+                <li key={key}>
+                  <a href={relatedLink['@id']} target="_blank">
+                    {relatedLink.label ? (
+                      <IntlString>{relatedLink.label}</IntlString>
+                    ) : (
+                      relatedLink['@id']
+                    )}
+                  </a>
+                </li>
+              )),
           }
         : null,
       rendering && rendering.length
-        ? rendering.filter(e => e).map((renderingLink, key) => (
-            <li key={key}>
-              <a href={renderingLink['@id']} target="_blank">
-                {renderingLink.label ? (
-                  <IntlString>{renderingLink.label}</IntlString>
-                ) : (
-                  renderingLink['@id']
-                )}
-              </a>
-            </li>
-          ))
+        ? rendering
+            .filter(e => e)
+            .map((renderingLink, key) => (
+              <li key={key}>
+                <a href={renderingLink['@id']} target="_blank">
+                  {renderingLink.label ? (
+                    <IntlString>{renderingLink.label}</IntlString>
+                  ) : (
+                    renderingLink['@id']
+                  )}
+                </a>
+              </li>
+            ))
         : null,
       within && within.length
         ? {
             label: 'Within',
-            value: within.filter(e => e).map((withinLink, key) => (
-              <li key={key}>
-                <a href={withinLink['@id']} target="_blank">
-                  {withinLink.label ? (
-                    <IntlString>{withinLink.label}</IntlString>
-                  ) : (
-                    withinLink['@id']
-                  )}
-                </a>
-              </li>
-            )),
+            value: within
+              .filter(e => e)
+              .map((withinLink, key) => (
+                <li key={key}>
+                  <a href={withinLink['@id']} target="_blank">
+                    {withinLink.label ? (
+                      <IntlString>{withinLink.label}</IntlString>
+                    ) : (
+                      withinLink['@id']
+                    )}
+                  </a>
+                </li>
+              )),
           }
         : null,
       startCanvas

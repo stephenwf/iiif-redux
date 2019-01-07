@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import IntlString from '../IntlString/IntlString';
 import { List, Badge } from 'antd';
+import CanvasPreview from '../CanvasPreview/CanvasPreview';
 
 const Muted = ({ children }) => (
   <span style={{ color: '#999' }}>{children}</span>
@@ -11,8 +12,12 @@ class DescriptivePanel extends Component {
     const {
       label,
       description,
+      summary,
+      posterCanvas,
+      requiredStatement,
       metadata,
       attribution,
+      rights,
       logo,
       license,
       thumbnail,
@@ -20,12 +25,48 @@ class DescriptivePanel extends Component {
 
     const data = [
       { title: 'label', value: <IntlString>{label}</IntlString> },
-      { title: 'description', value: <IntlString>{description}</IntlString> },
-      { title: 'attribution', value: <IntlString>{attribution}</IntlString> },
+      description
+        ? {
+            title: 'description',
+            value: <IntlString>{description}</IntlString>,
+          }
+        : null,
+      summary
+        ? { title: 'summary', value: <IntlString>{summary}</IntlString> }
+        : null,
+      attribution
+        ? {
+            title: 'attribution',
+            value: <IntlString>{attribution}</IntlString>,
+          }
+        : null,
+      requiredStatement
+        ? {
+            title: 'requiredStatement',
+            value: <IntlString>{requiredStatement}</IntlString>,
+          }
+        : null,
       {
         title: 'license',
         value: license ? <a href={license}>{license}</a> : null,
       },
+      posterCanvas
+        ? {
+            title: 'poster canvas',
+            value: (
+              <CanvasPreview
+                id={posterCanvas}
+                onClick={this.props.selectCanvas}
+              />
+            ),
+          }
+        : null,
+      rights
+        ? {
+            title: 'rights',
+            value: rights,
+          }
+        : null,
       {
         title: 'logo',
         value: logo ? (
@@ -62,7 +103,7 @@ class DescriptivePanel extends Component {
         ) : null,
         value: <IntlString>{metadataItem.value}</IntlString>,
       })),
-    ];
+    ].filter(Boolean);
 
     return (
       <div>

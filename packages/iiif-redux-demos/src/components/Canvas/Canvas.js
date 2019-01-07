@@ -49,6 +49,7 @@ class Canvas extends Component {
               viewingHint={this.props.viewingHint}
               height={this.props.height}
               width={this.props.width}
+              behavior={this.props.behavior}
             />
             <DescriptivePanel
               label={this.props.label}
@@ -107,9 +108,10 @@ export default resourceLoader(
       viewingHint: currentCanvas.getViewingHint,
       height: currentCanvas.getHeight,
       width: currentCanvas.getWidth,
+      behavior: currentCanvas.getBehavior,
       // Descriptive
       label: currentCanvas.getLabel,
-      description: currentCanvas.getDescription,
+      description: currentCanvas.getDescription || currentCanvas.getSummary,
       metadata: currentCanvas.getMetadata,
       attribution: currentCanvas.getAttribution,
       logo: currentCanvas.getLogo,

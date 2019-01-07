@@ -12,6 +12,11 @@ class TechnicalPanel extends Component {
       format,
       height,
       width,
+      // presentation 3
+      profile,
+      duration,
+      behavior,
+      timeMode,
     } = this.props;
     const data = [
       id ? { title: 'id', value: id } : null,
@@ -31,7 +36,22 @@ class TechnicalPanel extends Component {
             value: <Tag color="gold">{viewingHint}</Tag>,
           }
         : null,
+      behavior
+        ? {
+            title: 'behaviors',
+            value: (
+              <div>
+                {behavior.map(b => (
+                  <Tag color="blue">{b}</Tag>
+                ))}
+              </div>
+            ),
+          }
+        : null,
       navDate ? { title: 'nav date', value: navDate } : null,
+      profile ? { title: 'profile', value: profile } : null,
+      duration ? { title: 'duration', value: duration } : null,
+      timeMode ? { title: 'timeMode', value: timeMode } : null,
       viewingDirection
         ? {
             title: 'viewing direction',
