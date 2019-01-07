@@ -11497,9 +11497,9 @@ react-slick@~0.23.2:
     prettier "^1.14.3"
     resize-observer-polyfill "^1.5.0"
 
-react-sortable-hoc@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-sortable-hoc/-/react-sortable-hoc-1.0.0.tgz#71ec8f5d2fb98f67fb080f2bce37e03eeadf84b3"
+react-sortable-hoc@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-sortable-hoc/-/react-sortable-hoc-1.1.0.tgz#5486e600feb66a76d8e1c830856ed38eb7e986e8"
   dependencies:
     invariant "^2.2.1"
     prop-types "^15.5.7"
