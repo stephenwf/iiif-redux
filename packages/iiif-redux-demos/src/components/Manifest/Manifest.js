@@ -43,6 +43,7 @@ class Manifest extends Component {
               navDate={this.props.navDate}
             />
             <DescriptivePanel
+              selectCanvas={this.props.selectCanvas}
               label={this.props.label}
               description={this.props.description}
               metadata={this.props.metadata}
@@ -50,6 +51,7 @@ class Manifest extends Component {
               logo={this.props.logo}
               license={this.props.license}
               thumbnail={this.props.thumbnail}
+              posterCanvas={this.props.posterCanvas}
             />
             <StructuralPanel
               sequences={this.props.sequences}
@@ -141,9 +143,12 @@ export default resourceLoader(
         navDate: currentManifest.getNavDate,
         // Descriptive
         label: currentManifest.getLabel,
-        description: currentManifest.getDescription,
+        description:
+          currentManifest.getDescription || currentManifest.getSummary,
         metadata: currentManifest.getMetadata,
-        attribution: currentManifest.getAttribution,
+        attribution:
+          currentManifest.getAttribution ||
+          currentManifest.getRequiredStatement,
         logo: currentManifest.getLogo,
         license: currentManifest.getLicense,
         thumbnail: currentManifest.getThumbnail,
@@ -153,6 +158,7 @@ export default resourceLoader(
         related: currentManifest.getRelated,
         service: currentManifest.getService,
         seeAlso: currentManifest.getSeeAlso,
+        posterCanvas: currentManifest.getPosterCanvasId,
         // Structural
         sequences: currentManifest.getSequenceIds,
         canvases: currentManifest.getCanvasIds,
