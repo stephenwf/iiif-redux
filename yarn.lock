@@ -190,11 +190,11 @@
     memory-fs "^0.4.1"
     resolve "^1.2.0"
 
-"@lerna/add@3.10.2":
-  version "3.10.2"
-  resolved "https://registry.yarnpkg.com/@lerna/add/-/add-3.10.2.tgz#586a2db4f3e53c47390c9cd3c59a1925f75760f1"
+"@lerna/add@3.10.4":
+  version "3.10.4"
+  resolved "https://registry.yarnpkg.com/@lerna/add/-/add-3.10.4.tgz#34a7f5cababa7d62825c57b1d0ff6966a65078b5"
   dependencies:
-    "@lerna/bootstrap" "3.10.2"
+    "@lerna/bootstrap" "3.10.4"
     "@lerna/command" "3.10.0"
     "@lerna/filter-options" "3.10.1"
     "@lerna/npm-conf" "3.7.0"
@@ -212,9 +212,9 @@
     "@lerna/validation-error" "3.6.0"
     libnpm "^2.0.1"
 
-"@lerna/bootstrap@3.10.2":
-  version "3.10.2"
-  resolved "https://registry.yarnpkg.com/@lerna/bootstrap/-/bootstrap-3.10.2.tgz#a45efd4d74ef4a3b1ae1b95023a8b187f49f2c88"
+"@lerna/bootstrap@3.10.4":
+  version "3.10.4"
+  resolved "https://registry.yarnpkg.com/@lerna/bootstrap/-/bootstrap-3.10.4.tgz#7d9cfa50b55c7afbdd3da7a76171681aade15d59"
   dependencies:
     "@lerna/batch-packages" "3.10.0"
     "@lerna/command" "3.10.0"
@@ -583,9 +583,9 @@
     inquirer "^6.2.0"
     libnpm "^2.0.1"
 
-"@lerna/publish@3.10.1":
-  version "3.10.1"
-  resolved "https://registry.yarnpkg.com/@lerna/publish/-/publish-3.10.1.tgz#fe994503c0917730042c39a45121e3f3ca4a223f"
+"@lerna/publish@3.10.3":
+  version "3.10.3"
+  resolved "https://registry.yarnpkg.com/@lerna/publish/-/publish-3.10.3.tgz#4a205ba85174386e9673f69b095f38df73fd16ed"
   dependencies:
     "@lerna/batch-packages" "3.10.0"
     "@lerna/check-working-tree" "3.10.0"
@@ -7926,12 +7926,12 @@ left-pad@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/left-pad/-/left-pad-1.2.0.tgz#d30a73c6b8201d8f7d8e7956ba9616087a68e0ee"
 
-lerna@3.10.2:
-  version "3.10.2"
-  resolved "https://registry.yarnpkg.com/lerna/-/lerna-3.10.2.tgz#2c0568b8dc58286d984a5704bc449df3428851a0"
+lerna@3.10.4:
+  version "3.10.4"
+  resolved "https://registry.yarnpkg.com/lerna/-/lerna-3.10.4.tgz#1c292b9e3f652f48a1baa26fcd02f835e7c9cf30"
   dependencies:
-    "@lerna/add" "3.10.2"
-    "@lerna/bootstrap" "3.10.2"
+    "@lerna/add" "3.10.4"
+    "@lerna/bootstrap" "3.10.4"
     "@lerna/changed" "3.10.1"
     "@lerna/clean" "3.10.1"
     "@lerna/cli" "3.10.0"
@@ -7942,7 +7942,7 @@ lerna@3.10.2:
     "@lerna/init" "3.10.0"
     "@lerna/link" "3.10.0"
     "@lerna/list" "3.10.1"
-    "@lerna/publish" "3.10.1"
+    "@lerna/publish" "3.10.3"
     "@lerna/run" "3.10.1"
     "@lerna/version" "3.10.1"
     import-local "^1.0.0"
