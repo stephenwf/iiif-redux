@@ -123,16 +123,16 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@canvas-panel/core@0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@canvas-panel/core/-/core-0.1.1.tgz#5d03f160f863b130dd200ec6f7eefa56d56a4ca5"
+"@canvas-panel/core@0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@canvas-panel/core/-/core-0.1.2.tgz#0fe3bee28f93708c9d1452794fc20a2843c8142e"
   dependencies:
     "@fesk/bem-js" "^1.0.0"
     "@iiif/manifold" "^1.2.19"
-    "@stephenwf-forks/manifesto.js" "2.2.25"
     core-js "^2.5.3"
     create-react-context "^0.2.0"
     detect-it "^3.0.5"
+    manifesto.js "git+https://github.com/stephenwf/manifesto.git#feature/p3-alpha-3"
     mobile-detect "^1.4.2"
     openseadragon "^2.3.1"
     react "^16.3.2"
@@ -142,11 +142,11 @@
     screenfull "^3.3.2"
     whatwg-fetch "^3.0.0"
 
-"@canvas-panel/viewer-element@0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@canvas-panel/viewer-element/-/viewer-element-0.1.1.tgz#2f9769e5e3870837a0f127c40645397fab21178f"
+"@canvas-panel/viewer-element@0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@canvas-panel/viewer-element/-/viewer-element-0.1.2.tgz#28ba98ad5da7264db326eeb2b2ff1a12c710078e"
   dependencies:
-    "@canvas-panel/core" "0.1.1"
+    "@canvas-panel/core" "0.1.2"
 
 "@fesk/bem-js@^1.0.0":
   version "1.0.1"
@@ -756,14 +756,6 @@
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
   dependencies:
     any-observable "^0.3.0"
-
-"@stephenwf-forks/manifesto.js@2.2.25":
-  version "2.2.25"
-  resolved "https://registry.yarnpkg.com/@stephenwf-forks/manifesto.js/-/manifesto.js-2.2.25.tgz#69a7251479648c4078dc439c33dcbb2384916567"
-  dependencies:
-    exjs "github:BSick7/exjs#0.5.0"
-    http-status-codes "github:edsilv/http-status-codes#v0.0.7"
-    request "^2.83.0"
 
 "@types/jquery@^2.0.40":
   version "2.0.49"
@@ -5031,7 +5023,7 @@ exit@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/exit/-/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
 
-"exjs@github:BSick7/exjs#0.5.0":
+exjs@BSick7/exjs#0.5.0:
   version "0.5.0"
   uid "98195810790c0e61cb5beb510da4b756528f92f2"
   resolved "https://codeload.github.com/BSick7/exjs/tar.gz/98195810790c0e61cb5beb510da4b756528f92f2"
@@ -6380,7 +6372,7 @@ http-signature@~1.2.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
-"http-status-codes@github:edsilv/http-status-codes#v0.0.7":
+http-status-codes@edsilv/http-status-codes#v0.0.7:
   version "0.0.7"
   uid af3a8ab9970b1f291a79b03c7382dc16aebee749
   resolved "https://codeload.github.com/edsilv/http-status-codes/tar.gz/af3a8ab9970b1f291a79b03c7382dc16aebee749"
@@ -8504,6 +8496,15 @@ makeerror@1.0.x:
 mamacro@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/mamacro/-/mamacro-0.0.3.tgz#ad2c9576197c9f1abf308d0787865bd975a3f3e4"
+
+"manifesto.js@git+https://github.com/stephenwf/manifesto.git#feature/p3-alpha-3":
+  version "3.0.9"
+  uid "6a87dec4ef445fac1bb470a0c359ac452c1d1fc0"
+  resolved "git+https://github.com/stephenwf/manifesto.git#6a87dec4ef445fac1bb470a0c359ac452c1d1fc0"
+  dependencies:
+    exjs BSick7/exjs#0.5.0
+    http-status-codes edsilv/http-status-codes#v0.0.7
+    request "^2.83.0"
 
 map-cache@^0.2.2:
   version "0.2.2"
