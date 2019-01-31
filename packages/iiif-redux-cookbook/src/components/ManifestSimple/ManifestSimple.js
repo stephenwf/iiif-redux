@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { manifestByIdSelector } from 'iiif-redux/es/api/manifest';
-import { iiifResourceRequestUnknown } from 'iiif-redux/es/spaces/iiif-resource';
-import withLoadingState from '../../hoc/withLoadingState';
+import connect from '../../hoc/connect';
 import t from '../../utils/t';
 
 class ManifestSimple extends Component {
@@ -51,6 +49,5 @@ export default connect(
     license: currentManifest.getLicense,
     logo: currentManifest.getLogo,
     metadata: currentManifest.getMetadata,
-  })),
-  { iiifResourceRequestUnknown }
-)(withLoadingState(ManifestSimple));
+  }))
+)(ManifestSimple);

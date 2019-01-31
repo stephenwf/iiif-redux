@@ -28,7 +28,6 @@
     "start": "lerna run start --stream --parallel --concurrency 100",
     "build": "NODE_ENV=production lerna run build && lerna link",
     "build-all": "lerna run build",
-    "precommit": "lint-staged",
     "release": "fesk-release",
     "merge": "fesk-merge",
     "link": "lerna link",
@@ -55,5 +54,10 @@
       "packages/iiif-redux/__tests__/fixtures",
       "packages/iiif-redux/__tests__/api/3\\.x/[A-Za-z\\-]+/fixtures"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
