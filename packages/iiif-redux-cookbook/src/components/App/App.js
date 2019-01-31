@@ -8,6 +8,8 @@ import CanvasList from '../CanvasList/CanvasList';
 import { Manifest, ManifestContext } from '../../context/manifest';
 import t from '../../utils/t';
 import TestManifestContext from '../ManifestWithContext/ManifestWithContext';
+import HooksExample from '../HooksExample/HooksExample';
+import HookViewer from '../HookViewer/HookViewer';
 
 const store = createStore();
 
@@ -30,6 +32,12 @@ const Home = () => (
       <li>
         <Link to="/manifest-context">Manifest context (p2)</Link>
       </li>
+      <li>
+        <Link to="/hooks/1">Hooks example 1</Link>
+      </li>
+      <li>
+        <Link to="/hooks/2">Hooks example 2</Link>
+      </li>
     </ul>
   </div>
 );
@@ -42,12 +50,30 @@ const ContextTest = () => (
   </div>
 );
 
+const HooksTest = () => (
+  <div>
+    <Manifest id="https://wellcomelibrary.org/iiif/b18035723/manifest">
+      <HooksExample />
+    </Manifest>
+  </div>
+);
+
+const HooksViewerTest = () => (
+  <div>
+    <Manifest id="https://wellcomelibrary.org/iiif/b18035723/manifest">
+      <HookViewer />
+    </Manifest>
+  </div>
+);
+
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <div className="app">
-          <h1>IIIF Redux demos</h1>
+          <Link to="/" as="h1">
+            <h1>IIIF Redux demos</h1>
+          </Link>
           <Router>
             <Home path="/" default />
             <ManifestSimple
@@ -67,6 +93,8 @@ class App extends Component {
               id="https://raw.githubusercontent.com/digirati-co-uk/prezi2to3-js/master/tests/spec/fixtures/out/manifests.britishart.yale.edu__manifest__1474.json"
             />
             <ContextTest path="/manifest-context" />
+            <HooksTest path="/hooks/1" />
+            <HooksViewerTest path="/hooks/2" />
           </Router>
         </div>
       </Provider>
