@@ -14,8 +14,8 @@
   "dependencies": {
     "@reach/router": "1.2.1",
     "iiif-redux": "1.0.0",
-    "react": "16.8.0",
-    "react-dom": "16.8.0",
+    "react": "16.8.1",
+    "react-dom": "16.8.1",
     "react-redux": "6.0.0",
     "redux": "4.0.1"
   },
