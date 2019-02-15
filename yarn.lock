@@ -4876,9 +4876,9 @@ eslint-plugin-flow@2.29.1:
   dependencies:
     lodash "^4.15.0"
 
-eslint-plugin-flowtype@3.4.1:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-3.4.1.tgz#d359af7e4a22f41b8b441b8be72a207787f7b3f8"
+eslint-plugin-flowtype@3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-3.4.2.tgz#55475e10b05fd714d60bceebbbed596cb8706b16"
   dependencies:
     lodash "^4.17.11"
 
