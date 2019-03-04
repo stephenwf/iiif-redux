@@ -1,3 +1,17 @@
+
+<div align="center"><img src="https://raw.githubusercontent.com/stephenwf/hyperion/master/hyperion.png" width="390" /></div>
+<br />
+
+# Moving to Hyperion
+This project will soon be part of the [Hyperion Framework](https://github.com/stephenwf/hyperion) and APIs finalised. The aim of this library was to standardise both the IIIF presentation 2 and 3 specifications and provide a single layer for accessing data from them. As an experiment it was a success. However, the practicalities of supporting 2 presentation versions, and more when further versions are released is unrealistic. 
+
+Where the [Hyperion Framework](https://github.com/stephenwf/hyperion) is different is that it will always chase the specification. It is designed to internally work with latest Presentation version, and all IIIF resources requested by it will be upgraded on the fly to the latest version. It's also grounded in strong types, although does not require types to be used by consumers of the framework. This provides a better foundation for writing libraries and tools on top of the IIIF specifications, and is a consolidation of various experiments.
+
+The original architecture and readme can still be found below. You can find some more experiments in the pull requests.  
+
+<hr />
+
+
 <img src="https://raw.githubusercontent.com/stephenwf/iiif-redux/master/iiif-redux.png" width="340" />
 
 [![Coverage Status](https://coveralls.io/repos/github/stephenwf/iiif-redux/badge.svg)](https://coveralls.io/github/stephenwf/iiif-redux)
