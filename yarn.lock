@@ -11980,9 +11980,9 @@ reduce-reducers@^0.1.0:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/reduce-reducers/-/reduce-reducers-0.1.2.tgz#fa1b4718bc5292a71ddd1e5d839c9bea9770f14b"
 
-reduce-reducers@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/reduce-reducers/-/reduce-reducers-0.4.0.tgz#72e194e8e678f5947e092ddaf55c1881b4bdcc87"
+reduce-reducers@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/reduce-reducers/-/reduce-reducers-1.0.0.tgz#cc8e50ede1d3b687731027c0c7329f3c61e52531"
 
 redux-actions@^2.3.0:
   version "2.3.0"
