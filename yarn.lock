@@ -11772,10 +11772,10 @@ react-slick@~0.23.2:
     prettier "^1.14.3"
     resize-observer-polyfill "^1.5.0"
 
-react-sortable-hoc@1.9.0:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/react-sortable-hoc/-/react-sortable-hoc-1.9.0.tgz#ca09607d6ea717ebda899abad72cb2df9e0c20db"
-  integrity sha512-8ziTjeZ5Bg4fCvv/HaX5ULz+wCr7q2j5S41/SXypSfX/k7Z0n61K62m++lZRLG06E5WO5FBRpnd4zbDsF8dPzQ==
+react-sortable-hoc@1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/react-sortable-hoc/-/react-sortable-hoc-1.9.1.tgz#ae3d28c3cff87fb862be3ddcde9c76b5b5bd2152"
+  integrity sha512-2VeofjRav8+eZeE5Nm/+b8mrA94rQ+gBsqhXi8pRBSjOWNqslU3ZEm+0XhSlfoXJY2lkgHipfYAUuJbDtCixRg==
   dependencies:
     "@babel/runtime" "^7.2.0"
     invariant "^2.2.4"
