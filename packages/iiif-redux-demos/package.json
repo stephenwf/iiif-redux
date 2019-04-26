@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@canvas-panel/viewer-element": "0.1.2",
-    "antd": "3.16.5",
+    "antd": "3.16.6",
     "iiif-redux": "1.0.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
