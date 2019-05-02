@@ -144,9 +144,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@canvas-panel/core@0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@canvas-panel/core/-/core-0.1.2.tgz#0fe3bee28f93708c9d1452794fc20a2843c8142e"
+"@canvas-panel/core@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@canvas-panel/core/-/core-0.2.0.tgz#4a05cf9f1ce5ddc0302f701d85d684bb850404aa"
+  integrity sha512-Jo2WLfpKyLbHH2hShgVzJ67btZWQ1QY6Hig4PX5Vle+isL6BlZdJLR5N6QU7meX6d49xBhQMFeqZFaELLgneDg==
   dependencies:
     "@fesk/bem-js" "^1.0.0"
     "@iiif/manifold" "^1.2.19"
@@ -163,11 +164,12 @@
     screenfull "^3.3.2"
     whatwg-fetch "^3.0.0"
 
-"@canvas-panel/viewer-element@0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@canvas-panel/viewer-element/-/viewer-element-0.1.2.tgz#28ba98ad5da7264db326eeb2b2ff1a12c710078e"
+"@canvas-panel/viewer-element@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@canvas-panel/viewer-element/-/viewer-element-0.2.0.tgz#31ecf297546f8b549a2769e19934a13d0a13c8f1"
+  integrity sha512-Ft6CBQMIxlQqy5kkkbXN/OWDaPuGvXKfwWmguh17aOS0IKmYZotx6zfu3cPhXjV+hmwFdCZAwLjyQ1oEK5UM/A==
   dependencies:
-    "@canvas-panel/core" "0.1.2"
+    "@canvas-panel/core" "0.2.0"
 
 "@fesk/bem-js@^1.0.0":
   version "1.0.1"
