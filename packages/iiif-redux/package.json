@@ -38,7 +38,7 @@
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
-    "babel-jest": "23.6.0",
+    "babel-jest": "24.8.0",
     "nwb": "0.23.0",
     "nwb-watch": "1.0.0",
     "react-test-renderer": "16.8.6"
